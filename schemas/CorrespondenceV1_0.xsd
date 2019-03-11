@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.oscre.org/ns/eReg-Final/2012/CorrespondenceV1_0"
+	targetNamespace="http://www.oscre.org/ns/eReg-Final/2012/CorrespondenceV1_0"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+	<!--Document -->
+	<xs:element name="CorrespondenceV1_0" type="CorrespondenceV1_0Type" />
+
+	<xs:complexType name="CorrespondenceV1_0Type">
+		<xs:sequence>
+			<xs:element name="GatewayResponse" type="GatewayResponseType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GatewayResponseType">
+		<xs:sequence>
+			<xs:element name="TypeCode" type="ProductResponseCodeContentType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (letters, figures or symbols)
+						that for brevity and/or language independence may be used to
+						represent or replace a definitive value or text of an Attribute
+						together with relevant supplementary information.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ApplicationMessageId" type="xs:string"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="ExternalReference" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a particular
+						request, order or instruction in the system of the organisation
+						allocating it with the ability to associate the name of the
+						Company that has allocated it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ABR" type="xs:string" minOccurs="0"
+				maxOccurs="1" />
+			<xs:element name="Correspondence" type="AttachmentType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="AttachmentType">
+		<xs:simpleContent>
+			<xs:extension base="xs:base64Binary">
+				<xs:attribute name="filename" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>Must be the full filename including the
+							extension(Reference IETF RFC 2045, 2046, 2047)</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="format" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The format of the binary content.Note: A file
+							format is a particular way to encode information for storage in a
+							computer file. May be identified by the section of its name
+							following the final period, e.g., gif, pdf, jpg.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="ProductResponseCodeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="31">
+				<xs:annotation>
+					<xs:documentation>Correspondence</xs:documentation>
+					<xs:documentation>This value is used to signify a result as being
+						Correspondence</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

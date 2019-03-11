@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.oscre.org/ns/eReg-Final/2011/RequestLandChargesFullSearchV2_0"
+	targetNamespace="http://www.oscre.org/ns/eReg-Final/2011/RequestLandChargesFullSearchV2_0"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+	<!--Document-->
+	<xs:element name="RequestLandChargesFullSearchV2_0" type="RequestLandChargesFullSearchV2_0Type" />
+	<!--ABIEs-->
+	<xs:complexType name="Q1AlternativePostalAddressType">
+		<xs:sequence>
+			<xs:element name="AddressLine" type="Q3TextType" minOccurs="1"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Postcode" type="Q3TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1AlternativeDespatchDetailsType">
+		<xs:choice>
+			<xs:element name="PostalAddress" type="Q1AlternativePostalAddressType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A specific Address that can be used for the
+						delivery of physical mail.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DXDetails" type="Q1DXDetailsType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="Q1CommunicationType">
+		<xs:annotation>
+			<xs:documentation>Provides details of any other form of
+				communication</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Telephone" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ContactType">
+		<xs:annotation>
+			<xs:documentation>The information relevant to a person or
+				organization that acts as a point of contact with another person or
+				organization.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Name" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of this contact person or department.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Communication" type="Q1CommunicationType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The information relevant to methods of
+						communication for this Contact.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1CustomerReferenceType">
+		<xs:annotation>
+			<xs:documentation>Provides a unique reference to identify a
+				particular request, order or instruction or object in the system of
+				the organisation allocating it.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reference" type="ReferenceTextContentType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a
+						particular request, order or instruction in the system of the
+						organisation allocating it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllocatedBy" type="Q3TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of the organisation that has
+						allocated the Reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="Q3TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This field can be used to provide reference
+						description</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1DXDetailsType">
+		<xs:sequence>
+			<xs:element name="DXNumber" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique identifier for a delivery point for
+						organisations using the Document Exchange service.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExchangeName" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ExpectedPriceType">
+		<xs:annotation>
+			<xs:documentation>Information about price
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GrossPriceAmount" type="AmountType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The gross price is the price including the
+						VAT. If the VAT is zero then the Gross and Net Price will be the
+						same</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NetPriceAmount" type="AmountType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The Net Price is the amount before the VAT is
+						added on. If the VAT is zero then the Gross and Net Price will be
+						the same</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VATAmount" type="AmountType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the amount of the VAT
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ExternalReferenceType">
+		<xs:annotation>
+			<xs:documentation>A unique reference given to identify a particular
+				request, order or instruction in the system of the organisation
+				allocating it with the ability to associate the name of the Company
+				that has allocated it.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reference" type="ReferenceTextContentType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a
+						particular request, order or instruction in the system of the
+						organisation allocating it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllocatedBy" type="Q3TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of the organisation that has
+						allocated the Reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="Q3TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This field can be used to provide reference
+						description</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1IdentifierType">
+		<xs:sequence>
+			<xs:element name="MessageID" type="Q1TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1LandChargesFullSearchType">
+		<xs:sequence>
+
+			<xs:element name="ContinueIfActualFeeExceedsExpectedFeeIndicator"
+				type="IndicatorType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						A list of two mutually exclusive Boolean values that
+						express the only possible states of a Property.
+    			</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CountyOrAdministrativeArea" type="Q3TextType"
+				minOccurs="1" maxOccurs="6">
+				<xs:annotation>
+					<xs:documentation>
+						List of counties or administrative areas to search
+    			</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="StandardNames" type="Q1StandardNamesToSearchType"
+					minOccurs="1" maxOccurs="6" />
+				<xs:element name="NonStandardNames" type="Q1NonStandardNamesToSearchType"
+					minOccurs="1" maxOccurs="6" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1StandardNamesToSearchType">
+		<xs:sequence>
+			<xs:element name="SearchTypeCode" type="StandardCodeType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Type if Search to perform. 10 Private
+						Individual; 20 Limited and Public Limited Companies; 30 Complex
+						Names; Local Authority</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="StandardNameType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name to search. Will consist of Private
+						Individual Full Name, Limited Company Full Name, Complex Name or
+						Local Authority.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FromYear" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The year from which the search should start.
+						In the format YYYY (i.e. 1911)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ToYear" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The year to which the search should extend. In
+						the format YYYY (i.e. 2011)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1NonStandardNamesToSearchType">
+		<xs:sequence>
+			<xs:element name="SearchTypeCode" type="ComplexCodeType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Type if Search to perform. 10 Private
+						Individual; 20 Limited and Public Limited Companies; 30 Complex
+						Names; Local Authority</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="NonStandardNameContentType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name to search. Will consist of Private
+						Individual Full Name, Limited Company Full Name, Complex Name or
+						Local Authority.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FromYear" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The year from which the search should start.
+						In the format YYYY (i.e. 1911)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ToYear" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The year to which the search should extend. In
+						the format YYYY (i.e. 2011)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ProductType">
+		<xs:annotation>
+			<xs:documentation>This component contains details regarding the
+				search being ordered, expedited service, price details, delivery
+				method and any attachment.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ExternalReference" type="Q1ExternalReferenceType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference associated with a case in Case
+						Management System</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CustomerReference" type="Q1CustomerReferenceType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference of the person for whom the
+						remortgage is performed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExpectedPrice" type="Q1ExpectedPriceType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Information about price
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Contact" type="Q1ContactType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The information relevant to a person or
+						organization that acts as a point of contact with another person
+						or organization.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LandChargesFullSearch" type="Q1LandChargesFullSearchType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="AlternativeDespatchDetails" type="Q1AlternativeDespatchDetailsType"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RequestLandChargesFullSearchV2_0Type">
+		<xs:sequence>
+			<xs:element name="ID" type="Q1IdentifierType" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="Product" type="Q1ProductType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This component contains details regarding the
+						search being ordered, expedited service, price details, delivery
+						method and any attachment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--Datatypes-->
+	<xs:complexType name="AmountType">
+		<xs:annotation>
+			<xs:documentation>A number of monetary units specified in a currency
+				where the unit of the currency is explicit or implied.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="currencyID" type="xs:normalizedString"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation>The currency of the amount</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ComplexCodeType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Complex Name</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="40">
+				<xs:annotation>
+					<xs:documentation>Local Authority</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StandardCodeType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Private Individual</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Public Limited Company</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="IndicatorType">
+		<xs:annotation>
+			<xs:documentation>A list of two mutually exclusive Boolean values
+				that express the only possible states of a Property.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:boolean" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="StandardNameType">
+		<xs:annotation>
+			<xs:documentation>Human readable indication of names.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="IndividualName" type="IndividualNameType"
+					minOccurs="1" maxOccurs="1"></xs:element>
+				<xs:element name="CompanyName" type="CompanyNameContentType"
+					minOccurs="1" maxOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IndividualNameType">
+		<xs:annotation>
+			<xs:documentation>Human readable indication of names.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Forename" type="Q1ForenamesTextContentType"
+				minOccurs="1" maxOccurs="1"></xs:element>
+			<xs:element name="Surname" type="Q1SurnameTextContentType"
+				minOccurs="1" maxOccurs="1"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Q1TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Q3TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Q3TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<!--Contenttypes-->
+	<xs:simpleType name="Q1TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5" />
+			<xs:maxLength value="50" />
+			<xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Q1ForenamesTextContentType">
+		<xs:restriction base="invalidTrailingCharacter"><!-- prevents leading hyphen, space or apostrophe and requires at least one character -->
+			<xs:minLength value="1" />
+			<xs:maxLength value="90" />
+			<xs:pattern value="[A-Za-z][A-Za-z\- ']*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Q1SurnameTextContentType">
+		<xs:restriction base="invalidTrailingCharacter"><!-- prevents leading hyphen, space or apostrophe and requires at least one character -->
+			<xs:minLength value="1" />
+			<xs:maxLength value="89" />
+			<xs:pattern value="[A-Za-z][A-Za-z\- ']*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="invalidTrailingCharacter">
+	    <xs:restriction base="xs:string">
+	        <xs:pattern value=".*[^\- ']"/><!-- prevents trailing hyphen, space or apostrophe and requires at least one character -->
+	    </xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReferenceTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="25" />
+			<xs:pattern
+				value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" />
+		</xs:restriction>
+	</xs:simpleType>
+		<xs:simpleType name="Q3TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value=".*\S.*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NonStandardNameContentType">
+		<xs:annotation>
+			<xs:documentation>Human readable indication of names.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="90" />
+			<xs:pattern value=".*\S.*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CompanyNameContentType">
+		<xs:annotation>
+			<xs:documentation>Human readable indication of names.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="180" />
+			<xs:pattern value=".*\S.*"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

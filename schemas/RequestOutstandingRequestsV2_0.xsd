@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.oscre.org/ns/eReg-Final/2011/RequestOutstandingRequestsV2_0"
+	targetNamespace="http://www.oscre.org/ns/eReg-Final/2011/RequestOutstandingRequestsV2_0"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:appinfo>
+			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
+				<Contributor xmlns="http://www.w3.org/2001/XMLSchema">Developed by Matt Bell of LR
+					(mailto:dave.ankers@landregistry.gos.gov.uk)</Contributor>
+				<Contributor xmlns="http://www.w3.org/2001/XMLSchema">Developed by Richard Furze
+					of PISCES Ltd (mailto:richard.furze@pisces.co.uk)</Contributor>
+				<Contributor xmlns="http://www.w3.org/2001/XMLSchema">Monika Horner of PISCES Ltd
+					(mailto:monika.horner@pisces.co.uk)</Contributor>
+				<Creator>Land Registry</Creator>
+				<Date>
+					<Created>11/05/2011 10:33:37</Created>
+				</Date>
+				<Identifier>RequestOutstandingRequests-V2_0</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Publisher>Land Registry</Publisher>
+				<Subject>
+					<Category>Land and premises</Category>
+				</Subject>
+				<Subject>
+					<Project>eRegistration</Project>
+				</Subject>
+				<Title>RequestOutstandingRequestsV2_0</Title>
+			</Metadata>
+		</xs:appinfo>
+	</xs:annotation>
+	<!--Document-->
+	<xs:element name="RequestOutstandingRequests" type="RequestOutstandingRequestsType" />
+	<!--ABIEs-->
+	<xs:simpleType name="Q1ServiceType">
+		<xs:restriction base="xs:int" />
+	</xs:simpleType>
+	<xs:complexType name="Q1IdentifierType">
+		<xs:sequence>
+			<xs:element name="MessageID" type="Q1TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1OutstandingRequestsProductType">
+		<xs:annotation>
+			<xs:documentation>This component contains details regarding the
+				requests being searched for.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ShowOnlyNewResponses" type="IndicatorType"
+				default="false" minOccurs="1" maxOccurs="1" />
+			<xs:element name="SpecificService" type="Q1ServiceType"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RequestOutstandingRequestsType">
+		<xs:sequence>
+			<xs:element name="ID" type="Q1IdentifierType" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="Product" type="Q1OutstandingRequestsProductType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This component contains components holding
+						details of the requests being searched for</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--Datatypes-->
+	<xs:complexType name="IndicatorType">
+		<xs:annotation>
+			<xs:documentation>A list of two mutually exclusive Boolean values
+				that express the only possible states of a Property.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:boolean" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Q1TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Q1TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Q1TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5" />
+			<xs:maxLength value="50" />
+			<xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NumericType">
+		<xs:restriction base="xs:decimal" />
+	</xs:simpleType>
+</xs:schema>

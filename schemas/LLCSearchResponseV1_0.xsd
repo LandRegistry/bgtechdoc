@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.landregistry.gov.uk/LLC/LLCSearchResponseV1_0"
+	xmlns="http://www.landregistry.gov.uk/LLC/LLCSearchResponseV1_0"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:element name="LLCSearchResponse" type="LLCSearchResponseV1_0Type" />
+	<xs:complexType name="LLCSearchResponseV1_0Type">
+		<xs:sequence>
+			<xs:element name="GatewayResponse" type="Q1GatewayResponseType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1GatewayResponseType">
+		<xs:sequence>
+			<xs:element name="TypeCode" type="ProductResponseCodeType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (letters, figures or symbols)
+						that for brevity and/or language independence may be used to
+						represent or replace a definitive value or text of an Attribute
+						together with relevant supplementary information.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Acknowledgement" type="Q1AcknowledgementType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the the Business Gateway confirmation
+						response to the External System.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Rejection" type="Q1RejectionType"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="Results" type="Q1ResultsType" minOccurs="0"
+				maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProductResponseCodeType">
+		<xs:annotation>
+			<xs:documentation>A character string (letters, figures or symbols)
+				that for brevity and/or language independence may be used to
+				represent or replace a definitive value or text of an Attribute
+				together with relevant supplementary information.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ProductResponseCodeContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ProductResponseCodeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>Other</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Acknowledgement</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Rejection</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Result</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Q1AcknowledgementType">
+		<xs:annotation>
+			<xs:documentation>This is the the Business Gateway
+				confirmationresponse to the External System.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="AcknowledgementDetails" type="Q1AcknowledgementDetailsType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1AcknowledgementDetailsType">
+		<xs:sequence>
+			<xs:element name="UniqueID" type="IdentifierType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unique identifier used by end user to get the
+						status update of their request.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExpectedResponseDateTime" type="DateTimeType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This element will hold expected time when
+						Business Gateway will try to process the queued request. This
+						element will contain date and time data as GMT format. This
+						element should be marked as mandatory</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MessageDescription" type="TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This will be a String type element and will be
+						use to display a message to end user. This element should be
+						marked as mandatory</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ActualPriceType">
+		<xs:annotation>
+			<xs:documentation>Information about price</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GrossPriceAmount" type="AmountType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The gross price is the price including the VAT.
+						If the VAT is zero then the Gross and Net Price will be the same
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NetPriceAmount" type="AmountType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The Net Price is the amount before the VAT is
+						added on. If the VAT is zero then the Gross and Net Price will be
+						the same</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VATAmount" type="AmountType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the amount of the VAT</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1AttachmentType">
+		<xs:annotation>
+			<xs:documentation>An electronic copy of a document that may be
+				attached to a message.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="EmbeddedFileBinaryObject" type="BinaryObjectType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The binary representation of the image or
+						document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Title" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Title or Caption for the attached file or
+						document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A description of the contents of the attached
+						file or document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Date" type="DateType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The date of the document within the contained
+						attachment. In the example of a an attached photo, this would be
+						the date the photograph was taken.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CopyrightNotices" type="TextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Text description of any Legal or copyright
+						notices that may apply to the file in question.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1RejectionType">
+		<xs:sequence>
+			<xs:element name="ExternalReference" type="TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a particular
+						request, order or instruction in the system of the organisation
+						allocating it with the ability to associate the name of the
+						Company that has allocated it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ActualPrice" type="Q1ActualPriceType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the price for a Search/Product
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RejectionResponse" type="Q1RejectionResponseType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Provides details of the reasons for the rejection
+						of the Search Order Send message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1RejectionResponseType">
+		<xs:annotation>
+			<xs:documentation>Provides details of the reasons for the rejection.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reason" type="TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A description of the reason for rejection.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Code" type="TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A code signifying the reason for rejection
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OtherDescription" type="TextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Freeform text field to convey any further
+						information about the rejection.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ValidationErrors" type="Q1ValidationErrorsType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ResultsType">
+		<xs:sequence>
+			<xs:element name="ExternalReference" type="TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation> Reference associated with a case in Case
+						Management System    			</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ActualPrice" type="Q1ActualPriceType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation> This is the price for a Search/Product
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Attachment" type="Q1AttachmentType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation> An electronic copy of a document that may be
+						attached to a message.    			</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SearchReference" type="TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation> Land Registry Search Reference may be used to request a refreshed search within 6 months of original request. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ValidationErrorsType">
+		<xs:sequence>
+			<xs:element name="Code" type="TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DateTimeType">
+		<xs:annotation>
+			<xs:documentation>A particular point in the progression of time
+				together with the relevant supplementary information.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:dateTime" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="IdentifierType">
+		<xs:annotation>
+			<xs:documentation>A character string to identify and distinguish
+				uniquely, one instance of an object in an identification scheme from
+				all other objects in the same scheme together with relevant
+				supplementary information.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:normalizedString">
+				<xs:attribute name="schemeAgencyName" type="xs:string"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation>The identification of the agency that maintains
+							the identification scheme.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="schemeName" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The name of the identification scheme.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string" />
+		</xs:simpleContent>
+	</xs:complexType>  <!--Datatypes -->
+	<xs:complexType name="AmountType">
+		<xs:annotation>
+			<xs:documentation>A number of monetary units specified in a currency
+				where the unit of the currency is explicit or implied.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="currencyID" type="xs:normalizedString"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation>The currency of the amount</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="BinaryObjectType">
+		<xs:annotation>
+			<xs:documentation>A set of finite-length sequences of binary octets.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:base64Binary">
+				<xs:attribute name="filename" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>Must be the full filename including the
+							extension(Reference IETF RFC 2045, 2046, 2047)            </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="format" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The format of the binary content.Note: A file
+							format is a particular way to encode information for storage in a
+							computer file. May be identified by the section of its name
+							following the final period, e.g., gif, pdf, jpg.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="mimeCode" type="xs:normalizedString"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation>The mime type of the binary object.(Reference
+							IETF RFC 2045, 2046, 2047)Note: consist of a standardised system
+							of identifiers (managed by IANA) consisting of a type and a
+							sub-type, separated by a slash - for instance, text/html or
+							image/gif.            </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="characterSetCode" type="xs:normalizedString"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation>The character set of the binary object if the
+							mime type is text.(Reference IETF RFC 2045, 2046, 2047).
+							Examples: ISO-8859-1, UTF-8, UTF-16. See also
+							http://www.iana.org/assignments/character-sets.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="DateType">
+		<xs:annotation>
+			<xs:documentation>A particular point in the progression of time
+				together with the relevant supplementary information. OSCRE dates
+				follow the ISO 8601 Standard. The international standard date
+				notation is YYYY-MM-DD where YYYY is the year in the usual Gregorian
+				calendar, MM is the month of the year between 01 (January) and 12
+				(December), and DD is the day of the month between 01 and 31.For
+				example, the fourth day of February in the year 1995 is written in
+				the standard notation as 1995-02-04      </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:date" />
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

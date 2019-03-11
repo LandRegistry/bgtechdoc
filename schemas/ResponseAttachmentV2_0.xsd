@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.oscre.org/ns/eReg-Final/2012/ResponseAttachmentV2_0"
+	targetNamespace="http://www.oscre.org/ns/eReg-Final/2012/ResponseAttachmentV2_0"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+	<!--Document -->
+	<xs:element name="AttachmentResponseV2_0" type="AttachmentResponseV2_0Type" />
+
+	<xs:complexType name="AttachmentResponseV2_0Type">
+		<xs:sequence>
+			<xs:element name="GatewayResponse" type="GatewayResponseType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GatewayResponseType">
+		<xs:sequence>
+			<xs:element name="TypeCode" type="ProductResponseCodeContentType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (letters, figures or symbols)
+						that for brevity and/or language independence may be used to
+						represent or replace a definitive value or text of an Attribute
+						together with relevant supplementary information.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Acknowledgement" type="AcknowledgementType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the Business Gateways
+						confirmation
+						response to the External System.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Rejection" type="RejectionType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the Business Gateways
+						rejection response
+						to the External System.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Results" type="ResultsType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the Business Gateways
+						result response to
+						the External System.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="AcknowledgementType">
+		<xs:sequence>
+			<xs:element name="UniqueID" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unique identifier used by end user to get the
+						status update of their request.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MessageDescription" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This will be a String type element and will be
+						use to display a message to end user. This element should be
+						marked as mandatory</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExpectedResponseDateTime" type="xs:dateTime"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This element will hold expected time when
+						Business Gateway will try to process the queued request. This
+						element will contain date and time data as GMT format. This
+						element should be marked as mandatory</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="RejectionType">
+		<xs:sequence>
+			<xs:element name="ExternalReference" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a particular
+						request, order or instruction in the system of the organisation
+						allocating it with the ability to associate the name of the
+						Company that has allocated it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Reason" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A description of the reason for rejection.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Code" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A code signifying the reason for rejection
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OtherDescription" type="xs:string"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Freeform text field to convey any further
+						information about the rejection.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ValidationErrors" type="ValidationErrorsType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ValidationErrorsType">
+		<xs:sequence>
+			<xs:element name="Code" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ResultsType">
+		<xs:sequence>
+			<xs:element name="ExternalReference" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a particular
+						request, order or instruction in the system of the organisation
+						allocating it with the ability to associate the name of the
+						Company that has allocated it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MessageDetails" type="xs:string"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AttachmentID" type="xs:integer"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The ID of the newly provided document. This will
+						be the equivalent of the Priority or Document ID. If you send in a
+						completely new document, this will tell you what ID has been
+						assigned to it.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="ProductResponseCodeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>Other</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Acknowledgement</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Rejection</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Result</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

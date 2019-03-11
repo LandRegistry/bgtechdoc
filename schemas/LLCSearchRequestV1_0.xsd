@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.landregistry.gov.uk/LLC/LLCSearchRequestV1_0"
+	xmlns="http://www.landregistry.gov.uk/LLC/LLCSearchRequestV1_0"
+	elementFormDefault="qualified">
+	<xs:element name="LLCSearch" type="LLCSearchRequestV1_0Type"></xs:element>	<!-- fill out all input parameters very basic below -->
+	<xs:complexType name="LLCSearchRequestV1_0Type">
+		<xs:sequence>
+			<xs:element name="MessageId" type="MessageIdType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="Reference" type="ReferenceTextContentType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="FeeInPence" type="xs:nonNegativeInteger"
+				minOccurs="0" maxOccurs="1" />
+			<xs:choice>
+				<xs:element name="RefreshSearchReference" type="SearchReferenceTextType"
+					minOccurs="1" maxOccurs="1" />
+				<xs:sequence>
+					<xs:choice>
+						<xs:element name="TitleNumber" type="TitleType"
+							minOccurs="1" maxOccurs="1" />
+						<xs:element name="GeoJson" type="CDATA" />
+					</xs:choice>
+					<xs:element name="PropertyDescription" type="PropertyDescriptionType" />
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="Indicators" type="IndicatorsType"
+				minOccurs="1" maxOccurs="1">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="PropertyDescriptionType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="400" />
+			<xs:pattern
+				value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MessageIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5" />
+			<xs:maxLength value="50" />
+			<xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReferenceTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="25" />
+			<xs:pattern
+				value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SearchReferenceTextType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TitleType">
+		<xs:annotation>
+			<xs:documentation>This type defines the validation pattern for title
+				numbers</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="9" />
+			<xs:pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CDATA">
+		<xs:restriction base="xs:string" />
+	</xs:simpleType>
+	<xs:complexType name="IndicatorsType">
+		<xs:sequence>
+			<xs:element name="Indicator" type="IndicatorType"
+				minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IndicatorType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation> The indicators are generic so that new options
+					can be added in the future without schema changes. Expected
+					indicators are: ContinueIfOutOfHours ContinueIfFeeExceedsExpected
+				</xs:documentation>
+			</xs:annotation>
+			<xs:element name="IndicatorType" minOccurs="1" maxOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"></xs:minLength>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="IndicatorValue" type="xs:boolean"
+				minOccurs="1" maxOccurs="1"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

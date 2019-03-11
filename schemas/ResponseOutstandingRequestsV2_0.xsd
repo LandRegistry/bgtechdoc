@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.oscre.org/ns/eReg-Final/2011/ResponseOutstandingRequestsV2_0"
+	targetNamespace="http://www.oscre.org/ns/eReg-Final/2011/ResponseOutstandingRequestsV2_0"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:appinfo>
+			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
+				<Contributor xmlns="http://www.w3.org/2001/XMLSchema">Developed by Matt Bell of LR
+					(mailto:matthew.bell@landregistry.gsi.gov.uk)</Contributor>
+				<Contributor xmlns="http://www.w3.org/2001/XMLSchema">Developed by Richard Furze
+					of PISCES Ltd (mailto:richard.furze@pisces.co.uk)</Contributor>
+				<Contributor xmlns="http://www.w3.org/2001/XMLSchema">Monika Horner of PISCES Ltd
+					(mailto:monika.horner@pisces.co.uk)</Contributor>
+				<Creator>Land Registry</Creator>
+				<Date>
+					<Created>11/05/2011 10:33:37</Created>
+				</Date>
+				<Identifier>ResponseOutstandingRequests-V2_0</Identifier>
+				<Language>[ISO 639-2/B] ENG</Language>
+				<Publisher>Land Registry</Publisher>
+				<Subject>
+					<Category>Land and premises</Category>
+				</Subject>
+				<Subject>
+					<Project>eRegistration</Project>
+				</Subject>
+				<Title>ResponseOutstandingRequestsV2_0</Title>
+			</Metadata>
+		</xs:appinfo>
+	</xs:annotation>
+	<!--Document-->
+	<xs:element name="ResponseOutstandingRequests" type="ResponseOutstandingRequestsType" />
+	<!--ABIEs-->
+	<xs:complexType name="ResponseOutstandingRequestsType">
+		<xs:sequence>
+			<xs:element name="TypeCode" type="ProductResponseCodeType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="Results" type="ResultsType" minOccurs="0"
+				maxOccurs="1" />
+			<xs:element name="Rejection" type="Q1RejectionType"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1RejectionType">
+		<xs:sequence>
+			<xs:element name="RejectionResponse" type="Q1RejectionResponseType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Provides details of the reasons for the
+						rejection of the Search Order Send message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1RejectionResponseType">
+		<xs:annotation>
+			<xs:documentation>Provides details of the reasons for the
+				rejection.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reason" type="NonEmptyTextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A description of the reason for rejection.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Code" type="NonEmptyTextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A code signifying the reason for rejection
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NonEmptyTextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="NonEmptyTextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NonEmptyTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="300" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ResultsType">
+		<xs:sequence>
+			<xs:element name="OutstandingRequests" type="OutstandingRequestType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="ResultDateTime" type="DateTimeType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The datetime on which the result was produced
+						and is fully accurate.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OutstandingRequestType">
+		<xs:sequence>
+			<xs:element name="ID" type="Q1IdentifierType" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="NewResponse" type="IndicatorType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifies the status of a Business
+						Gateway request.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ServiceType" type="Q1ServiceType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifies the type of request that is
+						outstanding.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1IdentifierType">
+		<xs:sequence>
+			<xs:element name="MessageID" type="MessageIDTextContentType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--Datatypes-->
+	<xs:complexType name="IndicatorType">
+		<xs:annotation>
+			<xs:documentation>A list of two mutually exclusive Boolean values
+				that express the only possible states of a Property.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:boolean" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="DateTimeType">
+		<xs:annotation>
+			<xs:documentation>A particular point in the progression of time
+				together with the relevant supplementary information.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:dateTime" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ProductResponseCodeType">
+		<xs:annotation>
+			<xs:documentation>A character string (letters, figures or symbols)
+				that for brevity and/or language independence may be used to
+				represent or replace a definitive value or text of an Attribute
+				together with relevant supplementary information.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ProductResponseCodeContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<!--Contenttypes-->
+	<xs:simpleType name="ProductResponseCodeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>Other</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Acknowledgement</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Rejection</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Result</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Q1ServiceType">
+		<xs:restriction base="xs:int" />
+	</xs:simpleType>
+	<xs:simpleType name="MessageIDTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5" />
+			<xs:maxLength value="50" />
+			<xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

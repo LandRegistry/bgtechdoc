@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.oscre.org/ns/eReg-Final/2012/RequestAttachmentV2_1"
+	targetNamespace="http://www.oscre.org/ns/eReg-Final/2012/RequestAttachmentV2_1"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+	<!--Document -->
+	<xs:element name="AttachmentV2_1" type="AttachmentV2_1Type" />
+
+	<xs:complexType name="AttachmentV2_1Type">
+		<xs:sequence>
+			<xs:element name="AdditionalProviderFilter" type="AdditionalProviderFilterType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A value that can be used to subsequently retrieve request responses
+					 based upon high level grouping. This will be of particular interest to cloud providers.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+			<xs:element name="MessageId" type="MessageIdType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="ExternalReference" type="ReferenceTypeContent"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="ApplicationMessageId" type="MessageIdType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="ApplicationService" type="xs:integer"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is a numeric value which relates to the
+						service you are submitting the attachment to. Expected values can
+						be found in the Developer Pack.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:sequence>
+					<xs:choice>
+						<xs:element name="AttachmentId" type="xs:positiveInteger"
+							minOccurs="1" maxOccurs="1" />
+						<xs:element name="DocumentName" type="DocumentNameContent"
+							minOccurs="1" maxOccurs="1" />
+						<xs:element name="ApplicationType" type="ApplicationTypeContent"
+							minOccurs="1" maxOccurs="1" />
+					</xs:choice>
+					<xs:element name="CertifiedCopy" type="CertifiedTypeContent"
+						minOccurs="1" maxOccurs="1" />
+					<xs:element name="Attachment" type="AttachmentType"
+						minOccurs="1" maxOccurs="1" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="Notes" type="NonBlankTextType"
+						minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>This is a free format notepad area for any additional notes.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="AttachmentType">
+		<xs:annotation>
+			<xs:documentation>Maximum file size for an attachment is 20MB. 
+			We only accept the following file types: TIFF, GIF, JPEG and PDF
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:base64Binary">
+				<xs:attribute name="filename" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>Must be the full filename including the
+							extension(Reference IETF RFC 2045, 2046, 2047)</xs:documentation>
+						<xs:documentation>This is not required for requests
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="format" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The format of the binary content.Note: A file
+							format is a particular way to encode information for storage in a
+							computer file. May be identified by the section of its name
+							following the final period, e.g., gif, pdf, jpg.
+						</xs:documentation>
+						<xs:documentation>This is not required for requests
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+	<xs:simpleType name="MessageIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5" />
+			<xs:maxLength value="50" />
+			<xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AdditionalProviderFilterType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="50" />
+			<xs:pattern value="[a-zA-Z0-9]*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CertifiedTypeContent">
+		<xs:annotation>
+			<xs:documentation>This type defines the valid string values for a Certified Copy.
+			Original: This should be used where you hold the original document, 
+			original certificate or original letter.
+			
+			Certified: This should be used where you are submitting a document which is a copy 
+			of a document which has been certified on the face of the document by another 
+			Conveyancer to be a true copy of the original.
+			
+			Scanned: This should be used when you are submitting a document where you do not 
+			hold an original or copy certified by another Conveyancer and what you are 
+			submitting is a copy document such as copies of Death Certificates or Court Orders.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Original" />
+			<xs:enumeration value="Certified" />
+			<xs:enumeration value="Scanned" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ApplicationTypeContent">
+		<xs:annotation>
+			<xs:documentation>This type defines the valid string values for an
+				Application type.
+				These are described as follows:
+
+				ADV1 = Adverse possession of registered land
+				ADV2 = Notification of adverse possession
+				AN1  = Agreed Notice
+				AP1  = Alteration of Register
+				APT  = Appointment of New Trustee
+				AS1  = Assent
+				AS2  = Assent of Charge
+				AS3  = Assent of Part
+				C    = Charge
+				CCD  = Cancellation of Caution
+				CH2  = Obligation to make Further Advances (CH2)
+				CH3  = Note Agreed Maximum Amount of Security ()CH3)
+				CN   = Change of Name
+				CNL  = Cancellation of Noted Lease
+				CN1  = Cancel Notice
+				COA  = Change of Address
+				CPD  = Change of Property Description (CPD)
+				DB   = Determine the exact line of boundary
+				DIS  = Discharge
+				DJP  = Death of Joint Proprietor
+				DOL  = Determination of a Lease
+				DSP  = Death of Sole Proprietor
+				EX1  = Exempt Information Document (EX1)
+				EX3  = Remove Exempt Information Document (EX3)
+				HR1  = Notice of Home Rights (HR1)
+				HR2  = Renew notice of Home Rights (HR2)
+				HR4  = Cancel notice of Home Rights (HR4)
+				LEASE = Lease 
+				NOE  = Noting of Easement
+				NOL  = Noting of Lease
+				PC   = Postponement of Charge
+				RC   = Entry of Restrictive Covenant
+				RFN  = Rectification of Register
+				RGOE = Registration of Easements
+				ROCA = Release of Covenants - Agreed Notice
+				ROCC = Release of Covenants - Cancellation
+				ROCU = Release of Covenants - Unilateral Notice
+				ROE  = Release of Easements
+				RX1  = Restriction (Standard)
+				RX2  = Restriction (Non Standard)
+				RX3  = Cancel a Restriction
+				RX4  = Withdraw a Restriction
+				SBC  = Sub Charge
+				SC   = Note overriding priority of a statutory charge
+				SEV  = Severance of Joint Tenancy
+				SL   = Surrender of Lease
+				TNV  = Transfer not for Value
+				TP1  = Transfer of Part
+				TP2  = Transfer of Part Under Power of Sale
+				TR1  = Transfer
+				TR2  = Transfer Under Power of Sale
+				TR4  = Transfer of Charge
+				TRM  = Transfer by Operation of Law (On Death)
+				TSC  = Transfer Subject to a Charge
+				UN1  = Unilateral Notice
+				UN2  = Remove Unilateral Notice (UN2)
+				UN3  = Register Beneficiary of Unilateral Notice (UN3)
+				UN4  = Cancellation of a Unilateral Notice (UN4)
+				UT1  = Upgrade Title (UT1)
+				VC   = Variation of Charge
+				VLAN = Variation of Lease - Agreed Notice
+				VLAP = Variation of Lease
+				VLUN = Variation of Lease - Unilateral Notice
+				VOCA = Variation of Covenants - Agreed Notice
+				VOCU = Variation of Covenants - Unilateral Notice
+				VOE  = Variation of Easements
+				VOEA = Variation of Easements - Agreed Notice
+				VOEU = Variation of Easements - Unilateral Notice
+				WCT  = Withdraw a Caution			
+
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ADV1" />
+			<xs:enumeration value="ADV2" />
+			<xs:enumeration value="AN1" />
+			<xs:enumeration value="AP1" />
+			<xs:enumeration value="APT" />
+			<xs:enumeration value="AS1" />
+			<xs:enumeration value="AS2" />
+			<xs:enumeration value="AS3" />
+			<xs:enumeration value="C" />
+			<xs:enumeration value="CCD" />
+			<xs:enumeration value="CH2" />
+			<xs:enumeration value="CH3" />
+			<xs:enumeration value="CN" />
+			<xs:enumeration value="CNL" />
+			<xs:enumeration value="CN1" />
+			<xs:enumeration value="COA" />
+			<xs:enumeration value="CPD" />
+			<xs:enumeration value="DB" />
+			<xs:enumeration value="DIS" />
+			<xs:enumeration value="DJP" />
+			<xs:enumeration value="DOL" />
+			<xs:enumeration value="DSP" />
+			<xs:enumeration value="EX1" />
+			<xs:enumeration value="EX3" />
+			<xs:enumeration value="HR1" />
+			<xs:enumeration value="HR2" />
+			<xs:enumeration value="HR4" />
+			<xs:enumeration value="LEASE" />
+			<xs:enumeration value="NOE" />
+			<xs:enumeration value="NOL" />
+			<xs:enumeration value="PC" />
+			<xs:enumeration value="RC" />
+			<xs:enumeration value="RFN" />
+			<xs:enumeration value="RGOE" />
+			<xs:enumeration value="ROCA" />
+			<xs:enumeration value="ROCC" />
+			<xs:enumeration value="ROCU" />
+			<xs:enumeration value="ROE" />
+			<xs:enumeration value="RX1" />
+			<xs:enumeration value="RX2" />
+			<xs:enumeration value="RX3" />
+			<xs:enumeration value="RX4" />
+			<xs:enumeration value="SBC" />
+			<xs:enumeration value="SC" />
+			<xs:enumeration value="SEV" />
+			<xs:enumeration value="SL" />
+			<xs:enumeration value="TNV" />
+			<xs:enumeration value="TP1" />
+			<xs:enumeration value="TP2" />
+			<xs:enumeration value="TR1" />
+			<xs:enumeration value="TR2" />
+			<xs:enumeration value="TR4" />
+			<xs:enumeration value="TRM" />
+			<xs:enumeration value="TSC" />
+			<xs:enumeration value="UN1" />
+			<xs:enumeration value="UN2" />
+			<xs:enumeration value="UN3" />
+			<xs:enumeration value="UN4" />
+			<xs:enumeration value="UT1" />
+			<xs:enumeration value="VC" />
+			<xs:enumeration value="VLAN" />
+			<xs:enumeration value="VLAP" />
+			<xs:enumeration value="VLUN" />
+			<xs:enumeration value="VOCA" />
+			<xs:enumeration value="VOCU" />
+			<xs:enumeration value="VOE" />
+			<xs:enumeration value="VOEA" />
+			<xs:enumeration value="VOEU" />
+			<xs:enumeration value="WCT" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DocumentNameContent">
+		<xs:annotation>
+			<xs:documentation>This type defines the valid string values for a
+				Supporting Document Name</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Abstract" />
+			<xs:enumeration value="Agreement" />
+			<xs:enumeration value="Assent" />
+			<xs:enumeration value="Assignment" />
+			<xs:enumeration value="Birth Certificate" />
+			<xs:enumeration value="Charge" />
+			<xs:enumeration value="Conveyance" />
+			<xs:enumeration value="Correspondence" />
+			<xs:enumeration value="Court Order" />
+			<xs:enumeration value="Death Certificate" />
+			<xs:enumeration value="Deed" />
+			<xs:enumeration value="Discharge" />
+			<xs:enumeration value="Document List" />
+			<xs:enumeration value="Evidence" />
+			<xs:enumeration value="EX1A" />
+			<xs:enumeration value="Form DI" />
+			<xs:enumeration value="Identity Evidence" />
+			<xs:enumeration value="Identity Form" />
+			<xs:enumeration value="Indenture" />
+			<xs:enumeration value="Land Transaction Tax" />
+			<xs:enumeration value="Lease" />
+			<xs:enumeration value="Licence" />
+			<xs:enumeration value="LR Correspondence" />
+			<xs:enumeration value="Marriage Certificate" />
+			<xs:enumeration value="Plan" />
+			<xs:enumeration value="Power of Attorney" />
+			<xs:enumeration value="Probate" />
+			<xs:enumeration value="Stamp Duty Land Tax" />
+			<xs:enumeration value="Statement Of Truth" />
+			<xs:enumeration value="Statutory Declaration" />
+			<xs:enumeration value="Sub Charge" />
+			<xs:enumeration value="Transfer" />
+			<xs:enumeration value="Witness Statement" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ReferenceTypeContent">
+		<xs:annotation>
+			<xs:documentation>This type defines the validation pattern for
+				Application Reference</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="25" />
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="NonBlankTextType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
