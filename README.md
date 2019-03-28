@@ -49,3 +49,10 @@
 [Glossary](pages/definitions/GLOSSARY.md)
 
 [Frequently asked questions](pages/definitions/FAQ.md)
+
+##Contact
+For Technical Support for Business Gateway call the Information Systems (IS) Service Desk on 0300 006 0400.
+
+For further information regarding Business Gateway, please contact [channelpartners@landregistry.gov.uk](mailto:channelpartners@landregistry.gov.uk).
+
+Software vendors and conveyancers who are not signed up, but want to use Business Gateway as part of their CMS, should contact [channelpartners@landregistry.gov.uk](mailto:channelpartners@landregistry.gov.uk).
