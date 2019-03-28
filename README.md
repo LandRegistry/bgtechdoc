@@ -50,7 +50,7 @@
 
 [Frequently asked questions](pages/definitions/FAQ.md)
 
-##Contact
+## Contact
 For Technical Support for Business Gateway call the Information Systems (IS) Service Desk on 0300 006 0400.
 
 For further information regarding Business Gateway, please contact [channelpartners@landregistry.gov.uk](mailto:channelpartners@landregistry.gov.uk).
