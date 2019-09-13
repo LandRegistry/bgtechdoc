@@ -25,10 +25,10 @@ The following parameters will also be necessary if there are any complications, 
 #### Validation
 Validation diagram details the validation that the request undergoes.
 
-<h3><a href="../../pdfs/services/ApplicationEnquiry_ValidationDiagram_v1.0.pdf">
+<h3><a href="../../pdfs/services/ApplicationEnquiryv1_0_Validation Diagram.pdf">
 <img style="float: left; margin: 0px 5px 0px 0px;  border:5px solid LightGrey;" src="../../images/thumbnail/ApplicationEnquiryValidationDiagramV1_0.pdf.png"></a>
-<a href="../../pdfs/services/ApplicationEnquiry_ValidationDiagram_v1.0.pdf">Validation diagram</a></h3>
-<a download="ApplicationEnquiry_ValidationDiagram_v1.0.pdf" href="../../pdfs/services/ApplicationEnquiry_ValidationDiagram_v1.0.pdf">Download</a>
+<a href="../../pdfs/services/ApplicationEnquiryv1_0_Validation Diagram.pdf">Validation diagram</a></h3>
+<a download="ApplicationEnquiryv1_0_Validation Diagram.pdf" href="../../pdfs/services/ApplicationEnquiryv1_0_Validation Diagram.pdf">Download</a>
 
 PDF
 <br />
@@ -54,10 +54,10 @@ XSD
 
 <br/>
 
-<h3><a href="../../pdfs/services/ApplicationEnquiry_v1.0_SchemaExplain.pdf">
+<h3><a href="../../pdfs/services/ApplicationEnquiryv1_0_SchemaExplain.pdf">
 <img style="float: left; margin: 0px 5px 0px 0px;  border:5px solid LightGrey;" src="../../images/thumbnail/RequestApplicationEnquiryV1_0SchemaExplain.pdf.png"></a>
-<a href="../../pdfs/services/ApplicationEnquiry_v1.0_SchemaExplain.pdf">Schema explain</a></h3>
-<a download="ApplicationEnquiry_v1.0_SchemaExplain.pdf" href="../../pdfs/services/ApplicationEnquiry_v1.0_SchemaExplain.pdf">Download</a>
+<a href="../../pdfs/services/ApplicationEnquiryv1_0_SchemaExplain.pdf">Schema explain</a></h3>
+<a download="ApplicationEnquiryv1_0_SchemaExplain.pdf" href="../../pdfs/services/ApplicationEnquiryv1_0_SchemaExplain.pdf">Download</a>
 
 PDF
 
@@ -67,9 +67,9 @@ PDF
 
 #### Documents the data required for testing the service.
 
-<h3><a href="../../pdfs/services/ApplicationEnquiry v1_0VendorTest.pdf">
+<h3><a href="../../pdfs/services/ApplicationEnquiryv1_0_VendorTest.pdf">
 <img style="float: left; margin: 0px 5px 0px 0px;  border:5px solid LightGrey;" src="../../images/thumbnail/ApplicationEnquiry-v1_0VendorTest.pdf.png"></a>
-<a href="../../pdfs/services/ApplicationEnquiry v1_0VendorTest.pdf">Vendor Test Data</a></h3>
-<a download="ApplicationEnquiry v1_0VendorTest.pdf" href="../../pdfs/services/ApplicationEnquiry v1_0VendorTest.pdf">Download</a>
+<a href="../../pdfs/services/ApplicationEnquiryv1_0_VendorTest.pdf">Vendor Test Data</a></h3>
+<a download="ApplicationEnquiryv1_0_VendorTest.pdf" href="../../pdfs/services/ApplicationEnquiryv1_0_VendorTest.pdf">Download</a>
 
 PDF
