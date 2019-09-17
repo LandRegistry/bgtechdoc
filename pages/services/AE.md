@@ -15,7 +15,7 @@ Reveals any pending applications that are lodged against the title.
 Request an application enquiry by sending the following parameters:
 
 - login details
-- external reference number
+- application reference number
 - title number
 
 The following parameters will also be necessary if there are any complications, and may be supplied to keep transaction calls and processing times to a minimum.
