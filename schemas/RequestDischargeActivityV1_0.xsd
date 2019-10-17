@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.landregistry.gov.uk/RequestDischargeActivityV1_0"
+	targetNamespace="http://www.landregistry.gov.uk/RequestDischargeActivityV1_0"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+	<!--Document -->
+	<xs:element name="RequestDischargeActivityV1_0"
+		type="RequestDischargeActivityV1_0Type" />
+	<!--ABIEs -->
+	<xs:complexType name="RequestDischargeActivityV1_0Type">
+		<xs:sequence>
+			<xs:element name="ID" type="Q1IdentifierType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="Product" type="Q1ProductType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This component contains details regarding the
+						search being ordered.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Q1IdentifierType">
+		<xs:sequence>
+			<xs:element name="MessageID" type="Q1TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference for every new message. Enables
+						the use of SOAP reliable messaging.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ProductType">
+		<xs:annotation>
+			<xs:documentation>This component contains details regarding the
+				search being ordered.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ExternalReference"
+				type="Q1ExternalReferenceType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference supplied by the customer to identify their own case
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="SubjectProperty"
+					type="Q1SubjectPropertyType" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Includes the elements needed for a discharge search
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ExternalReferenceType">
+		<xs:annotation>
+			<xs:documentation>A unique reference given to identify a particular
+				request, order or instruction in the system of the organisation
+				allocating it with the ability to associate the name of the Company
+				that has allocated it.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reference"
+				type="ReferenceTextContentType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a particular 
+					search in the system of the organisation allocating it.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllocatedBy" type="Q3TextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A name that has allocated the reference
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="Q3TextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A reference description
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1SubjectPropertyType">
+		<xs:annotation>
+			<xs:documentation>The Property which is the subject of the search.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TitleNumber" type="Q2TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Provides the title number to be searched on
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element
+				name="ContinueIfTitleIsClosedAndContinuedIndicator"
+				type="IndicatorType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>An indicator to advise whether to continue 
+					with any new Title number without warning.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ChargeDate" type="DateType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The date of a charge, that you want to check,
+						that has been discharged within the last 30 calendar days
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--Datatypes -->
+	<xs:complexType name="IndicatorType">
+		<xs:annotation>
+			<xs:documentation>A list of two mutually exclusive Boolean values.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:boolean" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="DateType">
+		<xs:annotation>
+			<xs:documentation>
+				The international standard date notation is YYYY-MM-DD
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:date" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Q2TextType">
+		<xs:simpleContent>
+			<xs:extension base="Q2TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Q1TextType">
+		<xs:simpleContent>
+			<xs:extension base="Q1TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Q3TextType">
+		<xs:simpleContent>
+			<xs:extension base="Q3TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<!--Content types -->
+	<xs:simpleType name="Q3TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Q2TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="9" />
+			<xs:pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Q1TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5" />
+			<xs:maxLength value="50" />
+			<xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReferenceTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="25" />
+			<xs:pattern
+				value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
