@@ -68,7 +68,7 @@ PDF
 #### Documents the data required for testing the service.
 
 <h3><a href="../../pdfs/services/DischargeActivityv1_0_VendorTest.pdf">
-<img style="float: left; margin: 0px 5px 0px 0px;  border:5px solid LightGrey;" src="../../images/thumbnail/AE_thumbnail.png"></a>
+<img style="float: left; margin: 0px 5px 0px 0px;  border:5px solid LightGrey;" src="../../images/thumbnail/DA_thumbnail.png"></a>
 <a href="../../pdfs/services/DischargeActivityv1_0_VendorTest.pdf">Vendor Test Data</a></h3>
 <a download="DischargeActivityv1_0_VendorTest.pdf" href="../../pdfs/services/DischargeActivityv1_0_VendorTest.pdf">Download</a>
 
