@@ -21,7 +21,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	
 	<xs:complexType name="Q1IdentifierType">
 		<xs:sequence>
 			<xs:element name="MessageID" type="Q1TextType"
@@ -47,7 +46,6 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:choice>
 				<xs:element name="SubjectProperty"
 					type="Q1SubjectPropertyType" minOccurs="1" maxOccurs="1">
 					<xs:annotation>
@@ -55,7 +53,6 @@
 						</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-			</xs:choice>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Q1ExternalReferenceType">
