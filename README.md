@@ -21,6 +21,8 @@
 
 [Daylist Enquiry](pages/services/DLE.md)
 
+[Discharge Activity](pages/services/DA.md)
+
 [e-Document Registration Service](pages/services/DRS.md)
 
 [Land Charges Full Search](pages/services/LCFULL.md)
