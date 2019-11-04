@@ -109,7 +109,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="LocalAuthority" type="Q1Len50TextType"
+			<xs:element name="LocalAuthority" type="Q1Len38TextType"
 				minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A character string (i.e. a finite set of
@@ -177,7 +177,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="LocalAuthority" type="Q1Len35TextType"
+			<xs:element name="LocalAuthority" type="Q1Len38TextType"
 				minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A character string (i.e. a finite set of
@@ -245,7 +245,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="LocalAuthority" type="Q1Len35TextType"
+			<xs:element name="LocalAuthority" type="Q1Len38TextType"
 				minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A character string (i.e. a finite set of
@@ -773,6 +773,16 @@
 			<xs:extension base="Q1Len35TextContentType" />
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:complexType name="Q1Len38TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Q1Len38TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>	
 	<xs:complexType name="Q1Len30TextType">
 		<xs:annotation>
 			<xs:documentation>A character string (i.e. a finite set of
@@ -827,6 +837,13 @@
 			<xs:pattern value=".*\S.*"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="Q1Len38TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="38" />
+			<xs:pattern value=".*\S.*"/>
+		</xs:restriction>
+	</xs:simpleType>	
 	<xs:simpleType name="Q1Len30TextContentType">
 		<xs:restriction base="xs:string">
 			<xs:minLength value="1" />
