@@ -1871,11 +1871,6 @@ For example, the fourth day of February in the year 1995 is written in the stand
 				<xs:annotation>
 					<xs:documentation>Schedule of Multiple Registered Leases</xs:documentation>
 				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="140">
-				<xs:annotation>
-					<xs:documentation>Schedule of Deeds imposing Restrictive Covenants</xs:documentation>
-				</xs:annotation>
 			</xs:enumeration>	
 		</xs:restriction>
     </xs:simpleType>
