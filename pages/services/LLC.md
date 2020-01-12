@@ -24,18 +24,18 @@ PDF, 132KB, 4 pages
 
 ### Schemas
 
-<h3><a href="../../schemas/LLCSearchRequestV1_0.xsd">
+<h3><a href="../../schemas/LLCSearchRequestV2_0.xsd">
 <img style="float: left; margin: 0px 5px 0px 0px" src="../../images/thumbnail/file.png"></a> 
-<a href="../../schemas/LLCSearchRequestV1_0.xsd">LLCSearchRequestV1_0.xsd</a></h3>
-<a download="LLCSearchRequestV1_0.xsd" href="../../schemas/LLCSearchRequestV2_0.xsd">Download</a>
+<a href="../../schemas/LLCSearchRequestV2_0.xsd">LLCSearchRequestV2_0.xsd</a></h3>
+<a download="LLCSearchRequestV2_0.xsd" href="../../schemas/LLCSearchRequestV2_0.xsd">Download</a>
 
 XSD, 4KB
 
 <br/>
-<h3><a href="../../schemas/LLCSearchResponseV1_0.xsd">
+<h3><a href="../../schemas/LLCSearchResponseV2_0.xsd">
 <img style="float: left; margin: 0px 5px 0px 0px" src="../../images/thumbnail/file.png"></a> 
-<a href="../../schemas/LLCSearchResponseV1_0.xsd">LLCSearchResponseV1_0.xsd</a></h3>
-<a download="LLCSearchResponseV1_0.xsd" href="../../schemas/LLCSearchResponseV2_0.xsd">Download</a>
+<a href="../../schemas/LLCSearchResponseV2_0.xsd">LLCSearchResponseV2_0.xsd</a></h3>
+<a download="LLCSearchResponseV2_0.xsd" href="../../schemas/LLCSearchResponseV2_0.xsd">Download</a>
 
 XSD, 16KB
 
