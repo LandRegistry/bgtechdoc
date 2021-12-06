@@ -1,0 +1,136 @@
+{
+    "data": {
+        "title_status": "Title number is valid.",
+        "title_status_code": "VALID",
+        "title_number": "GR514441",
+        "applications_pending": false,
+        "referred_to_documents": [
+            {
+                "type": "Agreement for lease",
+                "type_code": "AGREEMENT_LEASE",
+                "entry_numbers": [
+                    "B13"
+                ],
+                "date": "2003-01-13",
+                "filed_under": "GR514441",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Deed",
+                "type_code": "DEED",
+                "entry_numbers": [
+                    "C16",
+                    "E13"
+                ],
+                "date": "1970-12-24",
+                "filed_under": "GR514441",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Deed",
+                "type_code": "DEED",
+                "entry_numbers": [
+                    "A9"
+                ],
+                "date": "2004-12-22",
+                "filed_under": "GR514441",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Lease",
+                "type_code": "LEASE",
+                "entry_numbers": [
+                    "L22"
+                ],
+                "date": "2006-11-17",
+                "filed_under": "GR514441",
+                "availability": "requires further investigation",
+                "availability_code": "MANUAL"
+            },
+            {
+                "type": "Lease",
+                "type_code": "LEASE",
+                "entry_numbers": [
+                    "L12"
+                ],
+                "date": "2007-05-21",
+                "filed_under": "GR514441",
+                "availability": "requires further investigation",
+                "availability_code": "MANUAL"
+            },
+            {
+                "type": "Lease",
+                "type_code": "LEASE",
+                "entry_numbers": [
+                    "L30"
+                ],
+                "date": "2009-02-26",
+                "filed_under": "GR514441",
+                "availability": "requires further investigation",
+                "availability_code": "MANUAL"
+            },
+            {
+                "type": "Lease",
+                "type_code": "LEASE",
+                "entry_numbers": [
+                    "L41"
+                ],
+                "date": "2011-01-02",
+                "filed_under": "GR514441",
+                "availability": "requires further investigation",
+                "availability_code": "MANUAL"
+            },
+            {
+                "type": "Lease",
+                "type_code": "LEASE",
+                "entry_numbers": [
+                    "F3"
+                ],
+                "date": "2008-02-11",
+                "filed_under": "GR514441",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Transfer",
+                "type_code": "TRANSFER",
+                "entry_numbers": [
+                    "E8"
+                ],
+                "date": "1949-08-21",
+                "filed_under": "DN403117",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Transfer",
+                "type_code": "TRANSFER",
+                "entry_numbers": [
+                    "C14",
+                    "E11"
+                ],
+                "date": "1961-10-26",
+                "filed_under": "DN4035921",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            }
+        ],
+        "register": {
+            "type": "register",
+            "type_code": "REGISTER",
+            "availability": "available for immediate download",
+            "availability_code": "IMMEDIATE",
+            "backdated": false
+        },
+        "title_plan": {
+            "type": "plan",
+            "type_code": "TITLEPLAN",
+            "availability": "not available",
+            "availability_code": "UNAVAILABLE",
+            "backdated": false
+        }
+    }
+}

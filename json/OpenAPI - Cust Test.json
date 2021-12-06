@@ -1,0 +1,371 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "HMLR Business Gateway",
+    "description": "A specification for the Business Gateway API.",
+    "version": "0.0.3"
+  },
+  "servers": [
+    {
+      "url": "https://bgtest.landregistry.gov.uk/bg2test/",
+      "description": "Customer Test"
+    }
+  ],
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Titles",
+      "description": "Operations regarding titles"
+    }
+  ],
+  "paths": {
+    "/titles/{title_number}/official-copies/availability": {
+      "get": {
+        "operationId": "getOfficialCopiesAvailability",
+        "tags": [
+          "Titles"
+        ],
+        "summary": "Get document availability associated with a title number.",
+        "description": "Returns the OC1 document availability (title register and title plan) and a collection of OC2 document availability (referred to in the register) for the provided title number.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TitleNumberParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/OfficialCopiesResponse"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Title not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DefaultErrorResponse"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    },
+    "parameters": {
+      "TitleNumberParameter": {
+        "in": "path",
+        "name": "title_number",
+        "description": "The title number of the property. Characters must be uppercase.",
+        "schema": {
+          "$ref": "#/components/schemas/TitleNumber"
+        },
+        "required": true
+      }
+    },
+    "responses": {
+      "DefaultErrorResponse": {
+        "description": "An error has occurred.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "examples": {
+              "Gateway Timeout": {
+                "value": {
+                  "errors": [
+                    {
+                      "timestamp": "2018-11-13T20:20:39+00:00",
+                      "http_status": "504",
+                      "error_code": "BG50004",
+                      "error_message": "Gateway timeout"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "TitleNumber": {
+        "description": "The title number of the property. Characters must be uppercase.",
+        "type": "string",
+        "maxLength": 9,
+        "pattern": "^[A-Z0-9]{1,9}$"
+      },
+      "OfficialCopyAvailabilityCode": {
+        "description": "The download availability states for a document.",
+        "type": "string",
+        "enum": [
+          "IMMEDIATE",
+          "MANUAL",
+          "UNAVAILABLE"
+        ]
+      },
+      "ReferredDocumentAvailability": {
+        "description": "The availability of an OC2 document referred to in the register.",
+        "type": "object",
+        "required": [
+          "type_code",
+          "type",
+          "entry_numbers",
+          "filed_under",
+          "availability",
+          "availability_code"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Document type description."
+          },
+          "type_code": {
+            "type": "string",
+            "description": "Document type code. See documentation *placeholder* for the list of type codes."
+          },
+          "entry_numbers": {
+            "description": "Where the document is referred to in the register.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "A1",
+              "C3",
+              "C4"
+            ]
+          },
+          "date": {
+            "description": "The date of the document.",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "filed_under": {
+            "description": "The title number of the property. Characters must be uppercase.",
+            "type": "string",
+            "maxLength": 9,
+            "pattern": "^[A-Z0-9]{1,9}$",
+            "nullable": true
+          },
+          "availability": {
+            "description": "The document availability description.",
+            "type": "string"
+          },
+          "availability_code": {
+            "$ref": "#/components/schemas/OfficialCopyAvailabilityCode"
+          }
+        }
+      },
+      "RegisterAvailability": {
+        "type": "object",
+        "description": "The availability of the record we create when registering titles to Land Registry.",
+        "required": [
+          "type_code",
+          "type",
+          "availability",
+          "availability_code",
+          "backdated"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "type_code": {
+            "description": "The document code for a register.",
+            "type": "string",
+            "enum": [
+              "REGISTER"
+            ]
+          },
+          "availability": {
+            "description": "The document availability description.",
+            "type": "string"
+          },
+          "availability_code": {
+            "$ref": "#/components/schemas/OfficialCopyAvailabilityCode"
+          },
+          "backdated": {
+            "type": "boolean",
+            "description": "Whether or not the document will be backdated due to pending applications."
+          }
+        }
+      },
+      "TitlePlanAvailability": {
+        "type": "object",
+        "description": "The availability of the official plan produced by HM Land Registry to show the extent of land in an individual registered title.",
+        "required": [
+          "type_code",
+          "type",
+          "availability",
+          "availability_code",
+          "backdated"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "type_code": {
+            "description": "The document code for a title plan.",
+            "type": "string",
+            "enum": [
+              "TITLEPLAN"
+            ]
+          },
+          "availability": {
+            "description": "The document availability description.",
+            "type": "string"
+          },
+          "availability_code": {
+            "$ref": "#/components/schemas/OfficialCopyAvailabilityCode"
+          },
+          "backdated": {
+            "type": "boolean",
+            "description": "Whether or not the document will be backdated due to pending applications."
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "description": "An error response for an unsuccessful request.",
+        "required": [
+          "timestamp",
+          "http_status",
+          "error_code",
+          "error_message"
+        ],
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "description": "The code related to this error, see documentation *currently not available*."
+          },
+          "error_message": {
+            "type": "string",
+            "description": "The descriptive reason behind an error."
+          },
+          "http_status": {
+            "type": "string",
+            "description": "The http status code related to this error.",
+            "example": "503"
+          },
+          "timestamp": {
+            "description": "The UTC timestamp of when the error occured.",
+            "type": "string",
+            "format": "date-time",
+            "example": "2021-04-04 15:29:51:405Z"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "description": "A response for an unsuccesful result.",
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "A collection of one or more errors as to why the API request failed.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "OfficialCopiesResponse": {
+        "type": "object",
+        "description": "A successful response.",
+        "required": [
+          "title_status",
+          "title_status_code",
+          "title_number",
+          "applications_pending",
+          "referred_to_documents",
+          "register",
+          "title_plan"
+        ],
+        "properties": {
+          "title_status": {
+            "type": "string",
+            "description": "The status of the title."
+          },
+          "title_status_code": {
+            "type": "string",
+            "enum": [
+              "VALID",
+              "CLOSED",
+              "CLOSED_AND_CONTINUED",
+              "NOT_COMPUTERISED",
+              "PENDING_APPLICATIONS",
+              "PENDING_DEALING",
+              "PENDING_FIRST",
+              "SCHEME"
+            ],
+            "description": "A code representing the current status of the title."
+          },
+          "title_number": {
+            "$ref": "#/components/schemas/TitleNumber"
+          },
+          "applications_pending": {
+            "description": "Whether or not this title number has pending applications against it.",
+            "type": "boolean"
+          },
+          "continued_under_title_number": {
+            "type": "string",
+            "description": "The title requested has been closed and continued under this title number.",
+            "example": "FL99999"
+          },
+          "referred_to_documents": {
+            "type": "array",
+            "description": "The collection of OC2 documents referred to on the register.",
+            "items": {
+              "$ref": "#/components/schemas/ReferredDocumentAvailability"
+            }
+          },
+          "register": {
+            "$ref": "#/components/schemas/RegisterAvailability"
+          },
+          "title_plan": {
+            "$ref": "#/components/schemas/TitlePlanAvailability"
+          }
+        }
+      }
+    }
+  }
+}
