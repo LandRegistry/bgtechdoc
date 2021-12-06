@@ -31,6 +31,8 @@
 
 [Local Land Charges Search](pages/services/LLC.md)
 
+[Official Copy Document Availability](pages/services/OCDA.md)
+
 [Official Copy Title Known](pages/services/OC.md)
 
 [Official Search of Whole](pages/services/OSW.md)
