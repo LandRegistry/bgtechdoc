@@ -3,11 +3,11 @@
   "info": {
     "title": "HMLR Business Gateway",
     "description": "A specification for the Business Gateway API.",
-    "version": "0.0.3"
+    "version": "0.0.4"
   },
   "servers": [
     {
-      "url": "https://bgtest.landregistry.gov.uk/bg2test/",
+      "url": "https://bgtest.landregistry.gov.uk/bg2test/s1/",
       "description": "Customer Test"
     }
   ],
@@ -268,15 +268,13 @@
         "type": "object",
         "description": "An error response for an unsuccessful request.",
         "required": [
-          "timestamp",
-          "http_status",
           "error_code",
           "error_message"
         ],
         "properties": {
           "error_code": {
             "type": "string",
-            "description": "The code related to this error, see documentation *currently not available*."
+            "description": "The code related to this error. See documentation for more information."
           },
           "error_message": {
             "type": "string",
@@ -292,6 +290,11 @@
             "type": "string",
             "format": "date-time",
             "example": "2021-04-04 15:29:51:405Z"
+          },
+          "trace_id": {
+            "description": "A trace identifier for this request.",
+            "type": "string",
+            "example": "c62e9b3f-e523-4f04-a941-c6cf0d60c080"
           }
         }
       },
