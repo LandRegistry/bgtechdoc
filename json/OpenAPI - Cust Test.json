@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://bgtest.landregistry.gov.uk/bg2test/s1/",
+      "url": "https://bgtest.landregistry.gov.uk/bg2test/s1/v1",
       "description": "Customer Test"
     }
   ],
