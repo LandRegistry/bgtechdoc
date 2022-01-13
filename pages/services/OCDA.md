@@ -7,7 +7,7 @@
 - [Schemas](#schemas)
 - [Vendor testing](#vendor-testing)
 
-The Official Copy Title known (OC1/OC2) service uses a title number (that could be obtained through Search by Property Description service) to return an Official Copy of the register, title plan or both, as a PDF. Can also return copies of documents referred to in the register e.g. conveyance, deed or lease.
+Check which register referred documents are available for immediate download. Use a title number to find out the Official Copy Document Availability status via a RESTful API. When you know what is available, you can order using the [Official Copy Title Known](/pages/services/OC.html) service.
 
 ### Overview
 
