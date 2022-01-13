@@ -7,7 +7,7 @@
 - [Schemas](#schemas)
 - [Vendor testing](#vendor-testing)
 
-Check which register referred documents are available for immediate download. Use a title number to find out the Official Copy Document Availability status via a RESTful API. When you know what is available, you can order using the [Official Copy Title Known](/pages/services/OC.html) service.
+Check which register referred documents are available for immediate download. Use a title number to find out the Official Copy Document Availability status via a RESTful API. When you know what is available, you can order using the [Official Copy Title Known](/bgtechdoc/pages/services/OC.html) service.
 
 ### Overview
 
