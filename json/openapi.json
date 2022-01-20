@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://businessgateway.landregistry.gov.uk/bg2/s1/"
+      "url": "https://businessgateway.landregistry.gov.uk/bg2/s1/v1"
     }
   ],
   "security": [
