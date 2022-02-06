@@ -751,6 +751,7 @@
 			<xs:enumeration value="Identity Form" />
 			<xs:enumeration value="Indenture" />
 			<xs:enumeration value="Land Transaction Tax" />
+			<xs:enumeration value="Lasting POA Summary" />
 			<xs:enumeration value="Lease" />
 			<xs:enumeration value="Licence" />
 			<xs:enumeration value="LR Correspondence" />
