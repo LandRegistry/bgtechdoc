@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.oscre.org/ns/eReg-Final/2011/ResponseDaylistEnquiryV2_0"
+	targetNamespace="http://www.oscre.org/ns/eReg-Final/2011/ResponseDaylistEnquiryV2_0"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+	<!--Document-->
+	<xs:element name="ResponseDaylistEnquiryV2_0" type="ResponseDaylistEnquiryV2_0Type" />
+	<!--ABIEs-->
+	<xs:complexType name="Q1AcknowledgementType">
+		<xs:annotation>
+			<xs:documentation>This is the the Business Gateway confirmation
+				response to the External System.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="AcknowledgementDetails"
+				type="Q1AcknowledgementDetailsType" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1AcknowledgementDetailsType">
+		<xs:sequence>
+			<xs:element name="UniqueID" type="IdentifierType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unique identifier used by end user to get
+						the status update of their request.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExpectedResponseDateTime" type="DateTimeType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This element will hold expected time when
+						Business Gateway will try to process the queued request. This
+						element will contain date and time data as GMT format. This
+						element should be marked as mandatory</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MessageDescription" type="TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This will be a String type element and will
+						be use to display a message to end user. This element should be
+						marked as mandatory</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1DaylistEnquiryType">
+		<xs:sequence>
+			<xs:element name="ApplicationType" type="ApplicationTypeContentType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifies the type of Land Registry
+						Application.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ApplicationReference" type="ApplicationReferenceType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unique identifier for a Land Registry
+						Application.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriorityDate" type="DateType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Date of a Land Registry Application that is
+						used to confer priority.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriorityTime" type="TimeType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Time of a Land Registry Application that is
+						used to confer priority.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Applicant" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The names of the private individuals or
+						companies for whom the Land Registry Application was lodged.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LodgedBy" type="LodgedByType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of the company that lodged the Land
+						Registry Application.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CustomerReference" type="CustomerReferenceTextContentType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The reference that a customer associated with
+						the Land Registry Application when it was lodged.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PropertyDescription" type="PropertyDescriptionType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifies the description of the land
+						affected by the Land Registry Application. May take the form of a
+						UK Address.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DepositReason" type="DepositReasonCodeContentType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifies the reason for a deposit
+						application.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SearchCertificateNumber" type="SearchCertificateNumberType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifies a unique identifier given to
+						a certificate that was provided to a customer as a result of a
+						Land Registry Official Search Application</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SearchInterest" type="SearchInterestType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Text that specifies the interest in which the
+						Land Registry Application was lodged. One of; P – " in respect of
+						an intended purchase", L - " in respect of an intended lease”, C -
+						" in respect of an intended charge”</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OLALodgedFor" type="OLALodgedForType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Text which desribes why an Outline
+						Application was lodged</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ExternalReferenceType">
+		<xs:annotation>
+			<xs:documentation>A unique reference given to identify a particular
+				request, order or instruction in the system of the organisation
+				allocating it with the ability to associate the name of the Company
+				that has allocated it.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reference" type="TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a
+						particular request, order or instruction in the system of the
+						organisation allocating it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllocatedBy" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of the organisation that has
+						allocated the Reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This field can be used to provide reference
+						description</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1GatewayResponseType">
+		<xs:sequence>
+			<xs:element name="TypeCode" type="ProductResponseCodeType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (letters, figures or symbols)
+						that for brevity and/or language independence may be used to
+						represent or replace a definitive value or text of an Attribute
+						together with relevant supplementary information.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Acknowledgement" type="Q1AcknowledgementType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the the Business Gateway
+						confirmationresponse to the External System.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Rejection" type="Q1RejectionType"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="Results" type="Q1ResultsType" minOccurs="0"
+				maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1MessageDetailsType">
+		<xs:sequence>
+			<xs:element name="Description" type="TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1RejectionType">
+		<xs:sequence>
+			<xs:element name="ExternalReference" type="Q1ExternalReferenceType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a
+						particular request, order or instruction in the system of the
+						organisation allocating it with the ability to associate the name
+						of the Company that has allocated it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RejectionResponse" type="Q1RejectionResponseType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Provides details of the reasons for the
+						rejection of the Search Order Send message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1RejectionResponseType">
+		<xs:annotation>
+			<xs:documentation>Provides details of the reasons for the
+				rejection.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reason" type="TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A description of the reason for rejection.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Code" type="TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A code signifying the reason for rejection
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OtherDescription" type="TextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Freeform text field to convey any further
+						information about the rejection.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ValidationErrors" type="Q1ValidationErrorsType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ResultsType">
+		<xs:sequence>
+			<xs:element name="ResultDateTime" type="DateTimeType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifies the date and time on which
+						the result was produced</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MessageDetails" type="Q1MessageDetailsType"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="ExternalReference" type="Q1ExternalReferenceType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference associated with a case in Case
+						Management System</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Title" type="Q1TitleType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Describes a title to an interest or
+						tenure interest which is registered at H.M. Land Registry in
+						England and Wales.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DaylistEnquiry" type="Q1DaylistEnquiryType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1TitleType">
+		<xs:annotation>
+			<xs:documentation>Describes a title to an interest or tenure
+				interest which is registered at H.M. Land Registry in England and
+				Wales.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TitleNumber" type="Q2TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						A unique reference number given to a piece of
+						registered land. It
+						is made up of an optional prefix of up to 3
+						characters followed by
+						up to six numerics. It consists of two main
+						parts:
+						(i) The Administrative Area being one or more of the
+						following:
+						· County
+						· District
+						· London Borough
+						· Unitary Authority.
+						(ii) The Property Address which usually comprises:
+						· House number
+						or name or plot number
+						· Road or st
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ValidationErrorsType">
+		<xs:sequence>
+			<xs:element name="Code" type="TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResponseDaylistEnquiryV2_0Type">
+		<xs:sequence>
+			<xs:element name="GatewayResponse" type="Q1GatewayResponseType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<!--Datatypes-->
+	<xs:complexType name="DateType">
+		<xs:annotation>
+			<xs:documentation>
+				A particular point in the progression of time
+				together with the
+				relevant supplementary information. OSCRE dates
+				follow the ISO 8601
+				Standard. The international standard date
+				notation is YYYY-MM-DD
+				where YYYY is the year in the usual Gregorian
+				calendar, MM is the
+				month of the year between 01 (January) and 12
+				(December), and DD is
+				the day of the month between 01 and 31.
+
+				For
+				example, the fourth day of February in the year 1995 is written in
+				the standard notation as 1995-02-04
+      </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:date" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="DateTimeType">
+		<xs:annotation>
+			<xs:documentation>A particular point in the progression of time
+				together with the relevant supplementary information.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:dateTime" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="IdentifierType">
+		<xs:annotation>
+			<xs:documentation>A character string to identify and distinguish
+				uniquely, one instance of an object in an identification scheme from
+				all other objects in the same scheme together with relevant
+				supplementary information.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:normalizedString">
+				<xs:attribute name="schemeAgencyName" type="xs:string"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation>The identification of the agency that
+							maintains the identification scheme.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="schemeName" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The name of the identification scheme.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ProductResponseCodeType">
+		<xs:annotation>
+			<xs:documentation>A character string (letters, figures or symbols)
+				that for brevity and/or language independence may be used to
+				represent or replace a definitive value or text of an Attribute
+				together with relevant supplementary information.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ProductResponseCodeContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TimeType">
+		<xs:annotation>
+			<xs:documentation>A particular point in the progression of time
+				together with relevant supplementary information.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:time" />
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<!--Contenttypes-->
+	<xs:simpleType name="DepositReasonCodeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>Not Applicable</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="W">
+				<xs:annotation>
+					<xs:documentation>Whole</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="P">
+				<xs:annotation>
+					<xs:documentation>Part</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ApplicationTypeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>Search of Whole (With Priority)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Search of Part (With Priority)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Deposit</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Dealing</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="40">
+				<xs:annotation>
+					<xs:documentation>Transfer of Part (Old Title)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="50">
+				<xs:annotation>
+					<xs:documentation>Dispositionary First Lease (Old
+						Title)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="60">
+				<xs:annotation>
+					<xs:documentation>Transfer of Part</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="70">
+				<xs:annotation>
+					<xs:documentation>Dispositionary First Lease
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="80">
+				<xs:annotation>
+					<xs:documentation>First Registration</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="90">
+				<xs:annotation>
+					<xs:documentation>Outline Application</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="100">
+				<xs:annotation>
+					<xs:documentation>Application</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SearchInterestType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="L">
+				<xs:annotation>
+					<xs:documentation>In respect of an intended lease
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="P">
+				<xs:annotation>
+					<xs:documentation>In respect of an intended purchase
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="C">
+				<xs:annotation>
+					<xs:documentation>In respect of an intended charge
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OLALodgedForType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="100" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProductResponseCodeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>Other</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Acknowledgement</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Rejection</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Result</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Q2TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Q2TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Q2TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="9" />
+			<xs:pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CustomerReferenceTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="25" />
+			<xs:pattern
+				value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PropertyDescriptionType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="1000" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SearchCertificateNumberType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="9" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LodgedByType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ApplicationReferenceType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="7" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

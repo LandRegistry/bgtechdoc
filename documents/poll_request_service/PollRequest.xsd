@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oscre.org/ns/eReg/MR01-20090605/PollRequest" targetNamespace="http://www.oscre.org/ns/eReg/MR01-20090605/PollRequest" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation><xs:appinfo><Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs"><Contributor xmlns="http://www.w3.org/2001/XMLSchema">Developed by Richard Furze of PISCES Ltd (mailto:richard.furze@pisces.co.uk)</Contributor><Contributor xmlns="http://www.w3.org/2001/XMLSchema">Monika Horner of PISCES Ltd (mailto:monika.horner@pisces.co.uk)</Contributor><Creator>PISCES Ltd</Creator><Date><Created>08/06/2009 11:45:37</Created></Date><Identifier>PollRequest-MR01</Identifier><Language>[ISO 639-2/B] ENG</Language><Publisher>Land Registry</Publisher><Subject><Category>Land and premises</Category></Subject><Subject><Project>eRegistration</Project></Subject><Title>PollRequest</Title>
+			</Metadata></xs:appinfo></xs:annotation><!--Document-->
+	<xs:element name="PollRequest" type="PollRequestType"/>
+	<!--ABIEs-->
+	<xs:complexType name="PollRequestType">
+		<xs:sequence>
+			<xs:element name="ID" type="Q1IdentifierType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1IdentifierType">
+		<xs:sequence>
+			<xs:element name="MessageID" type="MessageIDTextType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--Datatypes-->
+	<xs:complexType name="MessageIDTextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="MessageIDTextContentType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!--Contenttypes-->
+	<xs:simpleType name="MessageIDTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5"/>
+			<xs:maxLength value="50"/>
+			<xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

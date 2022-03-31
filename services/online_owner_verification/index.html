@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Online Owner Verification - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/services/online_owner_verification/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="Online Owner Verification - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/services/online_owner_verification/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Online Owner Verification" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/services/online_owner_verification/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#online-owner-verification"><span>Online Owner Verification</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+        <ul>
+          <li>
+            <a href="#if-you-39-re-a-software-developer"><span>If you’re a software developer</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#process-flow"><span>Process flow</span></a>
+        <ul>
+          <li>
+            <a href="#validation"><span>Validation</span></a>
+          </li>
+          <li>
+            <a href="#output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#schemas"><span>Schemas</span></a>
+      </li>
+      <li>
+        <a href="#vendor-testing"><span>Vendor testing</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+<p><a href="../">Back to Services</a> <a href="../../">Back to Home</a></p>
+<h1 id="online-owner-verification">Online Owner Verification</h1>
+<h2 id="overview">Overview</h2>
+
+<p>Use this service to verify property ownership data against HM Land Registry
+  property titles in real time.</p>
+
+<p>Get information on:</p>
+
+<ul>
+<li>historial name matching (from 2005 onwards)</li>
+<li>partial matching to increase the chances of a match</li>
+<li>the option to highlight if there are other legal owners on the title</li>
+<li>the option to search by title number to make sure a registered address is available</li>
+</ul>
+<h3 id="if-you-39-re-a-software-developer">If you&rsquo;re a software developer</h3>
+
+<p>Use this document to integrate data into your system.</p>
+
+<hr/>
+<h2 id="process-flow">Process flow</h2>
+<h3 id="validation">Validation</h3>
+
+<p>Online Owner Verification service validation diagram details the validation that the request goes through.</p>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Validation diagram Business Rules
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Business Rule</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Decision point</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-002</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+            The postcode must be a valid UK postcode that exists on Land Registry systems</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-003</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The system must retrieve a maximum of 50 property matches</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-011</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The title number must exist and not be recorded as a closed title, a Scheme Title, or a New Title allocated to a new title dealing on Land Registry systems.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-081</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">A valid address must contain a minimum of: Building name or number and postcode or Building name or number, street & city</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-099</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Where no tenure has been supplied, the system must search against all tenures</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+<p><br /></p>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Validation diagram Rejection Messages
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message ID</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rejection reason</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rejection code</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-004</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Please provide valid postcode</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.postcode.invalid</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-002</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.properties.toomanyproperties</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-010</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Title number is invalid</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.invalid</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-137</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">No valid title number has been identified from the data supplied for this service</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.properties.novalidtitlefound</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-136</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Insufficient address details. Please provide house name or number and postcode OR house name or number, street and city</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.address.invalidaddresscriteria</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-003</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.properties.nopropertyfound</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<div style="padding-bottom: 15px">
+  <a href="../../images/oov.png" target="_blank">
+    <img src="../../images/oov.png" style="width:700px;" alt="Online Owner verification flow chart" title="Clicking this image will open the image in a new tab">
+  </a>
+</div>
+<h3 id="output">Output</h3>
+
+<p>A list of properties and title numbers.</p>
+
+<hr/>
+<h2 id="schemas">Schemas</h2>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p>
+      <a href="../../documents/online_owner_verification/RequestOnlineOwnershipVerificationV1_0.xsd" class="govuk-!-font-size-24">RequestOnlineOwnershipVerificationV1_0</a>
+    </p>
+    <p>
+      <span class="govuk-body govuk-!-font-size-14">XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p>
+      <a href="../../documents/online_owner_verification/RequestOnlineOwnershipVerificationV1_0.xsd" class="govuk-!-font-size-19" download="download">Download</a>
+    </p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p>
+      <a href="../../documents/online_owner_verification/ResponseOnlineOwnershipVerificationV1_0.xsd" class="govuk-!-font-size-24">ResponseOnlineOwnershipVerificationV1_0</a>
+    </p>
+    <p>
+      <span class="govuk-body govuk-!-font-size-14">XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p>
+      <a href="../../documents/online_owner_verification/ResponseOnlineOwnershipVerificationV1_0.xsd" class="govuk-!-font-size-19" download="download">Download</a>
+    </p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p>
+      <a href="../../documents/online_owner_verification/PollRequest.xsd" class="govuk-!-font-size-24">PollRequest</a>
+    </p>
+    <p>
+      <span class="govuk-body govuk-!-font-size-14">XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p>
+      <a href="../../documents/online_owner_verification/PollRequest.xsd" class="govuk-!-font-size-19" download="download">Download</a>
+    </p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p>
+      <a href="../../documents/online_owner_verification/OOV_Interface_Spec.pdf" class="govuk-!-font-size-24">Interface specification</a>
+    </p>
+    <p>
+      <span class="govuk-body govuk-!-font-size-14">PDF, 429KB, 43 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p>
+      <a href="../../documents/online_owner_verification/OOV_Interface_Spec.pdf" class="govuk-!-font-size-19" download="download">Download</a>
+    </p>
+  </div>
+</div>
+
+<p>The interface specification specifies the interface between Land Registry and a Business Gateway Register Extract Service customer.</p>
+
+<hr/>
+<h2 id="vendor-testing">Vendor testing</h2>
+
+<p>Documents the data required for testing the service.</p>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p>
+      <a href="../../documents/online_owner_verification/OOV_Vendor_test_data.pdf" class="govuk-!-font-size-24">Vendor Test data</a>
+    </p>
+    <p>
+      <span class="govuk-body govuk-!-font-size-14">PDF, 282KB, 15 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p>
+      <a href="../../documents/online_owner_verification/OOV_Vendor_test_data.pdf" class="govuk-!-font-size-19" download="download">Download</a>
+    </p>
+  </div>
+</div>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

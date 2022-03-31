@@ -1,0 +1,163 @@
+{
+    "data": {
+        "title_status": "Title number is valid.",
+        "title_status_code": "VALID",
+        "title_number": "GR514442",
+        "applications_pending": false,
+        "referred_to_documents": [
+            {
+                "type": "Sub-charge",
+                "type_code": "SUB_CHARGE",
+                "entry_numbers": [
+                    "C11",
+                    "C12",
+                    "C13"
+                ],
+                "date": "2008-07-01",
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Charge",
+                "type_code": "CHARGE",
+                "entry_numbers": [
+                    "C8",
+                    "C9",
+                    "C10"
+                ],
+                "date": "2008-07-01",
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Charge",
+                "type_code": "CHARGE",
+                "entry_numbers": [
+                    "C4",
+                    "C5",
+                    "C6",
+                    "C7"
+                ],
+                "date": "2008-07-01",
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Charge",
+                "type_code": "CHARGE",
+                "entry_numbers": [
+                    "C2",
+                    "C3"
+                ],
+                "date": "2008-07-01",
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Conveyance",
+                "type_code": "CONVEYANCE",
+                "entry_numbers": [
+                    "R22"
+                ],
+                "date": "1893-03-25",
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Conveyance",
+                "type_code": "CONVEYANCE",
+                "entry_numbers": [
+                    "R42"
+                ],
+                "date": "1952-07-23",
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Conveyance",
+                "type_code": "CONVEYANCE",
+                "entry_numbers": [
+                    "R33"
+                ],
+                "date": "1953-08-25",
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Deed",
+                "type_code": "DEED",
+                "entry_numbers": [
+                    "C15"
+                ],
+                "date": "1951-12-10",
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Deed",
+                "type_code": "DEED",
+                "entry_numbers": [
+                    "C17"
+                ],
+                "date": "1989-12-23",
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Transfer",
+                "type_code": "TRANSFER",
+                "entry_numbers": [
+                    "B2"
+                ],
+                "date": "2004-04-01",
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Lease",
+                "type_code": "LEASE",
+                "entry_numbers": [
+                    "C32"
+                ],
+                "date": "2009-02-20",
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            },
+            {
+                "type": "Lease",
+                "type_code": "LEASE",
+                "entry_numbers": [
+                    "C32"
+                ],
+                "filed_under": "GR514442",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE"
+            }
+        ],
+        "register": {
+            "type": "register",
+            "type_code": "REGISTER",
+            "availability": "available for immediate download",
+            "availability_code": "IMMEDIATE",
+            "backdated": false
+        },
+        "title_plan": {
+            "type": "plan",
+            "type_code": "TITLEPLAN",
+            "availability": "available for immediate download",
+            "availability_code": "IMMEDIATE",
+            "backdated": false
+        }
+    }
+}

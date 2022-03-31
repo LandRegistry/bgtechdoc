@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Local land charges search - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/services/local_land_charges_search/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="Local land charges search - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/services/local_land_charges_search/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Local land charges search" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/services/local_land_charges_search/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#local-land-charges-search"><span>Local land charges search</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+        <ul>
+          <li>
+            <a href="#if-you-39-re-a-software-developer"><span>If you’re a software developer</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#process-flow"><span>Process flow</span></a>
+        <ul>
+          <li>
+            <a href="#validation"><span>Validation</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#schemas"><span>Schemas</span></a>
+      </li>
+      <li>
+        <a href="#vendor-testing"><span>Vendor testing</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+<p><a href="../">Back to Services</a> <a href="../../">Back to Home</a></p>
+<h1 id="local-land-charges-search">Local land charges search</h1>
+
+<hr>
+<h2 id="overview">Overview</h2>
+
+<p>Local Land Charges are financial charges or restrictions on the use of a
+  property or area of land.</p>
+
+<p>We&rsquo;re working with local authorities across the country to standardise and
+  migrate charges. This creates a single register that is up to date and accessible
+  to all.</p>
+
+<p>Use the Local Land Charges service to find details of entries relating to land
+  or property.</p>
+<h3 id="if-you-39-re-a-software-developer">If you&rsquo;re a software developer</h3>
+
+<P>Use this document to integrate data into your system.</P>
+
+<hr>
+<h2 id="process-flow">Process flow</h2>
+<h3 id="validation">Validation</h3>
+
+<p>Local Land Charges Search service validation diagram details the validation
+  that the request goes through.</p>
+<p><details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Local Land Charges Search business rules
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">BG Code</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Reason</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.invalid</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Title number is invalid</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">The Title Number must exist on Land Registry systems.</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.closed</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">This title number is closed</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">The Title Number has been closed on Land Registry systems and not continued.</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">bg.llc.title.closedAndContinued</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Title Number has been closed and registration continued under Title Number. Please request a search using the new Title Number.</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">The Title Number has been closed on Land Registry systems and continued under the provided Title Number.</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">bg.fee.feeMismatch</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Fee Amount provided does not match with the fee calculated by Land Registry.</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">If request contains an expected fee which is less than the actual fee and indicator &lsquo;ContinueIfFeeExceedsExpected&rsquo; is False.</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">bg.geojson.invalid</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">The supplied GeoJSON is not valid</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">GEOJSON must be a FeatureCollection and can contain multiple features, polygons and multiple polygons.</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.no.geojson</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Unable to obtain GeoJSON from title number please try again with GeoJSON data</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">The Title Number used does not have index mapping to obtain GEOJSON data</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">bg.nonmigrated.extent</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">You are searching a non-migrated authority, edit your search area or contact the local authority</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Your search area is in a local authority where the Local Land Charges data has not yet been migrated to HM Land Registry.</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">bg.llc.search.ref.not.found</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Search reference not found, refresh searches are valid for 6 months after the initial search</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Search reference not found on database or original search was over 6 months old</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">bg.document.maxFileSizeLimitExceeds</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Generated PDF exceeds maximum size of 20971520 bytes</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">PDF&rsquo;s in excess of 20MB are not returned by Business Gateway</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">bg.too.many.results</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Your search area has too many charges. Email HM Land Registry to search this area: locallandchargesregister@landregistry.gov.uk</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">More than 200 Local Land Charges identified from the search area</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details></p>
+<p><details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Local Land Charges Service  business rules
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Business rule</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">Title number valid</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Title number must exist on HM Land Registry systems and not be closed or closed and continued</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">Validate GeoJson</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">GEOJSON must be a FeatureCollection. It may contain Features, Polygons single and multiple.</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">Search reference valid</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Search reference as provided in the original response. To allow a refresh of the search, the original search must have been made by the same Business unit and it must be within 6 months of
+              the orginal searches date.</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">Non-migrated area</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">The whole of the search area is not yet migrated data to Land Registry.</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">Too many Local Land Charges results</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">If more than 200 Local Land Charges are identified for the search area, a response is not allowed through Business Gateway.</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-font-size-14">PDF oversize</td>
+            <td class="govuk-table__cell  govuk-!-font-size-14">Business Gateway currently does not return PDF&rsquo;s greater than 20MB. This limit has been increased in the past as broadband speeds have increased and may be reviewed in the future.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details></p>
+<p><div style="padding-bottom: 15px">
+    <a href="../../images/llc.png" target="_blank">
+      <img src="../../images/llc.png" style="width:700px;" alt="Local Land Charges Service via BG (Business Gateway) flow chart" title="Clicking this image will open the image in a new tab">
+    </a>
+  </div></p>
+
+<hr>
+<h2 id="schemas">Schemas</h2>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/land_charges_search/LLCSearchRequestV2_0.xsd" class="govuk-!-font-size-24">LLCSearchRequestV2_0</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/land_charges_search/LLCSearchRequestV2_0.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/land_charges_search/LLCSearchResponseV2_0.xsd" class="govuk-!-font-size-24">LLCSearchResponseV2_0</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/land_charges_search/LLCSearchResponseV2_0.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/land_charges_search/PollRequest.xsd" class="govuk-!-font-size-24">PollRequest</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/land_charges_search/PollRequest.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/land_charges_search/LLC_Interface_Spec_V2_0.pdf" class="govuk-!-font-size-24">Interface specification</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 606KB, 36 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/land_charges_search/LLC_Interface_Spec_V2_0.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<p>The interface specification specifies the interface between Land Registry and
+  a Business Gateway Register Extract Service customer.</p>
+
+<hr>
+<h2 id="vendor-testing">Vendor testing</h2>
+
+<p>Documents the data required for testing the service.</p>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/land_charges_search/LLC_Vendor_test_data_V2_0.pdf" class="govuk-!-font-size-24">Vendor Test data</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 252KB, 14 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/land_charges_search/LLC_Vendor_test_data_V2_0.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

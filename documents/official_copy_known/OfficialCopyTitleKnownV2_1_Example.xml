@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns1:RequestTitleKnownOfficialCopyV2_1
+	xmlns:ns1="http://www.oscre.org/ns/eReg-Final/2011/RequestTitleKnownOfficialCopyV2_1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.oscre.org/ns/eReg-Final/2011/RequestTitleKnownOfficialCopyV2_1 RequestTitleKnownOfficialCopyV2_1.xsd ">
+	<ns1:ID>
+		<ns1:MessageID>DfltMsgId1365516738853</ns1:MessageID>
+	</ns1:ID>
+	<ns1:Product>
+		<ns1:ExternalReference>
+			<ns1:Reference>extRef0001</ns1:Reference>
+		</ns1:ExternalReference>
+		<ns1:CustomerReference>
+			<ns1:Reference>custRef0001</ns1:Reference>
+		</ns1:CustomerReference>
+		<ns1:SubjectProperty>
+			<ns1:TitleNumber>ST500681</ns1:TitleNumber>
+		</ns1:SubjectProperty>
+		<ns1:ExpectedPrice>
+			<ns1:GrossPriceAmount>10</ns1:GrossPriceAmount>
+		</ns1:ExpectedPrice>
+		<ns1:Contact>
+			<ns1:Name>Fred Blogs</ns1:Name>
+			<ns1:Communication>
+				<ns1:Telephone>01234567</ns1:Telephone>
+			</ns1:Communication>
+		</ns1:Contact>
+		<ns1:TitleKnownOfficialCopy>
+			<ns1:RequestedOfficialCopyCode>10</ns1:RequestedOfficialCopyCode>
+			<ns1:PropertyDescription>A Nice House</ns1:PropertyDescription>
+			<ns1:OfficialCopyTypeCode>10</ns1:OfficialCopyTypeCode>
+			<ns1:ContinueIfTitleIsClosedAndContinuedIndicator>false</ns1:ContinueIfTitleIsClosedAndContinuedIndicator>
+			<ns1:NotifyIfPendingFirstRegistrationIndicator>false</ns1:NotifyIfPendingFirstRegistrationIndicator>
+			<ns1:NotifyIfPendingApplicationIndicator>false</ns1:NotifyIfPendingApplicationIndicator>
+			<ns1:SendBackDatedIndicator>false</ns1:SendBackDatedIndicator>
+			<ns1:ContinueIfActualFeeExceedsExpectedFeeIndicator>true</ns1:ContinueIfActualFeeExceedsExpectedFeeIndicator>
+		</ns1:TitleKnownOfficialCopy>
+	</ns1:Product>
+</ns1:RequestTitleKnownOfficialCopyV2_1>

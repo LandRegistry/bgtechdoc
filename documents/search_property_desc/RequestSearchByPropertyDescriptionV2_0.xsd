@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.oscre.org/ns/eReg-Final/2011/RequestSearchByPropertyDescriptionV2_0"
+	targetNamespace="http://www.oscre.org/ns/eReg-Final/2011/RequestSearchByPropertyDescriptionV2_0"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+	<!--Document-->
+	<xs:element name="RequestSearchByPropertyDescriptionV2_0"
+		type="RequestSearchByPropertyDescriptionV2_0Type" />
+	<!--ABIEs-->
+	<xs:complexType name="Q1AddressType">
+		<xs:annotation>
+			<xs:documentation>A specific Address that can be used for the
+				delivery of physical mail.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BuildingName" type="BuildingNameTextContentType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of the building or house on a street
+						of this address</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BuildingNumber" type="BuildingNumberTextContentType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The number of a building or house on a street
+						of this address. Where the building or house occupies a range of
+						numbers on the street, e.g. '1-9 Main St', this will be the lower
+						number of the range.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StreetName" type="StreetNameTextContentType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Name of a street or thoroughfare
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CityName" type="CityTextContentType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of the city, town or village of this
+						address.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PostcodeZone" type="PostcodeTextContentType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The identifier for one or more properties
+						according to the UK postal service; a group of letters and numbers
+						added to the postal address to assist in the sorting of mail, as
+						defined by the Royal Mail.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1CustomerReferenceType">
+		<xs:annotation>
+			<xs:documentation>Provides a unique reference to identify a
+				particular request, order or instruction or object in the system of
+				the organisation allocating it.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reference" type="ReferenceTextContentType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a
+						particular request, order or instruction in the system of the
+						organisation allocating it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllocatedBy" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of the organisation that has
+						allocated the Reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This field can be used to provide reference
+						description</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ExternalReferenceType">
+		<xs:annotation>
+			<xs:documentation>A unique reference given to identify a particular
+				request, order or instruction in the system of the organisation
+				allocating it with the ability to associate the name of the Company
+				that has allocated it.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reference" type="ReferenceTextContentType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a
+						particular request, order or instruction in the system of the
+						organisation allocating it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllocatedBy" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of the organisation that has
+						allocated the Reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This field can be used to provide reference
+						description</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1IdentifierType">
+		<xs:sequence>
+			<xs:element name="MessageID" type="Q1TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ProductType">
+		<xs:annotation>
+			<xs:documentation>This component contains details regarding the
+				search being ordered, expedited service, price details, delivery
+				method and any attachment.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ExternalReference" type="Q1ExternalReferenceType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference associated with a case in Case
+						Management System</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CustomerReference" type="Q1CustomerReferenceType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference of the person for whom the
+						remortgage is performed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubjectProperty" type="Q1SubjectPropertyType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The Property which is the subject of the
+						transaction, or on which a search is being prepared
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1SubjectPropertyType">
+		<xs:annotation>
+			<xs:documentation>The Property which is the subject of the
+				transaction.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Address" type="Q1AddressType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the address format used for the
+						subject property</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RequestSearchByPropertyDescriptionV2_0Type">
+		<xs:annotation>
+			<xs:documentation>This document provides the ability for the
+				[External System] to search Title Number by providing property
+				description. The [Business Gateway] will retrieve a list of all
+				properties (maximum of 50) along with the title number and tenure
+				matching the property description.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ID" type="Q1IdentifierType" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="Product" type="Q1ProductType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This component contains details regarding the
+						search being ordered, expedited service, price details, delivery
+						method and any attachment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--Datatypes-->
+	<xs:complexType name="Q1TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Q1TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<!--Contenttypes-->
+	<xs:simpleType name="Q1TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5" />
+			<xs:maxLength value="50" />
+			<xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PostcodeTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="8" />
+			<xs:pattern value="[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][A-Z-[CIKMOV]]{2}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CityTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="35" />
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StreetNameTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="80" />
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BuildingNameTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="50" />
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BuildingNumberTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="5" />
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReferenceTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="25" />
+			<xs:pattern
+				value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

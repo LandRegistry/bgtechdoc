@@ -1,0 +1,24 @@
+{
+    "data": {
+        "title_status": "According to our records this title number you entered, GR519468, has been closed and continued under title number GR519470.",
+        "title_status_code": "CLOSED_AND_CONTINUED",
+        "title_number": "GR519468",
+        "applications_pending": false,
+        "continued_under_title_number": "GR519470",
+        "referred_to_documents": [],
+        "register": {
+            "type": "register",
+            "type_code": "REGISTER",
+            "availability": "not available",
+            "availability_code": "UNAVAILABLE",
+            "backdated": false
+        },
+        "title_plan": {
+            "type": "plan",
+            "type_code": "TITLEPLAN",
+            "availability": "not available",
+            "availability_code": "UNAVAILABLE",
+            "backdated": false
+        }
+    }
+}

@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>A Guide for Developers - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/get_started/developer_guide/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="A Guide for Developers - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/get_started/developer_guide/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="A Guide for Developers" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/get_started/developer_guide/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#a-guide-for-developers"><span>A Guide for Developers</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+      </li>
+      <li>
+        <a href="#system-overview"><span>System overview</span></a>
+      </li>
+      <li>
+        <a href="#services-available-on-business-gateway"><span>Services available on Business Gateway</span></a>
+      </li>
+      <li>
+        <a href="#prerequisites"><span>Prerequisites</span></a>
+        <ul>
+          <li>
+            <a href="#prerequisites-for-generating-a-web-service-client"><span>Prerequisites for generating a web service client</span></a>
+          </li>
+          <li>
+            <a href="#expiry-of-certificates"><span>Expiry of Certificates</span></a>
+          </li>
+          <li>
+            <a href="#prerequisites-for-invoking-business-gateway-s-services"><span>Prerequisites for invoking Business Gateway’s services</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#design-constraints"><span>Design constraints</span></a>
+        <ul>
+          <li>
+            <a href="#unique-message-id"><span>Unique message ID</span></a>
+          </li>
+          <li>
+            <a href="#process-request-only-once"><span>Process request only once</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#apis-and-schema"><span>APIs and schema</span></a>
+        <ul>
+          <li>
+            <a href="#information-service-schema"><span>Information service schema</span></a>
+          </li>
+          <li>
+            <a href="#edocument-registration-services"><span>eDocument Registration Services</span></a>
+          </li>
+          <li>
+            <a href="#verification-services"><span>Verification Services</span></a>
+          </li>
+          <li>
+            <a href="#local-land-charges-services"><span>Local Land Charges Services</span></a>
+          </li>
+          <li>
+            <a href="#utility-services"><span>Utility Services</span></a>
+          </li>
+          <li>
+            <a href="#api-request-and-response"><span>API request and response</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#business-gateway-service-urls"><span>Business Gateway service URLs</span></a>
+        <ul>
+          <li>
+            <a href="#wsdl-and-request-response-schema-download-links"><span>WSDL and request/response schema download links</span></a>
+          </li>
+          <li>
+            <a href="#information-services"><span>Information services</span></a>
+          </li>
+          <li>
+            <a href="#e-drs"><span>e-DRS</span></a>
+          </li>
+          <li>
+            <a href="#verification-services-folder"><span>Verification services_folder</span></a>
+          </li>
+          <li>
+            <a href="#business-gateway-service-urls-local-land-charges-services"><span>Local Land Charges Services</span></a>
+          </li>
+          <li>
+            <a href="#outstanding-requests"><span>Outstanding requests</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#upgrade-and-change-policy-vendor-summary"><span>Upgrade and change policy - vendor summary</span></a>
+        <ul>
+          <li>
+            <a href="#upgrade-and-change-policy-vendor-summary-information-service-schema"><span>Information service schema</span></a>
+          </li>
+          <li>
+            <a href="#new-web-service"><span>New web service</span></a>
+          </li>
+          <li>
+            <a href="#web-service-deprecation"><span>Web service deprecation</span></a>
+          </li>
+          <li>
+            <a href="#emergency-bug-fix-minor-version-of-the-web-service"><span>Emergency bug fix (minor version of the web service)</span></a>
+          </li>
+          <li>
+            <a href="#scheduled-upgrade-major-version-of-the-web-service"><span>Scheduled upgrade (major version of the web service)</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><a href="../">Back to Getting Started</a> <a href="../../">Back to Home</a></p>
+<h1 id="a-guide-for-developers">A Guide for Developers</h1>
+<h2 id="overview">Overview</h2>
+<p>This document provides technical information about Business Gateway. You should
+use it if you are a:</p>
+
+<ul>
+<li>case management software vendor (CMS)</li>
+<li>conveyancer</li>
+<li>developer</li>
+</ul>
+
+<hr>
+<h2 id="system-overview">System overview</h2>
+<p>Business Gateway allows CMS vendors to have a direct interface with our
+e-services. It provides a framework to streamline and improve their business
+skills.</p>
+<p>This provides an electronic XML interface for interoperability between CMS and
+our existing services.</p>
+<p>A mutual SSL connection between the external system and Business Gateway’s web
+services allows for exchange of information.</p>
+<h2 id="services-available-on-business-gateway">Services available on Business Gateway</h2>
+
+<ul>
+<li><a href="../../services/application_enquiry/">Application Enquiry</a></li>
+<li><a href="../../services/discharge_activity/">Discharge Enquiry</a></li>
+<li><a href="../../services/edrs/">e-Document Registration Service</a></li>
+<li><a href="../../services/land_charges_full_search/">Land Charges Full Search</a></li>
+<li><a href="../../services/land_charges_bankruptcy_search/">Land Charges Bankruptcy Search</a></li>
+<li><a href="../../services/local_land_charges_search/">Local Land Charges Search</a></li>
+<li><a href="../../services/official_copy_title_known/">Official Copy Title Known</a></li>
+<li><a href="../../services/official_search_of_whole/">Official Search of Whole</a></li>
+<li><a href="../../services/official_search_of_part/">Official Search of Part</a></li>
+<li><a href="../../services/online_owner_verification/">Online Owner Verification</a></li>
+<li><a href="../../services/outstanding_requests_service/">Outstanding Requests Service</a></li>
+<li><a href="../../services/poll_request_service/">Poll Request Service</a></li>
+<li><a href="../../services/search_property_description/">Search by Property Description</a></li>
+<li><a href="../../services/search_index_map/">Search of the Index Map</a></li>
+<li><a href="../../services/register_extract_service/">Register Extract Service</a></li>
+</ul>
+
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+<h3 id="prerequisites-for-generating-a-web-service-client">Prerequisites for generating a web service client</h3>
+<p>A valid SSL certificate is required for downloading the WSDL and schema files
+from HM Land Registry Business Gateway. This certificate is needed for mutual
+SSL authentication.</p>
+<p>A list of URLs for all services provided by Business Gateway to download the
+respective WSDL and schema files for a given service.</p>
+<h3 id="expiry-of-certificates">Expiry of Certificates</h3>
+<p>HM Land Registry Business Gateway certificates expire after 3 years. When this
+date is approaching you will need to contact your Account Manager who can raise
+a request to have new Certificates issued.</p>
+<p>If your certificate expires you will not be able to access the Business Gateway
+until the new certificate is installed and your system is configured to use it.</p>
+<h3 id="prerequisites-for-invoking-business-gateway-s-services">Prerequisites for invoking Business Gateway’s services</h3>
+<p>To invoke Business Gateway services:</p>
+
+<ul>
+<li>a valid SSL certificate issued by Business Gateway is required. This
+certificate is used to enable mutual SSL authentication. This certificate is
+installed once at the CMS client site</li>
+<li>a list of URLs is required for all services provided by Business Gateway in
+order to invoke the required services</li>
+<li>an active user account to use Business Gateway. The user ID and the password
+is the same as for the HM Land Registry portal</li>
+<li>an active variable direct debit (VDD)</li>
+<li>the request should conform to the request schema</li>
+<li>the request must contain Business Gateway User ID and password and locale
+information as part of the SOAP header</li>
+<li>a unique message ID generation mechanism should be followed for every request
+being sent to Business Gateway (see Note 1)</li>
+<li>a mechanism is required to temporarily store the generated message ID. This
+message ID is used to fetch the response when the end user does not receive the
+synchronous response from Business Gateway for example when a request is made
+out of hours or when the message is lost in transit</li>
+</ul>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>Note 1
+
+Reliable Messaging:
+
+Message ID is used for the reliable messaging mechanism used in Business
+Gateway. The external system is required to generate a unique identifier for
+every request that has been sent to Business Gateway
+
+This message ID is used to receive a response from Business Gateway if the
+original response is lost due to network issues or other reasons such as
+if the original request was submitted out of hours.
+
+Business Gateway uses the following information for determining whether a
+given request is a new request
+
+- Message ID.
+- Service Type (for example bankruptcy search).
+- User ID.
+
+Business Gateway uses the following information for determining whether a
+given request is a new request
+</code></pre></div><h4 id="development-activities">Development activities</h4>
+
+<ul>
+<li>Install SSL certificates issued by HM Land Registry as trusted root.</li>
+<li>Install client digital certificate issued by HM Land Registry into client key
+store</li>
+<li>Develop a mechanism to generate and store unique message IDs with respect to the
+request sent to Business Gateway</li>
+<li>Consume the WSDL offered by Business Gateway and develop the following
+functionality based on the web services exposed</li>
+<li>Develop a mechanism to send requests to Business Gateway for each web service
+that has been exposed</li>
+<li>Develop a mechanism to submit Outstanding Request requests to get information
+about requests where the response is not available synchronously</li>
+<li>Develop a mechanism to send polling requests for the requests returned by the
+Outstanding Request service</li>
+<li>Develop a mechanism to process responses</li>
+<li>Develop a mechanism to deal with exceptions</li>
+<li>For each request sent, the SOAP header must contain the user ID, password and
+locale information</li>
+<li>For each request sent, the HTTPS channel will be mutually authenticated using
+certificate exchange</li>
+</ul>
+
+<hr>
+<h2 id="design-constraints">Design constraints</h2>
+<p>Web service requests over HTTP/HTTPS internet protocols are not reliable. This
+can lead to lost messages between request and response.</p>
+<p>To solve this, we use a reliable messaging mechanism (see Note 1). This way
+responses are not lost between the client CMS software and Business Gateway.</p>
+<p>The constraints used to ensure reliable messaging include:</p>
+
+<ul>
+<li>unique message ID</li>
+<li>process request only once</li>
+</ul>
+<h3 id="unique-message-id">Unique message ID</h3>
+<p>The client sends a SOAP request with a unique message ID and waits for the response.
+In case the client does not receive a response within a specified period of time,
+it will send the request with the same message ID once again.</p>
+<p>The client ensures that all message requests have a unique message ID. It is the
+responsibility of Business Gateway to correlate the SOAP request and response with
+the same message ID.</p>
+<h3 id="process-request-only-once">Process request only once</h3>
+<p>Business Gateway processes the request for the first time and stores the response
+in a database. Next time a request arrives as a result of a lost message, with the
+same message ID for the same service type and from the same user ID then the response
+is sent from the stored data.</p>
+
+<hr>
+<h2 id="apis-and-schema">APIs and schema</h2>
+<h3 id="information-service-schema">Information service schema</h3>
+
+<ul>
+<li>Application Enquiry</li>
+<li>Daylist Enquiry</li>
+<li>Discharge Enquiry</li>
+<li>Enquiry by property description</li>
+<li>Land Charges Bankruptcy Search</li>
+<li>Land Charges Full Search</li>
+<li>Official Copy Title Known</li>
+<li>Official Search of Whole</li>
+<li>Official Search of Part</li>
+<li>Search of the Index Map</li>
+<li>Register Extract Service</li>
+</ul>
+<h3 id="edocument-registration-services">eDocument Registration Services</h3>
+
+<ul>
+<li>Application to Change Register</li>
+<li>Attachment</li>
+<li>Correspondence</li>
+<li>Early Completion</li>
+</ul>
+<h3 id="verification-services">Verification Services</h3>
+
+<ul>
+<li>Online Ownership Verification</li>
+</ul>
+<h3 id="local-land-charges-services">Local Land Charges Services</h3>
+
+<ul>
+<li>Local land charges search</li>
+</ul>
+<h3 id="utility-services">Utility Services</h3>
+
+<ul>
+<li>Outstanding requests</li>
+</ul>
+<h3 id="api-request-and-response">API request and response</h3>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Request Type</li>
+  <ul class="govuk-list govuk-list--number">
+    <li><b>Normal Request</b>
+      <p>A request is considered to be a normal request when it is sent to Business
+        Gateway during working hours. The original request is stored by Business
+        Gateway along with the response.</p>
+    </li>
+    <li><b>Poll Request</b>
+        <p>A request is considered to be a normal request when it is sent to Business
+          Gateway during working hours. The original request is stored by Business
+          Gateway along with the response.</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><p>Collecting Out of Hours applications</p>
+            <p>When a request is sent to Business Gateway ‘out of hours’ or after
+              the day list is closed, the system calculates a suggested date and
+              time at which the response to the request will be made available.
+              The client can then make a poll request to Business Gateway at the
+              suggested date and time, with the message ID of the original message,
+              to retrieve the stored response.</p>
+          </li>
+          <li><p>Manual Processed applications</p>
+              <p>A poll request may be used to collect the result of a Business Gateway
+                application that has been processed manually by LR Staff.</p>
+          </li>
+        </ul>
+        <p>
+          For optimal usage the system can be written to automatically call the
+          Outstanding Request service, which will provide details of requests that have
+          a new response to be collected. These can then automatically be sent through
+          the corresponding Poll Request services, enabling the response to be
+          collected as early as possible. This is the only way to collect some of the
+          messages sent when using electronic Document Registration Service (eDRS).
+          We recommend following this process every couple of hours.
+        </p>
+    </li>
+  </ul>
+  <li>Request structure
+    <p>Business Gateway’s SOAP request consists of the following elements: SOAP
+      header must contain (refer to figure 1):</p>
+
+    <ul class="govuk-list govuk-list--number">
+      <li>user ID</li>
+      <li>password</li>
+      <li>locale information</li>
+    </ul>
+
+    <div style="padding-bottom: 20px; padding-top: 20px">
+      <pre><code>
+&lt;!-- SOAP envelope starts --&gt;
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:drs="http://drsv1_0.ws.bg.lr.gov"
+xmlns:req="http://www.oscre/ns/eReg-
+Final/2012/RequestApplicationToChangeRegisterV1_0"&gt;
+
+  &lt;!-- SOAP header starts --&gt;
+  &lt;soapenv:Header&gt;
+    &lt;wsse:Security xmlns:wsse="http://docs.oasis-
+open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"&gt;
+      &lt;wsse:UsernameToken&gt;
+        &lt;wsse:Username&gt;userName here&lt;/wsse:Username&gt;
+        &lt;wsse:Password type="http://docs.oasis-open.org/wss/2004/01/oasis-
+200401-wss-username-token-profile-1.0#PasswordText"&gt;password
+here&lt;/wsse:Password&gt;
+      &lt;/wsse:UsernameToken&gt;
+    &lt;/wsse:Security&gt;
+    &lt;i18n:international xmlns:i18n="http://www.w3.org/2005/09/ws-i18n"&gt;
+      &lt;i18n:locale&gt;en&lt;/i18n:locale&gt;
+    &lt;/i18n:international&gt;
+  &lt;/soapenv:Header&gt;
+  &lt;!-- SOAP header ends --&gt;
+
+  &lt;!-- SOAP body starts --&gt;
+  &lt;soapenv:Body&gt;
+    &lt;!-- SOAP body contains web service request --&gt;
+  &lt;/soapenv:Body&gt;
+  &lt;!-- SOAP body ends --&gt;
+
+&lt;/soapenv:Envelope&gt;
+&lt;!-- SOAP envelope ends --&gt;
+      </code></pre>
+      <p class="govuk-body-s">Figure 1</p>
+      <p class="govuk-body-s">The SOAP body contains the web service request as
+        shown in figure 1.</p>
+    </div>
+
+  </li>
+  <li>Response types
+    <p>Business Gateway sends the following types of responses as part of request
+      processing:</p>
+
+    <ul class="govuk-list govuk-list--number">
+      <li>Normal response when the request is processed successfully. This
+        includes the response for a Business Gateway application that has been
+        processed manually.</li>
+      <li>Acknowledgment response when the requested service is not available, or
+        the application requires manual processing.</li>
+      <li>Error response when one or more business rules failed while processing
+        the request.</li>
+      <li>SOAP fault response when some unexpected exception occurred while processing
+        the request. For example, the submitted request does not contain a value
+        in a mandatory element of the request schema corresponding to the requested
+        service. Refer to figure 2 for the structure of this type of response.</li>
+    </ul>
+
+    <div style="padding-bottom: 20px; padding-top: 20px">
+      <pre><code>
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:drs="http://drsv1_0.ws.bg.lr.gov/"
+xmlns:req="http://www.oscre.org/ns/eReg-
+Final/2012/RequestApplicationToChangeRegisterV1_0"&gt;
+          &lt;soapenv:Fault&gt;
+          &lt;faultcode&gt;soapenv:SchemaFault&lt;/faultcode&gt;
+          &lt;faultstring&gt;Schema Errors have occured&lt;/faultstring&gt;
+          &lt;detail&gt;
+            &lt;drs:SchemaException&gt;cvc-pattern-valid: Value '' is not facet-
+            valid with respect to pattern '[A-Z] {0,3} [0-9] {1,6} [ZT]?' for type 
+            'TitleType'.&lt;/drs:SchemaException&gt;
+              &lt;drs:SchemaException&gt;cvc-type.3.1.3: The value '' of element 
+              'TitleNumber' is not valid.&lt;/drs:SchemaException&gt;
+          &lt;/detail&gt;
+          &lt;/soapenv:Fault&gt;
+      </code></pre>
+      <p class="govuk-body-s">Figure 2</p>
+    </div>
+
+  </li>
+  <li>Response structure
+    <p>Business Gateway’s response structure has the following elements: Response
+      type code indicates the response type in the response structure. In Business
+      Gateway the response type code element can have one of the following values</p>
+
+    <ul class="govuk-list govuk-list--number">
+      <li>10 (for Acknowledgement)</li>
+      <li>20 (for Rejection)</li>
+      <li>30 (for Success)</li>
+    </ul>
+
+    <p><b>Acknowledgement</b></p>
+
+    <p>This element response type contains the following information:</p>
+
+    <p>Expected time when the user is supposed to send a poll request to get
+      the response. (this is only provided if the service was not available
+      when the application was submitted).</p>
+
+    <p>HMLRReference, this is HM Land Registry’s internal reference for the
+      application (this is only provided when the service was available, but
+      the application requires manual processing).</p>
+
+    <p>Unique message ID, the acknowledgment ID, which must be used to get the
+      poll response (refer to figure 3).</p>
+
+    <div style="padding-bottom: 20px; padding-top: 20px">
+      <pre><code>
+&lt;!-- SOAP envelope starts --&gt;
+&lt;soapenv:Envolope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+
+  &lt;!-- SOAP body starts --&gt;
+  &lt;soapenv:Body&gt;
+    &lt;ns3:processLCBankruptcySearchRequestResponse
+xmlns:ns1="http://www.oscre.org/ns/eReg-
+Final/2011/RequestLandChargesBankruptcySearchV2_0"
+    xmlns:ns3="http://bankruptcyv2_0.ws.bg.lr.gov/"
+    xmlns:ns4="http://www.oscre.org/ns/eReg-
+Final/2011/ResponseLandChargesBankruptcySearchV2_0"&gt;
+      &lt;return&gt;
+        &lt;ns4:GatewayResponse&gt;
+          &lt;!-- Response type code:10 i.e Acknowledgement --&gt;
+          &lt;ns4:TypeCode&gt;10&lt;/ns4:TypeCode&gt;
+          &lt;ns4:Acknowledgement&gt;
+            &lt;ns4:AcknowledgementDetails&gt;
+              &lt;!-- Unique message ID taken from request --&gt;
+              &lt;ns4:UniqueID&gt;7987dff7666s001&lt;/ns4:UniqueID&gt;
+              &lt;!-- Expected date and time for the response to be available --&gt;
+              &lt;ns4:ExpectedResponseDateTime&gt;
+              2011-09-15T06:40:30&lt;/ns4:ExpectedResponseDateTime&gt;
+              &lt;ns4:MessageDescription&gt;Service is not currently
+              available.System has queued your request,please poll
+              at specified time.&lt;/ns4:MessageDescription&gt;
+            &lt;/ns4:AcknowledgementDetails&gt;
+          &lt;/ns4:Acknowledgement&gt;
+        &lt;/ns4:GatewayResponse&gt;
+      &lt;/return&gt;
+    &lt;/ns3:processLCBankruptcySearchRequestResponse&gt;
+  &lt;/soapenv:Body&gt;
+  &lt;!-- SOAP body ends --&gt;
+
+&lt;/soapenv:Envelope&gt;
+&lt;!-- SOAP envelope ends --&gt;
+      </code></pre>
+      <p class="govuk-body-s">Figure 3</p>
+    </div>
+
+    <p><b>Rejection</b></p>
+
+    <p>This error response type contains the business rules that have failed while
+      processing the request (refer to figure 4).</p>
+
+    <div style="padding-bottom: 20px; padding-top: 20px">
+        <pre><code>
+  &lt;!-- SOAP Envelope starts --&gt;
+  &lt;soapenv:Envelope
+  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  
+    &lt;!-- SOAP Body starts&gt;
+    &lt;soapenv:Body&gt;
+      &lt;ns3:processLCBankruptcySearchRequestResponse
+  xmlns:ns1="http://www.oscre.org/ns/eReg-
+  Final/2011/RequestLandChargesBankruptcySearchV2_0"
+      xmlns:ns3="http://bankruptcyv2_0.ws.bg.lr.gov/"
+      xmlns:ns4="http://www.oscre.org/ns/eReg-
+  Final/2011/ResponseLandChargesBankruptcySearchV2_0"&gt;
+          &lt;return&gt;
+            &lt;ns4:GatewayResponse&gt;
+              &lt;!-- Response type Code:20 i.e. Rejection --&gt;
+                &lt;ns4:TypeCode&gt;20&lt;/ns4:TypeCode&gt;
+                &lt;ns4:Rejection&gt;
+                  &lt;ns4:ExternalReference&gt;
+                    &lt;ns4:Reference&gt;Test 1.023&lt;/ns4:Reference&gt;
+                  &lt;/ns4:ExternalReference&gt;
+                  &lt;ns4:RejectionResponse&gt;
+                    &lt;ns4:Reason&gt;BatchException&lt;/ns4:Reason&gt;
+                    &lt;ns4:Code&gt;BatchExceptionCode&lt;/ns4:Code&gt;
+                    &lt;!-- Business Rule failed --&gt;
+                      &lt;ns4:ValidationErrors&gt;
+                        &lt;!-- Language independent error code --&gt;
+                          &lt;ns4:Code&gt;bg.fee.feeMismatch&lt;/ns4:Code&gt;
+                        &lt;!-- Language dependent description (in this case 'EN') --&gt;
+                          &lt;ns4:Description&gt:Fee Amount provided does not match with 
+                          the fee calculated by Land Registry.&lt;/ns4:Description&gt;
+                      &lt;/ns4:ValidationErrors&gt;
+                  &lt;/ns4:RejectionResponse&gt;
+                &lt;/ns4:Rejection&gt;
+              &lt;/ns4:GatewayResponse&gt;
+            &lt;/return&gt;
+      &lt;/ns3:processLCBanruptcySearchRequestResponse&gt;
+    &lt;/soapenv:Body&gt;
+    &lt;!-- SOAP Body end --&gt;
+  &lt;/soapenv:Envelope&gt;
+  &lt;!-- SOAP Envelope ends --&gt;
+        </code></pre>
+        <p class="govuk-body-s">Figure 4</p>
+    </div>
+
+    <p><b>Success</b></p>
+
+    <p>This normal response type contains the success result (refer to figure 5).</p>
+
+    <div style="padding-bottom: 20px; padding-top: 20px">
+      <pre><code>
+&lt;!-- Soap Envelope starts --&gt;
+&lt;soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+
+&lt;!-- Soap Body starts --&gt;
+&lt;soapenv:Body&gt;
+  &lt;ns3:processLCBankruptcySearchRequestResponse
+xmlns:ns1="http://www.oscre.org/ns/eReg-
+Final/2011/RequestLandChargesBankruptcySearchV2_0"
+  xmlns:ns3="http://bankruptcyv2_0.ws.bg.lr.gov/"
+  xmlns:ns4="http://www.oscre.org/ns/eReg-
+Final/2011/ResponseLandChargesBankruptcySearchV2_0"&gt;
+    &lt;return&gt;
+      &lt;ns4:GatewayResponse&gt;
+        &lt;!-- Response type Code:30 i.e. Success --&gt;
+        &lt;ns4:TypeCode&gt;30&lt/ns4:TypeCode&gt;
+          &lt;!-- Success Results --&gt;
+        &lt;ns4:Results&gt;
+          &lt;ns4:ExternalReference&gt;
+            &lt;ns4:Reference&gt;abc12345&lt;/ns4:Reference&gt;
+          &lt;/ns4:ExternalReference&gt;
+          &lt;ns4:HMLRReference&gt;
+            &lt;ns4:Reference&gt;09395D&lt;/ns4:Reference&gt;
+          &lt;/ns4:HMLRReference&gt;
+          &lt;ns4:ActualPrice&gt;
+            &lt;ns4:GrossPriceAmount&gt;2.00&lt;/ns4:GrossPriceAmount&gt;
+          &lt;/ns4:ActualPrice&gt;
+          &lt;ns4:Attachment&gt;
+            &lt;ns4:EmbeddedFileBinaryObject ns4:format="PDF"&gt;Large byte
+array here removed for space&lt;/ns4:EmbeddedFileBinaryObject&gt;
+          &lt;/ns4:Attachment&gt;
+          &lt;ns4:ResultTypeCode&gt;10&lt;/ns4:ResultTypeCode&gt;
+        &lt;/ns4:Results&gt;
+      &lt;/ns4:GatewayResponse&gt;
+    &lt;/return&gt;
+  &lt;/ns3:processLCBankruptcySearchRequestResponse&gt;
+&lt;/soapenv:Body&gt;
+&lt;!-- Soap Body ends --&gt;
+&lt;/soapenv:Envelope&gt;
+&lt;!-- Soap Envelope ends --&gt;
+      </pre></code>
+      <p class="govuk-body-s">Figure 5</p>
+    </div>
+  </li>
+</ul>
+
+<hr>
+<h2 id="business-gateway-service-urls">Business Gateway service URLs</h2>
+<h3 id="wsdl-and-request-response-schema-download-links">WSDL and request/response schema download links</h3>
+<h4 id="wsdl">WSDL</h4>
+<p>In the URLs listed below, substitute {PLACE_HOLDER} as follows:</p>
+<h4 id="test-environments">Test Environments:</h4>
+
+<ul>
+<li><a href="https://bgtest.landregistry.gov.uk/b2b/ECBG_StubService">Enquiry by Property Description, Office Copy Title Known, Official Search of Whole with Priority</a></li>
+<li><a href="https://bgtest.landregistry.gov.uk/b2b/ECDRS_StubService">eDocument Registration Service</a></li>
+<li><a href="https://bgtest.landregistry.gov.uk/b2b/EOOV_StubService">Online Ownership Verification Service</a></li>
+<li><a href="https://bgtest.landregistry.gov.uk/b2b/ECLLC_StubService">Local Land Charges Service</a></li>
+<li><a href="https://bgtest.landregistry.gov.uk/b2b/BGStubService">All Other Services</a></li>
+</ul>
+<h4 id="production-environments">Production Environments:</h4>
+
+<ul>
+<li><a href="https://businessgateway.landregistry.gov.uk/b2b/ECDRS_SoapEngine">eDocument Registration Service</a></li>
+<li><a href="https://businessgateway.landregistry.gov.uk/b2b/EOOV_SoapEngine">Online Ownership Verification Service</a></li>
+<li><a href="https://businessgateway.landregistry.gov.uk/b2b/ECLLC_SoapEngine">Local Land Charges Service</a></li>
+<li><a href="https://businessgateway.landregistry.gov.uk/b2b/BGSoapEngine">All Other Services</a></li>
+</ul>
+<h4 id="service-endpoints-and-xsd-schema-definitions">Service endpoints and XSD schema definitions</h4>
+<p>Current links to service endpoints and XSD schema definitions can be found within
+the WSDL file.</p>
+<h3 id="information-services">Information services</h3>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Service</th>
+<th>Endpoints</th>
+</tr><tr>
+<td>Application Enquiry V1.0</td>
+<td>{PLACE_HOLDER}/ApplicationEnquiryV1_0PollRequestWebService?wsdl<br>{PLACE_HOLDER}/ApplicationEnquiryV1_0WebService?wsdl</td>
+</tr><tr>
+<td>Daylist enquiry V2.0</td>
+<td>{PLACE_HOLDER}/ApplicationEnquiryV1_0WebService?wsdl<br>{PLACE_HOLDER}/ApplicationEnquiryV1_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Discharge Activity V1.0</td>
+<td>{PLACE_HOLDER}/DischargeActivityV1_0WebService?wsdl<br>{PLACE_HOLDER}/DischargeActivityV1_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Enquiry by property description V2.0</td>
+<td>{PLACE_HOLDER}/EnquiryByPropertyDescriptionV2_0WebService?wsdl<br>{PLACE_HOLDER}/EnquiryByPropertyDescriptionV2_0PollWebService?wsdl</td>
+</tr><tr>
+<td>Land charges bankruptcy search V2.0</td>
+<td>{PLACE_HOLDER}/BankruptcySearchV2_0WebService?wsdl<br>{PLACE_HOLDER}/BankruptcySearchV2_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Land charges bankruptcy search V2.1</td>
+<td>{PLACE_HOLDER}/BankruptcySearchV2_1WebService?wsdl<br>{PLACE_HOLDER}/BankruptcySearchV2_1PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Land charges full search V2.0</td>
+<td>{PLACE_HOLDER}/FullSearchV2_0WebService?wsdl<br>{PLACE_HOLDER}/FullSearchV2_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Land charges full search V2.1</td>
+<td>{PLACE_HOLDER}/FullSearchV2_1WebService?wsdl<br>{PLACE_HOLDER}/FullSearchV2_1PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Official copy title known V2.0</td>
+<td>{PLACE_HOLDER}/OfficialCopyTitleKnownV2_0WebService?wsdl<br>{PLACE_HOLDER}/OC1TitleKnownV2_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Official copy title known V2.1</td>
+<td>{PLACE_HOLDER}/OfficialCopyTitleKnownV2_1WebService?wsdl<br>{PLACE_HOLDER}/OC1TitleKnownV2_1PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Official search of part with priority V2.0</td>
+<td>{PLACE_HOLDER}/OfficialSearchOfPartV2_0WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchOfPartV2_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Official search of part with priority V2.1</td>
+<td>{PLACE_HOLDER}/OfficialSearchOfPartV2_1WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchOfPartV2_1PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Official search of whole with priority V2.0</td>
+<td>{PLACE_HOLDER}/OfficialSearchV2_0WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchV2_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Official search of whole with priority V2.1</td>
+<td>{PLACE_HOLDER}/OfficialSearchV2_1WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchV2_1PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Register extract service V2.0</td>
+<td>{PLACE_HOLDER}/OfficialCopyWithSummaryV2_0WebService?wsdl<br>{PLACE_HOLDER}/OfficialCopyWithSummaryV2_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Register extract service V2.1</td>
+<td>{PLACE_HOLDER}/OfficialCopyWithSummaryV2_1WebService?wsdl<br>{PLACE_HOLDER}/OfficialCopyWithSummaryV2_1PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Search of the index map V2.0</td>
+<td>{PLACE_HOLDER}/SearchOfIndexMapV2_0WebService?wsdl<br>{PLACE_HOLDER}/SearchOfIndexMapV2_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Search of the index map V2.1</td>
+<td>{PLACE_HOLDER}/SearchOfIndexMapV2_1WebService?wsdl<br>{PLACE_HOLDER}/SearchOfIndexMapV2_1PollRequestWebService?wsdl</td>
+</tr>
+        </table>
+      </div><h3 id="e-drs">e-DRS</h3>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Service</th>
+<th>Endpoints</th>
+</tr><tr>
+<td>Application to change register V2.0</td>
+<td>{PLACE_HOLDER}/EDocumentRegistrationV2_0WebService?wsdl<br>{PLACE_HOLDER}/EDocumentRegistrationV2_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Attachment V2.0</td>
+<td>{PLACE_HOLDER}/AttachmentV2_0WebService?wsdl<br>{PLACE_HOLDER}/AttachmentV2_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Correspondence V1.0</td>
+<td>{PLACE_HOLDER}/CorrespondenceV1_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Early completion V2.0</td>
+<td>{PLACE_HOLDER}/EarlyCompletionV2_0PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Application to change register V2.1</td>
+<td>{PLACE_HOLDER}/EDocumentRegistrationV2_1WebService?wsdl<br>{PLACE_HOLDER}/EDocumentRegistrationV2_1PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Attachment V2.1</td>
+<td>{PLACE_HOLDER}/AttachmentV2_1WebService?wsdl<br>{PLACE_HOLDER}/AttachmentV2_1PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Correspondence V2.1</td>
+<td>{PLACE_HOLDER}/CorrespondenceV2_1PollRequestWebService?wsdl</td>
+</tr><tr>
+<td>Early completion V2.1</td>
+<td>{PLACE_HOLDER}/EarlyCompletionV2_1PollRequestWebService?wsdl</td>
+</tr>
+        </table>
+      </div><h3 id="verification-services-folder">Verification services_folder</h3>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Service</th>
+<th>Endpoints</th>
+</tr><tr>
+<td>Online Ownership Verification V1.0</td>
+<td>{PLACEHOLDER}/OnlineOwnershipVerificationV1_0WebService?wsdl</td>
+</tr>
+        </table>
+      </div><h3 id="business-gateway-service-urls-local-land-charges-services">Local Land Charges Services</h3>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Service</th>
+<th>Endpoints</th>
+</tr><tr>
+<td>Local land charges search V2.0</td>
+<td>{PLACEHOLDER}/LLCSearchV2_0WebService?wsdl</td>
+</tr>
+        </table>
+      </div><h3 id="outstanding-requests">Outstanding requests</h3>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Service</th>
+<th>Endpoints</th>
+</tr><tr>
+<td>Outstanding Requests V2.0</td>
+<td>{PLACE_HOLDER}/OutstandingRequestsV2_0WebService?wsdl</td>
+</tr><tr>
+<td>Outstanding Requests V2.1</td>
+<td>{PLACE_HOLDER}/OutstandingRequestsV2_1WebService?wsdl</td>
+</tr>
+        </table>
+      </div><h2 id="upgrade-and-change-policy-vendor-summary">Upgrade and change policy - vendor summary</h2>
+<h3 id="upgrade-and-change-policy-vendor-summary-information-service-schema">Information service schema</h3>
+<p>Due to the impact of delivering new schemas, we will endeavour to schedule a
+maximum of one release per year. We will only replace a web service immediately
+if there is a major bug.</p>
+<h3 id="new-web-service">New web service</h3>
+<p>Notification of the functionality and delivery schedule of a new web service will
+be through standard customer communication channels, combined with the new forum
+created for users of Business Gateway.</p>
+<p>All technical details will be published on the Business Gateway developer pack web
+page.</p>
+<p>A vendor test facility will go live at the same time as or prior to the web service
+itself. This will include Test Stubs, Vendor Test Data, Workflows providing business
+rules and message outputs and Schema Validation Sheets.</p>
+<h3 id="web-service-deprecation">Web service deprecation</h3>
+<p>Notification of the schedule for deprecation (removal) will come from the standard
+customer communication channels. The normal deprecation of a web service will be
+six months from the date of notification, but this may vary in exceptional circumstances.</p>
+<p>All users of a service will receive a final reminder one month before the service
+is discontinued.</p>
+<p>Changes and additions to the service will be contained in the Business Gateway Service
+release notes on the Business Gateway landing page. Change details relating to the
+developer pack will be contained in the Business Gateway Developer Pack release notes
+referenced on the Business Gateway developer pack webpage</p>
+<h3 id="emergency-bug-fix-minor-version-of-the-web-service">Emergency bug fix (minor version of the web service)</h3>
+<p>Notification of an emergency bug fix will be through the Service Desk. A new version
+number will be incorporated into an existing web service name that is being replaced,
+for example Version 1.0 will become Version 1.1.</p>
+<p>In this emergency example, Version 1.0 will be withdrawn as soon as Version 1.1
+becomes live.</p>
+<p>A new version of the vendor test facility (stub) will go live at the same time as
+the web service itself. Integrated vendors will be notified if and/or when they
+can test the change before it is put live.</p>
+<h3 id="scheduled-upgrade-major-version-of-the-web-service">Scheduled upgrade (major version of the web service)</h3>
+<p>Notification of the changes being made in a new version of an existing web service
+will be from the standard customer communication channels.</p>
+<p>The new version will run simultaneously with the old, until the old version is deprecated,
+to avoid the need for all applications to perform a hard cutover.</p>
+<p>A new version number will be incorporated into an existing web service name that
+is being replaced, for example Version 1.0 (or 1.1) will become Version 2.0.</p>
+<p>A new version of the vendor test facility will go live at the same time as or prior
+to the new version of the web service.</p>
+<p>Change details will be contained in the Service Business Gateway release notes on
+the Business Gateway landing page.</p>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

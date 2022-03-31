@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Find out about future changes - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/get_started/future_changes/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="Find out about future changes - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/get_started/future_changes/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Find out about future changes" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/get_started/future_changes/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#find-out-about-future-changes"><span>Find out about future changes</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+      </li>
+      <li>
+        <a href="#technical-details-of-future-changes"><span>Technical details of future changes</span></a>
+        <ul>
+          <li>
+            <a href="#if-you-are-parsing"><span>If you are parsing</span></a>
+          </li>
+          <li>
+            <a href="#if-you-are-developing-the-lcc-schemas"><span>If you are developing the LCC schemas</span></a>
+          </li>
+          <li>
+            <a href="#if-you-are-using-the-39-sopenv-39-label"><span>If you are using the ‘sopenv’ label</span></a>
+          </li>
+          <li>
+            <a href="#examples-of-new-and-old-messages"><span>Examples of new and old messages</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#contact"><span>Contact</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><a href="../">Back to Getting Started</a> <a href="../../">Back to Home</a></p>
+<h1 id="find-out-about-future-changes">Find out about future changes</h1>
+<h2 id="overview">Overview</h2>
+<p>This document is for software developers. Use when testing interfaces with the
+  web services, before deploying software.</p>
+
+<hr>
+<h2 id="technical-details-of-future-changes">Technical details of future changes</h2>
+<h3 id="if-you-are-parsing">If you are parsing</h3>
+<p>We do not recommend relying on manual parsing. This is because we cannot guarantee
+  that each service will change in the same way. You should make sure you can cope
+  with variable namespace labels.</p>
+<p>The test stubs are up to date to reflect this. You should make sure your system
+  is compatible going forward.</p>
+<p>The namespace labels and location in the XML will change. The namespace values
+  and tags on each namespace will not.</p>
+<h3 id="if-you-are-developing-the-lcc-schemas">If you are developing the LCC schemas</h3>
+<p>The new service goes live on 11th July 2018. If you are currently developing
+  the LLC schemas, you should make any changes before this date.</p>
+<h3 id="if-you-are-using-the-39-sopenv-39-label">If you are using the &lsquo;sopenv&rsquo; label</h3>
+<p>The “soapenv” label has changed to “soap”. The value remains “http://schemas.xmlsoap.org/soap/envelope/”
+  and is still only applied to Envelope and Body.</p>
+<p>These changes are only cosmetic and all major SOAP libraries will continue
+  to work as they do now.</p>
+<h3 id="examples-of-new-and-old-messages">Examples of new and old messages</h3>
+<p>The “soapenv” label has changed to “soap”. The value remains “http://schemas.xmlsoap.org/soap/envelope/”
+  and is still only applied to Envelope and Body.</p>
+<h4 id="new-example">New example:</h4>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soap:Body&gt;
+    &lt;ns3:performTitleKnownSearchResponse xmlns:ns1=
+    "http://www.oscre.org/ns/eRegFinal/2011/
+    RequestTitleKnownOfficialCopyV2_1"
+    xmlns:ns3="http://officialcopyv2_1.ws.bg.lr.gov/"
+    xmlns:ns4="http://www.oscre.org/ns/eReg-Final/2011/
+    ResponseTitleKnownOfficialCopyV2_0"&gt;
+      &lt;return&gt;
+        &lt;ns4:GatewayResponse&gt;
+          &lt;ns4:TypeCode&gt;30&lt;/ns4:TypeCode&gt;
+          &lt;ns4:Results&gt;
+            &lt;ns4:ExternalReference&gt;
+              &lt;ns4:Reference&gt;123&lt;/ns4:Reference&gt;
+            &lt;/ns4:ExternalReference&gt;
+            &lt;ns4:ActualPrice&gt;
+              &lt;ns4:GrossPriceAmount&gt;3.00&lt;/ns4:GrossPriceAmount&gt;
+            &lt;/ns4:ActualPrice&gt;
+            &lt;ns4:Attachment&gt;
+              &lt;ns4:EmbeddedFileBinaryObject ns4:format="PDF"&gt;
+TRIMMED FOR CLARITY&lt;/ns4:EmbeddedFileBinaryObject&gt;
+            &lt;/ns4:Attachment&gt;
+            &lt;ns4:ResultTypeCode&gt;10&lt;/ns4:ResultTypeCode&gt;
+            &lt;ns4:HMLRReference&gt;
+              &lt;ns4:Reference&gt;7BBBFNY&lt;/ns4:Reference&gt;
+            &lt;/ns4:HMLRReference&gt;
+          &lt;/ns4:Results&gt;
+        &lt;/ns4:GatewayResponse&gt;
+      &lt;/return&gt;
+    &lt;/ns3:performTitleKnownSearchResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code></pre></div><h4 id="old-example">Old example:</h4>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soapenv:Body&gt;
+    &lt;dlwmin:performTitleKnownSearchResponse xmlns:dlwmin=
+    "http://officialcopyv2_1.ws.bg.lr.gov/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+      &lt;return xmlns:ns1="http://www.oscre.org/ns/eReg-Final/2011/
+      RequestTitleKnownOfficialCopyV2_1"
+      xmlns:ns2="http://www.oscre.org/ns/eReg-Final/2011/
+      ResponseTitleKnownOfficialCopyV2_0"&gt;
+        &lt;ns2:GatewayResponse&gt;
+          &lt;ns2:TypeCode&gt;30&lt;/ns2:TypeCode&gt;
+          &lt;ns2:Results&gt;
+            &lt;ns2:ExternalReference&gt;
+              &lt;ns2:Reference&gt;123&lt;/ns2:Reference&gt;
+            &lt;/ns2:ExternalReference&gt;
+            &lt;ns2:ActualPrice&gt;
+              &lt;ns2:GrossPriceAmount&gt;3.00&lt;/ns2:GrossPriceAmount&gt;
+            &lt;/ns2:ActualPrice&gt;
+            &lt;ns2:Attachment&gt;
+              &lt;ns2:EmbeddedFileBinaryObject ns2:format="PDF"&gt;
+TRIMMED FOR CLARITY&lt;/ns2:EmbeddedFileBinaryObject&gt;
+            &lt;/ns2:Attachment&gt;
+            &lt;ns2:ResultTypeCode&gt;10&lt;/ns2:ResultTypeCode&gt;
+            &lt;ns2:HMLRReference&gt;
+              &lt;ns2:Reference&gt;7BBBFNY&lt;/ns2:Reference&gt;
+            &lt;/ns2:HMLRReference&gt;
+          &lt;/ns2:Results&gt;
+        &lt;/ns2:GatewayResponse&gt;
+      &lt;/return&gt;
+    &lt;/dlwmin:performTitleKnownSearchResponse&gt;
+  &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</code></pre></div>
+<hr>
+<h2 id="contact">Contact</h2>
+<p>If you would like help to make any technical changes, contact our Service Desk on:</p>
+<p><strong>Phone</strong></p>
+<p><a href="tel:0300%20006%200411">0300 006 0411</a> (Select option2 and then option 5)</p>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

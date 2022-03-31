@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>How our System Works - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/get_started/how_system_works/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="How our System Works - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/get_started/how_system_works/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="How our System Works" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/get_started/how_system_works/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#how-our-system-works"><span>How our System Works</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+        <ul>
+          <li>
+            <a href="#business-gateway"><span>Business gateway</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#architecture-overview"><span>Architecture overview</span></a>
+        <ul>
+          <li>
+            <a href="#architecture-overview-business-gateway"><span>Business Gateway</span></a>
+          </li>
+          <li>
+            <a href="#process-flow"><span>Process flow</span></a>
+          </li>
+          <li>
+            <a href="#example-request-response-flow"><span>Example request/response flow</span></a>
+          </li>
+          <li>
+            <a href="#poll-requests"><span>Poll requests</span></a>
+          </li>
+          <li>
+            <a href="#security"><span>Security</span></a>
+          </li>
+          <li>
+            <a href="#interoperability"><span>Interoperability</span></a>
+          </li>
+          <li>
+            <a href="#reliable-messaging"><span>Reliable messaging</span></a>
+          </li>
+          <li>
+            <a href="#use-of-unique-message-ids"><span>Use of unique message IDs</span></a>
+          </li>
+          <li>
+            <a href="#message-is-lost-in-transit-from-the-client"><span>Message is lost in transit from the client</span></a>
+          </li>
+          <li>
+            <a href="#message-is-lost-in-transit-from-the-gateway"><span>Message is lost in transit from the gateway</span></a>
+          </li>
+          <li>
+            <a href="#resubmission-of-a-failed-request"><span>Resubmission of a failed request</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+<p><a href="../">Back to Getting Started</a> <a href="../../">Back to Home</a></p>
+<h1 id="how-our-system-works">How our System Works</h1>
+
+<hr>
+<h2 id="overview">Overview</h2>
+<p>Use this document as a guide on how to integrate with our Business Gateway services.</p>
+<h3 id="business-gateway">Business gateway</h3>
+<p>The key features of Business Gateway are:</p>
+
+<ul>
+<li>adoption of open standards including e-GIF, HTTP, SOAP, WSDL, XML</li>
+<li>XML-based web services</li>
+<li>XML schemas that comply with the standards set by W3C, e-GIF and OSCRE provision
+of secure access to specific HM Land Registry services over the internet mutual
+SSL authentication between Business Gateway and client using certificate based
+authentication</li>
+<li>requests will be queued by Business Gateway when HM Land Registry systems are
+unable to process requests due to working hour limitations</li>
+<li>synchronous responses to requests when HM Land Registry systems are available
+reliable messaging facilitated by the use of a unique message ID</li>
+<li>multi-language enabled and facilitated via locale parameters passed in the SOAP
+header</li>
+</ul>
+
+<div style="padding-bottom: 20px; padding-top: 20px">
+  <a href="../../images/system_1.png" target="_blank">
+    <img src="../../images/system_1.png" alt="An image of showing the Basic principles for integration with the Business Gateway solution" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+  <p class="govuk-body-s">Figure 1: Basic principles for integration with the Business Gateway solution</p>
+</div>
+
+<hr>
+<h2 id="architecture-overview">Architecture overview</h2>
+<h3 id="architecture-overview-business-gateway">Business Gateway</h3>
+<p>Business Gateway is presented as a collection of web services. An example integration
+between a service consumer and a service provider is shown in figure 2. The example
+uses a generated proxy class to allow the client application to consume a web service
+as if it were a call to a native method. The proxy is generated from the web services
+described by the WSDL endpoint.</p>
+
+<div style="padding-bottom: 20px; padding-top: 20px">
+  <a href="../../images/system_2.png" target="_blank">
+    <img src="../../images/system_2.png" alt="Web service Overview Image" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+  <p class="govuk-body-s">Figure 2: Web services overview</p>
+</div>
+<h3 id="process-flow">Process flow</h3>
+
+<ol>
+<li>The client application calls the proxy method for the desired web service.</li>
+<li>The proxy class serialises the parameters into a SOAP message and sends it over
+HTTP to the SOAP endpoint as defined in the WSDL.</li>
+<li>The web services engine de-serialises the received message into an object that
+is used by the service provider application in a method call. The result of the
+method call is then serialised into a SOAP message by the web services engine and
+returned to the service consumer.</li>
+<li>The proxy class de-serialises the response message and returns the web service
+call result to the client application in a format that is suitable for native consumption.</li>
+</ol>
+<h3 id="example-request-response-flow">Example request/response flow</h3>
+<p>Business Gateway is implemented as a set of web services. It is designed to be highly
+available and is exposed as a set of pull-for-data interactions. The gateway does
+not push data to client systems, as this would require client systems to be highly
+available.</p>
+<p>The gateway operates using the following model:</p>
+
+<ol>
+<li><p>request received in Land Registry business hours, processed automatically –
+result and response returned synchronously</p></li>
+<li><p>request received in Land Registry business hours, requires manual processing –
+acknowledgement response returned</p></li>
+<li><p>request received out of Land Registry business hours – acknowledgement response
+returned with a suggested time for poll back</p></li>
+<li><p>polling request received – response returned if available. If response is not
+yet available then initial acknowledgment returned.</p></li>
+</ol>
+<p>Using this model, each service offered by the gateway will have a corresponding
+service to allow for a poll request. A response will consist of an acknowledgment,
+a result, or a rejection.</p>
+<p>For each request the following is required:</p>
+
+<ul>
+<li>client certificate - provided by Land Registry to create an SSL connection user
+ID and password to authenticate the user</li>
+<li>locale for the response language - currently only ‘en’ supported</li>
+<li>unique message ID - generated by the client to allow for reliable messaging</li>
+</ul>
+
+<div style="padding-bottom: 20px; padding-top: 20px">
+  <a href="../../images/system_3.png" target="_blank">
+    <img src="../../images/system_3.png" alt="An Image of the Business Gateway process flow" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+  <p class="govuk-body-s">Figure 3: Business Gateway process flow</p>
+</div>
+<p>Figure 4 shows an example service request. The scenario covers the case where a
+secure SSL connection has already been created and a service request is being
+sent for the first time.</p>
+<p>The scenario covers the following generic cases:</p>
+
+<ul>
+<li>SOAP fault due to XML request message failing validation</li>
+<li>rejection response due to authorisation failure</li>
+<li>result response as request processed successfully</li>
+<li>acknowledgement response as request unable to be processed currently</li>
+<li>rejection response as request failed processing</li>
+</ul>
+
+<div style="padding-bottom: 20px; padding-top: 20px">
+  <a href="../../images/system_4.png" target="_blank">
+    <img src="../../images/system_4.png" alt="An Image of an Example service request flow" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+  <p class="govuk-body-s">Figure 4: Example service request flow</p>
+</div>
+<h3 id="poll-requests">Poll requests</h3>
+<p>When a request has received an acknowledgment response, the client is required to
+poll the gateway for a response. This can be automated by the client using the
+Outstanding Request Service. Figure 5 shows the basic flow for Business Gateway
+behaviour upon receiving a poll request.</p>
+
+<div style="padding-bottom: 20px; padding-top: 20px">
+  <a href="../../images/system_5.png" target="_blank">
+    <img src="../../images/system_5.png" alt="An Image of the Business gateway poll request processing flow" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+  <p class="govuk-body-s">Figure 5: Business Gateway poll request processing flow</p>
+</div>
+<p>The following scenario demonstrates the polling flow for polling</p>
+
+<ol>
+<li>A request requiring Land Registry processing is received out-of-hours, or is
+sent for manual processing</li>
+<li>The request is stored by the gateway.</li>
+<li>A response is sent back to the client with the unique message ID that the client
+has provided and relevant details (If the request was submitted out of hours, then
+the response has a predicted processing time. If the request goes for Manual Processing,
+then the response will contain the ABR).</li>
+<li>The gateway has a scheduler that will run during working hours. The scheduler
+will fetch pending requests, re-authenticate the user, and then process the request.
+After the request is processed the response is stored in the gateway for retrieval.</li>
+<li>The client sends an Outstanding Requests request. The gateway returns details
+of applications with a new response.</li>
+<li>The client submits poll requests for each message returned by the Outstanding
+Request service.</li>
+<li>The gateway verifies that the user ID of the current request belongs to the same
+organisation of the original request. The gateway sends the processed response stored
+in the gateway.</li>
+<li>If a poll request is made for an application that does not have a new response
+yet, the gateway will return the previous response/acknowledgement.</li>
+</ol>
+<h3 id="security">Security</h3>
+<p>The solution enforces two levels of authentication. The first level of authentication
+will be established using digital certificates and the second level will be using
+user ID and password. Authorisation is via user ID and password. Transport level
+encryption will be applied over a HTTPS connection.</p>
+<h3 id="interoperability">Interoperability</h3>
+<p>All web services exposed via the gateway are WS-I and Basic profile 1.1 compliant.
+Web services invocations using SOAP document literal style will be supported. Any
+CMS client using a programming language that supports web services such as Java,
+.net or C++ should be able to consume the WSDL files exposed by the gateway.</p>
+<h3 id="reliable-messaging">Reliable messaging</h3>
+<p>Web services requests over HTTP/HTTPS internet protocols are not truly reliable
+and are known for losing messages between request and response. A reliable messaging
+technique is implemented, to ensure messages are not lost between the client software
+and the gateway.</p>
+<p>Figure demonstrates a normal style of interaction between a client and the gateway
+where messaging is assumed to be reliable.</p>
+<p>Figure 7 shows the scenario where a message is sent to the gateway but is lost in
+transit.</p>
+<p>Figure 8 shows the final scenario where a message is received by the gateway but
+the response fails to reach the client.</p>
+
+<div style="padding-bottom: 20px; padding-top: 20px">
+  <a href="../../images/system_6.png" target="_blank">
+    <img src="../../images/system_6.png" alt="An Image of a Normal SOAP request response processing" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+  <p class="govuk-body-s">Figure 6: Normal SOAP request response processing</p>
+</div>
+<h3 id="use-of-unique-message-ids">Use of unique message IDs</h3>
+<p>To facilitate reliable messaging, Business Gateway relies on the client producing
+a unique message ID that is sent with every request. The message ID is used to retrieve
+a response back from Business Gateway in the case where the original response has
+been lost (possibly due to network problems).</p>
+<p>The unique combination of message ID, user ID and message type will be used by Business
+Gateway software internally to ensure that every request is unique in the system.
+If two requests are made with the same message ID from different CMS systems, although
+the message ID is the same the user ID will be different. This forms a unique key
+and the message is therefore uniquely identified in the system.</p>
+<h3 id="message-is-lost-in-transit-from-the-client">Message is lost in transit from the client</h3>
+<p>The client code sends a SOAP request containing a unique message ID and should wait
+for a response. If the client does not receive a response within a reasonable period,
+it should send the request again with the same message ID. The client code can continue
+this pattern until it receives a response from the gateway.</p>
+<p>The client code must ensure that all message requests have a unique message ID.</p>
+<p>It will be the responsibility of the gateway to correlate the SOAP request and response
+with the same message ID.</p>
+
+<div style="padding-bottom: 20px; padding-top: 20px">
+  <a href="../../images/system_7.png" target="_blank">
+    <img src="../../images/system_7.png" alt="An Image of a SOAP request being lost" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+  <p class="govuk-body-s">Figure 7: SOAP request is lost</p>
+</div>
+<h3 id="message-is-lost-in-transit-from-the-gateway">Message is lost in transit from the gateway</h3>
+<p>The gateway will process the request for the first time and store the response.
+If a subsequent request is received with the same message and user ID, due to a
+message being lost in transit between the gateway and the client, then the response
+will be re- sent using the data stored in the gateway. This will ensure that the
+initial request will be processed only once.</p>
+
+<div style="padding-bottom: 20px; padding-top: 20px">
+  <a href="../../images/system_8.png" target="_blank">
+    <img src="../../images/system_8.png" alt="An Image of a SOAP response being lost" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+  <p class="govuk-body-s">Figure 8: SOAP response is lost</p>
+</div>
+<h3 id="resubmission-of-a-failed-request">Resubmission of a failed request</h3>
+<p>If a response contains a rejection or a SOAP fault then the client code should be
+able to handle the error condition, make necessary corrections and resubmit the
+request with a new messaging ID. Message IDs should not be re-used for resubmission.
+A SOAP fault will only be returned as a result of a system exception, for example
+a schema validation failure. Any rejections that come from the gateway in terms
+of a business rule validation failure will be sent as a response containing a rejection
+reason.</p>
+
+<div style="padding-bottom: 20px; padding-top: 20px">
+  <a href="../../images/system_9.png" target="_blank">
+    <img src="../../images/system_9.png" alt="An Image of SOAP reliable messaging" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+  <p class="govuk-body-s">Figure 9: SOAP reliable messaging</p>
+</div>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

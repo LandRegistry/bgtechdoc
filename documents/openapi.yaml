@@ -1,0 +1,2768 @@
+openapi: 3.0.1
+info:
+  title: Land Register API
+  description: |
+    The Land Register API aims to be the primary method of accessing register data for HM Land Registry.
+
+    The Land Register API provides data and services around the core data set.
+    Access to the API must be requested through the Digital Register project team.
+    If you would like to integrate systems with the Land Register API then please follow these steps:
+    -  Contact the project team about your needs to ensure that the API can serve them.
+    -  Create your own client for accessing the API, only returning the data you are using.
+    -  Request access to the API through a senior member of the project team (coordination of access in pre-production and production will be handled by WebOps). An individual access token will be created for each consuming service.
+    -  Send your access token in the 'Authorization' header of each call to the API. e.g. replace 'abc123' in:
+      `curl --header 'Authorization: Bearer abc123' --url ...`
+    -  Add to your Fraud Impact Assessment form that you will be accessing the Land Register API, the reasons why it is
+      needed and the specific data that is required.
+    -  Ensure that the data that is requested by your systems from the API is limited to only the data that you need.
+    -  Do NOT directly expose the data to external sources.
+    -  Application_timestamp will be returned as a UTC timezone, as such will NOT match exactly how it is stored within legacy databases.
+
+    The Digital Register project team and Counter Fraud team are available to support you through this process.
+  contact:
+    name: Digital Register Team
+    url: https://landregistry.gov.uk
+    email: DigitalRegister@landregistry.gov.uk
+  version: 6.0.0
+servers:
+- url: http://localhost:8080/api/v1/
+  description: Local development server (outside dev-env)
+- url: http://localhost:4780/api/v1/
+  description: Local development server (devenv)
+- url: https://land-register.development.stp.hmlr.zone/api/v1/
+  description: Remote development server
+- url: http://10.79.1.126:5001/api/v1/
+  description: Integration environment
+- url: http://10.79.1.119:5001/api/v1/
+  description: Acceptance environment
+- url: https://integration-land-register-service.apps.core.test.stp.hmlr.zone/api/v1
+  description: STP integration environment
+- url: https://preview-land-register-service.apps.core.test.stp.hmlr.zone/api/v1
+  description: STP preview environment (Acceptance)
+- url: https://analysis-land-register-service.apps.core.test.stp.hmlr.zone/api/v1
+  description: STP analysis environment
+- url: https://syt1-land-register-service.apps.core.test.stp.hmlr.zone/api/v1
+  description: STP SYT1 environment
+- url: https://syt2-land-register-service.apps.core.test.stp.hmlr.zone/api/v1
+  description: STP SYT2 environment
+- url: https://syt3-land-register-service.apps.core.test.stp.hmlr.zone/api/v1
+  description: STP SYT3 environment
+- url: https://uat1-land-register-service.apps.core.test.stp.hmlr.zone/api/v1
+  description: STP UAT1 environment
+- url: https://uat2-land-register-service.apps.core.test.stp.hmlr.zone/api/v1
+  description: STP UAT2 environment
+security:
+- bearerAuth: []
+tags:
+- name: interest
+  description: Operations relating to legal interests that relate parties and places.
+- name: party
+  description: Operations relating to persons or organisations.
+- name: place
+  description: Operations relating to land or property.
+- name: title
+  description: Operations relating to titles for land or property.
+paths:
+  /title/{titleNumber}:
+    get:
+      tags:
+      - title
+      summary: Gets summary information for the title with the specified title number.
+      description: |
+        ## Error responses
+        Calls to this endpoint may return the following error codes:
+        | Error code   | Message                                                                           | Cause                                                                                                                  |
+        |--------------|-----------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+        | `LRAPI00401` | The request could not be completed because a valid access token was not provided. | A valid access token must be provided to be able to access this data. Try the request again with a valid access token. |
+        | `LRAPI00404` | A title number must be provided.                                                  | The path parameter __{titleNumber}__ cannot be empty. Try the request again with a non-empty value.                    |
+        | `LRAPI01001` | The request failed to validate.                                                   | An invalid title number was provided. Check the value to ensure it does not violate the parameter constraints.         |
+        | `LRAPI02000` | Title number '__{titleNumber}__' does not exist.                                  | No title with the given title number could be found in the Land Register. Check that the title number is correct.      |
+      operationId: getTitle
+      parameters:
+      - name: titleNumber
+        in: path
+        description: |-
+          The unique reference number of the desired title.
+
+          ---
+
+          The following constraints apply to this parameter:
+          | Constraint                                                           | Error message                                           |
+          |----------------------------------------------------------------------|---------------------------------------------------------|
+          | The parameter must have a length less than or equal to 9 characters. | *The title number must be no longer than 9 characters.* |
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 9
+          type: string
+        example: AGL117262
+        x-validationMessages:
+          length: The title number must be no longer than 9 characters.
+      responses:
+        '200':
+          description: Summary information for the title.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TitleResponse'
+        '400':
+          description: An invalid title number was supplied.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: A valid access token was not provided.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: No title with the given title number could be found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /draft-titles/{titleNumber}:
+    get:
+      tags:
+      - draft-titles
+      summary: Gets summary information for the draft title with the specified title number.
+      description: |
+        ## Error responses
+        Calls to this endpoint may return the following error codes:
+        | Error code   | Message                                                                           | Cause     c                                                                                                            |
+        |--------------|-----------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+        | `LRAPI00401` | The request could not be completed because a valid access token was not provided. | A valid access token must be provided to be able to access this data. Try the request again with a valid access token. |
+        | `LRAPI00404` | A draft title number must be provided.                                            | The path parameter __{titleNumber}__ cannot be empty. Try the request again with a non-empty value.                    |
+        | `LRAPI01001` | The request failed to validate.                                                   | An invalid title number was provided. Check the value to ensure it does not violate the parameter constraints.         |
+        | `LRAPI90101` | No draft for title number '__{titleNumber}__' exists.                             | The given title number does not have a current draft associated with it. Check that the title number is correct.       |
+      operationId: getDraftTitle
+      parameters:
+      - name: titleNumber
+        in: path
+        description: |-
+          The unique reference number of the desired title.
+
+          ---
+
+          The following constraints apply to this parameter:
+          | Constraint                                                           | Error message                                           |
+          |----------------------------------------------------------------------|---------------------------------------------------------|
+          | The parameter must have a length less than or equal to 9 characters. | *The title number must be no longer than 9 characters.* |
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 9
+          type: string
+        example: AGL117262
+        x-validationMessages:
+          length: The title number must be no longer than 9 characters.
+      responses:
+        '200':
+          description: Summary information for the title.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TitleResponse'
+        '400':
+          description: An invalid title number was supplied.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: A valid access token was not provided.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: No title with the given title number could be found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    ErrorResponse:
+      required:
+      - error_code
+      - error_message
+      - reference
+      - status
+      type: object
+      properties:
+        error_message:
+          type: string
+          description: A human-readable message that provides a summary of the cause of the error.
+        reference:
+          type: string
+          description: |
+            The unique reference for the error.
+            Quote this reference when seeking technical support from the Digital Register team.
+          format: uuid
+        error_code:
+          type: string
+          description: An error code in the form <code>LRAPI<var>xxxxx</var></code> that identifies the cause of the error.
+        status:
+          maximum: 599
+          minimum: 400
+          type: integer
+          description: The HTTP status code returned by the server with this response.
+          format: int32
+      description: |
+        Returned when an error occurs while trying to serve a request.
+        It provides an error code for diagnostic purposes as well as a human-readable message.
+    TitleResponse:
+      allOf:
+      - $ref: '#/components/schemas/ResponseObject'
+      - $ref: '#/components/schemas/Title'
+      - type: object
+        properties:
+          interests:
+            $ref: '#/components/schemas/Interests'
+          concerns:
+            $ref: '#/components/schemas/Concerns'
+      x-wrapped-type: Title
+    ResponseObject:
+      type: object
+      properties:
+        data_issues:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataIssue'
+      description: |
+        Contains properties common to all successful response types of the Land Register API.
+      x-is-wrapper-type: true
+    DataIssue:
+      required:
+      - code
+      - message
+      - property_name
+      - reference
+      type: object
+      properties:
+        reference:
+          type: string
+          description: |
+            The unique reference for the data issue.
+            Quote this reference when seeking technical support from the Digital Register team.
+          format: uuid
+        code:
+          $ref: '#/components/schemas/DataQualityIssueType'
+        message:
+          type: string
+          description: A human-readable message that provides a summary of the cause of the issue.
+          example: The entry text is currently unavailable.
+        property_name:
+          type: string
+          description: |
+            The name of the property that this issue was raised for.
+            The full path from the root of the response (`response.body`) is provided, with nodes separated by the '.'
+            character.
+          example: response.body.entries[0].entry_text
+      description: |
+        Represents a single issue with the quality of the data available in the Land Register.
+    DataQualityIssueType:
+      type: string
+      description: |
+        An issue code in the form <code>data_quality_<var>issue_type</var></code> that identifies the cause of the issue.
+      example: data_quality_no_entry_text
+      enum:
+      - data_quality_language_code_invalid
+      - data_quality_class_of_title_invalid
+      - data_quality_tenure_invalid
+      - data_quality_no_entry_text
+      - data_quality_estate_interest_invalid
+      - data_quality_class_invalid_for_tenure
+      - data_quality_schedule_code_invalid
+      - data_quality_multiple_h_schedules
+      - data_quality_multiple_q_schedules
+      - data_quality_timeshare_lease_code_invalid
+      - data_quality_commonhold_type_invalid
+      - data_quality_continued_relationship_invalid
+      - data_quality_previous_relationship_invalid
+      - data_quality_previous_title_number_invalid
+      - data_quality_continued_title_number_invalid
+      - data_quality_proprietor_type_invalid
+      - data_quality_address_multiple_rdes
+      - data_quality_rdes_address_missing
+      - data_quality_schedule_address_blank
+      - data_quality_no_entry_role_code
+      - data_quality_price_paid_amount_missing
+      - data_quality_price_paid_date_missing
+      - data_quality_price_paid_lower_amount_missing
+      - data_quality_price_paid_upper_amount_missing
+      - data_quality_price_paid_additional_properties_missing
+      - data_quality_alias_name_missing
+      - data_quality_proprietor_address_missing
+      - data_quality_proprietor_address_description_missing
+      - data_quality_proprietor_surname_missing
+      - data_quality_proprietor_name_missing
+      - data_quality_price_paid_draft_entry_version_unknown
+      - data_quality_charge_date_missing
+      - data_quality_chargee_missing
+      - data_quality_chargee_surname_missing
+      - data_quality_chargee_name_missing
+      - data_quality_chargee_postal_address_missing
+      - data_quality_chargee_address_description_missing
+      - data_quality_multiple_charge_on_chargee_entry
+      - data_quality_invalid_value_for_covenantor
+      - data_quality_covenant_missing_source_type
+      - data_quality_incorrect_spelling_of_covenantor
+      - data_quality_validation_issue
+      - data_quality_incorrect_number_of_infills
+      - data_quality_charge_date_mismatch_on_obligation
+      - data_quality_obligation_exists_but_no_charge_exists
+      - data_quality_charge_date_missing_from_obligation
+      - data_quality_charge_date_missing_from_charge_restriction
+      - data_quality_charge_party_missing_from_charge_restriction
+      - data_quality_charge_missing_for_charge_restriction
+      - data_quality_charge_id_missing_for_charge_restriction
+      - data_quality_charge_date_missing_from_postponement
+      - data_quality_charge_date_mismatch_on_postponement
+      - data_quality_postponement_exists_but_no_charge_exists
+      - data_quality_postponement_charge_date_infill_number_mismatches_number_of_charges_on_postponement
+      - data_quality_multiple_price_paid_entries_exist_but_single_price_paid_expected
+      - data_quality_no_interests
+      - data_quality_entry_date_missing_from_restriction
+      - data_quality_beneficiary_missing_from_notice
+      - data_quality_beneficiary_missing_from_charge
+      - data_quality_charging_order_type_incorrect_on_equitable_charge
+      - data_quality_charging_order_type_missing_from_equitable_charge
+      - data_quality_source_parties_missing_from_charge
+      - data_quality_expiry_date_missing_from_charge
+      - data_quality_incorrect_spelling_of_other_than_a_charge
+      - data_quality_invalid_other_than_a_charge_when_not_disposition
+      - data_quality_invalid_other_than_a_charge
+      - data_quality_missing_charge_id
+      - data_quality_impacted_action_corrected
+      - data_quality_invalid_impacted_action
+      - data_quality_unilateral_notice_missing
+      - data_quality_beneficiary_missing_from_unilateral_notice
+      - data_quality_notice_date_missing_from_notice
+      - data_quality_charge_date_missing_from_notice
+      - data_quality_church_missing_from_notice
+      - data_quality_deed_parties_missing_from_notice
+      - data_quality_deed_type_missing_from_notice
+      - data_quality_deed_date_missing_from_notice
+      - data_quality_protected_interest_missing_from_notice
+      - data_quality_lease_term_missing_or_incomplete_from_notice
+      x-enum-description:
+      - |
+        The data quality code used when a language code is encountered that is not either `ENG` (English) or `CYM` (Welsh).
+      - |
+        The data quality code used when the class of a title cannot be determined.
+      - |
+        The data quality code used when the tenure of a title cannot be determined.
+      - |
+        The data quality code used when the text of a register entry could not be retrieved.
+      - |
+        The data quality code used when the estate interest of a title cannot be determined.
+      - |
+        The data quality code used when the class of a title is inapplicable given its tenure.
+      - |
+        The data quality code used when the sub-register or schedule of a title cannot be determined.
+      - |
+        The data quality code used when the title has more than one entry with a schedule code of H.
+      - |
+        The data quality code used when the title has more than one entry with a schedule code of Q.
+      - |
+        The data quality code used when the timeshare lease code is invalid.
+      - |
+        The data quality code used when the commonhold type is invalid.
+      - |
+        The data quality code used when the related title number does not have a corresponding previous title number.
+      - |
+        The data quality code used when the related title number does not have a corresponding continued title number.
+      - |
+        The previous title number is invalid.
+      - |
+        The continued title number is invalid.
+      - |
+        The proprietor type is invalid.
+      - |
+        The title has more than one current RDES entry.
+      - |
+        The title has no address and no schedule exists.
+      - |
+        The title has a schedule address with a blank property description.
+      - |
+        This entry does not have a role code.
+      - |
+        The title has a price paid entry with no amount.
+      - |
+        The title has a price paid entry with no date.
+      - |
+        The title has a price paid entry with no lower amount.
+      - |
+        The title has a price paid entry with no upper amount.
+      - |
+        The title has a price paid entry with no additional properties information.
+      - |
+        The title has an alias entry with missing forename and/or surname.
+      - |
+        The title has a proprietor with no address.
+      - |
+        The title has a proprietor address with no description.
+      - |
+        The title has a proprietor with a missing surname.
+      - |
+        The title has a proprietor with a missing name.
+      - |
+        The price paid is not present because of a system issue mapping from the source data. The draft entry version for the price paid entry is unknown.
+      - |
+        The title has a charge that is missing the charge date.
+      - |
+        The title has a charge that does not have a chargee.
+      - |
+        The title has a chargee entry with a missing surname.
+      - |
+        The title has a charge with a chargee that has a missing name.
+      - |
+        The title has a charge with a chargee that has a missing address.
+      - |
+        The title has a charge with a chargee that has a missing address description.
+      - |
+        The title has a chargee entry linked to more than one charge entry.
+      - |
+        The title has a personal covenant entry with a covenantor that is invalid.
+      - |
+        Deeds deed_type (personal_covenants source type) is blank.
+      - |
+        The title has a personal covenant entry with an incorrectly entered.
+      - |
+        A validation issue was found the the specified entry.
+      - |
+        Incorrect number of infills provided.
+      - |
+        The title has an obligation with a charge but the date does not match the date on the charge.
+      - |
+        The title has an obligation but the related charge information is missing. The LegacyEntryId of the obligation without an associated charge is:
+      - |
+        The title has an obligation missing the charge date.
+      - |
+        The title has a charge restriction without a charge date.
+      - |
+        The title has a charge restriction without a compliance authority which is provided by the charge party.
+      - |
+        The title has a charge restriction but the related charge is either missing, cancelled or discharged.
+      - |
+        The title has a charge restriction but the related charge id is missing.
+      - |
+        The title has a postponement missing a charge date.
+      - |
+        The title has a postponement with a charge date that does not match the date on the charge.
+      - |
+        The title has a postponement but the related charge information is missing. The LegacyEntryId of the postponement without an associated charge is:
+      - |
+        The title has a postponement with multiple charges and relevant data is not held in expected infills.
+      - |
+        The title has multiple price paid entries but should only have a single entry.
+      - |
+        Unable to retrieve interests or concerns for title.
+      - |
+        The title has a restriction missing an entry date.
+      - |
+        The title has a notice with a missing beneficiary.
+      - |
+        The title has a charge without an expected beneficiary.
+      - |
+        The title has an equitable charge with an incorrect charging order type.
+      - |
+        The title has an equitable charge without a charging order type.
+      - |
+        The title has a charge missing the party information.
+      - |
+        The title has a charge without an expiry date.
+      - |
+        The exemption ‘(other than a charge)’ has incorrect spelling.
+      - |
+        The exemption ‘(other than a charge)’ can only be included where the impacted action is ‘disposition'.
+      - |
+        The exemption must be ‘(other than a charge)'.
+      - |
+        The title has a charge with a missing charge id.
+      - |
+        The impacted action has an incorrect spelling or contains erroneous characters that cannot be corrected.
+      - |
+        The impacted action has an incorrect spelling or contains erroneous characters.
+      - |
+        The title has a beneficary but the corresponding unilateral notice is not present.
+      - |
+        The title has an entry relating to a unilateral notice but the corresponding beneficiary is not present.
+      - |
+        The title has a notice missing a notice date.
+      - |
+        The title has a notice missing a charge date.
+      - |
+        The title has a notice with a missing named church in the protected interest.
+      - |
+        The title has a notice with the deed parties missing.
+      - |
+        The title has a notice with the deed type or agreement type missing.
+      - |
+        The title has a notice missing a deed date.
+      - |
+        The title has a notice with the protected interest missing.
+      - |
+        The title has a notice with the lease term missing or incomplete.
+    Title:
+      required:
+      - application_reference
+      - caution_against_first_registration
+      - entries
+      - prices_paid
+      - properties
+      - proprietors
+      - status
+      - title_number
+      type: object
+      properties:
+        previous_title_number:
+          maxLength: 9
+          type: string
+          description: |
+            Title number that was previously allocated to a property.
+          example: AGL117262
+          x-data-quality:
+          - tag: data_quality_previous_title_number_invalid
+            message: The previous title number is invalid.
+        title_number:
+          maxLength: 9
+          type: string
+          description: The unique reference number that refers to this title.
+          example: AGL117262
+        scheme_status:
+          $ref: '#/components/schemas/SchemeStatus'
+        continuation_title_number:
+          maxLength: 9
+          type: string
+          description: |
+            Title number under which a closed title has been continued.
+          example: AGL117262
+          x-data-quality:
+          - tag: data_quality_continued_title_number_invalid
+            message: The continued title number is invalid.
+        application_timestamp:
+          type: string
+          description: |
+            The date and time that the latest application to make a substantive change to the register for this title was
+            submitted.
+
+            **NB**: This timestamp is provided in UTC, which may mean that it differs by an hour from
+            the value found in the Intelligent Register, as it is configured to use BST in the summer months.
+          format: date-time
+          example: '2011-02-11T13:44:02Z'
+        caution_against_first_registration:
+          type: boolean
+          description: |
+            Boolean value stating whether this title is a caution against first registration.
+          example: true
+        application_reference:
+          type: string
+          description: |
+            The Application Barcode Reference (ABR) of the latest application to make a substantive change to the register
+            for this title.
+          example: BADD31A
+        timeshare_lease_issued:
+          type: boolean
+          description: |
+            Indicates whether a timeshare discontinuous lease has been issued out of this title.
+          example: true
+          x-data-quality:
+          - tag: data_quality_timeshare_lease_code_invalid
+            message: The timeshare lease code is invalid.
+        prices_paid:
+          type: array
+          description: Describes the Price Paid or the Value Stated for a Property
+          items:
+            $ref: '#/components/schemas/PricePaid'
+          x-data-quality:
+          - tag: data_quality_price_paid_draft_entry_version_unknown
+            message: The price paid is not present because of a system issue mapping from the source data. The draft entry version for the price paid entry is unknown.
+          - tag: data_quality_multiple_price_paid_entries_exist_but_single_price_paid_expected
+            message: The title has multiple price paid entries but should only have a single entry.
+        proprietors:
+          type: array
+          description: The list of proprietors relating to this title.
+          items:
+            discriminator:
+              propertyName: proprietor_type
+              mapping:
+                private individual: '#/components/schemas/PrivateIndividual'
+                organisation: '#/components/schemas/Organisation'
+            oneOf:
+            - $ref: '#/components/schemas/PrivateIndividual'
+            - $ref: '#/components/schemas/Organisation'
+            x-force-type: Proprietor
+          x-force-type: List<Proprietor>
+        district_name:
+          maxLength: 38
+          type: string
+          description: |
+            The Name of an administrative district created since local government reorganisation 1974.
+            Administrative district also covers the London boroughs, unitary authorities and for (HMLR’s purposes) the Isles of Scilly parishes which encompasses the extent of the title.
+            A Title extent can occur over multiple districts but currently only the main primary district is being surfaced. Multiple districts will be available in later releases of data.
+          example: STRATFORD-ON-AVON
+        entries:
+          type: array
+          description: The list of current entries on the register for this title.
+          items:
+            $ref: '#/components/schemas/RegisterEntry'
+          x-data-quality:
+          - tag: data_quality_schedule_code_invalid
+            message: Ordering of entries failed due to an invalid schedule code.
+          - tag: data_quality_multiple_h_schedules
+            message: The title has more than one entry with a schedule code of H.
+          - tag: data_quality_multiple_q_schedules
+            message: The title has more than one entry with a schedule code of Q.
+        pre_act_caution:
+          type: boolean
+          description: |
+            Boolean value stating whether a caution against first registration was lodged prior to the LR Act 2002.
+            This is only applicable for titles identified as cautions against first registration - caution_against_first_registration is true.
+          example: true
+        edition_date:
+          type: string
+          description: |
+            The date on which the current version of the register was published.
+          format: date
+        estate_interest:
+          $ref: '#/components/schemas/EstateInterest'
+        properties:
+          type: array
+          description: The list of properties relating to this title.
+          items:
+            $ref: '#/components/schemas/Property'
+          x-data-quality:
+          - tag: data_quality_address_multiple_rdes
+            message: The title has more than one current RDES entry.
+          - tag: data_quality_rdes_address_missing
+            message: The title has no address and no schedule exists.
+        class_of_title:
+          $ref: '#/components/schemas/ClassOfTitle'
+        tenure:
+          $ref: '#/components/schemas/Tenure'
+        commonhold_type:
+          $ref: '#/components/schemas/CommonholdType'
+        developer_status:
+          $ref: '#/components/schemas/DeveloperStatus'
+        status:
+          $ref: '#/components/schemas/TitleStatusInfo'
+      description: |
+        Represents a title for land or property.
+    Tenure:
+      type: string
+      description: "The tenure of a title determines the rights of that title's proprietor(s).\n\
+        \nCurrently, the law in England and Wales permits two kinds of interest: *freehold*\
+        \ and *leasehold*.\n\n\n---\n\nA property of this type may be any of the following\
+        \ values:\n- `freehold`: Indicates that this is a freehold title; i.e. that\
+        \ full, perpetual, ownership rights of the specified property and\n  land\
+        \ are granted to the proprietor(s).\n  \n- `leasehold`: Indicates that this\
+        \ is a leasehold title; i.e. that possessory rights of the property (but not\
+        \ the land) have been\n  granted to the proprietor(s) for the duration of\
+        \ the lease agreement with the freeholder(s).\n  "
+      example: freehold
+      enum:
+      - freehold
+      - leasehold
+      x-enum-descriptions:
+      - |
+        Indicates that this is a freehold title; i.e. that full, perpetual, ownership rights of the specified property and
+        land are granted to the proprietor(s).
+      - |
+        Indicates that this is a leasehold title; i.e. that possessory rights of the property (but not the land) have been
+        granted to the proprietor(s) for the duration of the lease agreement with the freeholder(s).
+    ClassOfTitle:
+      type: string
+      description: "The *class of title* is a measure of confidence that HM Land Registry\
+        \ has in guaranteeing the proprietor(s) of the\ntitle against a legal challenge\
+        \ to that title.\n\n\n---\n\nA property of this type may be any of the following\
+        \ values:\n- `absolute`: A *title absolute* is conferred to the proprietor(s)\
+        \ if it is determined that the claim to proprietorship is\n  indisputable.\n\
+        \  When a title is first registered, it is required to provide a complete\
+        \ history of ownership for the 15 years prior\n  to registration.\n  In the\
+        \ case of a leasehold title, it is also required to prove that the landlord\
+        \ has the rights to grant a lease -\n  either through demonstrating 15 years\
+        \ of ownership history, or through an official copy of the register if the\n\
+        \  freehold is already registered.\n  Most titles are considered to be titles\
+        \ absolute.\n  \n- `good`: A *good leasehold* title is conferred to the proprietor(s)\
+        \ if the claim to the leasehold title is satisfactory,\n  but the landlord's\
+        \ claim to the freehold title cannot be verified.\n  In such a situation,\
+        \ it is unknown whether the claimed landlord has the power to grant such a\
+        \ lease, or whether\n  any covenants or restrictions affect the property.\n\
+        \  \n- `qualified`: A *qualified title* is conferred to the proprietor(s)\
+        \ if the claim to proprietorship is incomplete.\n  Such a class of title would\
+        \ be granted if, when first registered, did not fully account for the 15 years\
+        \ prior to\n  registration.\n  A qualified title is susceptible to being challenged\
+        \ by a person with a stronger claim to the title.\n  \n- `possessory`: A *possessory\
+        \ title* is conferred to the proprietor(s) when proprietorship is claimed\
+        \ by right of adverse\n  possession or when no documentation can be provided\
+        \ asserting the title.\n  "
+      example: absolute
+      enum:
+      - absolute
+      - good
+      - qualified
+      - possessory
+      x-enum-descriptions:
+      - |
+        A *title absolute* is conferred to the proprietor(s) if it is determined that the claim to proprietorship is
+        indisputable.
+        When a title is first registered, it is required to provide a complete history of ownership for the 15 years prior
+        to registration.
+        In the case of a leasehold title, it is also required to prove that the landlord has the rights to grant a lease -
+        either through demonstrating 15 years of ownership history, or through an official copy of the register if the
+        freehold is already registered.
+        Most titles are considered to be titles absolute.
+      - |
+        A *good leasehold* title is conferred to the proprietor(s) if the claim to the leasehold title is satisfactory,
+        but the landlord's claim to the freehold title cannot be verified.
+        In such a situation, it is unknown whether the claimed landlord has the power to grant such a lease, or whether
+        any covenants or restrictions affect the property.
+      - |
+        A *qualified title* is conferred to the proprietor(s) if the claim to proprietorship is incomplete.
+        Such a class of title would be granted if, when first registered, did not fully account for the 15 years prior to
+        registration.
+        A qualified title is susceptible to being challenged by a person with a stronger claim to the title.
+      - |
+        A *possessory title* is conferred to the proprietor(s) when proprietorship is claimed by right of adverse
+        possession or when no documentation can be provided asserting the title.
+    TitleStatusInfo:
+      required:
+      - value
+      type: object
+      properties:
+        date:
+          type: string
+          description: |
+            The date that the status of the title was changed.
+            The date will only be populated for 'closed' titles.
+          format: date
+        value:
+          $ref: '#/components/schemas/TitleStatus'
+      description: |
+        Encapsulates information related to the status of the title.
+    TitleStatus:
+      type: string
+      description: "The status of a title represents whether it is a pending new title\
+        \ (no register exists), open\n(register exists) or closed.\nAn open title\
+        \ is one which is still in effect, whereas a closed title is no longer legally\
+        \ binding.\nA title in 'pending new title' status will not contain any entries\
+        \ within the API response because\nentries are only added to the current version\
+        \ of the title when its first order is completed. \nA title with 'pending\
+        \ new title' status is a new title that has either been created from an old\n\
+        (existing) title or a first registration where the order to create the register\
+        \ has not\nyet been completed.\nA 'pending new title' can be part of a developing\
+        \ title, which is indicated by the developer_status property.\n\n\n---\n\n\
+        A property of this type may be any of the following values:\n- `open`: Open\n\
+        \  \n- `closed`: Closed\n  \n- `pending new title`: Pending new title\n  "
+      example: open
+      enum:
+      - open
+      - closed
+      - pending new title
+      x-enum-descriptions:
+      - |
+        Open
+      - |
+        Closed
+      - |
+        Pending new title
+    EstateInterest:
+      type: string
+      description: "Describes the type of *legal interest* (the collection of rights)\
+        \ of an *estate* (the land to which these rights\napply).\n\n\n---\n\nA property\
+        \ of this type may be any of the following values:\n- `estate in land`: An\
+        \ *estate in land* refers to ownership or possessory rights to land or property.\n\
+        \  \n  A freehold title or a leasehold title would be an example of an estate\
+        \ in land.\n  \n- `affecting franchise`: A *franchise* is a right granted\
+        \ by the Crown through a charter or letters patent, such as the right to host\
+        \ a\n  market or a fair.\n  A title to franchise does not grant any ownership\
+        \ to the land in question; it is distinct from freehold or\n  leasehold titles.\n\
+        \  \n  A franchise is an *affecting franchise* if it is registered to a defined\
+        \ extent of land and is capable of\n  affecting the title to an estate.\n\
+        \  Otherwise, the franchise is a *relating franchise*.\n  \n- `relating franchise`:\
+        \ A *franchise* is a right granted by the Crown through a charter or letters\
+        \ patent, such as the right to host a\n  market or a fair.\n  A title to franchise\
+        \ does not grant any ownership to the land in question; it is distinct from\
+        \ freehold or\n  leasehold titles.\n  \n  A franchise is an *affecting franchise*\
+        \ if it is registered to a defined extent of land and is capable of\n  affecting\
+        \ the title to an estate.\n  Otherwise, the franchise is a *relating franchise*.\n\
+        \  \n- `manor`: A *manor* was, historically, central to feudalism - either\
+        \ the Crown or a superior lord would grant ownership and\n  other rights in\
+        \ exchange for their allegiance and service.\n  \n  From a modern perspective,\
+        \ there are three main elements:\n  - The *lordship*, the owner of which is\
+        \ entitled to refer to themself as the lord of that manor\n  - The *manorial*,\
+        \ which refers to the land and the manor house upon it\n  - The *seignory*,\
+        \ which refers to additional rights on the land which have been reserved by\
+        \ the lord, such as\n    hunting or fishing rights\n  \n- `profit à prendre\
+        \ in gross`: A *profit à prendre in gross* is the right to take a natural\
+        \ resource from another person's land.\n  The owner of the profit may exercise\
+        \ that right irrespective of the ownership of the land in question.\n  The\
+        \ profit also effectively grants an easement on the land due to the necessity\
+        \ of physically accessing the\n  resource in order to take it.\n  \n- `rentcharge`:\
+        \ A *rentcharge* is a regular payment made between the owner of a freehold\
+        \ title and another person who otherwise\n  has no additional interest in\
+        \ the land.\n  This distinguishes a rentcharge from ground rent (which is\
+        \ only applicable to leasehold titles) or from a charge\n  (which is the use\
+        \ of a title as collateral in order to protect a lender in the event that\
+        \ a borrower defaults on\n  their repayments).\n  \n  A rentcharge is *terminable*\
+        \ if it is only applicable for a fixed term; otherwise, it is *perpetual*.\n\
+        \  \n- `perpetual rentcharge`: A *rentcharge* is a regular payment made between\
+        \ the owner of a freehold title and another person who otherwise\n  has no\
+        \ additional interest in the land.\n  This distinguishes a rentcharge from\
+        \ ground rent (which is only applicable to leasehold titles) or from a charge\n\
+        \  (which is the use of a title as collateral in order to protect a lender\
+        \ in the event that a borrower defaults on\n  their repayments).\n  \n  A\
+        \ rentcharge is *terminable* if it is only applicable for a fixed term; otherwise,\
+        \ it is *perpetual*.\n  \n- `terminable rentcharge`: A *rentcharge* is a regular\
+        \ payment made between the owner of a freehold title and another person who\
+        \ otherwise\n  has no additional interest in the land.\n  This distinguishes\
+        \ a rentcharge from ground rent (which is only applicable to leasehold titles)\
+        \ or from a charge\n  (which is the use of a title as collateral in order\
+        \ to protect a lender in the event that a borrower defaults on\n  their repayments).\n\
+        \  \n  A rentcharge is *terminable* if it is only applicable for a fixed term;\
+        \ otherwise, it is *perpetual*.\n  "
+      example: estate in land
+      enum:
+      - estate in land
+      - affecting franchise
+      - relating franchise
+      - manor
+      - profit à prendre in gross
+      - rentcharge
+      - perpetual rentcharge
+      - terminable rentcharge
+      x-enum-descriptions:
+      - |
+        An *estate in land* refers to ownership or possessory rights to land or property.
+
+        A freehold title or a leasehold title would be an example of an estate in land.
+      - |
+        A *franchise* is a right granted by the Crown through a charter or letters patent, such as the right to host a
+        market or a fair.
+        A title to franchise does not grant any ownership to the land in question; it is distinct from freehold or
+        leasehold titles.
+
+        A franchise is an *affecting franchise* if it is registered to a defined extent of land and is capable of
+        affecting the title to an estate.
+        Otherwise, the franchise is a *relating franchise*.
+      - |
+        A *franchise* is a right granted by the Crown through a charter or letters patent, such as the right to host a
+        market or a fair.
+        A title to franchise does not grant any ownership to the land in question; it is distinct from freehold or
+        leasehold titles.
+
+        A franchise is an *affecting franchise* if it is registered to a defined extent of land and is capable of
+        affecting the title to an estate.
+        Otherwise, the franchise is a *relating franchise*.
+      - |
+        A *manor* was, historically, central to feudalism - either the Crown or a superior lord would grant ownership and
+        other rights in exchange for their allegiance and service.
+
+        From a modern perspective, there are three main elements:
+        - The *lordship*, the owner of which is entitled to refer to themself as the lord of that manor
+        - The *manorial*, which refers to the land and the manor house upon it
+        - The *seignory*, which refers to additional rights on the land which have been reserved by the lord, such as
+          hunting or fishing rights
+      - |
+        A *profit à prendre in gross* is the right to take a natural resource from another person's land.
+        The owner of the profit may exercise that right irrespective of the ownership of the land in question.
+        The profit also effectively grants an easement on the land due to the necessity of physically accessing the
+        resource in order to take it.
+      - |
+        A *rentcharge* is a regular payment made between the owner of a freehold title and another person who otherwise
+        has no additional interest in the land.
+        This distinguishes a rentcharge from ground rent (which is only applicable to leasehold titles) or from a charge
+        (which is the use of a title as collateral in order to protect a lender in the event that a borrower defaults on
+        their repayments).
+
+        A rentcharge is *terminable* if it is only applicable for a fixed term; otherwise, it is *perpetual*.
+      - |
+        A *rentcharge* is a regular payment made between the owner of a freehold title and another person who otherwise
+        has no additional interest in the land.
+        This distinguishes a rentcharge from ground rent (which is only applicable to leasehold titles) or from a charge
+        (which is the use of a title as collateral in order to protect a lender in the event that a borrower defaults on
+        their repayments).
+
+        A rentcharge is *terminable* if it is only applicable for a fixed term; otherwise, it is *perpetual*.
+      - |
+        A *rentcharge* is a regular payment made between the owner of a freehold title and another person who otherwise
+        has no additional interest in the land.
+        This distinguishes a rentcharge from ground rent (which is only applicable to leasehold titles) or from a charge
+        (which is the use of a title as collateral in order to protect a lender in the event that a borrower defaults on
+        their repayments).
+
+        A rentcharge is *terminable* if it is only applicable for a fixed term; otherwise, it is *perpetual*.
+    DeveloperStatus:
+      type: string
+      description: "Any title which is part of a developing estate is identified as\
+        \ such as early as\npossible by the use of the developer status and this ensures\
+        \ that all titles within\na plot can be managed in the same way providing\
+        \ an efficient process and improved\ncustomer experience.\nThe developer status\
+        \ can be added and removed without an application being raised.\nWhen developer\
+        \ status is added the status is 'currently a developing title'\nand on removal\
+        \ of developer status it changes to 'previously a developing title'.\nIf the\
+        \ title is not part of a developing estate then the status will\nbe set to\
+        \ 'title is not a developing title'.\nA title that is a developing title can\
+        \ also have a title status of 'pending new title'.\n\n\n---\n\nA property\
+        \ of this type may be any of the following values:\n- `currently a developing\
+        \ title`: Currently a developing title\n  \n- `previously a developing title`:\
+        \ Previously a developing title\n  \n- `title is not a developing title`:\
+        \ Title is not a developing title\n  "
+      example: currently a developing title
+      enum:
+      - currently a developing title
+      - previously a developing title
+      - title is not a developing title
+      x-enum-descriptions:
+      - |
+        Currently a developing title
+      - |
+        Previously a developing title
+      - |
+        Title is not a developing title
+    CommonholdType:
+      type: string
+      description: |
+        A lookup value which indicates whether the current status of a Title which is registered as
+        commonhold is that of a ‘common parts title’ or ‘common unit title’.
+      example: part
+      enum:
+      - part
+      - unit
+    SchemeStatus:
+      maxLength: 52
+      type: string
+      description: "Whether a title number is a scheme title or not and if so whether\
+        \ it is a current scheme title or\na pre-allocated scheme title number with\
+        \ no applications pending.\n\n\n---\n\nA property of this type may be any\
+        \ of the following values:\n- `current scheme title`: Current scheme title.\n\
+        \  \n- `pre-allocated scheme title, no applications pending`: Pre-allocated\
+        \ scheme title, no applications pending.\n  \n- `title is not a scheme title`:\
+        \ Title is not a scheme title.\n  "
+      example: pre-allocated scheme title, no applications pending
+      enum:
+      - current scheme title
+      - pre-allocated scheme title, no applications pending
+      - title is not a scheme title
+      x-enum-descriptions:
+      - |
+        Current scheme title.
+      - |
+        Pre-allocated scheme title, no applications pending.
+      - |
+        Title is not a scheme title.
+    RegisterEntry:
+      required:
+      - legacy_entry_id
+      - register_sequence
+      type: object
+      properties:
+        entry_text:
+          type: string
+          description: Full entry text as shown on the register.
+          example: No disposition by a sole proprietor of the registered estate (except a trust corporation) under which capital money arises is to be registered unless authorised by an order of the court.
+          x-data-quality:
+          - tag: data_quality_no_entry_text
+            message: The entry text is currently unavailable.
+        language_code:
+          $ref: '#/components/schemas/LanguageCode'
+        schedule:
+          $ref: '#/components/schemas/ScheduleInfo'
+        legacy_entry_id:
+          type: string
+          description: |
+            The unique identifier for this entry as used by the legacy database.
+          example: '2017-06-04T04:34:52.817+00:00'
+        draft_entry_code:
+          maxLength: 5
+          minLength: 5
+          pattern: ^[A-Z0-9]{5}$
+          type: string
+          description: |
+            Identifies the *computerised register entry* (CRE) or *computerised search entry* (CSE) that this entry has used
+            as an entry template.
+          example: BX900
+        sub_register_sequence:
+          minimum: 1
+          type: integer
+          description: The position of the entry within its sub register (or schedule, if specified).
+          format: int32
+          example: 1
+        role_code:
+          maxLength: 4
+          minLength: 4
+          pattern: ^[A-Z0-9]{4}$
+          type: string
+          description: A four-character code that identifies the role that an entry fulfills within the register.
+          example: OJPR
+          x-data-quality:
+          - tag: data_quality_no_entry_role_code
+            message: This entry does not have a role code.
+        draft_entry_version:
+          minimum: 1
+          type: integer
+          description: The version number of the entry template used to create this entry.
+          format: int32
+          example: 1
+        entry_sequence:
+          minimum: 1
+          type: integer
+          description: The position of the entry within the entire register.
+          format: int32
+          example: 1
+        entry_date:
+          type: string
+          description: The date on which the entry was added to the register.
+          format: date
+        sub_register_code:
+          $ref: '#/components/schemas/SubRegister'
+      description: |
+        Represents an entry on the register for a title.
+    SubRegister:
+      type: string
+      description: |
+        A single-character code that identifies in which part of the register an entry resides.
+
+        The subregister code may be any of the following values:
+        - `A`: the entry is part of the property register
+        - `B`: the entry is part of the proprietorship register
+        - `C`: the entry is part of the charges register
+      example: A
+      enum:
+      - A
+      - B
+      - C
+    ScheduleInfo:
+      required:
+      - code
+      - sequence
+      type: object
+      properties:
+        sequence:
+          minimum: 1
+          type: integer
+          description: The position of the entry within its schedule.
+          format: int32
+          example: 1
+        code:
+          $ref: '#/components/schemas/ScheduleCode'
+        header:
+          type: object
+          additionalProperties:
+            type: string
+          description: |
+            The official header text of this schedule.
+            Note that H and Q schedules do not have header text; in this case, the header will have a value of `null`.
+          example:
+            eng: Schedule of rentcharges
+            cym: Atodlen rhent-daliadau cofrestredig
+      description: |
+        Encapsulates information about a schedule entry.
+    ScheduleCode:
+      type: string
+      description: |
+        A single-character code that identifies the schedule.
+        A schedule is an entry in the register that conforms to a particular structure.
+
+        The schedule code may be any of the following values:
+        - `D`: the entry is part of the schedule of deeds imposing restrictive covenants
+        - `F`: the entry is part of the schedule of leases of easements
+        - `H`: the entry is part of the schedule of a single registered lease
+        - `L`: the entry is part of the schedule of notices of lease
+        - `M`: the entry is part of the schedule of registered leases
+        - `P`: the entry is part of the schedule of properties
+        - `Q`: the entry is part of the schedule of a single registered lease, charged by a registered rentcharge
+        - `R`: the entry is part of the schedule of registered rentcharges
+        - `S`: the entry is part of the schedule of restrictive covenants
+        - `T`: the entry is part of the schedule of apportioned rent
+        - `W`: the entry is part of the schedule of rentcharges
+        - `X`: the entry is part of the schedule of personal covenants
+        - `Y`: the entry is part of the schedule of apportionments and exonerating rentcharges
+        - `Z`: the entry is part of the schedule of rentcharges created on transfer of part
+      example: L
+      enum:
+      - D
+      - F
+      - H
+      - L
+      - M
+      - P
+      - Q
+      - R
+      - S
+      - T
+      - W
+      - X
+      - Y
+      - Z
+    LanguageCode:
+      type: string
+      description: |
+        A three-character code representing a language according to the
+        [ISO 639-3 standard](https://iso639-3.sil.org/code_tables/639/data).
+      example: eng
+      enum:
+      - eng
+      - cym
+    Property:
+      required:
+      - address
+      - sequence
+      type: object
+      properties:
+        sequence:
+          minimum: 1
+          type: integer
+          description: The position of the property within the list.
+          format: int32
+          example: 1
+        address:
+          $ref: '#/components/schemas/Address'
+      description: |
+        Contains information related to a property.
+    Address:
+      required:
+      - description
+      - legacy_addr_id
+      type: object
+      properties:
+        legacy_addr_id:
+          type: string
+          description: |
+            The legacy identifier for the address.
+          example: '2017-06-04T04:34:52.817+00:00'
+        description:
+          maxLength: 1000
+          type: string
+          description: Full description of the address.
+          example: 123 fake street, Armada Way, Plymouth, Devon (PL1 2AB)
+          x-data-quality:
+          - tag: data_quality_schedule_address_blank
+            message: The title has a schedule address with a blank property description.
+      description: |
+        Contains information related to an address.
+    PrivateIndividual:
+      required:
+      - proprietor_type
+      properties:
+        aliases:
+          type: array
+          description: The list of aliases relating to this private individual.
+          items:
+            $ref: '#/components/schemas/PrivateIndividualAlias'
+        proprietor_type:
+          type: string
+          description: Classification of a proprietor to distinguish between a private individual and an organisation.
+          enum:
+          - private individual
+      description: |
+        Proprietor details for a private individual.
+      allOf:
+      - $ref: '#/components/schemas/Proprietor'
+      - $ref: '#/components/schemas/PrivateIndividualName'
+      x-discriminator-value: private individual
+    Proprietor:
+      type: object
+      properties:
+        sequence:
+          minimum: 1
+          type: integer
+          description: |
+            The position of the proprietor within the list.
+          format: int32
+          example: 1
+        addresses:
+          type: array
+          description: |
+            The list of addresses relating to this proprietor. These addresses are used for serving notices,
+            notifications or other communications by HM Land Registry staff.
+          items:
+            $ref: '#/components/schemas/ProprietorAddress'
+          x-data-quality:
+          - tag: data_quality_proprietor_address_missing
+            message: The title has a proprietor with no address.
+        legacy_name_id:
+          type: string
+          description: |
+            The legacy identifier for the proprietor name.
+          example: 2015-03-31-15.25.12.037850
+      description: |
+        The legal owner of the land or charge.
+      discriminator:
+        propertyName: proprietor_type
+        mapping:
+          private individual: '#/components/schemas/PrivateIndividual'
+          organisation: '#/components/schemas/Organisation'
+    ProprietorAddress:
+      type: object
+      properties:
+        building_name:
+          type: string
+          description: |
+            Name of residential or commercial premise.
+
+            The building name is a description applied to a single building or a small group of buildings, such as Highfield
+            House. This also includes those building numbers that contain non-numeric characters, such as 44A.
+            Some descriptive names, when included with the rest of the address, are sufficient to identify the property
+            uniquely and unambiguously, for example, MAGISTRATES COURT.
+
+            Sometimes the building name will be a blend of distinctive and descriptive naming, for example, RAILWAY
+            TAVERN (PUBLIC HOUSE) or THE COURT ROYAL (HOTEL).
+
+            The building number will be shown in this field when it contains a range, decimal or non-numeric character
+            (see Building Number field).
+
+            Condition:
+            Building Name must be present if Organisation Name, Building Number and PO Box Number are not present
+
+            `Legacy DB Mapping (table / column): T_ADDR_INFO_WORK / HOUSE_DESC`
+          example: ABBEY COURT
+        double_dependent_locality:
+          type: string
+          description: |
+            This is used to distinguish between similar thoroughfares or the same thoroughfare within a dependent
+            locality.
+
+            For example, Millbrook Industrial Estate and Cranford Estate in this situation: BRUNEL WAY,
+            MILLBROOK INDUSTRIAL ESTATE, MILLBROOK, SOUTHAMPTON and BRUNEL WAY, CRANFORD ESTATE,
+            MILLBROOK, SOUTHAMPTON.
+
+            Condition:
+            If a Double Dependent Locality is present, a Dependent Locality must also be present.
+
+            `Legacy DB Mapping (table / column): T_ADDR_INFO_WORK / LOCAL_NAME_2`
+          example: MATFORD BUSINESS PARK
+        postcode:
+          type: string
+          description: |
+            A postcode is an abbreviated form of address made up of combinations of between five and seven
+            alphanumeric characters. These are used by Royal Mail to help with the automated sorting of mail. A postcode
+            may cover between 1 and 100 addresses.
+
+            There are two main components of a postcode, for example, NW6 4DP:
+
+            * The outward code (or ‘outcode’). The first two–four characters of the postcode constituting the postcode
+            area and the postcode district, for example, NW6. It is the part of the postcode that enables mail to be sent
+            from the accepting office to the correct area for delivery.
+
+            * The inward code (or ‘incode’). The last three characters of the postcode constituting the postcode sector
+            and the postcode unit, example, 4DP. It is used to sort mail at the local delivery office.
+
+            `Legacy DB Mapping (table / column): T_ADDR_INFO_WORK / POSTCODE`
+          example: EX2 7HY
+        description:
+          maxLength: 1000
+          type: string
+          description: Full description of the property with its constituent parts combined.
+          example: 123 Smith Street, Plymouth (PL1 2AB)
+          x-validationMessages:
+            length: The address must be fewer than 1000 characters in length.
+          x-data-quality:
+          - tag: data_quality_proprietor_address_description_missing
+            message: The title has a proprietor address with no description.
+        sub_building_name:
+          type: string
+          description: |
+            The Sub Building Name and/or number are identifiers for subdivisions of properties.
+
+            Condition:
+            If a Sub Building Name is present a Building Name or Building Number must also be present.
+
+            `Legacy DB Mapping (table / column): T_ADDR_INFO_WORK / SUB_BLD_DESC`
+          example: UNIT 3-4
+        care_of_name:
+          type: string
+          description: |
+            Name of person, persons or organisation. Used in connection with an address which is 'care of', 'poste restante' or 'accommodation address'.
+            This field is only populated if care_of_indicator is true.
+          example: Hammonds Direct
+        type:
+          $ref: '#/components/schemas/AddressType'
+        thoroughfare:
+          type: string
+          description: |
+            A thoroughfare is fundamentally a road, track or named access route on which there are Royal Mail delivery
+            points, for example, HIGH STREET.
+
+            Condition:
+            Thoroughfare must be present if dependent thoroughfare is present.
+
+            `Legacy DB Mapping (table / column): T_ADDR_INFO_WORK / STREET_NAME`
+          example: EAGLE WAY
+        sequence:
+          minimum: 1
+          type: integer
+          description: The position of the address within the context of a single proprietor.
+          format: int32
+          example: 1
+          x-validationMessages:
+            minimum: The address sequence number must be a whole number greater than one.
+        dependent_locality:
+          type: string
+          description: |
+            Dependent locality areas define an area within a post town.
+
+            These are only necessary for postal purposes and
+            are used to aid differentiation where there are thoroughfares of the same name in the same locality.
+
+            For example, HIGH STREET in SHIRLEY and SWAYTHLING in this situation: HIGH STREET, SHIRLEY, SOUTHAMPTON
+            and HIGH STREET, SWAYTHLING, SOUTHAMPTON.
+
+            `Legacy DB Mapping (table / column): T_ADDR_INFO_WORK / LOCAL_NAME`
+          example: SOWTON INDUSTRIAL ESTATE
+        post_town:
+          type: string
+          description: |
+            The town or city in which the Royal Mail sorting office is located which services this record. There may be more
+            than one, possibly several, sorting offices in a town or city.
+
+            `Legacy DB Mapping (table / column): T_ADDR_INFO_WORK / TOWN_NAME`
+          example: EXETER
+        care_of_indicator:
+          type: boolean
+          description: |
+            Indicates whether or not an address is a 'care of', 'poste restante' or 'accommodation address'.
+            The address doesn't have to have a care_of_name if this is true. If the care_of_indicator is false, then care_of_name will not be set.
+          example: true
+        dependent_thoroughfare:
+          type: string
+          description: |
+            In certain places, for example, town centres, there are named thoroughfares within other named
+            thoroughfares, for example, parades of shops on a high street where different parades have their own identity.
+
+            For example, KINGS PARADE, HIGH STREET and QUEENS PARADE, HIGH STREET.
+
+            `Legacy DB Mapping (table / column): T_ADDR_INFO_WORK / STREET_NAME_2`
+          example: BEDFORD STREET
+        legacy_addr_id:
+          type: string
+          description: |
+            The legacy identifier for the address.
+          example: '2017-06-04T04:34:52.817+00:00'
+        building_number:
+          type: integer
+          description: |
+            The building number is a number given to a single building or a small group of buildings, thus identifying it
+            from its neighbours, for example, 44.
+
+            Building numbers that contain a range, decimals or non-numeric characters do not appear in this field but will
+            be found in the Building Name or the Sub Building Name fields
+
+            Condition:
+            Building Number must be present if Organisation Name, Building Name and PO Box Number are not present.
+
+            `Legacy DB Mapping (table / column): T_ADDR_INFO_WORK / HOUSE_NO`
+          format: int32
+          example: 12
+      description: |
+        Represents the address of a proprietor.
+    AddressType:
+      type: string
+      description: |
+        The Primary address must be UK, British Forces Post Office or Foreign. The other address types are Document Exchange, electronic or simply unknown.
+      example: uk
+      enum:
+      - uk
+      - bfpo
+      - foreign
+      - dx
+      - electronic
+      - unknown
+    Organisation:
+      allOf:
+      - $ref: '#/components/schemas/Proprietor'
+      - required:
+        - legacy_name_id
+        - location
+        - name
+        - organisation_type
+        - proprietor_type
+        - sequence
+        type: object
+        properties:
+          organisation_type:
+            $ref: '#/components/schemas/OrganisationType'
+          name:
+            maxLength: 366
+            type: string
+            description: |
+              Name of a company, corporate body, local authority or,
+              other organisation or establishment other than that of
+              a private individual.
+            example: ACME INC.
+            x-data-quality:
+            - tag: data_quality_proprietor_name_missing
+              message: The title has a proprietor with a missing name.
+          company_registration_number:
+            maxLength: 30
+            type: string
+            description: |
+              Number which is a unique identifier assigned to a company
+              when it is registered at Companies' House. Although the name of the company may change,
+              the company registration number will remain the same.
+            example: '9579244.0'
+          location:
+            $ref: '#/components/schemas/CompanyLocation'
+          proprietor_type:
+            type: string
+            description: Classification of a proprietor to distinguish between a private individual and an organisation.
+            enum:
+            - organisation
+        description: |
+          Proprietor details for an organisation.
+      x-discriminator-value: organisation
+    OrganisationType:
+      type: string
+      description: |
+        Fine-grained classification of an organisation.
+      example: corporate body
+      enum:
+      - private individual
+      - limited company or public limited company
+      - county council
+      - local authority
+      - corporate body
+      - industrial and provident society (company)
+      - industrial and provident society (corporate body)
+      - unknown (used for customer names only)
+      - unlimited company
+      - limited liability partnership
+      - housing association/society (company)
+      - housing association/society (corporate body)
+      - official custodian for charities
+      - official custodian for charities (on behalf of trustees)
+      - co-operative society (company)
+      - co-operative society (corporate body)
+      - community benefit society (company)
+      - community benefit society (corporate body)
+      - registered society (company)
+      - registered society (corporate body)
+      - housing association co-operative society (company)
+      - housing association co-operative society (corporate body)
+      - housing association community benefit society (company)
+      - housing association community benefit society (corporate body)
+      - housing association registered society (company)
+      - housing association registered society (corporate body)
+      - unknown (proprietor has no IOPN delimiters)
+    CompanyLocation:
+      type: string
+      description: |
+        The geographical location of the organisation.
+        A value of 'overseas' includes the Isle of Man and the Channel Islands.
+      example: england or wales
+      enum:
+      - england or wales
+      - scotland
+      - northern ireland
+      - overseas
+    PrivateIndividualName:
+      required:
+      - name
+      properties:
+        decor:
+          type: string
+          description: Text which contains the details of any decoration and/or title held by a private individual. e.g. 'OBE','GC', 'KCMG'. For those private individuals holding titles such as 'Duke of ...', 'Lord' etc., the particulars of such titles will be held in this field.
+          example: OBE
+        surname:
+          type: string
+          example: Smith
+          x-data-quality:
+          - tag: data_quality_proprietor_surname_missing
+            message: The title has a proprietor with a missing surname.
+        name:
+          type: string
+          description: Full name of the individual.
+          example: Mrs Sarah Louise Smith OBE
+        title:
+          type: string
+          example: Mrs
+        forenames:
+          type: string
+          example: Sarah Louise
+    PrivateIndividualAlias:
+      required:
+      - legacy_name_id
+      type: object
+      properties:
+        sequence:
+          minimum: 1
+          type: integer
+          description: |
+            The position of the alias within the list. Proprietor and alias lists are sequenced separately.
+          format: int32
+          example: 3
+        decor:
+          type: string
+          description: Text which contains the details of any decoration and/or title held by a private individual. e.g. 'OBE','GC', 'KCMG'. For those private individuals holding titles such as 'Duke of ...', 'Lord' etc., the particulars of such titles will be held in this field.
+          example: OBE
+        surname:
+          type: string
+          example: Smith
+        name:
+          type: string
+          description: Full name of the individual.
+          example: Mrs Sarah Louise Smith OBE
+          x-data-quality:
+          - tag: data_quality_alias_name_missing
+            message: The title has an alias entry with missing forename and/or surname.
+        legacy_name_id:
+          type: string
+          description: |
+            The legacy identifier for the alias.
+          example: 2015-03-31-15.25.12.037850
+        title:
+          type: string
+          example: Mrs
+        forenames:
+          type: string
+          example: Sarah Louise
+      description: |
+        An additional name, referred to in the register, that a private individual sometimes uses or is also known as.
+    PricePaid:
+      required:
+      - date
+      - price_paid_type
+      type: object
+      properties:
+        date:
+          $ref: '#/components/schemas/PricePaidDate'
+        sequence:
+          minimum: 1
+          type: integer
+          description: Number which identifies the position of one price paid item within the list. Most titles only have a single price paid item, which is the most recent amount for the property. Only titles containing multiple registered leases (with individual extents that have separate premiums) will contain a list and this is used to sequence that list. In this case, the extent for each item will be described in the additional_properties field e.g. "flat 6" and "garage 12".
+          format: int32
+          example: 1
+        amount:
+          example:
+            amount_type: single amount
+            description: £100,000
+          discriminator:
+            propertyName: amount_type
+          oneOf:
+          - $ref: '#/components/schemas/AmountSingle'
+          - $ref: '#/components/schemas/AmountRange'
+          x-force-type: Amount
+          x-data-quality:
+          - tag: data_quality_price_paid_amount_missing
+            message: The title has a price paid entry with no amount.
+          - tag: data_quality_price_paid_lower_amount_missing
+            message: The title has a price paid entry with no lower amount.
+          - tag: data_quality_price_paid_upper_amount_missing
+            message: The title has a price paid entry with no upper amount.
+        price_paid_type:
+          $ref: '#/components/schemas/PricePaidType'
+        legacy_entry_id:
+          type: string
+          example: 2019-11-18-12.52.12.555232
+        additional_properties:
+          type: string
+          description: |
+            The additional information held on the price paid item. This can be up to five title numbers
+            associated with the requested title number or it can be a property or extent description.
+            If the title has a price paid item and should have additional_properties information but it
+            is missing then a data quality issue of data_quality_price_paid_additional_properties_missing
+            is issued and additional_properties is set to null.
+            In most cases this field will be null since there are only a relatively small number of titles
+            with additional_properties associated with their price paid information.
+          example: titles AV583888 and DN394853
+          x-data-quality:
+          - tag: data_quality_price_paid_additional_properties_missing
+            message: The title has a price paid entry with no additional properties information.
+      description: |
+        Describes the Price Paid or the Value Stated for a Property.
+        In the case of Price Paid this will be the amount shown on
+        transfer/conveyance/lease as the price/premium paid for the
+        property for the most recent sale. In the case of value stated
+        this will be the actual amount of the value stated on a
+        transfer/conveyance/lease or will be the value based on fee
+        bands if price paid information can not be provided.
+    PricePaidType:
+      type: string
+      description: |
+        Describes the type of price paid entry held on the Register, either price or value stated
+      example: price
+      enum:
+      - price
+      - value stated
+    PricePaidDate:
+      required:
+      - description
+      type: object
+      properties:
+        description:
+          type: string
+          description: |
+            This will be the textual representation of the date as entered on the item.
+            If a specific date is provided then it could either be in long date format eg: 1 March 2016
+            or in short date format eg: 01/03/2016.
+            If there is no specific date then this can be a description from the item such as "on the date the lease was granted".
+            If a date is expected but is missing then a data quality issue of data_quality_price_paid_date_missing
+            is issued and date is set to null.
+          example: 6 March 2020
+        value:
+          type: string
+          description: |
+            The structured date if applicable.
+          format: date
+      description: |
+        For price paid this is the date of the deed from which the price paid was taken. For value stated,
+        this is the date of the application that gave rise to the entry on the register.
+        A date will not be available on some lease entries.
+    AmountSingle:
+      allOf:
+      - $ref: '#/components/schemas/Amount'
+      - required:
+        - amount_type
+        type: object
+        properties:
+          description:
+            type: string
+            description: |
+              The price paid or value stated amount including currency.
+              This amount can also include information regarding inclusion
+              or exclusion of a VAT element. It will also include entries
+              such as "under £100,000", "over £1,000,000" and
+              "between 'amount1' and 'amount2'" where these are
+              held as single descriptions. If an expected amount
+              is missing then a data quality issue of
+              data_quality_price_paid_amount_missing is issued
+              and amount is set to null.
+            example: £120,000
+          amount_type:
+            type: string
+            enum:
+            - single amount
+      x-discriminator-value: single amount
+    Amount:
+      required:
+      - amount_type
+      type: object
+      properties:
+        amount_type:
+          type: string
+          description: |
+            Coarse classification of an amount. Used to easily distinguish between a single amount or a range of amounts
+          enum:
+          - single amount
+          - amount range
+      discriminator:
+        propertyName: amount_type
+    AmountRange:
+      allOf:
+      - $ref: '#/components/schemas/Amount'
+      - required:
+        - amount_type
+        type: object
+        properties:
+          lower_description:
+            type: string
+            description: |
+              The lower amount stated when a range of amounts has been entered.
+              If the amount stated was "Under £100,000" this will appear as the upper amount
+              and lower amount is set to null. If the lower amount expected is missing
+              then a data quality issue of data_quality_price_paid_amount_missing is
+              issued and amount is set to null, neither upper or lower amounts will be available
+              if a data quality issue is raised.
+            example: £100,001
+          upper_description:
+            type: string
+            description: |
+              The upper amount stated when a range of amounts has been entered.
+              If the amount stated was "Over £100,000,000" then this will appear as the lower amount
+              and upper value is set to null. If the upper amount expected is missing
+              then a data quality issue of data_quality_price_paid_amount_missing is
+              issued and amount is set to null, neither upper or lower amounts will
+              be available if a data quality issue is raised.
+            example: £200,000
+          amount_type:
+            type: string
+            enum:
+            - amount range
+      x-discriminator-value: amount range
+    Interests:
+      type: object
+      properties:
+        notices:
+          type: array
+          description: The list of enhanced notices for the title
+          items:
+            $ref: '#/components/schemas/Notice'
+        covenants:
+          $ref: '#/components/schemas/Interests_covenants'
+        charges:
+          type: array
+          description: |
+            The list of charges for the title. The charges are listed in the order they appear in the register and the priority
+            will need to be determined by inspecting the charges themselves.
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/RegisteredCharge'
+            - $ref: '#/components/schemas/EquitableCharge'
+            x-force-type: Charge
+          x-force-type: List<Charge>
+        restrictions:
+          type: array
+          description: List of restrictions against the title
+          items:
+            $ref: '#/components/schemas/Restriction'
+      description: The list of interests on the title
+    Restriction:
+      required:
+      - actions
+      - legacy_entry_id
+      type: object
+      properties:
+        restriction_type:
+          type: string
+          description: Text which describes the title or rights over the land.
+          example: restriction
+        additional_considerations:
+          type: array
+          description: |
+            When information is provided or is missing which prevents the automation of the application/order because either
+            referral to Practice Guidance or some other manual intervention is required, then a note will be added explaining
+            the need for additional consideration. It may contain text to explain why a notice cannot be fully structured and
+            therefore may not be suitable for automatic processing.
+          items:
+            type: string
+            example: Check practice guidance for the latest applicable charities act
+        notes:
+          type: array
+          description: The list of notes associated with the restriction.
+          items:
+            type: string
+            example: copy filed
+        restricted_parties:
+          type: array
+          description: The parties that are restricted by the entry.
+          items:
+            type: string
+            example: sole proprietor
+        legacy_entry_id:
+          type: string
+          description: The unique identifier for this entry as used by the legacy database.
+          example: 2019-11-18 12.52.12.555232
+        expiry_condition:
+          type: string
+          description: Text which describes the expiry condition for the legal interest.
+          example: the death of the survivor of Joe Bloggs and Filiph Bloggs
+        subject:
+          type: string
+          description: Text which describes the subject or prime consideration of a legal interest.
+          example: registered estate
+        expiry_date:
+          type: string
+          description: The date on which the legal interest is due to expire.
+          format: date
+        impacted_action_condition:
+          type: string
+          description: A condition imposed on the action or actions before disposal is permitted.
+          example: the transfer or lease must be dated before the date specified in this restriction
+        legacy_charge_id:
+          type: string
+          description: The legacy identifier for the charge which the restriction applies to. If the restriction is not a charge restriction then this field will be null.
+          example: 2018-05-04-05.14.02.623118
+        entry_date:
+          pattern: ^\d{4}-\d{2}-\d{2}$
+          type: string
+          description: The date on which the restriction was added to the register.
+          example: '2020-05-05T00:00:00.000+00:00'
+        compliances:
+          type: array
+          description: The list of compliances for the interest.
+          items:
+            $ref: '#/components/schemas/Compliance'
+        impacted_action_condition_date:
+          pattern: ^\d{4}-\d{2}-\d{2}$
+          type: string
+          description: The date a condition imposed on the action or actions before disposal is permitted.
+          example: '2020-05-05T00:00:00.000+00:00'
+        restriction_form:
+          type: string
+          description: Code that identifies a particular type of 'standard restriction’ a restriction covering a specified type of interest.
+          example: B
+          enum:
+          - A
+          - AA
+          - B
+          - BB
+          - C
+          - CC
+          - D
+          - DD
+          - E
+          - EE
+          - F
+          - FF
+          - G
+          - GG
+          - H
+          - HH
+          - I
+          - II
+          - J
+          - JJ
+          - K
+          - KK
+          - L
+          - LL
+          - M
+          - MM
+          - N
+          - NN
+          - O
+          - OO
+          - P
+          - PP
+          - Q
+          - QQ
+          - R
+          - RR
+          - S
+          - SS
+          - T
+          - U
+          - V
+          - W
+          - X
+          - Y
+          - NO FORM
+          x-enum-descriptions:
+          - |
+            * A * Restriction on dispositions by sole proprietor
+          - |
+            * AA * Freezing order on the registered estate
+          - |
+            * BB * Dispositions by trustees of the legal estate – certificates required
+          - |
+            * C * Freezing order on charge
+          - Dispositions by personal representatives – certificate required
+          - Application for freezing order on the registered estate
+          - Parsonage, diocesan glebe, church or churchyard land
+          - Application for freezing order on charge
+          - Non-exempt charity – certificate required
+          - Restraint order or interim receiving order on the registered estate
+          - Land vested in official custodian on trust for non-exempt charity – authority required
+          - Restraint order or interim receiving order on charge
+          - Tenant for life as registered proprietor of settled land, where there are trustees of the settlement
+          - Application for restraint order or interim receiving order on the registered estate
+          - Statutory owners as trustees of the settlement and registered proprietors of settled land
+          - Application for restraint order or interim receiving order on charge
+          - Tenant for life as registered proprietor of settled land – no trustees of the settlement
+          - Beneficial interest that is a right or claim in relation to a registered estate
+          - Trustee in bankruptcy and beneficial interest – certificate required
+          - Statutory charge of beneficial interest in favour of the Lord Chancellor
+          - Charging order affecting beneficial interest – certificate required
+          - Lease of property in Wales by registered social landlord
+          - Disposition by registered proprietor of a registered estate or proprietor of charge – certificate required
+          - Restriction as to evidence of execution
+          - Disposition by registered proprietor of registered estate or proprietor of charge – certificate of registered proprietor of specified title number required
+          - Interest in beneficial joint tenancy subject to charge under section 22(1) of the Health and Social Services and Social Security Adjudications Act 1983 or section 71 of the Social Services and Well-being (Wales) Act 2014
+          - Disposition by registered proprietor of registered estate or proprietor of charge – consent required
+          - Disposition by registered proprietor of registered estate or proprietor of charge – consent or certificate required
+          - Disposition by registered proprietor of registered estate or proprietor of charge – consent of registered proprietor of specified title number or certificate required
+          - Disposition by proprietor of charge – consent or certificate required
+          - Disposition by registered proprietor of registered estate or proprietor of charge – consent of proprietor of specified charge or certificate required
+          - Disposition by registered proprietor of registered estate or proprietor of charge – certificate of landlord or of a conveyancer, required
+          - Disposition by registered proprietor of registered estate or proprietor of charge – consent of personal representatives required
+          - Land included in a list of assets of community value maintained under section 87(1) of the Localism Act 2011
+          - Disposition by registered proprietor of registered estate or proprietor of charge – evidence of compliance with club rules required
+          - Deputy appointed under section 16 of the Mental Capacity Act 2005 – solely owned property
+          - Disposition by proprietor of charge – certificate of compliance required
+          - Trustee appointed in place of a person who lacks capacity – jointly owned property
+          - Disposition by proprietor of charge – consent required
+          - Section 37 of the Housing Act 1985
+          - Section 157 of the Housing Act 1985
+          - Paragraph 4 of Schedule 9A to the Housing Act 1985
+          - Section 133 of the Housing Act 1988 or section 173 of the Local Government and Housing Act 1989
+          - Section 13 of the Housing Act 1996
+          - The restriction is in a non-standard form
+        housing_association_impact:
+          type: string
+          description: Text which describes whether a restriction burdens or is imposed by a Housing Association.
+          example: burdened or imposed
+        exemptions:
+          type: array
+          description: The list of circumstances in which the conditions of an interest do not apply.
+          items:
+            $ref: '#/components/schemas/Exemption'
+        restricted_charge_date:
+          type: string
+          description: The date of the charge which the restriction applies to. If the restriction is not a charge restriction then this field will be null.
+          example: '2020-10-06T00:00:00.000+00:00'
+        restriction_form_description:
+          type: string
+          description: Description of the restriction form.
+          example: Disposition by registered proprietor of a registered estate or proprietor of charge – certificate required
+          enum:
+          - Restriction on dispositions by sole proprietor
+          - Freezing order on the registered estate
+          - Dispositions by trustees of the legal estate – certificates required
+          - Freezing order on charge
+          - Dispositions by personal representatives – certificate required
+          - Application for freezing order on the registered estate
+          - Parsonage, diocesan glebe, church or churchyard land
+          - Application for freezing order on charge
+          - Non-exempt charity – certificate required
+          - Restraint order or interim receiving order on the registered estate
+          - Land vested in official custodian on trust for non-exempt charity – authority required
+          - Restraint order or interim receiving order on charge
+          - Tenant for life as registered proprietor of settled land, where there are trustees of the settlement
+          - Application for restraint order or interim receiving order on the registered estate
+          - Statutory owners as trustees of the settlement and registered proprietors of settled land
+          - Application for restraint order or interim receiving order on charge
+          - Tenant for life as registered proprietor of settled land – no trustees of the settlement
+          - Beneficial interest that is a right or claim in relation to a registered estate
+          - Trustee in bankruptcy and beneficial interest – certificate required
+          - Statutory charge of beneficial interest in favour of the Lord Chancellor
+          - Charging order affecting beneficial interest – certificate required
+          - Lease of property in Wales by registered social landlord
+          - Disposition by registered proprietor of a registered estate or proprietor of charge – certificate required
+          - Restriction as to evidence of execution
+          - Disposition by registered proprietor of registered estate or proprietor of charge – certificate of registered proprietor of specified title number required
+          - Interest in beneficial joint tenancy subject to charge under section 22(1) of the Health and Social Services and Social Security Adjudications Act 1983 or section 71 of the Social Services and Well-being (Wales) Act 2014
+          - Disposition by registered proprietor of registered estate or proprietor of charge – consent required
+          - Disposition by registered proprietor of registered estate or proprietor of charge – consent or certificate required
+          - Disposition by registered proprietor of registered estate or proprietor of charge – consent of registered proprietor of specified title number or certificate required
+          - Disposition by proprietor of charge – consent or certificate required
+          - Disposition by registered proprietor of registered estate or proprietor of charge – consent of proprietor of specified charge or certificate required
+          - Disposition by registered proprietor of registered estate or proprietor of charge – certificate of landlord or of a conveyancer, required
+          - Disposition by registered proprietor of registered estate or proprietor of charge – consent of personal representatives required
+          - Land included in a list of assets of community value maintained under section 87(1) of the Localism Act 2011
+          - Disposition by registered proprietor of registered estate or proprietor of charge – evidence of compliance with club rules required
+          - Deputy appointed under section 16 of the Mental Capacity Act 2005 – solely owned property
+          - Disposition by proprietor of charge – certificate of compliance required
+          - Trustee appointed in place of a person who lacks capacity – jointly owned property
+          - Disposition by proprietor of charge – consent required
+          - Section 37 of the Housing Act 1985
+          - Section 157 of the Housing Act 1985
+          - Paragraph 4 of Schedule 9A to the Housing Act 1985
+          - Section 133 of the Housing Act 1988 or section 173 of the Local Government and Housing Act 1989
+          - Section 13 of the Housing Act 1996
+          - The restriction is in a non-standard form
+        actions:
+          type: array
+          description: The list of actions that the restriction prevents from being registered.
+          items:
+            type: string
+            example: disposition
+        object:
+          type: string
+          description: Text which describes the object or defined extent of a legal interest.
+          example: whole
+      description: |
+        An interest in the proprietorship or charges register to prevent the registration of specific dispositions unless the terms of the restriction are complied with.
+    Exemption:
+      type: object
+      properties:
+        context:
+          type: string
+          description: The context in which the exemption applies
+          example: action
+        exemption:
+          type: string
+          description: Text which describes the circumstances in which the interest does not apply
+          example: other than a charge
+      description: |
+        The circumstances in which the conditions of an interest do not apply
+    Compliance:
+      required:
+      - additional_authorities
+      - alternative_authorities
+      type: object
+      properties:
+        authority_title_number:
+          type: string
+          description: The unique reference number that refers to the title to which the compliance authority is a proprietor.
+          example: DN1234
+        form_of_compliance:
+          type: string
+          description: The form of compliance
+          example: certificate
+        alternative_authorities:
+          type: array
+          description: Alternative authorities of the legal interest
+          items:
+            $ref: '#/components/schemas/Authority'
+        authority:
+          type: string
+          description: Name of the compliance authority
+          example: Joe Bloggs
+        additional_authorities:
+          type: array
+          description: Additional authorities of the legal interest
+          items:
+            $ref: '#/components/schemas/Authority'
+        description:
+          type: string
+          description: Description of the compliance authority
+          example: conveyancer
+        compliance_type:
+          type: string
+          description: Specifies whether the compliance is additional or alternative
+          example: additional
+      description: |
+        Record of who and what is required to comply with the terms of an interest
+    Authority:
+      type: object
+      properties:
+        authority:
+          type: string
+          description: Name of the compliance authority
+          example: Joe Bloggs
+        description:
+          type: string
+          description: Description of the compliance authority
+          example: conveyancer
+      description: |
+        The person or organisation, or a description of the appropriate party, that can provide evidence of compliance with the terms of an interest
+    Notice:
+      required:
+      - legacy_entry_ids
+      type: object
+      properties:
+        protected_interests:
+          minItems: 1
+          type: array
+          description: |
+            Text which describes the protected interest of a legal interest.
+          example: agreement for sale
+          items:
+            type: string
+          x-data-quality:
+          - tag: data_quality_church_missing_from_notice
+            message: The title has a notice with a missing named church in the protected interest.
+          - tag: data_quality_protected_interest_missing_from_notice
+            message: The title has a notice with the protected interest missing.
+        additional_considerations:
+          type: array
+          description: |
+            When information is provided or is missing which prevents the automation of the application/order because either
+            referral to Practice Guidance or some other manual intervention is required, then a note will be added explaining
+            the need for additional consideration. It may contain text to explain why a notice cannot be fully structured and
+            therefore may not be suitable for automatic processing.
+          items:
+            type: string
+            example: Check practice guidance for the latest applicable charities act
+        notes:
+          type: array
+          description: The list of notes associated with the notice.
+          items:
+            type: string
+            example: copy filed
+        sources:
+          type: array
+          description: The documents, deeds or other means by which the interest has been created.
+          items:
+            $ref: '#/components/schemas/Source'
+        expiry_condition:
+          type: string
+          description: Text which describes the expiry condition for the legal interest.
+          example: and exercisable within a period of 20 years from 2 January 2004
+        subject:
+          type: string
+          description: Text which describes the subject or prime consideration of a legal interest.
+          example: registered estate
+        parish_church:
+          type: string
+          description: The name of a parish church affected by a unilateral notice in respect of the repair of a church chancel. This will only be populated where the protected interest is ‘the liability to repair the chancel of’.
+          example: The Church of the Holy Mary
+        notice_type:
+          type: string
+          description: Classification of a notice.
+          enum:
+          - agreed notice
+          - crown rent notice
+          - death duty notice
+          - home rights notice
+          - section 49 notice
+          - unilateral notice
+          - unknown
+        legacy_entry_ids:
+          minItems: 1
+          type: array
+          description: |
+            The unique identifier for this entry as used by the legacy database.
+            The `entry_date` associated with a `legacy_entry_id` is stored in the corrosponding
+            index posistion within the `entry_dates` array. For example, the first `legacy_entry_id`
+            relates to the first entry_date.
+          example: 2019-11-18 12.52.12.555232
+          items:
+            type: string
+        notice_date:
+          type: string
+          description: The date of the unilateral notice.
+          example: 2020/01/31
+          x-data-quality:
+          - tag: data_quality_notice_date_missing_from_notice
+            message: The title has a notice missing a notice date.
+        lease_term:
+          type: string
+          description: The period of time during which a tenant holds an interest in land.
+          example: 5 years from 2020-01-20
+          x-data-quality:
+          - tag: data_quality_lease_term_missing_from_notice
+            message: The title has a notice with the lease term missing or incomplete.
+        served_by:
+          type: string
+          description: The name of the person or organisation that has served the unilateral notice on the registered proprietor on behalf of the beneficiary.
+          example: John Smith
+        entry_dates:
+          type: array
+          description: |
+            The date(s) on which the entries were added to the register.
+            The `legacy_entry_id` associated with an `entry_date` is stored in the corrosponding
+            index posistion within the `legacy_entry_ids` array. For example, the first `entry_date`
+            relates to the first `legacy_entry_id`.
+          items:
+            type: string
+            format: date
+        beneficiaries:
+          type: array
+          description: |
+            The names of the private individuals and/or organisations who will benefit from the legal interest.
+          example: whole
+          items:
+            type: string
+          x-data-quality:
+          - tag: data_quality_beneficiary_missing_from_notice
+            message: The title has a notice with a missing beneficiary.
+        statute:
+          type: string
+          description: A law enacted by the legislative branch of a government.
+          example: Section 42 of the Leasehold Reform, Housing and Urban Development Act 1993
+        object:
+          type: string
+          description: |
+            Text which describes the object or defined extent of a legal interest.
+            For home rights there might be a note giving extent limitations i.e. stating
+            that home rights only applies to part of the estate.   When this note is available 'object'
+            will be set to null, otherwise it will always be set to “whole”.
+          example: whole
+      description: |
+        Entry in the register representing a burden of interest affecting a registered estate or charge.
+        For home rights notices, only Home Rights/Matrimonial Homes (RMHA role code) entries will have
+        structured fields present (e.g., notice date, object, and entry date). Home rights contained in
+        cautions, land charges or provided as free format will only have a legacy entry id present.
+        For unilateral notices the notice and beneficiary will appear as a single Notice but
+        there will be two legacy_entry_id values and two entry_date values with the first belonging to
+        the unilateral notice and the second to the beneficiary.
+      x-data-quality:
+      - tag: data_quality_unilateral_notice_missing
+        message: The title has a beneficary but the corresponding unilateral notice is not present.
+      - tag: data_quality_beneficiary_missing_from_unilateral_notice
+        message: The title has an entry relating to a unilateral notice but the corresponding beneficiary is not present.
+    Source:
+      type: object
+      properties:
+        date:
+          type: string
+          description: The date of the document, deed or other means in which the interest was contained.
+          format: date
+          x-data-quality:
+          - tag: data_quality_deed_date_missing_from_notice
+            message: The title has a notice missing a deed date.
+          - tag: data_quality_charge_date_missing_from_notice
+            message: The title has a notice missing a charge date.
+        parties:
+          type: array
+          description: The parties to the document, deed or other means by which the interest has been created.
+          items:
+            $ref: '#/components/schemas/Party'
+          x-data-quality:
+          - tag: data_quality_deed_parties_missing_from_notice
+            message: The title has a notice with the deed parties missing.
+        type:
+          type: string
+          description: The type of document, deed or other means by which the interest has been created.
+          example: Conveyance
+          x-data-quality:
+          - tag: data_quality_deed_type_missing_from_notice
+            message: The title has a notice with the deed type or arrangement type missing.
+      description: |
+        Details about a document, deed or other means by which the interest has been created.
+    Party:
+      type: object
+      properties:
+        names:
+          type: array
+          description: The full name of a private individual or organisation within a party.
+          example: Joe Blogs
+          items:
+            type: string
+        role:
+          type: string
+          description: The relationship of the party to the source.
+          example: lendor
+      description: One or more private individuals and/or organisations that have the same role in a legal transaction.
+    RegisteredCharge:
+      allOf:
+      - $ref: '#/components/schemas/Charge'
+      - required:
+        - charge_type
+        type: object
+        properties:
+          chargees:
+            type: array
+            description: |
+              The ordered list of proprietors relating to the charge.  A chargee is a proprietor who lends money under a charge or mortgage.
+              These chargees don't necessarily exist in the list of proprietors against the title.
+            items:
+              oneOf:
+              - $ref: '#/components/schemas/PrivateIndividual'
+              - $ref: '#/components/schemas/Organisation'
+              x-force-type: Proprietor
+            x-force-type: List<Proprietor>
+          legacy_chargee_entry_id:
+            type: string
+            description: The legacy identifier for the chargee entry.
+            example: 2019-11-18-12.52.12.555231
+          legacy_charge_restriction_entry_ids:
+            type: array
+            description: |
+              The legacy identifier/s for the charge restriction entry / entries linked to this charge.
+              This list will be null if there are no charge restrictions linked to the charge.
+            example: 2019-11-18-12.52.12.555457
+            items:
+              type: string
+          legacy_obligation_entry_ids:
+            type: array
+            description: |
+              The legacy identifier/s for the obligation entry/ies affecting this charge.
+              The presence of an identifier within this list is an indication that an
+              Obligation exists affecting the charge.
+              This list will be empty if there are no obligations on this charge.
+            items:
+              type: string
+              example: 2020-09-10-12.52.12.385746
+          expiry_date:
+            type: string
+            description: The date on which the legal interest is due to expire.
+            format: date
+        description: |
+          A registered charge (often referred to merely as a "charge") is a form of protection which occurs when
+          a legal mortgage of registered land is registered making the mortgage fully effective at law and
+          allowing a lender to realise their security. A registered discount charge is also a legal charge.
+      x-discriminator-value: registered charge
+    Charge:
+      required:
+      - charge_type
+      - legacy_entry_id
+      type: object
+      properties:
+        additional_considerations:
+          type: array
+          description: |
+            When information is provided or is missing which prevents the automation of the application/order because either
+            referral to Practice Guidance or some other manual intervention is required, then a note will be added explaining
+            the need for additional consideration. It may contain text to explain why a notice cannot be fully structured and
+            therefore may not be suitable for automatic processing.
+          items:
+            type: string
+            example: Check practice guidance for the latest applicable charities act
+        charge_type:
+          type: string
+          description: |
+            Classification of a Charge.
+          enum:
+          - unknown
+          - registered charge
+          - equitable charge
+        notes:
+          type: array
+          description: The list of notes associated with the charge.
+          items:
+            type: string
+            example: copy filed
+        sources:
+          type: array
+          description: The list of sources associated with the charge.
+          items:
+            $ref: '#/components/schemas/Source'
+        legacy_postponement_entry_ids:
+          type: array
+          description: |
+            The legacy identifier/s for the postponement entry/ies affecting this charge.
+            The presence of an identifier within this list is an indication that a
+            Postponement exists affecting the priority of this charge.
+            This list will be empty if there are no postponements on this charge.
+          items:
+            type: string
+            example: 2020-09-10-12.52.12.385746
+        subject:
+          type: string
+          description: Text which describes the subject or prime consideration of a legal interest.
+          example: registered estat
+        legacy_charge_id:
+          type: string
+          description: The legacy identifier for the charge.
+          example: 2019-11-18-12.52.12.555232
+        charge_date:
+          type: string
+          description: |
+            The date on which the charge takes effect.
+            A charge date will not be available on all charge entries, such as Legal Aid Charges and some Miscellaneous Charge Entries.
+          format: date
+          x-data-quality:
+          - tag: data_quality_charge_date_missing
+            message: The title has a charge that is missing the charge date.
+        statute:
+          type: string
+          description: A law enacted by the legislative branch of a government.
+          example: Section 42 of the Leasehold Reform, Housing and Urban Development Act 1993
+        object:
+          type: string
+          description: Text which describes the object or defined extent of a legal interest.
+          example: whole
+        discount_charge:
+          type: boolean
+          description: Boolean value which indicates whether or not a charge is a discount charge.
+        legacy_charge_entry_id:
+          type: string
+          description: The legacy identifier for the charge entry.
+          example: 2019-11-18-12.52.12.555230
+        entry_date:
+          type: string
+          description: The date on which the entry was added to the register.
+          format: date
+      description: |
+        A form of protection or security over land known as a "charge" which can either be a registered (legal) or an equitable charge.
+        Priority ordering of charges is not currently provided, charges will appear in the order that they are retrieved and may not reflect original priority.
+        They also will not reflect revised priority from postponement, but will include postponement entry ids, affecting the charge, where available.”
+      discriminator:
+        propertyName: charge_type
+        mapping:
+          unknown: '#/components/schemas/UnknownCharge'
+          registered charge: '#/components/schemas/RegisteredCharge'
+          equitable charge: '#/components/schemas/EquitableCharge'
+    UnknownCharge:
+      allOf:
+      - $ref: '#/components/schemas/Charge'
+      - required:
+        - charge_type
+        type: object
+        properties:
+          charge_date:
+            type: string
+            description: |
+              The date on which the charge takes effect.
+              A charge date will not be available on all charge entries, such as Legal Aid Charges and some Miscellaneous Charge Entries.
+            format: date
+            x-data-quality:
+            - tag: data_quality_charge_date_missing
+              message: The title has a charge that is missing the charge date.
+        description: |
+          A charge whos type is unknown.
+      x-discriminator-value: unknown
+    EquitableCharge:
+      allOf:
+      - $ref: '#/components/schemas/Charge'
+      - required:
+        - charge_type
+        type: object
+        properties:
+          beneficiaries:
+            type: array
+            description: |
+              The names of the people and/or organisations who will benefit from the legal interest.
+            items:
+              type: string
+              example: John Doe
+        description: |
+          Equitable charge is a form of security over land that does not convey or assign any legal title in the property
+          An equitable charge does not provide the same legal protections to the lender as a registered charge.
+      x-discriminator-value: equitable charge
+    PersonalCovenant:
+      required:
+      - legacy_entry_id
+      - subject
+      type: object
+      properties:
+        notes:
+          type: array
+          description: The list of notes associated with the personal covenant.
+          items:
+            type: string
+            example: copy filed
+        sources:
+          type: array
+          description: List of documents, deeds or other means by which the covenant has been created.
+          items:
+            $ref: '#/components/schemas/Source'
+        legacy_entry_id:
+          type: string
+          description: The unique identifier for this entry as used by the legacy database.
+          example: 2019-11-18-12.52.12.555232
+        covenantor:
+          type: string
+          description: The party who gives a covenant and so carries the burden of it.
+          example: purchaser
+          enum:
+          - purchaser
+          - vendor
+        covenant_type:
+          type: string
+          description: Text which describes the type of interest, either positive covenant or indemnity covenant.
+          example: indemnity covenant
+          enum:
+          - positive covenant
+          - indemnity covenant
+        subject:
+          type: string
+          description: Text which describes the subject or prime consideration of a legal interest.
+          example: registered estate
+        entry_date:
+          type: string
+          description: The date on which the entry was added to the register.
+          format: date
+        object:
+          type: string
+          description: Text which describes the object or defined extent of a legal interest.
+          example: of the land in this title
+      description: |
+        A personal covenant is a covenant to do something.  There are two types of personal covenant: an indemnity covenant and a positive covenant.
+        An indemnity covenant is made by a covenantee (purchaser/transferee) to observe and perform earlier restrictive or positive covenants and/or to indemnify the
+        covenantor (vendor/transferor) against claims in respect of any breach of those earlier covenants.
+        A positive covenant is a covenant to do work, eg: to erect or maintain a fence or to make up a road or to contribute towards the cost.  It can be
+        by either the covenantee (purchaser/transferee) or the covenantor (vendor/transferor).  These type of covenants are also known as repairing covenants.
+    ImpliedCovenant:
+      required:
+      - legacy_entry_id
+      - subject
+      type: object
+      properties:
+        notes:
+          type: array
+          description: The list of notes associated with the implied covenant.
+          items:
+            type: string
+            example: copy filed
+        legacy_entry_id:
+          type: string
+          description: The unique identifier for this entry as used by the legacy database.
+          example: 2019-11-18-12.52.12.555232
+        covenant_type:
+          type: string
+          description: The high level interest type describing the covenant.
+          example: implied covenant
+        subject:
+          type: string
+          description: Text which describes the subject or prime consideration of a legal interest.
+          example: registered estate
+        statute:
+          type: string
+          description: A law enacted by the legislative branch of a government.
+          example: Part I of the Law of Property (Miscellaneous Provisions) Act 1994
+        entry_date:
+          type: string
+          description: The date on which the entry was added to the register.
+          format: date
+        object:
+          type: string
+          description: Text which describes the object or defined extent of a legal interest.
+          example: whole
+      description: |
+        When land is disposed of by way of conveyance, transfer, charge, or lease at a rent, certain covenants for title on the part of the seller
+        (which in this context also mean landlord or chargor) are implied on the sale by the use of key phrases.   Under the Law of Property
+        (Miscellaneous Provisions) Act 1994 (1994 Act) these covenants may be restricted or extended.  The following terms indicate the existence
+        of covenants of title: 'with full title guarantee' or 'with limited title guarantee'.
+    Concerns:
+      type: object
+      properties:
+        postponements:
+          type: array
+          description: List of postponements against the charges or notices on the title
+          items:
+            $ref: '#/components/schemas/Postponement'
+      description: |
+        The list of concerns related to the interests on the title.
+        A concern is something that affects an interest on a title such as a postponement which
+        alters the priority of a charge.
+        A concern should not exist without an interest. In the case of a postponement, at least
+        two interests should exist.
+    Postponement:
+      required:
+      - legacy_entry_id
+      type: object
+      properties:
+        additional_considerations:
+          type: array
+          description: |
+            When information is provided or is missing which prevents the automation of the application/order because either
+            referral to Practice Guidance or some other manual intervention is required, then a note will be added explaining
+            the need for additional consideration.  Text which explains why an entry cannot be fully deconstructed and therefore
+            is not suitable for automatic processing.
+          items:
+            type: string
+            example: Check practice guidance for the latest applicable charities act
+        legacy_entry_id:
+          type: string
+          description: The unique identifier for this entry as used by the legacy database.
+          example: 2020-09-10-12.52.12.385746
+        postponement_charges:
+          type: array
+          description: |
+            The legacy charge ids of the charges affected by the postponement entry.
+          items:
+            type: string
+            example: 2019-11-18-12.52.12.555456
+        entry_date:
+          type: string
+          description: The date on which the postponement entry was added to the register.
+          format: date
+      description: |
+        Postponement of a registered charge is an alteration in the priorities of a
+        least two registered charges.  The postponed charge
+        loses priority to at least one other charge that is thereby gaining priority.
+        The postponed charge is deferred as long as the
+        charge given priority over it stays on the register.
+    ValidationError:
+      allOf:
+      - $ref: '#/components/schemas/ErrorResponse'
+      - required:
+        - validation_issues
+        type: object
+        properties:
+          validation_issues:
+            type: array
+            items:
+              $ref: '#/components/schemas/ValidationIssue'
+        description: |
+          Returned when a request body contains invalid property values.
+    ValidationIssue:
+      required:
+      - message
+      - property_name
+      type: object
+      properties:
+        message:
+          type: string
+          description: A message summarising why this property failed to validate.
+          example: The ID cannot be null.
+        type:
+          $ref: '#/components/schemas/ValidationIssueType'
+        property_name:
+          type: string
+          description: |
+            The name of the property that this issue was raised for.
+            The full path from the root of the response (`response.body`) is provided, with nodes separated by the '.'
+            character.
+          example: response.body.entries[0].entry_text
+      description: |
+        Represents a single issue encountered while validating a property on a request body.
+    ValidationIssueType:
+      type: string
+      description: "An issue code in the form <code>validation_issue_<var>issue_type</var></code>\
+        \ that identifies the cause of the issue.\n\n\n---\n\nA property of this type\
+        \ may be any of the following values:\n- `validation_issue_impacted_action_invalid`:\
+        \ The validation code used when the impacted action is not disposition or\
+        \ specified type(s) of disposition\n  \n- `validation_issue_incorrect_spelling_of_disposition`:\
+        \ The validation code used when disposition is spelt wrong\n  \n- `validation_issue_impacted_actions_do_not_match`:\
+        \ The validation code used when there is more than one impacted action value\
+        \ within the CRE, the entries must match\n  \n- `validation_issue_exceeded_maximum_length`:\
+        \ The value provided exceeds the maximum length\n  \n- `validation_issue_exemption_invalid`:\
+        \ The validation code used when exemption is not blank or, (other than a charge)\
+        \ when the impacted action contains disposition\n  \n- `validation_issue_exemption_only_valid_for_disposition`:\
+        \ The validation code used when impacted action is not disposition and '(other\
+        \ than a charge)' is present\n  \n- `validation_issue_additional_restricted_party_invalid`:\
+        \ The value must be ', or by the proprietor of any registered charge, not\
+        \ being a charge registered before the entry of this restriction' or blank\n\
+        \  \n- `validation_issue_compliance_authority_invalid`: The compliance authority\
+        \ must be either 'a conveyancer', 'the applicant for registration', or 'the\
+        \ applicant for registration or their conveyancer'\n  \n- `validation_issue_alternative_compliance_authority_invalid`:\
+        \ The alternative compliance authority must be 'or his/her/their/its (as applied\
+        \ for) conveyancer', 'or his/her/their (as applied for) personal representatives',\
+        \ or 'or his/her/their (as applied for) personal representatives or his/her/their\
+        \ (as applied for) conveyancer', or specify appropriate details\n  \n- `validation_issue_value_must_be_a_valid_date`:\
+        \ The validation code used when the date provided is not a valid date\n  \n\
+        - `validation_issue_no_charge_found_for_charge_id`: The validation code used\
+        \ when there is no charge for the charge ID provided\n  \n- `validation_issue_no_charge_id_provided`:\
+        \ The validation code used when there was no charge ID provided with the charge\
+        \ restriction\n  \n- `validation_issue_no_charge_date_provided`: The validation\
+        \ code used when there was no charge date provided with the charge restriction\n\
+        \  \n- `validation_issue_charge_id_provided_is_for_an_equitable_charge`: The\
+        \ validation code used when the charge ID provided links to an equitable charge\
+        \ entry on the register\n  \n- `validation_issue_charging_order_type_invalid`:\
+        \ The value must be either \"an interim\" or \"a final\"\n  \n- `validation_issue_court_reference_invalid`:\
+        \ The validation code used when the court reference is not an alphanumeric\
+        \ value\n  \n- `validation_issue_disposition_do_not_apply`: The value must\
+        \ be 'or that they do not apply to the disposition' or blank\n  \n- `validation_issue_single_proprietor_on_register_for_title`:\
+        \ The validation code used when there is a sole proprietor for the title and\
+        \ the restriction being created is a joint proprietor restriction\n  \n- `validation_issue_no_charge_on_register`:\
+        \ The validation code used when impacted action includes sub-charge and there\
+        \ is no charge on the register for title\n  \n- `validation_issue_compliance_authority_must_be_proprietor_of_specified_charge`:\
+        \ The validation code used when the compliance authority provided does not\
+        \ match the charge proprietor of the related charge entry\n  \n- `validation_issue_optional_field_incorrect`:\
+        \ The value supplied is not valid\n  \n- `validation_issue_mandatory_field_missing`:\
+        \ The value must not be blank\n  \n- `validation_issue_incorrect_number_of_infills_provided`:\
+        \ Incorrect number of infills provided\n  \n- `validation_issue_legacy_charge_id_not_provided`:\
+        \ The validation code used when a Legacy Charge ID is not provided\n  \n-\
+        \ `validation_issue_exemption_must_only_be_other_than_a_charge`: The value\
+        \ must be '(other than a charge)' or blank\n  \n- `validation_issue_value_does_not_match_legacy_charge_date`:\
+        \ The value provided does not match legacy charge date\n  \n- `validation_issue_value_does_not_match_request_charge_date`:\
+        \ The value provided does not match request charge date\n  \n- `validation_issue_obligation_legacy_charge_id_not_present`:\
+        \ The legacyChargeId not provided in request\n  \n- `validation_issue_charge_date_in_future`:\
+        \ The charge date cannot be in the future\n  \n- `validation_issue_charge_date_incorrect_format`:\
+        \ The charge date format must be dd/mm/yyyy\n  \n- `validation_issue_legacy_charge_not_found`:\
+        \ No charge found for given legacy charge id and title number\n  \n- `validation_issue_draft_entry_code_not_supported`:\
+        \ The draft entry code provided in request is not supported\n  \n- `validation_issue_draft_entry_code_version_not_supported`:\
+        \ The draft entry code version provided in request is not supported\n  \n\
+        - `validation_issue_value_must_be_by_or_on_behalf_of`: The value provided\
+        \ must be either 'by' or 'on behalf of'\n  "
+      example: validation_issue_incorrect_spelling_of_disposition
+      enum:
+      - validation_issue_impacted_action_invalid
+      - validation_issue_incorrect_spelling_of_disposition
+      - validation_issue_impacted_actions_do_not_match
+      - validation_issue_exceeded_maximum_length
+      - validation_issue_exemption_invalid
+      - validation_issue_exemption_only_valid_for_disposition
+      - validation_issue_additional_restricted_party_invalid
+      - validation_issue_compliance_authority_invalid
+      - validation_issue_alternative_compliance_authority_invalid
+      - validation_issue_value_must_be_a_valid_date
+      - validation_issue_no_charge_found_for_charge_id
+      - validation_issue_no_charge_id_provided
+      - validation_issue_no_charge_date_provided
+      - validation_issue_charge_id_provided_is_for_an_equitable_charge
+      - validation_issue_charging_order_type_invalid
+      - validation_issue_court_reference_invalid
+      - validation_issue_disposition_do_not_apply
+      - validation_issue_single_proprietor_on_register_for_title
+      - validation_issue_no_charge_on_register
+      - validation_issue_compliance_authority_must_be_proprietor_of_specified_charge
+      - validation_issue_optional_field_incorrect
+      - validation_issue_mandatory_field_missing
+      - validation_issue_incorrect_number_of_infills_provided
+      - validation_issue_legacy_charge_id_not_provided
+      - validation_issue_exemption_must_only_be_other_than_a_charge
+      - validation_issue_value_does_not_match_legacy_charge_date
+      - validation_issue_value_does_not_match_request_charge_date
+      - validation_issue_obligation_legacy_charge_id_not_present
+      - validation_issue_charge_date_in_future
+      - validation_issue_charge_date_incorrect_format
+      - validation_issue_legacy_charge_not_found
+      - validation_issue_draft_entry_code_not_supported
+      - validation_issue_draft_entry_code_version_not_supported
+      - validation_issue_value_must_be_by_or_on_behalf_of
+      x-enum-descriptions:
+      - |
+        The validation code used when the impacted action is not disposition or specified type(s) of disposition
+      - |
+        The validation code used when disposition is spelt wrong
+      - |
+        The validation code used when there is more than one impacted action value within the CRE, the entries must match
+      - |
+        The value provided exceeds the maximum length
+      - |
+        The validation code used when exemption is not blank or, (other than a charge) when the impacted action contains disposition
+      - |
+        The validation code used when impacted action is not disposition and '(other than a charge)' is present
+      - |
+        The value must be ', or by the proprietor of any registered charge, not being a charge registered before the entry of this restriction' or blank
+      - |
+        The compliance authority must be either 'a conveyancer', 'the applicant for registration', or 'the applicant for registration or their conveyancer'
+      - |
+        The alternative compliance authority must be 'or his/her/their/its (as applied for) conveyancer', 'or his/her/their (as applied for) personal representatives', or 'or his/her/their (as applied for) personal representatives or his/her/their (as applied for) conveyancer', or specify appropriate details
+      - |
+        The validation code used when the date provided is not a valid date
+      - |
+        The validation code used when there is no charge for the charge ID provided
+      - |
+        The validation code used when there was no charge ID provided with the charge restriction
+      - |
+        The validation code used when there was no charge date provided with the charge restriction
+      - |
+        The validation code used when the charge ID provided links to an equitable charge entry on the register
+      - |
+        The value must be either "an interim" or "a final"
+      - |
+        The validation code used when the court reference is not an alphanumeric value
+      - |
+        The value must be 'or that they do not apply to the disposition' or blank
+      - |
+        The validation code used when there is a sole proprietor for the title and the restriction being created is a joint proprietor restriction
+      - |
+        The validation code used when impacted action includes sub-charge and there is no charge on the register for title
+      - |
+        The validation code used when the compliance authority provided does not match the charge proprietor of the related charge entry
+      - |
+        The value supplied is not valid
+      - |
+        The value must not be blank
+      - |
+        Incorrect number of infills provided
+      - |
+        The validation code used when a Legacy Charge ID is not provided
+      - |
+        The value must be '(other than a charge)' or blank
+      - |
+        The value provided does not match legacy charge date
+      - |
+        The value provided does not match request charge date
+      - |
+        The legacyChargeId not provided in request
+      - |
+        The charge date cannot be in the future
+      - |
+        The charge date format must be dd/mm/yyyy
+      - |
+        No charge found for given legacy charge id and title number
+      - |
+        The draft entry code provided in request is not supported
+      - |
+        The draft entry code version provided in request is not supported
+      - |
+        The value provided must be either 'by' or 'on behalf of'
+    Interests_covenants:
+      type: object
+      properties:
+        implied_covenants:
+          type: array
+          description: |
+            The list of implied covenants for the title.
+          items:
+            $ref: '#/components/schemas/ImpliedCovenant'
+        personal_covenants:
+          type: array
+          description: |
+            The list of personal covenants for the title. The personal covenants include indemnity and positive covenants.
+          items:
+            $ref: '#/components/schemas/PersonalCovenant'
+      description: |
+        A Covenant is a promise made by one party (the covenantor) for the benefit of another party (the covenantee) which is contained in a deed.
+        There are many different types of Covenant, currently the personal positive, personal indemnity and implied covenants are included.
+  parameters:
+    titleNumber:
+      name: titleNumber
+      in: path
+      description: |-
+        The unique reference number of the desired title.
+
+        ---
+
+        The following constraints apply to this parameter:
+        | Constraint                                                           | Error message                                           |
+        |----------------------------------------------------------------------|---------------------------------------------------------|
+        | The parameter must have a length less than or equal to 9 characters. | *The title number must be no longer than 9 characters.* |
+      required: true
+      style: simple
+      explode: false
+      schema:
+        maxLength: 9
+        type: string
+      example: AGL117262
+      x-validationMessages:
+        length: The title number must be no longer than 9 characters.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: UUID

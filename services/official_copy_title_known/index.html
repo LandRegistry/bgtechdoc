@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Official copy Title Known - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/services/official_copy_title_known/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="Official copy Title Known - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/services/official_copy_title_known/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Official copy Title Known" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/services/official_copy_title_known/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#official-copy-title-known"><span>Official copy Title Known</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+        <ul>
+          <li>
+            <a href="#if-you-39-re-a-software-developer"><span>If you’re a software developer</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#process-flow"><span>Process flow</span></a>
+        <ul>
+          <li>
+            <a href="#input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#validation"><span>Validation</span></a>
+          </li>
+          <li>
+            <a href="#output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#schemas"><span>Schemas</span></a>
+      </li>
+      <li>
+        <a href="#vendor-testing"><span>Vendor testing</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+<p><a href="../">Back to Services</a> <a href="../../">Back to Home</a></p>
+<h1 id="official-copy-title-known">Official copy Title Known</h1>
+
+<hr>
+<h2 id="overview">Overview</h2>
+<p>To use this service you will need a title number for a property or area of land.
+When you have these details, you can order:</p>
+
+<ul>
+<li>an official copy of the register</li>
+<li>an official copy of the title plan</li>
+<li>an official copy of a conveyance referred to on the register</li>
+<li>an official copy of a deed referred to on the register</li>
+<li>an official copy of the lease</li>
+</ul>
+<h3 id="if-you-39-re-a-software-developer">If you&rsquo;re a software developer</h3>
+<p>Use this document to integrate data into your system.</p>
+
+<hr>
+<h2 id="process-flow">Process flow</h2>
+<h3 id="input">Input</h3>
+<p>Request an official search by sending the following parameters:</p>
+
+<ul>
+<li>login details</li>
+<li>external reference number</li>
+<li>title number</li>
+<li>type (register, title plan, certificate or documents)</li>
+<li>estate plan plot number(s)</li>
+<li>requested official copy</li>
+<li>contact details (customer ref, address, name, phone)</li>
+<li>fee confirmation</li>
+<li>property description</li>
+<li>alternative despatch details</li>
+</ul>
+<p>The following parameters will also be necessary if there are any complications,
+   and may be supplied to keep transaction calls and processing times to a minimum.</p>
+
+<ul>
+<li>continue if closed and continued?</li>
+<li>notify if pending first registration?</li>
+<li>notify if pending application or send back-dated?</li>
+<li>continue if actual fee exceeds fee confirmation?</li>
+</ul>
+<h3 id="validation">Validation</h3>
+
+<p>Validation diagram details the validation that the request undergoes.</p>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Validation diagram Business Rules
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Business Rule</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Decision point</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">BG Code</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message ID</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message text</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Does title number exist on LR systems? N</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.invalid</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-010</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Title number is invalid</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is title number closed ? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.closed</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-014</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Title number is closed</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Pending new title but didn&rsquo;t specify Notify if Pending New Title as true</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.pendingFirstRegistrati on</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-015</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The title number provided is a pending first registration so we are unable to supply an official copy at this time. Please make a new request when the first registration is completed.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Are there any applications pending against the title? Y
+            Are there any application pending with a Dealing Code of &lsquo;CRX&rsquo; or &lsquo;DCX&rsquo;? Y
+            Did request specify to Send Backdated? N Did request specify to Notify if pending application? N</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.pendingApplication</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-016</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The title number provided has application(s) pending against it and back-dated office copies were not requested. Please make a new request for back dated office copies or a new request
+            when the application is completed.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-056</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Are there any applications pending against the title? Y
+            Did request specify Notify if pending application? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.pending.application.notific ation.message</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-017</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The title number provided has application(s) pending against it. You will be notified when the pending application(s) has been completed so that you can re-apply. A fee has not been
+            debited.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Are there any applications pending against the title? Y
+            Are there any application pending with a Dealing Code of &lsquo;CRX&rsquo; or &lsquo;DCX&rsquo;? Y
+            Did request specify to Send Backdated? N Did request specify to Notify if pending application? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.pending.application.notific ation.message</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-017</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The title number provided has application(s) pending against it. You will be notified when the pending application(s) has been completed so that you can re-apply. A fee has not been
+            debited.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Can all documents be delivered immediately? N
+            Are all documents unavailable? N</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.documents.electronic.versionNotAvailableMessage</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-019</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Your official copy request cannot be delivered immediately and requires further investigation. We are unable to calculate the exact fee at this time.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Various internal business rules (see workflow)</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Can all OCs be delivered electronically? N</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.electronic.vers ionNotAvailableMessage</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-021</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Your official copy(s) cannot be electronically delivered. Paper official copies will be sent to you by post/DX. We reserve the right on fee, it could be more than the fee charged for
+            electronic delivery.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Are there any applications pending against the title? Y
+            Are there any application pending with a Dealing Code of &lsquo;CRX&rsquo; or &lsquo;DCX&rsquo;? Y
+            Did request specify Notify if pending application? N</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.electronic.vers ionNotAvailableMessage</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-021</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Your official copy(s) cannot be electronically delivered. Paper official copies will be sent to you by post/DX. We reserve the right on fee, it could be more than the fee charged for
+            electronic delivery.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-024</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is Title Number continued under another title?</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.closedAndContinued</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-022</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Title Number <x> has been closed and registration continued under Title Number <y>. Please request an Official Copy of the new Title Number.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is the title a pending new title? Y
+            Did request specify Notify if pending new title? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.pending.registration.notific ation.message</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-025</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The Title number provided is a pending first registration. You will be notified when the first registration has been completed so that you can re-apply. A fee has not been debited.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Can all documents be delivered immediately? Y Is the Actual Fee more than the Expected Fee? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.fee.feeMismatch</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-032</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Fee Amount provided does not match with the fee calculated by Land Registry.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Various internal business rules (see workflow)</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Calculate <Actual Fee>
+          </td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.fee.feeMismatch</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-032</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Fee Amount provided does not match with the fee calculated by Land Registry.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is the title computerised? N</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.notcomputerised</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-066</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Your official copy request cannot be accepted as title records have not been computerised.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Does the request include a CI? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.ci.register.suc essMessage</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-067</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Your official copy request includes CI which cannot be delivered electronically. The official copy item(s) will be sent by post.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Various internal business rules (see workflow)</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is the title a Commonhold common parts title? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.searchOfIndexMap.succe ssMessage</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-070</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">You have requested an Official Copy relating to a Commonhold common parts title. Where an Official Copy Register is requested an Official Copy Title Plan is also provided at no extra cost.
+            Similarly, where an Official Copy Title Plan is requested an Official Copy Register is provided at no extra cost. Where an Official Copy Register and Title Plan are requested a fee for each set, rather than each item will be applied.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Are all requested documents unavailable? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.all.docs.unavailable</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-081</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">All requested document(s) are unavailable</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-052</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is the Type of document requested valid?</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.commonhold.only.docs</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-082</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Commonhold Community Statement, Memorandum and Articles of Association, Surrender of Development Rights and Termination Document can only be requested for commonhold titles</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Has Additional Information been supplied for a Type of Document of other?</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.additional.info.required</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-084</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Additional Information must be entered when a Document Type of &lsquo;Other&rsquo; is selected.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+<p><br />
+<h4 class="govuk-heading-s">Validation diagram 1</h4></p>
+
+<div style="padding-bottom: 15px">
+  <a href="../../images/oc_known_1.png" target="_blank">
+    <img src="../../images/oc_known_1.png" style="width:700px;" alt="Official copy Title Known - generic validation flow chart" title="Clicking this image will open the image in a new tab">
+  </a>
+</div>
+
+<h4 class="govuk-heading-s">Validation diagram 2</h4>
+
+<p>Official register, Title plan or CI (OC1)- this will return Register,
+  Title plan or CI that are associated with the given Title run
+</p>
+
+<div style="padding-bottom: 15px">
+  <a href="../../images/oc_known_2.png" target="_blank">
+    <img src="../../images/oc_known_2.png" style="width:700px;" alt="Official Copy Title Known via Business Gateway - Register, Title plan or CL flow chart" title="Clicking this image will open the image in a new tab">
+  </a>
+</div>
+
+<h4 class="govuk-heading-s">Validation diagram 3</h4>
+
+<p>Official copies documents (OC2)- this will return documents that are
+  associated with the given Title number (This must be requested seperately to
+  register)</p>
+
+<div style="padding-bottom: 15px">
+  <a href="../../images/oc_known_3.png" target="_blank">
+    <img src="../../images/oc_known_3.png" style="width:700px;" alt="Official Copy Title Known - Documents flow chart" title="Clicking this image will open the image in a new tab">
+  </a>
+</div>
+<h3 id="output">Output</h3>
+
+<p>Responds with a confirmation that the request for documents has been sent to
+  Land Registry. The user is also informed of any entitlement due to commonhold.</p>
+
+<hr>
+<h2 id="schemas">Schemas</h2>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/official_copy_known/request_title_known_official_copy_v2_1.xsd" class="govuk-!-font-size-24">request_title_known_official_copy_v2_1</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/official_copy_known/request_title_known_official_copy_v2_1.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/official_copy_known/ResponseTitleKnownOfficialCopyV2_0.xsd" class="govuk-!-font-size-24">ResponseTitleKnownOfficialCopyV2_0</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/official_copy_known/ResponseTitleKnownOfficialCopyV2_0.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/official_copy_known/OfficialCopyTitleKnownV2.1_Schema_Explain.pdf" class="govuk-!-font-size-24">Schema explain</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 243KB, 24 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/official_copy_known/OfficialCopyTitleKnownV2.1_Schema_Explain.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<p>Schema explain describes the request schema for the service.</p>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/official_copy_known/OfficialCopyTitleKnownV2_1_Example.xml" class="govuk-!-font-size-24">OfficialCopyTitleKnownV2_1_Example</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XML</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/official_copy_known/OfficialCopyTitleKnownV2_1_Example.xml"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<p>This provides example XML for the service.</p>
+
+<hr>
+<h2 id="vendor-testing">Vendor testing</h2>
+
+<p>Documents the data required for testing the service.</p>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/official_copy_known/OfficialCopyTitleKnown_OC1_v2_1_VendorTest.pdf" class="govuk-!-font-size-24">Vendor Test data (Request official copy)</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 392KB, 34 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/official_copy_known/OfficialCopyTitleKnown_OC1_v2_1_VendorTest.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/official_copy_known/OfficialCopyTitleKnown_OC2_v2_1_VendorTest.pdf" class="govuk-!-font-size-24">Vendor Test data (Request official copy with documents)</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 228KB, 13 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/official_copy_known/OfficialCopyTitleKnown_OC2_v2_1_VendorTest.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

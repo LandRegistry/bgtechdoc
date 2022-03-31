@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:drs="http://www.oscre.org/ns/eReg-Final/2012/RequestApplicationToChangeRegisterV2_1"
+	targetNamespace="http://www.oscre.org/ns/eReg-Final/2012/RequestApplicationToChangeRegisterV2_1"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:element name="RequestApplicationToChangeRegisterV2_1"
+		type="drs:RequestApplicationToChangeRegisterV2_1Type">
+
+		<!-- definition of primary keys -->
+		<xs:key name="ApplicationPriorityUniqueKey">
+			<xs:annotation>
+				<xs:documentation>This key enforces a not null element of Priority
+					which is unique across all child elements of Applications
+				</xs:documentation>
+			</xs:annotation>
+			<xs:selector
+				xpath="drs:Product/drs:Applications/drs:OtherApplication|drs:Product/drs:Applications/drs:ChargeApplication" />
+			<xs:field xpath="drs:Priority" />
+		</xs:key>
+		
+		<xs:key name="SupportingDocumentIdUniqueKey">
+			<xs:annotation>
+				<xs:documentation>This key enforces a not null element of DocumentId
+					which is unique across all SupportingDocument elements
+				</xs:documentation>
+			</xs:annotation>
+			<xs:selector
+				xpath="drs:Product/drs:SupportingDocuments/drs:SupportingDocument" />
+			<xs:field xpath="drs:DocumentId" />
+		</xs:key>
+
+		<xs:key name="RepresentativeIdUniqueKey">
+			<xs:annotation>
+				<xs:documentation>This key enforces a not null element of
+					RepresentativeId which is unique across all child elements of
+					Representations</xs:documentation>
+			</xs:annotation>
+			<xs:selector
+				xpath="drs:Product/drs:Representations/drs:LodgingConveyancer|drs:Product/drs:Representations/drs:Certified|drs:Product/drs:Representations/drs:IdentityEvidence|drs:Product/drs:Representations/drs:RepresentingConveyancer" />
+			<xs:field xpath="drs:RepresentativeId" />
+		</xs:key>
+
+
+		<!-- definition of foreign keys -->
+		<xs:keyref name="PartyRolePriorityForeignKey" refer="drs:ApplicationPriorityUniqueKey">
+			<xs:annotation>
+				<xs:documentation>This foreign key enforces that the value of the
+					Priority element within all child elements of Roles must match with
+					a value present in a child of Applications (appKey primary key)
+				</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="drs:Product/drs:Parties/drs:Party/drs:Roles/drs:Role" />
+			<xs:field xpath="drs:Priority" />
+		</xs:keyref>
+
+		<xs:keyref name="PartyRepresentativeIdForeignKey" refer="drs:RepresentativeIdUniqueKey">
+			<xs:annotation>
+				<xs:documentation>This foreign key enforces that the value of the
+					representativeId attribute within all child elements of Parties
+					must match with a value present in a child of Representations
+					(repKey primary key)</xs:documentation>
+			</xs:annotation>
+			<xs:selector xpath="drs:Product/drs:Parties/drs:Party" />
+			<xs:field xpath="@representativeId" />
+		</xs:keyref>
+
+
+		<!-- Definition of unique constraints -->
+		<xs:unique name="ApplicationPriorityDocumentIdUnique">
+			<xs:annotation>
+				<xs:documentation>This unique constraint enforces that Application,
+					Charge Application and Supporting Document Priority/DocumentIDs
+					must be unique across the Application. For Example Applcation
+					Priority 1, 2 and 3 followed by Supporting Documents with Document
+					IDs 4,5 and 6.</xs:documentation>
+			</xs:annotation>
+			<xs:selector
+				xpath="drs:Product/drs:Applications/drs:OtherApplication|drs:Product/drs:Applications/drs:ChargeApplication|drs:Product/drs:SupportingDocuments/drs:SupportingDocument" />
+			<xs:field xpath="drs:Priority|drs:DocumentId" />
+		</xs:unique>
+	</xs:element>
+
+
+	<!-- definition of complex types -->
+
+	<xs:complexType name="AdditionalPartyNotificationsType">
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="AdditionalPartyNotification" type="drs:AdditionalPartyNotificationType"
+				maxOccurs="1" minOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="AdditionalPartyNotificationType">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Name" type="drs:NonBlankTextType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="Reference" type="drs:NonBlankTextType"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="Address" type="drs:AddressType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="AddressForServiceType">
+		<xs:annotation>
+			<xs:documentation>This element must contain either an Address for
+				service option or Address(es) for the Party. If Address(es) are
+				supplied there MUST be Postal address and can optionally be up to 2
+				more addresses of any type.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="PostalAddress" type="drs:PostalAddressType"
+					minOccurs="1" maxOccurs="1" />
+				<xs:element name="AdditionalAddresses" type="drs:AdditionalAddressForServiceType"
+					minOccurs="0" maxOccurs="1" />
+
+			</xs:sequence>
+			<xs:element name="AddressForServiceOption" type="drs:AddressForServiceTypeContent"
+				minOccurs="1" maxOccurs="1" />
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="AdditionalAddressForServiceType">
+		<xs:choice minOccurs="1" maxOccurs="2">
+			<xs:element name="PostalAddress" type="drs:PostalAddressType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="EmailAddress" type="drs:EmailAddressType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="DXAddress" type="drs:DXAddressType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="AddressType">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="EmailAddress" type="drs:EmailAddressType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="DXAddress" type="drs:DXAddressType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="PostalAddress" type="drs:PostalAddressType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="ApplicationsType">
+		<xs:choice minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="OtherApplication" type="drs:OtherApplicationType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="ChargeApplication" type="drs:ChargeApplicationType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="ApplicationType">
+		<xs:sequence>
+			<xs:element name="Priority" type="xs:positiveInteger"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="Value" type="drs:NonBlankTextType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="FeeInPence" type="xs:nonNegativeInteger"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="Document" type="drs:DocumentType"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="OtherApplicationType">
+		<xs:complexContent>
+			<xs:extension base="drs:ApplicationType">
+				<xs:sequence>
+					<xs:element name="Type" type="drs:ApplicationTypeContent"
+						minOccurs="1" maxOccurs="1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CareOfAddressType">
+		<xs:sequence>
+			<xs:element name="CareOfName" type="drs:NonBlankTextType"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="CareOfReference" type="drs:NonBlankTextType"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ChargeApplicationType">
+		<xs:complexContent>
+			<xs:extension base="drs:ApplicationType">
+				<xs:sequence>
+					<xs:element name="ChargeDate" type="xs:date" minOccurs="1"
+						maxOccurs="1" />
+					<xs:choice>
+						<xs:element name="MDRef" type="drs:NonBlankTextType"
+							minOccurs="1" maxOccurs="1" />
+						<xs:element name="NoMDRef" type="drs:NoMDRefType"
+							minOccurs="1" maxOccurs="1" />
+					</xs:choice>
+					<xs:element name="SortCode" type="drs:NonBlankTextType"
+						minOccurs="0" maxOccurs="1"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CompanyType">
+		<xs:sequence>
+			<xs:element name="CompanyName" type="drs:NonBlankTextType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:choice minOccurs="0" maxOccurs="1">
+				<xs:element name="CompanyRegistrationNumber" type="drs:NonBlankTextType"
+					minOccurs="1" maxOccurs="1" />
+				<xs:element name="UK-LLPRegistrationNumber" type="drs:NonBlankTextType"
+					minOccurs="1" maxOccurs="1" />
+			</xs:choice>
+			<xs:element name="OverseasTerritory" type="drs:NonBlankTextType"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="OverseasNumberInTheUnitedKingdom" type="drs:NonBlankTextType"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DocumentType">
+		<xs:sequence>
+			<xs:element name="CertifiedCopy" type="drs:CertifiedTypeContent"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DXAddressType">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="drs:CareOfAddressType">
+				<xs:sequence>
+					<xs:element name="DXNumber" type="drs:NonBlankTextType"
+						minOccurs="1" maxOccurs="1" />
+					<xs:element name="DXExchange" type="drs:NonBlankTextType"
+						minOccurs="1" maxOccurs="1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="EmailAddressType">
+		<xs:sequence>
+			<xs:element name="Email" type="drs:NonBlankTextType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="LodgingConveyancerType">
+		<xs:complexContent>
+			<xs:extension base="drs:RepresentativeType" />
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="NoMDRefType" />
+
+	<xs:complexType name="CertifiedType">
+		<xs:complexContent>
+			<xs:extension base="drs:RepresentativeType">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="PartiesType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="Party" type="drs:PartyType" minOccurs="1"
+				maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="IdentityEvidenceType">
+		<xs:complexContent>
+			<xs:extension base="drs:RepresentativeType">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="PartyRolesType">
+		<xs:sequence>
+			<xs:element name="Role" type="drs:PartyRoleType"
+				minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PartyRoleType">
+		<xs:sequence>
+			<xs:element name="RoleType" type="drs:RoleTypeContent"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="Priority" type="xs:positiveInteger"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PartyType">
+		<xs:sequence>
+			<xs:element name="IsApplicant" type="xs:boolean"
+				minOccurs="1" maxOccurs="1" />
+			<xs:choice>
+				<xs:element name="Company" type="drs:CompanyType"
+					minOccurs="1" maxOccurs="1" />
+				<xs:element name="Person" type="drs:PersonType"
+					minOccurs="1" maxOccurs="1" />
+			</xs:choice>
+			<xs:element name="Roles" type="drs:PartyRolesType"
+				minOccurs="1" maxOccurs="1">
+				<xs:unique name="PartyRoleUnique">
+					<xs:annotation>
+						<xs:documentation>This unique constraint enforces that the values
+							of the Priority and RoleType elements are unique. This ensures
+							that a Party can only have a particular role within an
+							Application once.</xs:documentation>
+					</xs:annotation>
+					<xs:selector xpath="drs:Role" />
+					<xs:field xpath="drs:Priority" />
+					<xs:field xpath="drs:RoleType" />
+				</xs:unique>
+			</xs:element>
+			<xs:element name="AddressForService" type="drs:AddressForServiceType"
+				minOccurs="0" maxOccurs="1"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="representativeId" type="xs:positiveInteger"
+			use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="PersonType">
+		<xs:sequence>
+			<xs:element name="Forenames" type="drs:NonBlankTextType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="Surname" type="drs:NonBlankTextType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PostalAddressType">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="drs:CareOfAddressType">
+				<xs:sequence>
+					<xs:element name="AddressLine1" type="drs:NonBlankTextType"
+						minOccurs="1" maxOccurs="1" />
+					<xs:element name="AddressLine2" type="drs:NonBlankTextType"
+						minOccurs="0" maxOccurs="1" />
+					<xs:element name="AddressLine3" type="drs:NonBlankTextType"
+						minOccurs="0" maxOccurs="1" />
+					<xs:element name="AddressLine4" type="drs:NonBlankTextType"
+						minOccurs="0" maxOccurs="1" />
+					<xs:element name="City" type="drs:NonBlankTextType"
+						minOccurs="0" maxOccurs="1" />
+					<xs:element name="County" type="drs:NonBlankTextType"
+						minOccurs="0" maxOccurs="1" />
+					<xs:element name="Country" type="drs:NonBlankTextType"
+						minOccurs="0" maxOccurs="1" />
+					<xs:element name="Postcode" type="drs:NonBlankTextType"
+						minOccurs="0" maxOccurs="1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ProductType">
+		<xs:sequence>
+			<xs:element name="Reference" type="drs:ReferenceTypeContent"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+                    <xs:documentation>Reference of the person for whom the
+                        application is performed.</xs:documentation>
+                </xs:annotation>
+			</xs:element>
+			<xs:element name="TotalFeeInPence"
+				type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1" />
+			<xs:element name="Email" type="drs:NonBlankTextType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="TelephoneNumber"
+				type="drs:NonBlankTextType" minOccurs="1" maxOccurs="1" />
+			<xs:element name="AP1WarningUnderstood" type="xs:boolean"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="ApplicationDate" type="xs:date"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="DisclosableOveridingInterests"
+				type="xs:boolean" minOccurs="1" maxOccurs="1" />
+			<xs:element name="PostcodeOfProperty"
+				type="drs:NonBlankTextType" minOccurs="0" maxOccurs="1" />
+			<xs:element name="LocalAuthority"
+				type="drs:NonBlankTextType" minOccurs="0" maxOccurs="1" />
+			<xs:element name="Titles" type="drs:ServiceTitlesType"
+				minOccurs="1" maxOccurs="1">
+				<xs:unique name="TitleNumberUnique">
+					<xs:annotation>
+						<xs:documentation>
+							This unique constraint enforces that the
+							value of the Title elements must be unique. The selector evaluates the
+							TitleNumber elements and LesseeTitle element if it exists.  
+						</xs:documentation>
+					</xs:annotation>
+					<xs:selector xpath=".//drs:TitleNumber|.//drs:LesseeTitle" />
+					<xs:field xpath="." />
+				</xs:unique>
+			</xs:element>
+			<xs:element name="Applications" type="drs:ApplicationsType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="SupportingDocuments"
+				type="drs:SupportingDocumentsType" minOccurs="0" maxOccurs="1" />
+			<xs:element name="Representations"
+				type="drs:RepresentationsType" minOccurs="1" maxOccurs="1" />
+			<xs:element name="Parties" type="drs:PartiesType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="AdditionalPartyNotifications"
+				type="drs:AdditionalPartyNotificationsType" minOccurs="0"
+				maxOccurs="1" />
+			<xs:element name="Notes" type="drs:NonBlankTextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						This is a free format notepad area for any
+						additional notes.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ApplicationAffects" type="drs:ApplicationAffectsContent" maxOccurs="1" minOccurs="1"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RepresentationsType">
+		<xs:sequence>
+			<xs:element name="LodgingConveyancer" type="drs:LodgingConveyancerType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="RepresentingConveyancer" type="drs:RepresentingConveyancerType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="Certified" type="drs:CertifiedType"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="IdentityEvidence" type="drs:IdentityEvidenceType"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RepresentativeType">
+		<xs:sequence>
+			<xs:element name="RepresentativeId" type="xs:positiveInteger" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RepresentingConveyancerType">
+		<xs:complexContent>
+			<xs:extension base="drs:RepresentativeType">
+				<xs:sequence>
+					<xs:element name="ConveyancerName" type="drs:NonBlankTextType"
+						minOccurs="1" maxOccurs="1" />
+					<xs:element name="Reference" type="drs:NonBlankTextType"
+						minOccurs="1" maxOccurs="1" />
+					<xs:choice>
+						<xs:element name="DXAddress" type="drs:DXAddressType"
+							minOccurs="1" maxOccurs="1" />
+						<xs:element name="PostalAddress" type="drs:PostalAddressType"
+							minOccurs="1" maxOccurs="1" />
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="RequestApplicationToChangeRegisterV2_1Type">
+	   <xs:sequence>
+	   		<xs:element name="AdditionalProviderFilter" type="drs:AdditionalProviderFilterType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A value that can be used to subsequently retrieve request responses
+					 based upon high level grouping. This will be of particular interest to cloud providers.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+			<xs:element name="MessageId" type="drs:MessageIdType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique value that can be used to identify the application.</xs:documentation>
+                </xs:annotation>
+			</xs:element>
+			<xs:element name="ExternalReference" type="drs:ReferenceTypeContent"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+                    <xs:documentation>Reference associated with a case in Case
+                        Management System.</xs:documentation>
+                </xs:annotation>
+			</xs:element>
+			<xs:element name="Product" type="drs:ProductType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SupportingDocumentsType">
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="SupportingDocument" type="drs:SupportingDocumentType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SupportingDocumentType">
+		<xs:complexContent>
+			<xs:extension base="drs:DocumentType">
+				<xs:sequence>
+					<xs:element name="DocumentId" type="xs:positiveInteger"
+						minOccurs="1" maxOccurs="1" />
+					<xs:element name="DocumentName" type="drs:DocumentNameContent"
+						minOccurs="1" maxOccurs="1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="TitlesType">
+		<xs:annotation>
+			<xs:documentation>The Titles element must have at least 1 Title	element
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="TitleNumber" type="drs:TitleType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<!-- definition of simple types -->
+
+	<xs:simpleType name="AddressForServiceTypeContent">
+		<xs:annotation>
+			<xs:documentation>This type defines the valid string values for an
+				Application type.
+				These are described as follows:
+				A1 = Address of the
+				property (A1 register)
+				B1 = Current B1 Address (B1 register)
+				TA = Transfer/Assent
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A1" />
+			<xs:enumeration value="B1" />
+			<xs:enumeration value="TA" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ApplicationTypeContent">
+		<xs:annotation>
+			<xs:documentation>This type defines the valid string values for an
+				Application type.
+				A corresponding application form must then be attached to this 
+				application using the Attachment service (except DIS and CN).
+				These are described as follows:
+
+				ADV1 = Adverse possession of registered land
+				ADV2 = Notification of adverse possession
+				AN1  = Agreed Notice
+				AP1  = Alteration of Register
+				APT  = Appointment of New Trustee
+				AS1  = Assent
+				AS2  = Assent of Charge
+				AS3  = Assent of Part
+				CCD  = Cancellation of Caution
+				CH2  = Obligation to make Further Advances (CH2)
+				CH3  = Note Agreed Maximum Amount of Security ()CH3)
+				CN   = Change of Name
+				CNL  = Cancellation of Noted Lease
+				CN1  = Cancel Notice
+				COA  = Change of Address
+				CPD  = Change of Property Description (CPD)
+				DB   = Determine the exact line of boundary
+				DIS  = Discharge
+				DJP  = Death of Joint Proprietor
+				DOL  = Determination of a Lease
+				DSP  = Death of Sole Proprietor
+				EX1  = Exempt Information Document (EX1)
+				EX3  = Remove Exempt Information Document (EX3)
+				HR1  = Notice of Home Rights (HR1)
+				HR2  = Renew notice of Home Rights (HR2)
+				HR4  = Cancel notice of Home Rights (HR4)
+				LEASE = Lease 
+				NOE  = Noting of Easement
+				NOL  = Noting of Lease
+				PC   = Postponement of Charge
+				RC   = Entry of Restrictive Covenant
+				RFN  = Rectification of Register
+				RGOE = Registration of Easements
+				ROCA = Release of Covenants - Agreed Notice
+				ROCC = Release of Covenants - Cancellation
+				ROCU = Release of Covenants - Unilateral Notice
+				ROE  = Release of Easements
+				RX1  = Restriction (Standard)
+				RX2  = Restriction (Non Standard)
+				RX3  = Cancel a Restriction
+				RX4  = Withdraw a Restriction
+				SBC  = Sub Charge
+				SC   = Note overriding priority of a statutory charge
+				SEV  = Severance of Joint Tenancy
+				SL   = Surrender of Lease
+				TNV  = Transfer not for Value
+				TP1  = Transfer of Part
+				TP2  = Transfer of Part Under Power of Sale
+				TR1  = Transfer
+				TR2  = Transfer Under Power of Sale
+				TR4  = Transfer of Charge
+				TRM  = Transfer by Operation of Law (On Death)
+				TSC  = Transfer Subject to a Charge
+				UN1  = Unilateral Notice
+				UN2  = Remove Unilateral Notice (UN2)
+				UN3  = Register Beneficiary of Unilateral Notice (UN3)
+				UN4  = Cancellation of a Unilateral Notice (UN4)
+				UT1  = Upgrade Title (UT1)
+				VC   = Variation of Charge
+				VLAN = Variation of Lease - Agreed Notice
+				VLAP = Variation of Lease
+				VLUN = Variation of Lease - Unilateral Notice
+				VOCA = Variation of Covenants - Agreed Notice
+				VOCU = Variation of Covenants - Unilateral Notice
+				VOE  = Variation of Easements
+				VOEA = Variation of Easements - Agreed Notice
+				VOEU = Variation of Easements - Unilateral Notice
+				WCT  = Withdraw a Caution			
+
+				</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ADV1" />
+			<xs:enumeration value="ADV2" />
+			<xs:enumeration value="AN1" />
+			<xs:enumeration value="AP1" />
+			<xs:enumeration value="APT" />
+			<xs:enumeration value="AS1" />
+			<xs:enumeration value="AS2" />
+			<xs:enumeration value="AS3" />
+			<xs:enumeration value="CCD" />
+			<xs:enumeration value="CH2" />
+			<xs:enumeration value="CH3" />
+			<xs:enumeration value="CN" />
+			<xs:enumeration value="CNL" />
+			<xs:enumeration value="CN1" />
+			<xs:enumeration value="COA" />
+			<xs:enumeration value="CPD" />
+			<xs:enumeration value="DB" />
+			<xs:enumeration value="DIS" />
+			<xs:enumeration value="DJP" />
+			<xs:enumeration value="DOL" />
+			<xs:enumeration value="DSP" />
+			<xs:enumeration value="EX1" />
+			<xs:enumeration value="EX3" />
+			<xs:enumeration value="HR1" />
+			<xs:enumeration value="HR2" />
+			<xs:enumeration value="HR4" />
+			<xs:enumeration value="LEASE" />
+			<xs:enumeration value="NOE" />
+			<xs:enumeration value="NOL" />
+			<xs:enumeration value="PC" />
+			<xs:enumeration value="RC" />
+			<xs:enumeration value="RFN" />
+			<xs:enumeration value="RGOE" />
+			<xs:enumeration value="ROCA" />
+			<xs:enumeration value="ROCC" />
+			<xs:enumeration value="ROCU" />
+			<xs:enumeration value="ROE" />
+			<xs:enumeration value="RX1" />
+			<xs:enumeration value="RX2" />
+			<xs:enumeration value="RX3" />
+			<xs:enumeration value="RX4" />
+			<xs:enumeration value="SBC" />
+			<xs:enumeration value="SC" />
+			<xs:enumeration value="SEV" />
+			<xs:enumeration value="SL" />
+			<xs:enumeration value="TNV" />
+			<xs:enumeration value="TP1" />
+			<xs:enumeration value="TP2" />
+			<xs:enumeration value="TR1" />
+			<xs:enumeration value="TR2" />
+			<xs:enumeration value="TR4" />
+			<xs:enumeration value="TRM" />
+			<xs:enumeration value="TSC" />
+			<xs:enumeration value="UN1" />
+			<xs:enumeration value="UN2" />
+			<xs:enumeration value="UN3" />
+			<xs:enumeration value="UN4" />
+			<xs:enumeration value="UT1" />
+			<xs:enumeration value="VC" />
+			<xs:enumeration value="VLAN" />
+			<xs:enumeration value="VLAP" />
+			<xs:enumeration value="VLUN" />
+			<xs:enumeration value="VOCA" />
+			<xs:enumeration value="VOCU" />
+			<xs:enumeration value="VOE" />
+			<xs:enumeration value="VOEA" />
+			<xs:enumeration value="VOEU" />
+			<xs:enumeration value="WCT" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CertifiedTypeContent">
+		<xs:annotation>
+			<xs:documentation>This type defines the valid string values for a Certified Copy.
+			Original: This should be used where you hold the original document, 
+			original certificate or original letter.
+			
+			Certified: This should be used where you are submitting a document which is a copy 
+			of a document which has been certified on the face of the document by another 
+			Conveyancer to be a true copy of the original.
+			
+			Scanned: This should be used when you are submitting a document where you do not 
+			hold an original or copy certified by another Conveyancer and what you are 
+			submitting is a copy document such as copies of Death Certificates or Court Orders.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Original" />
+			<xs:enumeration value="Certified" />
+			<xs:enumeration value="Scanned" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DocumentNameContent">
+		<xs:annotation>
+			<xs:documentation>This type defines the valid string values for a
+				Supporting Document Name
+				A corresponding document must then be attached to this 
+                application using the Attachment service.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Abstract" />
+			<xs:enumeration value="Agreement" />
+			<xs:enumeration value="Assent" />
+			<xs:enumeration value="Assignment" />
+			<xs:enumeration value="Birth Certificate" />
+			<xs:enumeration value="Charge" />
+			<xs:enumeration value="Conveyance" />
+			<xs:enumeration value="Correspondence" />
+			<xs:enumeration value="Court Order" />
+			<xs:enumeration value="Death Certificate" />
+			<xs:enumeration value="Deed" />
+			<xs:enumeration value="Discharge" />
+			<xs:enumeration value="Document List" />
+			<xs:enumeration value="Evidence" />
+			<xs:enumeration value="EX1A" />
+			<xs:enumeration value="Form DI" />
+			<xs:enumeration value="Identity Evidence" />
+			<xs:enumeration value="Identity Form" />
+			<xs:enumeration value="Indenture" />
+			<xs:enumeration value="Land Transaction Tax" />
+			<xs:enumeration value="Lasting POA Summary" />
+			<xs:enumeration value="Lease" />
+			<xs:enumeration value="Licence" />
+			<xs:enumeration value="LR Correspondence" />
+			<xs:enumeration value="Marriage Certificate" />
+			<xs:enumeration value="Plan" />
+			<xs:enumeration value="Power of Attorney" />
+			<xs:enumeration value="Probate" />
+			<xs:enumeration value="Stamp Duty Land Tax" />
+			<xs:enumeration value="Statement Of Truth" />
+			<xs:enumeration value="Statutory Declaration" />
+			<xs:enumeration value="Sub Charge" />
+			<xs:enumeration value="Transfer" />
+			<xs:enumeration value="Witness Statement" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MessageIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5" />
+			<xs:maxLength value="50" />
+			<xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="AdditionalProviderFilterType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="50" />
+			<xs:pattern value="[a-zA-Z0-9]*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="NonBlankTextType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ReferenceTypeContent">
+		<xs:annotation>
+			<xs:documentation>This type defines the validation pattern for
+				Application Reference</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="25" />
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="RoleTypeContent">
+		<xs:annotation>
+			<xs:documentation>This type defines the valid string values for a
+				Role type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Borrower" />
+			<xs:enumeration value="Lender" />
+			<xs:enumeration value="PersonalRepresentative" />
+			<xs:enumeration value="Proprietor" />
+			<xs:enumeration value="ThirdParty" />
+			<xs:enumeration value="Transferee" />
+			<xs:enumeration value="Transferor" />
+			<xs:enumeration value="Lessee" />
+			<xs:enumeration value="Lessor" />			
+			<xs:enumeration value="PowerOfAttorney" />			
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TitleType">
+		<xs:annotation>
+			<xs:documentation>This type defines the validation pattern for title
+				numbers</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="9" />
+			<xs:pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ServiceTypeContent">
+		<xs:annotation>
+			<xs:documentation>This type defines the valid string values for the
+				service type</xs:documentation>
+		</xs:annotation>
+
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="REG"/>
+			<xs:enumeration value="DFL"/>
+			<xs:enumeration value="TP"/>
+		</xs:restriction>
+	</xs:simpleType>	
+
+	<xs:complexType name="DealingType">
+		<xs:sequence>
+			<xs:element name="DealingTitles" type="drs:TitlesType" maxOccurs="1" minOccurs="1"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="TransferOfPartType">
+		<xs:sequence>
+			<xs:element name="TransferorTitles" type="drs:TitlesType" maxOccurs="1" minOccurs="1"></xs:element>
+			<xs:element name="AdditionalTitles" type="drs:TitlesType" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NewLeaseType">
+		<xs:sequence>
+			<xs:element name="LessorTitles" type="drs:TitlesType" maxOccurs="1" minOccurs="1"></xs:element>
+			<xs:element name="AdditionalTitles" type="drs:TitlesType" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="LeaseExtensionType">
+		<xs:sequence>
+			<xs:element name="LessorTitles" type="drs:TitlesType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="LesseeTitle" type="drs:TitleType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="AdditionalTitles" type="drs:TitlesType" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+    <xs:complexType name="ServiceTitlesType">
+		<xs:choice minOccurs="1" maxOccurs="1">
+			<xs:element name="Dealing" type="drs:DealingType"></xs:element>
+			<xs:element name="TransferOfPart" type="drs:TransferOfPartType"></xs:element>
+			<xs:element name="NewLease" type="drs:NewLeaseType"></xs:element>
+			<xs:element name="LeaseExtension" type="drs:LeaseExtensionType"></xs:element>
+	    </xs:choice>
+	</xs:complexType>
+	
+
+    <xs:simpleType name="ApplicationAffectsContent">
+    <xs:annotation>
+			<xs:documentation>This type defines whether the application affect the whole
+			    or part of the title
+				These are described as follows:
+
+				WHOLE  = Whole of the title
+				PART  = Part of the title
+				</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WHOLE" />
+			<xs:enumeration value="PART" />
+		</xs:restriction>
+    </xs:simpleType>
+</xs:schema>

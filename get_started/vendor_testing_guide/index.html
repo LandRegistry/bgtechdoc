@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>A guide to Vendor testing - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/get_started/vendor_testing_guide/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="A guide to Vendor testing - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/get_started/vendor_testing_guide/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="A guide to Vendor testing" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/get_started/vendor_testing_guide/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#a-guide-to-vendor-testing"><span>A guide to Vendor testing</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+      </li>
+      <li>
+        <a href="#appendices"><span>Appendices</span></a>
+        <ul>
+          <li>
+            <a href="#vendor-test-strategy"><span>Vendor test strategy</span></a>
+          </li>
+          <li>
+            <a href="#exceptions"><span>Exceptions</span></a>
+          </li>
+          <li>
+            <a href="#role-based-access-control-rbac"><span>Role based access control (RBAC)</span></a>
+          </li>
+          <li>
+            <a href="#network-security"><span>Network security</span></a>
+          </li>
+          <li>
+            <a href="#availability"><span>Availability</span></a>
+          </li>
+          <li>
+            <a href="#support"><span>Support</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#business-services-available"><span>Business services available</span></a>
+        <ul>
+          <li>
+            <a href="#information-services"><span>Information services</span></a>
+          </li>
+          <li>
+            <a href="#outstanding-requests"><span>Outstanding Requests</span></a>
+          </li>
+          <li>
+            <a href="#network-services"><span>Network Services</span></a>
+          </li>
+          <li>
+            <a href="#verification-services"><span>Verification Services</span></a>
+          </li>
+          <li>
+            <a href="#local-land-charges-services"><span>Local Land Charges Services</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#getting-started"><span>Getting started</span></a>
+        <ul>
+          <li>
+            <a href="#vendor-entry-criteria-and-checklist"><span>Vendor entry criteria and checklist</span></a>
+          </li>
+          <li>
+            <a href="#overview-of-the-test-scenarios"><span>Overview of the test scenarios</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><a href="../">Back to Getting Started</a> <a href="../../">Back to Home</a></p>
+<h1 id="a-guide-to-vendor-testing">A guide to Vendor testing</h1>
+<h2 id="overview">Overview</h2>
+<p>This document is for software developers. Use when testing interfaces with the web services, before deploying software.</p>
+
+<hr>
+<h2 id="appendices">Appendices</h2>
+<h3 id="vendor-test-strategy">Vendor test strategy</h3>
+<p>Testing will be achieved by:</p>
+
+<ul>
+<li>submission of calls (conforming to defined XML submission criteria) from
+a vendor system to HM Land Registry via a simulated version of the Business
+Gateway installed in the production environment</li>
+<li>validation against the schema and business rules. No e-services will be
+initiated</li>
+<li>sending of appropriate response messages (successful and unsuccessful)
+which are hard coded in the simulated Business Gateway application (conforming
+to defined XML schemas).</li>
+</ul>
+<p>External testers will be able to connect to
+a live environment to perform the tests listed in the test data document.
+The requests they submit will be processed using stubs that mirror the live
+services. The stubs will not perform any database accesses, but will send
+validated responses based on the data received.</p>
+<p>The stubbed architecture will allow concurrent access by testers within
+the availability published below.</p>
+<h3 id="exceptions">Exceptions</h3>
+<p>The response times that are provided by this test service will be different
+from those in the live services, as there are no back-end Enterprise Java
+Bean (EJB) calls and database calls. The test environment will also have a
+lower processing priority than the production system. It is not intended that
+vendors can use the test service for performance testing.</p>
+<p>An acknowledgement response will contain the same poll back time for subsequent out of hour requests. For example, if the first acknowledgement that is sent to a user shows a poll time of 07:10:10, then if the user sends another request using the same combination of data the response will be the same i.e. the poll time will not change automatically.</p>
+<p>Although HM Land Registry will provide the test service, there will be no testing of vendors’ products by Land Registry and no form of accreditation of vendor software.</p>
+<p>The following scenarios will not be tested:</p>
+
+<ul>
+<li>role-based access for different services</li>
+<li>saving of requests and responses (as there are no database interactions)</li>
+</ul>
+<h3 id="role-based-access-control-rbac">Role based access control (RBAC)</h3>
+<p>In the production system Business Gateway uses portal login details.
+Portal will be required to setup initial password and shared secret questions to make the user login ‘active’.</p>
+<p>There are multiple portal roles available but for Business Gateway services, the only roles required are either:</p>
+
+<ul>
+<li>the conveyancer C4 role; a conveyancer who has a Network Access Agreement and the permission to edit and submit transactions.</li>
+<li>a register extract service role, which requires an additional Register Extract Service Agreement.</li>
+</ul>
+<p>It will be possible to use the login details in the portal at the same time as being used through Business Gateway.</p>
+<p>In the test system the test stubs do not have any RBAC limitations, as the user credentials are not validated. All tests use the specified user ID and password.</p>
+<h3 id="network-security">Network security</h3>
+<p>The security structure for vendors connecting to the test service will be the same as if they were connecting to the live system i.e. an SSL tunnel will be established using a HM Land Registry certificate. Any user connecting to the Business Gateway will need an appropriate SSL certificate to be stored on their machine to allow them to use either the production or the test service.</p>
+<h3 id="availability">Availability</h3>
+<p>The test service will be available 08.00 – 17.30 Monday to Friday excluding national public holidays.</p>
+<h3 id="support">Support</h3>
+<p>Technical support will be available 09.00 – 16.00 on the days the system is available. The contact details for technical support are published on the Business Gateway web page.</p>
+
+<hr>
+<h2 id="business-services-available">Business services available</h2>
+<p>This section summarises the services that are currently available in the test service.</p>
+<h3 id="information-services">Information services</h3>
+
+<ul>
+<li><h4 id="title-number-enquiry-by-property-description">Title number enquiry by property description</h4>
+
+<p>This service provides the ability for the external system to search for a title
+  number by providing a property description. It will retrieve a list of all properties
+  matching the supplied property description (maximum of 50) along with their
+  title number and tenure. The result will be returned in the response message.</p></li>
+<li><h4 id="official-search-of-whole-with-priority">Official search of whole with priority</h4>
+
+<p>This service provides the ability for the external system to request an OS1.
+  Whenever possible the requested official search certificate is made available
+  to the external system as a PDF.</p></li>
+<li><h4 id="land-charges-bankruptcy-search">Land charges bankruptcy search</h4>
+
+<p>This service provides the ability for the external system to make a K16
+  application for a bankruptcy search against private individuals and
+  complex names.</p>
+
+<p>The certificate of search result against a private individual will
+  be returned electronically as a PDF. The certificate of search result
+  against a complex name will be returned by post.</p></li>
+<li><h4 id="official-copy-title-known">Official copy – title known</h4>
+
+<p>This service provides the ability for the external system to submit
+  a request for an official copy using the title number. There are two
+  web services for official copies:</p>
+
+<ul>
+<li>an OC1 when requesting an official copy of the register, title
+plan or certificate in form CI</li>
+<li>an OC2 when requesting other documents (that have not been designated
+exempt) referred to in the register<br />
+Whenever possible the requested official copy is made available
+to the external system as a PDF. However, if an electronic version
+of the official copy cannot be supplied, it is sent through
+the post.<br />
+If the external system has requested more than one type of official
+copy document (OC2), the system will deliver electronic versions
+of the documents that can be electronically returned; other documents
+will be sent through the post. For official copy title documents
+(OC1) the documents will be delivered together.<br />
+For example, if the register and title plan are requested electronically,
+and the register cannot be provided electronically, both will be
+sent by post. A certificate in form CI will always be delivered
+by post.</li>
+</ul></li>
+<li><h4 id="register-extract">Register extract</h4>
+
+<p>This service provides the ability for the external system to submit
+  a request for an official copy using the title number. As well as
+  returning the PDF result as above, some of the information contained
+  in the register is returned in XML format (OCXML).</p>
+
+<p>The OCXML service will be available only when an official copy
+  of the register has been ordered and if it can be provided electronically.</p></li>
+<li><h4 id="official-search-of-part-with-priority">Official search of part with priority</h4>
+
+<p>This service provides the ability for the external system to
+  request an OS2. Whenever possible the requested official search
+  certificate is made available to the external system as a PDF.</p>
+
+<p>The process involves validation of inputs and confirmation
+  that the title is in an appropriate state for an official
+  search to be entered.</p></li>
+<li><h4 id="land-charges-full-search">Land charges full search</h4>
+
+<p>This service provides the ability for the external system
+  to make a K15 application for a full search against private
+  individuals, public limited companies, local authorities
+  and complex names.</p>
+
+<p>The certificate of search result against a private individual
+  or public limited company will be returned electronically
+  as a PDF. The certificate of search result against a local
+  authority or complex name will be returned by post.</p></li>
+<li><h4 id="daylist-enquiry">Daylist Enquiry</h4>
+
+<p>This service provides the ability for the external system to view a snapshot
+  of a title’s Daylist. This will reveal any pending applications that are lodged
+  against the title. This is not historical and is a view of what is there at
+  that moment in time.</p>
+
+<p>The process involves validation of inputs and confirmation that the title is
+  in an appropriate state for the Daylist to be viewed.</p></li>
+<li><h4 id="search-of-the-index-map">Search of the Index Map</h4>
+
+<p>This service provides the ability for the external system to request a SIM.
+  Whenever possible the requested search result will be made available to the
+  external system as a PDF.</p>
+
+<p>The process involves validation of inputs and confirmation that the information
+  provided is appropriate for a search to be processed.</p></li>
+<li><h4 id="application-enquiry">Application Enquiry</h4>
+
+<p>This service provides the ability for the external system to view a snapshot
+  of a title’s Daylist including the progress of the applications.</p>
+
+<p>A search can be made with the title number or a specific application reference.</p>
+
+<p>A search made with a title number will reveal details of any pending applications that are lodged against the title, as well as any Official Searches that are in their priority period.</p>
+
+<p>A search made with an application reference will return details of the specific application to which the reference relates.</p>
+
+<p>Both are not historical and are snapshot views at the time the request was made.</p>
+
+<p>The process involves validation of inputs and confirmation that the title or application reference is in an appropriate state for the Daylist to be viewed.</p>
+
+<p>To build upon the data being returned from a daylist enquiry this service now also returns:.</p>
+
+<ul>
+<li>Parent and new titles for a given application</li>
+<li>Priority period for Official Searches</li>
+<li>Description of the application’s progress</li>
+<li>A list of any relevant correspondence with dates</li>
+<li>The channel HMLR received the original application</li>
+<li>An indication if the application has been expedited</li>
+</ul></li>
+<li><h4 id="discharge-activity">Discharge Activity</h4>
+
+<p>This service provides the ability for the external system to request
+  discharge activity for a given title number. A request made with a title
+  number will reveal the number of discharges (of whole) that have been completed
+  within the last 30 calendar days for the title number provided. If an optional
+  charge date is provided that matches any of the discharged charges, then
+  the response will also include the following details for each matching
+  charge:</p>
+
+<ul>
+<li>the charge proprietors</li>
+<li>the date that the charge was discharged</li>
+</ul></li>
+</ul>
+<h3 id="outstanding-requests">Outstanding Requests</h3>
+
+<ul>
+<li><h4 id="outstanding-requests-service">Outstanding Requests Service</h4>
+
+<p>This service provides the ability for the external system to submit a request
+  to view the status of any of their outstanding requests. The response will
+  show details of which requests the organisation has submitted that have not
+  had a final response issued.</p>
+
+<p>If an application has been sent for manual processing, then the request will
+  show in the response as not having a new response. Once the application has
+  been completed, it will then show as a New Response, which will allow the
+  external system to submit a poll request to collect their response.</p></li>
+</ul>
+<h3 id="network-services">Network Services</h3>
+
+<ul>
+<li><h4 id="edocument-registration-services">eDocument Registration Services</h4>
+
+<p>These services provide the ability for the external system to submit a request
+  to change the register.</p>
+
+<p>The process involves validation of all the input data collation of details
+  to generate an AP1 and then returning the results with electronic documents
+  as well as an xml copy of the register.</p></li>
+</ul>
+<h3 id="verification-services">Verification Services</h3>
+
+<ul>
+<li><h4 id="online-ownership-verification-service">Online Ownership Verification Service</h4>
+
+<p>The Online Ownership Verification service identifies any titles associated
+  with the supplied address and then checks if the supplied name matches any
+  of the proprietors for those titles. If a title number is supplied this will
+  be used. The match result will be returned in the response message.</p></li>
+</ul>
+<h3 id="local-land-charges-services">Local Land Charges Services</h3>
+<h4 id="local-land-charges-services-local-land-charges-services">Local Land Charges Services</h4>
+<p>The Local Land Charges service provides the ability for the external system
+      to submit applications to register a local land charge or to vary or cancel
+      the registration of a local land charge and to submit applications for an
+      official search or personal search of the local land charges register.</p>
+
+<hr>
+<h2 id="getting-started">Getting started</h2>
+<h3 id="vendor-entry-criteria-and-checklist">Vendor entry criteria and checklist</h3>
+<p>The following list has the steps that a vendor would need to have taken before using the test service:</p>
+
+<ul>
+<li>sign a Business Gateway development licence</li>
+<li>use the Business Gateway developer pack to develop their interface to Business
+Gateway</li>
+<li>unit test their software, paying particular attention to field lengths being
+matched correctly</li>
+<li>apply for, and install a test SSL certificate from HM Land Registry (this
+process for fulfillment is documented on the web page)
+
+<ul>
+<li>understand what is required and have raised any questions or concerns.</li>
+</ul></li>
+</ul>
+<h3 id="overview-of-the-test-scenarios">Overview of the test scenarios</h3>
+
+<p>Each web service has a basic set of tests for the main flows:</p>
+
+<ul>
+<li>a successful completion</li>
+<li>an out of hours situation </li>
+<li>apollresponse</li>
+<li>an error situation</li>
+</ul>
+
+<p>The number of test scenarios will increase in the future.</p>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

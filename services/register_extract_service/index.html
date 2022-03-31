@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Register Extract service - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/services/register_extract_service/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="Register Extract service - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/services/register_extract_service/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Register Extract service" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/services/register_extract_service/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#register-extract-service"><span>Register Extract service</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+        <ul>
+          <li>
+            <a href="#if-you-39-re-a-software-developer"><span>If you’re a software developer</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#schemas"><span>Schemas</span></a>
+      </li>
+      <li>
+        <a href="#vendor-testing"><span>Vendor testing</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+<p><a href="../">Back to Services</a> <a href="../../">Back to Home</a></p>
+<h1 id="register-extract-service">Register Extract service</h1>
+
+<hr>
+<h2 id="overview">Overview</h2>
+
+<p>Use this service to get source data from the Land Register in an electronic
+  data stream (alongside the usual supply of the official copy).</p>
+
+<p>Find information on:</p>
+
+<ul>
+<li>the property</li>
+<li>the proprietor</li>
+<li>any leases or restrictions that apply to the property</li>
+<li>any agreed notices, unilateral notices, cautions or charges that apply to the property</li>
+</ul>
+
+<p>Our quick reference indicator shows entries that may need further action for
+  your clients.</p>
+<h3 id="if-you-39-re-a-software-developer">If you&rsquo;re a software developer</h3>
+
+<P>Use this document to integrate data into your system.</P>
+
+<hr>
+<h2 id="schemas">Schemas</h2>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/register_extract/RequestOCWithSummaryV2_0.xsd" class="govuk-!-font-size-24">RequestOCWithSummaryV2_0</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/register_extract/RequestOCWithSummaryV2_0.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/register_extract/ResponseOCWithSummaryV2_1.xsd" class="govuk-!-font-size-24">ResponseOCWithSummaryV2_1</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/register_extract/ResponseOCWithSummaryV2_1.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/register_extract/RES_V2_1_Interface_Specification.pdf" class="govuk-!-font-size-24">Interface specification</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 798KB, 64 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/register_extract/RES_V2_1_Interface_Specification.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<p>The interface specification specifies the interface between Land Registry and
+   a Business Gateway Register Extract Service customer.</p>
+
+<hr>
+<h2 id="vendor-testing">Vendor testing</h2>
+
+<p>Vendor Test Data (Outstanding requests) documents the data for testing the service.</p>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/register_extract/RES_Vendor_Data_v1_2.pdf" class="govuk-!-font-size-24">Vendor Test data</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 181KB, 5 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/register_extract/RES_Vendor_Data_v1_2.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

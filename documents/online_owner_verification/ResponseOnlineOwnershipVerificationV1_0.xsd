@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.landregistry.gov.uk/OOV/ResponseOnlineOwnershipVerificationV1_0"
+	xmlns="http://www.landregistry.gov.uk/OOV/ResponseOnlineOwnershipVerificationV1_0"
+	elementFormDefault="qualified">
+
+	<xs:element name="ResponseOOV" type="ResponseOnlineOwnershipVerificationType">
+	</xs:element>
+
+	<xs:complexType name="ResponseOnlineOwnershipVerificationType">
+		<xs:sequence>
+			<xs:element name="TypeCode" type="TypeCodes" maxOccurs="1" minOccurs="1"></xs:element>
+			<xs:element name="Acknowledgement" type="AcknowledgementType" maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="Rejection" type="RejectionType" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="Result" type="ResultType" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ResponseType">
+		<xs:sequence>
+			<xs:element name="Code" type="xs:string"></xs:element>
+			<xs:element name="Text" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+    <xs:simpleType name="TypeCodes">
+    	<xs:restriction base="xs:string">
+    		<xs:enumeration value="10">
+    			<xs:annotation>
+    				<xs:documentation>Acknowledgement</xs:documentation>
+    			</xs:annotation></xs:enumeration>
+    		<xs:enumeration value="20">
+    			<xs:annotation>
+    				<xs:documentation>Rejections</xs:documentation>
+    			</xs:annotation></xs:enumeration>
+    		<xs:enumeration value="30">
+    			<xs:annotation>
+    				<xs:documentation>Result</xs:documentation>
+    			</xs:annotation></xs:enumeration>
+    	</xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="AcknowledgementType">
+        <xs:sequence>
+      <xs:element name="UniqueID" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Unique identifier used by end user to get the status update of their request.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExpectedResponseDateTime" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>This element will hold expected time when Business Gateway will try to process the queued request. This element will contain date and time data as GMT format. This element should be marked as mandatory</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MessageDescription" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>This will be a String type element and will be use to display a message to end user. This element should be marked as mandatory</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    </xs:complexType>
+     
+    <xs:complexType name="RejectionType">
+    <xs:annotation>
+      <xs:documentation>Provides details of the reasons for the rejection.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    	<xs:element name="Reason" type="xs:string" minOccurs="1"
+    		maxOccurs="1">
+    		<xs:annotation>
+    			<xs:documentation>
+    				A description of the reason for rejection.
+    			</xs:documentation>
+    		</xs:annotation>
+    	</xs:element>
+    	<xs:element name="Code" type="xs:string" minOccurs="1"
+    		maxOccurs="1">
+    		<xs:annotation>
+    			<xs:documentation>
+    				A code signifying the reason for rejection
+    			</xs:documentation>
+    		</xs:annotation>
+    	</xs:element>
+    	<xs:element name="OtherDescription" type="xs:string" minOccurs="0"
+    		maxOccurs="1">
+    		<xs:annotation>
+    			<xs:documentation>
+    				Freeform text field to convey any further
+    				information about the rejection.
+    			</xs:documentation>
+    		</xs:annotation>
+    	</xs:element>
+    	<xs:element name="ValidationErrors" type="ValidationErrorsType"
+    		minOccurs="0" maxOccurs="unbounded" />
+    	<xs:element name="Reference" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+    </xs:sequence>
+    </xs:complexType>
+   <xs:complexType name="ValidationErrorsType">
+    <xs:sequence>
+      <xs:element name="Code" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Description" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+   <xs:complexType name="ResultType">
+   	<xs:sequence>
+   		<xs:element name="Message" type="xs:string" maxOccurs="1"
+   			minOccurs="0">
+   		</xs:element>
+   		<xs:element name="Reference" type="xs:string" maxOccurs="1"
+   			minOccurs="1">
+   		</xs:element>
+   		<xs:element name="MatchResult" type="MatchResultType" maxOccurs="1" minOccurs="1"></xs:element>
+   		<xs:element name="Match" type="NameMatchType"
+   			maxOccurs="unbounded" minOccurs="0">
+   		</xs:element>
+   	</xs:sequence>
+   </xs:complexType>
+
+
+
+
+   <xs:simpleType name="MatchResultType">
+   	<xs:restriction base="xs:string">
+   		<xs:enumeration value="NO_MATCHES"></xs:enumeration>
+   		<xs:enumeration value="SINGLE_MATCH"></xs:enumeration>
+   		<xs:enumeration value="MULTIPLE_MATCHES"></xs:enumeration>
+   	</xs:restriction>
+   </xs:simpleType>
+
+    <xs:complexType name="PropertyAddressType">
+   		<xs:sequence>
+
+   			<xs:element name="BuildingName" type="xs:string" minOccurs="0"
+   				maxOccurs="1">
+   				<xs:annotation>
+   					<xs:documentation>
+   						The name of the building or house on a street
+   						of this address
+   					</xs:documentation>
+   				</xs:annotation>
+   			</xs:element>
+   			<xs:element name="SubBuildingName" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+   			<xs:element name="BuildingNumber" type="xs:string"
+   				minOccurs="0" maxOccurs="1">
+   				<xs:annotation>
+   					<xs:documentation>
+   						The number of a building or house on a street
+   						of this address. Where the building or house
+   						occupies a range of numbers on the street,
+   						e.g. '1-9 Main St', this will be the lower
+   						number of the range.
+   					</xs:documentation>
+   				</xs:annotation>
+   			</xs:element>
+   			<xs:element name="StreetName" type="xs:string" minOccurs="0"
+   				maxOccurs="1">
+   				<xs:annotation>
+   					<xs:documentation>
+   						Name of a street or thoroughfare
+   					</xs:documentation>
+   				</xs:annotation>
+   			</xs:element>
+   			<xs:element name="CityName" type="xs:string" minOccurs="0"
+   				maxOccurs="1">
+   				<xs:annotation>
+   					<xs:documentation>
+   						The name of the city, town or village of this
+   						address.
+   					</xs:documentation>
+   				</xs:annotation>
+   			</xs:element>
+   			<xs:element name="PostcodeZone" type="xs:string" minOccurs="0"
+   				maxOccurs="1">
+   				<xs:annotation>
+   					<xs:documentation>
+   						The identifier for one or more properties
+   						according to the UK postal service; a group
+   						of letters and numbers added to the postal
+   						address to assist in the sorting of mail, as
+   						defined by the Royal Mail.
+   					</xs:documentation>
+   				</xs:annotation>
+   			</xs:element>
+   			<xs:element name="Tenure" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+   		</xs:sequence>
+    </xs:complexType>
+
+
+	   <xs:complexType name="NameMatchType">
+   	<xs:sequence>
+   		<xs:element name="SubjectProperty"
+   			type="SubjectPropertyType" maxOccurs="1" minOccurs="1">
+   		</xs:element>
+   		<xs:element name="SurnameMatch" type="MatchType"
+   			maxOccurs="1" minOccurs="1">
+   		</xs:element>
+   		<xs:element name="ForenameMatchDetails" type="MatchType"
+   			maxOccurs="1" minOccurs="1">
+   		</xs:element>
+   		<xs:element name="MiddleNameMatchDetails" type="MatchType"
+   			maxOccurs="1" minOccurs="0">
+   		</xs:element>
+   		<xs:element name="StringMatchDetails" type="MatchType"
+   			maxOccurs="1" minOccurs="0">
+   		</xs:element>
+   		<xs:element name="MatchInformation"
+   			type="MatchDetailsType" maxOccurs="unbounded" minOccurs="0">
+   		</xs:element>
+   	</xs:sequence>
+	   </xs:complexType>
+
+    <xs:complexType name="MatchType">
+    	<xs:sequence>
+    		<xs:element name="TypeOfMatch">
+    			<xs:simpleType>
+    				<xs:restriction base="xs:string">
+    					<xs:enumeration value="MATCH"></xs:enumeration>
+    					<xs:enumeration value="NO_MATCH"></xs:enumeration>
+    					<xs:enumeration value="PARTIAL_MATCH"></xs:enumeration>
+    					<xs:enumeration value="SKIPPED"></xs:enumeration>
+    				</xs:restriction>
+    			</xs:simpleType>
+    		</xs:element>
+    		<xs:element name="MatchDetails" type="MatchDetailsType" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MatchDetailsType">
+    	<xs:sequence>
+    		<xs:annotation>
+    			<xs:documentation>
+    				Flexible name/value pair element to include various values.
+    				Possible options are:
+    				Name                      Values (string)
+					HistoricalMatch           true or false
+					ProprietorFrom            date or unknown
+					ProprietorTo              date or unknown
+					Ownership                 Sole or Joint
+    				FORENAME_DISTANCE		  true or false
+    				FORENAME_SOUND			  true or false
+    				FORENAME_INITIAL		  true or false
+    				FORENAME_MIDDLE			  true or false
+    				FORENAME_ALIAS			  true or false
+    				MIDNAME_DISTANCE		  true or false
+    				MIDNAME_SOUND		 	  true or false
+    				MIDNAME_INITIAL			  true or false
+    				SURNAME_DISTANCE		  true or false
+    				SURNAME_SOUND			  true or false
+    				Note: _DISTANCE is Levenshtein distance and _SOUND is sounds like (DoubleMetaphone)    				
+    			</xs:documentation>
+    		</xs:annotation>
+    		<xs:element name="Name" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+    		<xs:element name="Value" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SubjectPropertyType">
+    	<xs:sequence>
+            <xs:element name="TitleNumber" maxOccurs="1" minOccurs="1">
+   			<xs:simpleType>
+   				<xs:restriction base="xs:string">
+   					<xs:minLength value="1"></xs:minLength>
+   					<xs:maxLength value="9"></xs:maxLength>
+   				</xs:restriction>
+   			</xs:simpleType>
+   		</xs:element>
+            <xs:element name="PropertyAddress" type="PropertyAddressType" maxOccurs="1" minOccurs="1">
+   		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Discharge enquiry - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/services/discharge_activity/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="Discharge enquiry - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/services/discharge_activity/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Discharge enquiry" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/services/discharge_activity/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#discharge-enquiry"><span>Discharge enquiry</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+        <ul>
+          <li>
+            <a href="#if-you-39-re-a-software-developer"><span>If you’re a software developer</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#process-flow"><span>Process flow</span></a>
+        <ul>
+          <li>
+            <a href="#input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#validation"><span>Validation</span></a>
+          </li>
+          <li>
+            <a href="#output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#schemas"><span>Schemas</span></a>
+      </li>
+      <li>
+        <a href="#vendor-testing"><span>Vendor testing</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+<p><a href="../">Back to Services</a> <a href="../../">Back to Home</a></p>
+<h1 id="discharge-enquiry">Discharge enquiry</h1>
+<p><hr /></p>
+<h2 id="overview">Overview</h2>
+
+<p>Use this service to check if any charges have been removed in the previous 30
+  days. </p>
+<h3 id="if-you-39-re-a-software-developer">If you&rsquo;re a software developer</h3>
+
+<P>Use this document to integrate data into your system.</P>
+<p><hr /></p>
+<h2 id="process-flow">Process flow</h2>
+<h3 id="input">Input</h3>
+
+<p>Request a daylist enquiry by sending the following parameters:</p>
+
+<ul>
+<li>login details</li>
+<li>optional charge date</li>
+<li>title number</li>
+</ul>
+
+<p>The following parameters will also be necessary if there are any complications,
+  and may be supplied to keep transaction calls and processing times to a minimum.</p>
+
+<ul>
+<li>continue if title is closed and continued</li>
+</ul>
+<h3 id="validation">Validation</h3>
+
+<p>Validation diagram details the validation that the request undergoes.</p>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Validation diagram Business Rules
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Business Rule</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Decision point</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">BG Code</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message ID</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message text</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+            BRL-NSP-117</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is the Title Number valid? N </td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">20</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-ISP-010</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Title number is invalid</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-024 </td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+            Is Title Number closed and not
+            continued? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">20</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-014</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+            This Title Number is closed</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-024 </td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+            Is &lt;Title Number&gt; continued
+            under another title number and
+            Continue if Closed and
+            Continued not selected Y          </td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">20</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-053</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+            Title Number &lt;x&gt; has been closed and registration
+            continued under Title Number &lt;y&gt;</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+            BRL-ISP-350<br />
+            BRL-ISP-351</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+            Have any discharges been made of
+            a charge matching the charge date?
+            Y </td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">30</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Result message</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+            (Discharges information will be listed in the XML)</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+              BRL-ISP-352</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+            Have any discharges been made of
+            a charge matching the charge date?
+            N</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">30</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Result message</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">
+            No charges of this date have been discharged in the
+            last 30 calendar days</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<div style="padding-bottom: 15px">
+  <a href="../../images/discharge_activity.png" target="_blank">
+    <img src="../../images/discharge_activity.png" alt="An image of a discharge activity V1.0 flowchart" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+</div>
+<h3 id="output">Output</h3>
+
+<p>A list of entries found against the supplied title number.</p>
+<p><hr />
+<br /></p>
+<h2 id="schemas">Schemas</h2>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/discharge_enquiry/RequestDischargeActivityV1_0.xsd" class="govuk-!-font-size-24">RequestDischargeActivityV1_0</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/discharge_enquiry/RequestDischargeActivityV1_0.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/discharge_enquiry/ResponseDischargeActivityV1_0.xsd" class="govuk-!-font-size-24">ResponseDischargeActivityV1_0</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/discharge_enquiry/ResponseDischargeActivityV1_0.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/discharge_enquiry/DischargeActivityv1_0_SchemaExplain.pdf" class="govuk-!-font-size-24">Schema explain</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 173KB, 8 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/discharge_enquiry/DischargeActivityv1_0_SchemaExplain.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<p>Schema explain describes the request schema for the service.</p>
+<p><hr /></p>
+<h2 id="vendor-testing">Vendor testing</h2>
+
+<p>Documents the data required for testing the service.</p>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/discharge_enquiry/DischargeActivityv1_0_VendorTest.pdf" class="govuk-!-font-size-24">Vendor Test data</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 253KB, 10 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/discharge_enquiry/DischargeActivityv1_0_VendorTest.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

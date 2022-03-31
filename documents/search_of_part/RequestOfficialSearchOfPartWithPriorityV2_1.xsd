@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.oscre.org/ns/eReg-Final/2011/RequestOfficialSearchOfPartWithPriorityV2_1"
+	targetNamespace="http://www.oscre.org/ns/eReg-Final/2011/RequestOfficialSearchOfPartWithPriorityV2_1"
+	elementFormDefault="qualified" attributeFormDefault="qualified">
+	<!--Document-->
+	<xs:element name="RequestOfficialSearchOfPartWithPriorityV2_1"
+		type="RequestOfficialSearchOfPartWithPriorityV2_1Type" />
+	<!--ABIEs-->
+	<xs:complexType name="Q1AlternativePostalAddressType">
+		<xs:sequence>
+			<xs:element name="AddressLine" type="Q3TextType" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A line of the address for the alternative despatch location.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Postcode" type="Q3TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A valid postcode for the alternative address.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1AlternativeDespatchDetailsType">
+		<xs:sequence>
+			<xs:element name ="AlternativeDespatchName" type="DespatchNameTextContentType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Name of firm/company results will be addressed to.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name ="AlternativeDespatchReference" type="Q4TextContentType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Text reference to be displayed on results.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AlternativeDespatchAddress" type="Q1AlternativeDespatchAddressType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						The type of address to be used on results.
+					</xs:documentation>
+				</xs:annotation>				
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+		<xs:complexType name="Q1AlternativeDespatchAddressType">
+		<xs:choice>
+			<xs:element name="PostalAddress" type="Q1AlternativePostalAddressType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						A specific Address that can be used for the
+						delivery of physical mail.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DXDetails" type="Q1DXDetailsType"
+				minOccurs="0" maxOccurs="1" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="Q1ApplicantPartyType">
+		<xs:annotation>
+			<xs:documentation>Either a registered title already exists in
+				which case the name(s) of the registered proprietor(s) is/are
+				required for the OS1 or the title is currently in the process of
+				being registered for the first time by virtue of the fact that an
+				application for first registration is currently pending at LR. Until
+				the first registration completed there will be no register to
+				search, so the applicant under the first registration must be given
+				for the OS1 - this is the person who is applying for first
+				registration e.g. the owner, not the conveyancer sending in the
+				application.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ApplicantName" type="NameTextContentType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1CommunicationType">
+		<xs:annotation>
+			<xs:documentation>Provides details of any other form of
+				communication</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Telephone" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ContactType">
+		<xs:annotation>
+			<xs:documentation>The information relevant to a person or
+				organization that acts as a point of contact with another person or
+				organization.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Name" type="NameTextContentType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of this contact person or department.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Communication" type="Q1CommunicationType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The information relevant to methods of
+						communication for this Contact.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1CustomerReferenceType">
+		<xs:annotation>
+			<xs:documentation>Provides a unique reference to identify a
+				particular request, order or instruction or object in the system of
+				the organisation allocating it.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reference" type="ReferenceTextContentType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a
+						particular request, order or instruction in the system of the
+						organisation allocating it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllocatedBy" type="Q3TextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of the organisation that has
+						allocated the Reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="Q3TextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This field can be used to provide reference
+						description</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1DXDetailsType">
+		<xs:sequence>
+			<xs:element name="DXNumber" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique identifier for a delivery point for
+						organisations using the Document Exchange service.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExchangeName" type="Q3TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1EstatePlanType">
+		<xs:sequence>
+			<xs:element name="PlotDetails" type="Q4TextContentType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Plot details of an approved estate plan that
+						relates to the search</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ApprovalDate" type="DateType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The date on which the estate plan was approved
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ExpectedPriceType">
+		<xs:annotation>
+			<xs:documentation>Information about price
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GrossPriceAmount" type="AmountType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The gross price is the price including the
+						VAT. If the VAT is zero then the Gross and Net Price will be the
+						same</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NetPriceAmount" type="AmountType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The Net Price is the amount before the VAT is
+						added on. If the VAT is zero then the Gross and Net Price will be
+						the same</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VATAmount" type="AmountType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the amount of the VAT
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ExternalReferenceType">
+		<xs:annotation>
+			<xs:documentation>A unique reference given to identify a particular
+				request, order or instruction in the system of the organisation
+				allocating it with the ability to associate the name of the Company
+				that has allocated it.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reference" type="ReferenceTextContentType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a
+						particular request, order or instruction in the system of the
+						organisation allocating it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllocatedBy" type="Q3TextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of the organisation that has
+						allocated the Reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="Q3TextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This field can be used to provide reference
+						description</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1IdentifierType">
+		<xs:sequence>
+			<xs:element name="MessageID" type="Q1TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1OfficialSearchOfPartWithPriorityType">
+		<xs:sequence>
+			<xs:element name="PriorityTypeCode" type="PriorityCodeType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (letters, figures or symbols)
+						that for brevity and/or language independence may be used to
+						represent or replace a definitive value or text of an Attribute
+						together with relevant supplementary information.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContinueIfNameMismatchOnRegisterIndicator"
+				type="IndicatorType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>An indicator sent by the CMS to the BG to
+						advise whether to continue with the new Title number without
+						warning.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContinueIfActualFeeExceedsExpectedFeeIndicator"
+				type="IndicatorType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A list of two mutually exclusive Boolean values
+						that express the only possible states of a Property.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SearchFromDate" type="SearchFromDateType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>If the Is First Registration = FALSE the Search
+						From Date is mandatory and is the date falling within the
+						defintition of search from date in rule 131 of the Land
+						Registration rules 2003.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RegisteredProprietorParty" type="Q1RegisteredProprietorPartyType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Either a registered title already exists in
+						which case the name(s) of the registered proprietor(s) is/are
+						required for the OS1 or the title is currently in the process of
+						being registered for the first time by virtue of the fact that an
+						application for first registration is currently pending at LR.
+						Until the first registration completed there will be no register
+						to search, so the applicant under the first registration must be
+						given for the OS1 - this is the person who is applying for first
+						registration e.g. the owner, not the conveyancer sending in the
+						application.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ApplicantParty" type="Q1ApplicantPartyType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Either a registered title already exists in
+						which case the name(s) of the registered proprietor(s) is/are
+						required for the OS1 or the title is currently in the process of
+						being registered for the first time by virtue of the fact that an
+						application for first registration is currently pending at LR.
+						Until the first registration completed there will be no register
+						to search, so the applicant under the first registration must be
+						given for the OS1 - this is the person who is applying for first
+						registration e.g. the owner, not the conveyancer sending in the
+						application.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TimeshareDetails" type="Q1TimeshareDetailsType"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="PropertyIdentification" type="Q1PropertyIdentificationType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1PlanAttachmentType">
+		<xs:annotation>
+			<xs:documentation>An electronic copy of a document that may be
+				attached to a message.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="EmbeddedFileBinaryObject" type="BinaryObjectType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The binary representation of the image or
+						document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Title" type="Q3TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Title or Caption for the attached file or
+						document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="Q3TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A description of the contents of the attached
+						file or document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Date" type="DateType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The date of the document within the contained
+						attachment. In the example of a an attached photo, this would be
+						the date the photograph was taken.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CopyrightNotices" type="Q3TextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Text description of any Legal or copyright
+						notices that may apply to the file in question.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1PostalAddressType">
+		<xs:annotation>
+			<xs:documentation>A specific Address that can be used for the
+				delivery of physical mail.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PostcodeZone" type="Q1PostcodeZoneType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The identifier for one or more properties
+						according to the UK postal service; a group of letters and numbers
+						added to the postal address to assist in the sorting of mail, as
+						defined by the Royal Mail.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1PostcodeZoneType">
+		<xs:annotation>
+			<xs:documentation>The identifier for one or more properties
+				according to the UK postal service; a group of letters and numbers
+				added to the postal address to assist in the sorting of mail, as
+				defined by the Royal Mail.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Postcode" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A full or partial UK Postcode</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ProductType">
+		<xs:annotation>
+			<xs:documentation>This component contains details regarding the
+				search being ordered, expedited service, price details, delivery
+				method and any attachment.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ExternalReference" type="Q1ExternalReferenceType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference associated with a case in Case
+						Management System</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CustomerReference" type="Q1CustomerReferenceType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference of the person for whom the
+						remortgage is performed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SubjectProperty" type="Q1SubjectPropertyType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The Property which is the subject of the
+						transaction, or on which a search is being prepared
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExpectedPrice" type="Q1ExpectedPriceType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Information about price
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Contact" type="Q1ContactType" minOccurs="1"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The information relevant to a person or
+						organization that acts as a point of contact with another person
+						or organization.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OfficialSearchOfPartWithPriority" type="Q1OfficialSearchOfPartWithPriorityType"
+				minOccurs="1" maxOccurs="1" />
+			<xs:element name="AlternativeDespatchDetails" type="Q1AlternativeDespatchDetailsType"
+				minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1PropertyIdentificationType">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="PropertyDescription" type="PropertyDescriptionTextContentType"
+					minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>This will be used if the proprietor names do
+							not match and the CMS System wants to continue with manual
+							investigation without warning. This will also be used if Title is
+							not computerised and the CMS System wants to continue with manual
+							investigation without warning.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PlanAttachment" type="Q1PlanAttachmentType"
+					minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>An electronic copy of a document that may be
+							attached to a message.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="EstatePlan" type="Q1EstatePlanType"
+					minOccurs="1" maxOccurs="1" />
+				<xs:element name="TitlePlan" type="Q1TitlePlanType"
+					minOccurs="1" maxOccurs="1" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1RegisteredProprietorPartyType">
+		<xs:annotation>
+			<xs:documentation>Either a registered title already exists in
+				which case the name(s) of the registered proprietor(s) is/are
+				required for the OS1 or the title is currently in the process of
+				being registered for the first time by virtue of the fact that an
+				application for first registration is currently pending at LR. Until
+				the first registration completed there will be no register to
+				search, so the applicant under the first registration must be given
+				for the OS1 - this is the person who is applying for first
+				registration e.g. the owner, not the conveyancer sending in the
+				application.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PropreitorName" type="NameTextContentType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1SubjectPropertyType">
+		<xs:annotation>
+			<xs:documentation>The Property which is the subject of the
+				transaction.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TitleNumber" type="Q2TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Provides the subject property title
+						number if known</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1TimeshareDetailsType">
+		<xs:sequence>
+			<xs:element name="SearchInRespectOfDiscontinuousTimeshareLeaseIndicator"
+				type="IndicatorType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>An indicator sent by the CMS to the BG to
+						advise whether the search is in respect of a discontinuous
+						timeshare lease.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TimeshareTimePeriodDemised" type="Q1TimeshareTimePeriodDemisedType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The amount of time that has demised on a
+						timeshare lease (if applicable)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1TimeshareTimePeriodDemisedType">
+		<xs:annotation>
+			<xs:documentation>Details relating to the time period demised
+				for a discontinuous timeshare lease</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TimesharePeriod" type="Q1TimesharePeriodTextType"
+				minOccurs="1" maxOccurs="1"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1TimesharePeriodTextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="TimesharePeriodTextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Q1TitlePlanType">
+		<xs:sequence>
+			<xs:element name="TitlePlanNumber" type="Q2TextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference of title plan to be searched
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Reference" type="Q3TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of
+						characters) generally in the form of words of a language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RequestOfficialSearchOfPartWithPriorityV2_1Type">
+		<xs:sequence>
+			<xs:element name="ID" type="Q1IdentifierType" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="Product" type="Q1ProductType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This component contains details regarding the
+						search being ordered, expedited service, price details, delivery
+						method and any attachment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--Datatypes-->
+	<xs:complexType name="AmountType">
+		<xs:annotation>
+			<xs:documentation>A number of monetary units specified in a currency
+				where the unit of the currency is explicit or implied.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="currencyID" type="xs:normalizedString"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation>The currency of the amount</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="BinaryObjectType">
+		<xs:annotation>
+			<xs:documentation>A set of finite-length sequences of binary octets.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:base64Binary">
+				<xs:attribute name="filename" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>
+							Must be the full filename including the
+							extension
+							(Reference IETF RFC 2045, 2046, 2047)
+            </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="format" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>
+							The format of the binary content.
+							Note: A file
+							format is a particular way to encode information for
+							storage in a
+							computer file. May be identified by the section of
+							its name
+							following the final period, e.g., gif, pdf, jpg.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="mimeCode" type="xs:normalizedString"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation>
+							The mime type of the binary object.
+							(Reference
+							IETF RFC 2045, 2046, 2047)
+							Note: consist of a standardised system
+							of identifiers (managed by
+							IANA) consisting of a type and a
+							sub-type, separated by a slash -
+							for instance, text/html or
+							image/gif.
+            </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="characterSetCode" type="xs:normalizedString"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation>
+							The character set of the binary object if the
+							mime type is text.
+							(Reference IETF RFC 2045, 2046, 2047).
+							Examples: ISO-8859-1,
+							UTF-8, UTF-16. See also
+							http://www.iana.org/assignments/character-sets.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="SearchFromDateType">
+		<xs:annotation>
+			<xs:documentation>
+				A particular point in the progression of time
+				together with the
+				relevant supplementary information. OSCRE dates
+				follow the ISO 8601
+				Standard. The international standard date
+				notation is YYYY-MM-DD
+				where YYYY is the year in the usual Gregorian
+				calendar, MM is the
+				month of the year between 01 (January) and 12
+				(December), and DD is
+				the day of the month between 01 and 31.
+
+				For
+				example, the fourth day of February in the year 1995 is written in
+				the standard notation as 1995-02-04
+      </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="SearchFromDateContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="DateType">
+		<xs:annotation>
+			<xs:documentation>
+				A particular point in the progression of time
+				together with the
+				relevant supplementary information. OSCRE dates
+				follow the ISO 8601
+				Standard. The international standard date
+				notation is YYYY-MM-DD
+				where YYYY is the year in the usual Gregorian
+				calendar, MM is the
+				month of the year between 01 (January) and 12
+				(December), and DD is
+				the day of the month between 01 and 31.
+
+				For
+				example, the fourth day of February in the year 1995 is written in
+				the standard notation as 1995-02-04
+      </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:date" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="IndicatorType">
+		<xs:annotation>
+			<xs:documentation>A list of two mutually exclusive Boolean values
+				that express the only possible states of a Property.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:boolean" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="NumericType">
+		<xs:annotation>
+			<xs:documentation>Numeric information that is assigned or is
+				determined by calculation, counting, or sequencing. It does not
+				require a unit of quantity or unit of measure.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="PriorityCodeType">
+		<xs:annotation>
+			<xs:documentation>A character string (letters, figures or symbols)
+				that for brevity and/or language independence may be used to
+				represent or replace a definitive value or text of an Attribute
+				together with relevant supplementary information.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="PriorityCodeContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Q1TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Q1TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Q2TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Q2TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Q3TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Q3TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<!--Contenttypes-->
+	<xs:simpleType name="TimesharePeriodTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="200" />
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriorityCodeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Purchase</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Lease</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Charge</xs:documentation>
+					<xs:documentation>-</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Q1TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5" />
+			<xs:maxLength value="50" />
+			<xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Q2TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="9" />
+			<xs:pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NameTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="100" />
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PropertyDescriptionTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="130" />
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReferenceTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="25" />
+			<xs:pattern
+				value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Q3TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value=".*\S.*" />
+		</xs:restriction>
+	</xs:simpleType>
+		<xs:simpleType name="SearchFromDateContentType">
+		<xs:restriction base="xs:date">
+			<xs:pattern value="(18|19|20)\d\d\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DespatchNameTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="70" />
+			<xs:pattern
+				value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Q4TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="25" />
+			<xs:pattern
+				value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

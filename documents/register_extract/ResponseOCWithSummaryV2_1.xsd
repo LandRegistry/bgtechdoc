@@ -1,0 +1,1918 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.oscre.org/ns/eReg-Final/2011/ResponseOCWithSummaryV2_1"
+	targetNamespace="http://www.oscre.org/ns/eReg-Final/2011/ResponseOCWithSummaryV2_1"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+	      <xs:documentation>This is the the Business Gateway confirmation response to the External System.</xs:documentation>
+	</xs:annotation><!--Document-->
+	<xs:element name="ResponseOCWithSummaryV2_1" type="ResponseOCWithSummaryV2_1Type" />
+	<!--ABIEs-->
+	<xs:complexType name="AddressLineType">
+		<xs:annotation>
+			<xs:documentation>
+				Free form line of an address, expressed as text.
+
+				The recommendation for using this component is as follows:
+				Line 1
+				Building Name
+				NOTE: This line may also include the Flat Number
+				followed by the Building
+				Name or could be separated out
+				Line 2
+				Building Number
+				Line 3 Street Name
+				Line 4 City Sub-Division-1
+				Line 5
+				City Name
+				Line 6 Country Subentity
+				Line 7 Postcode_Zone
+				NOTE: ONLY the
+				Post Code should exist in this array element
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="IndexNumeric" type="NumericType"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The ordinal position of the Address Line, in
+						relation to other Address Lines as part of an Address.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Line" type="TextType" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>An address line of unstructured text intended
+						for use only by systems incapable of providing structured or fully
+						structured addresses</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResponseOCWithSummaryV2_1Type">
+		<xs:sequence>
+			<xs:element name="GatewayResponse" type="Q1GatewayResponseType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1AcknowledgementType">
+		<xs:annotation>
+			<xs:documentation>This is the the Business Gateway confirmation
+				response to the External System.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="AcknowledgementDetails" type="Q1AcknowledgementDetailsType"
+				minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ActualPriceType">
+		<xs:annotation>
+			<xs:documentation>Information about price
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GrossPriceAmount" type="AmountType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The gross price is the price including the
+						VAT. If the VAT is zero then the Gross and Net Price will be the
+						same</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NetPriceAmount" type="AmountType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The Net Price is the amount before the VAT is
+						added on. If the VAT is zero then the Gross and Net Price will be
+						the same</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VATAmount" type="AmountType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the amount of the VAT
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1AddressType">
+		<xs:annotation>
+			<xs:documentation>A specific Address that can be used for the
+				delivery of physical mail.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PostcodeZone" type="Q1PostcodeZoneType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The identifier for one or more properties
+						according to the UK postal service; a group of letters and numbers
+						added to the postal address to assist in the sorting of mail, as
+						defined by the Royal Mail.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AddressLine" type="AddressLineType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Free form line of an address, expressed as text.
+
+						The recommendation for using this component is as follows:
+						Line 1
+						Building Name
+						NOTE: This line may also include the Flat Number
+						followed by the
+						Building Name or could be separated out
+						Line 2
+						Building Number
+						Line 3 Street Name
+						Line 4 City Sub-Division-1
+						Line 5
+						City Name
+						Line 6 Country Subentity
+						Line 7 Postcode_Zone
+						NOTE: ONLY
+						the Post Code should exist in this array element
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1AttachmentType">
+		<xs:annotation>
+			<xs:documentation>An electronic copy of a document that may be
+				attached to a message.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="EmbeddedFileBinaryObject" type="BinaryObjectType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The binary representation of the image or
+						document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Title" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Title or Caption for the attached file or
+						document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A description of the contents of the attached
+						file or document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Date" type="DateType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The date of the document within the contained
+						attachment.
+						In the example of a an attached photo, this would be
+						the date the
+						photograph was taken.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CopyrightNotices" type="TextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Text description of any Legal or copyright
+						notices that
+						may apply to the file in question.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ChargeType">
+		<xs:sequence>            <xs:element name="MultipleTitleIndicator" type="TextType" maxOccurs="1" minOccurs="0">
+			</xs:element>
+            <xs:element name="EntryDetails" type="Q1EntryDetailsType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ExternalReferenceType">
+		<xs:annotation>
+			<xs:documentation>A unique reference given to identify a particular
+				request, order or instruction in the system of the organisation
+				allocating it with the ability to associate the name of the Company
+				that has allocated it.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reference" type="TextType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a
+						particular request, order or instruction in the system of the
+						organisation allocating it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AllocatedBy" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The name of the organisation that has
+						allocated the Reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="TextType" minOccurs="0"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This field can be used to provide reference
+						description</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1GatewayResponseType">
+		<xs:sequence>
+			<xs:element name="TypeCode" type="ProductResponseCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Used to identify the response that will be issued to the CMS Vendor.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Acknowledgement" type="Q1AcknowledgementType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the the Business Gateway confirmationresponse to the External System.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Rejection" type="Q1RejectionType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Results" type="Q1ResultsType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1LeaseType">
+		<xs:sequence>
+			<xs:element name="LeaseTerm" type="LeaseTermTextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						A character string (i.e. a finite set of
+						characters) generally in the form of words of a
+						language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+            <xs:element name="LeaseDate" type="TextType" maxOccurs="1" minOccurs="1"></xs:element>
+            <xs:element name="Rent" type="RentAmountTextType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						A character string (i.e. a finite set of
+						characters) generally in the form of words of a
+						language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LeaseParty" type="Q1PartyType"
+				minOccurs="2" maxOccurs="unbounded" />
+			<xs:element name="EntryDetails" type="Q1EntryDetailsType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1MessageDetailsType">
+		<xs:sequence>
+			<xs:element name="Description" type="TextType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1OCSummaryDataType">
+		<xs:sequence>
+			<xs:element name="OfficialCopyDateTime" type="DateTimeType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						A particular point in the progression of time
+						together with the relevant supplementary
+						information.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EditionDate" type="DateType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						A particular point in the progression of time
+						together with the relevant supplementary
+						information. OSCRE dates follow the ISO 8601
+						Standard. The international standard date
+						notation is YYYY-MM-DD where YYYY is the year in
+						the usual Gregorian calendar, MM is the month of
+						the year between 01 (January) and 12 (December),
+						and DD is the day of the month between 01 and
+						31.
+
+						For example, the fourth day of February in the
+						year 1995 is written in the standard notation as
+						1995-02-04
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PricePaidEntry"
+				type="Q1PricePaidEntryType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Price paid entry
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PropertyAddress" type="Q1AddressType"
+				minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						A specific Address that can be used for the
+						delivery of physical mail.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Title" type="Q1TitleType" minOccurs="1"
+				maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Describes a title to an interest or tenure
+						interest which is registered at H.M. Land
+						Registry in England and Wales.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RegisterEntryIndicators"
+				type="Q1RegisterEntryIndicatorsType" minOccurs="1" maxOccurs="1" />
+			<xs:element name="Proprietorship"
+				type="Q1ProprietorshipType" minOccurs="1" maxOccurs="1" />
+			<xs:element name="Lease" type="Q1LeaseEntriesType" minOccurs="0"
+				maxOccurs="1" />
+			<xs:element name="RestrictionDetails"
+				type="Q1RestrictionDetailsType" minOccurs="0" maxOccurs="1" />
+			<xs:element name="Charge" type="Q1ChargeEntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="AgreedNotice" type="Q1AgreedNoticeEntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="Bankruptcy" type="Q1EntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="Caution" type="Q1EntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="DeedOfPostponement"
+				type="Q1EntriesType" maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="GreenOutEntry" type="Q1EntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="HomeRights" type="Q1HomeRightsEntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="RentCharge" type="Q1EntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="VendorsLien" type="Q1EntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="RightOfPreEmption"
+				type="Q1EntriesType" maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="DocumentDetails"
+				type="Q1DocumentDetailsType" maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="UnilateralNoticeDetails"
+				type="Q1UnilateralNoticeEntriesType" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="DeathOfProprietor"
+				type="Q1EntriesType" maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="DiscountCharge" type="Q1EntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="EquitableCharge" type="Q1EntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="NotedCharge" type="Q1EntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="CreditorsNotice" type="Q1EntriesType"
+				maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="UnidentifiedEntry"
+				type="Q1EntriesType" maxOccurs="1" minOccurs="0">
+			</xs:element>
+			<xs:element name="CCBIEntry" type="Q1EntriesType" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1OrganizationType">
+		<xs:annotation>
+			<xs:documentation>The information relevant to an organized structure set up for a particular purpose, e.g. a business, government body, department, charity, or financial institution.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Name" type="OrganisationNameTextType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>To specify any name related to this organization.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CompanyRegistrationNumber" type="CompanyRegistrationNumberTextType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference number allocated by the Registrar of Companies to a limited liability company or unlimited company at the time of first registration of that company.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1AcknowledgementDetailsType">
+	    <xs:sequence>
+	      <xs:element name="UniqueID" type="IdentifierType" minOccurs="1" maxOccurs="1">
+	        <xs:annotation>
+	          <xs:documentation>Unique identifier used by end user to get the status update of their request.</xs:documentation>
+	        </xs:annotation>
+	      </xs:element>
+	      <xs:element name="ExpectedResponseDateTime" type="DateTimeType" minOccurs="1" maxOccurs="1">
+	        <xs:annotation>
+	          <xs:documentation>This element will hold expected time when Business Gateway will try to process the queued request. This element will contain date and time data as GMT format. This element should be marked as mandatory</xs:documentation>
+	        </xs:annotation>
+	      </xs:element>
+	      <xs:element name="MessageDescription" type="TextType" minOccurs="1" maxOccurs="1">
+	        <xs:annotation>
+	          <xs:documentation>This will be a String type element and will be use to display a message to end user. This element should be marked as mandatory</xs:documentation>
+	        </xs:annotation>
+	      </xs:element>
+	    </xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name="Q1PartyType">
+		<xs:sequence>
+			<xs:choice><xs:element name="PrivateIndividual" type="Q1PrivateIndividualType" maxOccurs="1" minOccurs="1">
+			</xs:element><xs:element name="Organization" type="Q1OrganizationType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						The information relevant to an organized
+						structure set up for a particular purpose, e.g.
+						a business, government body, department,
+						charity, or financial institution.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element></xs:choice>
+            <xs:element name="Address" type="Q1AddressType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						The information relevant to a specific address
+						of a Party.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+            <xs:element name="CharityDetails" type="Q1CharityDetailsType" maxOccurs="1" minOccurs="0">
+			</xs:element>
+            <xs:element name="TradingName" type="TextType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						A private individual or company that carries out
+						business transactions under another name.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PartyNumber" type="TextType" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="PartyDescription" type="TextType" maxOccurs="1" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    	
+	<xs:complexType name="Q1PostcodeZoneType">
+		<xs:annotation>
+			<xs:documentation>The identifier for one or more properties according to the UK postal service; a group of letters and numbers added to the postal address to assist in the sorting of mail, as defined by the Royal Mail.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Postcode" type="TextType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A full or partial UK Postcode</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ProprietorshipType">
+		<xs:sequence>
+			<xs:element name="CurrentProprietorshipDate" type="DateType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						The date of the proprietorship entry in the
+						Register.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:choice>
+				<xs:element name="CautionerParty"
+					type="Q1PartyType" maxOccurs="unbounded" minOccurs="1">
+				</xs:element>
+				<xs:element name="RegisteredProprietorParty" type="Q1PartyType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1RegisterEntryIndicatorsType">
+		<xs:sequence>
+			<xs:element name="AgreedNoticeIndicator"
+				type="IndicatorType" minOccurs="1" maxOccurs="1">
+			</xs:element>
+			<xs:element name="BankruptcyIndicator" type="IndicatorType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="CautionIndicator" type="IndicatorType"
+				minOccurs="1" maxOccurs="1">
+			</xs:element>
+			<xs:element name="CCBIIndicator" type="IndicatorType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="ChargeeIndicator" type="IndicatorType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="ChargeIndicator" type="IndicatorType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="ChargeRelatedRestrictionIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="ChargeRestrictionIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="CreditorsNoticeIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="DeathOfProprietorIndicator"
+				type="IndicatorType" minOccurs="1" maxOccurs="1">
+			</xs:element>
+			<xs:element name="DeedOfPostponementIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="DiscountChargeIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="EquitableChargeIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="GreenOutEntryIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+
+            <xs:element name="HomeRightsChangeOfAddressIndicator" type="IndicatorType" maxOccurs="1" minOccurs="1"></xs:element>
+            <xs:element name="HomeRightsIndicator" type="IndicatorType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="LeaseHoldTitleIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="MultipleChargeIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="NonChargeRestrictionIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="NotedChargeIndicator" type="IndicatorType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="PricePaidIndicator" type="IndicatorType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="PropertyDescriptionNotesIndicator"
+				type="IndicatorType" minOccurs="1" maxOccurs="1">
+			</xs:element>
+			<xs:element name="RentChargeIndicator" type="IndicatorType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="RightOfPreEmptionIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="ScheduleOfLeasesIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="SubChargeIndicator" type="IndicatorType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>			
+			<xs:element name="UnidentifiedEntryIndicator"
+				type="IndicatorType" minOccurs="1" maxOccurs="1">
+			</xs:element>
+			<xs:element name="UnilateralNoticeBeneficiaryIndicator"
+				type="IndicatorType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="UnilateralNoticeIndicator"
+				type="IndicatorType" minOccurs="1" maxOccurs="1">
+			</xs:element>
+			<xs:element name="VendorsLienIndicator" type="IndicatorType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1RejectionType">
+		<xs:sequence>
+			<xs:element name="ExternalReference" type="Q1ExternalReferenceType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A unique reference given to identify a particular request, order or instruction in the system of the organisation allocating it with the ability to associate the name of the Company that has allocated it.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ActualPrice" type="Q1ActualPriceType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>This is the price for a Search/Product</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RejectionResponse" type="Q1RejectionResponseType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Provides details of the reasons for the rejection of the Search Order Send message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1RejectionResponseType">
+		<xs:annotation>
+			<xs:documentation>Provides details of the reasons for the rejection.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Reason" type="TextType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A description of the reason for rejection.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Code" type="TextType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A code signifying the reason for rejection</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OtherDescription" type="TextType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Freeform text field to convey any further information about the rejection.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ValidationErrors" type="Q1ValidationErrorsType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1RestrictionType">
+		<xs:sequence>
+			<xs:element name="RestrictionTypeCode"
+				type="RestrictionCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Type of restriction present in the Register.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+            <xs:element name="ChargeID" type="TextType" maxOccurs="1"
+				minOccurs="0">
+			</xs:element>
+
+			<xs:element name="EntryDetails" type="Q1EntryDetailsType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ResultsType">
+		<xs:sequence>
+			<xs:element name="MessageDetails"
+				type="Q1MessageDetailsType" minOccurs="0" maxOccurs="1" />
+			<xs:element name="ExternalReference"
+				type="Q1ExternalReferenceType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						Reference associated with a case in Case
+						Management System
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ActualPrice" type="Q1ActualPriceType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						This is the price for a Search/Product
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Attachment" type="Q1AttachmentType"
+				minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						An electronic copy of a document that may be
+						attached to a message.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OCSummaryData" type="Q1OCSummaryDataType"
+				minOccurs="0" maxOccurs="1" />
+			<xs:element name="OCRegisterData" type="Q1OCRegisterDataType" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1TitleType">
+		<xs:annotation>
+			<xs:documentation>Describes a title to an interest or tenure interest which is registered at H.M. Land Registry in England and Wales.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TitleNumber" type="Q2TextType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+A unique reference number given to a piece of registered land.  It is made up of an optional prefix of up to 3 characters followed by up to six numerics.  It consists of two main parts:
+(i) The Administrative Area being one or more of the following:
+· County
+· District
+· London Borough
+· Unitary Authority.
+(ii) The Property Address which usually comprises:
+· House number or name or plot number
+· Road or st
+          </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ClassOfTitleCode" type="ClassOfTitleCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (letters, figures or symbols) that for brevity and/or language independence may be used to represent or replace a definitive value or text of an Attribute together with relevant supplementary information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CommonholdIndicator" type="IndicatorType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A list of two mutually exclusive Boolean values that express the only possible states of a Property.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TitleRegistrationDetails" type="Q1TitleRegistrationDetailsType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1TitleRegistrationDetailsType">
+		<xs:sequence>
+			<xs:element name="DistrictName" type="DistrictNameTextType"
+				minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						A character string (i.e. a finite set of
+						characters) generally in the form of words of a
+						language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AdministrativeArea"
+				type="AdministrativeAreaTextType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						A character string (i.e. a finite set of
+						characters) generally in the form of words of a
+						language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LandRegistryOfficeName"
+				type="LandRegistryOfficeNameTextType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						A character string (i.e. a finite set of
+						characters) generally in the form of words of a
+						language.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LatestEditionDate" type="DateType" maxOccurs="1"
+				minOccurs="1">
+			</xs:element>
+
+			<xs:element name="PostcodeZone" type="Q1PostcodeZoneType"
+				maxOccurs="unbounded" minOccurs="0">
+			</xs:element>
+			<xs:element name="RegistrationDate" type="DateType" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Q1ValidationErrorsType">
+		<xs:sequence>
+			<xs:element name="Code" type="TextType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="TextType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--Datatypes-->
+	<xs:complexType name="AdministrativeAreaTextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="AdministrativeAreaTextContentType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="BinaryObjectType">
+		<xs:annotation>
+			<xs:documentation>A set of finite-length sequences of binary octets.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:base64Binary">
+				<xs:attribute name="filename" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>
+Must be the full filename including the extension
+(Reference IETF RFC 2045, 2046, 2047)
+            </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="format" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>
+The format of the binary content.
+Note: A file format is a particular way to encode information for storage in a computer file. May be identified by the section of its name following the final period, e.g., gif, pdf, jpg.
+            </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="mimeCode" type="xs:normalizedString" use="optional">
+					<xs:annotation>
+						<xs:documentation>
+The mime type of the binary object.
+(Reference IETF RFC 2045, 2046, 2047)
+Note: consist of a standardised system of identifiers (managed by IANA) consisting of a type and a sub-type, separated by a slash - for instance, text/html or image/gif.
+            </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="characterSetCode" type="xs:normalizedString" use="optional">
+					<xs:annotation>
+						<xs:documentation>
+The character set of the binary object if the mime type is text.
+(Reference IETF RFC 2045, 2046, 2047). Examples: ISO-8859-1, UTF-8, UTF-16. See also http://www.iana.org/assignments/character-sets.
+            </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="ClassOfTitleCodeType">
+		<xs:annotation>
+			<xs:documentation>A character string (letters, figures or symbols) that for brevity and/or language independence may be used to represent or replace a definitive value or text of an Attribute together with relevant supplementary information.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ClassOfTitleCodeContentType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="CompanyRegistrationNumberTextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="CompanyRegistrationNumberTextContentType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="DateType">
+		<xs:annotation>
+			<xs:documentation>
+A particular point in the progression of time together with the relevant supplementary information. OSCRE dates follow the ISO 8601 Standard. The international standard date notation is  YYYY-MM-DD where YYYY is the year in the usual Gregorian calendar, MM is the month of the year between 01 (January) and 12 (December), and DD is the day of the month between 01 and 31.
+
+For example, the fourth day of February in the year 1995 is written in the standard notation as 1995-02-04
+      </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:date"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="DateTimeType">
+		<xs:annotation>
+			<xs:documentation>A particular point in the progression of time together with the relevant supplementary information.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:dateTime"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="DistrictNameTextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="DistrictNameTextContentType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="AmountType">
+	  <xs:annotation>
+	    <xs:documentation>A number of monetary units specified in a currency where the unit of the currency is explicit or implied.</xs:documentation>
+	  </xs:annotation>
+	  <xs:simpleContent>
+	    <xs:extension base="xs:decimal">
+	      <xs:attribute name="currencyID" type="xs:normalizedString" use="optional">
+	        <xs:annotation>
+	          <xs:documentation>The currency of the amount</xs:documentation>
+	        </xs:annotation>
+	      </xs:attribute>
+	    </xs:extension>
+	  </xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="IndicatorType">
+		<xs:annotation>
+			<xs:documentation>A list of two mutually exclusive Boolean values that express the only possible states of a Property.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:boolean"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="LandRegistryOfficeNameTextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="LandRegistryOfficeNameTextContentType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="LeaseTermTextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="LeaseTermTextContentType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="IdentifierType">
+	  <xs:annotation>
+	    <xs:documentation>A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.</xs:documentation>
+	  </xs:annotation>
+	  <xs:simpleContent>
+	    <xs:extension base="xs:normalizedString">
+	      <xs:attribute name="schemeAgencyName" type="xs:string" use="optional">
+	        <xs:annotation>
+	          <xs:documentation>The identification of the agency that maintains the identification scheme.</xs:documentation>
+	        </xs:annotation>
+	      </xs:attribute>
+	      <xs:attribute name="schemeName" type="xs:string" use="optional">
+	        <xs:annotation>
+	          <xs:documentation>The name of the identification scheme.</xs:documentation>
+	        </xs:annotation>
+	      </xs:attribute>
+	    </xs:extension>
+	  </xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="NumericType">
+		<xs:annotation>
+			<xs:documentation>Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="OrganisationNameTextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="OrganisationNameTextContentType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="ProductResponseCodeType">
+		<xs:annotation>
+			<xs:documentation>Used to identify the response that will be issued to the CMS Vendor.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ProductResponseCodeContentType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="RentAmountTextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="RentAmountTextContentType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="RestrictionCodeType">
+		<xs:annotation>
+			<xs:documentation>Type of restriction present in the Register.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="RestrictionCodeContentType"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="Q2TextType">
+		<xs:annotation>
+			<xs:documentation>A character string (i.e. a finite set of
+				characters) generally in the form of words of a language.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Q2TextContentType" />
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="Q1NameType">
+		<xs:sequence>
+
+			<xs:element name="ForenamesName" type="TextType" maxOccurs="1" minOccurs="0"></xs:element>
+            <xs:element name="SurnameName" type="TextType" maxOccurs="1" minOccurs="1"></xs:element>
+        </xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Q1CharityDetailsType">
+		<xs:sequence>
+			<xs:element name="CharityName" type="TextType"
+				minOccurs="1" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="CharityAddress" type="Q1AddressType"
+				minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="CharityType" type="CharityCodeType"
+				minOccurs="1" maxOccurs="1" >
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>	
+    
+    <xs:complexType name="CharityCodeType">
+ 		<xs:annotation>
+			<xs:documentation>Type of Charity.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="CharityCodeContentType"/>
+		</xs:simpleContent>   
+    </xs:complexType>	
+
+	<xs:complexType name="Q1PrivateIndividualType">
+		<xs:sequence>
+			<xs:element name="Name" type="Q1NameType" maxOccurs="1" minOccurs="1"></xs:element>
+			<xs:element name="Alias" type="Q1NameType" maxOccurs="unbounded" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Q1OCRegisterDataType">
+		<xs:sequence>
+			<xs:element name="PropertyRegister"
+				type="Q1RegisterType" maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="ProprietorshipRegister"
+				type="Q1RegisterType" maxOccurs="1" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						AS part of RFC 11583/1 RES will be excluding
+						1925 Act Cautions as they cannot be converted
+						into Intelligent Register format. Hence all
+						Title Numbers will have an A and B register.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ChargesRegister" type="Q1RegisterType" maxOccurs="1" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Q1RegisterType">
+		<xs:sequence>
+            <xs:element name="DistrictDetails" type="Q1DistrictDetailsType" maxOccurs="1" minOccurs="0"></xs:element>
+            <xs:element name="RegisterEntry" type="Q1RegisterEntryType"
+				maxOccurs="unbounded" minOccurs="1">
+			</xs:element>
+			<xs:element name="Schedule" type="Q1ScheduleType"
+				maxOccurs="unbounded" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Q1RegisterEntryType">
+    	<xs:sequence>
+    		<xs:element name="EntryNumber" type="TextType" maxOccurs="1"
+    			minOccurs="1">
+    		</xs:element>
+    		<xs:element name="EntryDate" type="TextType" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="EntryType" type="TextType" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="EntryText" type="TextType" maxOccurs="unbounded"
+    			minOccurs="1">
+    		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1ScheduleType">
+    	<xs:sequence>
+    		<xs:element name="ScheduleType" type="TextType"
+    			maxOccurs="1" minOccurs="1">
+    		</xs:element>
+    		<xs:element name="ScheduleEntry" type="Q1RegisterEntryType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1DocumentEntryType">
+    	<xs:sequence>
+    		<xs:element name="DocumentType" type="DocumentCodeType"
+    			maxOccurs="1" minOccurs="1">
+    		</xs:element>
+    		<xs:element name="DocumentDate" type="TextType"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="EntryNumber" type="TextType"
+    			maxOccurs="unbounded" minOccurs="1">
+    		</xs:element>
+    		<xs:element name="PlanOnlyIndicator" type="IndicatorType"
+    			maxOccurs="1" minOccurs="1">
+    		</xs:element>
+    		<xs:element name="FiledUnder" type="TextType" maxOccurs="1" minOccurs="0"></xs:element>
+    		<xs:element name="RegisterDescription" type="TextType" maxOccurs="1" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1ChargeDetailsType">
+    	<xs:sequence>
+    		<xs:element name="ChargeID" type="TextType" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="ChargeDate" type="DateType" maxOccurs="1"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="RegisteredCharge" type="Q1ChargeType"
+    			maxOccurs="1" minOccurs="1">
+    		</xs:element>
+    		<xs:element name="ChargeProprietor"
+    			type="Q1ChargeProprietorType" maxOccurs="1" minOccurs="1">
+    		</xs:element>
+    		<xs:element name="SubCharge"
+    			type="Q1SubChargeDetailsType" maxOccurs="unbounded" minOccurs="0">
+    		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+       
+     <xs:complexType name="Q1SubChargeDetailsType">
+    	<xs:sequence>
+            <xs:element name="ChargeDate" type="DateType" maxOccurs="1" minOccurs="0">
+    		</xs:element>
+            <xs:element name="RegisteredCharge" type="Q1ChargeType"
+    			maxOccurs="1" minOccurs="1">
+    		</xs:element>
+    		<xs:element name="ChargeProprietor"
+    			type="Q1ChargeProprietorType" maxOccurs="1" minOccurs="1">
+    		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>    
+
+    <xs:complexType name="Q1RestrictionDetailsType">
+    	<xs:sequence>
+    		<xs:element name="RestrictionEntry" type="Q1RestrictionEntryType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1RestrictionEntryType">
+    	<xs:choice>
+    		<xs:element name="ChargeRelatedRestriction"
+    			type="Q1RestrictionType" maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="ChargeRestriction"
+    			type="Q1RestrictionType" maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="NonChargeRestriction"
+    			type="Q1RestrictionType" maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    	</xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="Q1UnilateralNoticeDetailsType">
+    	<xs:sequence>
+    		<xs:element name="UnilateralNotice"
+    			type="Q1EntryDetailsType" maxOccurs="1" minOccurs="1">
+    		</xs:element>
+    		<xs:element name="UnilateralNoticeBeneficiary" type="Q1EntryDetailsType" maxOccurs="1" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1ChargeProprietorType">
+    	<xs:sequence>
+            <xs:element name="ChargeeParty" type="Q1PartyType"
+    			maxOccurs="unbounded" minOccurs="1">
+    		</xs:element>
+    		<xs:element name="EntryDetails" type="Q1EntryDetailsType"
+    			maxOccurs="1" minOccurs="1">
+    		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+    
+
+	<xs:complexType name="Q1DistrictDetailsType">
+		<xs:sequence>
+			<xs:element name="EntryText" type="TextType"
+				maxOccurs="unbounded" minOccurs="0">
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Q1AgreedNoticeType">
+		<xs:sequence>
+            <xs:element name="AgreedNoticeType" type="AgreedNoticeTypeCodeType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="EntryDetails" type="Q1EntryDetailsType" maxOccurs="1" minOccurs="1"/>
+        </xs:sequence>
+	</xs:complexType>
+
+<!-- Infill Types -->
+
+	<xs:complexType name="Q1InfillDetailsType">
+		<xs:choice minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="Amount" type="AmountInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="ChargeDate" type="ChargeDateInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="ChargeParty" type="ChargePartyInfillType"
+			    maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="Date" type="DateInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="DeedDate" type="DeedDateInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="DeedExtent" type="DeedExtentInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+            <xs:element name="DeedParty" type="DeedPartyInfillType" 
+            	maxOccurs="1" minOccurs="1">
+            </xs:element>
+            <xs:element name="DeedType" type="DeedTypeInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="ExtentOfLand" type="ExtentOfLandInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="MiscellaneousText" type="MiscTextInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="Name" type="NameInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="Note" type="NoteInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="OptionalMiscText" type="OptMiscTextInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="PlansReference" type="PlansRefInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="TitleNumber" type="TitleNumberInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="VerbatimText" type="VerbatimTextInfillType"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="AmountInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="ChargeDateInfillType">
+		<xs:complexContent>
+			<xs:extension base="DateType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+
+	<xs:complexType name="ChargePartyInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	
+	<xs:complexType name="DateInfillType">
+		<xs:complexContent>
+			<xs:extension base="DateType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	
+	<xs:complexType name="DeedDateInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	
+	<xs:complexType name="DeedExtentInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	
+	<xs:complexType name="DeedPartyInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>		
+
+	<xs:complexType name="DeedTypeInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>		
+	
+	<xs:complexType name="ExtentOfLandInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>		
+
+	<xs:complexType name="MiscTextInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+
+	<xs:complexType name="NameInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+
+	<xs:complexType name="NoteInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+
+	<xs:complexType name="OptMiscTextInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+
+	<xs:complexType name="PlansRefInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+
+	<xs:complexType name="TitleNumberInfillType">
+		<xs:complexContent>
+			<xs:extension base="Q2TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+
+	<xs:complexType name="VerbatimTextInfillType">
+		<xs:complexContent>
+			<xs:extension base="TextType"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+<!-- End Infills  -->	
+
+    <xs:complexType name="Q1HomeRightsType">
+    	<xs:sequence>
+    		<xs:element name="ChangeOfAddressIndicator"
+    			type="IndicatorType" maxOccurs="1" minOccurs="1">
+    		</xs:element>
+    		<xs:element name="HomeRightsEntryDetails" type="Q1EntryDetailsType"
+    			maxOccurs="1" minOccurs="1">
+    		</xs:element>
+    		<xs:element name="ChangeOfAddressEntryDetails" type="Q1EntryDetailsType" maxOccurs="1" minOccurs="0"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1PricePaidEntryType">
+    	<xs:sequence>
+    		<xs:element name="MultipleTitleIndicator" type="MultipleTitleCodeType"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="EntryDetails" type="Q1EntryDetailsType" maxOccurs="1" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1DocumentDetailsType">
+    	<xs:sequence>
+    		<xs:element name="Document" type="Q1DocumentEntryType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="Q1EntryDetailsType">
+    	<xs:sequence>
+    		<xs:element name="EntryNumber" type="TextType" maxOccurs="1"
+    			minOccurs="1">
+    		</xs:element>
+    		<xs:element name="EntryText" type="TextType" maxOccurs="1"
+    			minOccurs="1">
+    		</xs:element>
+    		<xs:element name="RegistrationDate" type="DateType"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		<xs:choice>
+                <xs:element name="SubRegisterCode" type="SubRegisterCodeType" maxOccurs="1" minOccurs="0">
+    		</xs:element>
+                <xs:element name="ScheduleCode" type="ScheduleCodeType" maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    		</xs:choice>    		    		<xs:element name="Infills" type="Q1InfillDetailsType"
+    			maxOccurs="1" minOccurs="0">
+    		</xs:element>
+    	</xs:sequence>
+    </xs:complexType>        
+
+    <xs:complexType name="Q1EntriesType">
+    	<xs:sequence>
+    		<xs:element name="EntryDetails" type="Q1EntryDetailsType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1UnilateralNoticeEntriesType">
+    	<xs:sequence>
+    		<xs:element name="UnilateralNoticeEntry" type="Q1UnilateralNoticeDetailsType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1AgreedNoticeEntriesType">
+    	<xs:sequence>
+    		<xs:element name="AgreedNoticeEntry" type="Q1AgreedNoticeType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1ChargeEntriesType">
+    	<xs:sequence>
+    		<xs:element name="ChargeEntry" type="Q1ChargeDetailsType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1LeaseEntriesType">
+    	<xs:sequence>
+    		<xs:element name="LeaseEntry" type="Q1LeaseType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Q1HomeRightsEntriesType">
+    	<xs:sequence>
+    		<xs:element name="HomeRightsEntry" type="Q1HomeRightsType" maxOccurs="unbounded" minOccurs="1"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+
+	<!--Contenttypes-->
+	<xs:simpleType name="AdministrativeAreaTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="38"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AttachmentDescriptionTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="200"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AttachmentFileTitleTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="250"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ClassOfTitleCodeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Absolute Freehold</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Possessory Freehold</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Qualified Freehold</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="40">
+				<xs:annotation>
+					<xs:documentation>Scheme Title - Freehold</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="50">
+				<xs:annotation>
+					<xs:documentation>Scheme Title - Leasehold</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="60">
+				<xs:annotation>
+					<xs:documentation>Absolute Leasehold</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="70">
+				<xs:annotation>
+					<xs:documentation>Good Leasehold</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="80">
+				<xs:annotation>
+					<xs:documentation>Qualified Leasehold</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="90">
+				<xs:annotation>
+					<xs:documentation>Possessory Leasehold</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="100">
+				<xs:annotation>
+					<xs:documentation>Absolute Rentcharge</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="110">
+				<xs:annotation>
+					<xs:documentation>Possessory Rentcharge</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="120">
+				<xs:annotation>
+					<xs:documentation>Qualified Rentcharge</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="130">
+				<xs:annotation>
+					<xs:documentation>Caution Against First Registration</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="CompanyRegistrationNumberTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="DescriptionTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1024"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="DistrictNameTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="38"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="LandRegistryOfficeNameTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="LeaseTermTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="500"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="NonEmptyTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="500"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="OrganisationNameTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="366"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ProductResponseCodeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>Other</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Acknowledgement</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Rejection</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Result</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="RentAmountTextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="200"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="RestrictionCodeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>Other</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Joint Proprietor</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Charge Related</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Charge</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>			
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Q2TextContentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="9"/>
+			<xs:pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CharityCodeContentType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="C">
+				<xs:annotation>
+					<xs:documentation>Charity</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="R">
+				<xs:annotation>
+					<xs:documentation>Official Custodian for Charities</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="S">
+				<xs:annotation>
+					<xs:documentation>Official Custodian for Charities (Trustees)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+
+    <xs:simpleType name="AgreedNoticeTypeCodeType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Option to Purchase</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Right of Pre-emption</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>    
+    </xs:simpleType>
+
+    <xs:simpleType name="DocumentCodeType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Abstract</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Agreement</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Assent</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="40">
+				<xs:annotation>
+					<xs:documentation>Assignment</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="50">
+				<xs:annotation>
+					<xs:documentation>Charge</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="60">
+				<xs:annotation>
+					<xs:documentation>Conveyance</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="70">
+				<xs:annotation>
+					<xs:documentation>Deed</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="80">
+				<xs:annotation>
+					<xs:documentation>Indenture</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="90">
+				<xs:annotation>
+					<xs:documentation>Lease</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="100">
+				<xs:annotation>
+					<xs:documentation>Licence</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="110">
+				<xs:annotation>
+					<xs:documentation>Plan</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="120">
+				<xs:annotation>
+					<xs:documentation>Sub-Charge</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>			
+			<xs:enumeration value="130">
+				<xs:annotation>
+					<xs:documentation>Transfer</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="140">
+				<xs:annotation>
+					<xs:documentation>Other</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="150">
+				<xs:annotation>
+					<xs:documentation>Commonhold Community Statement</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="160">
+				<xs:annotation>
+					<xs:documentation>Memorandum and Articles of Association</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="170">
+				<xs:annotation>
+					<xs:documentation>Surrender of Development Rights</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="180">
+				<xs:annotation>
+					<xs:documentation>Termination Document</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>			
+		</xs:restriction>    
+    </xs:simpleType>
+
+    <xs:simpleType name="ScheduleCodeType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>Schedule of Deeds imposing Restrictive Covenants</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Schedule of Leases of Easements</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Schedule of Single Registered Lease</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Schedule of Notice of Leases</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="40">
+				<xs:annotation>
+					<xs:documentation>Schedule of Registered Properties</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="50">
+				<xs:annotation>
+					<xs:documentation>Schedule of Registered Rentcharges</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="60">
+				<xs:annotation>
+					<xs:documentation>Schedule of Restrictive Covenants</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="70">
+				<xs:annotation>
+					<xs:documentation>Schedule of Apportioned Rents</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="80">
+				<xs:annotation>
+					<xs:documentation>Schedule of Rentcharges</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="90">
+				<xs:annotation>
+					<xs:documentation>Schedule of Apportionments and Exonerations</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="100">
+				<xs:annotation>
+					<xs:documentation>Schedule of Rentcharges created by Transfers of Part</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>			
+			<xs:enumeration value="110">
+				<xs:annotation>
+					<xs:documentation>Schedule of Personal Covenants</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="120">
+				<xs:annotation>
+					<xs:documentation>Schedule of Single Registered Rentcharge Lease</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="130">
+				<xs:annotation>
+					<xs:documentation>Schedule of Multiple Registered Leases</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>	
+		</xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="SubRegisterCodeType">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="A">
+				<xs:annotation>
+					<xs:documentation>Property Register</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="B">
+				<xs:annotation>
+					<xs:documentation>Proprietorship Register</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="C">
+				<xs:annotation>
+					<xs:documentation>Charges Register</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="D">
+				<xs:annotation>
+					<xs:documentation>Cautioner's Register</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+    	</xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="MultipleTitleCodeType">
+    	<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>Entry effects 2 titles</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MoreThan2">
+				<xs:annotation>
+					<xs:documentation>Entry effects more than 2 titles</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+    	</xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

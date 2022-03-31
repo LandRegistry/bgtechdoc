@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns1:RequestOfficialSearchOfWholeWithPriorityV2_1
+	xmlns:ns1="http://www.oscre.org/ns/eReg-Final/2011/RequestOfficialSearchOfWholeWithPriorityV2_1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.oscre.org/ns/eReg-Final/2011/RequestOfficialSearchOfWholeWithPriorityV2_1 RequestOfficialSearchOfWholeWithPriorityV2_1.xsd ">
+	<ns1:ID>
+		<ns1:MessageID>DfltMsgId1365516738854</ns1:MessageID>
+	</ns1:ID>
+	<ns1:Product>
+		<ns1:ExternalReference>
+			<ns1:Reference>extRef0001</ns1:Reference>
+		</ns1:ExternalReference>
+		<ns1:CustomerReference>
+			<ns1:Reference>cstRef0001</ns1:Reference>
+		</ns1:CustomerReference>
+		<ns1:SubjectProperty>
+			<ns1:TitleNumber>ST500681</ns1:TitleNumber>
+		</ns1:SubjectProperty>
+		<ns1:ExpectedPrice>
+			<ns1:GrossPriceAmount>12</ns1:GrossPriceAmount>
+		</ns1:ExpectedPrice>
+		<ns1:Contact>
+			<ns1:Name>Fred Blogs</ns1:Name>
+			<ns1:Communication>
+				<ns1:Telephone>01234567</ns1:Telephone>
+			</ns1:Communication>
+		</ns1:Contact>
+		<ns1:OfficialSearchOfWholeWithPriority>
+			<ns1:PriorityTypeCode>10</ns1:PriorityTypeCode>
+			<ns1:PropertyDescription>A Nice House</ns1:PropertyDescription>
+			<ns1:SearchFromDate>2013-04-01</ns1:SearchFromDate>
+			<ns1:ContinueIfNameMismatchOnRegisterIndicator>false</ns1:ContinueIfNameMismatchOnRegisterIndicator>
+			<ns1:ContinueIfActualFeeExceedsExpectedFeeIndicator>false</ns1:ContinueIfActualFeeExceedsExpectedFeeIndicator>
+			<ns1:ContinueIfPendingSearchesOfPartIndicator>false</ns1:ContinueIfPendingSearchesOfPartIndicator>
+			<ns1:ContinueIfDeveloperTitleIndicator>false</ns1:ContinueIfDeveloperTitleIndicator>
+			<ns1:RegisteredProprietorsDetailsOrApplicantsForFirstRegistration>Prynne</ns1:RegisteredProprietorsDetailsOrApplicantsForFirstRegistration>
+			<ns1:ApplicantParty>Fred Blogs</ns1:ApplicantParty>
+		</ns1:OfficialSearchOfWholeWithPriority>
+	</ns1:Product>
+</ns1:RequestOfficialSearchOfWholeWithPriorityV2_1>

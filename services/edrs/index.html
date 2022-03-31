@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>e-Document registration service - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/services/edrs/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="e-Document registration service - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/services/edrs/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="e-Document registration service" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/services/edrs/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#e-document-registration-service"><span>e-Document registration service</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+        <ul>
+          <li>
+            <a href="#if-you-39-re-a-software-developer"><span>If you’re a software developer</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#process-flow"><span>Process flow</span></a>
+        <ul>
+          <li>
+            <a href="#validation"><span>Validation</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#schemas"><span>Schemas</span></a>
+      </li>
+      <li>
+        <a href="#vendor-testing"><span>Vendor testing</span></a>
+        <ul>
+          <li>
+            <a href="#data"><span>Data</span></a>
+          </li>
+          <li>
+            <a href="#scenarios"><span>Scenarios</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+<p><a href="../">Back to Services</a> <a href="../../">Back to Home</a></p>
+<h1 id="e-document-registration-service">e-Document registration service</h1>
+<p><hr /></p>
+<h2 id="overview">Overview</h2>
+
+<p>Use this service to:</p>
+
+<ul>
+<li>send applications to change the register</li>
+<li>automate the collection of correspondence and responses</li>
+<li>receive the completed application back</li>
+</ul>
+<h3 id="if-you-39-re-a-software-developer">If you&rsquo;re a software developer</h3>
+
+<P>Use this document to integrate data into your system.</P>
+<p><hr /></p>
+<h2 id="process-flow">Process flow</h2>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="../../documents/edrs/eDRS_V2_1_Submission.pdf" class="govuk-!-font-size-24">Submission guide</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 202KB, 5 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Submission.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<p>The submission guide advises how to use the services that make up e-DRS.</p>
+<h3 id="validation">Validation</h3>
+<h4 id="edrs-bg-request">eDRS BG Request</h4>
+
+<p>This visualisation specification provides the ability for Business Gateway to validate and prepare a response
+for the submission of a bundled substantive application via the Business Gateway against a maximum of 20
+title numbers.</p>
+
+<p>Checks specific to this service are applied to the data in the XML document and the request is either rejected
+or a result reponse is prepared and made available in XML format. Each XML document must contain a valid
+set of data items that conforms to the XML Schema defined for the service requested. The XML Schema data
+is detailed separately. This is the primary requirements specification for this service.</p>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      eDRS BG Request Rules
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rule number</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Name</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Code</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message ID</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message text</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-026</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">AP1 warning</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.ap1warning</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The only valid value for AP1 Warning Understood is &lsquo;Yes&rsquo;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-120</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Certification is required that the AP1 warning has been read and understood</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-028</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Party</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.applicant</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">At least one party for each e-DRS application must have Is Applicant equal to &lsquo;Yes&rsquo;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-100</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">At least one party must be an applicant</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-029</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Party ID</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.identityform</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">For each Party associated with Not Represented Identity Form there must be at least one Identity Form</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-119</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">An Identity Form must be provided</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-045</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Representation</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.party.representation</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Representation is always required for the following Role Types: &lsquo;Transferor&rsquo;, &lsquo;Transferee&rsquo;, &lsquo;Borrower&rsquo;, &lsquo;Lessor&rsquo; and'Lessee&rsquo;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-103</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Representation for Forenames, Surname, Company Name must be provided</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-046</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Representation</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.party.representation</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Representation is only required for a Party with a Role Type of &lsquo;Lender&rsquo; when the associated Application Type is &lsquo;Charge&rsquo;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-103</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Representation for Forenames, Surname, Company Name must be provided</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-051</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Title number validity</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.invalid.specific</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Each Title Number must exist on Land Registry systems and have a valid District Code></td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-096</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Title Number X is invalid</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-059</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">First application priority value</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.priority.startvalue</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The lowest Application Priority value must be &lsquo;1&rsquo;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-099</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Application priority must begin with &lsquo;1&rsquo;</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-060</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Other application priority value</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.priority.nonconsecutive</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Each Application Priority value must be a whole number and assigned in consecutive ascending order</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-113</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Application priority must be in consecutive numerical order</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-112</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Application Type for Role Type &lsquo;Borrower&rsquo;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.application.roletype</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">When Application Type is:&lsquo;Charge&rsquo;, Note Agreed Maximum Amount of Security (CH3), A Role Type of &lsquo;Borrower&rsquo; must be present</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-102</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Role Type of Role Type must be present for Application Type Application Priority</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-117</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Application Type for Role Type &lsquo;Transferee&rsquo;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.application.roletype</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">When Application Type is:
+            &lsquo;Transfer&rsquo;
+            &lsquo;Transfer by operation of Law(On Death)&rsquo; &lsquo;Transfer not for Value&rsquo;
+            &lsquo;Transfer of Charge&rsquo;
+            &lsquo;Transfer Subject to a Charge&rsquo;
+            A Role Type of &lsquo;Transferee&rsquo; must be present</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-102</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Role Type of Role Type must be present for Application Type Application Priority</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-118</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Application Type for Role Type &lsquo;Transferor&rsquo;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.application.roletype</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">When Application Type is:
+            &lsquo;Transfer&rsquo;
+            &lsquo;Transfer by operation of Law(On Death)&rsquo; &lsquo;Transfer not for Value&rsquo;
+            &lsquo;Transfer of Charge&rsquo;
+            &lsquo;Transfer Subject to a Charge&rsquo;
+            A Role Type of &lsquo;Transferor&rsquo; must be present</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-102</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Role Type of Role Type must be present for Application Type Application Priority</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-120</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Application supported by a document</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.application.document</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">An Application must be supported by a Document unless the value for the Application Type is &lsquo;Discharge&rsquo; or &lsquo;Change of Address&rsquo;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-101</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Application Type Application Priority must be supported by a document</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-122</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Lodging conveyancer representation</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.lodging.representation</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The Lodging Conveyancer must represent one of the parties to the application</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-112</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Application Application Type> Application Priority must be supported by a document</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-125</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Title not closed</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.closed.specific</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The Title must be open else corresponding validation failure message received</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-116</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Representation by the Lodging Conveyancer must be provided for one of the parties to the application</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-183</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Invalid Titles</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">scheme.title caution.title</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Applications against scheme titles or caution titles are not valid</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-130</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Title number <X> is closed</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-187</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Address for Service</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.transferee.afs</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Where the lodging conveyancer is the representing conveyancer for transferee(s) an address for service is required for each individual transferee.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-131</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Applications against scheme titles or caution titles are not supported</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-187</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Invalid lessee title</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">leasehold.title</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">A Lessees title number provided with a Lease Extension application must match a leasehold title held by Land Registry</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-140</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">As you are representing the transferee the address for service is required</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-239</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Invalid Titles</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">franchise.title</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a title with an estate interest of &lsquo;Affecting Franchise&rsquo; or &lsquo;Relating Franchise</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-141</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Lessees title number provided <X> does not match a leasehold title held by Land Registry</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-240</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Invalid Titles</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">pending.title</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a pending new title</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-142</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Applications for a New Lease, Lease Extension or a Transfer of Part against an affecting franchise or relating franchise are not supported</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-255</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Application Type for Role Type 'Lessor&rsquo;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.application.roletype</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">When Application Type is:-
+            ‘Lease’
+            A Role Type of ‘Lessor’ must be present</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-102</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The title number provided X is a pending new title. Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a pending new title</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-256</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Application Type for Role Type &lsquo;Lessee&rsquo;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.application.roletype</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">When Application Type is:-
+            ‘Lease’
+            A <Role Type> of ‘Lessee’ must be present</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-102</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Role type of Role Type must be present for Application Type Application Priority</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-257</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Invalid Titles</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">invalid.title.multi.district</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a multi title district title. Corresponding validation failure message- MSG-BG-143</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-143</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Applications for a New Lease, Lease Extension or a Transfer of Part against a title that has multiple districts associated with it are not supported.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<div style="padding-bottom: 15px">
+  <a href="../../images/edrs_1.png" target="_blank">
+    <img src="../../images/edrs_1.png" alt="An image of an eDRS BG (Business Gateway) request flowchart" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+</div>
+<h4 id="edrs-bg-attachment-request">eDRS BG Attachment Request</h4>
+
+<p>Checks specific to this service are applied to the data in the XML document and the request is either rejected
+or a result reponse is prepared and made available in XML format. Each XML document must contain a valid
+set of data items that conforms to the XML Schema defined for the service requested. The XML Schema data
+is detailed seperately. This requirements specification forms part of a larger service. </p>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      eDRS BG Attachment Rules
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rule number</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Name</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Code</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message ID</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message text</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-127</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Attachment Format</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.attachment.formatdescription.error</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The Attachment file must be in eithe GIF, JPEG, TIFF or PDF format</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-128</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The Attachment file must be in either GIF, JPG, TIFF or PDF format therefore your attachment cannot be accepted</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-128</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Current Pending Applications</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.attachment.record.not.found</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The Application Message ID must relate to a pending application</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-123</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Application priority must be in consecutive numerical order</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-129</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Maximum File Size</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.attachment.filesize.error</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The maximum file size for an Attachment is 3.6MB</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-122</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The attached file exceeds the maximum permitted file size of 20MB</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-241</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">PDF Valid</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.attachment.pdf.security</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">If Attachment is a PDF, it must not be secured</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-126</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Attachments in PDF format must be unsecured PDF&rsquo;s therefore your attachment cannot be accepted</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-242</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Tiff Valid</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.attachment.tiff.compatibility</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">An eDRS attachment in TIFF format must not violate the TIFF standards</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-127</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The attached TIFF file violates the TIFF standards and therefore your attachment cannot be accepted</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">NFR-BG-036</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Tiff Valid</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.attachment.tiff.compatibility</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">If Attachment is a TIFF file does it must not violate the TIFF standards</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-127</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The attached TIFF file violates the TIFF standards and therefore your attachment cannot be accepted</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">N/A</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Attachment Valid</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.attachmentid.notfound</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Does Attachment ID match a Document ID or Application Priority associated with the application? No</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-124</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Attachment ID does not match a document associated with the application</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">N/A</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Acknowledgement</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">TypeCode10</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Acknowledge receipt of attachment</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-129</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Your attachment has been received</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">N/A</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Virus Check</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.drs.virus</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Does Attachment contain a suspected virus?</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-121</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Your attachment has been received</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">N/A</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Acceptance Receipt</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">TypeCode30</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Accepted Attachment</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-125</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Your attachment has been accepted</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<div style="padding-bottom: 15px">
+  <a href="../../images/edrs_attachment.png" target="_blank">
+    <img src="../../images/edrs_attachment.png" alt="An image of a eDRS BG (Business Gateway) attachment request flowchart" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  </a>
+</div>
+<p><hr /></p>
+<h2 id="schemas">Schemas</h2>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="../../documents/edrs/RequestApplicationToChangeRegisterV2_1.xsd" class="govuk-!-font-size-24">RequestApplicationToChangeRegisterV2_1</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/RequestApplicationToChangeRegisterV2_1.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="../../documents/edrs/ResponseApplicationToChangeRegisterV2_0.xsd" class="govuk-!-font-size-24">ResponseApplicationToChangeRegisterV2_0</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/ResponseApplicationToChangeRegisterV2_0.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="../../documents/edrs/RequestAttachmentV2_1.xsd" class="govuk-!-font-size-24">RequestAttachmentV2_1</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/RequestAttachmentV2_1.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="../../documents/edrs/ResponseAttachmentV2_0.xsd" class="govuk-!-font-size-24">ResponseAttachmentV2_0</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/ResponseAttachmentV2_0.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="../../documents/edrs/CorrespondenceV1_0.xsd" class="govuk-!-font-size-24">CorrespondenceV1_0</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/CorrespondenceV1_0.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="../../documents/edrs/ResponseEarlyCompletionV2_0.xsd" class="govuk-!-font-size-24">ResponseEarlyCompletionV2_0</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >XSD</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/ResponseEarlyCompletionV2_0.xsd"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="../../documents/edrs/eDRS v2_1 Schema Model.pdf" class="govuk-!-font-size-24">eDRS schema model</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 292KB, 9 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS v2_1 Schema Model.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="../../documents/edrs/eDRS_v2_1_Interface_Spec.pdf" class="govuk-!-font-size-24">Interface specification</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 2039KB, 143 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_v2_1_Interface_Spec.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<p>The interface specification specifies the interface between Land Registry and a
+Business Gateway e-Document Registration Service customer.</p>
+<p><hr />
+<br /></p>
+<h2 id="vendor-testing">Vendor testing</h2>
+<h3 id="data">Data</h3>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data.pdf" class="govuk-!-font-size-24">Vendor Test data- EDRS</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 223KB, 18 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Attachment.pdf" class="govuk-!-font-size-24">Vendor Test data- Attachment</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 174KB, 7 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Attachment.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_Correspondence_Vendor_Test_Data_v1.1.pdf" class="govuk-!-font-size-24">Vendor Test data- Correspondence</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 135KB, 2 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_Correspondence_Vendor_Test_Data_v1.1.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_Early_Completion_Vendor_Test_Data_v1_1.pdf" class="govuk-!-font-size-24">Vendor Test data- early Completion</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 136KB, 2 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_Early_Completion_Vendor_Test_Data_v1_1.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+<h3 id="scenarios">Scenarios</h3>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario1.pdf" class="govuk-!-font-size-24">Scenario 1: transfer and charge</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 228KB, 14 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario1.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario2.pdf" class="govuk-!-font-size-24">Scenario 2: remortgage</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 215KB, 13 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario2.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario3.pdf" class="govuk-!-font-size-24">Scenario 3: transfer of equity</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 241KB, 15 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario3.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario4.pdf" class="govuk-!-font-size-24">Scenario 4: restriction, hostile takeover</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 217KB, 13 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario4.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario5.pdf" class="govuk-!-font-size-24">Scenario 5: change of name</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 219KB, 11 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario5.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario6.pdf" class="govuk-!-font-size-24">Scenario 6: dispositionary first lease</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 227KB, 14 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario6.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario7.pdf" class="govuk-!-font-size-24">Scenario 7: transfer of part</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 227KB, 14 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario7.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario8.pdf" class="govuk-!-font-size-24">Scenario 8: lease extension</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 225KB, 13 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario8.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>
