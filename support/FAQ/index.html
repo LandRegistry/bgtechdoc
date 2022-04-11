@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>FAQ - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/support/FAQ/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="FAQ - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/support/FAQ/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="FAQ" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/support/FAQ/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#faq"><span>FAQ</span></a>
+    <ul>
+      <li>
+        <a href="#how-are-the-web-services-structured"><span>How are the web services structured?</span></a>
+      </li>
+      <li>
+        <a href="#why-does-business-gateway-not-have-a-wsdl-namespace"><span>Why does Business Gateway not have a WSDL namespace?</span></a>
+      </li>
+      <li>
+        <a href="#how-are-the-client-ssl-digital-certificates-used"><span>How are the client SSL digital certificates used?</span></a>
+      </li>
+      <li>
+        <a href="#how-are-an-individual-s-user-credentials-used"><span>How are an individual’s user credentials used?</span></a>
+      </li>
+      <li>
+        <a href="#why-are-the-user-id-password-and-locale-not-part-of-a-soap-header-in-the-wsdl"><span>Why are the user id, password and locale not part of a SOAP header in the WSDL?</span></a>
+      </li>
+      <li>
+        <a href="#what-is-the-purpose-of-the-quot-messageid-quot-that-appears-in-all-the-schemas"><span>What is the purpose of the “MessageID” that appears in all the schemas?</span></a>
+      </li>
+      <li>
+        <a href="#what-is-the-billing-order-reconciliation-process"><span>What is the billing / order reconciliation process?</span></a>
+      </li>
+      <li>
+        <a href="#what-is-the-definition-of-a-complexname-with-regards-to-the-k15-and-k16"><span>What is the definition of a “ComplexName” with regards to the K15 and K16?</span></a>
+      </li>
+      <li>
+        <a href="#can-a-single-bankruptcy-search-be-submitted-against-multiple-clients-one-of-whom-is-a-company"><span>Can a single bankruptcy search be submitted against multiple clients, one of whom is a company?</span></a>
+      </li>
+      <li>
+        <a href="#how-will-the-enquiry-by-property-description-epd-service-handle-either-multiple-property-matches-or-no-match"><span>How will the enquiry by property description (EPD) service handle either multiple property matches or no match?</span></a>
+      </li>
+      <li>
+        <a href="#how-are-official-copy-results-returned-to-the-external-system"><span>How are official copy results returned to the external system?</span></a>
+      </li>
+      <li>
+        <a href="#is-the-official-copy-title-known-web-service-used-for-both-oc1s-and-oc2s"><span>Is the official copy title known web service used for both OC1s and OC2s?</span></a>
+      </li>
+      <li>
+        <a href="#what-is-the-purpose-of-quot-titlenumberfiledunder-when-requesting-oc2-documents"><span>What is the purpose of “TitleNumberFiledUnder” when requesting OC2 documents?</span></a>
+      </li>
+      <li>
+        <a href="#how-do-the-continue-and-notify-indicators-work"><span>How do the “continue” and “notify” indicators work?</span></a>
+      </li>
+      <li>
+        <a href="#what-is-the-difference-between-quot-customer-reference-quot-and-external-reference-and-how-should-they-be-used"><span>What is the difference between "Customer Reference” and “External Reference” and how should they be used?</span></a>
+      </li>
+      <li>
+        <a href="#can-an-official-copy-be-requested-in-the-same-request-that-retrieves-the-title-number"><span>Can an official copy be requested in the same request that retrieves the title number?</span></a>
+      </li>
+      <li>
+        <a href="#how-does-polling-work"><span>How does polling work?</span></a>
+      </li>
+      <li>
+        <a href="#can-i-retrieve-details-of-outstanding-requests"><span>Can I retrieve details of outstanding requests?</span></a>
+      </li>
+      <li>
+        <a href="#can-the-test-stub-environment-be-used-for-performance-testing"><span>Can the test stub environment be used for performance testing?</span></a>
+      </li>
+      <li>
+        <a href="#can-applications-be-submitted-in-batch-mode"><span>Can applications be submitted in batch mode?</span></a>
+      </li>
+      <li>
+        <a href="#can-postal-results-be-sent-to-an-address-other-than-the-customer-s-address-es-registered-with-land-registry"><span>Can postal results be sent to an address other than the customer’s address(es) registered with Land Registry?</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+<p><a href="../">Back to Support</a> <a href="../../">Back to Home</a></p>
+<h1 id="faq">FAQ</h1>
+<h2 id="how-are-the-web-services-structured">How are the web services structured?</h2>
+<p>There is a separate endpoint for each available service, which should:</p>
+
+<ul>
+<li>avoid a single WSDL becoming unmanageably large as the number of services grows</li>
+<li>allow multiple versions of a service to coexist without disturbing the current user base (see the <em>Business Gateway developer guide</em> for the Upgrade &amp; Change policy)</li>
+<li>facilitate introduction of a new service with no impact on the existing services.<br></li>
+</ul>
+<p>A full list of the URLs currently available can be found in section 9 of the <em>Business Gateway developer guide</em>.</p>
+<h2 id="why-does-business-gateway-not-have-a-wsdl-namespace">Why does Business Gateway not have a WSDL namespace?</h2>
+<p>The WSDL prefix is not needed because, like Google and Amazon, the XMLNS attribute is specified to point to the WSDL namespace. Therefore, all unqualified elements in the WSDL are automatically given the semantics belonging to the WSDL namespace.</p>
+<h2 id="how-are-the-client-ssl-digital-certificates-used">How are the client SSL digital certificates used?</h2>
+<p>The certificate is used to create the secure tunnel between each client and Business Gateway. It will identify the organisation it was issued to when the connection is made. Alongside the client certificate, the issuing Certificate Authority (CA) certificate and the root CA certificate will need to be installed onto each computer or server communicating with Business Gateway, to establish the chain of trust. A server operating as a hub could open multiple connections to Business Gateway using a single certificate, or the various certificates of the conveyancer firms being hosted.</p>
+<p><strong>N.B.</strong> The client certificate will expire after three years and the nominated technical contact will receive a reminder one month beforehand.</p>
+<h2 id="how-are-an-individual-s-user-credentials-used">How are an individual’s user credentials used?</h2>
+<p>Business Gateway uses the credentials allocated to users when they register to use the Land Registry portal. The credentials of the user initiating a Business Gateway request should be supplied in the SOAP header of the request (see <em>Business Gateway developer guide</em>) to authenticate the request. When using the vendor test stubs for testing, the credentials supplied in the vendor test data spreadsheet are used for all the tests.</p>
+<h2 id="why-are-the-user-id-password-and-locale-not-part-of-a-soap-header-in-the-wsdl">Why are the user id, password and locale not part of a SOAP header in the WSDL?</h2>
+<p>SOAP header is an optional element in the WSDL file and is mainly used in Business Gateway for authentication and internationalisation. It is best practice to not define the binding related to authentication as part of WSDL containing the abstraction of the service.</p>
+<h2 id="what-is-the-purpose-of-the-quot-messageid-quot-that-appears-in-all-the-schemas">What is the purpose of the &ldquo;MessageID&rdquo; that appears in all the schemas?</h2>
+<p>&ldquo;MessageID&rdquo; is a string field that is used as a mechanism for reliable messaging in Business Gateway. The external system is required to generate a unique identifier for each request it sends. The combination of the message ID, user ID and message type will be used by Business Gateway software to ensure that every request is unique within the system. If two requests were made with the same message ID from different CMS systems, the user ID would still be different making the request unique.<br>
+If a CMS uses a duplicate message ID in a request, the original response will always be returned. This feature may be used to retrieve a response that may have been lost due to network problems, or submitted after hours.</p>
+<h2 id="what-is-the-billing-order-reconciliation-process">What is the billing / order reconciliation process?</h2>
+<p>Variable direct debit (VDD) is the only payment method available. Payment is taken from the user’s account on the fourth day after receipt. There is no front-end portal to allow users to review ongoing or completed orders. Users will have to maintain their own control of requests, based on acknowledgements, results and polling instructions received from the service.</p>
+<h2 id="what-is-the-definition-of-a-complexname-with-regards-to-the-k15-and-k16">What is the definition of a “ComplexName” with regards to the K15 and K16?</h2>
+<p>The &ldquo;ComplexName&rdquo; element is for those names that do not conform to the usual forename and surname format, for example &ldquo;The Right Reverend Peter Nathaniel Ireland The Lord Bishop of Truro&rdquo;. These are rare and further information is given in Practice Guide <em>63 Land Charges – Applications for registration, official search, office copy and cancellation</em> available on Land Registry’s website. The success of a bankruptcy search is increased where all known names of an individual are searched, so we have included a complex name facility to allow full flexibility.</p>
+<h2 id="can-a-single-bankruptcy-search-be-submitted-against-multiple-clients-one-of-whom-is-a-company">Can a single bankruptcy search be submitted against multiple clients, one of whom is a company?</h2>
+<p>The service is designed for private individuals or complex names and both cannot be part of the same request. The schema should limit the private individual names to six sets of names i.e. forename(s) and surname. It is not designed to search a corporate name as only private individuals can become bankrupt.</p>
+<h2 id="how-will-the-enquiry-by-property-description-epd-service-handle-either-multiple-property-matches-or-no-match">How will the enquiry by property description (EPD) service handle either multiple property matches or no match?</h2>
+<p>The service will supply a maximum of 50 results per enquiry. Where there are no matches or a set of matches more than 50, the user will be asked to search again with amended search criteria.</p>
+<h2 id="how-are-official-copy-results-returned-to-the-external-system">How are official copy results returned to the external system?</h2>
+<p>If a single document is being returned it will be a base64 encoded PDF. If multiple documents are being returned, the PDFs will be in a base64 encoded zip file that will need to be decoded and then unzipped. The PDFs will be in the same format as if delivered from the portal. The type of attachment will be shown in the response as either ‘PDF’ or ‘ZIP’. The PDFs are named as either ‘Register’ or ‘Title Plan’, or with the date of a requested document; there is no unique document ID. The results will be held on a database table and do not need to be deleted by the CMS after they have been retrieved.</p>
+<p><strong>N.B.</strong> Documents will be delivered electronically where possible. If any of the documents requested cannot be delivered electronically, these documents will be returned in the post. In this instance the Business Gateway response will explain that an electronic version could not be provided. It will also confirm that the items will be issued by post/DX and may explain that the fee may be more than that normally applied to electronic delivery.</p>
+<h2 id="is-the-official-copy-title-known-web-service-used-for-both-oc1s-and-oc2s">Is the official copy title known web service used for both OC1s and OC2s?</h2>
+<p>Yes. The request can be structured to refine the precise type of official copy required.</p>
+
+<ul>
+<li>“OfficialCopyTypeCode” allows the user to select whether they want an official copy (OC1) or the associated documents (OC2).</li>
+<li>“RequestedOfficialCopyCode” allows the user to select specific OC1 documents i.e. register, title plan or CI only; register and title plan together; or CI and register together.</li>
+<li>“PropertyDescription” will be used for investigation purposes if either the proprietor names do not match or the title is not computerised and the appropriate continue indicator has been set to ‘true’.</li>
+<li>“NumberOfOfficialCopies” requires separate values for registers and title plans whenever postal delivery is requested.</li>
+<li>“CertificateInFormCI” is the certificate of inspection that can be requested as a part of an OC1. This is always sent by post even if the delivery method is electronic.</li>
+<li>“DocumentDetails” - when an OC2 is requested, the document(s) needs to be identified:
+
+<ul>
+<li>“TypeOfDocumentCode”: lease, deed and so on</li>
+<li>“DateOfDocumentDate”: date when the document was created</li>
+<li>“TitleNumberFiledUnder”: if there is a title number that is different from the original title number for which the document was made (see below).</li>
+</ul></li>
+<li>“ReturnDeliveryTypeCode” allows the user to request either postal or electronic delivery (if possible).<br></li>
+</ul>
+<p><strong>N.B.</strong> “AdditionalProductInformation” and “TenureTypeCode” are not used by Business Gateway.</p>
+<h2 id="what-is-the-purpose-of-quot-titlenumberfiledunder-when-requesting-oc2-documents">What is the purpose of &ldquo;TitleNumberFiledUnder” when requesting OC2 documents?</h2>
+<p>Most documents are filed under the title that carries the entry relating to that document. However, when this is not the case, this field should be used. Typical examples would be:</p>
+
+<ul>
+<li>an amalgamation of two or more titles; when entries are carried forward from closing titles the filed documents are not moved</li>
+<li>a filed document relating to more than one title; it can only be filed under one of them</li>
+<li>a surrender and re-grant of a lease; the old lease is often referenced on the new title but remains filed under the closing leasehold title.</li>
+</ul>
+<h2 id="how-do-the-continue-and-notify-indicators-work">How do the “continue” and “notify” indicators work?</h2>
+<p>These elements capture the conversational choices that could be made when ordering official copies and searches in the portal system. They enable processing to continue in this business-to-business system when certain pre-conditions have been met.</p>
+
+<ul>
+<li><p>“ContinueIfTitleIsClosedAndContinuedIndicator”.<br>
+If the requested title has been closed and continued and the indicator is true, the official copy will be returned for the continuation title number.<br>
+If the indicator is false, the message <em>“Title Number <x> has been closed and registration continued under Title Number <y>. Please request an Official Copy of the new Title Number”</em> will be returned.</p></li>
+<li><p>“NotifyIfPendingFirstRegistrationIndicator”.<br>
+If there is a pending first registration against the requested title and the indicator is true, message <em>“The Title number provided is a pending first registration. You will be notified when the first registration has been completed so that you can re-apply. A fee has not been debited.”</em> will be returned. Please note that the subsequent notification is a manual process.<br>
+If the indicator is false, message <em>”The title number provided is a pending first registration so we are unable to supply an official copy at this time. Please make a new request when the first registration is completed.”</em> will be returned.</p></li>
+<li><p>“NotifyIfPendingApplicationIndicator”.<br>
+If there is a pending application against the requested title and the indicator is true, message <em>“The title number provided has application(s) pending against it. You will be notified when the pending application(s) has been completed so that you can re-apply. A fee has not been debited.”</em> will be returned.<br>
+If the indicator is false, and the “SendBackDatedIndicator” is also false, message <em>“The title number provided has application(s) pending against it and back-dated office copies were not requested. Please make a new request for back dated office copies or a new request when the application is completed.”</em> will be returned.<br>
+If the indicator is false and the “SendBackDatedIndicator” is true, an OC backdated to the date of the pending application will be returned.</p></li>
+<li><p>“ContinueIfNameMismatchOnRegisterIndicator”.<br>
+If name details supplied do not match the registered proprietors of the requested title and the indicator is false, message <em>“There is no name match for this title number”</em> will be returned.</p></li>
+<li><p>“ContinueIfPendingSearchesOfPartIndicator”.<br>
+If there are pending searches of part against the requested title and the indicator is true, the official search will be returned.<br>
+If the indicator is false, message <em>“The title has applications of part pending against it. If you intend to take a registrable disposition of part you should apply for an official search of part.”</em> will be returned.</p></li>
+<li><p>“ContinueIfDeveloperTitleIndicator”.<br>
+If the requested title is a developer title and the indicator is true, the official search will be returned, without any indication that the title is a developer title.<br>
+If the indicator is false, message <em>“This is a developing title. If you intend to take a registrable disposition of part you should apply for an official search with priority of part.”</em> will be returned.</p></li>
+<li><p>“ContinueIfActualFeeExceedsExpectedFeeIndicator”.<br>
+If the “ExpectedFeeAmount” is less than the “ActualFeeAmount” (calculated by the system) and the indicator is true, the result will be returned with notification of the actual fee in the response.<br>
+If the indicator is false, message “Fee amount provided does not match with the fee calculated by Land Registry.” will be returned.</p></li>
+</ul>
+<h2 id="what-is-the-difference-between-quot-customer-reference-quot-and-external-reference-and-how-should-they-be-used">What is the difference between &quot;Customer Reference&rdquo; and “External Reference” and how should they be used?</h2>
+<p>Land Registry has no preference as to content of these fields, so their use and content depends on how an organisation structures its work and activities. The customer reference would normally be used to identify the conveyancer, client and activity i.e. a type of file reference required if contacting a customer. The external reference can be used to identify the response for a particular request. It is neither stored nor unique, but will be returned in both successful and rejection responses, not in the acknowledgement.</p>
+<p><strong>N.B.</strong> For a bankruptcy and full search transactions, Business Gateway will generate a unique &ldquo;HMLRReference&rdquo; that can be used if there are any subsequent queries about the result.</p>
+<h2 id="can-an-official-copy-be-requested-in-the-same-request-that-retrieves-the-title-number">Can an official copy be requested in the same request that retrieves the title number?</h2>
+<p>No. Enquiry by property description is one request that will return the title number information. If an official copy of the register is required against that title, then a separate official copy title known request will need to be lodged.</p>
+<h2 id="how-does-polling-work">How does polling work?</h2>
+<p>During the published working hours all responses to requests are synchronous unless there are system problems. If a request is submitted outside these hours, the acknowledgement response will suggest a time when the result will be available for retrieval.<br>
+The polling request should use message ID, user ID, password and locale parameters that match the original request. If the polling request itself is sent out-of-hours, another acknowledgement response would be sent with a ‘Request has not yet been processed’ message. (See <em>Business Gateway architecture overview</em> for more detail).</p>
+<h2 id="can-i-retrieve-details-of-outstanding-requests">Can I retrieve details of outstanding requests?</h2>
+<p>The Outstanding Requests service retrieves basic details (message ID and service type) of outstanding requests, i.e. where a final response has not been issued. The user ID, message ID, password and locale parameters should be specified, and a true or false value for the “Show Only New Responses” parameter; a true value will return details of all new (uncollected) requests for that business unit, whereas a false value will return details of all requests for that business unit with a status of “acknowledgement sent” or “manual processing”. Results in both cases can be refined by service type using the “Specific Service” parameter. The retrieval will work as above but restrict the results to requests of that type.</p>
+<h2 id="can-the-test-stub-environment-be-used-for-performance-testing">Can the test stub environment be used for performance testing?</h2>
+<p>The test stubs can only be used for testing connectivity to each of the services and receiving a documented set of responses.</p>
+<p><strong>N.B.</strong> There is no facility to submit ‘test’ transactions in the production system without being charged.</p>
+<h2 id="can-applications-be-submitted-in-batch-mode">Can applications be submitted in batch mode?</h2>
+<p>Business Gateway operates synchronously during office hours and there should be no need for a batch option. If customers are submitting high volumes of applications that could cause throughput delays by waiting for responses, they could open multiple channels to spread their load.</p>
+<h2 id="can-postal-results-be-sent-to-an-address-other-than-the-customer-s-address-es-registered-with-land-registry">Can postal results be sent to an address other than the customer’s address(es) registered with Land Registry?</h2>
+<p>You can specify an address where the postal result will be delivered by using the alternative dispatch address fields. This alternative address can be either a DX address OR a standard postal address.</p>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>
