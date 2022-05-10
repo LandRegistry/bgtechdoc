@@ -1,0 +1,516 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Registered Proprietor Names Service",
+      "description": "A specification for the HMLR Business Gateway registered proprietor names service.",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "https://businessgateway.landregistry.gov.uk/bg2/s2/v1/",
+          "description": "Production server"
+      },
+        {
+        "url": "https://bgtest.landregistry.gov.uk/bg2test/s2/v1/",
+          "description": "Test server"
+      }
+    ],
+    "security": [
+      {
+        "basicAuth": []
+      }
+    ],
+    "tags": [
+      {
+        "name": "Registered Proprietor Names",
+        "description": "Proprietor information related to a title."
+      }
+    ],
+    "paths": {
+      "/titles/{title_number}/registered-proprietor-names": {
+        "get": {
+          "operationId": "getRegisteredProprietorNames",
+          "tags": ["Registered Proprietor Names"],
+          "summary": "Get proprietor names associated with a title number.",
+          "description": "Returns the registered proprietor names for the provided title number.",
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/TitleNumberParameter"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/RegisteredProprietorsResponse"
+                  },
+                  "examples": {
+                    "Example: Title is valid, private individual proprietor": {
+                      "value": {
+                        "data": {
+                          "title_status": "Title number is valid.",
+                          "title_status_code": "VALID",
+                          "title_number": "HP708026",
+                          "proprietors": [
+                            {
+                              "sequence": 1,
+                              "proprietor_name": "Mr Richard Hurst OBE",
+                              "title": "Mr",
+                              "forenames": "Richard",
+                              "surname": "Hurst",
+                              "decoration": "OBE",
+                              "proprietor_type": "PRIVATE_INDIVIDUAL"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "Example: Title is valid, two private individual proprietors": {
+                      "value": {
+                        "data": {
+                          "title_status": "Title number is valid.",
+                          "title_status_code": "VALID",
+                          "title_number": "HP708026",
+                          "proprietors": [
+                            {
+                              "sequence": 1,
+                              "proprietor_name": "Mr Richard Hurst OBE",
+                              "title": "Mr",
+                              "forenames": "Richard",
+                              "surname": "Hurst",
+                              "decoration": "OBE",
+                              "proprietor_type": "PRIVATE_INDIVIDUAL"
+                            },
+                            {
+                              "sequence": 2,
+                              "proprietor_name": "Mrs Elizabeth Anne Hurst OBE",
+                              "title": "Mrs",
+                              "forenames": "Elizabeth Anne",
+                              "surname": "Hurst",
+                              "decoration": "OBE",
+                              "proprietor_type": "PRIVATE_INDIVIDUAL"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "Example: Title is valid, organisation proprietor": {
+                      "value": {
+                        "data": {
+                          "title_status": "Title number is valid.",
+                          "title_status_code": "VALID",
+                          "title_number": "HP708026",
+                          "proprietors": [
+                            {
+                              "sequence": 1,
+                              "proprietor_name": "csd plc",
+                              "organisation_type": "CORPORATE_BODY",
+                              "company_location": "ENGLAND_OR_WALES",
+                              "proprietor_type": "ORGANISATION"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "Example: Title is valid, one private individual and one organisation proprietor": {
+                      "value": {
+                        "data": {
+                          "title_status": "Title number is valid.",
+                          "title_status_code": "VALID",
+                          "title_number": "HP708026",
+                          "proprietors": [
+                            {
+                              "sequence": 1,
+                              "proprietor_name": "Mr Richard Hurst OBE",
+                              "title": "Mr",
+                              "forenames": "Richard",
+                              "surname": "Hurst",
+                              "decoration": "OBE",
+                              "proprietor_type": "PRIVATE_INDIVIDUAL"
+                            },
+                            {
+                              "sequence": 2,
+                              "proprietor_name": "csd plc",
+                              "organisation_type": "CORPORATE_BODY",
+                              "company_location": "ENGLAND_OR_WALES",
+                              "proprietor_type": "ORGANISATION"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "Example: Title is valid, closed and continued under another title number": {
+                      "value": {
+                        "data": {
+                          "title_status": "According to our records, this title number has been closed and continued under another title number.",
+                          "title_status_code": "CLOSED_AND_CONTINUED",
+                          "title_number": "HP708026",
+                          "continued_under_title_number": "HP708027",
+                          "proprietors": []
+                        }
+                      }
+                    },
+                    "Example: Title is valid, title status closed/cancelled/not used": {
+                      "value": {
+                        "data": {
+                          "title_status": "According to our records, this title number has been closed or cancelled.",
+                          "title_status_code": "CLOSED_OR_CANCELLED",
+                          "title_number": "HP708026",
+                          "proprietors": []
+                        }
+                      }
+                    },
+                    "Example: Title is valid, register not yet created": {
+                      "value": {
+                        "data": {
+                          "title_status": "This is pending a new title.",
+                          "title_status_code": "PENDING_NEW_TITLE",
+                          "title_number": "HP708026",
+                          "proprietors": []
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  },
+                  "examples": {
+                    "Example: Title is invalid": {
+                      "value": {
+                        "errors": [
+                          {
+                            "timestamp": "2021-11-13T20:20:39+00:00",
+                            "http_status": "400",
+                            "error_code": "BG40001",
+                            "error_message": "Malformed invalid schema. Title is invalid."
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Title not found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  },
+                  "examples": {
+                    "Example: Title is invalid": {
+                      "value": {
+                        "errors": [
+                          {
+                            "timestamp": "2021-11-13T20:20:39+00:00",
+                            "http_status": "404",
+                            "error_code": "BG40002",
+                            "error_message": "Title is not found."
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "default": {
+              "$ref": "#/components/responses/DefaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "securitySchemes": {
+        "basicAuth": {
+          "type": "http",
+          "scheme": "basic"
+        }
+      },
+      "parameters": {
+        "TitleNumberParameter": {
+          "in": "path",
+          "name": "title_number",
+          "description": "The title number of the property. Characters must be uppercase.",
+          "schema": {
+            "$ref": "#/components/schemas/TitleNumber"
+          },
+          "required": true
+        }
+      },
+      "responses": {
+        "DefaultErrorResponse": {
+          "description": "An error has occurred.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ErrorResponse"
+              },
+              "examples": {
+                "Gateway Timeout": {
+                  "value": {
+                    "errors": [
+                      {
+                        "timestamp": "2021-11-13T20:20:39+00:00",
+                        "http_status": "504",
+                        "error_code": "BG50004",
+                        "error_message": "Gateway timeout"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "schemas": {
+        "TitleNumber": {
+          "description": "The title number of the property.",
+          "type": "string",
+          "maxLength": 9,
+          "pattern": "^([a-zA-Z]{0,3}[1-9][0-9]{0,5}|[a-zA-Z]{1,3}[1-9][0-9]{0,3}[zZ])$"
+        },
+        "Proprietor": {
+          "type": "object",
+          "description": "A registered proprietor for the provided title number.",
+          "properties": {
+            "sequence": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "The position of the proprietor within the list.",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          "discriminator": {
+            "propertyName": "proprietor_type",
+            "mapping": {
+              "PRIVATE_INDIVIDUAL": "#/components/schemas/PrivateIndividual",
+              "ORGANISATION": "#/components/schemas/Organisation"
+            }
+          }
+        },
+        "PrivateIndividual": {
+          "description": "Proprietor details for a private individual.",
+          "properties": {
+            "proprietor_name": {
+              "type": "string",
+              "description": "Full name of the individual",
+              "example": "Mrs Sarah Louise Smith OBE"
+            },
+            "title": {
+              "type": "string",
+              "example": "Mrs"
+            },
+            "forenames": {
+              "type": "string",
+              "example": "Sarah Louise"
+            },
+            "surname": {
+              "type": "string",
+              "example": "Smith"
+            },
+            "decoration": {
+              "type": "string",
+              "description": "Text which contains the details of any decoration and/or title held by a private individual. e.g. 'OBE','GC', 'KCMG'. For those private individuals holding titles such as 'Duke of ...', 'Lord' etc., the particulars of such titles will be held in this field.",
+              "example": "OBE"
+            },
+            "proprietor_type": {
+              "type": "string",
+              "description": "Classification of a proprietor to distinguish between a private individual and an organisation.",
+              "enum": ["PRIVATE_INDIVIDUAL"]
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Proprietor"
+            }
+          ],
+          "x-discriminator-value": "PRIVATE_INDIVIDUAL"
+        },
+        "Organisation": {
+          "type": "object",
+          "description": "Proprietor details for an organisation.",
+          "properties": {
+            "proprietor_name": {
+              "type": "string",
+              "description": "Name of a company, corporate body, local authority or, other organisation or establishment other than that of a private individual.",
+              "example": "ACME INC."
+            },
+            "organisation_type": {
+              "type": "string",
+              "description": "Fine-grained classification of an organisation.",
+              "example": "CORPORATE_BODY",
+              "enum": [
+                "PRIVATE_INDIVIDUAL",
+                "LIMITED_COMPANY_OR_PUBLIC_LIMITED_COMPANY",
+                "COUNTY_COUNCIL",
+                "LOCAL_AUTHORITY",
+                "CORPORATE_BODY",
+                "INDUSTRIAL_AND_PROVIDENT_SOCIETY_(COMPANY)",
+                "INDUSTRIAL_AND_PROVIDENT_SOCIETY_(CORPORATE_BODY)",
+                "UNKNOWN_(USED_FOR_CUSTOMER_NAMES_ONLY)",
+                "UNLIMITED_COMPANY",
+                "LIMITED_LIABILITY_PARTNERSHIP",
+                "HOUSING_ASSOCIATION/SOCIETY_(COMPANY)",
+                "HOUSING_ASSOCIATION/SOCIETY_(CORPORATE_BODY)",
+                "OFFICIAL_CUSTODIAN_FOR_CHARITIES",
+                "OFFICIAL_CUSTODIAN_FOR_CHARITIES_(ON_BEHALF_OF_TRUSTEES)",
+                "CO-OPERATIVE_SOCIETY_(COMPANY)",
+                "CO-OPERATIVE_SOCIETY_(CORPORATE_BODY)",
+                "COMMUNITY_BENEFIT_SOCIETY_(COMPANY)",
+                "COMMUNITY_BENEFIT_SOCIETY_(CORPORATE_BODY)",
+                "REGISTERED_SOCIETY_(COMPANY)",
+                "REGISTERED_SOCIETY_(CORPORATE_BODY)",
+                "HOUSING_ASSOCIATION_CO-OPERATIVE_SOCIETY_(COMPANY)",
+                "HOUSING_ASSOCIATION_CO-OPERATIVE_SOCIETY_(CORPORATE_BODY)",
+                "HOUSING_ASSOCIATION_COMMUNITY_BENEFIT_SOCIETY_(COMPANY)",
+                "HOUSING_ASSOCIATION_COMMUNITY_BENEFIT_SOCIETY_(CORPORATE_BODY)",
+                "HOUSING_ASSOCIATION_REGISTERED_SOCIETY_(COMPANY)",
+                "HOUSING_ASSOCIATION_REGISTERED_SOCIETY_(CORPORATE_BODY)",
+                "UNKNOWN_(PROPRIETOR_HAS_NO_IOPN_DELIMITERS)"
+              ]
+            },
+            "company_location": {
+              "type": "string",
+              "description": "The geographical location of the organisation. A value of 'overseas' includes the Isle of Man and the Channel Islands.",
+              "example": "ENGLAND_OR_WALES",
+              "enum": ["ENGLAND_OR_WALES", "SCOTLAND", "NORTHERN_IRELAND", "OVERSEAS"]
+            },
+            "proprietor_type": {
+              "type": "string",
+              "description": "Classification of a proprietor to distinguish between a private individual and an organisation.",
+              "enum": ["ORGANISATION"]
+            }
+          },
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Proprietor"
+            }
+          ],
+          "x-discriminator-value": "ORGANISATION"
+        },
+        "Error": {
+          "type": "object",
+          "description": "An error response for an unsuccessful request.",
+          "required": [
+            "error_code",
+            "error_message"
+          ],
+          "properties": {
+            "error_code": {
+              "description": "The code related to this error, see documentation for more information.",
+              "type": "string"
+            },
+            "error_message": {
+              "description": "The descriptive reason behind an error.",
+              "type": "string"
+            },
+            "http_status": {
+              "description": "The http status code related to this error.",
+              "type": "string",
+              "example": "503"
+            },
+            "timestamp": {
+              "description": "The UTC timestamp of when the error occurred.",
+              "type": "string",
+              "format": "date-time",
+              "example": "2021-04-04 15:29:51:405Z"
+            },
+            "trace_id": {
+              "type": "string",
+              "description": "A trace identifier for this request.",
+              "example": "c62e9b3f-e523-4f04-a941-c6cf0d60c080"
+            }
+          }
+        },
+        "ErrorResponse": {
+          "description": "A response for an unsuccessful result.",
+          "type": "object",
+          "properties": {
+            "errors": {
+              "description": "A collection of one or more errors as to why the API request failed.",
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "RegisteredProprietorsResponse": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "object",
+              "description": "A successful response.",
+              "required": [
+                "title_status",
+                "title_status_code",
+                "title_number",
+                "proprietors"
+              ],
+              "properties": {
+                "title_status": {
+                  "type": "string",
+                  "description": "The status of the title."
+                },
+                "title_status_code": {
+                  "type": "string",
+                  "enum": [
+                    "VALID",
+                    "CLOSED_OR_CANCELLED",
+                    "CLOSED_AND_CONTINUED",
+                    "PENDING_NEW_TITLE"
+                  ],
+                  "description": "A code representing the current status of the title."
+                },
+                "title_number": {
+                  "$ref": "#/components/schemas/TitleNumber"
+                },
+                "continued_under_title_number": {
+                  "type": "string",
+                  "description": "The title requested has been closed and continued under this title number.",
+                  "example": "FL99999"
+                },
+                "proprietors": {
+                  "type": "array",
+                  "description": "The list of registered proprietors for the provided title number",
+                  "items": {
+                    "discriminator": {
+                      "propertyName": "proprietor_type",
+                      "mapping": {
+                        "PRIVATE_INDIVIDUAL": "#/components/schemas/PrivateIndividual",
+                        "ORGANISATION": "#/components/schemas/Organisation"
+                      }
+                    },
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/PrivateIndividual"
+                      },
+                      {
+                        "$ref": "#/components/schemas/Organisation"
+                      }
+                    ],
+                    "x-force-type": "Proprietor"
+                  },
+                  "x-force-type": "List<Proprietor>"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

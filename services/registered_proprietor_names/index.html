@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Registered Proprietor Names - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/services/registered_proprietor_names/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="Registered Proprietor Names - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/services/registered_proprietor_names/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Registered Proprietor Names" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/services/registered_proprietor_names/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#registered-proprietor-names"><span>Registered Proprietor Names</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+      </li>
+      <li>
+        <a href="#process-flow"><span>Process flow</span></a>
+        <ul>
+          <li>
+            <a href="#input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#output"><span>Output</span></a>
+          </li>
+          <li>
+            <a href="#process-flow-diagram"><span>Process flow diagram</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#service-working-hours"><span>Service working hours</span></a>
+      </li>
+      <li>
+        <a href="#rate-limiting"><span>Rate limiting</span></a>
+      </li>
+      <li>
+        <a href="#access-control"><span>Access control</span></a>
+      </li>
+      <li>
+        <a href="#error-and-status-codes"><span>Error and status codes</span></a>
+      </li>
+      <li>
+        <a href="#customer-test-stubs"><span>Customer test stubs</span></a>
+        <ul>
+          <li>
+            <a href="#endpoint-url"><span>Endpoint URL</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#scenarios-when-the-registered-proprietor-names-are-returned"><span>Scenarios when the registered proprietor names are returned</span></a>
+      </li>
+      <li>
+        <a href="#scenarios-when-the-registered-proprietor-names-are-not-returned"><span>Scenarios when the registered proprietor names are not returned</span></a>
+      </li>
+      <li>
+        <a href="#additional"><span>Additional</span></a>
+      </li>
+      <li>
+        <a href="#action-to-take-if-discrepancy-exists"><span>Action to take if discrepancy exists</span></a>
+      </li>
+      <li>
+        <a href="#schemas"><span>Schemas</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+
+<div class="page-nav">
+<a href="../index.html">Back to Services</a>
+<a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="registered-proprietor-names">Registered Proprietor Names</h1>
+
+<hr>
+<h2 id="overview">Overview</h2>
+<p>Check the name and type of registered proprietors of a registered title throughout 
+the process from instruction to application submission. The name can then be compared 
+against the name stored within the casework management system and documentation. If a 
+discrepancy exists, appropriate evidence can be submitted with the application to account 
+for the discrepancy, which will prevent the need for a requisition to be sent when the 
+application is considered by a caseworker. This service can be called as many times as 
+is required but it is only to be used in the support of lodging applications to change 
+the register.</p>
+
+<hr>
+<h2 id="process-flow">Process flow</h2>
+<p>To request the names of the registered proprietors of a title, you will need to input 
+the title number into your Case Management Software:</p>
+<h3 id="input">Input</h3>
+
+<ul>
+<li>login details</li>
+<li>title number</li>
+</ul>
+<h3 id="output">Output</h3>
+
+<ul>
+<li>registered proprietor names</li>
+<li>type of proprietor (private individual or organisation)</li>
+<li>if organisation:
+
+<ul>
+<li>type of organisation (refer to OpenApi specification)</li>
+</ul></li>
+<li>if type of organisation is a company:
+
+<ul>
+<li>company location (England or Wales, Scotland, Northern Ireland, Overseas)</li>
+</ul></li>
+</ul>
+<h3 id="process-flow-diagram">Process flow diagram</h3>
+
+<div style="padding-bottom: 15px">
+  <a href="../../images/registered_proprietor_names_flow.png" target="_blank" >
+    <img src="../../images/registered_proprietor_names_flow.png" style="width:700px;" alt="Registered Proprietor Names Service version 1 flow diagram" title="Clicking this image will open the image in a new tab">
+  </a>
+</div>
+
+<hr>
+<h2 id="service-working-hours">Service working hours</h2>
+<p>The Business Gateway service is available between 6.30am and 11pm. This service 
+will not be available between 11pm and 6.30am the following morning. These times 
+are in relation to the current time zone in London.</p>
+
+<hr>
+<h2 id="rate-limiting">Rate limiting</h2>
+<p>This service will be subject to rate limiting to ensure the service is used as intended, 
+to support the submission of applications to change the register. This is currently set 
+at 6 requests per individual user within an organisation per minute. This is subject to 
+change at any time.</p>
+
+<hr>
+<h2 id="access-control">Access control</h2>
+<p>To use this service you will need to be an existing Business Gateway user. You will 
+also need to ensure that users have been allocated a role that includes eConveyancer, 
+Edit and Submit and/or e-DRS (CSU or DRS, or WM1, C4, WM5 or Z2). For further 
+guidance please see:<br>
+<a href="https://www.gov.uk/guidance/land-registry-portal-update-a-user-account">https://www.gov.uk/guidance/land-registry-portal-update-a-user-account</a></p>
+<p>You will also need to request permission for any organisation to use the service. This 
+can be done by contacting <a href="mailto:Channelpartners@Landregistry.gov.uk">Channelpartners@Landregistry.gov.uk</a>.</p>
+<p>If you would like to integrate with this service you can request access at 
+<a href="https://www.gov.uk/guidance/apply-for-hm-land-registry-business-e-services">https://www.gov.uk/guidance/apply-for-hm-land-registry-business-e-services</a>.</p>
+
+<hr>
+<h2 id="error-and-status-codes">Error and status codes</h2>
+<p>When developing against the tabel below, please use the status code. Error codes are 
+currently in place but are subject to change or may disappear in the future.
+<table class="govuk-table">
+<caption>Error and status codes</caption>
+  <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">HTTP Code</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Condition</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Error Code</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Error Message</th>
+      </tr>
+  </thead>
+  <tbody class="govuk-table__body"><br>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">429</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Thrown when a user exceeds their allowed 60 second request limit</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG40006</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Too many requests, please wait and try again</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">423</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Thrown when the service is out of opening hours</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG50003</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">rpn service is currently out of hours</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">404</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Thrown when a title is not found</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG40002</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Title is not found.</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">403</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Thrown when a user does not have the correct role to use the service or the user&rsquo;s organisation is not permitted to use the service</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG40005</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Forbidden</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">401</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Thrown when invalid credentials are used or account status is not active</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG40004</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Unauthorized</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">400</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Thrown when a constraint violation exception is thrown. The title number is not in a recognised format</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG40001</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Malformed invalid schema. Title is invalid</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">503</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Thrown when the service is down for a non-specific reason</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG50002</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Service unavailable</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">500</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Thrown when no other specific exception is thrown</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG50001</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Internal server error</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">504</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Internal service timeout</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG50004</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Gateway timeout</td>
+    </tr>
+  </tbody>
+</table></p>
+
+<hr>
+<h2 id="customer-test-stubs">Customer test stubs</h2>
+<h3 id="endpoint-url">Endpoint URL</h3>
+<p>The test environment can be accessed at:<br>
+<code>
+https://bgtest.landregistry.gov.uk/bg2test/s2/v1/titles/{{TitleNumber}}/registered-proprietor-names
+</code></p>
+<p>Where <code>{{TitleNumber}}</code> is replaced by the title number you need to use.</p>
+<p>This requires a customer test certificate (this is different to the production client certificates).</p>
+
+<hr>
+<h2 id="scenarios-when-the-registered-proprietor-names-are-returned">Scenarios when the registered proprietor names are returned</h2>
+<p>Scenario 1 - Single private individual<br>
+Title Number - AB1208001</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title number is valid"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALID"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB1208001"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr Joe Bloggs OBE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bloggs"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"decoration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OBE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 2 - Two or more private individuals<br>
+Title Number - AB1208002</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title number is valid"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALID"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB1208002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr Joe Bloggs OBE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bloggs"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"decoration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OBE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mrs Elizabeth Anne Smith OBE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mrs"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elizabeth Anne"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"decoration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OBE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 3 - One private individual and One UK company<br>
+Title Number - AB1208003</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title number is valid"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALID"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB1208003"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr Joe Bloggs OBE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bloggs"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"decoration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OBE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"csda plc"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"organisation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CORPORATE_BODY"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"company_location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENGLAND_OR_WALES"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANISATION"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 4 - One overseas company<br>
+Title Number - AB1208004</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title number is valid"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALID"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB1208004"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"beach towels plc"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"organisation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CORPORATE_BODY"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"company_location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OVERSEAS"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANISATION"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 5 - One organisation, type = local authority<br>
+Title Number - AB1208005</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title number is valid"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALID"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB1208005"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new town care"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"organisation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCAL_AUTHORITY"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"company_location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENGLAND_OR_WALES"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANISATION"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<hr>
+<h2 id="scenarios-when-the-registered-proprietor-names-are-not-returned">Scenarios when the registered proprietor names are not returned</h2>
+<p>Scenario 6 - Invalid title format<br>
+Title Number - ABCDF3438$P</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-11-13T20:20:39+00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"http_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Malformed invalid schema. Title is invalid."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 7 - Title not found<br>
+Title Number - CD1208001</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-11-13T20:20:39+00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"http_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40002"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title is not found."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 8 - Closed title<br>
+Title Number - DT501578</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"According to our records, this title number has been closed or cancelled."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLOSED_OR_CANCELLED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DT501578"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 9 - Closed and continued title<br>
+Title Number - GR519468</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"According to our records, this title number has been closed and continued under another title number."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLOSED_AND_CONTINUED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GR519468"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"continued_under_title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EF1208001"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 10 - Pending new title (i.e. register not created yet)<br>
+Title Number - GR514443</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is pending a new title."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PENDING_NEW_TITLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GR514443"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 11 - Organisation not on allow list<br>
+Title Number - CD1208005</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40003"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organisation is not allowed access to this service."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"http_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"403"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-15T09:52:40.758182"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 12 - Out of business hours<br>
+Title Number - CD1208006</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG50003"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rpn service is currently out of hours"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"http_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"423"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-17T16:24:50.309567"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 13 - Exceeds rate limiting<br>
+Title Number - CD1208007</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40006"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Too many requests, please wait and try again"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"http_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"429"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-17T16:23:27.60063"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<hr>
+<h2 id="additional">Additional</h2>
+<p>In rare circumstances we will not be able to return names of the registered 
+proprietors, even if the title number you have entered is valid. You will not receive 
+an error message, instead the name fields will be blank.</p>
+
+<hr>
+<h2 id="action-to-take-if-discrepancy-exists">Action to take if discrepancy exists</h2>
+<p>If the name(s) returned do not match against the name within the casework 
+management system, end users should be reminded they will need to account for the 
+discrepancy through the submission of documentary evidence with the application to 
+change the register.<br>
+To see a process diagram on how to deal with unexpected 
+responses, <a target="_blank" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1069205/Variation_in_names_flow_chart_HM_Land_Registry.pdf">click here</a> 
+(will open pdf in a new window).</p>
+
+<hr>
+<h2 id="schemas">Schemas</h2>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="../../documents/registered_proprietor_names/openapi.json" class="govuk-!-font-size-24" id="openapi-json">openapi.json</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/doc_availability/openapi.json"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/bgtechdoc/accessibility/">Accessibility Statement</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

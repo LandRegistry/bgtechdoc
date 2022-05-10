@@ -114,10 +114,6 @@
       </li>
       <li>
         <a href="#customer-testing"><span>Customer testing</span></a>
-        <ul>
-          <li>
-          </li>
-        </ul>
       </li>
       <li>
         <a href="#status-codes"><span>Status codes</span></a>
@@ -141,7 +137,11 @@
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             
     <!---**************************************************************-->
-<p><a href="../">Back to Services</a> <a href="../../">Back to Home</a></p>
+
+<div class="page-nav">
+<a href="../index.html">Back to Services</a>
+<a href="../../index.html">Back to Home</a>
+</div>
 <h1 id="official-copy-document-availability">Official Copy Document Availability</h1>
 
 <hr>
@@ -149,7 +149,7 @@
 <p>Check which register referred documents are available for immediate download.
   Use a title number to find out the Official Copy Document Availability status
   via a RESTful API. When you know what is available, you can order using the
-  Official Copy Title Known service.</p>
+  <a href="../official_copy_title_known/">Official Copy Title Known</a> service.</p>
 
 <hr>
 <h2 id="process-flow">Process flow</h2>
@@ -190,16 +190,20 @@ requests per customer per minute which is subject to change at any time. Please 
 <h2 id="access-control">Access control</h2>
 <p>To use this service you will need to be an existing Business Gateway user. If you have an active user account,
 you will be able to access the new service using your existing credentials. If you would like to sign up to our
-service you can request access at <a href="https://www.gov.uk/guidance/apply-for-hm-land-registry-business-eservices">https://www.gov.uk/guidance/apply-for-hm-land-registry-business-eservices</a>.</p>
+service you can request access at <a href="https://www.gov.uk/guidance/apply-for-hm-land-registry-business-e-services">https://www.gov.uk/guidance/apply-for-hm-land-registry-business-e-services</a>.</p>
 
 <hr>
 <h2 id="customer-testing">Customer testing</h2>
 <p>Below, you will find the OpenAPI spec for the customer test environment and five stubs which you may build
-against. The test environment can be accessed at
-<u>https://bgtest.landregistry.gov.uk/bg2test/s1/v1/titles/&lt;title_number&gt;/official-copies/availability. </u></p>
-<p>See openapi.json</p>
-<p>Please find scenarios mapped to the test stubs as follows:
-<h4 class="govuk-heading-s">Example Title Number- DT501578</h4></p>
+against. The test environment can be accessed at:<br>
+<code>
+https://bgtest.landregistry.gov.uk/bg2test/s1/v1/titles/&lt;title_number&gt;/official-copies/availability
+</code></p>
+<p>Where <code>&lt;title_number&gt;</code> is replaced by the title number you need to use.</p>
+<p><a href="#openapi-json">See openapi.json</a></p>
+<p>Please find scenarios mapped to the test stubs as follows:</p>
+
+<summary>Example Title Number- DT501578</summary>
 
 <table class="govuk-table">
   <tbody class="govuk-table__body">
@@ -231,7 +235,7 @@ against. The test environment can be accessed at
 </table>
 <p><a href="#DT501578">See DT501578.json</a></p>
 
-<h4 class="govuk-heading-s">Example Title Number- GR514441</h4>
+<summary>Example Title Number- GR514441</summary>
 
 <table class="govuk-table">
   <tbody class="govuk-table__body">
@@ -263,7 +267,7 @@ against. The test environment can be accessed at
 </table>
 <p><a href="#GR514441">See GR514441.json</a></p>
 
-<h4 class="govuk-heading-s">Example Title Number GR514442</h4>
+<summary>Example Title Number GR514442</summary>
 
 <table class="govuk-table">
   <tbody class="govuk-table__body">
@@ -295,7 +299,7 @@ against. The test environment can be accessed at
 </table>
 <p><a href="#GR514442">See GR514442.json</a></p>
 
-<h4 class="govuk-heading-s">Example Title Number GR514443</h4>
+<summary>Example Title Number GR514443</summary>
 
 <table class="govuk-table">
   <tbody class="govuk-table__body">
@@ -327,7 +331,7 @@ against. The test environment can be accessed at
 </table>
 <p><a href="#GR514443">See GR514443.json</a></p>
 
-<h4 class="govuk-heading-s">Example Title Number GR519468</h4>
+<summary>Example Title Number GR519468</summary>
 
 <table class="govuk-table">
   <tbody class="govuk-table__body">
@@ -427,7 +431,7 @@ subject to future change or may disappear in the future – you may not want to 
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div >
-    <p><a href="../../documents/doc_availability/openapi.json" class="govuk-!-font-size-24">openapi.json</a></p>
+    <p><a href="../../documents/doc_availability/openapi.json" class="govuk-!-font-size-24" id="openapi-json">openapi.json</a></p>
     <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
       This file may not be suitable for users of assistive technology.</p>
     <p><a href="../../documents/doc_availability/openapi.json"  class="govuk-!-font-size-19" download >Download</a></p>
@@ -456,7 +460,7 @@ subject to future change or may disappear in the future – you may not want to 
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/doc_availability/DT501578.json" name="DT501578" class="govuk-!-font-size-24">DT501578</a></p>
+    <p><a href="../../documents/doc_availability/DT501578.json" id="DT501578" class="govuk-!-font-size-24">DT501578</a></p>
     <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
       This file may not be suitable for users of assistive technology.</p>
     <p><a href="../../documents/doc_availability/DT501578.json"  class="govuk-!-font-size-19" download >Download</a></p>
@@ -468,7 +472,7 @@ subject to future change or may disappear in the future – you may not want to 
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/doc_availability/GR514441.json" name="GR514441" class="govuk-!-font-size-24">GR514441</a></p>
+    <p><a href="../../documents/doc_availability/GR514441.json" id="GR514441" class="govuk-!-font-size-24">GR514441</a></p>
     <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
       This file may not be suitable for users of assistive technology.</p>
     <p><a href="../../documents/doc_availability/GR514441.json"  class="govuk-!-font-size-19" download >Download</a></p>
@@ -480,7 +484,7 @@ subject to future change or may disappear in the future – you may not want to 
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/doc_availability/GR514442.json" name="GR514442" class="govuk-!-font-size-24">GR514442</a></p>
+    <p><a href="../../documents/doc_availability/GR514442.json" id="GR514442" class="govuk-!-font-size-24">GR514442</a></p>
     <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
       This file may not be suitable for users of assistive technology.</p>
     <p><a href="../../documents/doc_availability/GR514442.json"  class="govuk-!-font-size-19" download >Download</a></p>
@@ -492,7 +496,7 @@ subject to future change or may disappear in the future – you may not want to 
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/doc_availability/GR514443.json" name="GR514443" class="govuk-!-font-size-24">GR514443</a></p>
+    <p><a href="../../documents/doc_availability/GR514443.json" id="GR514443" class="govuk-!-font-size-24">GR514443</a></p>
     <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
       This file may not be suitable for users of assistive technology.</p>
     <p><a href="../../documents/doc_availability/GR514443.json"  class="govuk-!-font-size-19" download >Download</a></p>
@@ -504,7 +508,7 @@ subject to future change or may disappear in the future – you may not want to 
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/doc_availability/GR519468.json" name="GR519468" class="govuk-!-font-size-24">GR519468</a></p>
+    <p><a href="../../documents/doc_availability/GR519468.json" id="GR519468" class="govuk-!-font-size-24">GR519468</a></p>
     <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
       This file may not be suitable for users of assistive technology.</p>
     <p><a href="../../documents/doc_availability/GR519468.json"  class="govuk-!-font-size-19" download >Download</a></p>
@@ -523,6 +527,11 @@ subject to future change or may disappear in the future – you may not want to 
   <div class="govuk-footer__meta">
     <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
 
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/bgtechdoc/accessibility/">Accessibility Statement</a>
+            </li>
+        </ul>
 
       <svg
         aria-hidden="true"

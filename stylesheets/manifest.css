@@ -3612,5 +3612,10 @@ html.has-search-results-open {
 .fixedsticky-on + .fixedsticky-dummy {
   display: block; }
 
+.page-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
 
 

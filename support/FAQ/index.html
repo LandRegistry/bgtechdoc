@@ -162,7 +162,11 @@
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             
     <!---**************************************************************-->
-<p><a href="../">Back to Support</a> <a href="../../">Back to Home</a></p>
+
+<div class="page-nav">
+<a href="../index.html">Back to Support</a>
+<a href="../../index.html">Back to Home</a>
+</div>
 <h1 id="faq">FAQ</h1>
 <h2 id="how-are-the-web-services-structured">How are the web services structured?</h2>
 <p>There is a separate endpoint for each available service, which should:</p>
@@ -229,7 +233,7 @@ If a CMS uses a duplicate message ID in a request, the original response will al
 <ul>
 <li><p>“ContinueIfTitleIsClosedAndContinuedIndicator”.<br>
 If the requested title has been closed and continued and the indicator is true, the official copy will be returned for the continuation title number.<br>
-If the indicator is false, the message <em>“Title Number <x> has been closed and registration continued under Title Number <y>. Please request an Official Copy of the new Title Number”</em> will be returned.</p></li>
+If the indicator is false, the message <em>“Title Number &lt;x&gt; has been closed and registration continued under Title Number &lt;y&gt;. Please request an Official Copy of the new Title Number”</em> will be returned.</p></li>
 <li><p>“NotifyIfPendingFirstRegistrationIndicator”.<br>
 If there is a pending first registration against the requested title and the indicator is true, message <em>“The Title number provided is a pending first registration. You will be notified when the first registration has been completed so that you can re-apply. A fee has not been debited.”</em> will be returned. Please note that the subsequent notification is a manual process.<br>
 If the indicator is false, message <em>”The title number provided is a pending first registration so we are unable to supply an official copy at this time. Please make a new request when the first registration is completed.”</em> will be returned.</p></li>
@@ -279,6 +283,11 @@ The polling request should use message ID, user ID, password and locale paramete
   <div class="govuk-footer__meta">
     <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
 
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/bgtechdoc/accessibility/">Accessibility Statement</a>
+            </li>
+        </ul>
 
       <svg
         aria-hidden="true"

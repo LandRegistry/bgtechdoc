@@ -96,9 +96,6 @@
             <a href="#if-you-are-parsing"><span>If you are parsing</span></a>
           </li>
           <li>
-            <a href="#if-you-are-developing-the-lcc-schemas"><span>If you are developing the LCC schemas</span></a>
-          </li>
-          <li>
             <a href="#if-you-are-using-the-39-sopenv-39-label"><span>If you are using the ‘sopenv’ label</span></a>
           </li>
           <li>
@@ -121,7 +118,10 @@
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             
-    <p><a href="../">Back to Getting Started</a> <a href="../../">Back to Home</a></p>
+    <div class="page-nav">
+<a href="../index.html">Back to Getting Started</a>
+<a href="../../index.html">Back to Home</a>
+</div>
 <h1 id="find-out-about-future-changes">Find out about future changes</h1>
 <h2 id="overview">Overview</h2>
 <p>This document is for software developers. Use when testing interfaces with the
@@ -137,16 +137,13 @@
   is compatible going forward.</p>
 <p>The namespace labels and location in the XML will change. The namespace values
   and tags on each namespace will not.</p>
-<h3 id="if-you-are-developing-the-lcc-schemas">If you are developing the LCC schemas</h3>
-<p>The new service goes live on 11th July 2018. If you are currently developing
-  the LLC schemas, you should make any changes before this date.</p>
 <h3 id="if-you-are-using-the-39-sopenv-39-label">If you are using the &lsquo;sopenv&rsquo; label</h3>
-<p>The “soapenv” label has changed to “soap”. The value remains “http://schemas.xmlsoap.org/soap/envelope/”
+<p>The “soapenv” label has changed to “soap”. The value remains “<a href="http://schemas.xmlsoap.org/soap/envelope/">http://schemas.xmlsoap.org/soap/envelope/</a>”
   and is still only applied to Envelope and Body.</p>
 <p>These changes are only cosmetic and all major SOAP libraries will continue
   to work as they do now.</p>
 <h3 id="examples-of-new-and-old-messages">Examples of new and old messages</h3>
-<p>The “soapenv” label has changed to “soap”. The value remains “http://schemas.xmlsoap.org/soap/envelope/”
+<p>The “soapenv” label has changed to “soap”. The value remains “<a href="http://schemas.xmlsoap.org/soap/envelope/">http://schemas.xmlsoap.org/soap/envelope/</a>”
   and is still only applied to Envelope and Body.</p>
 <h4 id="new-example">New example:</h4>
 <div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
@@ -218,8 +215,7 @@ TRIMMED FOR CLARITY&lt;/ns2:EmbeddedFileBinaryObject&gt;
 <hr>
 <h2 id="contact">Contact</h2>
 <p>If you would like help to make any technical changes, contact our Service Desk on:</p>
-<p><strong>Phone</strong></p>
-<p><a href="tel:0300%20006%200411">0300 006 0411</a> (Select option2 and then option 5)</p>
+<p><strong>Phone</strong>: <a href="tel:0300%20006%200411">0300 006 0411</a> (Select option 2 and then option 5)</p>
 
 
 
@@ -233,6 +229,11 @@ TRIMMED FOR CLARITY&lt;/ns2:EmbeddedFileBinaryObject&gt;
   <div class="govuk-footer__meta">
     <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
 
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/bgtechdoc/accessibility/">Accessibility Statement</a>
+            </li>
+        </ul>
 
       <svg
         aria-hidden="true"

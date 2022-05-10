@@ -198,7 +198,10 @@
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             
-    <p><a href="../">Back to Getting Started</a> <a href="../../">Back to Home</a></p>
+    <div class="page-nav">
+<a href="../index.html">Back to Getting Started</a>
+<a href="../../index.html">Back to Home</a>
+</div>
 <h1 id="a-guide-for-developers">A Guide for Developers</h1>
 <h2 id="overview">Overview</h2>
 <p>This document provides technical information about Business Gateway. You should
@@ -388,42 +391,43 @@ is sent from the stored data.</p>
 <h3 id="api-request-and-response">API request and response</h3>
 
 <ul class="govuk-list govuk-list--bullet">
-  <li>Request Type</li>
-  <ul class="govuk-list govuk-list--number">
-    <li><b>Normal Request</b>
-      <p>A request is considered to be a normal request when it is sent to Business
-        Gateway during working hours. The original request is stored by Business
-        Gateway along with the response.</p>
-    </li>
-    <li><b>Poll Request</b>
+  <li>Request Type
+    <ul class="govuk-list govuk-list--number">
+      <li><b>Normal Request</b>
         <p>A request is considered to be a normal request when it is sent to Business
           Gateway during working hours. The original request is stored by Business
           Gateway along with the response.</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><p>Collecting Out of Hours applications</p>
-            <p>When a request is sent to Business Gateway ‘out of hours’ or after
-              the day list is closed, the system calculates a suggested date and
-              time at which the response to the request will be made available.
-              The client can then make a poll request to Business Gateway at the
-              suggested date and time, with the message ID of the original message,
-              to retrieve the stored response.</p>
-          </li>
-          <li><p>Manual Processed applications</p>
-              <p>A poll request may be used to collect the result of a Business Gateway
-                application that has been processed manually by LR Staff.</p>
-          </li>
-        </ul>
-        <p>
-          For optimal usage the system can be written to automatically call the
-          Outstanding Request service, which will provide details of requests that have
-          a new response to be collected. These can then automatically be sent through
-          the corresponding Poll Request services, enabling the response to be
-          collected as early as possible. This is the only way to collect some of the
-          messages sent when using electronic Document Registration Service (eDRS).
-          We recommend following this process every couple of hours.
-        </p>
-    </li>
-  </ul>
+      </li>
+      <li><b>Poll Request</b>
+          <p>A request is considered to be a normal request when it is sent to Business
+            Gateway during working hours. The original request is stored by Business
+            Gateway along with the response.</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><p>Collecting Out of Hours applications</p>
+              <p>When a request is sent to Business Gateway ‘out of hours’ or after
+                the day list is closed, the system calculates a suggested date and
+                time at which the response to the request will be made available.
+                The client can then make a poll request to Business Gateway at the
+                suggested date and time, with the message ID of the original message,
+                to retrieve the stored response.</p>
+            </li>
+            <li><p>Manual Processed applications</p>
+                <p>A poll request may be used to collect the result of a Business Gateway
+                  application that has been processed manually by LR Staff.</p>
+            </li>
+          </ul>
+          <p>
+            For optimal usage the system can be written to automatically call the
+            Outstanding Request service, which will provide details of requests that have
+            a new response to be collected. These can then automatically be sent through
+            the corresponding Poll Request services, enabling the response to be
+            collected as early as possible. This is the only way to collect some of the
+            messages sent when using electronic Document Registration Service (eDRS).
+            We recommend following this process every couple of hours.
+          </p>
+      </li>
+    </ul>
+  </li>
   <li>Request structure
     <p>Business Gateway’s SOAP request consists of the following elements: SOAP
       header must contain (refer to figure 1):</p>
@@ -468,7 +472,7 @@ here&lt;/wsse:Password&gt;
 &lt;/soapenv:Envelope&gt;
 &lt;!-- SOAP envelope ends --&gt;
       </code></pre>
-      <p class="govuk-body-s">Figure 1</p>
+      <p class="govuk-body-s">Figure 1: SOAP request</p>
       <p class="govuk-body-s">The SOAP body contains the web service request as
         shown in figure 1.</p>
     </div>
@@ -510,7 +514,7 @@ Final/2012/RequestApplicationToChangeRegisterV1_0"&gt;
           &lt;/detail&gt;
           &lt;/soapenv:Fault&gt;
       </code></pre>
-      <p class="govuk-body-s">Figure 2</p>
+      <p class="govuk-body-s">Figure 2: SOAP fault response</p>
     </div>
 
   </li>
@@ -579,7 +583,7 @@ Final/2011/ResponseLandChargesBankruptcySearchV2_0"&gt;
 &lt;/soapenv:Envelope&gt;
 &lt;!-- SOAP envelope ends --&gt;
       </code></pre>
-      <p class="govuk-body-s">Figure 3</p>
+      <p class="govuk-body-s">Figure 3: SOAP acknowledgement response</p>
     </div>
 
     <p><b>Rejection</b></p>
@@ -630,7 +634,7 @@ Final/2011/ResponseLandChargesBankruptcySearchV2_0"&gt;
   &lt;/soapenv:Envelope&gt;
   &lt;!-- SOAP Envelope ends --&gt;
         </code></pre>
-        <p class="govuk-body-s">Figure 4</p>
+        <p class="govuk-body-s">Figure 4: SOAP rejection response</p>
     </div>
 
     <p><b>Success</b></p>
@@ -680,7 +684,7 @@ array here removed for space&lt;/ns4:EmbeddedFileBinaryObject&gt;
 &lt;/soapenv:Envelope&gt;
 &lt;!-- Soap Envelope ends --&gt;
       </pre></code>
-      <p class="govuk-body-s">Figure 5</p>
+      <p class="govuk-body-s">Figure 5: SOAP success response</p>
     </div>
   </li>
 </ul>
@@ -711,136 +715,191 @@ array here removed for space&lt;/ns4:EmbeddedFileBinaryObject&gt;
 <p>Current links to service endpoints and XSD schema definitions can be found within
 the WSDL file.</p>
 <h3 id="information-services">Information services</h3>
-<div class="table-container">
-        <table>
-          <tr>
-<th>Service</th>
-<th>Endpoints</th>
-</tr><tr>
-<td>Application Enquiry V1.0</td>
-<td>{PLACE_HOLDER}/ApplicationEnquiryV1_0PollRequestWebService?wsdl<br>{PLACE_HOLDER}/ApplicationEnquiryV1_0WebService?wsdl</td>
-</tr><tr>
-<td>Daylist enquiry V2.0</td>
-<td>{PLACE_HOLDER}/ApplicationEnquiryV1_0WebService?wsdl<br>{PLACE_HOLDER}/ApplicationEnquiryV1_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Discharge Activity V1.0</td>
-<td>{PLACE_HOLDER}/DischargeActivityV1_0WebService?wsdl<br>{PLACE_HOLDER}/DischargeActivityV1_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Enquiry by property description V2.0</td>
-<td>{PLACE_HOLDER}/EnquiryByPropertyDescriptionV2_0WebService?wsdl<br>{PLACE_HOLDER}/EnquiryByPropertyDescriptionV2_0PollWebService?wsdl</td>
-</tr><tr>
-<td>Land charges bankruptcy search V2.0</td>
-<td>{PLACE_HOLDER}/BankruptcySearchV2_0WebService?wsdl<br>{PLACE_HOLDER}/BankruptcySearchV2_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Land charges bankruptcy search V2.1</td>
-<td>{PLACE_HOLDER}/BankruptcySearchV2_1WebService?wsdl<br>{PLACE_HOLDER}/BankruptcySearchV2_1PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Land charges full search V2.0</td>
-<td>{PLACE_HOLDER}/FullSearchV2_0WebService?wsdl<br>{PLACE_HOLDER}/FullSearchV2_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Land charges full search V2.1</td>
-<td>{PLACE_HOLDER}/FullSearchV2_1WebService?wsdl<br>{PLACE_HOLDER}/FullSearchV2_1PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Official copy title known V2.0</td>
-<td>{PLACE_HOLDER}/OfficialCopyTitleKnownV2_0WebService?wsdl<br>{PLACE_HOLDER}/OC1TitleKnownV2_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Official copy title known V2.1</td>
-<td>{PLACE_HOLDER}/OfficialCopyTitleKnownV2_1WebService?wsdl<br>{PLACE_HOLDER}/OC1TitleKnownV2_1PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Official search of part with priority V2.0</td>
-<td>{PLACE_HOLDER}/OfficialSearchOfPartV2_0WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchOfPartV2_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Official search of part with priority V2.1</td>
-<td>{PLACE_HOLDER}/OfficialSearchOfPartV2_1WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchOfPartV2_1PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Official search of whole with priority V2.0</td>
-<td>{PLACE_HOLDER}/OfficialSearchV2_0WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchV2_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Official search of whole with priority V2.1</td>
-<td>{PLACE_HOLDER}/OfficialSearchV2_1WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchV2_1PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Register extract service V2.0</td>
-<td>{PLACE_HOLDER}/OfficialCopyWithSummaryV2_0WebService?wsdl<br>{PLACE_HOLDER}/OfficialCopyWithSummaryV2_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Register extract service V2.1</td>
-<td>{PLACE_HOLDER}/OfficialCopyWithSummaryV2_1WebService?wsdl<br>{PLACE_HOLDER}/OfficialCopyWithSummaryV2_1PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Search of the index map V2.0</td>
-<td>{PLACE_HOLDER}/SearchOfIndexMapV2_0WebService?wsdl<br>{PLACE_HOLDER}/SearchOfIndexMapV2_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Search of the index map V2.1</td>
-<td>{PLACE_HOLDER}/SearchOfIndexMapV2_1WebService?wsdl<br>{PLACE_HOLDER}/SearchOfIndexMapV2_1PollRequestWebService?wsdl</td>
-</tr>
-        </table>
-      </div><h3 id="e-drs">e-DRS</h3>
-<div class="table-container">
-        <table>
-          <tr>
-<th>Service</th>
-<th>Endpoints</th>
-</tr><tr>
-<td>Application to change register V2.0</td>
-<td>{PLACE_HOLDER}/EDocumentRegistrationV2_0WebService?wsdl<br>{PLACE_HOLDER}/EDocumentRegistrationV2_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Attachment V2.0</td>
-<td>{PLACE_HOLDER}/AttachmentV2_0WebService?wsdl<br>{PLACE_HOLDER}/AttachmentV2_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Correspondence V1.0</td>
-<td>{PLACE_HOLDER}/CorrespondenceV1_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Early completion V2.0</td>
-<td>{PLACE_HOLDER}/EarlyCompletionV2_0PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Application to change register V2.1</td>
-<td>{PLACE_HOLDER}/EDocumentRegistrationV2_1WebService?wsdl<br>{PLACE_HOLDER}/EDocumentRegistrationV2_1PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Attachment V2.1</td>
-<td>{PLACE_HOLDER}/AttachmentV2_1WebService?wsdl<br>{PLACE_HOLDER}/AttachmentV2_1PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Correspondence V2.1</td>
-<td>{PLACE_HOLDER}/CorrespondenceV2_1PollRequestWebService?wsdl</td>
-</tr><tr>
-<td>Early completion V2.1</td>
-<td>{PLACE_HOLDER}/EarlyCompletionV2_1PollRequestWebService?wsdl</td>
-</tr>
-        </table>
-      </div><h3 id="verification-services-folder">Verification services_folder</h3>
-<div class="table-container">
-        <table>
-          <tr>
-<th>Service</th>
-<th>Endpoints</th>
-</tr><tr>
-<td>Online Ownership Verification V1.0</td>
-<td>{PLACEHOLDER}/OnlineOwnershipVerificationV1_0WebService?wsdl</td>
-</tr>
-        </table>
-      </div><h3 id="business-gateway-service-urls-local-land-charges-services">Local Land Charges Services</h3>
-<div class="table-container">
-        <table>
-          <tr>
-<th>Service</th>
-<th>Endpoints</th>
-</tr><tr>
-<td>Local land charges search V2.0</td>
-<td>{PLACEHOLDER}/LLCSearchV2_0WebService?wsdl</td>
-</tr>
-        </table>
-      </div><h3 id="outstanding-requests">Outstanding requests</h3>
-<div class="table-container">
-        <table>
-          <tr>
-<th>Service</th>
-<th>Endpoints</th>
-</tr><tr>
-<td>Outstanding Requests V2.0</td>
-<td>{PLACE_HOLDER}/OutstandingRequestsV2_0WebService?wsdl</td>
-</tr><tr>
-<td>Outstanding Requests V2.1</td>
-<td>{PLACE_HOLDER}/OutstandingRequestsV2_1WebService?wsdl</td>
-</tr>
-        </table>
-      </div><h2 id="upgrade-and-change-policy-vendor-summary">Upgrade and change policy - vendor summary</h2>
+
+<table class="govuk-table">
+  <caption>Information services</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-!-font-size-14" scope="col">Service</th>
+      <th class="govuk-table__cell govuk-!-font-size-14" scope="col">Endpoints</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Application Enquiry V1.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/ApplicationEnquiryV1_0PollRequestWebService?wsdl<br>{PLACE_HOLDER}/ApplicationEnquiryV1_0WebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Daylist enquiry V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/ApplicationEnquiryV1_0WebService?wsdl<br>{PLACE_HOLDER}/ApplicationEnquiryV1_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Discharge Activity V1.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/DischargeActivityV1_0WebService?wsdl<br>{PLACE_HOLDER}/DischargeActivityV1_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Enquiry by property description V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/EnquiryByPropertyDescriptionV2_0WebService?wsdl<br>{PLACE_HOLDER}/EnquiryByPropertyDescriptionV2_0PollWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Land charges bankruptcy search V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/BankruptcySearchV2_0WebService?wsdl<br>{PLACE_HOLDER}/BankruptcySearchV2_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Land charges bankruptcy search V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/BankruptcySearchV2_1WebService?wsdl<br>{PLACE_HOLDER}/BankruptcySearchV2_1PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Land charges full search V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/FullSearchV2_0WebService?wsdl<br>{PLACE_HOLDER}/FullSearchV2_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Land charges full search V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/FullSearchV2_1WebService?wsdl<br>{PLACE_HOLDER}/FullSearchV2_1PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Official copy title known V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/OfficialCopyTitleKnownV2_0WebService?wsdl<br>{PLACE_HOLDER}/OC1TitleKnownV2_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Official copy title known V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/OfficialCopyTitleKnownV2_1WebService?wsdl<br>{PLACE_HOLDER}/OC1TitleKnownV2_1PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Official search of part with priority V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/OfficialSearchOfPartV2_0WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchOfPartV2_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Official search of part with priority V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/OfficialSearchOfPartV2_1WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchOfPartV2_1PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Official search of whole with priority V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/OfficialSearchV2_0WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchV2_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Official search of whole with priority V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/OfficialSearchV2_1WebService?wsdl<br>{PLACE_HOLDER}/OfficialSearchV2_1PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Register extract service V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/OfficialCopyWithSummaryV2_0WebService?wsdl<br>{PLACE_HOLDER}/OfficialCopyWithSummaryV2_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Register extract service V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/OfficialCopyWithSummaryV2_1WebService?wsdl<br>{PLACE_HOLDER}/OfficialCopyWithSummaryV2_1PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Search of the index map V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/SearchOfIndexMapV2_0WebService?wsdl<br>{PLACE_HOLDER}/SearchOfIndexMapV2_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Search of the index map V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/SearchOfIndexMapV2_1WebService?wsdl<br>{PLACE_HOLDER}/SearchOfIndexMapV2_1PollRequestWebService?wsdl</td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="e-drs">e-DRS</h3>
+
+<table class="govuk-table">
+  <caption>e-DRS</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-!-font-size-14" scope="col">Service</th>
+      <th class="govuk-table__cell govuk-!-font-size-14" scope="col">Endpoints</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Application to change register V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/EDocumentRegistrationV2_0WebService?wsdl<br>{PLACE_HOLDER}/EDocumentRegistrationV2_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Attachment V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/AttachmentV2_0WebService?wsdl<br>{PLACE_HOLDER}/AttachmentV2_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Correspondence V1.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/CorrespondenceV1_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Early completion V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/EarlyCompletionV2_0PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Application to change register V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/EDocumentRegistrationV2_1WebService?wsdl<br>{PLACE_HOLDER}/EDocumentRegistrationV2_1PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Attachment V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/AttachmentV2_1WebService?wsdl<br>{PLACE_HOLDER}/AttachmentV2_1PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Correspondence V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/CorrespondenceV2_1PollRequestWebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Early completion V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/EarlyCompletionV2_1PollRequestWebService?wsdl</td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="verification-services-folder">Verification services_folder</h3>
+
+<table class="govuk-table">
+  <caption>Verification services_folder</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-!-font-size-14" scope="col">Service</th>
+      <th class="govuk-table__cell govuk-!-font-size-14" scope="col">Endpoints</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Online Ownership Verification V1.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACEHOLDER}/OnlineOwnershipVerificationV1_0WebService?wsdl</td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="business-gateway-service-urls-local-land-charges-services">Local Land Charges Services</h3>
+
+<table class="govuk-table">
+  <caption>Local Land Charges Services</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-!-font-size-14" scope="col">Service</th>
+      <th class="govuk-table__cell govuk-!-font-size-14" scope="col">Endpoints</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Local land charges search V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACEHOLDER}/LLCSearchV2_0WebService?wsdl</td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="outstanding-requests">Outstanding requests</h3>
+
+<table class="govuk-table">
+  <caption>Outstanding requests</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-!-font-size-14" scope="col">Service</th>
+      <th class="govuk-table__cell govuk-!-font-size-14" scope="col">Endpoints</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Outstanding Requests V2.0</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/OutstandingRequestsV2_0WebService?wsdl</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">Outstanding Requests V2.1</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">{PLACE_HOLDER}/OutstandingRequestsV2_1WebService?wsdl</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="upgrade-and-change-policy-vendor-summary">Upgrade and change policy - vendor summary</h2>
 <h3 id="upgrade-and-change-policy-vendor-summary-information-service-schema">Information service schema</h3>
 <p>Due to the impact of delivering new schemas, we will endeavour to schedule a
 maximum of one release per year. We will only replace a web service immediately
@@ -897,6 +956,11 @@ the Business Gateway landing page.</p>
   <div class="govuk-footer__meta">
     <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
 
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/bgtechdoc/accessibility/">Accessibility Statement</a>
+            </li>
+        </ul>
 
       <svg
         aria-hidden="true"
