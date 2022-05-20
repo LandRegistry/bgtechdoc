@@ -194,6 +194,7 @@ When you have these details, you can order:</p>
           <th scope="col" class="govuk-table__header govuk-!-font-size-14">BG Code</th>
           <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message ID</th>
           <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message text</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">OC1 / OC2</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -203,6 +204,7 @@ When you have these details, you can order:</p>
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.invalid</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-010</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Title number is invalid</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
@@ -210,13 +212,15 @@ When you have these details, you can order:</p>
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.closed</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-014</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Title number is closed</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Pending new title but didn&rsquo;t specify Notify if Pending New Title as true</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.pendingFirstRegistrati on</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.pendingFirstRegistration</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-015</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">The title number provided is a pending first registration so we are unable to supply an official copy at this time. Please make a new request when the first registration is completed.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
@@ -227,25 +231,28 @@ When you have these details, you can order:</p>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-016</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">The title number provided has application(s) pending against it and back-dated office copies were not requested. Please make a new request for back dated office copies or a new request
             when the application is completed.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-056</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Are there any applications pending against the title? Y
             Did request specify Notify if pending application? Y</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">bg.pending.application.notific ation.message</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.pending.application.notification.message</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-017</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">The title number provided has application(s) pending against it. You will be notified when the pending application(s) has been completed so that you can re-apply. A fee has not been
             debited.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Are there any applications pending against the title? Y
             Are there any application pending with a Dealing Code of &lsquo;CRX&rsquo; or &lsquo;DCX&rsquo;? Y
             Did request specify to Send Backdated? N Did request specify to Notify if pending application? Y</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">bg.pending.application.notific ation.message</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.pending.application.notification.message</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-017</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">The title number provided has application(s) pending against it. You will be notified when the pending application(s) has been completed so that you can re-apply. A fee has not been
             debited.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
@@ -254,24 +261,27 @@ When you have these details, you can order:</p>
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.documents.electronic.versionNotAvailableMessage</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-019</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Your official copy request cannot be delivered immediately and requires further investigation. We are unable to calculate the exact fee at this time.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC2</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Various internal business rules (see workflow)</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Can all OCs be delivered electronically? N</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.electronic.vers ionNotAvailableMessage</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.electronic.versionNotAvailableMessage</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-021</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Your official copy(s) cannot be electronically delivered. Paper official copies will be sent to you by post/DX. We reserve the right on fee, it could be more than the fee charged for
             electronic delivery.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Are there any applications pending against the title? Y
             Are there any application pending with a Dealing Code of &lsquo;CRX&rsquo; or &lsquo;DCX&rsquo;? Y
             Did request specify Notify if pending application? N</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.electronic.vers ionNotAvailableMessage</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.electronic.versionNotAvailableMessage</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-021</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Your official copy(s) cannot be electronically delivered. Paper official copies will be sent to you by post/DX. We reserve the right on fee, it could be more than the fee charged for
             electronic delivery.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-024</td>
@@ -279,14 +289,16 @@ When you have these details, you can order:</p>
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.closedAndContinued</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-022</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Title Number &lt;x&gt; has been closed and registration continued under Title Number &lt;y&gt;. Please request an Official Copy of the new Title Number.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Is the title a pending new title? Y
             Did request specify Notify if pending new title? Y</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">bg.pending.registration.notific ation.message</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.pending.registration.notification.message</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-025</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">The Title number provided is a pending first registration. You will be notified when the first registration has been completed so that you can re-apply. A fee has not been debited.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
@@ -294,14 +306,15 @@ When you have these details, you can order:</p>
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.fee.feeMismatch</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-032</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Fee Amount provided does not match with the fee calculated by Land Registry.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC2</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Various internal business rules (see workflow)</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">Calculate &lt;Actual Fee&gt;
-          </td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Calculate &lt;Actual Fee&gt;</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.fee.feeMismatch</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-032</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Fee Amount provided does not match with the fee calculated by Land Registry.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
@@ -309,21 +322,24 @@ When you have these details, you can order:</p>
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.notcomputerised</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-066</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Your official copy request cannot be accepted as title records have not been computerised.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Does the request include a CI? Y</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.ci.register.suc essMessage</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.ci.register.sucessMessage</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-067</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Your official copy request includes CI which cannot be delivered electronically. The official copy item(s) will be sent by post.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Various internal business rules (see workflow)</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Is the title a Commonhold common parts title? Y</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">bg.searchOfIndexMap.succe ssMessage</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.searchOfIndexMap.successMessage</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-070</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">You have requested an Official Copy relating to a Commonhold common parts title. Where an Official Copy Register is requested an Official Copy Title Plan is also provided at no extra cost.
             Similarly, where an Official Copy Title Plan is requested an Official Copy Register is provided at no extra cost. Where an Official Copy Register and Title Plan are requested a fee for each set, rather than each item will be applied.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC1</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
@@ -331,6 +347,7 @@ When you have these details, you can order:</p>
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.all.docs.unavailable</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-081</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">All requested document(s) are unavailable</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC2</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-052</td>
@@ -338,6 +355,7 @@ When you have these details, you can order:</p>
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.commonhold.only.docs</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-082</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Commonhold Community Statement, Memorandum and Articles of Association, Surrender of Development Rights and Termination Document can only be requested for commonhold titles</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC2</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
@@ -345,6 +363,7 @@ When you have these details, you can order:</p>
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialcopy.additional.info.required</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-084</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Additional Information must be entered when a Document Type of &lsquo;Other&rsquo; is selected.</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">OC2</td>
         </tr>
       </tbody>
     </table>
