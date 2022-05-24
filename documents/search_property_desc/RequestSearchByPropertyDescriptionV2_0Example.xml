@@ -1,24 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ns2:RequestSearchByPropertyDescriptionV2_0
-	xmlns:ns2="http://www.oscre.org/ns/eReg-Final/2011/RequestSearchByPropertyDescriptionV2_0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.oscre.org/ns/eReg-Final/2011/RequestSearchByPropertyDescriptionV2_0 RequestSearchByPropertyDescriptionV2_0.xsd ">
-	<ns2:ID>
-		<ns2:MessageID>DfltMsgId1365516738852</ns2:MessageID>
-	</ns2:ID>
-	<ns2:Product>
-		<ns2:ExternalReference>
-			<ns2:Reference>extRef0001</ns2:Reference>
-		</ns2:ExternalReference>
-		<ns2:CustomerReference>
-			<ns2:Reference>custRef0001</ns2:Reference>
-		</ns2:CustomerReference>
-		<ns2:SubjectProperty>
-			<ns2:Address>
-				<ns2:BuildingNumber>99</ns2:BuildingNumber>
-				<ns2:StreetName>Flake Avenue</ns2:StreetName>
-				<ns2:CityName>Torquay</ns2:CityName>
-			</ns2:Address>
-		</ns2:SubjectProperty>
-	</ns2:Product>
-</ns2:RequestSearchByPropertyDescriptionV2_0>
+<ns3:searchProperties xmlns:ns2="http://www.oscre.org/ns/eReg-Final/2011/RequestSearchByPropertyDescriptionV2_0" xmlns:ns3="http://epdv2_0.ws.bg.lr.gov/">
+	<arg0>
+		<ns2:ID>
+			<ns2:MessageID>DfltMsgId1365516738852</ns2:MessageID>
+		</ns2:ID>
+		<ns2:Product>
+			<ns2:ExternalReference>
+				<ns2:Reference>extRef0001</ns2:Reference>
+			</ns2:ExternalReference>
+			<ns2:CustomerReference>
+				<ns2:Reference>custRef0001</ns2:Reference>
+			</ns2:CustomerReference>
+			<ns2:SubjectProperty>
+				<ns2:Address>
+					<ns2:BuildingNumber>99</ns2:BuildingNumber>
+					<ns2:StreetName>Flake Avenue</ns2:StreetName>
+					<ns2:CityName>Torquay</ns2:CityName>
+				</ns2:Address>
+			</ns2:SubjectProperty>
+		</ns2:Product>
+	</arg0>
+</ns3:searchProperties>
