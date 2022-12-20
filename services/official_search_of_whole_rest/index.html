@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Official Search of Whole with Data - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/services/official_search_of_whole_rest/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="Official Search of Whole with Data - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/services/official_search_of_whole_rest/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Official Search of Whole with Data" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/services/official_search_of_whole_rest/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#official-search-of-whole-with-data"><span>Official Search of Whole with Data</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+        <ul>
+          <li>
+            <a href="#if-you-39-re-a-software-developer"><span>If You’re a Software Developer</span></a>
+          </li>
+          <li>
+            <a href="#how-the-restful-api-service-differs-from-the-soap-api-service"><span>How the RESTful API Service Differs from the SOAP API Service</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#process-flow"><span>Process flow</span></a>
+        <ul>
+          <li>
+            <a href="#input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#validation"><span>Validation</span></a>
+          </li>
+          <li>
+            <a href="#output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#service-working-hours"><span>Service Working Hours</span></a>
+      </li>
+      <li>
+        <a href="#access-control"><span>Access Control</span></a>
+      </li>
+      <li>
+        <a href="#status-codes"><span>Status Codes</span></a>
+        <ul>
+          <li>
+            <a href="#success-codes"><span>Success Codes</span></a>
+          </li>
+          <li>
+            <a href="#error-codes"><span>Error Codes</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#customer-test-stubs"><span>Customer Test Stubs</span></a>
+        <ul>
+          <li>
+            <a href="#endpoint-url"><span>Endpoint URL</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#schemas"><span>Schemas</span></a>
+      </li>
+      <li>
+        <a href="#vendor-testing"><span>Vendor testing</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+
+<div class="page-nav">
+<a href="../index.html">Back to Services</a>
+<a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="official-search-of-whole-with-data">Official Search of Whole with Data</h1>
+
+<hr>
+<h2 id="overview">Overview</h2>
+<p>An Official Search of Whole with Data protects agreements between buyers, sellers and lenders. 
+The Official Search of Whole with Data RESTful API expands on the existing Official Search of Whole SOAP API, see HMLR Developer Pack <a href="../official_search_of_whole/">here</a> for information on the existing service.</p>
+<p>It will also tell you about:</p>
+
+<ul>
+<li>alterations made to the register since the search from date</li>
+<li>applications against the title that have not yet been completed</li>
+<li>existing official searches</li>
+<li>outline applications that are not protected by official search</li>
+</ul>
+<p>Each service can be used:</p>
+
+<ul>
+<li>when your application relates to the whole of the registered title to protect transfers, leases and mortgages. </li>
+<li>both services prevent any registrations of adverse interest for 30 business days. </li>
+</ul>
+<p>Each service will also tell you about:</p>
+
+<ul>
+<li>alterations made to the register since the search from date </li>
+<li>applications against the title that have not yet been completed </li>
+<li>existing official searches </li>
+<li>outline applications that are not protected by official search </li>
+</ul>
+<p>The following sections relate to the Official Search of Whole with Data RESTful API service.</p>
+<h3 id="if-you-39-re-a-software-developer">If You&rsquo;re a Software Developer</h3>
+<p>Use this document to integrate data into your system.</p>
+<p>Initially we expect users of the new RESTful version to have already integrated with the existing SOAP service.</p>
+<p>Where an Official Search of Whole can&rsquo;t be returned immediately (either lodged out of service hours or because it requires manual processing), then the RESTful service will confirm successful receipt, but the result will be available through the existing SOAP methods.
+By far the majority of Official Searches of Whole are returned immediately and for those, the RESTful service will return the Official Search result certificate and additional JSON data elements detailing information contained within the result certificate PDF.</p>
+<h3 id="how-the-restful-api-service-differs-from-the-soap-api-service">How the RESTful API Service Differs from the SOAP API Service</h3>
+<p>This service is an enhanced RESTful version of the original Official Search of Whole SOAP service.
+Within the service parameters, in the majority of cases, the Official Search certificate will be supplemented with data items in a JSON response relating to the result as follows:</p>
+<h4 id="flags">Flags</h4>
+<p>Within the JSON response there are two flags, each providing a Boolean true/false response.
+These flags indicate the content revealed within the Official Search certificate.</p>
+
+<ol>
+<li><p><code>register_has_changed_since_search_from_date</code><br>
+True - if the register has changed since the search from date, a value of true will be returned.<br>
+False - if the register has not changed since the search from date, a value of false will be returned.</p></li>
+<li><p><code>result_contains_advisory_entries</code><br>
+True - if the Official Search certificate (PDF) does contains further advisory entries in addition to whether the register has changed, a value of true will be returned.<br>
+False - if the Official Search certificate (PDF) does not contain any further advisory entries in addition to whether the register has changed, a value of false will be returned.</p></li>
+</ol>
+<h4 id="advisory-entries">Advisory Entries</h4>
+<p>When further advisory entries are contained in the certificate result, further detail is supplied for the following advisory entries:</p>
+
+<ul>
+<li>there is an existing official search pending on the title</li>
+<li>the names of the registered proprietor(s) provided do not agree with those shown on the register</li>
+<li>the title number comprises a commonhold unit within a commonhold development</li>
+</ul>
+<p>The complete text of each result entry present on the search certificate will be returned in the JSON response.</p>
+<p>These advisory entries represent the most common entries but the Official Search certificate (PDF) may contain additional advisory entries.</p>
+<h4 id="data-items-extracted-from-the-official-search-certificate">Data Items Extracted from the Official Search Certificate</h4>
+<p>Additional data items relating to the official search result will also be returned within the JSON API response as follows:</p>
+
+<ul>
+<li><code>official_copy_timestamp</code> - if a new edition of the register has been opened</li>
+<li><code>certificate_timestamp</code>, <code>priority_type</code>, <code>applicant</code> - if there is an existing official search certificate pending on the title</li>
+<li><code>registered_proprietor_names</code> - if the names of the registered proprietor(s) given in the application do not agree with those shown on the register</li>
+<li><code>commonhold_title_number</code> - if the title number comprises a commonhold unit</li>
+</ul>
+<p>This service is limited to immediate search results.
+When a result cannot be returned immediately, the official search certificate will become available via the existing Official Search of Whole SOAP API polling service and will not be supplemented with the JSON response data items.
+This will be the case when a search:</p>
+
+<ul>
+<li>has been submitted outside of service working hours</li>
+<li>requires manual processing</li>
+</ul>
+
+<hr>
+<h2 id="process-flow">Process flow</h2>
+<h3 id="input">Input</h3>
+<p>To request an official search, you will need to send:</p>
+
+<ul>
+<li>login details</li>
+<li>external reference number</li>
+<li>title number</li>
+<li>search start date</li>
+<li>customer reference</li>
+<li>applicant name</li>
+<li>priority type</li>
+<li>contact details</li>
+<li>property description</li>
+<li>alternative despatch details</li>
+</ul>
+<p>The following parameters will also be necessary if there are any complications, and may be supplied to keep transaction calls and processing times to a minimum.</p>
+
+<ul>
+<li><code>NAME_MISMATCH_ON_REGISTER</code></li>
+<li><code>PENDING_SEARCHES_OF_PART</code></li>
+<li><code>DEVELOPER_TITLE</code></li>
+<li><code>ACTUAL_FEE_EXCEEDS_EXPECTED_FEE</code></li>
+</ul>
+<h3 id="validation">Validation</h3>
+<p>Validation diagram details the validation that the request undergoes.</p>
+
+<div style="padding-bottom: 15px">
+  <a href="../../images/official_search_of_whole_rest/validation_diagram.png" target="_blank">
+    <img src="../../images/official_search_of_whole_rest/validation_diagram.png" style="width:700px;" alt="1. Search of whole with priority via BG (business gateway) flow chart" title="Clicking this image will open the image in a new tab">
+  </a>
+</div>
+<h3 id="output">Output</h3>
+<p>HM Land Registry will confirm when they receive a request for documents.</p>
+
+<hr>
+<h2 id="service-working-hours">Service Working Hours</h2>
+<p>The Business Gateway service is available between 6.30am and 11pm.
+This service will not be available between 11pm and 6.30am the following morning.
+These times are in relation to the current time zone in London.</p>
+
+<hr>
+<h2 id="access-control">Access Control</h2>
+<p>To use this service, we would expect you to be an existing Business Gateway user and have already integrated with the Official Search of Whole SOAP API service.
+If you have an active user account, you will be able to access the new service using your existing credentials.</p>
+<p>If you are not an existing user and would like to sign up to our service, you can request access at <a href="https://www.gov.uk/guidance/apply-for-hm-land-registry-business-e-services">Apply for HM Land Registry Business e-services</a></p>
+
+<hr>
+<h2 id="status-codes">Status Codes</h2>
+<p>When developing against the table below, please use the status code.</p>
+<h3 id="success-codes">Success Codes</h3>
+
+<table class="govuk-table">
+  <caption>Success Codes</caption>
+  <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Status</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Title</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Type</th>
+      </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">201</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Successful Request</td>
+      <td class="govuk-table__cell govuk-!-font-size-14"></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">202</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Manual Processing Required</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">BG20001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">202</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Submission Out of Hours</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">BG20002</td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="error-codes">Error Codes</h3>
+<p>Error codes are currently in place but are subject to change or may disappear in the future.</p>
+<p>A <code>trace_id</code> value uniquely identifies the request resulting in an error.</p>
+
+<table class="govuk-table">
+<caption>Error Codes</caption>
+  <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Status</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Title</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Type</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Detail</th>
+      </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">400</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Invalid request body</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">OS1API002</td>
+        <td class="govuk-table__cell govuk-!-font-size-14"><code>{field}</code> is invalid</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">401</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Invalid credentials or account is not active</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG40004</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Unauthorized</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">403</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Incorrect user role or organisation is not permitted</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG40005</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Forbidden</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">409</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Existing message id</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG40011</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Message ID has already been submitted</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">422</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Invalid title</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">bg.title.invalid</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Title Number is invalid</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">422</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Name mismatch and not continue</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">bg.state.nonamematch</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">There is no name match for this title</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">422</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Closed title</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">bg.title.closed</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Title number is closed</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">422</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Fee mismatch</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">bg.fee.feeMismatch</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Fee amount provided does not match with the fee calculated by Land Registry</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">422</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Search from date is in the future</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">bg.date.futuuredate</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Search from date is invalid</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">422</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Developer title and not continue</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">bg.title.developertitle</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">This is a developing title. If you intend to take a registrable disposition of part you should apply for an official search with priority of part</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">422</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Pending search and not continue</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">bg.title.pendingsearchofpart</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">The title has applications of part pending against it. If you intend to take a registrable disposition of part you should apply for an official search of part</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">422</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Caution title</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">bg.title.caution</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Official Search cannot be lodged against a Caution Title</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">429</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Request limit exceeded</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG40006</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Too many requests, please wait and try again</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">500</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">No specific exception</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG50001</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Internal server error</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">503</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Service is down for a non-specific reason</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG50002</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Service unavailable</td>
+    </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-!-font-size-14">504</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Internal service timeout</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">BG50004</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">Gateway timeout</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+<h2 id="customer-test-stubs">Customer Test Stubs</h2>
+<h3 id="endpoint-url">Endpoint URL</h3>
+<p>The test environment can be accessed at <code>https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+<p>This requires a customer test certificate (this is different to the production client certificates).</p>
+
+<hr>
+<h2 id="schemas">Schemas</h2>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="openapi.html" class="govuk-!-font-size-24" id="openapi-yaml">OpenAPI Schema</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >YAML</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/official_search_of_whole_rest/openapi.yaml"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<hr>
+<h2 id="vendor-testing">Vendor testing</h2>
+<p>Documents the data required for testing the service.</p>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/official_search_of_whole_rest/vendor_test.pdf" class="govuk-!-font-size-24">Vendor Test data (request official search of whole)</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 587KB, 34 pages</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/official_search_of_whole_rest/vendor_test.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/bgtechdoc/accessibility/">Accessibility Statement</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>
