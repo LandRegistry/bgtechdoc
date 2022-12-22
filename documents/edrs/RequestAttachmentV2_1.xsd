@@ -172,7 +172,7 @@
 				ROCU = Release of Covenants - Unilateral Notice
 				ROE  = Release of Easements
 				RX1  = Restriction (Standard)
-				RX2  = Restriction (Non Standard)
+				RX2  = Restriction (Disapply or modify restriction)
 				RX3  = Cancel a Restriction
 				RX4  = Withdraw a Restriction
 				SBC  = Sub Charge
@@ -286,6 +286,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Abstract" />
 			<xs:enumeration value="Agreement" />
+			<xs:enumeration value="AMS1" />
 			<xs:enumeration value="Assent" />
 			<xs:enumeration value="Assignment" />
 			<xs:enumeration value="Birth Certificate" />
@@ -312,6 +313,7 @@
 			<xs:enumeration value="Plan" />
 			<xs:enumeration value="Power of Attorney" />
 			<xs:enumeration value="Probate" />
+			<xs:enumeration value="PSS1" />
 			<xs:enumeration value="Stamp Duty Land Tax" />
 			<xs:enumeration value="Statement Of Truth" />
 			<xs:enumeration value="Statutory Declaration" />

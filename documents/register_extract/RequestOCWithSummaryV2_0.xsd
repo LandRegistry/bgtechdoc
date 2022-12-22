@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oscre.org/ns/eReg-Final/2011/RequestOCWithSummaryV2_0" targetNamespace="http://www.oscre.org/ns/eReg-Final/2011/RequestOCWithSummaryV2_0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.oscre.org/ns/eReg-Final/2011/RequestOCWithSummaryV2_0"
+           targetNamespace="http://www.oscre.org/ns/eReg-Final/2011/RequestOCWithSummaryV2_0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
 	<xs:annotation>
-	      <xs:documentation>This is the Business Gateway request for the OC with Summary service.</xs:documentation>
+		<xs:documentation>This is the Business Gateway request for the OC with Summary service.</xs:documentation>
 	</xs:annotation>
 	<!--Document-->
-	<xs:element name="RequestOCWithSummaryV2_0" type="RequestOCWithSummaryV2_0Type"/>
+	<xs:element name="RequestOCWithSummaryV2_0"
+	            type="RequestOCWithSummaryV2_0Type"/>
 	<!--ABIEs-->
 	<xs:complexType name="Q1CustomerReferenceType">
 		<xs:annotation>
 			<xs:documentation>Provides a unique reference to identify a particular request, order or instruction or object in the system of the organisation allocating it.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Reference" type="ReferenceTextContentType" minOccurs="1" maxOccurs="1">
+			<xs:element name="Reference"
+			            type="ReferenceTextContentType"
+			            minOccurs="1"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A unique reference given to identify a particular request, order or instruction in the system of the organisation allocating it.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AllocatedBy" type="Q3TextType" minOccurs="0" maxOccurs="1">
+			<xs:element name="AllocatedBy"
+			            type="Q3TextType"
+			            minOccurs="0"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The name of the organisation that has allocated the Reference</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Description" type="Q3TextType" minOccurs="0" maxOccurs="1">
+			<xs:element name="Description"
+			            type="Q3TextType"
+			            minOccurs="0"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>This field can be used to provide reference description</xs:documentation>
 				</xs:annotation>
@@ -33,19 +47,28 @@
 			<xs:documentation>Information about price</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="GrossPriceAmount" type="AmountType" minOccurs="0" maxOccurs="1">
+			<xs:element name="GrossPriceAmount"
+			            type="AmountType"
+			            minOccurs="0"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The gross price is the price including the VAT.  
 					If the VAT is zero then the Gross and Net Price will be the same</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NetPriceAmount" type="AmountType" minOccurs="0" maxOccurs="1">
+			<xs:element name="NetPriceAmount"
+			            type="AmountType"
+			            minOccurs="0"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The Net Price is the amount before the VAT is added on. 
 					If the VAT is zero then the Gross and Net Price will be the same</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="VATAmount" type="AmountType" minOccurs="0" maxOccurs="1">
+			<xs:element name="VATAmount"
+			            type="AmountType"
+			            minOccurs="0"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>This is the amount of the VAT</xs:documentation>
 				</xs:annotation>
@@ -57,17 +80,26 @@
 			<xs:documentation>A unique reference given to identify a particular request, order or instruction in the system of the organisation allocating it with the ability to associate the name of the Company that has allocated it.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Reference" type="ReferenceTextContentType" minOccurs="1" maxOccurs="1">
+			<xs:element name="Reference"
+			            type="ReferenceTextContentType"
+			            minOccurs="1"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A unique reference given to identify a particular request, order or instruction in the system of the organisation allocating it.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="AllocatedBy" type="Q3TextType" minOccurs="0" maxOccurs="1">
+			<xs:element name="AllocatedBy"
+			            type="Q3TextType"
+			            minOccurs="0"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The name of the organisation that has allocated the Reference</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Description" type="Q3TextType" minOccurs="0" maxOccurs="1">
+			<xs:element name="Description"
+			            type="Q3TextType"
+			            minOccurs="0"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>This field can be used to provide reference description</xs:documentation>
 				</xs:annotation>
@@ -76,7 +108,10 @@
 	</xs:complexType>
 	<xs:complexType name="Q1IdentifierType">
 		<xs:sequence>
-			<xs:element name="MessageID" type="Q1TextType" minOccurs="1" maxOccurs="1">
+			<xs:element name="MessageID"
+			            type="Q1TextType"
+			            minOccurs="1"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A character string (i.e. a finite set of characters) generally in the form of words of a language.</xs:documentation>
 				</xs:annotation>
@@ -88,27 +123,42 @@
 			<xs:documentation>This component contains details regarding the search being ordered, expedited service, price details, delivery method and any attachment.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="SubjectProperty" type="Q1SubjectPropertyType" minOccurs="1" maxOccurs="1">
+			<xs:element name="SubjectProperty"
+			            type="Q1SubjectPropertyType"
+			            minOccurs="1"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The Property which is the subject of the transaction, or on which a search is being prepared</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ExpectedPrice" type="Q1ExpectedPriceType" minOccurs="0" maxOccurs="1">
+			<xs:element name="ExpectedPrice"
+			            type="Q1ExpectedPriceType"
+			            minOccurs="0"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Information about price</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ExternalReference" type="Q1ExternalReferenceType" minOccurs="1" maxOccurs="1">
+			<xs:element name="ExternalReference"
+			            type="Q1ExternalReferenceType"
+			            minOccurs="1"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Reference associated with a case in Case Management System</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="CustomerReference" type="Q1CustomerReferenceType" minOccurs="1" maxOccurs="1">
+			<xs:element name="CustomerReference"
+			            type="Q1CustomerReferenceType"
+			            minOccurs="1"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Reference of the person for whom the remortgage is performed.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TitleKnownOfficialCopy" type="Q1TitleKnownOfficialCopyType" minOccurs="1" maxOccurs="1">
+			<xs:element name="TitleKnownOfficialCopy"
+			            type="Q1TitleKnownOfficialCopyType"
+			            minOccurs="1"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The ability for the [External System] to submit a request for an official copy using the title number. This includes requesting official copy of the Register / Title Plan / Certificate in form CI (OC1) or other documents (OC2) associated with the title.</xs:documentation>
 				</xs:annotation>
@@ -120,8 +170,10 @@
 			<xs:documentation>The Property which is the subject of the transaction.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="TitleNumber" type="Q2TextType"
-				minOccurs="1" maxOccurs="1">
+			<xs:element name="TitleNumber"
+			            type="Q2TextType"
+			            minOccurs="1"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Provides the subject property title
 						number if known</xs:documentation>
@@ -131,9 +183,11 @@
 	</xs:complexType>
 	<xs:complexType name="Q1TitleKnownOfficialCopyType">
 		<xs:sequence>
-			<xs:element
-				name="ContinueIfTitleIsClosedAndContinuedIndicator"
-				type="IndicatorType" minOccurs="1" maxOccurs="1" default="false">
+			<xs:element name="ContinueIfTitleIsClosedAndContinuedIndicator"
+			            type="IndicatorType"
+			            minOccurs="1"
+			            maxOccurs="1"
+			            default="false">
 				<xs:annotation>
 					<xs:documentation>
 						An indicator sent by the CMS to the BG to advise
@@ -143,27 +197,40 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="NotifyIfPendingFirstRegistrationIndicator"
-				type="IndicatorType" minOccurs="1" maxOccurs="1" default="false">
+			            type="IndicatorType"
+			            minOccurs="1"
+			            maxOccurs="1"
+			            default="false">
 				<xs:annotation>
 					<xs:documentation>
 						A list of two mutually exclusive Boolean values
 						that express the only possible states of a
 						Property.
+						Please note that this value will always be treated as 
+						being set to false by HMLR
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="NotifyIfPendingApplicationIndicator"
-				type="IndicatorType" minOccurs="1" maxOccurs="1" default="false">
+			            type="IndicatorType"
+			            minOccurs="1"
+			            maxOccurs="1"
+			            default="false">
 				<xs:annotation>
 					<xs:documentation>
 						A list of two mutually exclusive Boolean values
 						that express the only possible states of a
 						Property.
+						Please note that this value will always be treated as 
+						being set to false by HMLR
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="SendBackDatedIndicator"
-				type="IndicatorType" minOccurs="1" maxOccurs="1" default="false">
+			            type="IndicatorType"
+			            minOccurs="1"
+			            maxOccurs="1"
+			            default="false">
 				<xs:annotation>
 					<xs:documentation>
 						A list of two mutually exclusive Boolean values
@@ -172,9 +239,11 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element
-				name="ContinueIfActualFeeExceedsExpectedFeeIndicator"
-				type="IndicatorType" minOccurs="1" maxOccurs="1" default="false">
+			<xs:element name="ContinueIfActualFeeExceedsExpectedFeeIndicator"
+			            type="IndicatorType"
+			            minOccurs="1"
+			            maxOccurs="1"
+			            default="false">
 				<xs:annotation>
 					<xs:documentation>
 						A list of two mutually exclusive Boolean values
@@ -183,8 +252,10 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-
-			<xs:element name="IncludeTitlePlanIndicator" type="IndicatorType" maxOccurs="1" minOccurs="1"></xs:element>
+			<xs:element name="IncludeTitlePlanIndicator"
+			            type="IndicatorType"
+			            maxOccurs="1"
+			            minOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="RequestOCWithSummaryV2_0Type">
@@ -198,8 +269,14 @@ If the External System has requested more than one type of official copy and sel
 			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ID" type="Q1IdentifierType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="Product" type="Q1ProductType" minOccurs="1" maxOccurs="1">
+			<xs:element name="ID"
+			            type="Q1IdentifierType"
+			            minOccurs="1"
+			            maxOccurs="1"/>
+			<xs:element name="Product"
+			            type="Q1ProductType"
+			            minOccurs="1"
+			            maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>This component contains details regarding the search being ordered, expedited service, price details, delivery method and any attachment</xs:documentation>
 				</xs:annotation>
@@ -230,7 +307,7 @@ If the External System has requested more than one type of official copy and sel
 			</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
-			<xs:extension base="Q2TextContentType" />
+			<xs:extension base="Q2TextContentType"/>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="Q3TextType">
@@ -240,9 +317,9 @@ If the External System has requested more than one type of official copy and sel
 			</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
-			<xs:extension base="Q3TextContentType" />
+			<xs:extension base="Q3TextContentType"/>
 		</xs:simpleContent>
-	</xs:complexType>	
+	</xs:complexType>
 	<!--Contenttypes-->
 	<xs:simpleType name="CustomerReferenceTextContentType">
 		<xs:restriction base="xs:string">
@@ -265,8 +342,9 @@ If the External System has requested more than one type of official copy and sel
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="currencyID" type="xs:normalizedString"
-					use="optional">
+				<xs:attribute name="currencyID"
+				              type="xs:normalizedString"
+				              use="optional">
 					<xs:annotation>
 						<xs:documentation>The currency of the amount</xs:documentation>
 					</xs:annotation>
@@ -290,14 +368,14 @@ If the External System has requested more than one type of official copy and sel
 	</xs:simpleType>
 	<xs:simpleType name="Q2TextContentType">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="1" />
-			<xs:maxLength value="9" />
-			<xs:pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?" />
+			<xs:minLength value="1"/>
+			<xs:maxLength value="9"/>
+			<xs:pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Q3TextContentType">
 		<xs:restriction base="xs:string">
-			<xs:pattern value=".*\S.*" />
+			<xs:pattern value=".*\S.*"/>
 		</xs:restriction>
-	</xs:simpleType>	
+	</xs:simpleType>
 </xs:schema>
