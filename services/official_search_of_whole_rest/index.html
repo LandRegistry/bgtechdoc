@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Official Search of Whole with Data - HM Land Registry Business Gateway Developer Pack</title>
+    <title>Official Search of Whole (with Priority) with Data - HM Land Registry Business Gateway Developer Pack</title>
 
     <link href="../../stylesheets/manifest.css" rel="stylesheet" />
 
@@ -13,12 +13,12 @@
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:image" content="/images/govuk-large.png" />
-      <meta name="twitter:title" content="Official Search of Whole with Data - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:title" content="Official Search of Whole (with Priority) with Data - HM Land Registry Business Gateway Developer Pack" />
       <meta name="twitter:url" content="/services/official_search_of_whole_rest/" />
 
       <meta property="og:image" content="/images/govuk-large.png" />
       <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
-      <meta property="og:title" content="Official Search of Whole with Data" />
+      <meta property="og:title" content="Official Search of Whole (with Priority) with Data" />
       <meta property="og:type" content="object" />
       <meta property="og:url" content="/services/official_search_of_whole_rest/" />
 
@@ -84,7 +84,7 @@
               <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
                       <ul>
   <li>
-    <a href="#official-search-of-whole-with-data"><span>Official Search of Whole with Data</span></a>
+    <a href="#official-search-of-whole-with-priority-with-data"><span>Official Search of Whole (with Priority) with Data</span></a>
     <ul>
       <li>
         <a href="#overview"><span>Overview</span></a>
@@ -160,20 +160,12 @@
 <a href="../index.html">Back to Services</a>
 <a href="../../index.html">Back to Home</a>
 </div>
-<h1 id="official-search-of-whole-with-data">Official Search of Whole with Data</h1>
+<h1 id="official-search-of-whole-with-priority-with-data">Official Search of Whole (with Priority) with Data</h1>
 
 <hr>
 <h2 id="overview">Overview</h2>
-<p>An Official Search of Whole with Data protects agreements between buyers, sellers and lenders. 
-The Official Search of Whole with Data RESTful API expands on the existing Official Search of Whole SOAP API, see HMLR Developer Pack <a href="../official_search_of_whole/">here</a> for information on the existing service.</p>
-<p>It will also tell you about:</p>
-
-<ul>
-<li>alterations made to the register since the search from date</li>
-<li>applications against the title that have not yet been completed</li>
-<li>existing official searches</li>
-<li>outline applications that are not protected by official search</li>
-</ul>
+<p>An Official Search of Whole (with Priority) with Data protects agreements between buyers, sellers and lenders. 
+The Official Search of Whole (with Priority) with Data RESTful API expands on the existing Official Search of Whole (with Priority) SOAP API, see HMLR Developer Pack <a href="../official_search_of_whole/">here</a> for information on the existing service.</p>
 <p>Each service can be used:</p>
 
 <ul>
@@ -188,14 +180,14 @@ The Official Search of Whole with Data RESTful API expands on the existing Offic
 <li>existing official searches </li>
 <li>outline applications that are not protected by official search </li>
 </ul>
-<p>The following sections relate to the Official Search of Whole with Data RESTful API service.</p>
+<p>The following sections relate to the Official Search of Whole (with Priority) with Data RESTful API service.</p>
 <h3 id="if-you-39-re-a-software-developer">If You&rsquo;re a Software Developer</h3>
 <p>Use this document to integrate data into your system.</p>
 <p>Initially we expect users of the new RESTful version to have already integrated with the existing SOAP service.</p>
 <p>Where an Official Search of Whole can&rsquo;t be returned immediately (either lodged out of service hours or because it requires manual processing), then the RESTful service will confirm successful receipt, but the result will be available through the existing SOAP methods.
 By far the majority of Official Searches of Whole are returned immediately and for those, the RESTful service will return the Official Search result certificate and additional JSON data elements detailing information contained within the result certificate PDF.</p>
 <h3 id="how-the-restful-api-service-differs-from-the-soap-api-service">How the RESTful API Service Differs from the SOAP API Service</h3>
-<p>This service is an enhanced RESTful version of the original Official Search of Whole SOAP service.
+<p>This service is an enhanced RESTful version of the original Official Search of Whole (with Priority) SOAP service.
 Within the service parameters, in the majority of cases, the Official Search certificate will be supplemented with data items in a JSON response relating to the result as follows:</p>
 <h4 id="flags">Flags</h4>
 <p>Within the JSON response there are two flags, each providing a Boolean true/false response.
@@ -229,7 +221,7 @@ False - if the Official Search certificate (PDF) does not contain any further ad
 <li><code>commonhold_title_number</code> - if the title number comprises a commonhold unit</li>
 </ul>
 <p>This service is limited to immediate search results.
-When a result cannot be returned immediately, the official search certificate will become available via the existing Official Search of Whole SOAP API polling service and will not be supplemented with the JSON response data items.
+When a result cannot be returned immediately, the official search certificate will become available via the existing Official Search of Whole (with Priority) SOAP API polling service and will not be supplemented with the JSON response data items.
 This will be the case when a search:</p>
 
 <ul>
@@ -281,7 +273,7 @@ These times are in relation to the current time zone in London.</p>
 
 <hr>
 <h2 id="access-control">Access Control</h2>
-<p>To use this service, we would expect you to be an existing Business Gateway user and have already integrated with the Official Search of Whole SOAP API service.
+<p>To use this service, we would expect you to be an existing Business Gateway user and have already integrated with the Official Search of Whole (with Priority) SOAP API service.
 If you have an active user account, you will be able to access the new service using your existing credentials.</p>
 <p>If you are not an existing user and would like to sign up to our service, you can request access at <a href="https://www.gov.uk/guidance/apply-for-hm-land-registry-business-e-services">Apply for HM Land Registry Business e-services</a></p>
 
