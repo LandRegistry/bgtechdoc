@@ -1,0 +1,8 @@
+.swagger-ui .info .title small {
+    background: #89bf04;
+}
+
+.swagger-ui .info .title small pre {
+    background: #89bf04;
+    border: 0;
+}
