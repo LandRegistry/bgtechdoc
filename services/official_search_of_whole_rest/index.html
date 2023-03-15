@@ -262,6 +262,99 @@ This will be the case when a search:</p>
     <img src="../../images/official_search_of_whole_rest/validation_diagram.png" style="width:700px;" alt="1. Search of whole with priority via BG (business gateway) flow chart" title="Clicking this image will open the image in a new tab">
   </a>
 </div>
+
+<details class="govuk-details" data-module="govuk-details" open>
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Validation diagram Business Rules
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Business Rule</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Decision point</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">BG Code</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message ID</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message text</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal business rule</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Does &lt;Title number&gt; exist on LR systems? N</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.invalid</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-010</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Title number is invalid</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-004</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is the &lt;Title number&gt; a caution title? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.caution</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-074</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Official Search cannot be lodged against a Caution Title</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-011</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is the &lt;Title number&gt; closed ? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.closed</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-014</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">This title number is closed</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-034</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is the search from date valid? N</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.date.missing</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-038</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Search from date is invalid</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-ISBG-026</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Do &lt;Search Names&gt; match proprietors names? N Did request specify &lt;Continue if Name Mismatch? N</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.state.nonamematch</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-035</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">There is no name match for this title number</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal business rule</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is the &lt; Title number&gt; a pending a pending FR?Y Are there any pending searches of part against &lt;Title Number&gt;? Y</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.pendingsearchofpart</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-012</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The title has applications of part pending against it. If you intend to take a registrable disposition of part you should apply for an official search of part.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal business rule</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Is the &lt; Title number&gt; a pending FR?Y Are there any pending searches of part against &lt;Title Number&gt;? N Is the &lt;Title Number&gt; a developer title? Y Did customer specify continue if developer title? N</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.developertitle</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-013</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">This is a developing title. If you intend to take a registrable disposition of part you should apply for an official search with priority of part. </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">BRL-FEE-011</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Calculate &lt;Actual Fee&gt;</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.fee.feeMismatch</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-032</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Fee Amount provided does not match with the fee calculated by Land Registry</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Various internal business rules (see work flow)</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Determine if result can be delivered electronically</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14"> </td>
+          <td class="govuk-table__cell  govuk-!-font-size-14"> </td>
+          <td class="govuk-table__cell  govuk-!-font-size-14"> </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell  govuk-!-font-size-14">Internal decision point</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Prepare acknowledgement response</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">bg.officialSearch.sucessMessage</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-087</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">We have accepted your application for an official search with priority. Priority begins now and expires on &lt;date&gt;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
 <h3 id="output">Output</h3>
 <p>HM Land Registry will confirm when they receive a request for documents.</p>
 
@@ -376,7 +469,7 @@ If you have an active user account, you will be able to access the new service u
     <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-!-font-size-14">422</td>
         <td class="govuk-table__cell govuk-!-font-size-14">Search from date is in the future</td>
-        <td class="govuk-table__cell govuk-!-font-size-14">bg.date.futuuredate</td>
+        <td class="govuk-table__cell govuk-!-font-size-14">bg.date.futuredate</td>
         <td class="govuk-table__cell govuk-!-font-size-14">Search from date is invalid</td>
     </tr>
     <tr class="govuk-table__row">

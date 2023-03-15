@@ -5,24 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Getting Started with SOAP Services - HM Land Registry Business Gateway Developer Pack</title>
+    <title>Upgrade and Change Policy - HM Land Registry Business Gateway Developer Pack</title>
 
-    <link href="../stylesheets/manifest.css" rel="stylesheet" />
+    <link href="../../../stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="/get_started/">
+    <link rel="canonical" href="/rest/get_started/upgrade_and_change_policy/">
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:image" content="/images/govuk-large.png" />
-      <meta name="twitter:title" content="Getting Started with SOAP Services - HM Land Registry Business Gateway Developer Pack" />
-      <meta name="twitter:url" content="/get_started/" />
+      <meta name="twitter:title" content="Upgrade and Change Policy - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/rest/get_started/upgrade_and_change_policy/" />
 
       <meta property="og:image" content="/images/govuk-large.png" />
       <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
-      <meta property="og:title" content="Getting Started with SOAP Services" />
+      <meta property="og:title" content="Upgrade and Change Policy" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="/get_started/" />
+      <meta property="og:url" content="/rest/get_started/upgrade_and_change_policy/" />
 
-          <link href="../favicon.ico" rel="icon" type="image/ico" />
+          <link href="../../../favicon.ico" rel="icon" type="image/ico" />
 
   </head>
 
@@ -84,19 +84,22 @@
               <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
                       <ul>
   <li>
-    <a href="#getting-started-with-soap-services"><span>Getting Started with SOAP Services</span></a>
+    <a href="#upgrade-and-change-policy"><span>Upgrade and Change Policy</span></a>
     <ul>
       <li>
-        <a href="#how-our-system-works"><span>How our system works</span></a>
+        <a href="#information-service-schema"><span>Information Service Schema</span></a>
       </li>
       <li>
-        <a href="#a-guide-for-developers"><span>A guide for developers</span></a>
+        <a href="#new-web-service"><span>New Web Service</span></a>
       </li>
       <li>
-        <a href="#a-guide-to-vendor-testing"><span>A guide to vendor testing</span></a>
+        <a href="#web-service-deprecation"><span>Web Service Deprecation</span></a>
       </li>
       <li>
-        <a href="#find-out-about-future-changes"><span>Find out about future changes</span></a>
+        <a href="#bug-fix-releases"><span>Bug Fix Releases</span></a>
+      </li>
+      <li>
+        <a href="#scheduled-upgrade-releases"><span>Scheduled Upgrade Releases</span></a>
       </li>
     </ul>
   </li>
@@ -110,14 +113,53 @@
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             
-    <!---**************************************************************-->
-<p><a href="../">Back to Home</a></p>
-<h1 id="getting-started-with-soap-services">Getting Started with SOAP Services</h1>
-<p>Guides to integrating with the Business Gateway services :</p>
-<h2 id="how-our-system-works"><a href="how_system_works">How our system works</a></h2>
-<h2 id="a-guide-for-developers"><a href="developer_guide">A guide for developers</a></h2>
-<h2 id="a-guide-to-vendor-testing"><a href="vendor_testing_guide">A guide to vendor testing</a></h2>
-<h2 id="find-out-about-future-changes"><a href="future_changes">Find out about future changes</a></h2>
+    <div class="page-nav">
+<a href="../get_started/index.html">Back to Get Started</a>
+<a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="upgrade-and-change-policy">Upgrade and Change Policy</h1>
+<h2 id="information-service-schema">Information Service Schema</h2>
+<p>Due to the impact of delivering new schemas, we will endeavour to schedule a maximum of one release per year.
+We will only replace a web service immediately if there is a major bug.</p>
+<h2 id="new-web-service">New Web Service</h2>
+<p>Notification of the functionality and delivery schedule of a new web service will
+be through standard customer communication channels, combined with the new forum
+created for users of Business Gateway.</p>
+<p>All technical details will be published on the Business Gateway developer pack web
+page.</p>
+<p>A vendor test facility will go live at the same time as or prior to the web service
+itself. This will include Test Stubs, Vendor Test Data, Workflows providing business
+rules and message outputs and Schema Validation Sheets.</p>
+<h2 id="web-service-deprecation">Web Service Deprecation</h2>
+<p>Notification of the schedule for deprecation (removal) will come from the standard
+customer communication channels. The normal deprecation of a web service will be
+six months from the date of notification, but this may vary in exceptional circumstances.</p>
+<p>All users of a service will receive a final reminder one month before the service
+is discontinued.</p>
+<p>Changes and additions to the service will be contained in the Business Gateway Service
+release notes on the Business Gateway landing page. Change details relating to the
+developer pack will be contained in the Business Gateway Developer Pack release notes
+referenced on the Business Gateway developer pack webpage</p>
+<h2 id="bug-fix-releases">Bug Fix Releases</h2>
+<p>Notification of an emergency bug fix will be through the Service Desk. A new version
+number will be incorporated into an existing web service name that is being replaced,
+for example Version 1.0 will become Version 1.1.</p>
+<p>In this emergency example, Version 1.0 will be withdrawn as soon as Version 1.1
+becomes live.</p>
+<p>A new version of the vendor test facility (stub) will go live at the same time as
+the web service itself. Integrated vendors will be notified if and/or when they
+can test the change before it is put live.</p>
+<h2 id="scheduled-upgrade-releases">Scheduled Upgrade Releases</h2>
+<p>Notification of the changes being made in a new version of an existing web service
+will be from the standard customer communication channels.</p>
+<p>The new version will run simultaneously with the old, until the old version is deprecated,
+to avoid the need for all applications to perform a hard cutover.</p>
+<p>A new version number will be incorporated into an existing web service name that
+is being replaced, for example Version 1.0 (or 1.1) will become Version 2.0.</p>
+<p>A new version of the vendor test facility will go live at the same time as or prior
+to the new version of the web service.</p>
+<p>Change details will be contained in the Service Business Gateway release notes on
+the Business Gateway landing page.</p>
 
 
 
@@ -174,6 +216,6 @@
     </div>
 
     
-    <script src="../javascripts/application.js"></script>
+    <script src="../../../javascripts/application.js"></script>
   </body>
 </html>
