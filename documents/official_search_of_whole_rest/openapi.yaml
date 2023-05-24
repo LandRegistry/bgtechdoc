@@ -58,12 +58,7 @@ paths:
                         
         '5XX':        
           $ref: '#/components/responses/DefaultErrorResponse'   
-         
-      parameters:
-        - name: SoapCredentials
-          in: header
-          schema: 
-            type: string
+
 components:
   responses:
     DefaultErrorResponse:
@@ -400,6 +395,8 @@ components:
           example: 2022-02-12
         continue_application_if: 
           type: array
+          minimum: 0
+          example: "[], [NAME_MISMATCH_ON_REGISTER, DEVELOPER_TITLE]"
           items:
             type: string
             enum:
@@ -408,11 +405,12 @@ components:
               - PENDING_SEARCHES_OF_PART
               - DEVELOPER_TITLE
             description: >
-              Cases to allow the application to continue without warning. Avalibale values: 
+              Cases to allow the application to continue without warning. Available values:
                * 'NAME_MISMATCH_ON_REGISTER' - Used if the proprietor names do not match and the CMS System wants to continue without warning
                * 'ACTUAL_FEE_EXCEEDS_EXPECTED_FEE' - Used if the actual fee exceeds the expected fee and the CMS System wants to continue without warning
                * 'PENDING_SEARCHES_OF_PART' - Used if there are pending searches of part against the quoted title number and the CMS System wants to continue without warning
                * 'DEVELOPER_TITLE' - Used if the quoted title number is a developer title and the CMS System wants to continue without warning
+               * If none of the above cases apply, simply use an empty array [].
         registered_proprietors_details_or_applicants_for_first_registration:
           type: string
           description: Name(s) of the registered proprietor(s) as on the register required for OS1 OR the person who is applying for first registration, e.g. the owner (NOT the conveyancer sending the application)
