@@ -185,6 +185,7 @@
 				TR1  = Transfer
 				TR2  = Transfer Under Power of Sale
 				TR4  = Transfer of Charge
+				TR5  = Transfer of portfolio of titles
 				TRM  = Transfer by Operation of Law (On Death)
 				TSC  = Transfer Subject to a Charge
 				UN1  = Unilateral Notice
@@ -258,6 +259,7 @@
 			<xs:enumeration value="TR1" />
 			<xs:enumeration value="TR2" />
 			<xs:enumeration value="TR4" />
+			<xs:enumeration value="TR5" />
 			<xs:enumeration value="TRM" />
 			<xs:enumeration value="TSC" />
 			<xs:enumeration value="UN1" />
