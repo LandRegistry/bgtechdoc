@@ -1,0 +1,264 @@
+openapi: 3.0.0
+info:
+  title: Estimate Completion Date API
+  description: A specification for the HMLR Business Gateway estimate completion date service.
+  version: 1.0.0
+servers:
+  - url: https://businessgateway.landregistry.gov.uk/bg2/api
+    description: Live endpoint
+  - url: https://bgtest.landregistry.gov.uk/bg2test/api
+    description: Customer Test Endpoint
+security:
+  - basicAuth: []
+tags:
+  - name: ECD
+paths:
+  /v1/applications/{application_reference}/estimate-completion-date:
+    get:
+      operationId: getEstimateCompletionDate
+      tags:
+        - ECD
+      summary: Get estimate completion date of associated application reference
+      description: Get estimated completion date for register create/update applications associated to application reference.
+      parameters:
+        - $ref: '#/components/parameters/ApplicationReferenceParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the application estimate completion date
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - 'data'
+                properties:
+                  data:
+                    $ref: '#/components/schemas/ECDResponseData'
+              examples: {
+                "Example: Application reference valid, application is received. ECD is available.": {
+                  "value": {
+                    "data": {
+                      "application_reference": "X000XXX",
+                      "application_status": "RECEIVED",
+                      "application_priority_date": "20/08/2021",
+                      "estimated_completion_date_status": "AVAILABLE",
+                      "estimated_completion_dates": [
+                        {
+                          "date": "17/03/2023",
+                          "probability": 0.9
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Example: Application reference is valid, application is delayed. ECD is available.": {
+                  "value": {
+                    "data": {
+                      "application_reference": "X001XXX",
+                      "application_status": "DELAYED",
+                      "application_priority_date": "19/01/2023",
+                      "estimated_completion_date_status": "AVAILABLE",
+                      "estimated_completion_dates": [
+                        {
+                          "date": "13/05/2024",
+                          "probability": 0.9
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Example: Application reference is valid, application is received. ECD status is exceeded.": {
+                  "value": {
+                    "data": {
+                      "application_reference": "X002XXX",
+                      "application_status": "RECEIVED",
+                      "application_priority_date": "12/02/2022",
+                      "estimated_completion_date_status": "EXCEEDED"
+                    }
+                  }
+                },
+                "Example: Application reference valid and matches an application. ECD is not yet calculated.": {
+                  "value": {
+                    "data": {
+                      "application_reference": "X003XXX",
+                      "application_status": "RECEIVED",
+                      "application_priority_date": "20/04/2022",
+                      "estimated_completion_date_status": "CALCULATING"
+                    }
+                  }
+                },
+                "Example: Application reference is valid and matches a cancelled application. ECD status is unavailable.": {
+                  "value": {
+                    "data": {
+                      "application_reference": "X004XXX",
+                      "application_status": "CANCELLED",
+                      "application_priority_date": "23/08/2022",
+                      "estimated_completion_date_status": "UNAVAILABLE"
+                    }
+                  }
+                }
+              }
+        '4XX':
+          description: client errors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples: {
+                "Example 400: Application reference invalid format": {
+                  "value": {
+                    "errors": [
+                      {
+                        "code": "BG40001",
+                        "detail": "Malformed invalid schema. Application Reference is invalid.",
+                        "status": "400",
+                        "trace_id": "c62e9b3f-e523-4f04-a941-c6cf0d60c080",
+                        "title": "Invalid application reference."
+                      }
+                    ]
+                  }
+                },
+                "Example 404: Application reference valid format but does not match an HMLR application": {
+                  "value": {
+                    "errors": [
+                      {
+                        "code": "BG40002",
+                        "detail": "application reference is not found.",
+                        "status": "404",
+                        "trace_id": "c62e9b3f-e523-4f04-a941-c6cf0d60c080",
+                        "title": "application reference not found."
+                      }
+                    ]
+                  }
+                }
+              }
+        '5XX':
+          $ref: '#/components/responses/DefaultErrorResponse'
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+  parameters:
+    ApplicationReferenceParameter:
+      in: path
+      name: application_reference
+      description: HMLR generated unique set of characters that identifies applications.
+      required: true
+      schema:
+        $ref: '#/components/schemas/ApplicationReference'
+  responses:
+    DefaultErrorResponse:
+      description: An error has occurred.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            Gateway Timeout:
+              value:
+                errors:
+                  - code: BG50004
+                    detail: The gateway has timed out.
+                    status: '504'
+                    trace_id: c62e9b3f-e523-4f04-a941-c6cf0d60c080
+                    title: An error has occurred
+  schemas:
+    ECDResponseData:
+      description: Response object
+      type: object
+      required:
+        - application_reference
+        - application_status
+        - application_priority_date
+        - estimated_completion_date_status
+      properties:
+        application_reference:
+          $ref: '#/components/schemas/ApplicationReference'
+        application_status:
+          $ref: '#/components/schemas/ApplicationStatus'
+        application_priority_date:
+          type: string
+          format: date
+          description: 'Date of a Land Registry Application that is used to confer priority.'
+        estimated_completion_date_status:
+          $ref: '#/components/schemas/ECDStatus'
+        estimated_completion_dates:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/ECD'
+    ApplicationReference:
+      description: HMLR generated unique set of characters that identifies applications
+      type: string
+      pattern: ^([A-Z][0-9]{3}[A-Z]{3})|([A-Z]{2}[0-9A-F]{5})$
+    ApplicationStatus:
+      type: string
+      description: "A code representing the status of an application.  \n - DELAYED: The application has requisitions, an extension of time has been granted, a site visit has been requested, the application has been referred internally or there are prior pending applications. \n - RECEIVED: The application has been received, the priority is protected and is awaiting processing. \n - CANCELLED: The application has been cancelled and removed from the Daylist. \n - COMPLETED: The application has been completed and is no longer active on the Daylist."
+      enum: ["DELAYED", "CANCELLED", "RECEIVED", "COMPLETED"]
+    ECDStatus:
+      type: string
+      description: "A code representing the status of obtaining the estimated completion date.  \n - AVAILABLE: ECD is available \n - CALCULATING: This is shown when the ECD for the application is being calculated for the first time. \n - EXCEEDED: ECD is unavailable. This is shown when the ECD for the application has elapsed. \n - UNAVAILABLE: ECD is unavailable. Application status is completed or cancelled. \n - NOT_APPLICABLE: ECD is unavailable."
+      enum: ["AVAILABLE", "CALCULATING", "EXCEEDED", "UNAVAILABLE", "NOT_APPLICABLE"]
+    ECD:
+      type: object
+      description: "If EstimatedCompletionDateStatus is [AVAILABLE] the estimated completion date of the application is provided."
+      properties:
+        date:
+          type: string
+          format: date
+          description: "ECD is calculated using the time in which 90% of the application type were completed. See documentation for current calculation ruleset."
+        probability:
+          description: "The chance the application will be completed by this date."
+          type: number
+          example: 0.9
+          minimum: 0
+          maximum: 1
+    ErrorResponse:
+      description: A response for an unsuccessful result.
+      type: object
+      properties:
+        errors:
+          description: A collection of one or more errors as to why the API request failed.
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+    Error:
+      type: object
+      description: An error response for an unsuccessful request.
+      required:
+        - code
+        - detail
+      properties:
+        code:
+          description: The code related to this error, see documentation for more information.
+          type: string
+        detail:
+          description: The descriptive reason behind an error.
+          type: string
+        status:
+          description: The http status code related to this error.
+          type: string
+          example: '503'
+        trace_id:
+          type: string
+          description: A trace identifier for this request.
+          example: c62e9b3f-e523-4f04-a941-c6cf0d60c080
+        title:
+          type: string
+          description: A short summary of the problem that does not change from occurrence to occurrence of the problem.
+        source:
+          $ref: '#/components/schemas/Source'
+    Source:
+      type: object
+      description: An object containing references to the primary source of the error.
+      properties:
+        pointer:
+          type: string
+          description: JSON Pointer to the value in the request document that caused the error
+        parameter:
+          type: string
+          description: A string indicating which URI query parameter caused the error
+        header:
+          type: string
+          description: A string indicating the name of a single request header which caused the error

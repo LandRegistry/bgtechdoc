@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Estimated Completion Date - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/services/estimated_completion_date/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="Estimated Completion Date - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/services/estimated_completion_date/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Estimated Completion Date" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/services/estimated_completion_date/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
+    <div class="search-results__inner">
+      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
+      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
+      <div class="search-results__content"></div>
+    </div>
+  </div>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#estimated-completion-date"><span>Estimated Completion Date</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+      </li>
+      <li>
+        <a href="#application-types"><span>Application Types</span></a>
+      </li>
+      <li>
+        <a href="#process-flow"><span>Process Flow</span></a>
+        <ul>
+          <li>
+            <a href="#input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#output"><span>Output</span></a>
+          </li>
+          <li>
+            <a href="#process-flow-diagram"><span>Process Flow Diagram</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#service-working-hours"><span>Service Working Hours</span></a>
+      </li>
+      <li>
+        <a href="#access-control"><span>Access Control</span></a>
+      </li>
+      <li>
+        <a href="#rate-limiting"><span>Rate Limiting</span></a>
+      </li>
+      <li>
+        <a href="#schemas"><span>Schemas</span></a>
+      </li>
+      <li>
+        <a href="#error-and-status-codes"><span>Error and Status Codes</span></a>
+      </li>
+      <li>
+        <a href="#customer-test-stubs"><span>Customer Test Stubs</span></a>
+        <ul>
+          <li>
+            <a href="#customer-test-endpoint"><span>Customer Test Endpoint</span></a>
+          </li>
+          <li>
+            <a href="#scenarios-when-ecd-is-returned"><span>Scenarios when ECD is returned</span></a>
+          </li>
+          <li>
+            <a href="#scenarios-when-ecd-is-not-returned"><span>Scenarios when ECD is not returned</span></a>
+          </li>
+          <li>
+            <a href="#client-side-error-scenarios"><span>Client-side error scenarios</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+
+<div class="page-nav">
+<a href="../index.html">Back to Services</a>
+<a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="estimated-completion-date">Estimated Completion Date</h1>
+
+<hr>
+<h2 id="overview">Overview</h2>
+<p>The Estimated Completion Date (ECD) is a date by which the application is likely to be completed.
+It is not based on the individual application but is an estimate of when the majority (90%)
+of that application type will be completed.</p>
+<p>In order to retain parity with our Portal customer experience, we recommend that anyone integrating with this service refer to the estimated completion timeframes which can be found at <a href="https://www.gov.uk/guidance/hm-land-registry-estimated-completion-timeframes">https://www.gov.uk/guidance/hm-land-registry-estimated-completion-timeframes</a>. We also ask that you make your customers aware of the above URL.</p>
+<p>The ECD:</p>
+
+<ul>
+<li>Is calculated on and from the day an application is received by HMLR.</li>
+<li>May take up to an hour to be displayed after application submission.</li>
+<li>Is updated every 30 calendar days until the application is completed or cancelled.</li>
+<li>Is updated if HMLR correspondence is issued (first item of correspondence only).</li>
+</ul>
+
+<hr>
+<h2 id="application-types">Application Types</h2>
+<p>To use the ECD service you will need to know the application reference of the application you wish to find
+out the ECD for. If you do not know the application reference, please use the <a href="../application_enquiry/">application enquiry</a>
+service to obtain this.</p>
+<p>This service is for applications that change the register i.e. register create and register update
+applications only. This is denoted by the format of the application reference (you may also see this referred
+to as the ABR or HMLR reference):</p>
+<p><code>A999AAA</code> or <code>AAXXXXX</code></p>
+<p>Where:
+<code>A = [A-Z]</code>
+<code>9 = [0-9]</code>
+<code>X = [0-9A-F]</code></p>
+
+<hr>
+<h2 id="process-flow">Process Flow</h2>
+<p>To request the Estimated Completion Date of an application, you will need to input the Application Reference into
+your Case Management Software:</p>
+<h3 id="input">Input</h3>
+
+<ul>
+<li>Login details</li>
+<li>Application reference</li>
+</ul>
+<h3 id="output">Output</h3>
+
+<ul>
+<li>Application reference</li>
+<li>Application status</li>
+<li>Application priority date</li>
+<li>Estimated completion date status</li>
+<li>Estimated completion date</li>
+<li>Note: refer to the OpenAPI specification for further details. See <a href="openapi.html">link</a></li>
+</ul>
+<h3 id="process-flow-diagram">Process Flow Diagram</h3>
+
+<div style="padding-bottom: 15px">
+  <a href="../../images/estimated_completion_date/validation_diagram.png" target="_blank" >
+    <img src="../../images/estimated_completion_date/validation_diagram.png" style="width:700px;" alt="1. Estimate Completion Date Service version 1 flow diagram" title="Clicking this image will open the image in a new tab">
+  </a>
+</div>
+
+<hr>
+<h2 id="service-working-hours">Service Working Hours</h2>
+<p>The Business Gateway service is available between 6.30am and 11pm. Please note that you may find that the service
+processes your requests outside of these hours, but no support is available.</p>
+
+<hr>
+<h2 id="access-control">Access Control</h2>
+<p>To use this service you will need to be an existing Business Gateway user. You will also need to ensure that users
+have at least one of the following access role codes/collection IDs:
+- L1, L2, L3, WM1, WM2, WM5, C4, VS1, Z1, Z2</p>
+<p>If you would like to integrate with this service you can request access at
+<a href="https://www.gov.uk/guidance/apply-for-hm-land-registry-business-e-services">https://www.gov.uk/guidance/apply-for-hm-land-registry-business-e-services</a>.</p>
+
+<hr>
+<h2 id="rate-limiting">Rate Limiting</h2>
+<p>This service will be subject to rate limiting to ensure it performs well for all users. This is currently set at 60
+requests per business unit per minute which is subject to change at any time. Please contact us at
+<a href="mailto:Channelpartners@Landregistry.gov.uk">Channelpartners@Landregistry.gov.uk</a>.</p>
+
+<hr>
+<h2 id="schemas">Schemas</h2>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="openapi.html" class="govuk-!-font-size-24" id="openapi-yaml">OpenAPI Schema</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >YAML</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/estimated_completion_date/openapi.yaml"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<hr>
+<h2 id="error-and-status-codes">Error and Status Codes</h2>
+<p>When developing against the below, please use the status code. Error codes are currently in place but are subject to
+change or may disappear in the future.</p>
+
+<table class="govuk-table">
+  <caption>Error and Status Codes</caption>
+  <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">HTTP code</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Title</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Error code</th>
+          <th scope="col" class="govuk-table__header govuk-!-font-size-14">Detail</th>
+      </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">400</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Parameter is invalid</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">BG40001</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Application Reference has an invalid format</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">401</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Unauthorized</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">BG40004</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Invalid credentials or account is not active</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">403</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Forbidden</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">BG40005</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Incorrect user role or organisation is not permitted</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">404</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Application reference not found</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">BG40002</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">The Application reference provided does not exist</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">429</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Rate Limit Exceeded</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">BG40006</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Too many requests, please wait and try again</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">500</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">An error has occurred</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">BG50001</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Internal server error</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-font-size-14">504</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Internal service timeout</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">BG50004</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">The gateway has timed out</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+<h2 id="customer-test-stubs">Customer Test Stubs</h2>
+<h3 id="customer-test-endpoint">Customer Test Endpoint</h3>
+<p>The test environment can be accessed at:</p>
+<p><code>https://bgtest.landregistry.gov.uk/bg2test/api/v1/applications/{application_reference}/estimate-completion-date</code></p>
+<p>Where <code>{application_reference}</code> is replaced by the application reference you need to use.</p>
+<p>This requires a customer test certificate (this is different to the production client certificates)</p>
+<h3 id="scenarios-when-ecd-is-returned">Scenarios when ECD is returned</h3>
+<p>Scenario 1 - Application reference is valid and matches an application. ECD is provided.<br>
+ABR: X000XXX</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"application_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"X000XXX"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEIVED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"application_priority_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20/08/2021"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"estimated_completion_date_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AVAILABLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"estimated_completion_dates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17/03/2023"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"probability"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 2 - Application reference is valid, application is delayed. ECD is provided.<br>
+ABR: X001XXX</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"application_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"X001XXX"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELAYED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"application_priority_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19/01/2023"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"estimated_completion_date_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AVAILABLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"estimated_completion_dates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13/05/2024"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"probability"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="scenarios-when-ecd-is-not-returned">Scenarios when ECD is not returned</h3>
+<p>Scenario 3 - Application reference is valid, application is received. ECD status is exceeded.<br>
+ABR: X002XXX</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"application_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"X002XXX"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEIVED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"application_priority_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12/02/2022"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"estimated_completion_date_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCEEDED"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 4 - Application reference is valid and matches an application. ECD is not yet calculated.<br>
+ABR: X003XXX</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"application_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"X003XXX"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEIVED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"application_priority_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20/04/2022"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"estimated_completion_date_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CALCULATING"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 5 - Application reference is valid and matches a cancelled application. ECD status is unavailable.<br>
+ABR: X004XXX</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"application_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"X004XXX"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"application_priority_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23/08/2022"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"estimated_completion_date_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNAVAILABLE"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="client-side-error-scenarios">Client-side error scenarios</h3>
+<p>Scenario 6 - Application reference is invalid.<br>
+ABR: 005XXXX</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40001"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Application reference has an invalid format."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"trace_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c62e9b3f-e523-4f04-a941-c6cf0d60c080"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parameter is invalid."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><br></p>
+<p>Scenario 7 - Application reference is valid but does not match a HMLR application.<br>
+ABR: X006XXX</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40002"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The application provided does not exist."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"trace_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c62e9b3f-e523-4f04-a941-c6cf0d60c080"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Application reference not found."</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/bgtechdoc/accessibility/">Accessibility Statement</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>
