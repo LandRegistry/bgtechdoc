@@ -31,12 +31,12 @@
 
     <div class="app-pane">
       <div class="app-pane__header toc-open-disabled">
-        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
 
         <header class="govuk-header app-header" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-header__container--full-width">
     <div class="govuk-header__logo">
-      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+      <a href="../../" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__product-name">
           HM Land Registry Business Gateway Developer Pack
         </span>
@@ -57,7 +57,7 @@
       <div class="app-pane__body" data-module="in-page-navigation">
           <div class="app-pane__toc">
             <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
-              <div class="search" data-module="search">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
   <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
     <input type="hidden" name="as_sitesearch" value=""/>
     <label class="govuk-label search__label" for="search" aria-hidden="true">
@@ -71,13 +71,6 @@
       placeholder="Search">
     <button type="submit" class="search__button">Search</button>
   </form>
-  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
-    <div class="search-results__inner">
-      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
-      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
-      <div class="search-results__content"></div>
-    </div>
-  </div>
 </div>
 
               <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
@@ -122,7 +115,7 @@
             </div>
           </div>
 
-        <div class="app-pane__content toc-open-disabled">
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             
     <!---**************************************************************-->
@@ -132,7 +125,8 @@
 <a href="../../index.html">Back to Home</a>
 </div>
 <h1 id="e-document-registration-service">e-Document Registration Service</h1>
-<p><hr /></p>
+
+<hr>
 <h2 id="overview">Overview</h2>
 
 <p>Use this service to:</p>
@@ -144,8 +138,9 @@
 </ul>
 <h3 id="if-you-39-re-a-software-developer">If you&rsquo;re a software developer</h3>
 
-<P>Use this document to integrate data into your system.</P>
-<p><hr /></p>
+<p>Use this document to integrate data into your system.</p>
+
+<hr>
 <h2 id="process-flow">Process flow</h2>
 
 <div style="padding-bottom: 15px">
@@ -511,7 +506,8 @@ is detailed seperately. This requirements specification forms part of a larger s
     </table>
   </div>
 </details>
-<p><hr /></p>
+
+<hr>
 <h2 id="schemas">Schemas</h2>
 
 <div style="padding-bottom: 15px">
@@ -603,17 +599,21 @@ is detailed seperately. This requirements specification forms part of a larger s
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div >
-    <p><a href="../../documents/edrs/eDRS_v2_1_Interface_Spec.pdf" class="govuk-!-font-size-24">Interface specification</a></p>
+    <p><a href="../../documents/edrs/eDRS_v2_1_Interface_Spec_V1_3.pdf" class="govuk-!-font-size-24">Interface specification</a></p>
     <p><span class="govuk-body govuk-!-font-size-14" >PDF, 2039KB, 143 pages</span><br>
       This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_v2_1_Interface_Spec.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_v2_1_Interface_Spec_V1_3.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
   </div>
 </div>
 
 <p>The interface specification specifies the interface between Land Registry and a
 Business Gateway e-Document Registration Service customer.</p>
-<p><hr />
-<br /></p>
+
+<p><a class="govuk-!-font-size-24" href="https://www.gov.uk/government/publications/business-gateway-application-types/business-gateway-application-types">https://www.gov.uk/government/publications/business-gateway-application-types/business-gateway-application-types</a></p>
+
+<p>Please use the Business Gateway application types table to guide users as to the correct ServiceTitlesType to select (Dealing/Transfer of Part/New Lease/Lease Extension). This will help reduce the rejection/cancellation of applications.</p>
+
+<hr>
 <h2 id="vendor-testing">Vendor testing</h2>
 <h3 id="data">Data</h3>
 
@@ -775,7 +775,13 @@ Business Gateway e-Document Registration Service customer.</p>
 
         <ul class="govuk-footer__inline-list">
             <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="/bgtechdoc/accessibility/">Accessibility Statement</a>
+              <a class="govuk-footer__link" href="../../accessibility">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="../../support/glossary">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="../../support">Support</a>
             </li>
         </ul>
 

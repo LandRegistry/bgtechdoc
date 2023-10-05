@@ -31,12 +31,12 @@
 
     <div class="app-pane">
       <div class="app-pane__header toc-open-disabled">
-        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
 
         <header class="govuk-header app-header" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-header__container--full-width">
     <div class="govuk-header__logo">
-      <a href="/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+      <a href="../../" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__product-name">
           HM Land Registry Business Gateway Developer Pack
         </span>
@@ -57,7 +57,7 @@
       <div class="app-pane__body" data-module="in-page-navigation">
           <div class="app-pane__toc">
             <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
-              <div class="search" data-module="search">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
   <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
     <input type="hidden" name="as_sitesearch" value=""/>
     <label class="govuk-label search__label" for="search" aria-hidden="true">
@@ -71,13 +71,6 @@
       placeholder="Search">
     <button type="submit" class="search__button">Search</button>
   </form>
-  <div id="search-results" class="search-results" aria-hidden="true" role="dialog" aria-labelledby="search-results-title">
-    <div class="search-results__inner">
-      <button class="search-results__close">Close<span class="search-results__close-label"> search results</span></button>
-      <h2 id="search-results-title" class="search-results__title" aria-live="assertive" role="alert">Results</h2>
-      <div class="search-results__content"></div>
-    </div>
-  </div>
 </div>
 
               <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
@@ -133,7 +126,7 @@
             </div>
           </div>
 
-        <div class="app-pane__content toc-open-disabled">
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             
     <!---**************************************************************-->
@@ -381,12 +374,17 @@ https://bgtest.landregistry.gov.uk/bg2test/s1/v1/titles/&lt;title_number&gt;/off
       <td class="govuk-table__cell govuk-!-font-size-14">Malformed invalid schema. Title is invalid</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header govuk-!-font-size-14">BG40003</th>
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">BG40004</th>
       <td class="govuk-table__header govuk-!-font-size-14">401</td>
       <td class="govuk-table__cell govuk-!-font-size-14">Unauthorised</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header govuk-!-font-size-14">BG40006</th>
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">BG40005</th>
+      <td class="govuk-table__header govuk-!-font-size-14">403</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Forbidden</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">BG40002</th>
       <td class="govuk-table__header govuk-!-font-size-14">404</td>
       <td class="govuk-table__cell govuk-!-font-size-14">Title not found. <br />
         This may be due to the title number being inputted incorrectly- please
@@ -394,7 +392,7 @@ https://bgtest.landregistry.gov.uk/bg2test/s1/v1/titles/&lt;title_number&gt;/off
         not have been used historically or has not yet been allocated. </td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header govuk-!-font-size-14">BG40002</th>
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">BG40006</th>
       <td class="govuk-table__header govuk-!-font-size-14">429</td>
       <td class="govuk-table__cell govuk-!-font-size-14">Too many requests, please wait and try again </td>
     </tr>
@@ -410,13 +408,13 @@ https://bgtest.landregistry.gov.uk/bg2test/s1/v1/titles/&lt;title_number&gt;/off
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header govuk-!-font-size-14">BG50003</th>
-      <td class="govuk-table__header govuk-!-font-size-14">500</td>
-      <td class="govuk-table__cell govuk-!-font-size-14">Internal server error</td>
+      <td class="govuk-table__header govuk-!-font-size-14">503</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Service Unavailable</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header govuk-!-font-size-14">BG50004</th>
-      <td class="govuk-table__header govuk-!-font-size-14">503</td>
-      <td class="govuk-table__cell govuk-!-font-size-14">Service unavailable</td>
+      <td class="govuk-table__header govuk-!-font-size-14">504</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Gateway Timeout</td>
     </tr>
   </tbody>
 </table>
@@ -529,7 +527,13 @@ subject to future change or may disappear in the future – you may not want to 
 
         <ul class="govuk-footer__inline-list">
             <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="/bgtechdoc/accessibility/">Accessibility Statement</a>
+              <a class="govuk-footer__link" href="../../accessibility">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="../../support/glossary">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="../../support">Support</a>
             </li>
         </ul>
 
