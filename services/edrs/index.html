@@ -36,7 +36,7 @@
         <header class="govuk-header app-header" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-header__container--full-width">
     <div class="govuk-header__logo">
-      <a href="../../" class="govuk-header__link govuk-header__link--homepage">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__product-name">
           HM Land Registry Business Gateway Developer Pack
         </span>
@@ -84,6 +84,17 @@
         <ul>
           <li>
             <a href="#if-you-39-re-a-software-developer"><span>If you’re a software developer</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#release-notes"><span>Release notes</span></a>
+        <ul>
+          <li>
+            <a href="#19th-november-2023"><span>19th November 2023</span></a>
+          </li>
+          <li>
+            <a href="#upcoming"><span>Upcoming</span></a>
           </li>
         </ul>
       </li>
@@ -141,6 +152,29 @@
 <p>Use this document to integrate data into your system.</p>
 
 <hr>
+<h2 id="release-notes">Release notes</h2>
+<h3 id="19th-november-2023">19th November 2023</h3>
+
+<ul>
+<li>Added charge date validation with error code <code>bg.chargedate.invalid</code>.</li>
+<li>Added charge MDRef validation with error code <code>bg.mdref.invalid</code>.</li>
+<li>Added charge MDRef validation with error code <code>bg.mdref.validation</code>.</li>
+<li>Added charge fee validation with error code <code>bg.feeinpence.invalid</code>.</li>
+<li>Added fee mismatch validation with error code <code>bg.drs.feemismatch.invalid</code>.
+
+<ul>
+<li><p style="margin: 5px 0px">Will be renamed to <code>bg.feemismatch.invalid</code> in the next release.</p></li>
+</ul></li>
+</ul>
+<h3 id="upcoming">Upcoming</h3>
+
+<ul>
+<li>Discharge fee validation with error code <code>bg.feeinpence.discharge.invalid</code>.</li>
+<li>Discharge with Charge fee mismatch validation with error code <code>bg.feemismatch.charge.invalid</code>.</li>
+<li>Rename fee mismatch validation error code to <code>bg.feemismatch.invalid</code>.</li>
+</ul>
+
+<hr>
 <h2 id="process-flow">Process flow</h2>
 
 <div style="padding-bottom: 15px">
@@ -169,8 +203,8 @@ set of data items that conforms to the XML Schema defined for the service reques
 is detailed separately. This is the primary requirements specification for this service.</p>
 
 <div style="padding-bottom: 15px">
-  <a href="../../images/edrs_1.png" target="_blank">
-    <img src="../../images/edrs_1.png" alt="An image of an eDRS BG (Business Gateway) request flowchart" title="Clicking this image will open the image in a new tab" style="width:700px;">
+  <a href="../../images/edrs_BG_request.png" target="_blank">
+    <img src="../../images/edrs_BG_request.png" alt="An image of an eDRS BG (Business Gateway) request flowchart" title="Clicking this image will open the image in a new tab" style="width:700px;">
   </a>
 </div>
 
@@ -385,6 +419,62 @@ is detailed separately. This is the primary requirements specification for this 
           <td class="govuk-table__cell  govuk-!-font-size-14">Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a multi title district title. Corresponding validation failure message- MSG-BG-143</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-143</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Applications for a New Lease, Lease Extension or a Transfer of Part against a title that has multiple districts associated with it are not supported.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-!-font-size-14">BRL-DRSBG-258</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">Charge Date</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">bg.chargedate.invalid</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">Application Charge &lt;X&gt; Charge date must not be in the future</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">MSG-BG-145</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">The date on the charge deed must not post date the application submission date.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-!-font-size-14">BRL-DRSBG-259</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">Fees</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">bg.feeinpence.invalid</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">Application Charge &lt;X&gt; FeeinPence must not be below 2000</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">MSG-BG-146</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">The minimum fee for an application to register a charge is £20 - for more information on scale 2 registration services&rsquo; fees see the Land Registration Fee Order 2021, articles 4 and 5.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-!-font-size-14">BRL-DRSBG-260</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">Fees</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">bg.feemismatch.invalid</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">FeeinPence must match TotalFeeinPence</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">MSG-BG-147</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">For an application with a single transaction, the FeeinPence field must match TotalFeeinPence field.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-!-font-size-14">BRL-DRSBG-261</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">MDRef</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">bg.mdref.invalid</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">Application Charge &lt;X&gt; MDRef &lt;X&gt; is invalid</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">MSG-BG-148</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">The mortgage document reference does not follow the required format. The input for non-digital mortgages should be in the format of &lsquo;MD{digits}{letter}&rsquo;, where {digits} is 3 or 4 digits, and {letter} is a single letter. The input for digital mortgages should be in the format of &lsquo;e-MD{digits}{letter}&rsquo;, where {digits} is 3 or 4 digits, and {letter} is a single letter.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-!-font-size-14">BRL-DRSBG-262</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">MDRef</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">bg.mdref.validation</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">Application Charge &lt;X&gt; MDRef &lt;X&gt; validation failed</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">BSG-BG-149</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">The mortgage document reference has not been found within the approved commercial arrangements library.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-!-font-size-14">BRL-DRSBG-263</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">Fees</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">bg.feeinpence.discharge.invalid</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">Application Discharge &lt;X&gt; FeeinPence must be 0</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">MSG-BG-150</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">The fee for a discharge application must be &lsquo;0&rsquo;.</td>
+        </tr>
+        <tr>
+          <td class="govuk-table__cell govuk-!-font-size-14">BRL-DRSBG-264</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">Fees</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">bg.feemismatch.charge.invalid</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">FeeinPence of charge must match TotalFeeinPence</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">MSG-BG-151</td>
+          <td class="govuk-table__cell govuk-!-font-size-14">For an application with a single charge and one or more discharges, the FeeinPence field for the charge must match TotalFeeinPence field.</td>
         </tr>
       </tbody>
     </table>
@@ -775,13 +865,13 @@ Business Gateway e-Document Registration Service customer.</p>
 
         <ul class="govuk-footer__inline-list">
             <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="../../accessibility">Accessibility Statement</a>
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
             </li>
             <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="../../support/glossary">Glossary</a>
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
             </li>
             <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="../../support">Support</a>
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
             </li>
         </ul>
 
