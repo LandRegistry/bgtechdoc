@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.1.0
 info:
   title: Official Search of Whole with Data
   description: An Official Search of Whole with Data protects agreements between buyers, sellers and lenders. The Official Search of Whole with Data RESTful API expands on the existing Official Search of Whole SOAP API.
@@ -396,7 +396,9 @@ components:
         continue_application_if: 
           type: array
           minimum: 0
-          example: "[], [NAME_MISMATCH_ON_REGISTER, DEVELOPER_TITLE]"
+          examples:
+            - ["NAME_MISMATCH_ON_REGISTER", "DEVELOPER_TITLE"]
+            - []
           items:
             type: string
             enum:
