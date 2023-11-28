@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://businessgateway.landregistry.gov.uk/bg2/s1/v1"
+      "url": "https://businessgateway.landregistry.gov.uk/bg2/api/v2"
     }
   ],
   "security": [
@@ -420,7 +420,8 @@
                             "date": "2020-12-01",
                             "filed_under": "AB000000",
                             "availability": "available for immediate download",
-                            "availability_code": "IMMEDIATE"
+                            "availability_code": "IMMEDIATE",
+                            "plan_only": true
                           }
                         ],
                         "register": {
@@ -482,7 +483,8 @@
                             "date": "2020-12-01",
                             "filed_under": "AB000000",
                             "availability": "available for immediate download",
-                            "availability_code": "IMMEDIATE"
+                            "availability_code": "IMMEDIATE",
+                            "plan_only": false
                           }
                         ],
                         "register": {
@@ -544,7 +546,8 @@
                             "date": "2020-12-01",
                             "filed_under": null,
                             "availability": "available for immediate download",
-                            "availability_code": "IMMEDIATE"
+                            "availability_code": "IMMEDIATE",
+                            "plan_only": false
                           }
                         ],
                         "register": {
@@ -656,7 +659,8 @@
                             "date": "2020-12-01",
                             "filed_under": "AB000000",
                             "availability": "available for immediate download",
-                            "availability_code": "IMMEDIATE"
+                            "availability_code": "IMMEDIATE",
+                            "plan_only": false
                           }
                         ],
                         "register": {
@@ -819,7 +823,7 @@
                       "errors": [
                         {
                           "error_code": "BG40002",
-                          "error_message": "title is not found",
+                          "error_message": "Title not found",
                           "http_status": "404",
                           "timestamp": "2018-11-13T20:20:39+00:00",
                           "trace_id": "eeb2e6aa-8856-4762-8d2f-f9ee6c0667bd"
@@ -870,7 +874,7 @@
                   "errors": [
                     {
                       "error_code": "BG50004",
-                      "error_message": "Gateway timeout",
+                      "error_message": "Internal service timeout",
                       "http_status": "504",
                       "timestamp": "2020-11-13T20:20:58+00:00",
                       "trace_id": "9abcfbe7-c222-490a-a6f1-838276f1a7f7"
@@ -908,7 +912,8 @@
           "entry_numbers",
           "filed_under",
           "availability",
-          "availability_code"
+          "availability_code",
+          "plan_only"
         ],
         "properties": {
           "type": {
@@ -950,6 +955,10 @@
           },
           "availability_code": {
             "$ref": "#/components/schemas/OfficialCopyAvailabilityCode"
+          },
+          "plan_only": {
+            "description": "The document only contains a plan, not the complete document",
+            "type": "boolean"
           }
         }
       },
@@ -1025,33 +1034,52 @@
         "type": "object",
         "description": "An error response for an unsuccessful request.",
         "required": [
-          "error_code",
-          "error_message"
+          "code",
+          "detail"
         ],
         "properties": {
-          "error_code": {
+          "code": {
             "type": "string",
             "description": "The code related to this error. See documentation for more information."
           },
-          "error_message": {
+          "detail": {
             "type": "string",
             "description": "The descriptive reason behind an error."
           },
-          "http_status": {
+          "status": {
             "type": "string",
             "description": "The http status code related to this error.",
             "example": "503"
-          },
-          "timestamp": {
-            "description": "The UTC timestamp of when the error occured.",
-            "type": "string",
-            "format": "date-time",
-            "example": "2021-04-04 15:29:51:405Z"
           },
           "trace_id": {
             "description": "A trace identifier for this request.",
             "type": "string",
             "example": "c62e9b3f-e523-4f04-a941-c6cf0d60c080"
+          },
+          "title": {
+            "type": "string",
+            "description": "A short summary of the problem that does not change from occurrence to occurrence of the problem."
+          },
+          "source": {
+            "$ref": "#/components/schemas/Source"
+          }
+        }
+      },
+      "Source": {
+        "type": "object",
+        "description": "An object containing references to the primary source of the error.",
+        "properties": {
+          "pointer": {
+            "type": "string",
+            "description": "JSON Pointer to the value in the request document that caused the error."
+          },
+          "parameter": {
+            "type": "string",
+            "description": "A string indicating which URI query parameter caused the error."
+          },
+          "header": {
+            "type": "string",
+            "description": "A string indicating the name of a single request header which caused the error."
           }
         }
       },

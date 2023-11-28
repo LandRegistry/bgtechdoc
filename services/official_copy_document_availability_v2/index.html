@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Official Copy Document Availability V2 - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/services/official_copy_document_availability_v2/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="Official Copy Document Availability V2 - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/services/official_copy_document_availability_v2/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Official Copy Document Availability V2" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/services/official_copy_document_availability_v2/" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+        <strong class="govuk-tag">Alpha</strong>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#official-copy-document-availability-v2"><span>Official Copy Document Availability V2</span></a>
+    <ul>
+      <li>
+        <a href="#overview"><span>Overview</span></a>
+      </li>
+      <li>
+        <a href="#release-notes"><span>Release notes</span></a>
+        <ul>
+          <li>
+            <a href="#30th-november-2023"><span>30th November 2023</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#process-flow"><span>Process flow</span></a>
+        <ul>
+          <li>
+            <a href="#input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#output"><span>Output</span></a>
+          </li>
+          <li>
+            <a href="#process-flow-diagram"><span>Process flow diagram</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#service-working-hours"><span>Service Working Hours</span></a>
+      </li>
+      <li>
+        <a href="#rate-limiting"><span>Rate limiting</span></a>
+      </li>
+      <li>
+        <a href="#access-control"><span>Access control</span></a>
+      </li>
+      <li>
+        <a href="#customer-testing"><span>Customer testing</span></a>
+      </li>
+      <li>
+        <a href="#status-codes"><span>Status codes</span></a>
+      </li>
+      <li>
+        <a href="#schemas"><span>Schemas</span></a>
+      </li>
+      <li>
+        <a href="#vendor-testing"><span>Vendor testing</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+
+<div class="page-nav">
+<a href="../index.html">Back to Services</a>
+<a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="official-copy-document-availability-v2">Official Copy Document Availability V2</h1>
+
+<hr>
+<p>For V1 of the official copy document availability click <a href="../official_copy_document_availability_v1/">here</a>.</p>
+<h2 id="overview">Overview</h2>
+<p>Check which register referred documents are available for immediate download.
+  Use a title number to find out the Official Copy Document Availability status
+  via a RESTful API. When you know what is available, you can order using the
+  <a href="../official_copy_title_known/">Official Copy Title Known</a> service.</p>
+
+<hr>
+<h2 id="release-notes">Release notes</h2>
+<h3 id="30th-november-2023">30th November 2023</h3>
+
+<ul>
+<li>Added an additional <code>plan_only</code> flag to the <code>Referred Document Availability</code> items, which if true states the document only contains a plan, not the complete document.
+
+<ul>
+<li>Added to new server url for <code>bg2/api</code> only.</li>
+</ul></li>
+<li>Updated rate limiting method.
+
+<ul>
+<li>Added response header <code>x-ratelimit-remaining</code> to identify remaining limit.</li>
+</ul></li>
+<li>Updated error codes to align with other newer services for consistancy.</li>
+</ul>
+<h4 id="error-code-changes">Error Code Changes</h4>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Status Code</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Old Error Code</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">New Error Code</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Explanation</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">401</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40003</td>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40004</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Unauthorised</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">403</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40003</td>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40005</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Forbidden</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">404</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40006</td>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40002</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Title not found</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">429</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40002</td>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40006</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Too many requests, please wait and try again</td>
+    </tr>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">503</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG50004</td>
+      <td class="govuk-table__header govuk-!-font-size-14">BG50003</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Service unavailable</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">504</th>
+      <td class="govuk-table__header govuk-!-font-size-14">-</td>
+      <td class="govuk-table__header govuk-!-font-size-14">BG50004</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Internal service timeout</td>
+    </tr>
+  </tbody>
+</table>
+<h4 id="known-issues">Known Issues</h4>
+
+<ul>
+<li>Rate limiting will return a <code>429</code> but will not return a response body.</li>
+</ul>
+<h2 id="process-flow">Process flow</h2>
+<p>To request the availability of a document, you will need to input the title number into your Case
+Management Software:</p>
+<h3 id="input">Input</h3>
+
+<ul>
+<li>login details</li>
+<li>title number</li>
+</ul>
+<h3 id="output">Output</h3>
+
+<ul>
+<li>a list of register referred documents, their availability for download and whether or not these documents are only the plan.</li>
+<li>availability of Title Register and Title Plan documents</li>
+</ul>
+<h3 id="process-flow-diagram">Process flow diagram</h3>
+
+<div style="padding-bottom: 15px">
+  <a href="../../images/oc_flow.png" target="_blank" >
+    <img src="../../images/oc_flow.png" style="width:700px;" alt="Official Copy Document Availability Service version 2 flow diagram" title="Clicking this image will open the image in a new tab">
+  </a>
+</div>
+
+<hr>
+<h2 id="service-working-hours">Service Working Hours</h2>
+<p>The Business Gateway service is available between 6.30am and 11pm. Please note that you may find that the
+service processes your requests outside of these hours, but no support is available.</p>
+
+<hr>
+<h2 id="rate-limiting">Rate limiting</h2>
+<p>This service will be subject to rate limiting to ensure it performs well for all users. This is currently set at 75
+requests per customer per minute which is subject to change at any time. Please contact us at
+<a href="mailto:ChannelPartners@landregistry.gov.uk">ChannelPartners@landregistry.gov.uk</a>.</p>
+
+<summary><b>Rate limit Headers:</b></summary>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Burst:</th>
+      <td class="govuk-table__cell govuk-!-font-size-14"><i>X-RateLimit-Burst-Capacity</i></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Replenish:</th>
+      <td class="govuk-table__cell govuk-!-font-size-14"><i>X-RateLimit-Replenish-Rate</i></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Request:</th>
+      <td class="govuk-table__cell govuk-!-font-size-14"><i>X-RateLimit-Requested-Tokens</i></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Remain:</th>
+      <td class="govuk-table__cell govuk-!-font-size-14"><i>X-RateLimit-Remaining</i></td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="access-control">Access control</h2>
+<p>To use this service you will need to be an existing Business Gateway user. If you have an active user account,
+you will be able to access the new service using your existing credentials. If you would like to sign up to our
+service you can request access at <a href="https://www.gov.uk/guidance/apply-for-hm-land-registry-business-e-services">https://www.gov.uk/guidance/apply-for-hm-land-registry-business-e-services</a>.</p>
+
+<hr>
+<h2 id="customer-testing">Customer testing</h2>
+<p>Below, you will find the OpenAPI spec for the customer test environment and five stubs which you may build
+against. The test environment can be accessed at:<br>
+<code>
+https://bgtest.landregistry.gov.uk/bg2test/api/v2/titles/&lt;title_number&gt;/official-copies/availability
+</code></p>
+<p>Where <code>&lt;title_number&gt;</code> is replaced by the title number you need to use.</p>
+<p><a href="#openapi-json">See openapi.json</a></p>
+<p>Please find scenarios mapped to the test stubs as follows:</p>
+
+<summary>Example Title Number- DT501578</summary>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Title</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">Closed or Cancelled</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Register</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Title Plan</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Available Immediately</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Requiring Further Investigation</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">7 different docs (some filed under other Title Numbers)</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Not Available</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">4 different docs </td>
+    </tr>
+  </tbody>
+</table>
+<p><a href="#DT501578">See DT501578.json</a></p>
+
+<summary>Example Title Number- GR514441</summary>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Title</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">Open</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Register</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Title Plan</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Available Immediately</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">6 different docs (some filed under other Title Numbers)</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Requiring Further Investigation</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">4 (some filed under other Title Numbers) </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Not Available</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">0</td>
+    </tr>
+  </tbody>
+</table>
+<p><a href="#GR514441">See GR514441.json</a></p>
+
+<summary>Example Title Number GR514442</summary>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Title</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">Open</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Register</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Title Plan</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Available Immediately</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">12 different docs</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Requiring Further Investigation</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">0 docs</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Not Available</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">0 docs</td>
+    </tr>
+  </tbody>
+</table>
+<p><a href="#GR514442">See GR514442.json</a></p>
+
+<summary>Example Title Number GR514443</summary>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Title</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">Open</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Register</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">Yes (Pending)</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Title Plan</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">Yes (Pending)</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Available Immediately</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">1 doc</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Requiring Further Investigation</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">7 different docs (some filed under other Title Numbers) </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Not Available</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">4 different docs </td>
+    </tr>
+  </tbody>
+</table>
+<p><a href="#GR514443">See GR514443.json</a></p>
+
+<summary>Example Title Number GR519468</summary>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Title</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">Closed and Continued- Provide new Title Number</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Register</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Title Plan</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">No</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Available Immediately</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">0</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Requiring Further Investigation</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">0</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">Documents Referred- Not Available</th>
+      <td class="govuk-table__cell govuk-!-font-size-14">0</td>
+    </tr>
+  </tbody>
+</table>
+<p><a href="#GR519468">See GR519468.json</a></p>
+
+<hr>
+<h2 id="status-codes">Status codes</h2>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Status Code</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Error Code</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Explanation</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">400</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40001</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Malformed invalid schema. Title is invalid</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">401</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40004</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Unauthorised</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">403</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40005</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Forbidden</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">404</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40002</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Title not found. <br />
+        This may be due to the title number being inputted incorrectly- please
+        check and try again. Alternatively, the title number you have entered may
+        not have been used historically or has not yet been allocated. </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">429</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG40006</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Too many requests, please wait and try again </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">500</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG50001</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Internal server error</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">500</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG50002</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Internal server error</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">503</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG50003</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Service unavailable</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-font-size-14">504</th>
+      <td class="govuk-table__header govuk-!-font-size-14">BG50004</td>
+      <td class="govuk-table__cell govuk-!-font-size-14">Internal service timeout</td>
+    </tr>
+  </tbody>
+</table>
+<p>When developing against the above, please use the status code. Error codes are currently in place but are
+subject to future change or may disappear in the future – you may not want to build against these.</p>
+
+<hr>
+<h2 id="schemas">Schemas</h2>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div >
+    <p><a href="openapi.html" class="govuk-!-font-size-24" id="openapi-json">OpenAPI Schema</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/doc_availability/v2/openapi.json"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<hr>
+<h2 id="vendor-testing">Vendor testing</h2>
+
+<p>Sample JSON files.</p>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/doc_availability/v2/OpenAPI-CustTest.json" class="govuk-!-font-size-24">OpenAPI- Cust Test</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/doc_availability/v2/OpenAPI-CustTest.json"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/doc_availability/v2/DT501578.json" id="DT501578" class="govuk-!-font-size-24">DT501578</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/doc_availability/v2/DT501578.json"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/doc_availability/v2/GR514441.json" id="GR514441" class="govuk-!-font-size-24">GR514441</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/doc_availability/v2/GR514441.json"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/doc_availability/v2/GR514442.json" id="GR514442" class="govuk-!-font-size-24">GR514442</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/doc_availability/v2/GR514442.json"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/doc_availability/v2/GR514443.json" id="GR514443" class="govuk-!-font-size-24">GR514443</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/doc_availability/v2/GR514443.json"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+<div style="padding-bottom: 15px">
+  <div style="float:left; padding-right: 15px">
+    <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
+  </div>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/doc_availability/GR519468.json" id="GR519468" class="govuk-!-font-size-24">GR519468</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >JSON</span><br>
+      This file may not be suitable for users of assistive technology.</p>
+    <p><a href="../../documents/doc_availability/GR519468.json"  class="govuk-!-font-size-19" download >Download</a></p>
+  </div>
+</div>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

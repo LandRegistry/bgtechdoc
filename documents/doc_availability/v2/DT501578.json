@@ -1,0 +1,176 @@
+{
+    "data": {
+        "title_status": "According to our records this title number has been cancelled (or closed).",
+        "title_status_code": "CLOSED",
+        "title_number": "DT501578",
+        "applications_pending": false,
+        "referred_to_documents": [
+            {
+                "type": "Sub-charge",
+                "type_code": "SUB_CHARGE",
+                "entry_numbers": [
+                    "C11",
+                    "C12",
+                    "C13"
+                ],
+                "date": "2008-07-01",
+                "filed_under": "DT501578",
+                "availability": "not available",
+                "availability_code": "UNAVAILABLE",
+                "plan_only": false
+            },
+            {
+                "type": "Charge",
+                "type_code": "CHARGE",
+                "entry_numbers": [
+                    "C8",
+                    "C9",
+                    "C10"
+                ],
+                "date": "2008-07-01",
+                "filed_under": "DT501578",
+                "availability": "not available",
+                "availability_code": "UNAVAILABLE",
+                "plan_only": false
+            },
+            {
+                "type": "Charge",
+                "type_code": "CHARGE",
+                "entry_numbers": [
+                    "C4",
+                    "C5",
+                    "C6",
+                    "C9"
+                ],
+                "date": "2008-07-01",
+                "filed_under": "DT501578",
+                "availability": "requires further investigation",
+                "availability_code": "MANUAL",
+                "plan_only": false
+            },
+            {
+                "type": "Charge",
+                "type_code": "CHARGE",
+                "entry_numbers": [
+                    "C2",
+                    "C3"
+                ],
+                "date": "2008-07-01",
+                "filed_under": "DT501578",
+                "availability": "requires further investigation",
+                "availability_code": "MANUAL",
+                "plan_only": false
+            },
+            {
+                "type": "Conveyance",
+                "type_code": "CONVEYANCE",
+                "entry_numbers": [
+                    "A3"
+                ],
+                "date": "2008-06-19",
+                "filed_under": "DT501578",
+                "availability": "requires further investigation",
+                "availability_code": "MANUAL",
+                "plan_only": false
+            },
+            {
+                "type": "Conveyance",
+                "type_code": "CONVEYANCE",
+                "entry_numbers": [
+                    "A5",
+                    "A6"
+                ],
+                "date": "2008-06-19",
+                "filed_under": "DT501578",
+                "availability": "not available",
+                "availability_code": "UNAVAILABLE",
+                "plan_only": false
+            },
+            {
+                "type": "Transfer",
+                "type_code": "TRANSFER",
+                "entry_numbers": [
+                    "E7"
+                ],
+                "date": "1946-07-28",
+                "filed_under": "DT501578",
+                "availability": "not available",
+                "availability_code": "UNAVAILABLE",
+                "plan_only": false
+            },
+            {
+                "type": "Transfer",
+                "type_code": "TRANSFER",
+                "entry_numbers": [
+                    "C10"
+                ],
+                "date": "1957-07-17",
+                "filed_under": "DT501578",
+                "availability": "requires further investigation",
+                "availability_code": "MANUAL",
+                "plan_only": false
+            },
+            {
+                "type": "Lease",
+                "type_code": "LEASE",
+                "entry_numbers": [
+                    "C33"
+                ],
+                "date": "2010-05-07",
+                "filed_under": "DT501578",
+                "availability": "requires further investigation",
+                "availability_code": "MANUAL",
+                "plan_only": false
+            },
+            {
+                "type": "Lease",
+                "type_code": "LEASE",
+                "entry_numbers": [
+                    "C35"
+                ],
+                "filed_under": "DT501583",
+                "availability": "requires further investigation",
+                "availability_code": "MANUAL",
+                "plan_only": false
+            },
+            {
+                "type": "Lease",
+                "type_code": "LEASE",
+                "entry_numbers": [
+                    "C21"
+                ],
+                "date": "2005-11-07",
+                "filed_under": "DT501583",
+                "availability": "requires further investigation",
+                "availability_code": "MANUAL",
+                "plan_only": true
+            },
+            {
+                "type": "Lease",
+                "type_code": "LEASE",
+                "entry_numbers": [
+                    "C35"
+                ],
+                "date": "2009-02-18",
+                "filed_under": "DT501583",
+                "availability": "available for immediate download",
+                "availability_code": "IMMEDIATE",
+                "plan_only": false
+            }
+        ],
+        "register": {
+            "type": "register",
+            "type_code": "REGISTER",
+            "availability": "not available",
+            "availability_code": "UNAVAILABLE",
+            "backdated": false
+        },
+        "title_plan": {
+            "type": "plan",
+            "type_code": "TITLEPLAN",
+            "availability": "not available",
+            "availability_code": "UNAVAILABLE",
+            "backdated": false
+        }
+    }
+}

@@ -1,0 +1,1131 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Official Copy Document Availability Service",
+    "description": "A specification for the HMLR Business Gateway official copies document availability service.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://businessgateway.landregistry.gov.uk/bg2/api/v1"
+    }
+  ],
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Official Copies",
+      "description": "Document information related to a title."
+    }
+  ],
+  "paths": {
+    "/titles/{title_number}/official-copies/availability": {
+      "get": {
+        "operationId": "getOfficialCopiesAvailability",
+        "tags": [
+          "Official Copies"
+        ],
+        "summary": "Get document availability associated with a title number.",
+        "description": "Returns the OC1 document availability (title register and title plan) and a collection of OC2 document availability (referred to in the register) for the provided title number.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TitleNumberParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "data"
+                  ],
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/OfficialCopiesResponse"
+                    }
+                  }
+                },
+                "examples": {
+                  "1: Title is valid and has the register immediately available": {
+                    "value": {
+                      "data": {
+                        "title_status": "Title number is valid.",
+                        "title_status_code": "VALID",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Title Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "2: Title is valid and does not have the register immediately available": {
+                    "value": {
+                      "data": {
+                        "title_status": "Title number is valid.",
+                        "title_status_code": "VALID",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "requires further investigation",
+                          "availability_code": "MANUAL",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "3: Title is valid and has the title plan immediately available": {
+                    "value": {
+                      "data": {
+                        "title_status": "Title number is valid.",
+                        "title_status_code": "VALID",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "4: Title is valid and does not have the title plan immediately available": {
+                    "value": {
+                      "data": {
+                        "title_status": "Title number is valid.",
+                        "title_status_code": "VALID",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "requires further investigation",
+                          "availability_code": "MANUAL",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "5: Title is valid, has pending correction applications against it and has the register immediately available": {
+                    "value": {
+                      "data": {
+                        "title_status": "There is at least one pending application for registration against this title number. You may want to view the day list.",
+                        "title_status_code": "PENDING_APPLICATIONS",
+                        "title_number": "AB000000",
+                        "applications_pending": true,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "6: Title is valid, has pending correction applications against it and does not have the register immediately available": {
+                    "value": {
+                      "data": {
+                        "title_status": "There is at least one pending application for registration against this title number. You may want to view the day list.",
+                        "title_status_code": "PENDING_APPLICATIONS",
+                        "title_number": "AB000000",
+                        "applications_pending": true,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "requires further investigation",
+                          "availability_code": "MANUAL",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "7: Title is valid, has pending correction applications against it and has the title plan immediately available": {
+                    "value": {
+                      "data": {
+                        "title_status": "There is at least one pending application for registration against this title number. You may want to view the day list.",
+                        "title_status_code": "PENDING_APPLICATIONS",
+                        "title_number": "AB000000",
+                        "applications_pending": true,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "8: Title is valid, has pending correction applications against it and does not have the title plan immediately available": {
+                    "value": {
+                      "data": {
+                        "title_status": "There is at least one pending application for registration against this title number. You may want to view the day list.",
+                        "title_status_code": "PENDING_APPLICATIONS",
+                        "title_number": "AB000000",
+                        "applications_pending": true,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "requires further investigation",
+                          "availability_code": "MANUAL",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "9: Title is valid and has pending non-correction applications against it": {
+                    "value": {
+                      "data": {
+                        "title_status": "There is at least one pending application for registration against this title number. You may want to view the day list.",
+                        "title_status_code": "PENDING_APPLICATIONS",
+                        "title_number": "AB000000",
+                        "applications_pending": true,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": true
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": true
+                        }
+                      }
+                    }
+                  },
+                  "10: Title is valid and closed/cancelled": {
+                    "value": {
+                      "data": {
+                        "title_status": "According to our records this title number has been cancelled (or closed).",
+                        "title_status_code": "CLOSED",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "11: Title is valid, closed and continued under another title number": {
+                    "value": {
+                      "data": {
+                        "title_status": "The title number you entered, has been closed and continued under another title number.",
+                        "title_status_code": "CLOSED_AND_CONTINUED",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "continued_under_title_number": "AB000001",
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "12: Title is valid but not computerised": {
+                    "value": {
+                      "data": {
+                        "title_status": "No computerised register held for this title. Please check the title number.",
+                        "title_status_code": "NOT_COMPUTERISED",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "13: Title is valid, is a pending new title or has pending dealings against it": {
+                    "value": {
+                      "data": {
+                        "title_status": "This is a pending new title number allocated for a dealing with the whole. Only document requests can be accepted against it.",
+                        "title_status_code": "PENDING_DEALING",
+                        "title_number": "AB000000",
+                        "applications_pending": true,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "14: Title is valid but is a scheme title": {
+                    "value": {
+                      "data": {
+                        "title_status": "This is a scheme title number allocated prior to receipt of the first application. Only document requests can be accepted against it.",
+                        "title_status_code": "SCHEME",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability": "not available",
+                          "availability_code": "UNAVAILABLE",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "15: Title is valid and has register referred to documents": {
+                    "value": {
+                      "data": {
+                        "title_status": "Title number is valid.",
+                        "title_status_code": "VALID",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [
+                          {
+                            "type": "Abstract",
+                            "type_code": "ABSTRACT",
+                            "entry_numbers": [
+                              "A1"
+                            ],
+                            "date": "2020-12-01",
+                            "filed_under": "AB000000",
+                            "availability": "available for immediate download",
+                            "availability_code": "IMMEDIATE"
+                          }
+                        ],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "16: Title is valid and has no register referred to documents": {
+                    "value": {
+                      "data": {
+                        "title_status": "Title number is valid.",
+                        "title_status_code": "VALID",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "17: Title is valid, closed/cancelled and has register referred to documents": {
+                    "value": {
+                      "data": {
+                        "title_status": "According to our records this title number has been cancelled (or closed).",
+                        "title_status_code": "CLOSED",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [
+                          {
+                            "type": "Abstract",
+                            "type_code": "ABSTRACT",
+                            "entry_numbers": [
+                              "A1"
+                            ],
+                            "date": "2020-12-01",
+                            "filed_under": "AB000000",
+                            "availability": "available for immediate download",
+                            "availability_code": "IMMEDIATE"
+                          }
+                        ],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "18: Title is valid, closed/cancelled and has no register referred to documents": {
+                    "value": {
+                      "data": {
+                        "title_status": "According to our records this title number has been cancelled (or closed).",
+                        "title_status_code": "CLOSED",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "19: Title is valid, has pending non-correction applications against it and has register referred to documents": {
+                    "value": {
+                      "data": {
+                        "title_status": "There is at least one pending application for registration against this title number. You may want to view the day list.",
+                        "title_status_code": "PENDING_APPLICATIONS",
+                        "title_number": "AB000000",
+                        "applications_pending": true,
+                        "referred_to_documents": [
+                          {
+                            "type": "Charge",
+                            "type_code": "CHARGE",
+                            "entry_numbers": [
+                              "A1"
+                            ],
+                            "date": "2020-12-01",
+                            "filed_under": null,
+                            "availability": "available for immediate download",
+                            "availability_code": "IMMEDIATE"
+                          }
+                        ],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "20: Title is valid, has pending non-correction applications against it and has no register referred to documents": {
+                    "value": {
+                      "data": {
+                        "title_status": "There is at least one pending application for registration against this title number. You may want to view the day list.",
+                        "title_status_code": "PENDING_APPLICATIONS",
+                        "title_number": "AB000000",
+                        "applications_pending": true,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "21: Title is valid, has pending correction applications against it and has register referred to documents": {
+                    "value": {
+                      "data": {
+                        "title_status": "There is at least one pending application for registration against this title number. You may want to view the day list.",
+                        "title_status_code": "PENDING_APPLICATIONS",
+                        "title_number": "AB000000",
+                        "applications_pending": true,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "22: Title is valid, has pending correction applications against it and has no register referred to documents": {
+                    "value": {
+                      "data": {
+                        "title_status": "There is at least one pending application for registration against this title number. You may want to view the day list.",
+                        "title_status_code": "PENDING_APPLICATIONS",
+                        "title_number": "AB000000",
+                        "applications_pending": true,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "23: Title is valid, is a scheme title and has register referred to documents": {
+                    "value": {
+                      "data": {
+                        "title_status": "This is a scheme title number allocated prior to receipt of the first application. Only document requests can be accepted against it.",
+                        "title_status_code": "SCHEME",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [
+                          {
+                            "type": "Abstract",
+                            "type_code": "ABSTRACT",
+                            "entry_numbers": [
+                              "A1"
+                            ],
+                            "date": "2020-12-01",
+                            "filed_under": "AB000000",
+                            "availability": "available for immediate download",
+                            "availability_code": "IMMEDIATE"
+                          }
+                        ],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "24: Title is valid, is a scheme title and has no register referred to documents": {
+                    "value": {
+                      "data": {
+                        "title_status": "This is a scheme title number allocated prior to receipt of the first application. Only document requests can be accepted against it.",
+                        "title_status_code": "SCHEME",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "25: Title is valid, closed and continued under another title number": {
+                    "value": {
+                      "data": {
+                        "title_status": "The title number you entered, has been closed and continued under another title number.",
+                        "title_status_code": "CLOSED_AND_CONTINUED",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "continued_under_title_number": "AB000001",
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "26: Title is valid but not computerised": {
+                    "value": {
+                      "data": {
+                        "title_status": "No computerised register held for this title. Please check the title number.",
+                        "title_status_code": "NOT_COMPUTERISED",
+                        "title_number": "AB000000",
+                        "applications_pending": false,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  },
+                  "27: Title is valid, is a pending new title or has pending dealings against it": {
+                    "value": {
+                      "data": {
+                        "title_status": "This is a pending new title. A register or title plan is currently not available.",
+                        "title_status_code": "PENDING_FIRST",
+                        "title_number": "AB000000",
+                        "applications_pending": true,
+                        "referred_to_documents": [],
+                        "register": {
+                          "type": "Register",
+                          "type_code": "REGISTER",
+                          "availability": "available for immediate download",
+                          "availability_code": "IMMEDIATE",
+                          "backdated": false
+                        },
+                        "title_plan": {
+                          "type": "Plan",
+                          "type_code": "TITLEPLAN",
+                          "availability_code": "UNAVAILABLE",
+                          "availability": "not available",
+                          "backdated": false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "& 14: Title is invalid": {
+                    "value": {
+                      "errors": [
+                        {
+                          "error_code": "BG40001",
+                          "error_message": "Malformed invalid schema. Title is invalid.",
+                          "http_status": "400",
+                          "timestamp": "2019-03-21T05:10:21+00:00",
+                          "trace_id": "66d62778-cab6-47d7-b067-ceb2a5efb013"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Title not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "& 14: Title is invalid": {
+                    "value": {
+                      "errors": [
+                        {
+                          "error_code": "BG40002",
+                          "error_message": "Title is not found",
+                          "http_status": "404",
+                          "timestamp": "2018-11-13T20:20:39+00:00",
+                          "trace_id": "eeb2e6aa-8856-4762-8d2f-f9ee6c0667bd"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/DefaultErrorResponse"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    },
+    "parameters": {
+      "TitleNumberParameter": {
+        "in": "path",
+        "name": "title_number",
+        "description": "The title number of the property. Characters must be uppercase.",
+        "schema": {
+          "$ref": "#/components/schemas/TitleNumber"
+        },
+        "required": true
+      }
+    },
+    "responses": {
+      "DefaultErrorResponse": {
+        "description": "An error has occurred.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "examples": {
+              "Gateway Timeout": {
+                "value": {
+                  "errors": [
+                    {
+                      "error_code": "BG50004",
+                      "error_message": "Internal service timeout",
+                      "http_status": "504",
+                      "timestamp": "2020-11-13T20:20:58+00:00",
+                      "trace_id": "9abcfbe7-c222-490a-a6f1-838276f1a7f7"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "TitleNumber": {
+        "description": "The title number of the property. Characters must be uppercase.",
+        "type": "string",
+        "maxLength": 9,
+        "pattern": "^[A-Z0-9]{1,9}$"
+      },
+      "OfficialCopyAvailabilityCode": {
+        "description": "The download availability states for a document.",
+        "type": "string",
+        "enum": [
+          "IMMEDIATE",
+          "MANUAL",
+          "UNAVAILABLE"
+        ]
+      },
+      "ReferredDocumentAvailability": {
+        "description": "The availability of an OC2 document referred to in the register.",
+        "type": "object",
+        "required": [
+          "type_code",
+          "type",
+          "entry_numbers",
+          "filed_under",
+          "availability",
+          "availability_code"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Document type description."
+          },
+          "type_code": {
+            "type": "string",
+            "description": "Document type code."
+          },
+          "entry_numbers": {
+            "description": "The location that the document is referred to in the register.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "A1",
+              "C3",
+              "C4"
+            ]
+          },
+          "date": {
+            "description": "The date of the document.",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "filed_under": {
+            "description": "The title number of the property. Characters must be uppercase.",
+            "type": "string",
+            "maxLength": 9,
+            "pattern": "^[A-Z0-9]{1,9}$",
+            "nullable": true
+          },
+          "availability": {
+            "description": "The document availability description.",
+            "type": "string"
+          },
+          "availability_code": {
+            "$ref": "#/components/schemas/OfficialCopyAvailabilityCode"
+          }
+        }
+      },
+      "RegisterAvailability": {
+        "type": "object",
+        "description": "The availability of the record we create when registering titles to Land Registry.",
+        "required": [
+          "type_code",
+          "type",
+          "availability",
+          "availability_code",
+          "backdated"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "type_code": {
+            "description": "The document code for a register.",
+            "type": "string",
+            "enum": [
+              "REGISTER"
+            ]
+          },
+          "availability": {
+            "description": "The document availability description.",
+            "type": "string"
+          },
+          "availability_code": {
+            "$ref": "#/components/schemas/OfficialCopyAvailabilityCode"
+          },
+          "backdated": {
+            "type": "boolean",
+            "description": "Whether or not the document will be backdated due to pending applications."
+          }
+        }
+      },
+      "TitlePlanAvailability": {
+        "type": "object",
+        "description": "The availability of the official plan produced by HM Land Registry to show the extent of land in an individual registered title.",
+        "required": [
+          "type_code",
+          "type",
+          "availability",
+          "availability_code",
+          "backdated"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "type_code": {
+            "description": "The document code for a title plan.",
+            "type": "string",
+            "enum": [
+              "TITLEPLAN"
+            ]
+          },
+          "availability": {
+            "description": "The document availability description.",
+            "type": "string"
+          },
+          "availability_code": {
+            "$ref": "#/components/schemas/OfficialCopyAvailabilityCode"
+          },
+          "backdated": {
+            "type": "boolean",
+            "description": "Whether or not the document will be backdated due to pending applications."
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "description": "An error response for an unsuccessful request.",
+        "required": [
+          "error_code",
+          "error_message"
+        ],
+        "properties": {
+          "error_code": {
+            "type": "string",
+            "description": "The code related to this error. See documentation for more information."
+          },
+          "error_message": {
+            "type": "string",
+            "description": "The descriptive reason behind an error."
+          },
+          "http_status": {
+            "type": "string",
+            "description": "The http status code related to this error.",
+            "example": "503"
+          },
+          "timestamp": {
+            "description": "The UTC timestamp of when the error occured.",
+            "type": "string",
+            "format": "date-time",
+            "example": "2021-04-04 15:29:51:405Z"
+          },
+          "trace_id": {
+            "description": "A trace identifier for this request.",
+            "type": "string",
+            "example": "c62e9b3f-e523-4f04-a941-c6cf0d60c080"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "description": "A response for an unsuccesful result.",
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "A collection of one or more errors as to why the API request failed.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "OfficialCopiesResponse": {
+        "type": "object",
+        "description": "A successful response.",
+        "required": [
+          "title_status",
+          "title_status_code",
+          "title_number",
+          "applications_pending",
+          "referred_to_documents",
+          "register",
+          "title_plan"
+        ],
+        "properties": {
+          "title_status": {
+            "type": "string",
+            "description": "The status of the title."
+          },
+          "title_status_code": {
+            "type": "string",
+            "enum": [
+              "VALID",
+              "CLOSED",
+              "CLOSED_AND_CONTINUED",
+              "NOT_COMPUTERISED",
+              "PENDING_APPLICATIONS",
+              "PENDING_DEALING",
+              "PENDING_FIRST",
+              "SCHEME"
+            ],
+            "description": "A code representing the current status of the title."
+          },
+          "title_number": {
+            "$ref": "#/components/schemas/TitleNumber"
+          },
+          "applications_pending": {
+            "description": "Whether or not this title number has pending applications against it.",
+            "type": "boolean"
+          },
+          "continued_under_title_number": {
+            "type": "string",
+            "description": "The title requested has been closed and continued under this title number.",
+            "example": "FL99999"
+          },
+          "referred_to_documents": {
+            "type": "array",
+            "description": "The collection of OC2 documents referred to on the register.",
+            "items": {
+              "$ref": "#/components/schemas/ReferredDocumentAvailability"
+            }
+          },
+          "register": {
+            "$ref": "#/components/schemas/RegisterAvailability"
+          },
+          "title_plan": {
+            "$ref": "#/components/schemas/TitlePlanAvailability"
+          }
+        }
+      }
+    }
+  }
+}
