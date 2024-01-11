@@ -176,8 +176,8 @@ The Official Search of Whole (with Priority) with Data RESTful API expands on th
 <p>The following sections relate to the Official Search of Whole (with Priority) with Data RESTful API service.</p>
 <h3 id="if-you-39-re-a-software-developer">If You&rsquo;re a Software Developer</h3>
 <p>Use this document to integrate data into your system.</p>
-<p>Initially we expect users of the new RESTful version to have already integrated with the existing SOAP service.</p>
-<p>Where an Official Search of Whole can&rsquo;t be returned immediately (either lodged out of service hours or because it requires manual processing), then the RESTful service will confirm successful receipt, but the result will be available through the existing SOAP methods.
+<p>Initially we expect users of the new RESTful version to have already integrated with the existing <a href="https://landregistry.github.io/bgtechdoc/services/official_search_of_whole/#official-search-of-whole-with-priority">SOAP (v2.1) service</a>.</p>
+<p>Where an Official Search of Whole can&rsquo;t be returned immediately (either lodged out of service hours or because it requires manual processing), then the RESTful service will confirm successful receipt, but the result will be available from the existing SOAP poll endpoint (https://businessgateway.landregistry.gov.uk/b2b/BGSoapEngine/OfficialSearchV2_1PollRequestWebService?wsdl).
 By far the majority of Official Searches of Whole are returned immediately and for those, the RESTful service will return the Official Search result certificate and additional JSON data elements detailing information contained within the result certificate PDF.</p>
 <h3 id="how-the-restful-api-service-differs-from-the-soap-api-service">How the RESTful API Service Differs from the SOAP API Service</h3>
 <p>This service is an enhanced RESTful version of the original Official Search of Whole (with Priority) SOAP service.
@@ -214,7 +214,8 @@ False - if the Official Search certificate (PDF) does not contain any further ad
 <li><code>commonhold_title_number</code> - if the title number comprises a commonhold unit</li>
 </ul>
 <p>This service is limited to immediate search results.
-When a result cannot be returned immediately, the official search certificate will become available via the existing Official Search of Whole (with Priority) SOAP API polling service and will not be supplemented with the JSON response data items.
+When a result cannot be returned immediately, the official search certificate will become available via the existing Official Search of Whole (with Priority) SOAP API poll endpoint (https://businessgateway.landregistry.gov.uk/b2b/BGSoapEngine/Offi
+cialSearchV2_1PollRequestWebService?wsdl) and will not be supplemented with the JSON response data items.
 This will be the case when a search:</p>
 
 <ul>

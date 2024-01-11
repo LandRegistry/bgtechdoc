@@ -24,6 +24,352 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/OfficialSearchRequest'
+            examples:
+              '201 - Successful request returned with data - no adverse entries':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD100
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2022-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                      - DEVELOPER_TITLE
+                    registered_proprietors_details_or_applicants_for_first_registration: Smith
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 3.00
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+              '201 - Successful request returned with data - no adverse entries, proprietor name mismatch':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD101
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2022-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                    registered_proprietors_details_or_applicants_for_first_registration: Bloggs
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 3.00
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+              '201 - Successful request returned with data - new edition of register, commonhold title':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD102
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2022-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                      - DEVELOPER_TITLE
+                    registered_proprietors_details_or_applicants_for_first_registration: Smith
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 3.00
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+              '201 - Successful request returned with data - new edition of register, prior pending official search, proprietor name mismatch, commonhold title':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD103
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2022-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                    registered_proprietors_details_or_applicants_for_first_registration: Bloggs
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 3.00
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+              '202 - accepted request - manual processing required':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD104
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2022-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                    registered_proprietors_details_or_applicants_for_first_registration: Smith
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 3.00
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+              '202 - submission out of hours':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD105
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2022-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                      - DEVELOPER_TITLE
+                    registered_proprietors_details_or_applicants_for_first_registration: Smith
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 3.00
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+              '422 - invalid title':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD106
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2022-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                      - DEVELOPER_TITLE
+                    registered_proprietors_details_or_applicants_for_first_registration: Smith
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 3.00
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+              '422 - caution title':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD107
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2022-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                      - DEVELOPER_TITLE
+                    registered_proprietors_details_or_applicants_for_first_registration: Smith
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 3.00
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+              '422 - closed title':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD108
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2022-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                      - DEVELOPER_TITLE
+                    registered_proprietors_details_or_applicants_for_first_registration: Smith
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 3.00
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+              '422 - future date - not pending first registration':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD109
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2099-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                      - DEVELOPER_TITLE
+                    registered_proprietors_details_or_applicants_for_first_registration: Smith
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 3.00
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+              '422 - developer title - "continue application if" field does not include "developer_title"':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD110
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2022-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                    registered_proprietors_details_or_applicants_for_first_registration: Smith
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 3.00
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+              '422 - expected fee too low - "continue application if" field does not include "actual_fee_exceeds_expected_fee"':
+                value:
+                  message_id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                  title_number: PMD111
+                  official_search_of_whole_with_priority:
+                    priority_type: Purchase
+                    property_description: 28a Richmond Avenue, Basingstoke, RG38 8DJ
+                    search_from_date: 2022-02-12
+                    continue_application_if:
+                      - NAME_MISMATCH_ON_REGISTER
+                      - DEVELOPER_TITLE
+                    registered_proprietors_details_or_applicants_for_first_registration: Smith
+                    applicant_party: Joe Bloggs and Jane Bloggs
+                  external_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  customer_reference:
+                    reference: GB000123Z
+                    allocated_by: AAA Conveyancers
+                    description: Reference description
+                  expected_price:
+                    gross_price_amount: 2.90
+                    net_price_amount: 3
+                    vat_amount: 0.75
+                    currency_id: GBP
+                  contact:
+                    - name: John Smith
+                      telephone_number: stringstr
+
       responses:
         '201':
           description: Official Search of Whole with Priority completed. Search result enclosed
@@ -36,6 +382,194 @@ paths:
                 properties:
                   data:
                     $ref: '#/components/schemas/OfficialSearchCreatedResponseData'
+              examples:
+                'Successful Request with No Adverse Entries':
+                  value:
+                    data:
+                      id: "001"
+                      hmlr_reference: "0000000"
+                      external_reference:
+                        reference: AA0
+                        allocated_by: AA0
+                        description: AA0
+                      actual_price:
+                        gross_price_amount: 3.0
+                        currency_id: GBP
+                      certificate:
+                        type: ATTACHMENT
+                        attachment: omitted
+                      official_search_data:
+                        search_from_date: 2022-04-12
+                        has_register_changed: false
+                        has_advisory_entries: false
+                        official_search_number: 300-A1-AA
+                        certificate_timestamp: 2022-11-25T10:03:21
+                        priority_period_expiry_date: 2023-01-10
+                        title_number: PMD100
+                        applicants: Joe Bloggs and Jane Bloggs
+                        result_entries:
+                          register_status_entry:
+                            entry_text: Since 8 April 2022 no adverse entries have been made.
+                        key_number: 12345678
+                'Successful Response with Proprietor Name Mismatch':
+                  value:
+                    data:
+                      id: "001"
+                      hmlr_reference: "0000001"
+                      external_reference:
+                        reference: AA0
+                        allocated_by: AA0
+                        description: AA0
+                      actual_price:
+                        gross_price_amount: 3.0
+                        currency_id: GBP
+                      certificate:
+                        type: ATTACHMENT
+                        attachment: omitted
+                      official_search_data:
+                        search_from_date: 2022-04-12
+                        has_register_changed: false
+                        has_advisory_entries: true
+                        proprietor_names:
+                          - "JOHN SMITH"
+                          - "JOAN SMITH"
+                        official_search_number: 300-A1-AA
+                        certificate_timestamp: 2022-11-25T10:03:21
+                        priority_period_expiry_date: 2023-01-10
+                        title_number: PMD101
+                        applicants: Joe Bloggs and Jane Bloggs
+                        result_entries:
+                          register_status_entry:
+                            entry_text: Since 8 April 2022 no adverse entries have been made.
+                          advisory_entries:
+                            - entry_text: > 
+                                Your search has been completed despite the fact that the names of the
+                                registered proprietor(s) given in your application do not agree with those shown on the register.
+                                The names in the register are John Smith and Joan Smith. Please ensure that the correct names
+                                appear in any instrument lodged for registration and where necessary appropriate evidence to account
+                                for the discrepancy accompanies the application.
+                              name_mismatch:
+                                registered_proprietor_names:
+                                  - "JOHN SMITH"
+                                  - "JOAN SMITH"
+                        key_number: 12345678
+                'Successful Request with New Edition of Register and Commonhold Title':
+                  value:
+                    data:
+                      id: "001"
+                      hmlr_reference: "0000002"
+                      external_reference:
+                        reference: AA0
+                        allocated_by: AA0
+                        description: AA0
+                      actual_price:
+                        gross_price_amount: 3.0
+                        currency_id: GBP
+                      certificate:
+                        type: ATTACHMENT
+                        attachment: omitted
+                      official_search_data:
+                        search_from_date: 2022-04-12
+                        has_register_changed: true
+                        has_advisory_entries: true
+                        official_search_number: 300-A1-AA
+                        certificate_timestamp: 2022-11-25T10:03:21
+                        priority_period_expiry_date: 2023-01-10
+                        title_number: PMD102
+                        applicants: Joe Bloggs and Jane Bloggs
+                        result_entries:
+                          register_status_entry:
+                            entry_text: >
+                              Since 5 August 2020 a new edition of the register has been opened and an
+                              official copy dated 25 November 2022 and timed at 10:03:21 showing the entries
+                              subsisting then is enclosed. The result is subject to such entries. If further
+                              official search applications are made the 'search from' date to be quoted must
+                              be the date of the official copy.
+                          advisory_entries:
+                            - entry_text: >
+                                The title number referred to in the result comprises a commonhold unit
+                                within a commonhold development. The development consists of a common parts title
+                                registered under title number PMD099 and individual commonhold unit titles. If you
+                                wish to obtain a complete list of the commonhold unit titles, you should apply
+                                for a search of the index map in form SIM and quote the common parts title number.
+                                Under the current Land Registration Fee Order, a fee may be payable for this service.
+                                You can obtain Practice Guide 60 Commonhold from any of our offices or from our
+                                Internet site www.gov.uk/land-registry. The Practice Guide contains information
+                                about commonhold registrations.
+                              commonhold_title:
+                                commonhold_title_number: PMD099
+                          key_number: 12345678
+                'Successful Request with New Edition of Register and Prior Pending Official Search and Proprietor Name Mismatch and Commonhold Title':
+                  value:
+                    data:
+                      id: "001"
+                      hmlr_reference: "0000003"
+                      external_reference:
+                        reference: AA0
+                        allocated_by: AA0
+                        description: AA0
+                      actual_price:
+                        gross_price_amount: 3.0
+                        currency_id: GBP
+                      certificate:
+                        type: ATTACHMENT
+                        attachment: omitted
+                      official_search_data:
+                        search_from_date: 2022-04-12
+                        has_register_changed: true
+                        has_advisory_entries: true
+                        proprietor_names:
+                          - "JOHN SMITH"
+                          - "JOAN SMITH"
+                        official_search_number: 300-A1-AA
+                        certificate_timestamp: 2022-11-25T10:03:21
+                        priority_period_expiry_date: 2023-01-10
+                        title_number: PMD103
+                        applicants: Joe Bloggs and Jane Bloggs
+                        result_entries:
+                          register_status_entry:
+                            entry_text: >
+                              Since 5 August 2020 a new edition of the register has been opened and an
+                              official copy dated 25 November 2022 and timed at 10:03:21 showing the entries
+                              subsisting then is enclosed. The result is subject to such entries. If further
+                              official search applications are made the 'search from' date to be quoted must
+                              be the date of the official copy.
+                          advisory_entries:
+                            - entry_text: >
+                                Your search has been completed despite the fact that the names of the
+                                registered proprietor(s) given in your application do not agree with those
+                                shown on the register. The names in the register are John Smith and Joan Smith.
+                                Please ensure that the correct names appear in any instrument lodged for
+                                registration and where necessary appropriate evidence to account for the
+                                discrepancy accompanies the application.
+                              name_mismatch:
+                                registered_proprietor_names:
+                                  - "JOHN SMITH"
+                                  - "JOAN SMITH"
+                            - entry_text: >
+                                An official search certificate dated 15 November 2022 and timed at 12:27:21
+                                has been issued to protect an intending CHARGE in favour of SANTANDER PLC
+                                affecting the whole of the registered title. The relative priorities conferred
+                                by the issue of two or more official search certificates are governed by the
+                                provisions of rule 153 of the Land Registration Rules 2003.
+                            - entry_text: >
+                                The title number referred to in the result comprises a commonhold unit
+                                within a commonhold development. The development consists of a common parts
+                                title registered under title number PMD099 and individual commonhold unit titles.
+                                If you wish to obtain a complete list of the commonhold unit titles, you should
+                                apply for a search of the index map in form SIM and quote the common parts title
+                                number. Under the current Land Registration Fee Order, a fee may be payable for
+                                this service. You can obtain Practice Guide 60 Commonhold from any of our offices
+                                or from our Internet site www.gov.uk/land-registry. The Practice Guide contains
+                                information about commonhold registrations.
+                              commonhold_title:
+                                commonhold_title_number: PMD099
+                          pending_official_searches_of_whole:
+                            - certificate_timestamp: 2022-11-15T12:27:21.152924
+                              priority_type: Charge
+                              applicant: Santander PLC
+                          key_number: 12345678
+
 
         '202':
           description: Official Search of Whole with Priority accepted however not completed because manual processing is required
@@ -48,13 +582,88 @@ paths:
                 properties:
                   data:
                     $ref: '#/components/schemas/OfficialSearchAcceptedResponseData'
+              examples:
+                'Manual Processing Required':
+                  value:
+                    data:
+                      id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                      acknowledgement_message: We have accepted your application for an official search with priority. Priority
+                        begins now and expires on 24 May 2022.
+                      hmlr_reference: J111AAA
+                      acknowledgement_code: BG20001
+                'Submission Out of Hours':
+                  value:
+                    data:
+                      id: dfcacc5e-456e-4fd1-88e5-8070e43d6714
+                      expected_response_at: 2022-12-12T08:44:30.244Z
+                      acknowledgement_message: Service is not currently available. System has queued your request, please poll at
+                        specified time
+                      acknowledgement_code: BG20002
 
-        '409':
-          description: Official Search of Whole with Priority rejected because request already exists for the submitting user
-          $ref: '#/components/responses/DefaultErrorResponse'
 
         '4XX':
-          $ref: '#/components/responses/DefaultErrorResponse'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                '409 - Existing Message Id':
+                  value:
+                    errors:
+                      - code: BG40011
+                        detail: Message ID has already been submitted
+                        status: 409
+                        trace_id: c62e9b3f-e523-4f04-a941-c6cf0d60c080
+                        title: Existing message id
+                '422 - Invalid Title':
+                  value:
+                    errors:
+                      - code: bg.title.invalid
+                        detail: Title number is invalid
+                        status: 422
+                        trace_id: c62e9b3f-e523-4f04-a941-c6cf0d60c080
+                        title: Invalid title
+                '422 - Caution Title':
+                  value:
+                    errors:
+                      - code: bg.title.caution
+                        detail: Official Search cannot be lodged against a Caution Title
+                        status: 422
+                        trace_id: c62e9b3f-e523-4f04-a941-c6cf0d60c080
+                        title: Caution title
+                '422 - Closed Title':
+                  value:
+                    errors:
+                      - code: bg.title.closed
+                        detail: Title number is closed
+                        status: 422
+                        trace_id: c62e9b3f-e523-4f04-a941-c6cf0d60c080
+                        title: Closed title
+                '422 - Future Date':
+                  value:
+                    errors:
+                      - code: bg.title.futuredate
+                        detail: Search from date is invalid
+                        status: 422
+                        trace_id: c62e9b3f-e523-4f04-a941-c6cf0d60c080
+                        title: Search from date is in the future
+                '422 - Developer Title':
+                  value:
+                    errors:
+                      - code: bg.title.developertitle
+                        detail: This is a developing title. If you intend to take a registrable disposition of part you should
+                          apply for an official search with priority of part.
+                        status: 422
+                        trace_id: c62e9b3f-e523-4f04-a941-c6cf0d60c080
+                        title: Developer title and not continue
+                '422 - Fee Mismatch':
+                  value:
+                    errors:
+                      - code: bg.title.feemismatch
+                        detail: Fee Amount provided does not match with the fee calculated by Land Registry
+                        status: 422
+                        trace_id: c62e9b3f-e523-4f04-a941-c6cf0d60c080
+                        title: Fee mismatch and not continue.
                         
         '5XX':        
           $ref: '#/components/responses/DefaultErrorResponse'   
@@ -68,7 +677,7 @@ components:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
           examples:
-            Gateway Timeout:
+            '504 - Gateway Timeout':
               value:
                 errors:
                   - code: BG50004
