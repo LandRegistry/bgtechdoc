@@ -41,7 +41,6 @@
           HM Land Registry Business Gateway Developer Pack
         </span>
       </a>
-        <strong class="govuk-tag">Alpha</strong>
     </div>
   </div>
 </header>
@@ -139,72 +138,78 @@
 <p>The “soapenv” label has changed to “soap”. The value remains “<a href="http://schemas.xmlsoap.org/soap/envelope/">http://schemas.xmlsoap.org/soap/envelope/</a>”
   and is still only applied to Envelope and Body.</p>
 <h4 id="new-example">New example:</h4>
-<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
-  &lt;soap:Body&gt;
-    &lt;ns3:performTitleKnownSearchResponse xmlns:ns1=
+
+<pre><code>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ns3:performTitleKnownSearchResponse xmlns:ns1=
     "http://www.oscre.org/ns/eRegFinal/2011/
     RequestTitleKnownOfficialCopyV2_1"
     xmlns:ns3="http://officialcopyv2_1.ws.bg.lr.gov/"
     xmlns:ns4="http://www.oscre.org/ns/eReg-Final/2011/
-    ResponseTitleKnownOfficialCopyV2_0"&gt;
-      &lt;return&gt;
-        &lt;ns4:GatewayResponse&gt;
-          &lt;ns4:TypeCode&gt;30&lt;/ns4:TypeCode&gt;
-          &lt;ns4:Results&gt;
-            &lt;ns4:ExternalReference&gt;
-              &lt;ns4:Reference&gt;123&lt;/ns4:Reference&gt;
-            &lt;/ns4:ExternalReference&gt;
-            &lt;ns4:ActualPrice&gt;
-              &lt;ns4:GrossPriceAmount&gt;3.00&lt;/ns4:GrossPriceAmount&gt;
-            &lt;/ns4:ActualPrice&gt;
-            &lt;ns4:Attachment&gt;
-              &lt;ns4:EmbeddedFileBinaryObject ns4:format="PDF"&gt;
-TRIMMED FOR CLARITY&lt;/ns4:EmbeddedFileBinaryObject&gt;
-            &lt;/ns4:Attachment&gt;
-            &lt;ns4:ResultTypeCode&gt;10&lt;/ns4:ResultTypeCode&gt;
-            &lt;ns4:HMLRReference&gt;
-              &lt;ns4:Reference&gt;7BBBFNY&lt;/ns4:Reference&gt;
-            &lt;/ns4:HMLRReference&gt;
-          &lt;/ns4:Results&gt;
-        &lt;/ns4:GatewayResponse&gt;
-      &lt;/return&gt;
-    &lt;/ns3:performTitleKnownSearchResponse&gt;
-  &lt;/soap:Body&gt;
-&lt;/soap:Envelope&gt;
-</code></pre></div><h4 id="old-example">Old example:</h4>
-<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
-  &lt;soapenv:Body&gt;
-    &lt;dlwmin:performTitleKnownSearchResponse xmlns:dlwmin=
+    ResponseTitleKnownOfficialCopyV2_0">
+      <return>
+        <ns4:GatewayResponse>
+          <ns4:TypeCode>30</ns4:TypeCode>
+          <ns4:Results>
+            <ns4:ExternalReference>
+              <ns4:Reference>123</ns4:Reference>
+            </ns4:ExternalReference>
+            <ns4:ActualPrice>
+              <ns4:GrossPriceAmount>3.00</ns4:GrossPriceAmount>
+            </ns4:ActualPrice>
+            <ns4:Attachment>
+              <ns4:EmbeddedFileBinaryObject ns4:format="PDF">
+TRIMMED FOR CLARITY</ns4:EmbeddedFileBinaryObject>
+            </ns4:Attachment>
+            <ns4:ResultTypeCode>10</ns4:ResultTypeCode>
+            <ns4:HMLRReference>
+              <ns4:Reference>7BBBFNY</ns4:Reference>
+            </ns4:HMLRReference>
+          </ns4:Results>
+        </ns4:GatewayResponse>
+      </return>
+    </ns3:performTitleKnownSearchResponse>
+  </soap:Body>
+</soap:Envelope>
+</code></pre>
+<h4 id="old-example">Old example:</h4>
+
+<pre><code>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Body>
+    <dlwmin:performTitleKnownSearchResponse xmlns:dlwmin=
     "http://officialcopyv2_1.ws.bg.lr.gov/"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-      &lt;return xmlns:ns1="http://www.oscre.org/ns/eReg-Final/2011/
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <return xmlns:ns1="http://www.oscre.org/ns/eReg-Final/2011/
       RequestTitleKnownOfficialCopyV2_1"
       xmlns:ns2="http://www.oscre.org/ns/eReg-Final/2011/
-      ResponseTitleKnownOfficialCopyV2_0"&gt;
-        &lt;ns2:GatewayResponse&gt;
-          &lt;ns2:TypeCode&gt;30&lt;/ns2:TypeCode&gt;
-          &lt;ns2:Results&gt;
-            &lt;ns2:ExternalReference&gt;
-              &lt;ns2:Reference&gt;123&lt;/ns2:Reference&gt;
-            &lt;/ns2:ExternalReference&gt;
-            &lt;ns2:ActualPrice&gt;
-              &lt;ns2:GrossPriceAmount&gt;3.00&lt;/ns2:GrossPriceAmount&gt;
-            &lt;/ns2:ActualPrice&gt;
-            &lt;ns2:Attachment&gt;
-              &lt;ns2:EmbeddedFileBinaryObject ns2:format="PDF"&gt;
-TRIMMED FOR CLARITY&lt;/ns2:EmbeddedFileBinaryObject&gt;
-            &lt;/ns2:Attachment&gt;
-            &lt;ns2:ResultTypeCode&gt;10&lt;/ns2:ResultTypeCode&gt;
-            &lt;ns2:HMLRReference&gt;
-              &lt;ns2:Reference&gt;7BBBFNY&lt;/ns2:Reference&gt;
-            &lt;/ns2:HMLRReference&gt;
-          &lt;/ns2:Results&gt;
-        &lt;/ns2:GatewayResponse&gt;
-      &lt;/return&gt;
-    &lt;/dlwmin:performTitleKnownSearchResponse&gt;
-  &lt;/soapenv:Body&gt;
-&lt;/soapenv:Envelope&gt;
-</code></pre></div>
+      ResponseTitleKnownOfficialCopyV2_0">
+        <ns2:GatewayResponse>
+          <ns2:TypeCode>30</ns2:TypeCode>
+          <ns2:Results>
+            <ns2:ExternalReference>
+              <ns2:Reference>123</ns2:Reference>
+            </ns2:ExternalReference>
+            <ns2:ActualPrice>
+              <ns2:GrossPriceAmount>3.00</ns2:GrossPriceAmount>
+            </ns2:ActualPrice>
+            <ns2:Attachment>
+              <ns2:EmbeddedFileBinaryObject ns2:format="PDF">
+TRIMMED FOR CLARITY</ns2:EmbeddedFileBinaryObject>
+            </ns2:Attachment>
+            <ns2:ResultTypeCode>10</ns2:ResultTypeCode>
+            <ns2:HMLRReference>
+              <ns2:Reference>7BBBFNY</ns2:Reference>
+            </ns2:HMLRReference>
+          </ns2:Results>
+        </ns2:GatewayResponse>
+      </return>
+    </dlwmin:performTitleKnownSearchResponse>
+  </soapenv:Body>
+</soapenv:Envelope>
+</code></pre>
+
 <hr>
 <h2 id="contact">Contact</h2>
 <p>If you would like help to make any technical changes, contact our Service Desk on:</p>

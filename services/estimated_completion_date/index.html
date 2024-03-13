@@ -41,7 +41,6 @@
           HM Land Registry Business Gateway Developer Pack
         </span>
       </a>
-        <strong class="govuk-tag">Alpha</strong>
     </div>
   </div>
 </header>
@@ -313,99 +312,120 @@ The error codes listed are subject to change.</p>
 <h3 id="scenarios-when-ecd-is-returned">Scenarios when ECD is returned</h3>
 <p>Scenario 1 - Application reference is valid and matches an application. ECD is provided.<br>
 ABR: X000XXX</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"application_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"X000XXX"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEIVED"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"application_priority_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20/08/2021"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"estimated_completion_date_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AVAILABLE"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"estimated_completion_dates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17/03/2023"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"probability"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "data": {
+        "application_reference": "X000XXX",
+        "application_status": "RECEIVED",
+        "application_priority_date": "20/08/2021",
+        "estimated_completion_date_status": "AVAILABLE",
+        "estimated_completion_dates": [
+            {
+              "date": "17/03/2023",
+              "probability": 0.9
+            }
+        ]
+    }
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 2 - Application reference is valid, application is delayed. ECD is provided.<br>
 ABR: X001XXX</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"application_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"X001XXX"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELAYED"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"application_priority_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19/01/2023"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"estimated_completion_date_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AVAILABLE"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"estimated_completion_dates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13/05/2024"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"probability"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id="scenarios-when-ecd-is-not-returned">Scenarios when ECD is not returned</h3>
+
+<pre><code>
+{
+    "data": {
+        "application_reference": "X001XXX",
+        "application_status": "DELAYED",
+        "application_priority_date": "19/01/2023",
+        "estimated_completion_date_status": "AVAILABLE",
+        "estimated_completion_dates": [
+            {
+              "date": "13/05/2024",
+              "probability": 0.9
+            }
+        ]
+    }
+}
+</code></pre>
+<h3 id="scenarios-when-ecd-is-not-returned">Scenarios when ECD is not returned</h3>
 <p>Scenario 3 - Application reference is valid, application is received. ECD status is exceeded.<br>
 ABR: X002XXX</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"application_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"X002XXX"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEIVED"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"application_priority_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12/02/2022"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"estimated_completion_date_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCEEDED"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "data": {
+        "application_reference": "X002XXX",
+        "application_status": "RECEIVED",
+        "application_priority_date": "12/02/2022",
+        "estimated_completion_date_status": "EXCEEDED"
+    }
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 4 - Application reference is valid and matches an application. ECD is not yet calculated.<br>
 ABR: X003XXX</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"application_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"X003XXX"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEIVED"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"application_priority_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20/04/2022"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"estimated_completion_date_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CALCULATING"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "data": {
+        "application_reference": "X003XXX",
+        "application_status": "RECEIVED",
+        "application_priority_date": "20/04/2022",
+        "estimated_completion_date_status": "CALCULATING"
+    }
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 5 - Application reference is valid and matches a cancelled application. ECD status is unavailable.<br>
 ABR: X004XXX</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"application_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"X004XXX"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"application_priority_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23/08/2022"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"estimated_completion_date_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNAVAILABLE"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id="client-side-error-scenarios">Client-side error scenarios</h3>
+
+<pre><code>
+{
+    "data": {
+        "application_reference": "X004XXX",
+        "application_status": "CANCELLED",
+        "application_priority_date": "23/08/2022",
+        "estimated_completion_date_status": "UNAVAILABLE"
+    }
+}
+</code></pre>
+<h3 id="client-side-error-scenarios">Client-side error scenarios</h3>
 <p>Scenario 6 - Application reference is invalid.<br>
 ABR: 005XXXX</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40001"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Application reference has an invalid format."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"trace_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c62e9b3f-e523-4f04-a941-c6cf0d60c080"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parameter is invalid."</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "errors": [
+        {
+          "code": "BG40001",
+          "detail": "Application reference has an invalid format.",
+          "status": "400",
+          "trace_id": "c62e9b3f-e523-4f04-a941-c6cf0d60c080",
+          "title": "parameter is invalid."
+        }
+    ]
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 7 - Application reference is valid but does not match a HMLR application.<br>
 ABR: X006XXX</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40002"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The application provided does not exist."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"trace_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c62e9b3f-e523-4f04-a941-c6cf0d60c080"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Application reference not found."</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
+
+<pre><code>
+{
+    "errors": [
+        {
+          "code": "BG40002",
+          "detail": "The application provided does not exist.",
+          "status": "404",
+          "trace_id": "c62e9b3f-e523-4f04-a941-c6cf0d60c080",
+          "title": "Application reference not found."
+        }
+    ]
+}
+</code></pre>
+
 
 
             

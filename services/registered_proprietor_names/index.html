@@ -41,7 +41,6 @@
           HM Land Registry Business Gateway Developer Pack
         </span>
       </a>
-        <strong class="govuk-tag">Alpha</strong>
     </div>
   </div>
 </header>
@@ -313,222 +312,261 @@ https://bgtest.landregistry.gov.uk/bg2test/s2/v1/titles/{{TitleNumber}}/register
 <h2 id="scenarios-when-the-registered-proprietor-names-are-returned">Scenarios when the registered proprietor names are returned</h2>
 <p>Scenario 1 - Single private individual<br>
 Title Number - AB1208001</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title number is valid"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALID"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB1208001"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr Joe Bloggs OBE"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bloggs"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"decoration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OBE"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "data": {
+        "title_status": "Title number is valid",
+        "title_status_code": "VALID",
+        "title_number": "AB1208001",
+        "proprietors": [
+            {
+                "sequence": 1,
+                "proprietor_name": "Mr Joe Bloggs OBE",
+                "title": "Mr",
+                "forenames": "Joe",
+                "surname": "Bloggs",
+                "decoration": "OBE",
+                "proprietor_type": "PRIVATE_INDIVIDUAL"
+            }
+        ]
+    }
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 2 - Two or more private individuals<br>
 Title Number - AB1208002</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title number is valid"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALID"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB1208002"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr Joe Bloggs OBE"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bloggs"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"decoration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OBE"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mrs Elizabeth Anne Smith OBE"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mrs"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elizabeth Anne"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"decoration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OBE"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "data": {
+        "title_status": "Title number is valid",
+        "title_status_code": "VALID",
+        "title_number": "AB1208002",
+        "proprietors": [
+            {
+                "sequence": 1,
+                "proprietor_name": "Mr Joe Bloggs OBE",
+                "title": "Mr",
+                "forenames": "Joe",
+                "surname": "Bloggs",
+                "decoration": "OBE",
+                "proprietor_type": "PRIVATE_INDIVIDUAL"
+            },
+            {
+                "sequence": 2,
+                "proprietor_name": "Mrs Elizabeth Anne Smith OBE",
+                "title": "Mrs",
+                "forenames": "Elizabeth Anne",
+                "surname": "Smith",
+                "decoration": "OBE",
+                "proprietor_type": "PRIVATE_INDIVIDUAL"
+            }
+        ]
+    }
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 3 - One private individual and One UK company<br>
 Title Number - AB1208003</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title number is valid"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALID"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB1208003"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr Joe Bloggs OBE"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bloggs"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"decoration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OBE"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"csda plc"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"organisation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CORPORATE_BODY"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"company_location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENGLAND_OR_WALES"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANISATION"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "data": {
+        "title_status": "Title number is valid",
+        "title_status_code": "VALID",
+        "title_number": "AB1208003",
+        "proprietors": [
+            {
+                "sequence": 1,
+                "proprietor_name": "Mr Joe Bloggs OBE",
+                "title": "Mr",
+                "forenames": "Joe",
+                "surname": "Bloggs",
+                "decoration": "OBE",
+                "proprietor_type": "PRIVATE_INDIVIDUAL"
+            },
+            {
+                "sequence": 2,
+                "proprietor_name": "csda plc",
+                "organisation_type": "CORPORATE_BODY",
+                "company_location": "ENGLAND_OR_WALES",
+                "proprietor_type": "ORGANISATION"
+            }
+        ]
+    }
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 4 - One overseas company<br>
 Title Number - AB1208004</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title number is valid"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALID"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB1208004"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"beach towels plc"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"organisation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CORPORATE_BODY"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"company_location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OVERSEAS"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANISATION"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "data": {
+        "title_status": "Title number is valid",
+        "title_status_code": "VALID",
+        "title_number": "AB1208004",
+        "proprietors": [
+            {
+                "sequence": 1,
+                "proprietor_name": "beach towels plc",
+                "organisation_type": "CORPORATE_BODY",
+                "company_location": "OVERSEAS",
+                "proprietor_type": "ORGANISATION"
+            }
+        ]
+    }
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 5 - One organisation, type = local authority<br>
 Title Number - AB1208005</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title number is valid"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALID"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AB1208005"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new town care"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"organisation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCAL_AUTHORITY"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"company_location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENGLAND_OR_WALES"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"proprietor_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANISATION"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
+
+<pre><code>
+{
+    "data": {
+        "title_status": "Title number is valid",
+        "title_status_code": "VALID",
+        "title_number": "AB1208005",
+        "proprietors": [
+            {
+                "sequence": 1,
+                "proprietor_name": "new town care",
+                "organisation_type": "LOCAL_AUTHORITY",
+                "company_location": "ENGLAND_OR_WALES",
+                "proprietor_type": "ORGANISATION"
+            }
+        ]
+    }
+}
+</code></pre>
+
 <hr>
 <h2 id="scenarios-when-the-registered-proprietor-names-are-not-returned">Scenarios when the registered proprietor names are not returned</h2>
 <p>Scenario 6 - Invalid title format<br>
 Title Number - ABCDF3438$P</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-11-13T20:20:39+00:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"http_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40001"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Malformed invalid schema. Title is invalid."</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "errors": [
+        {
+            "timestamp": "2021-11-13T20:20:39+00:00",
+            "http_status": "400",
+            "error_code": "BG40001",
+            "error_message": "Malformed invalid schema. Title is invalid."
+        }
+    ]
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 7 - Title not found<br>
 Title Number - CD1208001</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-11-13T20:20:39+00:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"http_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40002"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title is not found."</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "errors": [
+        {
+            "timestamp": "2021-11-13T20:20:39+00:00",
+            "http_status": "404",
+            "error_code": "BG40002",
+            "error_message": "Title is not found."
+        }
+    ]
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 8 - Closed title<br>
 Title Number - DT501578</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"According to our records, this title number has been closed or cancelled."</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLOSED_OR_CANCELLED"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DT501578"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "data": {
+        "title_status": "According to our records, this title number has been closed or cancelled.",
+        "title_status_code": "CLOSED_OR_CANCELLED",
+        "title_number": "DT501578",
+        "proprietors": []
+    }
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 9 - Closed and continued title<br>
 Title Number - GR519468</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"According to our records, this title number has been closed and continued under another title number."</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLOSED_AND_CONTINUED"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GR519468"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"continued_under_title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EF1208001"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "data": {
+        "title_status": "According to our records, this title number has been closed and continued under another title number.",
+        "title_status_code": "CLOSED_AND_CONTINUED",
+        "title_number": "GR519468",
+        "continued_under_title_number": "EF1208001",
+        "proprietors": []
+    }
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 10 - Pending new title (i.e. register not created yet)<br>
 Title Number - GR514443</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"title_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is pending a new title."</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PENDING_NEW_TITLE"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GR514443"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"proprietors"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "data": {
+        "title_status": "This is pending a new title.",
+        "title_status_code": "PENDING_NEW_TITLE",
+        "title_number": "GR514443",
+        "proprietors": []
+    }
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 11 - Organisation not on allow list<br>
 Title Number - CD1208005</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40003"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organisation is not allowed access to this service."</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"http_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"403"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-15T09:52:40.758182"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "errors": [
+        {
+            "error_code": "BG40003",
+            "error_message": "Organisation is not allowed access to this service.",
+            "http_status": "403",
+            "timestamp": "2022-03-15T09:52:40.758182"
+        }
+    ]
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 12 - Out of business hours<br>
 Title Number - CD1208006</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG50003"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rpn service is currently out of hours"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"http_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"423"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-17T16:24:50.309567"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><p><br></p>
+
+<pre><code>
+{
+    "errors": [
+        {
+            "error_code": "BG50003",
+            "error_message": "rpn service is currently out of hours",
+            "http_status": "423",
+            "timestamp": "2022-03-17T16:24:50.309567"
+        }
+    ]
+}
+</code></pre>
+<p><br></p>
 <p>Scenario 13 - Exceeds rate limiting<br>
 Title Number - CD1208007</p>
-<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BG40006"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"error_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Too many requests, please wait and try again"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"http_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"429"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-17T16:23:27.60063"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
+
+<pre><code>
+{
+    "errors": [
+        {
+            "error_code": "BG40006",
+            "error_message": "Too many requests, please wait and try again",
+            "http_status": "429",
+            "timestamp": "2022-03-17T16:23:27.60063"
+        }
+    ]
+}
+</code></pre>
+
 <hr>
 <h2 id="additional">Additional</h2>
 <p>In rare circumstances we will not be able to return names of the registered 
