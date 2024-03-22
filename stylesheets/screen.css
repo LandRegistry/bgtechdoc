@@ -3951,3 +3951,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between; }
+
+details {
+  margin-bottom: 8px; }
+
+details > summary {
+  padding: 4px;
+  background-color: #eeeeee;
+  border: none;
+  box-shadow: 1px 1px 2px #bbbbbb;
+  cursor: pointer; }
+
+details > summary:hover {
+  background-color: #cccccc; }
