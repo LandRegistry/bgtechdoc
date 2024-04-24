@@ -1,0 +1,1589 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Business Gateway Vendor Test Data - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/pdfs/official_search_of_whole_rest/vendor_test/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="Business Gateway Vendor Test Data - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/pdfs/official_search_of_whole_rest/vendor_test/" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Business Gateway Vendor Test Data" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/pdfs/official_search_of_whole_rest/vendor_test/" />
+
+          <link href="../../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search" data-path-to-site-root="../../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#business-gateway-vendor-test-data"><span>Business Gateway Vendor Test Data</span></a>
+    <ul>
+      <li>
+        <a href="#official-search-of-whole-with-priority-with-data"><span>Official Search of Whole (with Priority) with Data</span></a>
+        <ul>
+          <li>
+            <a href="#1-os1-successful-request-returned-with-data-no-adverse-entries"><span>1. OS1 - Successful request returned with data - No adverse entries</span></a>
+          </li>
+          <li>
+            <a href="#2-os1-successful-request-returned-with-data-no-adverse-entries-proprietor-name-mismatch"><span>2. OS1 - Successful request returned with data - No adverse entries, proprietor name mismatch</span></a>
+          </li>
+          <li>
+            <a href="#3-os1-successful-request-returned-with-data-new-edition-of-register-commonhold-title"><span>3. OS1 - Successful request returned with data - New edition of register, commonhold title</span></a>
+          </li>
+          <li>
+            <a href="#4-os1-successful-request-returned-with-data-new-edition-of-register-prior-pending-official-search-proprietor-name-mismatch-commonhold-title"><span>4. OS1 - Successful request returned with data - New edition of register, prior pending official search, proprietor name mismatch, commonhold title</span></a>
+          </li>
+          <li>
+            <a href="#5-os1-accepted-request-manual-processing-required"><span>5. OS1 - Accepted request - Manual processing required</span></a>
+          </li>
+          <li>
+            <a href="#6-os1-submission-out-of-hours"><span>6. OS1 - Submission out of hours</span></a>
+          </li>
+          <li>
+            <a href="#7-os1-invalid-title"><span>7. OS1 - Invalid title</span></a>
+          </li>
+          <li>
+            <a href="#8-os1-caution-title"><span>8. OS1 - Caution title</span></a>
+          </li>
+          <li>
+            <a href="#9-os1-closed-title"><span>9. OS1 - Closed title</span></a>
+          </li>
+          <li>
+            <a href="#10-os1-future-date-not-pending-first-registration"><span>10. OS1 - Future date - Not pending first registration</span></a>
+          </li>
+          <li>
+            <a href="#11-os1-developer-title-quot-continue-application-if-quot-field-does-not-include-quot-developer-title-quot"><span>11. OS1 - Developer title - “continue_application_if” field does not include “developer_title”</span></a>
+          </li>
+          <li>
+            <a href="#12-os1-expected-fee-too-low-quot-continue-application-if-quot-field-does-not-include-quot-actual-fee-exceeds-expected-fee-quot"><span>12. OS1 - Expected fee too low - “continue_application_if” field does not include “actual_fee_exceeds_expected_fee”</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#appendix"><span>Appendix</span></a>
+        <ul>
+          <li>
+            <a href="#201-successful-response-with-no-adverse-entries"><span>201 - Successful response with no adverse entries</span></a>
+          </li>
+          <li>
+            <a href="#201-successful-response-with-proprietor-name-mismatch"><span>201 - Successful response with Proprietor Name Mismatch</span></a>
+          </li>
+          <li>
+            <a href="#201-successful-response-with-new-edition-of-register-and-commonhold-title"><span>201 - Successful response with new edition of register and commonhold title</span></a>
+          </li>
+          <li>
+            <a href="#201-successful-response-with-new-edition-of-register-and-prior-pending-official-search-and-proprietor-name-mismatch-and-commonhold-title"><span>201 - Successful response with new edition of register and prior pending official search and proprietor name mismatch and commonhold title</span></a>
+          </li>
+          <li>
+            <a href="#202-manual-processing-required-response"><span>202 - Manual processing required response</span></a>
+          </li>
+          <li>
+            <a href="#202-submission-out-of-hours-response"><span>202 - Submission out of hours response</span></a>
+          </li>
+          <li>
+            <a href="#422-invalid-title-response"><span>422 - Invalid title response</span></a>
+          </li>
+          <li>
+            <a href="#422-caution-title-response"><span>422 - Caution title response</span></a>
+          </li>
+          <li>
+            <a href="#422-closed-title-response"><span>422 - Closed title response</span></a>
+          </li>
+          <li>
+            <a href="#422-future-date-response"><span>422 - Future date response</span></a>
+          </li>
+          <li>
+            <a href="#422-developer-title-response"><span>422 - Developer title response</span></a>
+          </li>
+          <li>
+            <a href="#422-fee-mismatch-response"><span>422 - Fee mismatch response</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+
+<div class="page-nav">
+<a href="../../../services/official_search_of_whole_rest/index.html">Back to Official Search of Whole (with Priority) with Data</a>
+<a href="../../../index.html">Back to Home</a>
+</div>
+<h1 id="business-gateway-vendor-test-data">Business Gateway Vendor Test Data</h1>
+
+<hr>
+<h2 id="official-search-of-whole-with-priority-with-data">Official Search of Whole (with Priority) with Data</h2>
+<h3 id="1-os1-successful-request-returned-with-data-no-adverse-entries">1. OS1 - Successful request returned with data - No adverse entries</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD100</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Joe Bloggs and Jane Bloggs</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 201<br>
+Result pdf returned with data<br>
+See <a href="#201-successful-response-with-no-adverse-entries">201 - Successful response with no adverse entries</a></p>
+<p>All tests require the basic minimum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<h3 id="2-os1-successful-request-returned-with-data-no-adverse-entries-proprietor-name-mismatch">2. OS1 - Successful request returned with data - No adverse entries, proprietor name mismatch</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD101</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Must contain &ldquo;NAME_MISMATCH_ON_REGISTER&rdquo;</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Must not equal &ldquo;Jones&rdquo;</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Joe Bloggs and Jane Bloggs</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 201<br>
+Result pdf returned with data<br>
+See <a href="#201-successful-response-with-proprietor-name-mismatch">201 - Successful response with proprietor name mismatch</a></p>
+<p>All tests require the basic miminum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<h3 id="3-os1-successful-request-returned-with-data-new-edition-of-register-commonhold-title">3. OS1 - Successful request returned with data - New edition of register, commonhold title</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD102</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Must contain &ldquo;NAME_MISMATCH_ON_REGISTER&rdquo;</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Must not equal &ldquo;Jones&rdquo;</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Joe Bloggs and Jane Bloggs</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 201<br>
+Result pdf returned with data<br>
+See <a href="#201-successful-response-with-new-edition-of-register-and-commonhold-title">201 - Successful response with new edition of register and commonhold title</a></p>
+<p>All tests require the basic miminum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<h3 id="4-os1-successful-request-returned-with-data-new-edition-of-register-prior-pending-official-search-proprietor-name-mismatch-commonhold-title">4. OS1 - Successful request returned with data - New edition of register, prior pending official search, proprietor name mismatch, commonhold title</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD103</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Must contain &ldquo;NAME_MISMATCH_ON_REGISTER&rdquo;</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Must not equal &ldquo;Jones&rdquo;</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Joe Bloggs and Jane Bloggs</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 201<br>
+Result pdf returned with data<br>
+See <a href="#201-successful-response-with-new-edition-of-register-and-prior-pending-official-search-and-proprietor-name-mismatch-and-commonhold-title">201 - Successful request with new edition of register and prior pending official search
+and proprietor name mismatch and commonhold title</a></p>
+<p>All tests require the basic miminum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<h3 id="5-os1-accepted-request-manual-processing-required">5. OS1 - Accepted request - Manual processing required</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD104</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Must contain &ldquo;NAME_MISMATCH_ON_REGISTER&rdquo;</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Must not equal &ldquo;Jones&rdquo;</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 202<br>
+Acknowledgement only<br>
+Message: &ldquo;We have accepted your application for an official search with priority. Priority begins now and expires on &lt;date&gt;.&rdquo; returned.<br>
+See <a href="#202-manual-processing-required-response">202 - Manual processing required</a></p>
+<p>All tests require the basic miminum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<p>For manually processed results, polling is required via the Official Search Of Whole SOAP service. Polling is not
+possible via the REST service and the additional data will not be returned.</p>
+<h3 id="6-os1-submission-out-of-hours">6. OS1 - Submission out of hours</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD105</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 202<br>
+Acknowledgement only<br>
+Message: &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.<br>
+See <a href="#202-submission-out-of-hours-response">202 - Submission out of hours</a></p>
+<p>All tests require the basic miminum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<p>For accepted out of hours results, polling is required via Official Search Of Whole SOAP service. Polling is not
+possible via the REST service and the additional data will not be returned.</p>
+<h3 id="7-os1-invalid-title">7. OS1 - Invalid title</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD106</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 422<br>
+bg.title.invalid<br>
+Message: &ldquo;Title number is invalid.&rdquo; returned.<br>
+See <a href="#422-invalid-title-response">422 - Invalid title</a></p>
+<p>All tests require the basic miminum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<h3 id="8-os1-caution-title">8. OS1 - Caution title</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD107</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 422<br>
+bg.title.caution<br>
+Message: &ldquo;Official Search cannot be lodged against a Caution Title.&rdquo; returned.<br>
+See <a href="#422-caution-title-response">422 - Caution title</a></p>
+<p>All tests require the basic minimum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<h3 id="9-os1-closed-title">9. OS1 - Closed title</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD108</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 422<br>
+bg.title.closed<br>
+Message: &ldquo;Title number is closed.&rdquo; returned.<br>
+See <a href="#422-closed-title-response">422 - Closed title</a></p>
+<p>All tests require the basic minimum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<h3 id="10-os1-future-date-not-pending-first-registration">10. OS1 - Future date - Not pending first registration</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD109</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Any future date</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 422<br>
+bg.date.futuredate<br>
+Message: &ldquo;Search from date is invalid.&rdquo; returned.<br>
+See <a href="#422-future-date-response">422 - Future date</a></p>
+<p>All tests require the basic minimum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<h3 id="11-os1-developer-title-quot-continue-application-if-quot-field-does-not-include-quot-developer-title-quot">11. OS1 - Developer title - &ldquo;continue_application_if&rdquo; field does not include &ldquo;developer_title&rdquo;</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD110</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Must not contain &ldquo;DEVELOPER_TITLE&rdquo;</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 422<br>
+bg.title.developertitle<br>
+Message: &ldquo;This is a developing title. If you intend to take a registrable disposition of part you should apply for an official search of priority of part.&rdquo; returned.<br>
+See <a href="#422-developer-title-response">422 - Developer title</a></p>
+<p>All tests require the basic minimum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<h3 id="12-os1-expected-fee-too-low-quot-continue-application-if-quot-field-does-not-include-quot-actual-fee-exceeds-expected-fee-quot">12. OS1 - Expected fee too low - &ldquo;continue_application_if&rdquo; field does not include &ldquo;actual_fee_exceeds_expected_fee&rdquo;</h3>
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+      <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="2">Login Details</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Submission Identity Information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14" rowspan="7">Title and property information</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Title number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>PMD111</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Priority Type</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Search from Date</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Property Description</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Continue Application If</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>Must not contain &ldquo;ACTUAL_FEE_EXCEEDS_EXPECTED_FEE&rdquo;</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Registered Proprietor Details or Applicants for First Registration</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Applicant Party</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Customer Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Expected Price</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Gross Price Amount</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14"><strong>£3</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell  govuk-!-font-size-14">Contact</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Telephone number</td>
+      <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid input</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Expected output</strong><br>
+http status code 422<br>
+bg.fee.feeMismatch<br>
+Message: &ldquo;Fee amount provided does not match with the fee calculated by Land Registry.&rdquo; returned.<br>
+See <a href="#422-fee-mismatch-response">422 - Fee mismatch</a></p>
+<p>All tests require the basic minimum data items (as per the schemas). Items in bold are scenario-specific data and are
+needed for the test to return the correct response.</p>
+<h2 id="appendix">Appendix</h2>
+<h3 id="201-successful-response-with-no-adverse-entries">201 - Successful response with no adverse entries</h3>
+
+<pre><code>{
+    "data": {
+        "id": "001",
+        "hmlr_reference": "0000000",
+        "external_reference": {
+            "reference": "AA0",
+            "allocated_by": "AA0",
+            "description": "AA0"
+        },
+        "actual_price": {
+            "gross_price_amount": 3.0,
+            "currency_id": "GBP"
+        },
+        "certificate": {
+            "type": "ATTACHMENT",
+            "attachment": "omitted",
+        },
+        "official_search_data": {
+            "search_from_date": "2022-04-12",
+            "has_register_changed": false,
+            "has_advisory_entries": false,
+            "official_search_number": "300-A1-AA",
+            "certificate_timestamp": "2022-11-25T10:03:21",
+            "priority_period_expiry_date": "2023-01-10",
+            "title_number": "PMD100",
+            "applicants": "Joe Bloggs and Jane Bloggs",
+            "result_entries": {
+                "register_status_entry": {
+                    "entry_text": "Since 8 April 2022 no adverse entries have been made."
+                },
+            }
+            "key_number": "12345678"
+        }
+    }
+}
+</code></pre>
+<h3 id="201-successful-response-with-proprietor-name-mismatch">201 - Successful response with Proprietor Name Mismatch</h3>
+
+<pre><code>{
+    "data": {
+        "id": "001",
+        "hmlr_reference": "0000001",
+        "external_reference": {
+            "reference": "AA0",
+            "allocated_by": "AA0",
+            "description": "AA0"
+        },
+        "actual_price": {
+            "gross_price_amount": 3.0,
+            "currency_id": "GBP"
+        },
+        "certificate": {
+            "type": "ATTACHMENT",
+            "attachment": "omitted",
+        },
+        "official_search_data": {
+        "search_from_date": "2022-04-12",
+        "has_register_changed": false,
+        "has_advisory_entries": true,
+        "proprietor_names": [
+            "JOHN SMITH",
+            "JOAN SMITH"
+        ],
+        "official_search_number": "300-A1-AA",
+        "certificate_timestamp": "2022-11-25T10:03:21",
+        "priority_period_expiry_date": "2023-01-10",
+        "title_number": "PMD101",
+        "applicants": "Joe Bloggs and Jane Bloggs",
+        "result_entries": {
+            "register_status_entry": {
+                "entry_text": "Since 8 April 2022 no adverse entries have been made."
+            },
+            "advisory_entries": [
+                {
+                    "entry_text": "Your search has been completed despite the fact that the names of the
+                    registered proprietor(s) given in your application do not agree with those shown on the register. The names in the
+                    register are John Smith and Joan Smith. Please ensure that the correct names appear in any instrument lodged for
+                    registration and where necessary appropriate evidence to account for the discrepancy accompanies the application.",
+                    "name_mismatch": {
+                        "registered_proprietor_names": [
+                            "JOHN SMITH",
+                            "JOAN SMITH"
+                        ]
+                    }
+                }
+            ]
+        },
+        "key_number": "12345678"
+        }
+    }
+}
+</code></pre>
+<h3 id="201-successful-response-with-new-edition-of-register-and-commonhold-title">201 - Successful response with new edition of register and commonhold title</h3>
+
+<pre><code>{
+    "data": {
+        "id": "001",
+        "hmlr_reference": "0000002",
+        "external_reference": {
+            "reference": "AA0",
+            "allocated_by": "AA0",
+            "description": "AA0"
+        },
+        "actual_price": {
+            "gross_price_amount": 3.0,
+            "currency_id": "GBP"
+        },
+        "certificate": {
+            "type": "ATTACHMENT",
+            "attachment": "omitted",
+        },
+        "official_search_data": {
+            "search_from_date": "2022-04-12",
+            "has_register_changed": true,
+            "has_advisory_entries": true,
+            "official_search_number": "300-A1-AA",
+            "certificate_timestamp": "2022-11-25T10:03:21",
+            "priority_period_expiry_date": "2023-01-10",
+            "title_number": "PMD102",
+            "applicants": "Joe Bloggs and Jane Bloggs",
+            "result_entries": {
+                "register_status_entry": {
+                    "entry_text": "Since 5 August 2020 a new edition of the register has been opened and an
+                    official copy dated 25 November 2022 and timed at 10:03:21 showing the entries subsisting then is enclosed. The
+                    result is subject to such entries. If further official search applications are made the 'search from' date to be
+                    quoted must be the date of the official copy."
+                },
+                "advisory_entries": [
+                    {
+                        "entry_text": "The title number referred to in the result comprises a commonhold unit
+                        within a commonhold development. The development consists of a common parts title registered under title number
+                        PMD099 and individual commonhold unit titles. If you wish to obtain a complete list of the commonhold unit titles,
+                        you should apply for a search of the index map in form SIM and quote the common parts title number. Under the
+                        current Land Registration Fee Order, a fee may be payable for this service. You can obtain Practice Guide 60
+                        Commonhold from any of our offices or from our Internet site www.gov.uk/land-registry The Practice Guide contains
+                        information about commonhold registrations.",
+                        "commonhold_title": {
+                            "commonhold_title_number": "PMD099"
+                        }
+                    },
+                ]
+            },
+            "key_number": "12345678"
+        }
+    }
+}
+</code></pre>
+<h3 id="201-successful-response-with-new-edition-of-register-and-prior-pending-official-search-and-proprietor-name-mismatch-and-commonhold-title">201 - Successful response with new edition of register and prior pending official search and proprietor name mismatch and commonhold title</h3>
+
+<pre><code>{
+    "data": {
+        "id": "001",
+        "hmlr_reference": "0000003",
+        "external_reference": {
+            "reference": "AA0",
+            "allocated_by": "AA0",
+            "description": "AA0"
+        },
+        "actual_price": {
+            "gross_price_amount": 3.0,
+            "currency_id": "GBP"
+        },
+        "certificate": {
+            "type": "ATTACHMENT",
+            "attachment": "omitted",
+        },
+        "official_search_data": {
+            "search_from_date": "2022-04-12",
+            "has_register_changed": true,
+            "has_advisory_entries": true,
+            "proprietor_names": [
+                "JOHN SMITH",
+                "JOAN SMITH"
+            ],
+            "official_search_number": "300-A1-AA",
+            "certificate_timestamp": "2022-11-25T10:03:21",
+            "priority_period_expiry_date": "2023-01-10",
+            "title_number": "PMD103",
+            "applicants": "Joe Bloggs and Jane Bloggs",
+            "result_entries": {
+                "register_status_entry": {
+                    "entry_text": "Since 5 August 2020 a new edition of the register has been opened and an
+                    official copy dated 25 November 2022 and timed at 10:03:21 showing the entries subsisting then is enclosed. The
+                    result is subject to such entries. If further official search applications are made the 'search from' date to be
+                    quoted must be the date of the official copy."
+                },
+                "advisory_entries": [
+                    {
+                        "entry_text": "Your search has been completed despite the fact that the names of the
+                        registered proprietor(s) given in your application do not agree with those shown on the register. The names in the
+                        register are John Smith and Joan Smith. Please ensure that the correct names appear in any instrument lodged for
+                        registration and where necessary appropriate evidence to account for the discrepancy accompanies the application.",
+                        "name_mismatch": {
+                            "registered_proprietor_names": [
+                                "JOHN SMITH",
+                                "JOAN SMITH"
+                            ]
+                        }
+                    },
+                    {
+                        "entry_text": "An official search certificate dated 15 November 2022 and timed at 12:27:21
+                        has been issued to protect an intending CHARGE in favour of SANTANDER PLC affecting the whole of the registered
+                        title. The relative priorities conferred by the issue of two or more official search certificates are governed by
+                        the provisions of rule 153 of the Land Registration Rules 2003."
+                    },
+                    {
+                        "entry_text": "The title number referred to in the result comprises a commonhold unit
+                        within a commonhold development. The development consists of a common parts title registered under title number
+                        PMD099 and individual commonhold unit titles. If you wish to obtain a complete list of the commonhold unit titles,
+                        you should apply for a search of the index map in form SIM and quote the common parts title number. Under the
+                        current Land Registration Fee Order, a fee may be payable for this service. You can obtain Practice Guide 60
+                        Commonhold from any of our offices or from our Internet site www.gov.uk/land-registry The Practice Guide contains
+                        information about commonhold registrations.",
+                        "commonhold_title": {
+                            "commonhold_title_number": "PMD099"
+                        }
+                    },
+                ]
+            },
+            "pending_official_searches_of_whole": [
+                {
+                    "certificate_timestamp": "2022-11-15T12:27:21.152924",
+                    "priority_type": "Charge",
+                    "applicant": "Santander PLC"
+                }
+            ],
+            "key_number": "12345678"
+        }
+    }
+}
+</code></pre>
+<h3 id="202-manual-processing-required-response">202 - Manual processing required response</h3>
+
+<pre><code>{
+    "data": {
+        "id": "dfcacc5e-456e-4fd1-88e5-8070e43d6714",
+        "acknowledgement_message": "We have accepted your application for an official search with priority. Priority
+        begins now and expires on 24 May 2022.",
+        "hmlr_reference": "J111AAA",
+        "acknowledgement_code": "BG20001"
+    }
+}
+</code></pre>
+<h3 id="202-submission-out-of-hours-response">202 - Submission out of hours response</h3>
+
+<pre><code>{
+    "data": {
+        "id": "dfcacc5e-456e-4fd1-88e5-8070e43d6714",
+        "expected_response_at": "2022-12-12T08:44:30.244Z",
+        "acknowledgement_message": "Service is not currently available. System has queued your request, please poll at
+        specified time",
+        "acknowledgement_code": "BG20002"
+    }
+}
+</code></pre>
+<h3 id="422-invalid-title-response">422 - Invalid title response</h3>
+
+<pre><code>{
+    "errors": [
+        {
+            "code": "bg.title.invalid",
+            "detail": "Title number is invalid",
+            "status": "422",
+            "trace_id": "c62e9b3f-e523-4f04-a941-c6cf0d60c080",
+            "title": "Invalid title."
+        }
+    ]
+}
+</code></pre>
+<h3 id="422-caution-title-response">422 - Caution title response</h3>
+
+<pre><code>{
+    "errors": [
+        {
+            "code": "bg.title.caution",
+            "detail": " Official Search cannot be lodged against a Caution Title",
+            "status": "422",
+            "trace_id": "c62e9b3f-e523-4f04-a941-c6cf0d60c080",
+            "title": "Caution title."
+        }
+    ]
+}
+</code></pre>
+<h3 id="422-closed-title-response">422 - Closed title response</h3>
+
+<pre><code>{
+    "errors": [
+        {
+            "code": "bg.title.closed",
+            "detail": "Title number is closed",
+            "status": "422",
+            "trace_id": "c62e9b3f-e523-4f04-a941-c6cf0d60c080",
+            "title": "Closed title."
+        }
+    ]
+}
+</code></pre>
+<h3 id="422-future-date-response">422 - Future date response</h3>
+
+<pre><code>{
+    "errors": [
+        {
+            "code": "bg.title.futuredate",
+            "detail": "Search from date is invalid",
+            "status": "422",
+            "trace_id": "c62e9b3f-e523-4f04-a941-c6cf0d60c080",
+            "title": "Search from date is in the future."
+        }
+    ]
+}
+</code></pre>
+<h3 id="422-developer-title-response">422 - Developer title response</h3>
+
+<pre><code>{
+    "errors": [
+        {
+            "code": "bg.title.developertitle",
+            "detail": "This is a developing title. If you intend to take a registrable disposition of part you should
+            apply for an official search with priority of part.",
+            "status": "422",
+            "trace_id": "c62e9b3f-e523-4f04-a941-c6cf0d60c080",
+            "title": "Developer title and not continue."
+        }
+    ]
+}
+</code></pre>
+<h3 id="422-fee-mismatch-response">422 - Fee mismatch response</h3>
+
+<pre><code>{
+    "errors": [
+        {
+            "code": "bg.title.feemismatch",
+            "detail": "Fee Amount provided does not match with the fee calculated by Land Registry",
+            "status": "422",
+            "trace_id": "c62e9b3f-e523-4f04-a941-c6cf0d60c080",
+            "title": "Fee mismatch and not continue."
+        }
+    ]
+}
+</code></pre>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../../javascripts/application.js"></script>
+  </body>
+</html>
