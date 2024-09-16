@@ -303,10 +303,12 @@ currently in place but are subject to change or may disappear in the future.
 <h3 id="endpoint-url">Endpoint URL</h3>
 <p>The test environment can be accessed at:<br>
 <code>
-https://bgtest.landregistry.gov.uk/bg2test/s2/v1/titles/{{TitleNumber}}/registered-proprietor-names
+https://bgtest.landregistry.gov.uk/bg2test/api/v1/titles/&lt;title_number&gt;/registered-proprietor-names
 </code></p>
-<p>Where <code>{{TitleNumber}}</code> is replaced by the title number you need to use.</p>
+<p>Where <code>&lt;title_number&gt;</code> is replaced by the title number you need to use.</p>
 <p>This requires a customer test certificate (this is different to the production client certificates).</p>
+<p>The previous test environment url has been deprecated:
+<s>https://bgtest.landregistry.gov.uk/bg2test/s2/v1/titles/<title_number>/registered-proprietor-names</s></p>
 
 <hr>
 <h2 id="scenarios-when-the-registered-proprietor-names-are-returned">Scenarios when the registered proprietor names are returned</h2>
@@ -445,13 +447,13 @@ Title Number - AB1208005</p>
 <hr>
 <h2 id="scenarios-when-the-registered-proprietor-names-are-not-returned">Scenarios when the registered proprietor names are not returned</h2>
 <p>Scenario 6 - Invalid title format<br>
-Title Number - ABCDF3438$P</p>
+Title Number - ABCDF3438P</p>
 
 <pre><code>
 {
     "errors": [
         {
-            "timestamp": "2021-11-13T20:20:39+00:00",
+            "timestamp": "2022-03-15T09:52:40.758182",
             "http_status": "400",
             "error_code": "BG40001",
             "error_message": "Malformed invalid schema. Title is invalid."
@@ -467,7 +469,7 @@ Title Number - CD1208001</p>
 {
     "errors": [
         {
-            "timestamp": "2021-11-13T20:20:39+00:00",
+            "timestamp": "2022-03-15T09:52:40.758182",
             "http_status": "404",
             "error_code": "BG40002",
             "error_message": "Title is not found."
