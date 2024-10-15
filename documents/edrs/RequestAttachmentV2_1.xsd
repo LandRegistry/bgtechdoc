@@ -59,7 +59,7 @@
 	
 	<xs:complexType name="AttachmentType">
 		<xs:annotation>
-			<xs:documentation>Maximum file size for an attachment is 20MB. 
+			<xs:documentation>Maximum file size for an attachment is 40MB. 
 			We only accept the following file types: TIFF, GIF, JPEG and PDF
 			</xs:documentation>
 		</xs:annotation>

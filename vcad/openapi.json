@@ -1,0 +1,1882 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "description": "V0.1 of the set of APIs for the new Validating Customer Application Data RESTful API Schema",
+    "title": "V0.1 Validating Customer Application Data RESTful API Schema"
+  },
+  "paths": {
+    "/order/submit": {
+      "post": {
+        "description": "Accept order submission requests for processing",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubstantiveOrder"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderCreation"
+                }
+              }
+            },
+            "description": "Order creation request accepted.",
+            "headers": {
+              "Location": {
+                "description": "Get order creation status URI for checking status",
+                "schema": {
+                  "type": "string"
+                },
+                "style": "simple"
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request due to payload not meeting the required schema."
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderCreation"
+                }
+              }
+            },
+            "description": "Unauthorised - an access token is required"
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      }
+    },
+    "/document/url": {
+      "post": {
+        "description": "Retrieve a generated document upload URL",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DocumentUploadUrlRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentUploadUrlResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised - an access token is required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order/{order_request_id}/status": {
+      "get": {
+        "description": "Get status of an order submission request.",
+        "parameters": [
+          {
+            "description": "The ID returned by the Order Submission request API",
+            "in": "path",
+            "name": "order_request_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusResponse"
+                }
+              }
+            },
+            "description": "Request status received."
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                  "schema": {
+                      "$ref": "#/components/schemas/ErrorResponse"
+                  }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                  "schema": {
+                      "$ref": "#/components/schemas/ErrorResponse"
+                  }
+              }
+            },
+            "description": "Unauthorised - an access token is required"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                  "schema": {
+                      "$ref": "#/components/schemas/ErrorResponse"
+                  }
+              }
+            },
+            "description": "Order creation request not found in the system."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+        "AddressReference": {
+            "maxLength": 50,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9-?,_]+$",
+            "type": "string",
+            "description": "Unique identifier for addresses, used to reference addresses from elsewhere in the spec.",
+            "example": "property address"
+        },
+        "PartyReference": {
+            "maxLength": 50,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9-?,_]+$",
+            "type": "string",
+            "description": "Unique identifier for parties, used to reference parties from elsewhere in the spec.",
+            "example": "customer"
+        },
+        "DocumentReference": {
+            "maxLength": 50,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9-?,_]+$",
+            "type": "string",
+            "description": "Unique identifier for documents, used to reference documents from elsewhere in the spec.",
+            "example": "signed_charge"
+        },
+        "TransactionReference": {
+            "maxLength": 50,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9-?,_]+$",
+            "type": "string",
+            "description": "Unique identifier for transactions, used to reference transactions from elsewhere in the spec.",
+            "example": "property charge"
+        },
+        "TransactionFee": {
+          "type": "object",
+          "properties": {
+            "transaction_reference": {
+              "$ref": "#/components/schemas/TransactionReference"
+            },
+            "fee": {
+              "description": "Fee in pence",
+              "type": "integer"
+            }
+          }
+        },
+      "AddressDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "UK",
+              "OVERSEAS",
+              "EMAIL",
+              "DX",
+              "BFPO",
+              "PO_BOX"
+            ]
+          }
+        },
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
+      "AddressForServiceOption": {
+        "type": "string",
+        "description": "* `PROPERTY_ADDRESS` - The address for service is specified in the property address (A1)\n* `TRANSFER_ASSENT_ADDRESS` - The address for service is provided in transfer/assent document info\n* `CURRENT_ADDRESS` - The address for service should not be changed and match the B1 register\n* `PROVIDED_ADDRESS` - The address for service has been provided alongside this option\n* `NOT_REQUIRED` - The address for service is not required for the party.\n",
+        "enum": [
+          "PROPERTY_ADDRESS",
+          "TRANSFER_ASSENT_ADDRESS",
+          "CURRENT_ADDRESS",
+          "PROVIDED_ADDRESS",
+          "NOT_REQUIRED"
+        ]
+      },
+      "AmountDetails": {
+        "type": "object",
+        "description": "value_band - Value band of the equity being transferred",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TransactionDetails"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "value": {
+                "minimum": 0,
+                "type": "integer",
+                "format": "int32"
+              },
+              "value_band": {
+                "$ref": "#/components/schemas/ValueBand"
+              },
+              "full_value_of_property_band": {
+                "$ref": "#/components/schemas/ValueBand"
+              },
+              "full_value_of_property": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "outstanding_charge": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ]
+      },
+      "BfpoAddress": {
+        "required": [
+          "number",
+          "service_number_rank",
+          "unit_regiment"
+        ],
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AddressDetails"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "care_of_name": {
+                "maxLength": 200,
+                "minLength": 0,
+                "type": "string"
+              },
+              "full_address": {
+                "maxLength": 1000,
+                "minLength": 0,
+                "type": "string"
+              },
+              "number": {
+                "maxLength": 10,
+                "minLength": 0,
+                "type": "string"
+              },
+              "service_number_rank": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              },
+              "unit_regiment": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "BypassValidationData": {
+        "required": [
+          "validation_type",
+          "validation_pointer",
+          "reason",
+          "comment"
+        ],
+        "type": "object",
+        "properties": {
+          "validation_type": {
+            "maxLength": 30,
+            "minLength": 1,
+            "type": "string"
+          },
+          "validation_pointer": {
+            "maxLength": 250,
+            "minLength": 1,
+            "type": "string"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "DISAGREE_WITH_REGISTER",
+              "UNABLE_TO_RESOLVE_ERRORS_BEFORE_OS_EXPIRES",
+              "DISAGREE_WITH_EXTRACTED_DATA"
+            ]
+          },
+          "comment": {
+            "maxLength": 250,
+            "minLength": 1,
+            "type": "string"
+          }
+        }
+      },
+      "Charge": {
+        "required": [
+          "date"
+        ],
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TransactionDetails"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "mdref": {
+                "maxLength": 10,
+                "minLength": 0,
+                "type": "string"
+              },
+              "value": {
+                "minimum": 0,
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ]
+      },
+      "Discharge": {
+        "required": [
+          "discharge_submission_type"
+        ],
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TransactionDetails"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "discharge_submission_type": {
+                "type": "string",
+                "enum": [
+                  "ATTACHED",
+                  "LENDER",
+                  "LATER"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "DocumentMetadata": {
+        "required": [
+          "certification_statement_type",
+          "document_filename"
+        ],
+        "type": "object",
+        "properties": {
+          "certification_statement_type": {
+            "type": "string",
+            "enum": [
+              "CERTIFIED",
+              "CERTIFIED_BY_ANOTHER",
+              "NOT_CERTIFIED"
+            ]
+          },
+          "document_filename": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          }
+        }
+      },
+      "DocumentRef": {
+        "type": "object",
+        "properties": {
+          "appn_doc_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "att_doc_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "document_hub_slot_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      },
+      "DocumentUploadUrlResponse": {
+        "type": "object",
+        "properties": {
+          "upload_url": {
+            "type": "string"
+          },
+          "document_id": {
+            "type": "string"
+          }
+        }
+      },
+      "DocumentUploadUrlData": {
+        "required": [
+          "document_type"
+        ],
+        "type": "object",
+        "properties": {
+          "document_type": {
+            "type": "string",
+            "enum": [
+              "ACKAPU",
+              "ADJAR",
+              "ADJREVU",
+              "ADMIN_LTRS",
+              "ADV1",
+              "ADV2",
+              "AN1",
+              "APPOINTMENT_OF_TRUSTEE",
+              "AS1",
+              "AS2",
+              "AS3",
+              "BIRTH_CERT",
+              "BOUND_PLAN",
+              "CC",
+              "CCD",
+              "CERT_DEATH",
+              "CERT_S89",
+              "CH2",
+              "CH3",
+              "CHARG_ORD",
+              "CHARGE",
+              "CIVIL_CERT",
+              "CM2",
+              "CM5",
+              "CM6",
+              "CN1",
+              "CNFRM_DTMN_LTA_LGHA",
+              "CNFRM_NO_DEED_SUR",
+              "CNFRM_NO_LTA_LGHA",
+              "CNSNT_ADMIN_COURT",
+              "COMP_DOC",
+              "CONSENT",
+              "CONTR_RES",
+              "CONV_CERT",
+              "CONVEYANCE",
+              "COR_CERT",
+              "CORRES",
+              "COSR",
+              "COURT_ORD",
+              "CRALIQ",
+              "CRED_DEC",
+              "CRED_RES",
+              "CRWALIQ",
+              "DB",
+              "DEATH_CERT",
+              "DEED",
+              "DEED_POLL",
+              "DEED_REG_DIS",
+              "DEED_SUR",
+              "DJP",
+              "DOP",
+              "DRIVING_LICENCE",
+              "DS1",
+              "DS3",
+              "EOB",
+              "EOL",
+              "EVD_NO_RENEW",
+              "EVIDENCE",
+              "FORM_600",
+              "FORM_600CH",
+              "FORM_JO",
+              "FR1",
+              "GENDER_CERT",
+              "GVD",
+              "HR1",
+              "HR2",
+              "HR4",
+              "JP1",
+              "K17_OR_K18",
+              "K20",
+              "K22",
+              "K3",
+              "K4",
+              "LEASE",
+              "LIQ_CERT_1",
+              "LIQ_CERT_2",
+              "LIQ_CERT_3",
+              "LIQ01",
+              "LNDLD_CNSNT",
+              "LONP",
+              "LTT",
+              "MEMO",
+              "MORD",
+              "NOD",
+              "PASSPORT",
+              "PLAN",
+              "POA",
+              "PROBATE",
+              "REVERS_INT",
+              "RN",
+              "RX1",
+              "RX2",
+              "RX3",
+              "RX4",
+              "SDLT",
+              "SEV",
+              "SHRF_RTN",
+              "SIDE_LTR",
+              "SOT",
+              "SSALIQ",
+              "STAT_DEC",
+              "TP1",
+              "TP2",
+              "TR1",
+              "TR2",
+              "TR4",
+              "TRANSFER",
+              "TRUSTEE_RESOLUTION",
+              "UN1",
+              "UN2",
+              "UN3",
+              "UN4",
+              "UT1",
+              "VAR_CHARGE",
+              "VAR_COV",
+              "VAR_EAS",
+              "VAR_LEASE",
+              "VESTING_ORDER",
+              "WCT",
+              "WINDING_UP"
+            ]
+          },
+          "additional_provider_filter": {
+            "type": "string"
+          }
+        }
+      },
+      "DocumentUploadUrlRequest": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/DocumentUploadUrlData"
+          }
+        }
+      },
+      "DxAddress": {
+        "required": [
+          "exchange_name",
+          "number"
+        ],
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AddressDetails"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "care_of_name": {
+                "maxLength": 200,
+                "minLength": 0,
+                "type": "string"
+              },
+              "exchange_name": {
+                "maxLength": 20,
+                "minLength": 0,
+                "type": "string"
+              },
+              "full_address": {
+                "maxLength": 1000,
+                "minLength": 0,
+                "type": "string"
+              },
+              "number": {
+                "maxLength": 10,
+                "minLength": 0,
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "EmailAddress": {
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AddressDetails"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "email": {
+                "maxLength": 254,
+                "minLength": 0,
+                "type": "string"
+              },
+              "full_address": {
+                "maxLength": 1000,
+                "minLength": 0,
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+        "ErrorResponse": {
+          "properties": {
+              "errors": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/components/schemas/ErrorModel"
+                  }
+              }
+          }
+        },
+      "ErrorModel": {
+        "required": [
+          "type",
+          "summary",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+            "type": {
+                "type": "string",
+                "description": "The type of error received",
+                "example": "L2_MDREF_ERROR"
+            },
+            "summary": {
+                "type": "string",
+                "description": "A short human readable summary of the error type",
+                "example": "MDRef validation Failed"
+            },
+            "detail": {
+                "type": "string",
+                "description": "A longer description about the type of error received",
+                "example": "The MDref included in the request does not exist"
+            },
+            "pointer": {
+                "type": "string",
+                "description": "A JSON pointer to the location in the JSON payload that caused the error (optional)",
+                "example": "#/data/transaction/0/mdref"
+            }
+        }
+      },
+      "OrderCreation": {
+        "type": "object",
+        "properties": {
+          "order_request_id": {
+            "type": "string"
+          }
+        }
+      },
+      "StatusResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+              "type": "array",
+              "items": {
+                  "$ref": "#/components/schemas/ErrorModel"
+              }
+          },
+          "hmlr_reference": {
+            "type": "string"
+          },
+          "priority_timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "order_request_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+                "PENDING",
+                "NOT_CREATED",
+                "NOT_ACCEPTED",
+                "QUEUED_OUT_OF_HOURS",
+                "ACCEPTED"
+            ]
+          },
+          "calculated_fees": {
+            "type": "object",
+            "properties": {
+              "total_fee": {
+                "description": "Total fee in pence",
+                "type": "integer"
+              },
+              "per_transaction": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/TransactionFee"
+                }
+              }
+            }
+          }
+        }
+      },
+      "OrderLodger": {
+          "description": "Information about the person lodging the application. (This is usually the conveynacer lodging on behalf of an individual)",
+          "required": [
+          "email",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "$ref": "#/components/schemas/EmailAddress"
+          },
+          "telephone": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "CONVEYANCER",
+              "NON_CONVEYANCER"
+            ]
+          }
+        }
+      },
+      "OtherConveyancer": {
+        "required": [
+          "full_name",
+          "registered_address"
+        ],
+        "type": "object",
+        "properties": {
+          "conveyancer_reference": {
+            "maxLength": 25,
+            "minLength": 0,
+            "type": "string"
+          },
+          "full_name": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "registered_address": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          }
+        }
+      },
+      "OverseasAddress": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AddressDetails"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "care_of_name": {
+                "maxLength": 200,
+                "minLength": 0,
+                "type": "string"
+              },
+              "country": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              },
+              "full_address": {
+                "maxLength": 1000,
+                "minLength": 0,
+                "type": "string"
+              },
+              "line1": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              },
+              "line2": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              },
+              "line3": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              },
+              "line4": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              },
+              "line5": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "PoBoxAddress": {
+        "required": [
+          "number",
+          "post_town",
+          "postcode"
+        ],
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AddressDetails"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "care_of_name": {
+                "maxLength": 200,
+                "minLength": 0,
+                "type": "string"
+              },
+              "full_address": {
+                "maxLength": 1000,
+                "minLength": 0,
+                "type": "string"
+              },
+              "number": {
+                "maxLength": 20,
+                "minLength": 0,
+                "type": "string"
+              },
+              "post_town": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              },
+              "postcode": {
+                "maxLength": 8,
+                "minLength": 5,
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "RegisterPartyDetails": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "forenames": {
+            "maxLength": 366,
+            "minLength": 0,
+            "type": "string"
+          },
+          "organisation_name": {
+            "maxLength": 366,
+            "minLength": 0,
+            "type": "string"
+          },
+          "surname": {
+            "maxLength": 366,
+            "minLength": 0,
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "PRIVATE_INDIVIDUAL",
+              "OTHER_ORGANISATION",
+              "OVERSEAS_COMPANY",
+              "UK_COMPANY",
+              "UNKNOWN"
+            ]
+          }
+        }
+      },
+      "SubstantiveOrderData": {
+            "required": [
+                "applicants",
+                "customer_reference",
+                "order_lodger",
+                "ap1_warning_understood",
+                "titles",
+                "transactions",
+                "type",
+                "vdd_account_number"
+            ],
+            "type": "object",
+            "properties": {
+                "addresses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/Address"
+                    }
+                },
+                "ap1_warning_understood": {
+                    "type": "boolean",
+                    "description": "Setting this value to true notes you have understood the following: <br>**WARNING** <br>If you dishonestly enter information or make a statement that you know is, or might be, untrue or misleading, and intend by doing so to make a gain for yourself or another person, or to cause loss or the risk of loss to another person, you may commit the offence of fraud under section 1 of the Fraud Act 2006, the maximum penalty for which is 10 years’ imprisonment or an unlimited fine, or both. <br>Failure to complete this form with proper care may result in a loss of protection under the Land Registration Act 2002 if, as a result, a mistake is made in the register.  <br>Under section 66 of the Land Registration Act 2002 most documents (including this form) kept by the registrar relating to an application to the registrar or referred to in the register are open to public inspection and copying. If you believe a document contains prejudicial information, you may apply for that part of the document to be made exempt using Form EX1, under rule 136 of the Land Registration Rules 2003.",
+                    "nullable": false
+                },
+                "applicants": {
+                    "type": "array",
+                    "description": "A list containing the applicant(s).",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "description": "This is the party or parties who the order is being made on behalf of.",
+                        "required": [
+                            "party_reference"
+                        ],
+                        "properties": {
+                            "party_reference": {
+                                "$ref": "#/components/schemas/PartyReference"
+                            }
+                        }
+                    }
+                },
+                "bypass_validation": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/BypassValidationData"
+                    }
+                },
+                "customer_reference": {
+                    "maxLength": 25,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "documents": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/DocumentDetails"
+                    }
+                },
+                "jp1_reference": {
+                    "type": "string"
+                },
+                "order_lodger": {
+                    "$ref": "#/components/schemas/OrderLodger"
+                },
+                "parties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/Party"
+                    }
+                },
+                "titles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/TitleDetails"
+                    }
+                },
+                "transactions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/Transaction"
+                    }
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "REGISTER_UPDATE",
+                        "TRANSFER_OF_PART",
+                        "DISPOSITIONARY_FIRST_LEASE",
+                        "REMOVE_JP1"
+                    ]
+                },
+                "additional_provider_filter": {
+                    "maxLength": 50,
+                    "minLength": 0,
+                    "pattern": "^\\w*$",
+                    "type": "string"
+                },
+                "vdd_account_number": {
+                    "maxLength": 7,
+                    "minLength": 0,
+                    "type": "string"
+                }
+            }
+        },
+      "SubstantiveOrderSummary": {
+        "type": "object",
+        "properties": {
+          "final_legacy_work_reference": {
+            "type": "string"
+          },
+          "order_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "priority_timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "SubstantiveOrder": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/SubstantiveOrderData"
+          }
+        }
+      },
+      "TitleDetails": {
+        "required": [
+          "scope_details",
+          "title_number"
+        ],
+        "type": "object",
+        "properties": {
+          "disclosable_overriding_interests": {
+            "type": "boolean"
+          },
+          "scope_details": {
+            "$ref": "#/components/schemas/TitleScopeDetails"
+          },
+          "title_number": {
+            "maxLength": 9,
+            "minLength": 0,
+            "type": "string"
+          },
+          "title_type": {
+            "type": "string",
+            "enum": [
+              "REGISTER_TITLE",
+              "TRANSFEROR_TITLE",
+              "ADDITIONAL_TITLE",
+              "LANDLORD_TITLE",
+              "TENANT_TITLE"
+            ]
+          }
+        }
+      },
+      "TitleScopeDetails": {
+        "required": [
+          "scope"
+        ],
+        "type": "object",
+        "properties": {
+          "part_description": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "WHOLE",
+              "PART"
+            ]
+          }
+        }
+      },
+      "TransactionDetails": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
+      "Transfer": {
+        "required": [
+          "additional_provisions_code",
+          "consideration_description",
+          "consideration_type",
+          "date",
+          "title_guarantee_code"
+        ],
+        "type": "object",
+        "description": "value_band - Value band of the equity being transferred",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TransactionDetails"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "additional_provisions": {
+                "type": "string"
+              },
+              "additional_provisions_code": {
+                "type": "string",
+                "enum": [
+                  "NO_PROVISIONS",
+                  "MANUAL_TR1_FORM",
+                  "DETAILS_ENTERED"
+                ]
+              },
+              "consideration_description": {
+                "maxLength": 200,
+                "minLength": 0,
+                "type": "string"
+              },
+              "consideration_type": {
+                "type": "string",
+                "enum": [
+                  "MONETARY_VALUE",
+                  "NO_MONETARY_VALUE",
+                  "OTHER"
+                ]
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "title_guarantee_code": {
+                "type": "string",
+                "enum": [
+                  "FULL",
+                  "LIMITED"
+                ]
+              },
+              "trust_declaration_type": {
+                "type": "string",
+                "enum": [
+                  "JOINT_TENANTS",
+                  "TENANTS_IN_COMMON",
+                  "TRUST_DETAILS",
+                  "FORM_JO"
+                ]
+              },
+              "trust_details": {
+                "maxLength": 300,
+                "minLength": 0,
+                "type": "string"
+              },
+              "value": {
+                "minimum": 0,
+                "type": "integer",
+                "format": "int32"
+              },
+              "value_band": {
+                "$ref": "#/components/schemas/ValueBand"
+              },
+              "full_value_of_property_band": {
+                  "$ref": "#/components/schemas/ValueBand"
+              },
+              "full_value_of_property": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "outstanding_charge": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ]
+      },
+      "UkAddress": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AddressDetails"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "building_description": {
+                "maxLength": 85,
+                "minLength": 0,
+                "type": "string"
+              },
+              "care_of_name": {
+                "maxLength": 200,
+                "minLength": 0,
+                "type": "string"
+              },
+              "department_name": {
+                "maxLength": 60,
+                "minLength": 0,
+                "type": "string"
+              },
+              "dependent_locality": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              },
+              "dependent_street": {
+                "maxLength": 80,
+                "minLength": 0,
+                "type": "string"
+              },
+              "double_dependent_locality": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              },
+              "full_address": {
+                "maxLength": 1000,
+                "minLength": 0,
+                "type": "string"
+              },
+              "organisation_name": {
+                "maxLength": 60,
+                "minLength": 0,
+                "type": "string"
+              },
+              "post_town": {
+                "maxLength": 35,
+                "minLength": 0,
+                "type": "string"
+              },
+              "postcode": {
+                "maxLength": 8,
+                "minLength": 5,
+                "type": "string"
+              },
+              "street": {
+                "maxLength": 80,
+                "minLength": 0,
+                "type": "string"
+              },
+              "sub_building_description": {
+                "maxLength": 40,
+                "minLength": 0,
+                "type": "string"
+              },
+              "uprn": {
+                "minimum": 1,
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          }
+        ]
+      },
+      "ValueBand": {
+        "required": [
+          "lower_value_band"
+        ],
+        "type": "object",
+        "properties": {
+          "lower_value_band": {
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "upper_value_band": {
+            "minimum": 100000,
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Address": {
+            "required": [
+                "reference",
+                "details"
+            ],
+            "type": "object",
+            "properties": {
+                "reference": {
+                    "$ref": "#/components/schemas/AddressReference"
+                },
+                "details": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/components/schemas/BfpoAddress"
+                        },
+                        {
+                            "$ref": "#/components/schemas/DxAddress"
+                        },
+                        {
+                            "$ref": "#/components/schemas/EmailAddress"
+                        },
+                        {
+                            "$ref": "#/components/schemas/OverseasAddress"
+                        },
+                        {
+                            "$ref": "#/components/schemas/PoBoxAddress"
+                        },
+                        {
+                            "$ref": "#/components/schemas/UkAddress"
+                        }
+                    ]
+                }
+            }
+        },
+      "DocumentDetails": {
+            "required": [
+                "reference",
+                "document_metadata",
+                "type"
+            ],
+            "type": "object",
+            "properties": {
+                "reference": {
+                    "$ref": "#/components/schemas/DocumentReference"
+                },
+                "document_id": {
+                    "type": "string",
+                    "description": "To reference documents from Order Creation Document Store"
+                },
+                "document_metadata": {
+                    "$ref": "#/components/schemas/DocumentMetadata"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "ABSTRACT",
+                        "ACKAPU",
+                        "ADJAR",
+                        "ADJREVU",
+                        "ADMIN_LTRS",
+                        "ADV1",
+                        "ADV2",
+                        "AGREEMENT",
+                        "AMS1",
+                        "AN1",
+                        "AP1",
+                        "APPL_FRM",
+                        "APPOINTMENT_OF_TRUSTEE",
+                        "AS1",
+                        "AS2",
+                        "AS3",
+                        "ASSENT",
+                        "ASSIGNMENT",
+                        "BIRTH_CERT",
+                        "BOUND_PLAN",
+                        "CC",
+                        "CCD",
+                        "CERT_CON_CH",
+                        "CERT_DEATH",
+                        "CERT_REG_CH",
+                        "CERT_S89",
+                        "CH1",
+                        "CH2",
+                        "CH3",
+                        "CHARGE",
+                        "CHARG_ORD",
+                        "CIVIL_CERT",
+                        "CM2",
+                        "CM5",
+                        "CM6",
+                        "CN1",
+                        "CNFRM_DTMN_LTA_LGHA",
+                        "CNFRM_NO_DEED_SUR",
+                        "CNFRM_NO_LTA_LGHA",
+                        "CNSNT_ADMIN_COURT",
+                        "COMP_DOC",
+                        "CONSENT",
+                        "CONST_COMP",
+                        "CONTR_RES",
+                        "CONVEYANCE",
+                        "CONV_CERT",
+                        "CONV_CERT_DEATH",
+                        "CORRES",
+                        "COR_CERT",
+                        "COSR",
+                        "COURT_ORD",
+                        "CRALIQ",
+                        "CRED_DEC",
+                        "CRED_RES",
+                        "CRT_FORM_7",
+                        "CRWALIQ",
+                        "DB",
+                        "DEATH_CERT",
+                        "DEC_AB_NULL_MARR",
+                        "DEED",
+                        "DEED_POLL",
+                        "DEED_REG_DIS",
+                        "DEED_SUR",
+                        "DISCHARGE",
+                        "DJP",
+                        "DL",
+                        "DOP",
+                        "DRIVING_LICENCE",
+                        "DS1",
+                        "DS2",
+                        "DS3",
+                        "DS3_SHORT",
+                        "EOB",
+                        "EOL",
+                        "EVD_NO_RENEW",
+                        "EVIDENCE",
+                        "EV_OV_NAME_CHANGE",
+                        "EX1",
+                        "EX1A",
+                        "FORM_600",
+                        "FORM_600CH",
+                        "FORM_DI",
+                        "FORM_JO",
+                        "FR1",
+                        "GENDER_CERT",
+                        "GVD",
+                        "HR1",
+                        "HR2",
+                        "HR4",
+                        "ID1",
+                        "ID2",
+                        "ID3",
+                        "ID4",
+                        "ID5",
+                        "ID_EV",
+                        "ID_FRM",
+                        "INDENTURE",
+                        "JP1",
+                        "K17_OR_K18",
+                        "K20",
+                        "K22",
+                        "K3",
+                        "K4",
+                        "LEASE",
+                        "LICENCE",
+                        "LIQ01",
+                        "LIQ_CERT_1",
+                        "LIQ_CERT_2",
+                        "LIQ_CERT_3",
+                        "LNDLD_CNSNT",
+                        "LONP",
+                        "LR_CORRES",
+                        "LTT",
+                        "MARR_CERT",
+                        "MEMO",
+                        "MORD",
+                        "MRTG_DEED",
+                        "NOD",
+                        "ORD_DISS_NULL_CP",
+                        "PASSPORT",
+                        "PLAN",
+                        "POA",
+                        "PROBATE",
+                        "PSS1",
+                        "REVERS_INT",
+                        "RN",
+                        "RX1",
+                        "RX2",
+                        "RX3",
+                        "RX4",
+                        "RXC",
+                        "SC",
+                        "SDLT",
+                        "SEV",
+                        "SHRF_RTN",
+                        "SIDE_LTR",
+                        "SOT",
+                        "SSALIQ",
+                        "STAT_DEC",
+                        "SUB_CHARGE",
+                        "TP1",
+                        "TP2",
+                        "TR1",
+                        "TR2",
+                        "TR4",
+                        "TRANSFER",
+                        "TRUSTEE_RESOLUTION",
+                        "UN1",
+                        "UN2",
+                        "UN3",
+                        "UN4",
+                        "UT1",
+                        "VAR_CHARGE",
+                        "VAR_COV",
+                        "VAR_EAS",
+                        "VAR_LEASE",
+                        "VESTING_ORDER",
+                        "WCT",
+                        "WINDING_UP",
+                        "WIT_STATE"
+                    ]
+                }
+            }
+        },
+      "Party": {
+            "required": [
+                "address_for_service_option",
+                "reference",
+                "type"
+            ],
+            "type": "object",
+            "properties": {
+                "address_for_service_option": {
+                    "$ref": "#/components/schemas/AddressForServiceOption"
+                },
+                "addresses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/AddressReference"
+                    }
+                },
+                "company_number": {
+                    "maxLength": 30,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "forenames": {
+                    "maxLength": 366,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "freeformat_name": {
+                    "maxLength": 366,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "identity_evidence_type": {
+                    "type": "string",
+                    "enum": [
+                        "EVIDENCE",
+                        "VERIFIED",
+                        "NOT_REQUIRED"
+                    ]
+                },
+                "incorporation_territory": {
+                    "maxLength": 254,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "organisation_name": {
+                    "maxLength": 366,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "other_conveyancer": {
+                    "$ref": "#/components/schemas/OtherConveyancer"
+                },
+                "reference": {
+                    "$ref": "#/components/schemas/PartyReference"
+                },
+                "register_action": {
+                    "type": "string",
+                    "enum": [
+                        "AMEND",
+                        "REMOVE"
+                    ]
+                },
+                "representation_type": {
+                    "type": "string",
+                    "enum": [
+                        "LODGING_CONVEYANCER",
+                        "OTHER_CONVEYANCER",
+                        "NOT_REPRESENTED"
+                    ]
+                },
+                "surname": {
+                    "maxLength": 366,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "PRIVATE_INDIVIDUAL",
+                        "OTHER_ORGANISATION",
+                        "OVERSEAS_COMPANY",
+                        "UK_COMPANY",
+                        "UNKNOWN"
+                    ]
+                }
+            }
+        },
+      "PartyRole": {
+            "required": [
+                "role"
+            ],
+            "type": "object",
+            "properties": {
+                "capacity": {
+                    "type": "string",
+                    "description": "This enum describes the capacity in which a party is acting in a transaction. The possible values are:\n* `REGISTERED_PROPRIETOR` - The party is acting as a registered proprietor.\n* `ENTITLED_REGISTERED_PROPRIETOR` - The party is acting as entitled to be registered as the proprietor.\n* `ADDITIONAL_TRUSTEE - The party is acting as an additional trustee.\n* `INSOLVENCY_PRACTITIONER` - The party is acting as an insolvency practitioner.\n* `RECEIVER` - The party is acting as receiver.\n* `DEPUTY` - The party is acting as a deputy.\n* `GUARDIAN` - The party is acting as a guardian.\n* `PERSONAL_REPRESENTATIVE` - The party is acting as a personal representative.\n* `NOT_REQUIRED` - Capacity is not required for the party role (at time of capture by land registry policy).\n* `null` - The capacity value is not known for the party.\n",
+                    "enum": [
+                        "REGISTERED_PROPRIETOR",
+                        "ENTITLED_REGISTERED_PROPRIETOR",
+                        "ADDITIONAL_TRUSTEE",
+                        "INSOLVENCY_PRACTITIONER",
+                        "RECEIVER",
+                        "DEPUTY",
+                        "GUARDIAN",
+                        "PERSONAL_REPRESENTATIVE",
+                        "NOT_REQUIRED"
+                    ]
+                },
+                "party_reference": {
+                    "$ref": "#/components/schemas/PartyReference"
+                },
+                "role": {
+                    "type": "string",
+                    "enum": [
+                        "ATTORNEY",
+                        "TRANSFEROR",
+                        "TRANSFEREE",
+                        "LENDER",
+                        "BORROWER",
+                        "PERSONAL_REPRESENTATIVE",
+                        "ASSENTOR",
+                        "LANDLORD",
+                        "TENANT"
+                    ]
+                }
+            }
+        },
+      "Transaction": {
+            "required": [
+                "reference",
+                "type"
+            ],
+            "type": "object",
+            "description": "full_value_of_property_band - Value band of the value of the entire property",
+            "properties": {
+                "reference": {
+                    "$ref": "#/components/schemas/TransactionReference"
+                },
+                "details": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/components/schemas/AmountDetails"
+                        },
+                        {
+                            "$ref": "#/components/schemas/Charge"
+                        },
+                        {
+                            "$ref": "#/components/schemas/Discharge"
+                        },
+                        {
+                            "$ref": "#/components/schemas/Transfer"
+                        }
+                    ]
+                },
+                "documents": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/DocumentReference"
+                    }
+                },
+                "party_roles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/PartyRole"
+                    }
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "ADV1",
+                        "ADV2",
+                        "AGN",
+                        "APLC",
+                        "APLCO",
+                        "APLM",
+                        "APR",
+                        "APT",
+                        "ASSTTP",
+                        "ASTC",
+                        "ASTT",
+                        "ATP",
+                        "AUN",
+                        "BKN",
+                        "BKR",
+                        "C",
+                        "CAG",
+                        "CANI",
+                        "CANR",
+                        "CANU",
+                        "CBKN",
+                        "CBKR",
+                        "CCT",
+                        "CH2",
+                        "CH3",
+                        "CHOA",
+                        "CHOU",
+                        "CHR",
+                        "CN",
+                        "CNC",
+                        "CNL",
+                        "COA",
+                        "COAC",
+                        "CON",
+                        "COP",
+                        "CPD",
+                        "CPVK",
+                        "CPVU",
+                        "CTD",
+                        "CUR",
+                        "DB",
+                        "DCLN",
+                        "DCLV",
+                        "DFL1",
+                        "DFL3",
+                        "DFL4",
+                        "DFL5",
+                        "DFT",
+                        "DIS",
+                        "DJP",
+                        "DL",
+                        "DMR",
+                        "DOG",
+                        "DP",
+                        "DSP",
+                        "DTL",
+                        "EXR",
+                        "HR",
+                        "JP1",
+                        "LCATCO",
+                        "LCBD",
+                        "LCBET",
+                        "LCBN",
+                        "LCF",
+                        "LCMRE",
+                        "LCOE",
+                        "LCOF",
+                        "LCSD",
+                        "LCSDM",
+                        "LCSOL",
+                        "LCSOLM",
+                        "LCSDWT",
+                        "LCSDMWT",
+                        "MDR",
+                        "NCT",
+                        "NDC",
+                        "NFR",
+                        "NOE",
+                        "NOL",
+                        "NPR",
+                        "NRT",
+                        "PC",
+                        "PER",
+                        "PRO",
+                        "RC",
+                        "RFN",
+                        "RHR",
+                        "ROCA",
+                        "ROCC",
+                        "ROCU",
+                        "RNT",
+                        "ROE",
+                        "RRD",
+                        "RTM",
+                        "RUN",
+                        "RXL",
+                        "RXN",
+                        "RXS",
+                        "SBC",
+                        "SHO",
+                        "SJT",
+                        "STVC",
+                        "STVL",
+                        "T",
+                        "TNV",
+                        "TNVTP",
+                        "TOC",
+                        "TOSNV",
+                        "TOSNVTP",
+                        "TOSTP",
+                        "TOSV",
+                        "TPS",
+                        "TPSTP",
+                        "TRC",
+                        "TRM",
+                        "TSCNV",
+                        "TSCNVTP",
+                        "TSCTP",
+                        "TSCV",
+                        "TTP",
+                        "TVR",
+                        "TVRTP",
+                        "UNN",
+                        "UPT",
+                        "VC",
+                        "VLAN",
+                        "VLAP",
+                        "VLUN",
+                        "VO",
+                        "VOC",
+                        "VOCA",
+                        "VOCU",
+                        "VOE",
+                        "VOEA",
+                        "VOEU",
+                        "WCT",
+                        "WDR"
+                    ]
+                },
+                "title_references": {
+                    "type": "array",
+                    "description": "A list of titles that affect or relate to this transaction",
+                    "items": {
+                        "maxLength": 9,
+                        "minLength": 0,
+                        "type": "string"
+                    },
+                    "minItems": 1
+                }
+            }
+        }
+    }
+  }
+}
