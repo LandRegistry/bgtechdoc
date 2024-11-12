@@ -129,10 +129,10 @@ HTTP headers will be provided in the response to inform you when the next reques
 <th>Description</th>
 </tr><tr>
 <td>Account</td>
-<td>Each account is subjected to their own rate limit.</td>
+<td>Each user login account is subjected to their own rate limit.</td>
 </tr><tr>
-<td>Organisation</td>
-<td>The organisation as a whole cannot exceed a given rate limit.</td>
+<td>Business Unit</td>
+<td>Each business unit and all it's users cannot exceed a given rate limit.</td>
 </tr>
         </table>
       </div><h3 id="response-headers">Response Headers</h3>
@@ -157,7 +157,7 @@ HTTP headers will be provided in the response to inform you when the next reques
 <td>The numbers of seconds to wait before the quota completely resets.</td>
 </tr><tr>
 <td><code>Retry-After</code></td>
-<td>5</td>
+<td>0</td>
 <td>The numbers of seconds to wait before sending another request.</td>
 </tr>
         </table>
@@ -171,15 +171,15 @@ HTTP headers will be provided in the response to inform you when the next reques
 <th>Limit</th>
 </tr><tr>
 <td>Official Copies Document Availability</td>
-<td>Organisation</td>
+<td>Business Unit</td>
 <td>150 per minute</td>
 </tr><tr>
 <td>Registered Proprietor Names</td>
-<td>User</td>
+<td>Account</td>
 <td>6 per minute</td>
 </tr><tr>
 <td>Estimate Completion Date</td>
-<td>Organisation</td>
+<td>Business Unit</td>
 <td>150 per minute</td>
 </tr>
         </table>
