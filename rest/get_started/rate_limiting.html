@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>REST Rate Limiting - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/rest/get_started/rate_limiting.html">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:title" content="REST Rate Limiting - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/rest/get_started/rate_limiting.html" />
+
+      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="REST Rate Limiting" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/rest/get_started/rate_limiting.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search" aria-hidden="true">
+      Search (via Google)
+    </label>
+    <input
+      type="text"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#rest-rate-limiting"><span>REST Rate Limiting</span></a>
+    <ul>
+      <li>
+        <a href="#introduction"><span>Introduction</span></a>
+        <ul>
+          <li>
+            <a href="#rate-limit-scopes"><span>Rate Limit Scopes</span></a>
+          </li>
+          <li>
+            <a href="#response-headers"><span>Response Headers</span></a>
+          </li>
+          <li>
+            <a href="#expected-limits"><span>Expected Limits</span></a>
+          </li>
+          <li>
+            <a href="#deprecated-response-headers"><span>Deprecated Response Headers</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <div class="page-nav">
+<a href="../index.html">Back to Get Started</a>
+<a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="rest-rate-limiting">REST Rate Limiting</h1>
+<h2 id="introduction">Introduction</h2>
+<p>HM Land Registry may need to restrict the usage of an API to protect it from excessive use. 
+These rate limits are subject to change based on expected loads and uptake of the service.</p>
+<p>If the rate limit is exceeded you&rsquo;ll get a HTTP 429 response (Too Many Requests). 
+HTTP headers will be provided in the response to inform you when the next request may be made.</p>
+<p>We currently promote a sliding window rate limiting policy, this ensures an initial burst of requests can be sent and slowly replenished over time. Where possible spreading requests out over time is highly advised.</p>
+<p>If you are concerned with a rate limit, you may contact us and we can discuss whether increasing the rate limit is appropriate. Please contact us at
+<a href="mailto:channelpartners@landregistry.gov.uk">channelpartners@landregistry.gov.uk</a> (clicking this link will open a new window).</p>
+<h3 id="rate-limit-scopes">Rate Limit Scopes</h3>
+<p>Depending on the service, rate limits may be applied at different levels.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Scope</th>
+<th>Description</th>
+</tr><tr>
+<td>Account</td>
+<td>Each account is subjected to their own rate limit.</td>
+</tr><tr>
+<td>Organisation</td>
+<td>The organisation as a whole cannot exceed a given rate limit.</td>
+</tr>
+        </table>
+      </div><h3 id="response-headers">Response Headers</h3>
+<p>All REST/JSON APIs now have consistant rate limiting headers.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
+</tr><tr>
+<td><code>RateLimit-Limit</code></td>
+<td>70</td>
+<td>The total number of requests that may be accrued.</td>
+</tr><tr>
+<td><code>RateLimit-Remaining</code></td>
+<td>68</td>
+<td>The current number of requests that can be made before receiving a 429.</td>
+</tr><tr>
+<td><code>RateLimit-Reset</code></td>
+<td>5</td>
+<td>The numbers of seconds to wait before the quota completely resets.</td>
+</tr><tr>
+<td><code>Retry-After</code></td>
+<td>5</td>
+<td>The numbers of seconds to wait before sending another request.</td>
+</tr>
+        </table>
+      </div><h3 id="expected-limits">Expected Limits</h3>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Service</th>
+<th>Scope</th>
+<th>Limit</th>
+</tr><tr>
+<td>Official Copies Document Availability</td>
+<td>User</td>
+<td>150 per minute</td>
+</tr><tr>
+<td>Registered Proprietor Names</td>
+<td>User</td>
+<td>6 per minute</td>
+</tr><tr>
+<td>Estimate Completion Date</td>
+<td>User</td>
+<td>150 per minute</td>
+</tr>
+        </table>
+      </div><h3 id="deprecated-response-headers">Deprecated Response Headers</h3>
+<p>These headers have been used in the past and will be removed no earlier than June 1st 2025.
+We recommend no longer using these and migrating over to the newer headers when possible.</p>
+<p>Official Copies Document Availability</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Deprecated  Header</th>
+<th>New Header</th>
+</tr><tr>
+<td><code>x-rate-limit-burst-capacity</code></td>
+<td><code>RateLimit-Limit</code></td>
+</tr><tr>
+<td><code>x-rate-limit-remaining</code></td>
+<td><code>RateLimit-Remaining</code></td>
+</tr><tr>
+<td><code>x-rate-limit-replenish</code></td>
+<td>Removed</td>
+</tr><tr>
+<td><code>x-rate-limit-requested-tokens</code></td>
+<td>Removed</td>
+</tr>
+        </table>
+      </div><p>Registered Proprietor Names</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Deprecated Header</th>
+<th>New Header</th>
+</tr><tr>
+<td><code>x-rate-limit-remaining</code></td>
+<td><code>RateLimit-Remaining</code></td>
+</tr><tr>
+<td><code>x-rate-limit-retry-after</code></td>
+<td><code>Retry-After</code></td>
+</tr>
+        </table>
+      </div><p>Estimate Completion Date</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Deprecated Header</th>
+<th>New Header</th>
+</tr><tr>
+<td><code>x-rate-limit-burst-capacity</code></td>
+<td><code>RateLimit-Limit</code></td>
+</tr><tr>
+<td><code>x-rate-limit-remaining</code></td>
+<td><code>RateLimit-Remaining</code></td>
+</tr><tr>
+<td><code>x-rate-limit-replenish</code></td>
+<td>Removed</td>
+</tr><tr>
+<td><code>x-rate-limit-requested-tokens</code></td>
+<td>Removed</td>
+</tr>
+        </table>
+      </div>
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>
