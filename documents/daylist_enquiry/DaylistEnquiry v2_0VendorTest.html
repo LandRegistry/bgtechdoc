@@ -1,0 +1,1234 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Daylist enquiry - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/daylist_enquiry/DaylistEnquiry v2_0VendorTest.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Daylist enquiry - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/daylist_enquiry/DaylistEnquiry v2_0VendorTest.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Daylist enquiry" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/daylist_enquiry/DaylistEnquiry v2_0VendorTest.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#daylist-enquiry-vendor-test-data"><span>Daylist enquiry vendor test data</span></a>
+    <ul>
+      <li>
+        <a href="#1-daylist-enquiry"><span>1. Daylist enquiry</span></a>
+        <ul>
+          <li>
+            <a href="#normal-in-hours-requests"><span>Normal in hours requests</span></a>
+          </li>
+          <li>
+            <a href="#1-1-undertake-a-daylist-enquiry-with-one-entry-returned"><span>1.1 Undertake a daylist enquiry with one entry returned</span></a>
+          </li>
+          <li>
+            <a href="#1-2-undertake-a-daylist-enquiry-with-no-entries-returned"><span>1.2 Undertake a daylist enquiry with no entries returned</span></a>
+          </li>
+          <li>
+            <a href="#1-3-undertake-a-daylist-enquiry-with-multiple-entries-returned"><span>1.3 Undertake a daylist enquiry with multiple entries returned</span></a>
+          </li>
+          <li>
+            <a href="#1-4-undertake-a-daylist-enquiry-where-the-title-is-closed-and-continue"><span>1.4 Undertake a daylist enquiry where the title is closed and continue</span></a>
+          </li>
+          <li>
+            <a href="#1-5-undertake-a-daylist-enquiry-where-the-title-is-not-found"><span>1.5 Undertake a daylist enquiry where the title is not found</span></a>
+          </li>
+          <li>
+            <a href="#1-6-undertake-a-daylist-enquiry-where-the-title-is-closed"><span>1.6 Undertake a daylist enquiry where the title is closed</span></a>
+          </li>
+          <li>
+            <a href="#1-7-undertake-a-daylist-enquiry-where-access-is-denied"><span>1.7 Undertake a daylist enquiry where access is denied</span></a>
+          </li>
+          <li>
+            <a href="#1-8-out-of-hours"><span>1.8 Out of hours</span></a>
+          </li>
+          <li>
+            <a href="#1-9-poll-for-response-not-yet-processed"><span>1.9 Poll for response - not yet processed</span></a>
+          </li>
+          <li>
+            <a href="#1-10-poll-for-response-processed-no-results-returned"><span>1.10 Poll for response - processed - no results returned</span></a>
+          </li>
+          <li>
+            <a href="#1-11-poll-for-response-rejection"><span>1.11 Poll for response - rejection</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/online_owner_verification/index.html">Back to Daylist Enquiry</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="daylist-enquiry-vendor-test-data">Daylist enquiry vendor test data</h1>
+
+<hr>
+<h2 id="1-daylist-enquiry">1. Daylist enquiry</h2>
+
+<div class="govuk-inset-text">Note: MessageIDs are case sensitive and all lowercase.</div>
+<h3 id="normal-in-hours-requests">Normal in hours requests</h3>
+<h3 id="1-1-undertake-a-daylist-enquiry-with-one-entry-returned">1.1 Undertake a daylist enquiry with one entry returned</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Daylist enquiry 01</li>
+          <li>Test purpose: Undertake a daylist enquiry search where 1 result is returned</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with a single Entry from the daylist</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with a single Entry from the daylist</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with a single Entry from the daylist</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testsuccessoneresult</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with a single Entry from the daylist</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Title Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">DN100</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with a single Entry from the daylist</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with a single Entry from the daylist</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if&hellip;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">True</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with a single Entry from the daylist</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-2-undertake-a-daylist-enquiry-with-no-entries-returned">1.2 Undertake a daylist enquiry with no entries returned</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Daylist enquiry 02</li>
+          <li>Test purpose: Undertake a daylist enquiry search where no results is returned</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with no daylist entries.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with no daylist entries.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with no daylist entries.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testsuccessnoresult</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with no daylist entries.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Title Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">DN100</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with no daylist entries.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with no daylist entries.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if&hellip;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">True</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with no daylist entries.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-3-undertake-a-daylist-enquiry-with-multiple-entries-returned">1.3 Undertake a daylist enquiry with multiple entries returned</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Daylist enquiry 03</li>
+          <li>Test purpose: Undertake a daylist enquiry search where multiple result are returned</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with multiple different daylist entries</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with multiple different daylist entries</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with multiple different daylist entries</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testsuccessmanyresult</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with multiple different daylist entries</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Title Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">DN100</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with multiple different daylist entries</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with multiple different daylist entries</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if&hellip;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">True</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with multiple different daylist entries</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-4-undertake-a-daylist-enquiry-where-the-title-is-closed-and-continue">1.4 Undertake a daylist enquiry where the title is closed and continue</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Daylist enquiry 04</li>
+          <li>Test purpose: Undertake a daylist enquiry search where the title is closed and continue</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message details will specify that the title requested is closed and continued</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message details will specify that the title requested is closed and continued</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Response will contain the details of a title with a single Entry from the daylist</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testclosedandcontinue</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message details will specify that the title requested is closed and continued</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Title Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BK554444</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message details will specify that the title requested is closed and continued</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message details will specify that the title requested is closed and continued</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if&hellip;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">False</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message details will specify that the title requested is closed and continued</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-5-undertake-a-daylist-enquiry-where-the-title-is-not-found">1.5 Undertake a daylist enquiry where the title is not found</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Daylist enquiry 05</li>
+          <li>Test purpose: Undertake a daylist enquiry search where the title cannot be found</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: Title number is invalid</li>
+                      <li>Code: bg.title.invalid</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: Title number is invalid</li>
+                      <li>Code: bg.title.invalid</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: Title number is invalid</li>
+                      <li>Code: bg.title.invalid</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testtitlenumbernotfound</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: Title number is invalid</li>
+                      <li>Code: bg.title.invalid</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Title Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">DN100</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: Title number is invalid</li>
+                      <li>Code: bg.title.invalid</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: Title number is invalid</li>
+                      <li>Code: bg.title.invalid</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if&hellip;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">True</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: Title number is invalid</li>
+                      <li>Code: bg.title.invalid</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-6-undertake-a-daylist-enquiry-where-the-title-is-closed">1.6 Undertake a daylist enquiry where the title is closed</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Daylist enquiry 06</li>
+          <li>Test purpose: Undertake a daylist enquiry search where the title has been closed</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: This title number is closed</li>
+                      <li>Code: bg.title.closed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: This title number is closed</li>
+                      <li>Code: bg.title.closed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: This title number is closed</li>
+                      <li>Code: bg.title.closed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testclosedtitlenumber</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: This title number is closed</li>
+                      <li>Code: bg.title.closed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Title Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">DN100</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: This title number is closed</li>
+                      <li>Code: bg.title.closed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: This title number is closed</li>
+                      <li>Code: bg.title.closed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if&hellip;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">True</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: This title number is closed</li>
+                      <li>Code: bg.title.closed</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-7-undertake-a-daylist-enquiry-where-access-is-denied">1.7 Undertake a daylist enquiry where access is denied</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Daylist enquiry 07</li>
+          <li>Test purpose: Undertake a daylist enquiry search where access is denied</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">WebService fault message: You do not have the necessary rights to access this service.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">WebService fault message: You do not have the necessary rights to access this service.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">WebService fault message: You do not have the necessary rights to access this service.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testaccessdenied</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">WebService fault message: You do not have the necessary rights to access this service.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Title Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">DN100</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">WebService fault message: You do not have the necessary rights to access this service.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">WebService fault message: You do not have the necessary rights to access this service.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if&hellip;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">True</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">WebService fault message: You do not have the necessary rights to access this service.</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-8-out-of-hours">1.8 Out of hours</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Daylist enquiry 07</li>
+          <li>Test purpose: Out of hours</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message: Service is not currently available. System has queued your request, please poll at specified time</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message: Service is not currently available. System has queued your request, please poll at specified time</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message: Service is not currently available. System has queued your request, please poll at specified time</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testoutofhours</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message: Service is not currently available. System has queued your request, please poll at specified time</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Title Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">DN100</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message: Service is not currently available. System has queued your request, please poll at specified time</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External Reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message: Service is not currently available. System has queued your request, please poll at specified time</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Subject Property</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if&hellip;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">True</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message: Service is not currently available. System has queued your request, please poll at specified time</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-9-poll-for-response-not-yet-processed">1.9 Poll for response - not yet processed</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Daylist enquiry 09</li>
+          <li>Test purpose: Poll for response - still out of hours</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message: Request has not yet been processed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message: Request has not yet been processed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message: Request has not yet been processed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">pollstilloutofhours</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message: Request has not yet been processed</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-10-poll-for-response-processed-no-results-returned">1.10 Poll for response - processed - no results returned</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Daylist enquiry 10</li>
+          <li>Test purpose: Poll for response - processed no results found on day list</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with no day list entries.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with no day list entries.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with no day list entries.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">pollsuccessnoresults</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Response will contain the details of a title with no day list entries.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-11-poll-for-response-rejection">1.11 Poll for response - rejection</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Daylist enquiry 11</li>
+          <li>Test purpose: Poll for response - rejection - Title number closed</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: This title number is closed</li>
+                      <li>Code: bg.title.closed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: This title number is closed</li>
+                      <li>Code: bg.title.closed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: This title number is closed</li>
+                      <li>Code: bg.title.closed</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">polltitlenumberclosed</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message: This title number is closed</li>
+                      <li>Code: bg.title.closed</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

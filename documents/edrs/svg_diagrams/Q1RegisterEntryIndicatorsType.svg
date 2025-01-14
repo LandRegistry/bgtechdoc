@@ -1,0 +1,139 @@
+<svg width="400" height="700" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- ProductType -->
+    <rect x="30" y="50" width="330" height="630" class="small-box"></rect>
+    <text x="40" y="70" class="title">Q1RegisterEntryIndicatorsType</text>
+    <text x="40" y="90" class="content">- AgreedNoticeIndicator</text>
+    <text x="255" y="90" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="110" class="content">- BankruptcyIndicator</text>
+    <text x="255" y="110" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="130" class="content">- CautionIndicator</text>
+    <text x="255" y="130" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="150" class="content">- CCBIIndicator</text>
+    <text x="255" y="150" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="170" class="content">- ChargeeIndicator</text>
+    <text x="255" y="170" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="190" class="content">- ChargeIndicator</text>
+    <text x="255" y="190" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="210" class="content">- ChargeRelatedRestrictionIndicator</text>
+    <text x="255" y="210" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="230" class="content">- ChargeRestrictionIndicator</text>
+    <text x="255" y="230" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="250" class="content">- CreditorsNoticeIndicator</text>
+    <text x="255" y="250" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="270" class="content">- DeathOfProprietorIndicator</text>
+    <text x="255" y="270" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="290" class="content">- DeedOfPostponementIndicator</text>
+    <text x="255" y="290" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="310" class="content">- DiscountChargeIndicator</text>
+    <text x="255" y="310" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="330" class="content">- EquitableChargeIndicator</text>
+    <text x="255" y="330" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="350" class="content">- GreenOutEntryIndicator</text>
+    <text x="255" y="350" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="370" class="content">- HomeRightsChangeOfAddressIndicator</text>
+    <text x="255" y="370" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="390" class="content">- HomeRightsIndicator</text>
+    <text x="255" y="390" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="410" class="content">- LeaseHoldTitleIndicator</text>
+    <text x="255" y="410" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="430" class="content">- MultipleChargeIndicator</text>
+    <text x="255" y="430" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="450" class="content">- NonChargeRestrictionIndicator</text>
+    <text x="255" y="450" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="470" class="content">- NotedChargeIndicator</text>
+    <text x="255" y="470" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="490" class="content">- PricePaidIndicator</text>
+    <text x="255" y="490" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="510" class="content">- PropertyDescriptionNotesIndicator</text>
+    <text x="255" y="510" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="530" class="content">- RentChargeIndicator</text>
+    <text x="255" y="530" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="550" class="content">- RightOfPreEmptionIndicator</text>
+    <text x="255" y="550" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="570" class="content">- ScheduleOfLeasesIndicator</text>
+    <text x="255" y="570" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="590" class="content">- SubChargeIndicator</text>
+    <text x="255" y="590" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="610" class="content">- UnidentifiedEntryIndicator</text>
+    <text x="255" y="610" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="630" class="content">- UnilateralNoticeBeneficiaryIndicator</text>
+    <text x="255" y="630" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="650" class="content">- UnilateralNoticeIndicator</text>
+    <text x="255" y="650" class="content">[1..1] IndicatorType</text>
+    <text x="40" y="670" class="content">- VendorsLienIndicator</text>
+    <text x="255" y="670" class="content">[1..1] IndicatorType</text>
+
+
+
+    <!-- Table Lines -->
+    <!-- Table Lines - ProductType -->
+    <line x1="30" y1="74" x2="360" y2="74" stroke="lightgrey"></line>
+    <line x1="30" y1="76" x2="360" y2="76" stroke="lightgrey"></line>
+    <line x1="30" y1="97" x2="360" y2="97" stroke="lightgrey"></line>
+    <line x1="30" y1="117" x2="360" y2="117" stroke="lightgrey"></line>
+    <line x1="30" y1="137" x2="360" y2="137" stroke="lightgrey"></line>
+    <line x1="30" y1="157" x2="360" y2="157" stroke="lightgrey"></line>
+    <line x1="30" y1="177" x2="360" y2="177" stroke="lightgrey"></line>
+    <line x1="30" y1="197" x2="360" y2="197" stroke="lightgrey"></line>
+    <line x1="30" y1="217" x2="360" y2="217" stroke="lightgrey"></line>
+    <line x1="30" y1="237" x2="360" y2="237" stroke="lightgrey"></line>
+    <line x1="30" y1="257" x2="360" y2="257" stroke="lightgrey"></line>
+    <line x1="30" y1="277" x2="360" y2="277" stroke="lightgrey"></line>
+    <line x1="30" y1="297" x2="360" y2="297" stroke="lightgrey"></line>
+    <line x1="30" y1="317" x2="360" y2="317" stroke="lightgrey"></line>
+    <line x1="30" y1="337" x2="360" y2="337" stroke="lightgrey"></line>
+    <line x1="30" y1="357" x2="360" y2="357" stroke="lightgrey"></line>
+    <line x1="30" y1="377" x2="360" y2="377" stroke="lightgrey"></line>
+    <line x1="30" y1="397" x2="360" y2="397" stroke="lightgrey"></line>
+    <line x1="30" y1="417" x2="360" y2="417" stroke="lightgrey"></line>
+    <line x1="30" y1="437" x2="360" y2="437" stroke="lightgrey"></line>
+    <line x1="30" y1="457" x2="360" y2="457" stroke="lightgrey"></line>
+    <line x1="30" y1="477" x2="360" y2="477" stroke="lightgrey"></line>
+    <line x1="30" y1="497" x2="360" y2="497" stroke="lightgrey"></line>
+    <line x1="30" y1="517" x2="360" y2="517" stroke="lightgrey"></line>
+    <line x1="30" y1="537" x2="360" y2="537" stroke="lightgrey"></line>
+    <line x1="30" y1="557" x2="360" y2="557" stroke="lightgrey"></line>
+    <line x1="30" y1="577" x2="360" y2="577" stroke="lightgrey"></line>
+    <line x1="30" y1="597" x2="360" y2="597" stroke="lightgrey"></line>
+    <line x1="30" y1="617" x2="360" y2="617" stroke="lightgrey"></line>
+    <line x1="30" y1="637" x2="360" y2="637" stroke="lightgrey"></line>
+    <line x1="30" y1="657" x2="360" y2="657" stroke="lightgrey"></line>
+
+
+
+
+</svg>

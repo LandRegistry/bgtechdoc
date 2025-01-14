@@ -1,0 +1,92 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- EarlyCompletionType -->
+    <rect x="30" y="50" width="270" height="130" class="small-box"></rect>
+    <text x="40" y="70" class="title">EarlyCompletionType</text>
+    <text x="40" y="90" class="content">- ApplicationMessageId</text>
+    <text x="175" y="90" class="content">[1..1] string</text>
+    <text x="40" y="110" class="content">- ExternalReference</text>
+    <text x="175" y="110" class="content">[1..1] string</text>
+    <text x="40" y="130" class="content">- ABR</text>
+    <text x="175" y="130" class="content">[1..1] int</text>
+    <text x="40" y="150" class="content">- DespatchDocument</text>
+    <text x="175" y="150" class="content">[0..1] string</text>
+    <text x="40" y="170" class="content">- XmlRegisters</text>
+    <text x="175" y="170" class="content">[0..1] XmlRegistersType</text>
+
+    <!-- AttachmentType -->
+    <rect x="400" y="55" width="120" height="70" class="small-box"></rect>
+    <text x="410" y="75" class="title">AttachmentType</text>
+    <text x="405" y="95" class="content">- filename</text>
+    <text x="480" y="95" class="content">string</text>
+    <text x="405" y="115" class="content">- format</text>
+    <text x="480" y="115" class="content">string</text>
+
+    <!-- XmlRegistersType -->
+    <rect x="380" y="185" width="300" height="90" class="small-box"></rect>
+    <text x="390" y="205" class="title">XmlRegistersType</text>
+    <text x="385" y="225" class="content">- TitleNumber</text>
+    <text x="520" y="225" class="content">[1..1] string</text>
+    <text x="385" y="245" class="content">- OCSummaryData</text>
+    <text x="520" y="245" class="content">[1..1] Q1OCSummaryDataType</text>
+    <text x="385" y="265" class="content">- XmlRegisterData</text>
+    <text x="520" y="265" class="content">[1..1] XmlRegisterDataType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - EarlyCompletionType -->
+    <line x1="30" y1="75" x2="300" y2="75" stroke="lightgrey"></line>
+    <line x1="30" y1="77" x2="300" y2="77" stroke="lightgrey"></line>
+    <line x1="30" y1="96" x2="300" y2="96" stroke="lightgrey"></line>
+    <line x1="30" y1="116" x2="300" y2="116" stroke="lightgrey"></line>
+    <line x1="30" y1="136" x2="300" y2="136" stroke="lightgrey"></line>
+    <line x1="30" y1="156" x2="300" y2="156" stroke="lightgrey"></line>
+
+    <!-- Table Lines - AttachmentType -->
+    <line x1="400" y1="79" x2="520" y2="79" stroke="lightgrey"></line>
+    <line x1="400" y1="81" x2="520" y2="81" stroke="lightgrey"></line>
+    <line x1="400" y1="101" x2="520" y2="101" stroke="lightgrey"></line>
+
+    <!-- Table Lines - XmlRegistersType -->
+    <line x1="380" y1="209" x2="680" y2="209" stroke="lightgrey"></line>
+    <line x1="380" y1="211" x2="680" y2="211" stroke="lightgrey"></line>
+    <line x1="380" y1="231" x2="680" y2="231" stroke="lightgrey"></line>
+    <line x1="380" y1="251" x2="680" y2="251" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="300" y1="147" x2="400" y2="67" class="line"></line>
+    <line x1="300" y1="167" x2="380" y2="197" class="line"></line>
+
+</svg>

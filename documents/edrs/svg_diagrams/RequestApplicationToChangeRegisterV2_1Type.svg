@@ -1,0 +1,133 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- RequestApplicationToChangeRegisterV2_1Type -->
+    <rect x="30" y="50" width="320" height="115" class="small-box"></rect>
+    <text x="40" y="70" class="title">RequestApplicationToChangeRegisterV2_1Type</text>
+    <text x="40" y="95"  class="content">- AdditionalProviderFilter</text>
+    <text x="180" y="95" class="content">[1..1] AdditionalProviderFilterType</text>
+    <text x="40" y="115" class="content">- MessageId</text>
+    <text x="180" y="115" class="content">[1..1] MessageIdType</text>
+    <text x="40" y="135" class="content">- ExternalReference</text>
+    <text x="180" y="135" class="content">[1..1] ReferenceTypeContent</text>
+    <text x="40" y="155" class="content">- Product</text>
+    <text x="180" y="155" class="content">[1..1] ProductType</text>
+
+    <!-- RequestApplicationToChangeRegisterV2_1 -->
+    <rect x="440" y="5" width="260" height="30" class="small-box"></rect>
+    <text x="450" y="25" class="title">RequestApplicationToChangeRegisterV2_1</text>
+
+    <!-- MessageIdType -->
+    <rect x="440" y="45" width="105" height="30" class="small-box"></rect>
+    <text x="450" y="64" class="title">MessageIdType</text>
+
+    <!-- ReferenceTypeContext -->
+    <rect x="440" y="85" width="145" height="30" class="small-box"></rect>
+    <text x="450" y="105" class="title">ReferenceTypeContext</text>
+
+    <!-- ProductType-->
+    <rect x="440" y="120" width="365" height="375" class="small-box"></rect>
+    <text x="450" y="140" class="title">ProductType</text>
+    <text x="445" y="165"  class="content">- Reference</text>
+    <text x="610" y="165" class="content">[1..1] ReferenceType</text>
+    <text x="445" y="185" class="content">- TotalFeeInPence</text>
+    <text x="610" y="185" class="content">[1..1] nonNegativeInteger</text>
+    <text x="445" y="205" class="content">- Email</text>
+    <text x="610" y="205" class="content">[1..1] NonBlankTextType</text>
+    <text x="445" y="225" class="content">- TelephoneNumber</text>
+    <text x="610" y="225" class="content">[1..1] NonBlankTextType</text>
+    <text x="445" y="245" class="content">- AP1WarningUnderstood</text>
+    <text x="610" y="245" class="content">[1..1] boolean</text>
+    <text x="445" y="265" class="content">- ApplicationDate</text>
+    <text x="610" y="265" class="content">[1..1] date</text>
+    <text x="445" y="285" class="content">- DisclosableOveridingInterests</text>
+    <text x="610" y="285" class="content">[1..1] boolean</text>
+    <text x="445" y="305" class="content">- PostcodeOfProperty</text>
+    <text x="610" y="305" class="content">[0..1] NonBlankTextType</text>
+    <text x="445" y="325" class="content">- LocalAuthority</text>
+    <text x="610" y="325" class="content">[0..1] NonBlankTextType</text>
+    <text x="445" y="345" class="content">- Titles</text>
+    <text x="610" y="345" class="content">[1..1] ServiceTitlesType</text>
+    <text x="445" y="365" class="content">- Applications</text>
+    <text x="610" y="365" class="content">[1..1] ApplicationsType</text>
+    <text x="445" y="385" class="content">- SupportingDocuments</text>
+    <text x="610" y="385" class="content">[0..1] SupportingDocumentsType</text>
+    <text x="445" y="405" class="content">- Representations</text>
+    <text x="610" y="405" class="content">[1..1] RepresentationsType</text>
+    <text x="445" y="425" class="content">- Parties</text>
+    <text x="610" y="425" class="content">[1..1] PartiesType</text>
+    <text x="445" y="445" class="content">- AdditionalPartyNotifications</text>
+    <text x="610" y="445" class="content">[0..1] AdditionalPartyNotificationsType</text>
+    <text x="445" y="465" class="content">- Notes</text>
+    <text x="610" y="465" class="content">[0..1] NonBlankTextType</text>
+    <text x="445" y="485" class="content">- ApplicationAffects</text>
+    <text x="610" y="485" class="content">[1..1] ApplicationAffectsContent</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - RequestApplicationToChangeRegisterV2_1Type -->
+    <line x1="30" y1="78" x2="350" y2="78" stroke="lightgrey"></line>
+    <line x1="30" y1="80" x2="350" y2="80" stroke="lightgrey"></line>
+    <line x1="30" y1="102" x2="350" y2="102" stroke="lightgrey"></line>
+    <line x1="30" y1="122" x2="350" y2="122" stroke="lightgrey"></line>
+    <line x1="30" y1="142" x2="350" y2="142" stroke="lightgrey"></line>
+
+    <!-- Table Lines - ProductType -->
+    <line x1="440" y1="147" x2="805" y2="147" stroke="lightgrey"></line>
+    <line x1="440" y1="149" x2="805" y2="149" stroke="lightgrey"></line>
+    <line x1="440" y1="171" x2="805" y2="171" stroke="lightgrey"></line>
+    <line x1="440" y1="191" x2="805" y2="191" stroke="lightgrey"></line>
+    <line x1="440" y1="211" x2="805" y2="211" stroke="lightgrey"></line>
+    <line x1="440" y1="231" x2="805" y2="231" stroke="lightgrey"></line>
+    <line x1="440" y1="251" x2="805" y2="251" stroke="lightgrey"></line>
+    <line x1="440" y1="271" x2="805" y2="271" stroke="lightgrey"></line>
+    <line x1="440" y1="291" x2="805" y2="291" stroke="lightgrey"></line>
+    <line x1="440" y1="311" x2="805" y2="311" stroke="lightgrey"></line>
+    <line x1="440" y1="331" x2="805" y2="331" stroke="lightgrey"></line>
+    <line x1="440" y1="351" x2="805" y2="351" stroke="lightgrey"></line>
+    <line x1="440" y1="371" x2="805" y2="371" stroke="lightgrey"></line>
+    <line x1="440" y1="391" x2="805" y2="391" stroke="lightgrey"></line>
+    <line x1="440" y1="411" x2="805" y2="411" stroke="lightgrey"></line>
+    <line x1="440" y1="431" x2="805" y2="431" stroke="lightgrey"></line>
+    <line x1="440" y1="451" x2="805" y2="451" stroke="lightgrey"></line>
+    <line x1="440" y1="471" x2="805" y2="471" stroke="lightgrey"></line>
+
+
+    <!-- Connecting Lines -->
+    <line x1="350" y1="92" x2="440" y2="20" class="line"></line>
+    <line x1="350" y1="110" x2="440" y2="60" class="line"></line>
+    <line x1="350" y1="130" x2="440" y2="100" class="line"></line>
+    <line x1="350" y1="150" x2="440" y2="136" class="line"></line>
+
+</svg>

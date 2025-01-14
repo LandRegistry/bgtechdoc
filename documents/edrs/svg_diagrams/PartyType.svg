@@ -1,0 +1,128 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- PartyType -->
+    <rect x="30" y="50" width="300" height="150" class="small-box"></rect>
+    <text x="40" y="70" class="title">PartyType</text>
+    <text x="40" y="90" class="content">- representativeId</text>
+    <text x="200" y="90" class="content">positiveInteger</text>
+    <text x="40" y="110" class="content">- IsApplicant</text>
+    <text x="170" y="110" class="content">[1..1] boolean</text>
+    <text x="40" y="130" class="content">- Company</text>
+    <text x="170" y="130" class="content">[1..1] CompanyType</text>
+    <text x="40" y="150" class="content">- Person</text>
+    <text x="170" y="150" class="content">[1..1] PersonType</text>
+    <text x="40" y="170" class="content">- Roles</text>
+    <text x="170" y="170" class="content">[1..1] PartyRolesType</text>
+    <text x="40" y="190" class="content">- AddressForService</text>
+    <text x="170" y="190" class="content">[0..1] AddressForServiceType</text>
+
+    <!-- CompanyType -->
+    <rect x="380" y="5" width="350" height="130" class="small-box"></rect>
+    <text x="390" y="25" class="title">CompanyType</text>
+    <text x="385" y="45" class="content">- CompanyName</text>
+    <text x="600" y="45" class="content">[1..1] NonBlankTextType</text>
+    <text x="385" y="65" class="content">- CompanyRegistrationNumber</text>
+    <text x="600" y="65" class="content">[1..1] NonBlankTextType</text>
+    <text x="385" y="85" class="content">- UK-LLPRegistrationNumber</text>
+    <text x="600" y="85" class="content">[1..1] NonBlankTextType</text>
+    <text x="385" y="105" class="content">- OverseasTerritory</text>
+    <text x="600" y="105" class="content">[0..1] NonBlankTextType</text>
+    <text x="385" y="125" class="content">- OverseasNumberInTheUnitedKingdom</text>
+    <text x="600" y="125" class="content">[0..1] NonBlankTextType</text>
+
+    <!-- PersonType -->
+    <rect x="380" y="145" width="230" height="70" class="small-box"></rect>
+    <text x="390" y="165" class="title">PersonType</text>
+    <text x="385" y="185" class="content">- Forenames</text>
+    <text x="480" y="185" class="content">[1..1] NonBlankTextType</text>
+    <text x="385" y="205" class="content">- Surname</text>
+    <text x="480" y="205" class="content">[1..1] NonBlankTextType</text>
+
+    <!-- PartyRolesType -->
+    <rect x="380" y="225" width="180" height="50" class="small-box"></rect>
+    <text x="390" y="245" class="title">PartyRolesType</text>
+    <text x="385" y="265" class="content">- Role <tspan dx="35">[1..*] PartyRoleType</tspan></text>
+
+    <!-- AddressForServiceType -->
+    <rect x="380" y="285" width="360" height="90" class="small-box"></rect>
+    <text x="390" y="305" class="title">AddressForServiceType</text>
+    <text x="385" y="325" class="content">- PostalAddress</text>
+    <text x="540" y="325" class="content">[1..1] PartyAddressType</text>
+    <text x="385" y="345" class="content">- AdditionalAddresses</text>
+    <text x="540" y="345" class="content">[0..1] AdditionalAddressForServiceType</text>
+    <text x="385" y="365" class="content">- AddressForServiceOption</text>
+    <text x="540" y="365" class="content">[1..1] AddressForServiceTypeContent</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - PartyType -->
+    <line x1="30" y1="75" x2="330" y2="75" stroke="lightgrey"></line>
+    <line x1="30" y1="77" x2="330" y2="77" stroke="lightgrey"></line>
+    <line x1="30" y1="96" x2="330" y2="96" stroke="lightgrey"></line>
+    <line x1="30" y1="116" x2="330" y2="116" stroke="lightgrey"></line>
+    <line x1="30" y1="136" x2="330" y2="136" stroke="lightgrey"></line>
+    <line x1="30" y1="156" x2="330" y2="156" stroke="lightgrey"></line>
+    <line x1="30" y1="176" x2="330" y2="176" stroke="lightgrey"></line>
+
+    <!-- Table Lines - CompanyType -->
+    <line x1="380" y1="29" x2="730" y2="29" stroke="lightgrey"></line>
+    <line x1="380" y1="31" x2="730" y2="31" stroke="lightgrey"></line>
+    <line x1="380" y1="50" x2="730" y2="50" stroke="lightgrey"></line>
+    <line x1="380" y1="70" x2="730" y2="70" stroke="lightgrey"></line>
+    <line x1="380" y1="90" x2="730" y2="90" stroke="lightgrey"></line>
+    <line x1="380" y1="110" x2="730" y2="110" stroke="lightgrey"></line>
+
+    <!-- Table Lines - PersonType -->
+    <line x1="380" y1="169" x2="610" y2="169" stroke="lightgrey"></line>
+    <line x1="380" y1="171" x2="610" y2="171" stroke="lightgrey"></line>
+    <line x1="380" y1="191" x2="610" y2="191" stroke="lightgrey"></line>
+
+    <!-- Table Lines - PartyRolesType -->
+    <line x1="380" y1="249" x2="560" y2="249" stroke="lightgrey"></line>
+    <line x1="380" y1="251" x2="560" y2="251" stroke="lightgrey"></line>
+
+    <!-- Table Lines - AddressForServiceType -->
+    <line x1="380" y1="309" x2="740" y2="309" stroke="lightgrey"></line>
+    <line x1="380" y1="311" x2="740" y2="311" stroke="lightgrey"></line>
+    <line x1="380" y1="331" x2="740" y2="331" stroke="lightgrey"></line>
+    <line x1="380" y1="351" x2="740" y2="351" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="330" y1="127" x2="380" y2="20" class="line"></line>
+    <line x1="330" y1="147" x2="380" y2="160" class="line"></line>
+    <line x1="330" y1="167" x2="380" y2="240" class="line"></line>
+    <line x1="330" y1="187" x2="380" y2="300" class="line"></line>
+
+</svg>

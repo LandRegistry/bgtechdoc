@@ -1,0 +1,3048 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Electronic Document Registration Service vendor test data - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/edrs/eDRS_V2_1_Vendor_Test_Data.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Electronic Document Registration Service vendor test data - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/edrs/eDRS_V2_1_Vendor_Test_Data.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Electronic Document Registration Service vendor test data" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/edrs/eDRS_V2_1_Vendor_Test_Data.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#electronic-document-registration-service-vendor-test-data"><span>Electronic Document Registration Service vendor test data</span></a>
+    <ul>
+      <li>
+        <a href="#1-electronic-document-registration-service"><span>1. Electronic Document Registration Service</span></a>
+      </li>
+      <li>
+        <a href="#2-electronic-document-registration-service-polling-service"><span>2. Electronic Document Registration Service Polling Service</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/edrs/index.html">Back to e-DRS</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="electronic-document-registration-service-vendor-test-data">Electronic Document Registration Service vendor test data</h1>
+
+<hr>
+
+<div class="govuk-inset-text">Note: all tests require the basic minimum data items as per the schemas.</div>
+<p>This will actually be ignored by the system but is needed to pass XML validation.</p>
+<p>Items highlighted in the test documentation are needed for the test to return the correct response.</p>
+<h2 id="1-electronic-document-registration-service">1. Electronic Document Registration Service</h2>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 01</li>
+          <li>Test purpose: Lodge an application against closed title</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.closed.specific</li>
+                      <li>Description: &ldquo;Title number CL123456 is closed.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.closed.specific</li>
+                      <li>Description: &ldquo;Title number CL123456 is closed.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.closed.specific</li>
+                      <li>Description: &ldquo;Title number CL123456 is closed.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.closed.specific</li>
+                      <li>Description: &ldquo;Title number CL123456 is closed.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.closed.specific</li>
+                      <li>Description: &ldquo;Title number CL123456 is closed.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.closed.specific</li>
+                      <li>Description: &ldquo;Title number CL123456 is closed.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">TitleNumber or LesseeTitle (when LeaseExtension ServiceTitleType)</span></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">CL123456</span></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.closed.specific</li>
+                      <li>Description: &ldquo;Title number CL123456 is closed.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 02</li>
+          <li>Test purpose: Lodge an application against invalid title</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.invalid.specific</li>
+                      <li>Description: &ldquo;Title number IV123456 is invalid.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.invalid.specific</li>
+                      <li>Description: &ldquo;Title number IV123456 is invalid.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.invalid.specific</li>
+                      <li>Description: &ldquo;Title number IV123456 is invalid.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.invalid.specific</li>
+                      <li>Description: &ldquo;Title number IV123456 is invalid.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.invalid.specific</li>
+                      <li>Description: &ldquo;Title number IV123456 is invalid.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>ProductType</li>
+                      <li>Note: To test multiple titles send in extra titles that are valid and not CL123456 or IV123456.</li>
+                    </ul>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.invalid.specific</li>
+                      <li>Description: &ldquo;Title number IV123456 is invalid.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>ProductType</li>
+                      <li>Note: To test multiple titles send in extra titles that are valid and not CL123456 or IV123456.</li>
+                    </ul>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">TitleNumber or LesseeTitle (when LeaseExtension ServiceTitleType)</span></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">IV123456</span></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.title.invalid.specific</li>
+                      <li>Description: &ldquo;Title number IV123456 is invalid.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 03</li>
+          <li>Test purpose: Lodge an application out of hours</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Message ID</span></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">testoutofhours</span></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 04</li>
+          <li>Test purpose: Lodge an application correctly (default test)</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Your application has been accepted.&rdquo;</li>
+                      <li>PriorityDateTime: now</li>
+                      <li>ABR (Application Barcode Reference): A123BCD</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Your application has been accepted.&rdquo;</li>
+                      <li>PriorityDateTime: now</li>
+                      <li><abbr title="Application Barcode Reference">ABR</abbr>: A123BCD</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Your application has been accepted.&rdquo;</li>
+                      <li>PriorityDateTime: now</li>
+                      <li><abbr title="Application Barcode Reference">ABR</abbr>: A123BCD</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Your application has been accepted.&rdquo;</li>
+                      <li>PriorityDateTime: now</li>
+                      <li><abbr title="Application Barcode Reference">ABR</abbr>: A123BCD</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Your application has been accepted.&rdquo;</li>
+                      <li>PriorityDateTime: now</li>
+                      <li><abbr title="Application Barcode Reference">ABR</abbr>: A123BCD</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>ProductType</li>
+                      <li><span class="hmlr-mark-highlight" role="mark">Note: Do not use any red data from the above tests as this may trigger that test to run instead of this one.</span></li>
+                    </ul>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Your application has been accepted.&rdquo;</li>
+                      <li>PriorityDateTime: now</li>
+                      <li><abbr title="Application Barcode Reference">ABR</abbr>: A123BCD</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 05</li>
+          <li>Test purpose: Lodge an application with an incorrect first priority</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.startvalue</li>
+                      <li>Description: &ldquo;Application priority must begin with 1.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.startvalue</li>
+                      <li>Description: &ldquo;Application priority must begin with 1.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.startvalue</li>
+                      <li>Description: &ldquo;Application priority must begin with 1.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.startvalue</li>
+                      <li>Description: &ldquo;Application priority must begin with 1.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.startvalue</li>
+                      <li>Description: &ldquo;Application priority must begin with 1.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.startvalue</li>
+                      <li>Description: &ldquo;Application priority must begin with 1.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <span class="hmlr-mark-highlight" role="mark">Priority</span>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <span class="hmlr-mark-highlight" role="mark">First priority &gt; 1</span>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.startvalue</li>
+                      <li>Description: &ldquo;Application priority must begin with 1.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 07</li>
+          <li>Test purpose: Lodge an application with missing mandatory roles</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.application.roletype</li>
+                      <li>Description: Role type of &lt;Role Type&gt; must be present for &lt;Application Type&gt; &lt;Application Priority&gt;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.application.roletype</li>
+                      <li>Description: Role type of &lt;Role Type&gt; must be present for &lt;Application Type&gt; &lt;Application Priority&gt;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.application.roletype</li>
+                      <li>Description: Role type of &lt;Role Type&gt; must be present for &lt;Application Type&gt; &lt;Application Priority&gt;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.application.roletype</li>
+                      <li>Description: Role type of &lt;Role Type&gt; must be present for &lt;Application Type&gt; &lt;Application Priority&gt;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.application.roletype</li>
+                      <li>Description: Role type of &lt;Role Type&gt; must be present for &lt;Application Type&gt; &lt;Application Priority&gt;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <span>ProductType</span>
+                    <span class="hmlr-mark-highlight" role="mark">The table below sets out the application types and roles required. To run this test, create the required application and miss off the required role.</span>
+                    <span class="hmlr-mark-highlight" role="mark">To pass schema validation all parties must have at least one role. So in effect at least two applications will be needed with one (from the list here) containing no linked parties or roles.</span>
+                    <span class="hmlr-mark-highlight" role="mark">The error message will contain the application details with the missing role type.</span>
+                    </ul>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.application.roletype</li>
+                      <li>Description: Role type of &lt;Role Type&gt; must be present for &lt;Application Type&gt; &lt;Application Priority&gt;</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Application</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Role Required</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Charge</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Borrower</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Note Agreed Maximum Amount of Security (CH3)</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Borrower</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Transfer</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>Transferee</li>
+                      <li>Transferor</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Transfer by Law of Operation</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>Transferee</li>
+                      <li>Transferor</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Transfer not for value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>Transferee</li>
+                      <li>Transferor</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Transfer of Charge</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>Transferee</li>
+                      <li>Transferor</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Transfer Subject to a Charge</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>Transferee</li>
+                      <li>Transferor</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Entry of Restrictive Covenent</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Transferor</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Lease</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>Lessor</li>
+                      <li>Lessee</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 08</li>
+          <li>Test purpose: Lodge an application with incorrect mandatory representation</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.party.representation</li>
+                      <li>Description: &ldquo;Representation for &lt;party name&gt; must be provided.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.party.representation</li>
+                      <li>Description: &ldquo;Representation for &lt;party name&gt; must be provided.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.party.representation</li>
+                      <li>Description: &ldquo;Representation for &lt;party name&gt; must be provided.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.party.representation</li>
+                      <li>Description: &ldquo;Representation for &lt;party name&gt; must be provided.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.party.representation</li>
+                      <li>Description: &ldquo;Representation for &lt;party name&gt; must be provided.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>ProductType</li>
+                      <li>
+                        <span class="hmlr-mark-highlight" role="mark">The table below sets out the roles, for certain application types, that require mandatory representation.</span>
+                        <span class="hmlr-mark-highlight" role="mark">To invoke the test submit a party that has the required roleType and application type but is missing representation.</span>
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.party.representation</li>
+                      <li>Description: &ldquo;Representation for &lt;party name&gt; must be provided.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Application type</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Representation for roles</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Charge</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Lender</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any other application type (other than a charge)</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>Transferee</li>
+                      <li>Transferor</li>
+                      <li>Borrower</li>
+                      <li>Lessor</li>
+                      <li>Lessee</li>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 09</li>
+          <li>Test purpose: Lodge an application with no lodging conveyancer representation</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.lodging.representation</li>
+                      <li>Description: &ldquo;Representation by the Lodging Conveyancer must be provided for one of the parties to the application.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.lodging.representation</li>
+                      <li>Description: &ldquo;Representation by the Lodging Conveyancer must be provided for one of the parties to the application.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.lodging.representation</li>
+                      <li>Description: &ldquo;Representation by the Lodging Conveyancer must be provided for one of the parties to the application.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.lodging.representation</li>
+                      <li>Description: &ldquo;Representation by the Lodging Conveyancer must be provided for one of the parties to the application.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.lodging.representation</li>
+                      <li>Description: &ldquo;Representation by the Lodging Conveyancer must be provided for one of the parties to the application.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.lodging.representation</li>
+                      <li>Description: &ldquo;Representation by the Lodging Conveyancer must be provided for one of the parties to the application.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <span class="hmlr-mark-highlight" role="mark">Submit the request with no parties containing representation by the Lodging Conveyancer.</span>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <span class="hmlr-mark-highlight" role="mark">Submit the request with no parties containing representation by the Lodging Conveyancer.</span>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.lodging.representation</li>
+                      <li>Description: &ldquo;Representation by the Lodging Conveyancer must be provided for one of the parties to the application.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 10</li>
+          <li>Test purpose: Lodge an application with a missing identity form</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.identityform</li>
+                      <li>Description: &ldquo;An Identity Form must be provided.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.identityform</li>
+                      <li>Description: &ldquo;An Identity Form must be provided.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.identityform</li>
+                      <li>Description: &ldquo;An Identity Form must be provided.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.identityform</li>
+                      <li>Description: &ldquo;An Identity Form must be provided.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.identityform</li>
+                      <li>Description: &ldquo;An Identity Form must be provided.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.identityform</li>
+                      <li>Description: &ldquo;An Identity Form must be provided.&rdquo;</li>
+                    </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">IdentityEvidence</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">Any XML valid input</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.identityform</li>
+                      <li>Description: &ldquo;An Identity Form must be provided.&rdquo;</li>
+                    </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">Party</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">Uses above representation provided in IdentityEvidence</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.identityform</li>
+                      <li>Description: &ldquo;An Identity Form must be provided.&rdquo;</li>
+                    </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">SupportingDocument</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">Missing identity form</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.identityform</li>
+                      <li>Description: &ldquo;An Identity Form must be provided.&rdquo;</li>
+                    </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 11</li>
+          <li>Test purpose: Lodge an application without confirming AP1 (Alteration of Register) warning is understood</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.ap1warning</li>
+                      <li>Description: &ldquo;Certification is required that the <abbr title="Alteration of Register">AP1</abbr> warning has been read and understood.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.ap1warning</li>
+                      <li>Description: &ldquo;Certification is required that the <abbr title="Alteration of Register">AP1</abbr> warning has been read and understood.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.ap1warning</li>
+                      <li>Description: &ldquo;Certification is required that the <abbr title="Alteration of Register">AP1</abbr> warning has been read and understood.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.ap1warning</li>
+                      <li>Description: &ldquo;Certification is required that the <abbr title="Alteration of Register">AP1</abbr> warning has been read and understood.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.ap1warning</li>
+                      <li>Description: &ldquo;Certification is required that the <abbr title="Alteration of Register">AP1</abbr> warning has been read and understood.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.drs.ap1warning</li>
+                    <li>Description: &ldquo;Certification is required that the <abbr title="Alteration of Register">AP1</abbr> warning has been read and understood.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">AP1WarningUnderstood</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">False</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.drs.ap1warning</li>
+                    <li>Description: &ldquo;Certification is required that the <abbr title="Alteration of Register">AP1</abbr> warning has been read and understood.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 12</li>
+          <li>Test purpose: Lodge an application with an incorrect priority order</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.nonconsecutive</li>
+                      <li>Description: &ldquo;Application priority must be in consecutive numerical order.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.nonconsecutive</li>
+                      <li>Description: &ldquo;Application priority must be in consecutive numerical order.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.nonconsecutive</li>
+                      <li>Description: &ldquo;Application priority must be in consecutive numerical order.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.nonconsecutive</li>
+                      <li>Description: &ldquo;Application priority must be in consecutive numerical order.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid entry</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.priority.nonconsecutive</li>
+                      <li>Description: &ldquo;Application priority must be in consecutive numerical order.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.drs.priority.nonconsecutive</li>
+                    <li>Description: &ldquo;Application priority must be in consecutive numerical order.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">Priority</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">Ensure 2 or more applications have non consecutive priority numbers</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.drs.priority.nonconsecutive</li>
+                    <li>Description: &ldquo;Application priority must be in consecutive numerical order.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 13</li>
+          <li>Test purpose: Lodge an application with missing mandatory documentation</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.application.document</li>
+                      <li>Description: Application &lt;application name&gt; must be supported by a document</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.application.document</li>
+                      <li>Description: Application &lt;application name&gt; must be supported by a document</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.application.document</li>
+                      <li>Description: Application &lt;application name&gt; must be supported by a document</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.application.document</li>
+                      <li>Description: Application &lt;application name&gt; must be supported by a document</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid entry</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.application.document</li>
+                      <li>Description: Application &lt;application name&gt; must be supported by a document</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.drs.application.document</li>
+                    <li>Description: Application &lt;application name&gt; must be supported by a document</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">Application</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">Only a discharge or change of address do not require any mandatory documents. Submit any other application without documents (neither application document nor supporting document)</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.drs.application.document</li>
+                    <li>Description: Application &lt;application name&gt; must be supported by a document</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 14</li>
+          <li>Test purpose: Lodge an application against a scheme title</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: schema.title</li>
+                      <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: schema.title</li>
+                      <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: schema.title</li>
+                      <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: schema.title</li>
+                      <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: schema.title</li>
+                      <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: schema.title</li>
+                    <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">TitleNumber or LesseeTitle (when LeaseExtension ServiceTitleType)</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">SC123456</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: schema.title</li>
+                    <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>Scheme titles (originally known as “improvement scheme titles”) were introduced to facilitate the registration of areas of land acquired piecemeal. This is for slum clearance and redevelopment, normally by public authorities such as local councils and new town development corporations.</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 15</li>
+          <li>Test purpose: Lodge an application against caution title</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: caution.title</li>
+                      <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: caution.title</li>
+                      <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: caution.title</li>
+                      <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: caution.title</li>
+                      <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: caution.title</li>
+                      <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: caution.title</li>
+                    <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">TitleNumber or LesseeTitle (when LeaseExtension ServiceTitleType)</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">CT123456</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: caution.title</li>
+                    <li>Description: &ldquo;Applications for a dealing against scheme titles or caution titles are not supported.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>A caution against first registration is a means of protecting an interest in an unregistered estate in land. When registered, a caution is given its own caution title number.</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 16</li>
+          <li>Test purpose: Lodge an application with lodging conveyancer as representing transferee with no address for service</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.transferee.afs</li>
+                      <li>Description: &ldquo;As you are representing the transferee the address for service is required.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.transferee.afs</li>
+                      <li>Description: &ldquo;As you are representing the transferee the address for service is required.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.transferee.afs</li>
+                      <li>Description: &ldquo;As you are representing the transferee the address for service is required.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.transferee.afs</li>
+                      <li>Description: &ldquo;As you are representing the transferee the address for service is required.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: bg.drs.transferee.afs</li>
+                      <li>Description: &ldquo;As you are representing the transferee the address for service is required.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.drs.transferee.afs</li>
+                    <li>Description: &ldquo;As you are representing the transferee the address for service is required.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">Submit the request with a transferee party containing representation by the Lodging Conveyancer but with no address for service.</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">Submit the request with a transferee party containing representation by the Lodging Conveyancer but with no address for service.</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.drs.transferee.afs</li>
+                    <li>Description: &ldquo;As you are representing the transferee the address for service is required.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 17</li>
+          <li>Test purpose: Lodge an application against a franchise title</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: franchise.title</li>
+                      <li>Description: &ldquo;Applications for a New Lease, Lease Extension or a Transfer of Part against an affecting franchise or relating franchise are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: franchise.title</li>
+                      <li>Description: &ldquo;Applications for a New Lease, Lease Extension or a Transfer of Part against an affecting franchise or relating franchise are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: franchise.title</li>
+                      <li>Description: &ldquo;Applications for a New Lease, Lease Extension or a Transfer of Part against an affecting franchise or relating franchise are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: franchise.title</li>
+                      <li>Description: &ldquo;Applications for a New Lease, Lease Extension or a Transfer of Part against an affecting franchise or relating franchise are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: franchise.title</li>
+                      <li>Description: &ldquo;Applications for a New Lease, Lease Extension or a Transfer of Part against an affecting franchise or relating franchise are not supported.&rdquo;</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <span>ProductType</span>
+                    <span class="hmlr-mark-highlight" role="mark">&lt;TitleNumber&gt; can be entered under:</span>
+                    <span class="hmlr-mark-highlight" role="mark">
+                      <ul>
+                        <li>&lt;LessorTitle&gt;</li>
+                        <li>&lt;TransferorTitle&gt;</li>
+                        <li>&lt;AdditionalTitle&gt;</li>
+                      </ul>
+                    </span>
+                  </ul>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: franchise.title</li>
+                    <li>Description: &ldquo;Applications for a New Lease, Lease Extension or a Transfer of Part against an affecting franchise or relating franchise are not supported.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <span>ProductType</span>
+                    <span class="hmlr-mark-highlight" role="mark">&lt;TitleNumber&gt; can be entered under:</span>
+                    <span class="hmlr-mark-highlight" role="mark">
+                      <ul>
+                        <li>&lt;LessorTitle&gt;</li>
+                        <li>&lt;TransferorTitle&gt;</li>
+                        <li>&lt;AdditionalTitle&gt;</li>
+                      </ul>
+                    </span>
+                  </ul>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">TitleNumber or LesseeTitle (when LeaseExtension ServiceTitleType)</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">FT123456</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: franchise.title</li>
+                    <li>Description: &ldquo;Applications for a New Lease, Lease Extension or a Transfer of Part against an affecting franchise or relating franchise are not supported.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>Under section 3, Land Registration Act 2002, a franchise may be the subject of an application for voluntary first registration. The most common franchise is the right to hold a market or fair.</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 18</li>
+          <li>Test purpose: Lodge an application against a pending new title</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: pending.title</li>
+                      <li>Description: “The title number provided PT123456 is a pending new title. Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a pending new title.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: pending.title</li>
+                      <li>Description: “The title number provided PT123456 is a pending new title. Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a pending new title.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: pending.title</li>
+                      <li>Description: “The title number provided PT123456 is a pending new title. Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a pending new title.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: pending.title</li>
+                      <li>Description: “The title number provided PT123456 is a pending new title. Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a pending new title.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: pending.title</li>
+                      <li>Description: “The title number provided PT123456 is a pending new title. Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a pending new title.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;TitleNumber&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">
+                    <ul>
+                      <li>&lt;LessorTitle&gt;</li>
+                      <li>&lt;TransferorTitle&gt;</li>
+                      <li>&lt;AdditionalTitle&gt;</li>
+                    </ul>
+                  </span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: pending.title</li>
+                    <li>Description: “The title number provided PT123456 is a pending new title. Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a pending new title.”</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;TitleNumber&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">
+                    <ul>
+                      <li>&lt;LessorTitle&gt;</li>
+                      <li>&lt;TransferorTitle&gt;</li>
+                      <li>&lt;AdditionalTitle&gt;</li>
+                    </ul>
+                  </span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">TitleNumber or LesseeTitle (when LeaseExtension ServiceTitleType)</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">PT123456</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: pending.title</li>
+                    <li>Description: “The title number provided PT123456 is a pending new title. Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a pending new title.”</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 19</li>
+          <li>Test purpose: Lodge an application against a lessee title that is not leasehold</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: caution.title</li>
+                      <li>Description: “Lessees title number provided LT123456 does not match a leasehold title held by Land Registry.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: caution.title</li>
+                      <li>Description: “Lessees title number provided LT123456 does not match a leasehold title held by Land Registry.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: caution.title</li>
+                      <li>Description: “Lessees title number provided LT123456 does not match a leasehold title held by Land Registry.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: caution.title</li>
+                      <li>Description: “Lessees title number provided LT123456 does not match a leasehold title held by Land Registry.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: caution.title</li>
+                      <li>Description: “Lessees title number provided LT123456 does not match a leasehold title held by Land Registry.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: caution.title</li>
+                    <li>Description: “Lessees title number provided LT123456 does not match a leasehold title held by Land Registry.”</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">LesseeTitle</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">LT123456</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: caution.title</li>
+                    <li>Description: “Lessees title number provided LT123456 does not match a leasehold title held by Land Registry.”</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 20</li>
+          <li>Test purpose: Lodge a charge application</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <span>ProductType</span>
+                    <span class="hmlr-mark-highlight" role="mark">&lt;ChargeDate&gt; can be entered under:</span>
+                    <span class="hmlr-mark-highlight" role="mark">&lt;ChargeApplicationType&gt;</li></span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.chargedate.invalid</li>
+                    <li>Description: “Application Charge &lt;X&gt; Charge Date must not be in the future.”</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <span>ProductType</span>
+                    <span class="hmlr-mark-highlight" role="mark">&lt;ChargeDate&gt; can be entered under:</span>
+                    <span class="hmlr-mark-highlight" role="mark"><li>&lt;ChargeApplicationType&gt;</li></span>
+                  </ul>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">ChargeDate</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">01/01/5000 (Any future date)</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.chargedate.invalid</li>
+                    <li>Description: “Application Charge &lt;X&gt; Charge Date must not be in the future.”</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">&lt;MDRef&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;ChargeApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">MDRef</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">A</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.mdref.invalid</li>
+                    <li>Description: “Application Charge &lt;X&gt; MDRef A is invalid.&ldquo;</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">&lt;MDRef&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;ChargeApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">MDRef</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">MD999Z</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.mdref.validation</li>
+                    <li>Description: “Application Charge &lt;X&gt; MDRef MD999Z validation failed.&rdquo;</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 21</li>
+          <li>Test purpose: Lodge a single charge application</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;FeeInPence&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;ChargeApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.feeinpence.invalid</li>
+                    <li>Description: “Application Charge &lt;X&gt; FeeinPence must not be below 2000.”</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;FeeInPence&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;ChargeApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">FeeInPence</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">12</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.feeinpence.invalid</li>
+                    <li>Description: “Application Charge &lt;X&gt; FeeinPence must not be below 2000.”</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 22</li>
+          <li>Test purpose: Lodge a single application</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;FeeInPence&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;ChargeApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.feeinpence.invalid</li>
+                    <li>Description: “Application Charge &lt;X&gt; FeeinPence must not be below 2000.”</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;FeeInPence&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;ChargeApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">FeeInPence</span>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span class="hmlr-mark-highlight" role="mark">12</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.feeinpence.invalid</li>
+                    <li>Description: “Application Charge &lt;X&gt; FeeinPence must not be below 2000.”</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 23</li>
+          <li>Test purpose: Lodge a single discharge application</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;FeeInPence&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;OtherApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.feeinpence.discharge.invalid</li>
+                    <li>Description: “Application Charge &lt;X&gt; FeeinPence must be 0.”</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;FeeInPence&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;OtherApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">FeeInPence</span></td>
+                <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">1000</span></td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.feeinpence.discharge.invalid</li>
+                    <li>Description: “Application Charge &lt;X&gt; FeeinPence must be 0.”</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service 24</li>
+          <li>Test purpose: Lodge an application with charge and discharge</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">AdditionalProviderFilter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;FeeInPence&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;OtherApplicationType&gt;</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;ChargeApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.feemismatch.charge.invalid</li>
+                    <li>Description: “FeeInPence of charge must match TotalFeeInPence.”</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;FeeInPence&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;OtherApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">FeeInPence (of charge)</span></td>
+                <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">3000</span></td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.feemismatch.charge.invalid</li>
+                    <li>Description: “FeeInPence of charge must match TotalFeeInPence.”</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;FeeInPence&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;OtherApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">FeeInPence (of discharge)</span></td>
+                <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">0</span></td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.feemismatch.charge.invalid</li>
+                    <li>Description: “FeeInPence of charge must match TotalFeeInPence.”</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <span>ProductType</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;FeeInPence&gt; can be entered under:</span>
+                  <span class="hmlr-mark-highlight" role="mark">&lt;OtherApplicationType&gt;</span>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">TotalFeeInPence</span></td>
+                <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">0</span></td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">
+                  <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode: &lsquo;20&rsquo;</li>
+                    <li>Code: bg.feemismatch.charge.invalid</li>
+                    <li>Description: “FeeInPence of charge must match TotalFeeInPence.”</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h2 id="2-electronic-document-registration-service-polling-service">2. Electronic Document Registration Service Polling Service</h2>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service Poll 01</li>
+          <li>Test purpose: Lodge an application correctly</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: &ldquo;Your application has been processed.&rdquo;</li>
+                      <li>ResultTypeCode: &lsquo;10&rsquo;</li>
+                      <li>DespatchDocument:</li>
+                      <li>filename: Land Registry Documents.zip</li>
+                      <li>XmlRegisters:</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: &ldquo;Your application has been processed&rdquo;</li>
+                      <li>ResultTypeCode: &lsquo;10&rsquo;</li>
+                      <li>DespatchDocument:</li>
+                      <li>filename: Land Registry Documents.zip</li>
+                      <li>XmlRegisters:</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: &ldquo;Your application has been processed&rdquo;</li>
+                      <li>ResultTypeCode: &lsquo;10&rsquo;</li>
+                      <li>DespatchDocument:</li>
+                      <li>filename: Land Registry Documents.zip</li>
+                      <li>XmlRegisters:</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Message ID</span></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">returnType1</span></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: &ldquo;Your application has been processed&rdquo;</li>
+                      <li>ResultTypeCode: &lsquo;10&rsquo;</li>
+                      <li>DespatchDocument:</li>
+                      <li>filename: Land Registry Documents.zip</li>
+                      <li>XmlRegisters:</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Electronic Document Registration Service Poll 02</li>
+          <li>Test purpose: Lodge an application correctly with an incorrect total Fee</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: &ldquo;Your application has been processed&rdquo;</li>
+                      <li>ResultTypeCode: &lsquo;10&rsquo;</li>
+                      <li>ActualFee: 50000</li>
+                      <li>FeeAdjusted: true</li>
+                      <li>DespatchDocument:</li>
+                      <li>filename: Land Registry Documents.zip</li>
+                      <li>XmlRegisters:</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: &ldquo;Your application has been processed&rdquo;</li>
+                      <li>ResultTypeCode: &lsquo;10&rsquo;</li>
+                      <li>ActualFee: 50000</li>
+                      <li>FeeAdjusted: true</li>
+                      <li>DespatchDocument:</li>
+                      <li>filename: Land Registry Documents.zip</li>
+                      <li>XmlRegisters:</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: &ldquo;Your application has been processed&rdquo;</li>
+                      <li>ResultTypeCode: &lsquo;10&rsquo;</li>
+                      <li>ActualFee: 50000</li>
+                      <li>FeeAdjusted: true</li>
+                      <li>DespatchDocument:</li>
+                      <li>filename: Land Registry Documents.zip</li>
+                      <li>XmlRegisters:</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Message ID</span></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">returnType2</span></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: &ldquo;Your application has been processed&rdquo;</li>
+                      <li>ResultTypeCode: &lsquo;10&rsquo;</li>
+                      <li>ActualFee: 50000</li>
+                      <li>FeeAdjusted: true</li>
+                      <li>DespatchDocument:</li>
+                      <li>filename: Land Registry Documents.zip</li>
+                      <li>XmlRegisters:</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- Q1GatewayResponseType -->
+    <rect x="30" y="20" width="320" height="110" class="small-box"></rect>
+    <text x="40" y="40" class="title">Q1GatewayResponseType</text>
+    <text x="40" y="60" class="content">- TypeCode</text>
+    <text x="175" y="60" class="content">[1..1] ProductResponseCodeType</text>
+    <text x="40" y="80" class="content">- Acknowledgement</text>
+    <text x="175" y="80" class="content">[1..1] Q1AcknowledgementType</text>
+    <text x="40" y="100" class="content">- Rejection</text>
+    <text x="175" y="100" class="content">[0..1] Q1RejectionType</text>
+    <text x="40" y="120" class="content">- Results</text>
+    <text x="175" y="120" class="content">[0..1] Q1ResultsType</text>
+
+    <!-- ProductResponseCodeType -->
+    <rect x="380" y="5" width="200" height="30" class="small-box"></rect>
+    <text x="390" y="25" class="title">ProductResponseCodeType</text>
+
+    <!-- Q1AcknowledgementType -->
+    <rect x="380" y="55" width="400" height="50" class="small-box"></rect>
+    <text x="390" y="75" class="title">Q1AcknowledgementType</text>
+    <text x="385" y="95" class="content">- AcknowledgementDetails</text>
+    <text x="555" y="95" class="content">[1..1] Q1AcknowledgementDetailsType</text>
+
+    <!-- Q1RejectionType -->
+    <rect x="380" y="125" width="290" height="90" class="small-box"></rect>
+    <text x="390" y="145" class="title">Q1RejectionType</text>
+    <text x="385" y="165" class="content">- ExternalReference</text>
+    <text x="500" y="165" class="content">[1..1] TextType</text>
+    <text x="385" y="185" class="content">- ActualPrice</text>
+    <text x="500" y="185" class="content">[0..1] Q1ActualPriceType</text>
+    <text x="385" y="205" class="content">- RejectionResponse</text>
+    <text x="500" y="205" class="content">[1..1] Q1RejectionResponseType</text>
+
+    <!-- Q1ResultsType -->
+    <rect x="380" y="235" width="300" height="230" class="small-box"></rect>
+    <text x="390" y="255" class="title">Q1ResultsType</text>
+    <text x="385" y="275" class="content">- ExternalReference</text>
+    <text x="530" y="275" class="content">[1..1] TextType</text>
+    <text x="385" y="295" class="content">- ActualPrice</text>
+    <text x="530" y="295" class="content">[1..1] Q1ActualPriceType</text>
+    <text x="385" y="315" class="content">- SearchArea</text>
+    <text x="530" y="315" class="content">[0..1] CData</text>
+    <text x="385" y="335" class="content">- Attachment</text>
+    <text x="530" y="335" class="content">[0..1] Q1AttachmentType</text>
+    <text x="385" y="355" class="content">- SearchDateTime</text>
+    <text x="530" y="355" class="content">[1..1] DateTimeType</text>
+    <text x="385" y="375" class="content">- SearchDescription</text>
+    <text x="530" y="375" class="content">[1..1] string</text>
+    <text x="385" y="395" class="content">- NumberSearchesFound</text>
+    <text x="530" y="395" class="content">[1..1] integer</text>
+    <text x="385" y="415" class="content">- Charges</text>
+    <text x="530" y="415" class="content">[0..1] LocalLandChargeType</text>
+    <text x="385" y="435" class="content">- ChargesAlternateFormat</text>
+    <text x="557" y="435" class="content">CData</text>
+    <text x="385" y="455" class="content">- SearchReference</text>
+    <text x="530" y="455" class="content">[1..1] TextType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - Q1GatewayResponseType -->
+    <line x1="30" y1="45" x2="350" y2="45" stroke="lightgrey"></line>
+    <line x1="30" y1="47" x2="350" y2="47" stroke="lightgrey"></line>
+    <line x1="30" y1="66" x2="350" y2="66" stroke="lightgrey"></line>
+    <line x1="30" y1="86" x2="350" y2="86" stroke="lightgrey"></line>
+    <line x1="30" y1="106" x2="350" y2="106" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1AcknowledgementType -->
+    <line x1="380" y1="79" x2="780" y2="79" stroke="lightgrey"></line>
+    <line x1="380" y1="81" x2="780" y2="81" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1RejectionType -->
+    <line x1="380" y1="149" x2="670" y2="149" stroke="lightgrey"></line>
+    <line x1="380" y1="151" x2="670" y2="151" stroke="lightgrey"></line>
+    <line x1="380" y1="171" x2="670" y2="171" stroke="lightgrey"></line>
+    <line x1="380" y1="191" x2="670" y2="191" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1ResultsType -->
+    <line x1="380" y1="259" x2="680" y2="259" stroke="lightgrey"></line>
+    <line x1="380" y1="261" x2="680" y2="261" stroke="lightgrey"></line>
+    <line x1="380" y1="281" x2="680" y2="281" stroke="lightgrey"></line>
+    <line x1="380" y1="301" x2="680" y2="301" stroke="lightgrey"></line>
+    <line x1="380" y1="321" x2="680" y2="321" stroke="lightgrey"></line>
+    <line x1="380" y1="341" x2="680" y2="341" stroke="lightgrey"></line>
+    <line x1="380" y1="361" x2="680" y2="361" stroke="lightgrey"></line>
+    <line x1="380" y1="381" x2="680" y2="381" stroke="lightgrey"></line>
+    <line x1="380" y1="401" x2="680" y2="401" stroke="lightgrey"></line>
+    <line x1="380" y1="421" x2="680" y2="421" stroke="lightgrey"></line>
+    <line x1="380" y1="441" x2="680" y2="441" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="350" y1="57" x2="380" y2="20" class="line"></line>
+    <line x1="350" y1="77" x2="380" y2="90" class="line"></line>
+    <line x1="350" y1="97" x2="380" y2="140" class="line"></line>
+    <line x1="350" y1="117" x2="380" y2="250" class="line"></line>
+
+</svg>

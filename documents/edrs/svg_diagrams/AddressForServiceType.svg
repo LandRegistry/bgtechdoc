@@ -1,0 +1,109 @@
+<svg width="700" height="350" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- AddressForServiceType -->
+    <rect x="30" y="50" width="310" height="90" class="small-box"></rect>
+    <text x="40" y="70" class="title">AddressForServiceType</text>
+    <text x="40" y="90" class="content">- PostalAddress</text>
+    <text x="140" y="90" class="content">[1..1] PostalAddressType</text>
+    <text x="40" y="110" class="content">- IsApplicant</text>
+    <text x="140" y="110" class="content">[1..1] AdditionalAddressForServiceType</text>
+    <text x="40" y="130" class="content">- Company</text>
+    <text x="140" y="130" class="content">[1..1] AddressForServiceTypeContent</text>
+
+    <!-- PostalAddressType -->
+    <rect x="380" y="5" width="250" height="190" class="small-box"></rect>
+    <text x="390" y="25" class="title">PostalAddressType</text>
+    <text x="385" y="45" class="content">- AddressLine1</text>
+    <text x="500" y="45" class="content">[1..1] NonBlankTextType</text>
+    <text x="385" y="65" class="content">- AddressLine2</text>
+    <text x="500" y="65" class="content">[0..1] NonBlankTextType</text>
+    <text x="385" y="85" class="content">- AddressLine3</text>
+    <text x="500" y="85" class="content">[0..1] NonBlankTextType</text>
+    <text x="385" y="105" class="content">- AddressLine4</text>
+    <text x="500" y="105" class="content">[0..1] NonBlankTextType</text>
+    <text x="385" y="125" class="content">- City</text>
+    <text x="500" y="125" class="content">[0..1] NonBlankTextType</text>
+    <text x="385" y="145" class="content">- County</text>
+    <text x="500" y="145" class="content">[0..1] NonBlankTextType</text>
+    <text x="385" y="165" class="content">- Country</text>
+    <text x="500" y="165" class="content">[0..1] NonBlankTextType</text>
+    <text x="385" y="185" class="content">- Postcode</text>
+    <text x="500" y="185" class="content">[0..1] NonBlankTextType</text>
+
+    <!-- AdditionalAddressForServiceType -->
+    <rect x="380" y="205" width="230" height="90" class="small-box"></rect>
+    <text x="390" y="225" class="title">AdditionalAddressForServiceType</text>
+    <text x="385" y="245" class="content">- PostalAddress</text>
+    <text x="480" y="245" class="content">[1..1] PostalAddressType</text>
+    <text x="385" y="265" class="content">- EmailAddress</text>
+    <text x="480" y="265" class="content">[1..1] EmailAddressType</text>
+    <text x="385" y="285" class="content">- DXAddress</text>
+    <text x="480" y="285" class="content">[1..1] DXAddressType</text>
+
+    <!-- AddressForServiceTypeContent -->
+    <rect x="380" y="305" width="200" height="30" class="small-box"></rect>
+    <text x="390" y="325" class="title">AddressForServiceTypeContent</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - AddressForServiceType -->
+    <line x1="30" y1="75" x2="340" y2="75" stroke="lightgrey"></line>
+    <line x1="30" y1="77" x2="340" y2="77" stroke="lightgrey"></line>
+    <line x1="30" y1="96" x2="340" y2="96" stroke="lightgrey"></line>
+    <line x1="30" y1="116" x2="340" y2="116" stroke="lightgrey"></line>
+
+    <!-- Table Lines - PostalAddressType -->
+    <line x1="380" y1="29" x2="630" y2="29" stroke="lightgrey"></line>
+    <line x1="380" y1="31" x2="630" y2="31" stroke="lightgrey"></line>
+    <line x1="380" y1="50" x2="630" y2="50" stroke="lightgrey"></line>
+    <line x1="380" y1="70" x2="630" y2="70" stroke="lightgrey"></line>
+    <line x1="380" y1="90" x2="630" y2="90" stroke="lightgrey"></line>
+    <line x1="380" y1="110" x2="630" y2="110" stroke="lightgrey"></line>
+    <line x1="380" y1="130" x2="630" y2="130" stroke="lightgrey"></line>
+    <line x1="380" y1="150" x2="630" y2="150" stroke="lightgrey"></line>
+    <line x1="380" y1="170" x2="630" y2="170" stroke="lightgrey"></line>
+
+    <!-- Table Lines - AdditionalAddressForServiceType -->
+    <line x1="380" y1="229" x2="610" y2="229" stroke="lightgrey"></line>
+    <line x1="380" y1="231" x2="610" y2="231" stroke="lightgrey"></line>
+    <line x1="380" y1="251" x2="610" y2="251" stroke="lightgrey"></line>
+    <line x1="380" y1="271" x2="610" y2="271" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="340" y1="87" x2="380" y2="20" class="line"></line>
+    <line x1="340" y1="107" x2="380" y2="220" class="line"></line>
+    <line x1="340" y1="127" x2="380" y2="320" class="line"></line>
+
+</svg>

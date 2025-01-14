@@ -1,0 +1,1875 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Discharge Activity - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/discharge_activity/DischargeActivityv1_0_VendorTest.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Discharge Activity - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/discharge_activity/DischargeActivityv1_0_VendorTest.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Discharge Activity" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/discharge_activity/DischargeActivityv1_0_VendorTest.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#discharge-activity-vendor-test-data-v1-0"><span>Discharge Activity Vendor Test Data V1.0</span></a>
+    <ul>
+      <li>
+        <a href="#normal-in-hours-requests"><span>Normal in hours requests</span></a>
+        <ul>
+          <li>
+            <a href="#undertake-a-discharge-activity-with-two-discharges-and-one-charge-date-match"><span>Undertake a discharge activity with two discharges and one charge date match</span></a>
+          </li>
+          <li>
+            <a href="#undertake-a-discharge-activity-one-discharge-found-one-match-against-charge-date"><span>Undertake a discharge activity one discharge found, one match against charge date</span></a>
+          </li>
+          <li>
+            <a href="#undertake-a-discharge-activity-with-two-discharges-and-two-matches-on-charge-date"><span>Undertake a discharge activity with two discharges and two matches on charge date</span></a>
+          </li>
+          <li>
+            <a href="#undertake-a-discharge-activity-with-no-discharges-found-and-no-match-for-charge-date"><span>Undertake a discharge activity with no discharges found and no match for charge date</span></a>
+          </li>
+          <li>
+            <a href="#undertake-a-discharge-activity-where-the-title-is-closed-and-continued"><span>Undertake a discharge activity where the title is closed and continued</span></a>
+          </li>
+          <li>
+            <a href="#undertake-a-discharge-activity-where-the-title-is-not-found-due-to-being-invalid"><span>Undertake a discharge activity where the title is not found due to being invalid</span></a>
+          </li>
+          <li>
+            <a href="#out-of-hours"><span>Out of hours</span></a>
+          </li>
+          <li>
+            <a href="#undertake-a-discharge-activity-one-discharge-found-one-charge-date-match-closed-and-continued-title"><span>Undertake a discharge activity one discharge found, one charge date match, closed and continued title</span></a>
+          </li>
+          <li>
+            <a href="#undertake-a-discharge-activity-with-no-discharges-found-against-closed-and-continued-title"><span>Undertake a discharge activity with no discharges found against closed and continued title</span></a>
+          </li>
+          <li>
+            <a href="#undertake-a-discharge-activity-one-discharge-found-no-match-against-charge-date"><span>Undertake a discharge activity one discharge found, no match against charge date</span></a>
+          </li>
+          <li>
+            <a href="#undertake-a-discharge-activity-with-one-discharge-returned-no-search-for-charge-date"><span>Undertake a discharge activity with one discharge returned, no search for charge date</span></a>
+          </li>
+          <li>
+            <a href="#undertake-a-discharge-activity-where-the-title-is-closed-and-not-continued-under-another-title"><span>Undertake a discharge activity where the title is closed and not continued under another title</span></a>
+          </li>
+          <li>
+            <a href="#undertake-a-discharge-activity-where-access-is-denied"><span>Undertake a discharge activity where access is denied</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#poll-requests"><span>Poll requests</span></a>
+        <ul>
+          <li>
+            <a href="#poll-for-response-not-yet-processed"><span>Poll for response. Not yet processed</span></a>
+          </li>
+          <li>
+            <a href="#poll-for-response-processed-no-results-returned"><span>Poll for response. Processed. No results returned</span></a>
+          </li>
+          <li>
+            <a href="#poll-for-response-rejection"><span>Poll for response. Rejection</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/discharge_activity/index.html">Back to Discharge Activity</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="discharge-activity-vendor-test-data-v1-0">Discharge Activity Vendor Test Data V1.0</h1>
+
+<hr>
+<p>Note: MessageIDs are case sensitive and all lowercase.</p>
+<p>All test requests require the exact messageID as quoted in the test details.</p>
+<p>The real service will require <strong>unique</strong> references for each request.</p>
+<h2 id="normal-in-hours-requests">Normal in hours requests</h2>
+<h3 id="undertake-a-discharge-activity-with-two-discharges-and-one-charge-date-match">Undertake a discharge activity with two discharges and one charge date match</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 1</li>
+                <li>Test purpose: Discharge activity search where two discharges are found but only one matches charge date</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and one discharge activity containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and one discharge activity containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and one discharge activity containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">success-two-discharges-one-match</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and one discharge activity containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">DT984660</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and one discharge activity containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and one discharge activity containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and one discharge activity containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Charge date</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">2019-02-13</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and one discharge activity containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="undertake-a-discharge-activity-one-discharge-found-one-match-against-charge-date">Undertake a discharge activity one discharge found, one match against charge date</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 2</li>
+                <li>Test purpose: Discharge activity search with a charge date match that has two proprietors</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">success-one-discharge-one-match</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">NYK123654</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Charge date</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">2002-08-23</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="undertake-a-discharge-activity-with-two-discharges-and-two-matches-on-charge-date">Undertake a discharge activity with two discharges and two matches on charge date</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 3</li>
+                <li>Test purpose: Undertake a discharge activity search with two charges made on the same date</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and two discharge activities, both containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and two discharge activities, both containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and two discharge activities, both containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">success-two-discharges-two-matches</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and two discharge activities, both containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">DT984660</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and two discharge activities, both containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and two discharge activities, both containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and two discharge activities, both containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Charge date</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">1995-02-13</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of two and two discharge activities, both containing one proprietor and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="undertake-a-discharge-activity-with-no-discharges-found-and-no-match-for-charge-date">Undertake a discharge activity with no discharges found and no match for charge date</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 4</li>
+                <li>Test purpose: Undertake a discharge activity search where no result is returned</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">success-no-results</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">NYK567842</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Charge date</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">2007-10-26</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="undertake-a-discharge-activity-where-the-title-is-closed-and-continued">Undertake a discharge activity where the title is closed and continued</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 5</li>
+                <li>Test purpose: Undertake a discharge activity search where the title is closed and continued</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number BK554444 has been closed and registration continued under Title Number DT643551&rsquo;.</li>
+                            <li>Code = bg.general.title.closedAndContinued</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number BK554444 has been closed and registration continued under Title Number DT643551&rsquo;.</li>
+                            <li>Code = bg.general.title.closedAndContinued</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number BK554444 has been closed and registration continued under Title Number DT643551&rsquo;.</li>
+                            <li>Code = bg.general.title.closedAndContinued</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">closed-and-continued</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number BK554444 has been closed and registration continued under Title Number DT643551&rsquo;.</li>
+                            <li>Code = bg.general.title.closedAndContinued</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BK554444</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number BK554444 has been closed and registration continued under Title Number DT643551&rsquo;.</li>
+                            <li>Code = bg.general.title.closedAndContinued</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number BK554444 has been closed and registration continued under Title Number DT643551&rsquo;.</li>
+                            <li>Code = bg.general.title.closedAndContinued</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14"><strong>false</strong></td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number BK554444 has been closed and registration continued under Title Number DT643551&rsquo;.</li>
+                            <li>Code = bg.general.title.closedAndContinued</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="undertake-a-discharge-activity-where-the-title-is-not-found-due-to-being-invalid">Undertake a discharge activity where the title is not found due to being invalid</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 6</li>
+                <li>Test purpose: Undertake a discharge activity search where the title is invalid</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number is invalid&rsquo;.</li>
+                            <li>Code = bg.title.invalid</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number is invalid&rsquo;.</li>
+                            <li>Code = bg.title.invalid</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number is invalid&rsquo;.</li>
+                            <li>Code = bg.title.invalid</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">title-number-not-found</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number is invalid&rsquo;.</li>
+                            <li>Code = bg.title.invalid</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">NT99999</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number is invalid&rsquo;.</li>
+                            <li>Code = bg.title.invalid</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number is invalid&rsquo;.</li>
+                            <li>Code = bg.title.invalid</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;Title number is invalid&rsquo;.</li>
+                            <li>Code = bg.title.invalid</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="out-of-hours">Out of hours</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 7</li>
+                <li>Test purpose: Out of hours</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;10&rsquo;</li>
+                            <li>Message = &lsquo;Service is not currently available. System has queued your request, please poll at specified time&rsquo;.</li>
+                            <li>Includes a timestamp of when to repoll</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;10&rsquo;</li>
+                            <li>Message = &lsquo;Service is not currently available. System has queued your request, please poll at specified time&rsquo;.</li>
+                            <li>Includes a timestamp of when to repoll</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;10&rsquo;</li>
+                            <li>Message = &lsquo;Service is not currently available. System has queued your request, please poll at specified time&rsquo;.</li>
+                            <li>Includes a timestamp of when to repoll</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">out-of-hours</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;10&rsquo;</li>
+                            <li>Message = &lsquo;Service is not currently available. System has queued your request, please poll at specified time&rsquo;.</li>
+                            <li>Includes a timestamp of when to repoll</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">NYK456581</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;10&rsquo;</li>
+                            <li>Message = &lsquo;Service is not currently available. System has queued your request, please poll at specified time&rsquo;.</li>
+                            <li>Includes a timestamp of when to repoll</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;10&rsquo;</li>
+                            <li>Message = &lsquo;Service is not currently available. System has queued your request, please poll at specified time&rsquo;.</li>
+                            <li>Includes a timestamp of when to repoll</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;10&rsquo;</li>
+                            <li>Message = &lsquo;Service is not currently available. System has queued your request, please poll at specified time&rsquo;.</li>
+                            <li>Includes a timestamp of when to repoll</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="undertake-a-discharge-activity-one-discharge-found-one-charge-date-match-closed-and-continued-title">Undertake a discharge activity one discharge found, one charge date match, closed and continued title</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 8</li>
+                <li>Test purpose: Show response with a charge date match against continuation title</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">success-one-discharge-one-match</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">NYK456113</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Charge date</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">1999-12-01</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and one discharge activity containing two proprietors and the discharge date.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="undertake-a-discharge-activity-with-no-discharges-found-against-closed-and-continued-title">Undertake a discharge activity with no discharges found against closed and continued title</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 9</li>
+                <li>Test purpose: Undertake a discharge activity search where no result is returned against continuation title</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">success-no-results</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">NYK456113</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Charge date</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">1999-12-15</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of zero and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="undertake-a-discharge-activity-one-discharge-found-no-match-against-charge-date">Undertake a discharge activity one discharge found, no match against charge date</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 10</li>
+                <li>Test purpose: Undertake a discharge activity search where one discharge is found</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">success-one-discharge-no-match</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">NYK567842</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Charge date</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">2001-05-18</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against, a discharge count of one and a message &ldquo;No charges of this date have been discharged in the last 30 calendar days&rdquo;.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="undertake-a-discharge-activity-with-one-discharge-returned-no-search-for-charge-date">Undertake a discharge activity with one discharge returned, no search for charge date</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 11</li>
+                <li>Test purpose: Undertake a discharge activity search where a single discharge count is returned</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against and a discharge count of one.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against and a discharge count of one.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against and a discharge count of one.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">success-one-discharge</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against and a discharge count of one.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">NYK123654</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against and a discharge count of one.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against and a discharge count of one.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against and a discharge count of one.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Charge date</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">No value sent</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the details of the title searched against and a discharge count of one.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="undertake-a-discharge-activity-where-the-title-is-closed-and-not-continued-under-another-title">Undertake a discharge activity where the title is closed and not continued under another title</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 12</li>
+                <li>Test purpose: Undertake a discharge activity search where the title is invalid</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;This title number is closed&rsquo;.</li>
+                            <li>Code = bg.title.closed</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;This title number is closed&rsquo;.</li>
+                            <li>Code = bg.title.closed</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;This title number is closed&rsquo;.</li>
+                            <li>Code = bg.title.closed</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">closed-title-number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;This title number is closed&rsquo;.</li>
+                            <li>Code = bg.title.closed</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">DT516100</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;This title number is closed&rsquo;.</li>
+                            <li>Code = bg.title.closed</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;This title number is closed&rsquo;.</li>
+                            <li>Code = bg.title.closed</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;This title number is closed&rsquo;.</li>
+                            <li>Code = bg.title.closed</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="undertake-a-discharge-activity-where-access-is-denied">Undertake a discharge activity where access is denied</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 13</li>
+                <li>Test purpose: Undertake a discharge activity search where access is denied</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">WebService fault message = &lsquo;You do not have the necessary rights to access this service&rsquo;.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">WebService fault message = &lsquo;You do not have the necessary rights to access this service&rsquo;.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">WebService fault message = &lsquo;You do not have the necessary rights to access this service&rsquo;.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">access-denied</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">WebService fault message = &lsquo;You do not have the necessary rights to access this service&rsquo;.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">DN100</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">WebService fault message = &lsquo;You do not have the necessary rights to access this service&rsquo;.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Any value</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">WebService fault message = &lsquo;You do not have the necessary rights to access this service&rsquo;.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">true</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">WebService fault message = &lsquo;You do not have the necessary rights to access this service&rsquo;.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h2 id="poll-requests">Poll requests</h2>
+<h3 id="poll-for-response-not-yet-processed">Poll for response. Not yet processed</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 14</li>
+                <li>Test purpose: Poll for response. Still out of hours</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;10&rsquo;</li>
+                            <li>Message = &lsquo;Request has not yet been processed.&rsquo;</li>
+                            <li>Includes expected process time as a timestamp</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;10&rsquo;</li>
+                            <li>Message = &lsquo;Request has not yet been processed.&rsquo;</li>
+                            <li>Includes expected process time as a timestamp</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;10&rsquo;</li>
+                            <li>Message = &lsquo;Request has not yet been processed.&rsquo;</li>
+                            <li>Includes expected process time as a timestamp</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">pollstilloutofhours</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;10&rsquo;</li>
+                            <li>Message = &lsquo;Request has not yet been processed.&rsquo;</li>
+                            <li>Includes expected process time as a timestamp</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="poll-for-response-processed-no-results-returned">Poll for response. Processed. No results returned</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 15</li>
+                <li>Test purpose: Poll for response. Processed. No results found on daylist</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the title number of the original request (NYK567842), no discharges found, no matches for a charge date supplied previously.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the title number of the original request (NYK567842), no discharges found, no matches for a charge date supplied previously.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the title number of the original request (NYK567842), no discharges found, no matches for a charge date supplied previously.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">pollsuccessnoresults</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;30&rsquo;</li>
+                            <li>Response will contain the title number of the original request (NYK567842), no discharges found, no matches for a charge date supplied previously.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="poll-for-response-rejection">Poll for response. Rejection</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            <ul class="govuk-list govuk-!-font-size-14">
+                <li>Test: Example 16</li>
+                <li>Test purpose: Poll for response. Rejection. Title number closed</li>
+            </ul>
+        </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                    <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;This title number is closed.&rsquo;</li>
+                            <li>Code = bg.title.closed</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;This title number is closed.&rsquo;</li>
+                            <li>Code = bg.title.closed</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;This title number is closed.&rsquo;</li>
+                            <li>Code = bg.title.closed</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">polltitlenumberclosed</td>
+                    <td class="govuk-table__cell govuk-!-font-size-14">
+                        <ul class="govuk-list govuk-!-font-size-14">
+                            <li>Typecode = &lsquo;20&rsquo;</li>
+                            <li>Message = &lsquo;This title number is closed.&rsquo;</li>
+                            <li>Code = bg.title.closed</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

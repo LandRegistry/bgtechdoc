@@ -1,0 +1,95 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7"
+            refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+        </marker>
+    </defs>
+
+    <!-- ApplicationType -->
+    <rect x="30" y="4" width="220" height="110" class="small-box"></rect>
+    <text x="40" y="20" class="title">ApplicationType</text>
+    <text x="40" y="44" class="content">- Priority</text>
+    <text x="120" y="44" class="content">[1..1] positiveInteger</text>
+    <text x="40" y="64" class="content">- Value</text>
+    <text x="120" y="64" class="content">[1..1] NonBlankTextType</text>
+    <text x="40" y="84" class="content">- FeeInPence</text>
+    <text x="120" y="84" class="content">[1..1] NonNegativeInteger</text>
+    <text x="40" y="104" class="content">- Document</text>
+    <text x="120" y="104" class="content">[0..1] DocumentType</text>
+
+    <!-- ChargeApplicationType -->
+    <rect x="30" y="150" width="220" height="110" class="small-box"></rect>
+    <text x="40" y="170" class="title">ChargeApplicationType</text>
+    <text x="40" y="190" class="content">- ChargeDate</text>
+    <text x="120" y="190" class="content">[1..1] date</text>
+    <text x="40" y="210" class="content">- MDRef</text>
+    <text x="120" y="210" class="content">[1..1] NonBankTextType</text>
+    <text x="40" y="230" class="content">- NoMDRef</text>
+    <text x="120" y="230" class="content">[1..1] NoMDRefType</text>
+    <text x="40" y="250" class="content">- SortCode</text>
+    <text x="120" y="250" class="content">[0..1] NonBlankTextType</text>
+
+    <!-- NonBlankTextType -->
+    <rect x="330" y="150" width="125" height="30" class="small-box"></rect>
+    <text x="340" y="170" class="title">NonBlankTextType</text>
+
+    <!-- NoMDRefType -->
+    <rect x="330" y="210" width="95" height="30" class="small-box"></rect>
+    <text x="340" y="230" class="title">NoMDRefType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - ApplicationType -->
+    <line x1="30" y1="29" x2="250" y2="29" stroke="lightgrey"></line>
+    <line x1="30" y1="31" x2="250" y2="31" stroke="lightgrey"></line>
+    <line x1="30" y1="50" x2="250" y2="50" stroke="lightgrey"></line>
+    <line x1="30" y1="70" x2="250" y2="70" stroke="lightgrey"></line>
+    <line x1="30" y1="90" x2="250" y2="90" stroke="lightgrey"></line>
+
+    <!-- Table Lines - ChargeApplicationType -->
+    <line x1="30" y1="175" x2="250" y2="175" stroke="lightgrey"></line>
+    <line x1="30" y1="177" x2="250" y2="177" stroke="lightgrey"></line>
+    <line x1="30" y1="195" x2="250" y2="195" stroke="lightgrey"></line>
+    <line x1="30" y1="215" x2="250" y2="215" stroke="lightgrey"></line>
+    <line x1="30" y1="235" x2="250" y2="235" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="250" y1="205" x2="330" y2="165" class="line"></line>
+    <line x1="250" y1="225" x2="330" y2="225" class="line"></line>
+    <line x1="250" y1="245" x2="330" y2="165" class="line"></line>
+    <line x1="135" y1="150" x2="135" y2="134" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

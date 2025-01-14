@@ -1,0 +1,100 @@
+<svg width="900" height="700" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- Q1TitleType -->
+    <rect x="30" y="50" width="340" height="110" class="small-box"></rect>
+    <text x="40" y="70" class="title">Q1TitleType</text>
+    <text x="40" y="90" class="content">- TitleNumber</text>
+    <text x="180" y="90" class="content">[1..1] Q2TextType</text>
+    <text x="40" y="110" class="content">- ClassOfTitleCode</text>
+    <text x="180" y="110" class="content">[1..1] ClassOfTitleCodeType</text>
+    <text x="40" y="130" class="content">- CommonholdIndicator</text>
+    <text x="180" y="130" class="content">[0..1] IndicatorType</text>
+    <text x="40" y="150" class="content">- TitleRegistrationDetails</text>
+    <text x="180" y="150" class="content">[0..1] Q1TitleRegistrationDetailsType</text>
+
+    <!-- Q2TextType -->
+    <rect x="440" y="5" width="85" height="30" class="small-box"></rect>
+    <text x="450" y="25" class="title">Q2TextType</text>
+
+    <!-- ClassOfTitleCodeType -->
+    <rect x="440" y="45" width="145" height="30" class="small-box"></rect>
+    <text x="450" y="64" class="title">ClassOfTitleCodeType</text>
+
+    <!-- IndicatorType -->
+    <rect x="440" y="85" width="95" height="30" class="small-box"></rect>
+    <text x="450" y="105" class="title">IndicatorType</text>
+
+    <!-- Q1TitleRegistrationDetailsType -->
+    <rect x="440" y="125" width="360" height="150" class="small-box"></rect>
+    <text x="450" y="145" class="title">Q1TitleRegistrationDetailsType</text>
+    <text x="445" y="165" class="content">- DistrictName</text>
+    <text x="595" y="165" class="content">[1..1] DistrictNameTextType</text>
+    <text x="445" y="185" class="content">- AdministrativeArea</text>
+    <text x="595" y="185" class="content">[1..1] AdministrativeAreaTextType</text>
+    <text x="445" y="205" class="content">- LandRegistryOfficeName</text>
+    <text x="595" y="205" class="content">[1..1] LandRegistryOfficeNameTextType</text>
+    <text x="445" y="225" class="content">- LatestEditionDate</text>
+    <text x="595" y="225" class="content">[1..1] DateType</text>
+    <text x="445" y="245" class="content">- PostcodeZone</text>
+    <text x="595" y="245" class="content">[0..*] Q1PostcodeZoneType</text>
+    <text x="445" y="265" class="content">- RegistrationDate</text>
+    <text x="595" y="265" class="content">[0..1] DateType</text>
+
+
+    <!-- Table Lines -->
+    <!-- Table Lines - Q1TitleType -->
+    <line x1="30" y1="74" x2="370" y2="74" stroke="lightgrey"></line>
+    <line x1="30" y1="76" x2="370" y2="76" stroke="lightgrey"></line>
+    <line x1="30" y1="97" x2="370" y2="97" stroke="lightgrey"></line>
+    <line x1="30" y1="117" x2="370" y2="117" stroke="lightgrey"></line>
+    <line x1="30" y1="137" x2="370" y2="137" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1TitleRegistrationDetailsType -->
+    <line x1="440" y1="149" x2="800" y2="149" stroke="lightgrey"></line>
+    <line x1="440" y1="151" x2="800" y2="151" stroke="lightgrey"></line>
+    <line x1="440" y1="170" x2="800" y2="170" stroke="lightgrey"></line>
+    <line x1="440" y1="190" x2="800" y2="190" stroke="lightgrey"></line>
+    <line x1="440" y1="210" x2="800" y2="210" stroke="lightgrey"></line>
+    <line x1="440" y1="230" x2="800" y2="230" stroke="lightgrey"></line>
+    <line x1="440" y1="250" x2="800" y2="250" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="370" y1="90" x2="440" y2="20" class="line"></line>
+    <line x1="370" y1="110" x2="440" y2="60" class="line"></line>
+    <line x1="370" y1="130" x2="440" y2="100" class="line"></line>
+    <line x1="370" y1="150" x2="440" y2="140" class="line"></line>
+
+</svg>

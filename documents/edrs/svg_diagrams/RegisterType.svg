@@ -1,0 +1,99 @@
+<svg width="700" height="3  00" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- RegisterType -->
+    <rect x="30" y="50" width="270" height="90" class="small-box"></rect>
+    <text x="40" y="70" class="title">RegisterType</text>
+    <text x="40" y="90" class="content">- DistrictDetails</text>
+    <text x="170" y="90" class="content">[0..1] DistrictDetailsType</text>
+    <text x="40" y="110" class="content">- RegisterEntry</text>
+    <text x="170" y="110" class="content">[1..*] RegisterEntryType</text>
+    <text x="40" y="130" class="content">- Schedule</text>
+    <text x="170" y="130" class="content">[0..*] ScheduleType</text>
+
+    <!-- DistrictDetailsType -->
+    <rect x="380" y="5" width="180" height="50" class="small-box"></rect>
+    <text x="390" y="25" class="title">DistrictDetailsType</text>
+    <text x="390" y="45" class="content">- EntryText <tspan dx="50">[0..*] string</tspan></text>
+
+    <!-- RegisterEntryType -->
+    <rect x="380" y="80" width="180" height="110" class="small-box"></rect>
+    <text x="390" y="100" class="title">RegisterEntryType</text>
+    <text x="385" y="120" class="content">- EntryNumber</text>
+    <text x="495" y="120" class="content">[1..1] string</text>
+    <text x="385" y="140" class="content">- EntryDate</text>
+    <text x="495" y="140" class="content">[0..1] string</text>
+    <text x="385" y="160" class="content">- EntryType</text>
+    <text x="495" y="160" class="content">[0..1] string</text>
+    <text x="385" y="180" class="content">- EntryText</text>
+    <text x="495" y="180" class="content">[1..*] string</text>
+
+    <!-- ScheduleType -->
+    <rect x="380" y="210" width="250" height="70" class="small-box"></rect>
+    <text x="390" y="230" class="title">ScheduleType</text>
+    <text x="385" y="250" class="content">- ScheduleType</text>
+    <text x="500" y="250" class="content">[1..1] string</text>
+    <text x="385" y="270" class="content">- ScheduleEntry</text>
+    <text x="500" y="270" class="content">[1..*] RegisterEntryType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - RegisterType -->
+    <line x1="30" y1="74" x2="300" y2="74" stroke="lightgrey"></line>
+    <line x1="30" y1="76" x2="300" y2="76" stroke="lightgrey"></line>
+    <line x1="30" y1="96" x2="300" y2="96" stroke="lightgrey"></line>
+    <line x1="30" y1="117" x2="300" y2="117" stroke="lightgrey"></line>
+
+    <!-- Table Lines - DistrictDetailsType -->
+    <line x1="380" y1="29" x2="560" y2="29" stroke="lightgrey"></line>
+    <line x1="380" y1="31" x2="560" y2="31" stroke="lightgrey"></line>
+
+    <!-- Table Lines - RegisterEntryType -->
+    <line x1="380" y1="108" x2="560" y2="108" stroke="lightgrey"></line>
+    <line x1="380" y1="106" x2="560" y2="106" stroke="lightgrey"></line>
+    <line x1="380" y1="126" x2="560" y2="126" stroke="lightgrey"></line>
+    <line x1="380" y1="146" x2="560" y2="146" stroke="lightgrey"></line>
+    <line x1="380" y1="166" x2="560" y2="166" stroke="lightgrey"></line>
+
+    <!-- Table Lines - ScheduleType -->
+    <line x1="380" y1="234" x2="630" y2="234" stroke="lightgrey"></line>
+    <line x1="380" y1="236" x2="630" y2="236" stroke="lightgrey"></line>
+    <line x1="380" y1="255" x2="630" y2="255" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="300" y1="87" x2="380" y2="20" class="line"></line>
+    <line x1="300" y1="107" x2="380" y2="95" class="line"></line>
+    <line x1="300" y1="127" x2="380" y2="225" class="line"></line>
+
+</svg>

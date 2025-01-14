@@ -1,0 +1,72 @@
+<svg width="700" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+        fill: #F9F9F9;
+        stroke: #707070;
+        stroke-width: 1;
+        rx: 4;
+        ry: 4;
+        }
+        .line {
+        stroke: #707070;
+        stroke-width: 1;
+        }
+        .text {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        fill: #000;
+        }
+        .title {
+        font-weight: bold;
+        font-size: 12px;
+        }
+        .content {
+        font-size: 11px;
+        fill: #333;
+        }
+        .small-box {
+        fill: #FFFFFF;
+        stroke: #707070;
+        stroke-width: 1;
+        rx: 2;
+        ry: 2;
+        }
+    </style>
+
+    <!-- RequestOnlineOwnershipVerificationTypeV1_0 -->
+    <rect x="30" y="50" width="260" height="30" class="small-box"></rect>
+    <text x="40" y="70" class="title">RequestOnlineOwnershipVerificationTypeV1_0</text>
+
+    <!-- RequestOnlineOwnershipVerificationType -->
+    <rect x="380" y="5" width="280" height="170" class="small-box"></rect>
+    <text x="390" y="25" class="title">RequestOnlineOwnershipVerificationType</text>
+    <text x="390" y="45" class="content">- MessageId</text>
+    <text x="505" y="45" class="content">[1..1] MessageIdTextContentType</text>
+    <text x="390" y="65" class="content">- Reference</text>
+    <text x="505" y="65" class="content">[1..1] ReferenceTextContentType</text>
+    <text x="390" y="85" class="content">- SubjectProperty</text>
+    <text x="505" y="85" class="content">[1..1] SubjectPropertyType</text>
+    <text x="390" y="105" class="content">- FirstForename</text>
+    <text x="505" y="105" class="content">[1..1] FirstForenameContentType</text>
+    <text x="390" y="125" class="content">- MiddleName</text>
+    <text x="505" y="125" class="content">[0..1] NameContentType</text>
+    <text x="390" y="145" class="content">- Surname</text>
+    <text x="505" y="145" class="content">[1..1] NameContentType</text>
+    <text x="390" y="165" class="content">- Indicators</text>
+    <text x="505" y="165" class="content">[1..1] IndicatorsType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - RequestOnlineOwnershipVerificationType -->
+    <line x1="380" y1="29" x2="660" y2="29" stroke="lightgrey"></line>
+    <line x1="380" y1="31" x2="660" y2="31" stroke="lightgrey"></line>
+    <line x1="380" y1="51" x2="660" y2="51" stroke="lightgrey"></line>
+    <line x1="380" y1="71" x2="660" y2="71" stroke="lightgrey"></line>
+    <line x1="380" y1="91" x2="660" y2="91" stroke="lightgrey"></line>
+    <line x1="380" y1="111" x2="660" y2="111" stroke="lightgrey"></line>
+    <line x1="380" y1="131" x2="660" y2="131" stroke="lightgrey"></line>
+    <line x1="380" y1="151" x2="660" y2="151" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="290" y1="67" x2="380" y2="20" class="line"></line>
+
+</svg>

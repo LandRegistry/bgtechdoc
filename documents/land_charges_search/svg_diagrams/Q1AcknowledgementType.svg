@@ -1,0 +1,65 @@
+<svg width="800" height="130" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- Q1AcknowledgementType -->
+    <rect x="30" y="50" width="360" height="50" class="small-box"></rect>
+    <text x="40" y="70" class="title">Q1AcknowledgementType</text>
+    <text x="40" y="90" class="content">- AcknowledgementDetails <tspan dx="20">[1..1] Q1AcknowledgementDetailsType</tspan></text>
+
+    <!-- Q1AcknowledgementDetailsType -->
+    <rect x="450" y="5" width="290" height="90" class="small-box"></rect>
+    <text x="460" y="25" class="title">Q1AcknowledgementDetailsType</text>
+    <text x="455" y="45" class="content">- UniqueID</text>
+    <text x="630" y="45" class="content">[1..1] IdentifierType</text>
+    <text x="455" y="65" class="content">- ExpectedResponseDateTime</text>
+    <text x="630" y="65" class="content">[0..1] DateTimeType</text>
+    <text x="455" y="85" class="content">- MessageDescription</text>
+    <text x="630" y="85" class="content">[1..1] TextType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - Q1AcknowledgementType -->
+    <line x1="30" y1="74" x2="390" y2="74" stroke="lightgrey"></line>
+    <line x1="30" y1="76" x2="390" y2="76" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1AcknowledgementDetailsType -->
+    <line x1="450" y1="29" x2="740" y2="29" stroke="lightgrey"></line>
+    <line x1="450" y1="31" x2="740" y2="31" stroke="lightgrey"></line>
+    <line x1="450" y1="50" x2="740" y2="50" stroke="lightgrey"></line>
+    <line x1="450" y1="70" x2="740" y2="70" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="390" y1="90" x2="450" y2="20" class="line"></line>
+
+</svg>

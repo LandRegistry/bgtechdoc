@@ -1,0 +1,2869 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Online Owner Verification Service - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/online_owner_verification/OOV_Vendor_test_data.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Online Owner Verification Service - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/online_owner_verification/OOV_Vendor_test_data.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Online Owner Verification Service" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/online_owner_verification/OOV_Vendor_test_data.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#online-owner-verification-service-vendor-test-data-v2-0"><span>Online Owner Verification Service Vendor Test Data V2.0</span></a>
+    <ul>
+      <li>
+        <a href="#no-address-match"><span>No address match</span></a>
+      </li>
+      <li>
+        <a href="#postcode-invalid"><span>Postcode invalid</span></a>
+      </li>
+      <li>
+        <a href="#full-match"><span>Full match</span></a>
+        <ul>
+          <li>
+            <a href="#input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#surname-match"><span>Surname match</span></a>
+        <ul>
+          <li>
+            <a href="#surname-match-input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#surname-match-output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#surname-partial-match"><span>Surname partial match</span></a>
+        <ul>
+          <li>
+            <a href="#surname-partial-match-input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#surname-partial-match-output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#forename-partial-match"><span>Forename partial match</span></a>
+        <ul>
+          <li>
+            <a href="#forename-partial-match-input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#forename-partial-match-output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#middle-name-mismatch-historical"><span>Middle name mismatch (Historical)</span></a>
+        <ul>
+          <li>
+            <a href="#middle-name-mismatch-historical-input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#middle-name-mismatch-historical-output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#string-match"><span>String match</span></a>
+        <ul>
+          <li>
+            <a href="#string-match-input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#string-match-output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#no-match"><span>No match</span></a>
+        <ul>
+          <li>
+            <a href="#no-match-input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#no-match-output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#historical-match"><span>Historical match</span></a>
+        <ul>
+          <li>
+            <a href="#historical-match-input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#historical-match-output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#out-of-hours-1"><span>Out of hours 1</span></a>
+      </li>
+      <li>
+        <a href="#out-of-hours-2"><span>Out of hours 2</span></a>
+      </li>
+      <li>
+        <a href="#multiple-addresses"><span>Multiple addresses</span></a>
+        <ul>
+          <li>
+            <a href="#multiple-addresses-input"><span>Input</span></a>
+          </li>
+          <li>
+            <a href="#multiple-addresses-output"><span>Output</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/online_owner_verification/index.html">Back to Online Owner Verification</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="online-owner-verification-service-vendor-test-data-v2-0">Online Owner Verification Service Vendor Test Data V2.0</h1>
+
+<hr>
+<p>Note: Items highlighted in <span class="hmlr-mark-highlight" role="mark">red</span> in the test documentation are needed for the test to return the correct response.</p>
+<h2 id="no-address-match">No address match</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-nam-1</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Type</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has been matched.&rsquo;</li>
+                    <li>Code = &lsquo;bg.properties.nopropertyfound&rsquo;</li>
+                    <li>Reference = 1234/5-6</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="postcode-invalid">Postcode invalid</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-pi-1</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Type</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Please provide valid postcode&rsquo;</li>
+                    <li>Code = &lsquo;bg.postcode.invalid&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="full-match">Full match</h2>
+<h3 id="input">Input</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-fm-1</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if out of hours</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip partial matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip historical matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="output">Output</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Output element</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Type code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">30</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1234/5-6</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Match result</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">SINGLE_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">DN506574</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">24</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Dovedale Road</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Plymouth</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">freehold</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle name match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Historical</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Ownership</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Sole</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="surname-match">Surname match</h2>
+<h3 id="surname-match-input">Input</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-snm-1</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if out of hours</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip partial matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip historical matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="surname-match-output">Output</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Output element</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Type code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">30</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1234/5-6</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Match result</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">SINGLE_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">DN506574</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">24</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Dovedale Road</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Plymouth</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">freehold</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">NO_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle name match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">NO_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Historical</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Ownership</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Sole</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="surname-partial-match">Surname partial match</h2>
+<h3 id="surname-partial-match-input">Input</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-snpm-1</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if out of hours</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip partial matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip historical matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="surname-partial-match-output">Output</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Output element</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Type code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">30</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1234/5-6</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Match result</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">SINGLE_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">DN506574</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">24</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Dovedale Road</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Plymouth</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">freehold</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">PARTIAL_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">SURNAME_DISTANCE</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">SURNAME_SOUND</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">NO_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle name match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">NO_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Historical</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Ownership</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Sole</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="forename-partial-match">Forename partial match</h2>
+<h3 id="forename-partial-match-input">Input</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-fnpm-1</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if out of hours</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip partial matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip historical matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="forename-partial-match-output">Output</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Output element</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Type code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">30</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1234/5-6</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Match result</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">SINGLE_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">DN506574</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">DRAKES COURT</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Sub building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">20</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">264</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">HIGH STREET</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">PLYMOUTH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode zone</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">PL14 8QN</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">freehold</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename match details/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">PARTIAL_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">FORENAME_DISTANCE</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">FORENAME_SOUND</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">FORENAME_INITAL</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">FORENAME_MIDDLE</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle name match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">NO_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Historical</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Ownership</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Sole</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="middle-name-mismatch-historical">Middle name mismatch (Historical)</h2>
+<h3 id="middle-name-mismatch-historical-input">Input</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-mnm-1</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if out of hours</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip partial matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip historical matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="middle-name-mismatch-historical-output">Output</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Output element</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Type code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">30</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1234/5-6</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Match result</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">SINGLE_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">DN506574</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">24</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Dovedale Road</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Plymouth</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">freehold</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle name match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">NO_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Historical</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Ownership</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Sole</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Proprietor from</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">01 Jun 2005</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Proprietor to</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">19 Aug 2011</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="string-match">String match</h2>
+<h3 id="string-match-input">Input</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-nsm-1</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if out of hours</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip partial matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip historical matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="string-match-output">Output</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Output element</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Type code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">30</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1234/5-6</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Match result</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">SINGLE_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">DN506574</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">24</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Dovedale Road</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Plymouth</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">freehold</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">NO_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">SKIPPED</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle name match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">SKIPPED</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">String match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Historical</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Ownership</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Sole</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="no-match">No match</h2>
+<h3 id="no-match-input">Input</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-nm-1</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if out of hours</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip partial matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip historical matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="no-match-output">Output</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Output element</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Type code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">30</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1234/5-6</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Match result</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">NO_MATCHES</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">DN506574</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">24</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Dovedale Road</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Plymouth</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">freehold</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">NO_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">SKIPPED</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle name match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">SKIPPED</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">String match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">NO_MATCH</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="historical-match">Historical match</h2>
+<h3 id="historical-match-input">Input</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-hm-1</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if out of hours</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip partial matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip historical matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="historical-match-output">Output</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Output element</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Type code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">30</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1234/5-6</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Match result</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">SINGLE_MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">DN506574</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">24</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Dovedale Road</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Plymouth</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">freehold</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename match/Type of match</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle name match details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MATCH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Historical</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Ownership</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Joint</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Proprietor from</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">01 Jun 2005</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Proprietor to</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">19 Aug 2011</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="out-of-hours-1">Out of hours 1</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-ooh-1</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if out of hours</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">False</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip partial matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip historical matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>Rejection</li>
+                    <li>Reason = &lsquo;Service is not currently available and your request will not be processed&rsquo;</li>
+                    <li>Code = &lsquo;bg.outofhours.stop&rsquo;</li>
+                    <li>Reference = 1234-5/6</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="out-of-hours-2">Out of hours 2</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-ooh-2</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if out of hours</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">True</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip partial matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip historical matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Acknowledgement</li>
+                    <li>UniqueID = &lsquo;OnlineOwnershipVerification-20131107-113612&rsquo;</li>
+                    <li>ExpectedResponseDateTime = &lsquo;2013-11-07T11:40:11&rsquo;</li>
+                    <li>MessageDescription = &lsquo;Service is not currently available. System has queued your request, please poll at specified time.&rsquo;</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="multiple-addresses">Multiple addresses</h2>
+<h3 id="multiple-addresses-input">Input</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">eoov-mam-1</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Forename</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Middle names</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference, title, address and name information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Surname</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if out of hours</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">True</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip partial matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Indicator information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Skip historical matching</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="multiple-addresses-output">Output</h3>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Output element</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Type code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">30</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1234/5-6</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Match result</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">MULTIPLE_MATCHES</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Multiple</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">DRAKES COURT</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Sub building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Multiple</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">264</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">HIGH STREET</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">PLYMOUTH</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode zone</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">PL14 8QN</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Tenure</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">freehold</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Match information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>Request returns 50 properties with a variation of matches:</p>
+                <ul>
+                    <li>FULL MATCH = 13</li>
+                    <li>NO MATCH = 34</li>
+                    <li>* SKIPPED ALL = 3 (This means forename match, middle name match and surname match are all returned with a value of SKIPPED. See MatchType in the interface specification for the different scenarios for SKIPPED.)</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Historical</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">False</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Ownership</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Sole</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<svg width="600" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- NewLeaseType -->
+    <rect x="30" y="50" width="220" height="70" class="small-box"></rect>
+    <text x="40" y="70" class="title">NewLeaseType</text>
+    <text x="40" y="90" class="content">- LessorTitles</text>
+    <text x="160" y="90" class="content">[1..1] TitlesType</text>
+    <text x="40" y="110" class="content">- AdditionalTitles</text>
+    <text x="160" y="110" class="content">[0..1] TitlesType</text>
+
+    <!-- TitlesType -->
+    <rect x="330" y="5" width="200" height="50" class="small-box"></rect>
+    <text x="340" y="25" class="title">TitlesType</text>
+    <text x="335" y="45" class="content">- TitleNumber <tspan dx="45">[1..1] TitleType</tspan></text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - NewLeaseType -->
+    <line x1="30" y1="74" x2="250" y2="74" stroke="lightgrey"></line>
+    <line x1="30" y1="76" x2="250" y2="76" stroke="lightgrey"></line>
+    <line x1="30" y1="96" x2="250" y2="96" stroke="lightgrey"></line>
+
+    <!-- Table Lines - TitlesType -->
+    <line x1="330" y1="29" x2="530" y2="29" stroke="lightgrey"></line>
+    <line x1="330" y1="31" x2="530" y2="31" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="250" y1="87" x2="330" y2="20" class="line"></line>
+    <line x1="250" y1="107" x2="330" y2="20" class="line"></line>
+
+</svg>

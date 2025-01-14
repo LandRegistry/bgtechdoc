@@ -1,0 +1,170 @@
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- XmlRegistersType -->
+    <rect x="10" y="50" width="310" height="90" class="small-box"></rect>
+    <text x="20" y="70" class="title">XmlRegistersType</text>
+    <text x="20" y="90" class="content">- TitleNumber</text>
+    <text x="160" y="90" class="content">[1..1] string</text>
+    <text x="20" y="110" class="content">- OCSummaryData</text>
+    <text x="160" y="110" class="content">[1..1] Q1OCSummaryDataType</text>
+    <text x="20" y="130" class="content">- XmlRegisterData</text>
+    <text x="160" y="130" class="content">[1..1] XmlRegisterDataType</text>
+
+    <!-- Q1OCSummaryDataType -->
+    <rect x="380" y="5" width="330" height="590" class="small-box"></rect>
+    <text x="390" y="25" class="title">Q1OCSummaryDataType</text>
+    <text x="385" y="45" class="content">- OfficialCopyDateTime</text>
+    <text x="520" y="45" class="content">[1..1] DateTimeType</text>
+    <text x="385" y="65" class="content">- EditionDate</text>
+    <text x="520" y="65" class="content">[1..1] DateType</text>
+    <text x="385" y="85" class="content">- PricePaidEntry</text>
+    <text x="520" y="85" class="content">[0..1] Q1PricePaidEntryType</text>
+    <text x="385" y="105" class="content">- PropertyAddress</text>
+    <text x="520" y="105" class="content">[1..*] Q1AddressType</text>
+    <text x="385" y="125" class="content">- Title</text>
+    <text x="520" y="125" class="content">[1..1] Q1TitleType</text>
+    <text x="385" y="145" class="content">- RegisterEntryIndicators</text>
+    <text x="520" y="145" class="content">[1..1] Q1RegisterEntryIndicatorsType</text>
+    <text x="385" y="165" class="content">- Proprietorship</text>
+    <text x="520" y="165" class="content">[1..1] Q1ProprietorshipType</text>
+    <text x="385" y="185" class="content">- Lease</text>
+    <text x="520" y="185" class="content">[0..1] Q1LeaseEntriesType</text>
+    <text x="385" y="205" class="content">- RestrictionsDetails</text>
+    <text x="520" y="205" class="content">[0..1] Q1RestrictionDetailsType</text>
+    <text x="385" y="225" class="content">- Charge</text>
+    <text x="520" y="225" class="content">[0..1] Q1ChargeEntriesType</text>
+    <text x="385" y="245" class="content">- AgreedNotice</text>
+    <text x="520" y="245" class="content">[0..1] Q1AgreedNoticeEntriesType</text>
+    <text x="385" y="265" class="content">- Bankruptcy</text>
+    <text x="520" y="265" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="285" class="content">- Caution</text>
+    <text x="520" y="285" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="305" class="content">- DeedOfPostponement</text>
+    <text x="520" y="305" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="325" class="content">- GreenOutEntry</text>
+    <text x="520" y="325" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="345" class="content">- HomeRights</text>
+    <text x="520" y="345" class="content">[0..1] Q1HomeRightsEntriesType</text>
+    <text x="385" y="365" class="content">- RentCharge</text>
+    <text x="520" y="365" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="385" class="content">- VendorsLien</text>
+    <text x="520" y="385" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="405" class="content">- RightOfPreEmption</text>
+    <text x="520" y="405" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="425" class="content">- DocumentDetails</text>
+    <text x="520" y="425" class="content">[0..1] Q1DocumentDetailsType</text>
+    <text x="385" y="445" class="content">- UnilateralNoticeDetails</text>
+    <text x="520" y="445" class="content">[0..1] Q1UnilateralNoticeEntriesType</text>
+    <text x="385" y="465" class="content">- DeathOfProprietor</text>
+    <text x="520" y="465" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="485" class="content">- DiscountCharge</text>
+    <text x="520" y="485" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="505" class="content">- EquitableCharge</text>
+    <text x="520" y="505" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="525" class="content">- NotedCharge</text>
+    <text x="520" y="525" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="545" class="content">- CreditorsNotice</text>
+    <text x="520" y="545" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="565" class="content">- UnidentifiedEntry</text>
+    <text x="520" y="565" class="content">[0..1] Q1EntriesType</text>
+    <text x="385" y="585" class="content">- CCBIEntry</text>
+    <text x="520" y="585" class="content">[0..1] Q1EntriesType</text>
+
+
+    <!-- XmlRegisterDataType -->
+    <rect x="380" y="610" width="240" height="110" class="small-box"></rect>
+    <text x="390" y="630" class="title">XmlRegisterDataType</text>
+    <text x="385" y="650" class="content">- TitleNumber</text>
+    <text x="520" y="650" class="content">[1..1] string</text>
+    <text x="385" y="670" class="content">- PropertyRegister</text>
+    <text x="520" y="670" class="content">[1..1] RegisterType</text>
+    <text x="385" y="690" class="content">- ProprietorshipRegister</text>
+    <text x="520" y="690" class="content">[1..1] RegisterType</text>
+    <text x="385" y="710" class="content">- ChargeRegister</text>
+    <text x="520" y="710" class="content">[0..1] RegisterType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - XmlRegistersType -->
+    <line x1="30" y1="75" x2="320" y2="75" stroke="lightgrey"></line>
+    <line x1="30" y1="77" x2="320" y2="77" stroke="lightgrey"></line>
+    <line x1="30" y1="96" x2="320" y2="96" stroke="lightgrey"></line>
+    <line x1="30" y1="116" x2="320" y2="116" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1OCSummaryDataType -->
+    <line x1="380" y1="29" x2="710" y2="29" stroke="lightgrey"></line>
+    <line x1="380" y1="31" x2="710" y2="31" stroke="lightgrey"></line>
+    <line x1="380" y1="50" x2="710" y2="50" stroke="lightgrey"></line>
+    <line x1="380" y1="70" x2="710" y2="70" stroke="lightgrey"></line>
+    <line x1="380" y1="90" x2="710" y2="90" stroke="lightgrey"></line>
+    <line x1="380" y1="110" x2="710" y2="110" stroke="lightgrey"></line>
+    <line x1="380" y1="130" x2="710" y2="130" stroke="lightgrey"></line>
+    <line x1="380" y1="150" x2="710" y2="150" stroke="lightgrey"></line>
+    <line x1="380" y1="170" x2="710" y2="170" stroke="lightgrey"></line>
+    <line x1="380" y1="190" x2="710" y2="190" stroke="lightgrey"></line>
+    <line x1="380" y1="210" x2="710" y2="210" stroke="lightgrey"></line>
+    <line x1="380" y1="230" x2="710" y2="230" stroke="lightgrey"></line>
+    <line x1="380" y1="250" x2="710" y2="250" stroke="lightgrey"></line>
+    <line x1="380" y1="270" x2="710" y2="270" stroke="lightgrey"></line>
+    <line x1="380" y1="250" x2="710" y2="250" stroke="lightgrey"></line>
+    <line x1="380" y1="270" x2="710" y2="270" stroke="lightgrey"></line>
+    <line x1="380" y1="290" x2="710" y2="290" stroke="lightgrey"></line>
+    <line x1="380" y1="310" x2="710" y2="310" stroke="lightgrey"></line>
+    <line x1="380" y1="330" x2="710" y2="330" stroke="lightgrey"></line>
+    <line x1="380" y1="350" x2="710" y2="350" stroke="lightgrey"></line>
+    <line x1="380" y1="370" x2="710" y2="370" stroke="lightgrey"></line>
+    <line x1="380" y1="390" x2="710" y2="390" stroke="lightgrey"></line>
+    <line x1="380" y1="410" x2="710" y2="410" stroke="lightgrey"></line>
+    <line x1="380" y1="430" x2="710" y2="430" stroke="lightgrey"></line>
+    <line x1="380" y1="450" x2="710" y2="450" stroke="lightgrey"></line>
+    <line x1="380" y1="470" x2="710" y2="470" stroke="lightgrey"></line>
+    <line x1="380" y1="490" x2="710" y2="490" stroke="lightgrey"></line>
+    <line x1="380" y1="510" x2="710" y2="510" stroke="lightgrey"></line>
+    <line x1="380" y1="530" x2="710" y2="530" stroke="lightgrey"></line>
+    <line x1="380" y1="550" x2="710" y2="550" stroke="lightgrey"></line>
+    <line x1="380" y1="570" x2="710" y2="570" stroke="lightgrey"></line>
+
+    <!-- Table Lines - XmlRegisterDataType -->
+    <line x1="380" y1="634" x2="620" y2="634" stroke="lightgrey"></line>
+    <line x1="380" y1="636" x2="620" y2="636" stroke="lightgrey"></line>
+    <line x1="380" y1="656" x2="620" y2="656" stroke="lightgrey"></line>
+    <line x1="380" y1="676" x2="620" y2="676" stroke="lightgrey"></line>
+    <line x1="380" y1="696" x2="620" y2="696" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="320" y1="107" x2="380" y2="20" class="line"></line>
+    <line x1="320" y1="127" x2="380" y2="630" class="line"></line>
+
+</svg>

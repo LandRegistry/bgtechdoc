@@ -1,0 +1,62 @@
+<svg width="700" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- RequestApplicationToChangeRegisterV2_1 -->
+    <rect x="40" y="95" width="260" height="30" class="small-box"></rect>
+    <text x="50" y="115" class="title">RequestApplicationToChangeRegisterV2_1</text>
+
+    <!-- RequestApplicationToChangeRegisterV2_1Type -->
+    <rect x="330" y="50" width="320" height="115" class="box"></rect>
+    <text x="340" y="70" class="title">RequestApplicationToChangeRegisterV2_1Type</text>
+    <text x="340" y="95"  class="content">- AdditionalProviderFilter</text>
+    <text x="480" y="95" class="content">[1..1] AdditionalProviderFilterType</text>
+    <text x="340" y="115" class="content">- MessageId</text>
+    <text x="480" y="115" class="content">[1..1] MessageIdType</text>
+    <text x="340" y="135" class="content">- ExternalReference</text>
+    <text x="480" y="135" class="content">[1..1] ReferenceTypeContent</text>
+    <text x="340" y="155" class="content">- Product</text>
+    <text x="480" y="155" class="content">[1..1] ProductType</text>
+
+    <!-- Table Lines - RequestApplicationToChangeRegisterV2_1Type -->
+    <line x1="330" y1="78" x2="650" y2="78" stroke="lightgrey"></line>
+    <line x1="330" y1="80" x2="650" y2="80" stroke="lightgrey"></line>
+    <line x1="330" y1="102" x2="650" y2="102" stroke="lightgrey"></line>
+    <line x1="330" y1="122" x2="650" y2="122" stroke="lightgrey"></line>
+    <line x1="330" y1="142" x2="650" y2="142" stroke="lightgrey"></line>
+
+    <!-- Connecting Line -->
+    <line x1="300" y1="110" x2="330" y2="70" class="line"></line>
+
+</svg>

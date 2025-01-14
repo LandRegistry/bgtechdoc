@@ -1,0 +1,91 @@
+<svg width="900" height="300" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- Q1RestrictionType -->
+    <rect x="30" y="50" width="280" height="95" class="small-box"></rect>
+    <text x="40" y="70" class="title">Q1RestrictionType</text>
+    <text x="40" y="95"  class="content">- RestrictionTypeCode</text>
+    <text x="170" y="95" class="content">[1..1] RestrictionCodeType</text>
+    <text x="40" y="115" class="content">- ChargeID</text>
+    <text x="170" y="115" class="content">[0..1] TextType</text>
+    <text x="40" y="135" class="content">- EntryDetails</text>
+    <text x="170" y="135" class="content">[1..1] Q1EntryDetailsType</text>
+
+    <!-- RestrictionCodeType -->
+    <rect x="440" y="5" width="140" height="30" class="small-box"></rect>
+    <text x="450" y="25" class="title">RestrictionCodeType</text>
+
+    <!-- TextType -->
+    <rect x="440" y="45" width="70" height="30" class="small-box"></rect>
+    <text x="450" y="64" class="title">TextType</text>
+
+    <!-- Q1EntryDetailsType-->
+    <rect x="440" y="120" width="280" height="155" class="small-box"></rect>
+    <text x="450" y="140" class="title">Q1EntryDetailsType</text>
+    <text x="445" y="165"  class="content">- EntryNumber <tspan dx="45"></tspan></text>
+    <text x="565" y="165" class="content">[1..1] TextType</text>
+    <text x="445" y="185" class="content">- EntryText</text>
+    <text x="565" y="185" class="content">[1..1] TextType</text>
+    <text x="445" y="205" class="content">- RegistrationDate</text>
+    <text x="565" y="205" class="content">[0..1] DateType</text>
+    <text x="445" y="225" class="content">- SubRegisterCode</text>
+    <text x="565" y="225" class="content">[0..1] SubRegisterCodeType</text>
+    <text x="445" y="245" class="content">- ScheduleCode</text>
+    <text x="565" y="245" class="content">[0..1] ScheduleCodeType</text>
+    <text x="445" y="265" class="content">- Infills</text>
+    <text x="565" y="265" class="content">[0..1] Q1InfillDetailsType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - Q1RestrictionType -->
+    <line x1="30" y1="78" x2="310" y2="78" stroke="lightgrey"></line>
+    <line x1="30" y1="80" x2="310" y2="80" stroke="lightgrey"></line>
+    <line x1="30" y1="102" x2="310" y2="102" stroke="lightgrey"></line>
+    <line x1="30" y1="122" x2="310" y2="122" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1EntryDetailsType -->
+    <line x1="440" y1="147" x2="720" y2="147" stroke="lightgrey"></line>
+    <line x1="440" y1="149" x2="720" y2="149" stroke="lightgrey"></line>
+    <line x1="440" y1="171" x2="720" y2="171" stroke="lightgrey"></line>
+    <line x1="440" y1="191" x2="720" y2="191" stroke="lightgrey"></line>
+    <line x1="440" y1="211" x2="720" y2="211" stroke="lightgrey"></line>
+    <line x1="440" y1="231" x2="720" y2="231" stroke="lightgrey"></line>
+    <line x1="440" y1="251" x2="720" y2="251" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="310" y1="92" x2="440" y2="20" class="line"></line>
+    <line x1="310" y1="110" x2="440" y2="60" class="line"></line>
+    <line x1="310" y1="135" x2="440" y2="136" class="line"></line>
+
+</svg>

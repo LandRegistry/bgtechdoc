@@ -1,0 +1,119 @@
+<svg width="700" height="350" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- LLCSearchRequestV2_0Type -->
+    <rect x="30" y="50" width="320" height="215" class="small-box"></rect>
+    <text x="40" y="70" class="title">LLCSearchRequestV2_0Type</text>
+    <text x="40" y="95"  class="content">- MessageId</text>
+    <text x="180" y="95" class="content">[1..1] MessageIdType</text>
+    <text x="40" y="115" class="content">- Reference</text>
+    <text x="180" y="115" class="content">[1..1] ReferenceTextContextType</text>
+    <text x="40" y="135" class="content">- FeeInPence</text>
+    <text x="180" y="135" class="content">[0..1] nonNegativeInteger</text>
+    <text x="40" y="155" class="content">- RefreshSearchReference</text>
+    <text x="180" y="155" class="content">[1..1] SearchReferenceTextType</text>
+    <text x="40" y="175" class="content">- TitleNumber</text>
+    <text x="180" y="175" class="content">[1..1] TitleType</text>
+    <text x="40" y="195" class="content">- GeoJson</text>
+    <text x="180" y="195" class="content">[1..1] CDATA</text>
+    <text x="40" y="215" class="content">- PropertyDescription</text>
+    <text x="208" y="215" class="content">PropertyDescription</text>
+    <text x="40" y="235" class="content">- ResponseFormat</text>
+    <text x="180" y="235" class="content">[1..1] ResponseFormatContent</text>
+    <text x="40" y="255" class="content">- Indicators</text>
+    <text x="180" y="255" class="content">[1..1] IndicatorsType</text>
+
+    <!-- MessageIdType -->
+    <rect x="440" y="5" width="110" height="30" class="small-box"></rect>
+    <text x="450" y="25" class="title">MessageIdType</text>
+
+    <!-- ReferenceTextContentType -->
+    <rect x="440" y="45" width="175" height="30" class="small-box"></rect>
+    <text x="450" y="64" class="title">ReferenceTextContentType</text>
+
+    <!-- SearchReferenceTextType -->
+    <rect x="440" y="85" width="170" height="30" class="small-box"></rect>
+    <text x="450" y="105" class="title">SearchReferenceTextType</text>
+
+    <!-- TitleType -->
+    <rect x="440" y="125" width="70" height="30" class="small-box"></rect>
+    <text x="450" y="145" class="title">TitleType</text>
+
+    <!-- CDATA -->
+    <rect x="440" y="165" width="60" height="30" class="small-box"></rect>
+    <text x="450" y="185" class="title">CDATA</text>
+
+    <!-- PropertyDescriptionType -->
+    <rect x="440" y="205" width="160" height="30" class="small-box"></rect>
+    <text x="450" y="225" class="title">PropertyDescriptionType</text>
+
+    <!-- ResponseFormatContent -->
+    <rect x="440" y="245" width="160" height="30" class="small-box"></rect>
+    <text x="450" y="265" class="title">ResponseFormatContent</text>
+
+    <!-- IndicatorsType -->
+    <rect x="440" y="285" width="200" height="50" class="small-box"></rect>
+    <text x="450" y="305" class="title">IndicatorsType</text>
+    <text x="450" y="325" class="title">Indicator</text>
+    <text x="520" y="325" class="title">[0..*] IndicatorType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - LLCSearchRequestV2_0Type -->
+    <line x1="30" y1="78" x2="350" y2="78" stroke="lightgrey"></line>
+    <line x1="30" y1="80" x2="350" y2="80" stroke="lightgrey"></line>
+    <line x1="30" y1="102" x2="350" y2="102" stroke="lightgrey"></line>
+    <line x1="30" y1="122" x2="350" y2="122" stroke="lightgrey"></line>
+    <line x1="30" y1="142" x2="350" y2="142" stroke="lightgrey"></line>
+    <line x1="30" y1="162" x2="350" y2="162" stroke="lightgrey"></line>
+    <line x1="30" y1="182" x2="350" y2="182" stroke="lightgrey"></line>
+    <line x1="30" y1="202" x2="350" y2="202" stroke="lightgrey"></line>
+    <line x1="30" y1="222" x2="350" y2="222" stroke="lightgrey"></line>
+    <line x1="30" y1="242" x2="350" y2="242" stroke="lightgrey"></line>
+
+    <!-- Table Lines - IndicatorsType -->
+    <line x1="440" y1="310" x2="640" y2="310" stroke="lightgrey"></line>
+    <line x1="440" y1="312" x2="640" y2="312" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="350" y1="92" x2="440" y2="20" class="line"></line>
+    <line x1="350" y1="112" x2="440" y2="60" class="line"></line>
+    <line x1="350" y1="152" x2="440" y2="100" class="line"></line>
+    <line x1="350" y1="172" x2="440" y2="140" class="line"></line>
+    <line x1="350" y1="192" x2="440" y2="180" class="line"></line>
+    <line x1="350" y1="212" x2="440" y2="220" class="line"></line>
+    <line x1="350" y1="232" x2="440" y2="260" class="line"></line>
+    <line x1="350" y1="252" x2="440" y2="300" class="line"></line>
+
+</svg>

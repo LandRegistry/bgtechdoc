@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+table td, table th {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+table.schema-table tr > *:nth-child(2) {
+    width: 30%; /* or other styles */
+}
+
+.border-bottom-none > td{
+    border-bottom: 0px none;
+}

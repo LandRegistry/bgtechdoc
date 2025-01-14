@@ -1,0 +1,57 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+        fill: #F9F9F9;
+        stroke: #707070;
+        stroke-width: 1;
+        rx: 4;
+        ry: 4;
+        }
+        .line {
+        stroke: #707070;
+        stroke-width: 1;
+        }
+        .text {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        fill: #000;
+        }
+        .title {
+        font-weight: bold;
+        font-size: 12px;
+        }
+        .content {
+        font-size: 11px;
+        fill: #333;
+        }
+        .small-box {
+        fill: #FFFFFF;
+        stroke: #707070;
+        stroke-width: 1;
+        rx: 2;
+        ry: 2;
+        }
+    </style>
+
+    <!-- ResultType -->
+    <rect x="30" y="50" width="240" height="110" class="small-box"></rect>
+    <text x="40" y="70" class="title">ResultType</text>
+    <text x="40" y="90" class="content">- Message</text>
+    <text x="150" y="90" class="content">[0..1] string</text>
+    <text x="40" y="110" class="content">- Reference</text>
+    <text x="150" y="110" class="content">[1..1] string</text>
+    <text x="40" y="130" class="content">- MatchResult</text>
+    <text x="150" y="130" class="content">[1..1] MatchResultType</text>
+    <text x="40" y="150" class="content">- Match</text>
+    <text x="150" y="150" class="content">[0..*] NameMatchType</text>
+
+
+    <!-- Table Lines -->
+    <!-- Table Lines - ResultType -->
+    <line x1="30" y1="75" x2="270" y2="75" stroke="lightgrey"></line>
+    <line x1="30" y1="77" x2="270" y2="77" stroke="lightgrey"></line>
+    <line x1="30" y1="96" x2="270" y2="96" stroke="lightgrey"></line>
+    <line x1="30" y1="116" x2="270" y2="116" stroke="lightgrey"></line>
+    <line x1="30" y1="136" x2="270" y2="136" stroke="lightgrey"></line>
+
+</svg>

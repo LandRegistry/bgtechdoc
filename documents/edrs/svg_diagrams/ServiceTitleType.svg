@@ -1,0 +1,116 @@
+<svg width="700" height="400" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- ServiceTitlesType -->
+    <rect x="30" y="50" width="270" height="108" class="small-box"></rect>
+    <text x="40" y="70" class="title">ServiceTitlesType</text>
+    <text x="40" y="90" class="content">- Dealing</text>
+    <text x="190" y="90" class="content">DealingType</text>
+    <text x="40" y="110" class="content">- TransferOfPart</text>
+    <text x="190" y="110" class="content">TransferOfPartType</text>
+    <text x="40" y="130" class="content">- NewLease</text>
+    <text x="190" y="130" class="content">NewLeaseType</text>
+    <text x="40" y="150" class="content">- LeaseExtension</text>
+    <text x="190" y="150" class="content">LeaseExtensionType</text>
+
+    <!-- DealingType -->
+    <rect x="380" y="5" width="280" height="50" class="small-box"></rect>
+    <text x="390" y="25" class="title">DealingType</text>
+    <text x="385" y="45" class="content">- DealingTitles</text>
+    <text x="570" y="45" class="content">[1..1] TitlesType</text>
+
+    <!-- TransferOfPartType -->
+    <rect x="380" y="65" width="280" height="70" class="small-box"></rect>
+    <text x="390" y="85" class="title">TransferOfPartType</text>
+    <text x="385" y="105" class="content">- TransferorTitles</text>
+    <text x="570" y="105" class="content">[1..1] TitlesType</text>
+    <text x="385" y="125" class="content">- AdditionalTitles</text>
+    <text x="570" y="125" class="content">[0..1] TitlesType</text>
+
+    <!-- NewLeaseType -->
+    <rect x="380" y="145" width="280" height="70" class="small-box"></rect>
+    <text x="390" y="165" class="title">NewLeaseType</text>
+    <text x="385" y="185" class="content">- LessorTitles</text>
+    <text x="570" y="185" class="content">[1..1] TitlesType</text>
+    <text x="385" y="205" class="content">- AdditionalTitles</text>
+    <text x="570" y="205" class="content">[0..1] TitlesType</text>
+
+    <!-- LeaseExtensionType -->
+    <rect x="380" y="225" width="280" height="90" class="small-box"></rect>
+    <text x="390" y="245" class="title">LeaseExtensionType</text>
+    <text x="385" y="265" class="content">- LessorTitles</text>
+    <text x="570" y="265" class="content">[1..1] TitlesType</text>
+    <text x="385" y="285" class="content">- LesseeTitles</text>
+    <text x="570" y="285" class="content">[1..1] TitlesType</text>
+    <text x="385" y="305" class="content">- AdditionalTitles</text>
+    <text x="570" y="305" class="content">[0..1] TitlesType</text>
+
+
+    <!-- Table Lines -->
+    <!-- Table Lines - ServiceTitlesType -->
+    <line x1="30" y1="74" x2="300" y2="74" stroke="lightgrey"></line>
+    <line x1="30" y1="76" x2="300" y2="76" stroke="lightgrey"></line>
+    <line x1="30" y1="97" x2="300" y2="97" stroke="lightgrey"></line>
+    <line x1="30" y1="117" x2="300" y2="117" stroke="lightgrey"></line>
+    <line x1="30" y1="137" x2="300" y2="137" stroke="lightgrey"></line>
+    <line x1="30" y1="157" x2="300" y2="157" stroke="lightgrey"></line>
+
+    <!-- Table Lines - DealingType -->
+    <line x1="380" y1="29" x2="660" y2="29" stroke="lightgrey"></line>
+    <line x1="380" y1="31" x2="660" y2="31" stroke="lightgrey"></line>
+
+    <!-- Table Lines - TransferOfPartType -->
+    <line x1="380" y1="90" x2="660" y2="90" stroke="lightgrey"></line>
+    <line x1="380" y1="92" x2="660" y2="92" stroke="lightgrey"></line>
+    <line x1="380" y1="110" x2="660" y2="110" stroke="lightgrey"></line>
+
+    <!-- Table Lines - NewLeaseType -->
+    <line x1="380" y1="170" x2="660" y2="170" stroke="lightgrey"></line>
+    <line x1="380" y1="172" x2="660" y2="172" stroke="lightgrey"></line>
+    <line x1="380" y1="191" x2="660" y2="191" stroke="lightgrey"></line>
+
+    <!-- Table Lines - LeaseExtensionType -->
+    <line x1="380" y1="250" x2="660" y2="250" stroke="lightgrey"></line>
+    <line x1="380" y1="252" x2="660" y2="252" stroke="lightgrey"></line>
+    <line x1="380" y1="271" x2="660" y2="271" stroke="lightgrey"></line>
+    <line x1="380" y1="291" x2="660" y2="291" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="300" y1="90" x2="380" y2="20" class="line"></line>
+    <line x1="300" y1="110" x2="380" y2="80" class="line"></line>
+    <line x1="300" y1="130" x2="380" y2="160" class="line"></line>
+    <line x1="300" y1="145" x2="380" y2="240" class="line"></line>
+
+</svg>

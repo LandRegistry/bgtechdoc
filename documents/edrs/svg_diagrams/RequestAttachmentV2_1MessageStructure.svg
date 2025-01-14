@@ -1,0 +1,81 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- AttachmentV2_0 -->
+    <rect x="30" y="50" width="110" height="30" class="small-box"></rect>
+    <text x="40" y="70" class="title">AttachmentV2_0</text>
+
+    <!-- AttachmentV2_0Type -->
+    <rect x="230" y="5" width="290" height="230" class="small-box"></rect>
+    <text x="240" y="25" class="title">AttachmentV2_0Type</text>
+    <text x="240" y="45" class="content">- MessageId</text>
+    <text x="370" y="45" class="content">[1..1] MessageIdType</text>
+    <text x="240" y="65" class="content">- ExternalReference</text>
+    <text x="370" y="65" class="content">[1..1] ReferenceTypeContent</text>
+    <text x="240" y="85" class="content">- ApplicationMessageId</text>
+    <text x="370" y="85" class="content">[1..1] MessageIdType</text>
+    <text x="240" y="105" class="content">- ApplicationService</text>
+    <text x="370" y="105" class="content">[1..1] integer</text>
+    <text x="240" y="125" class="content">- AttachmentId</text>
+    <text x="370" y="125" class="content">[1..1] positiveInteger</text>
+    <text x="240" y="145" class="content">- DocumentName</text>
+    <text x="370" y="145" class="content">[1..1] DocumentNameContent</text>
+    <text x="240" y="165" class="content">- ApplicationType</text>
+    <text x="370" y="165" class="content">[1..1] ApplicationTypeContent</text>
+    <text x="240" y="185" class="content">- CertifiedCopy</text>
+    <text x="370" y="185" class="content">[1..1] CertifiedTypeContent</text>
+    <text x="240" y="205" class="content">- Attachment</text>
+    <text x="370" y="205" class="content">[1..1] AttachmentType</text>
+    <text x="240" y="225" class="content">- Notes</text>
+    <text x="370" y="225" class="content">[1..1] NonBlankTextType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - AttachmentV2_0Type -->
+    <line x1="230" y1="29" x2="520" y2="29" stroke="lightgrey"></line>
+    <line x1="230" y1="31" x2="520" y2="31" stroke="lightgrey"></line>
+    <line x1="230" y1="51" x2="520" y2="51" stroke="lightgrey"></line>
+    <line x1="230" y1="71" x2="520" y2="71" stroke="lightgrey"></line>
+    <line x1="230" y1="91" x2="520" y2="91" stroke="lightgrey"></line>
+    <line x1="230" y1="111" x2="520" y2="111" stroke="lightgrey"></line>
+    <line x1="230" y1="131" x2="520" y2="131" stroke="lightgrey"></line>
+    <line x1="230" y1="151" x2="520" y2="151" stroke="lightgrey"></line>
+    <line x1="230" y1="171" x2="520" y2="171" stroke="lightgrey"></line>
+    <line x1="230" y1="191" x2="520" y2="191" stroke="lightgrey"></line>
+    <line x1="230" y1="211" x2="520" y2="211" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="140" y1="67" x2="230" y2="20" class="line"></line>
+
+</svg>

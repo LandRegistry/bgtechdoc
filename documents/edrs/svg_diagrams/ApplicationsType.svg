@@ -1,0 +1,96 @@
+<svg width="900" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- ApplicationsType -->
+    <rect x="30" y="50" width="300" height="70" class="small-box"></rect>
+    <text x="40" y="70" class="title">ApplicationsType</text>
+    <text x="40" y="90" class="content">- OtherApplication</text>
+    <text x="180" y="90" class="content">[1..1] OtherApplicationType</text>
+    <text x="40" y="110" class="content">- ChargeApplication</text>
+    <text x="180" y="110" class="content">[1..1] ChargeApplicationType</text>
+
+    <!-- OtherApplicationType -->
+    <rect x="380" y="5" width="260" height="50" class="small-box"></rect>
+    <text x="390" y="25" class="title">OtherApplicationType</text>
+    <text x="390" y="45" class="content">- Type <tspan dx="55">[1..1] ApplicationTypeContent</tspan></text>
+
+    <!-- ApplicationTypeContent -->
+    <rect x="690" y="15" width="160" height="30" class="small-box"></rect>
+    <text x="700" y="35" class="title">ApplicationTypeContent</text>
+
+    <!-- NoMDRefType -->
+    <rect x="690" y="115" width="100" height="30" class="small-box"></rect>
+    <text x="700" y="135" class="title">NoMDRefType</text>
+
+    <!-- ChargeApplicationType -->
+    <rect x="380" y="80" width="250" height="110" class="small-box"></rect>
+    <text x="390" y="100" class="title">ChargeApplicationType</text>
+    <text x="385" y="120" class="content">- ChargeDate</text>
+    <text x="500" y="120" class="content">[1..1] date</text>
+    <text x="385" y="140" class="content">- MDRef</text>
+    <text x="500" y="140" class="content">[1..1] NonBlankTextType</text>
+    <text x="385" y="160" class="content">- NoMDRef</text>
+    <text x="500" y="160" class="content">[1..1] NoMDRefType</text>
+    <text x="385" y="180" class="content">- SortCode</text>
+    <text x="500" y="180" class="content">[0..1] NonBlankTextType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - ApplicationsType -->
+    <line x1="30" y1="74" x2="330" y2="74" stroke="lightgrey"></line>
+    <line x1="30" y1="76" x2="330" y2="76" stroke="lightgrey"></line>
+    <line x1="30" y1="96" x2="330" y2="96" stroke="lightgrey"></line>
+
+    <!-- Table Lines - OtherApplicationType -->
+    <line x1="380" y1="29" x2="640" y2="29" stroke="lightgrey"></line>
+    <line x1="380" y1="31" x2="640" y2="31" stroke="lightgrey"></line>
+
+    <!-- Table Lines - ChargeApplicationType -->
+    <line x1="380" y1="29" x2="640" y2="29" stroke="lightgrey"></line>
+    <line x1="380" y1="31" x2="640" y2="31" stroke="lightgrey"></line>
+
+    <!-- Table Lines - ChargeApplicationType -->
+    <line x1="380" y1="108" x2="630" y2="108" stroke="lightgrey"></line>
+    <line x1="380" y1="106" x2="630" y2="106" stroke="lightgrey"></line>
+    <line x1="380" y1="126" x2="630" y2="126" stroke="lightgrey"></line>
+    <line x1="380" y1="146" x2="630" y2="146" stroke="lightgrey"></line>
+    <line x1="380" y1="166" x2="630" y2="166" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="330" y1="90" x2="380" y2="20" class="line"></line>
+    <line x1="640" y1="42" x2="690" y2="30" class="line"></line>
+    <line x1="330" y1="107" x2="380" y2="95" class="line"></line>
+    <line x1="630" y1="157" x2="690" y2="132" class="line"></line>
+
+</svg>

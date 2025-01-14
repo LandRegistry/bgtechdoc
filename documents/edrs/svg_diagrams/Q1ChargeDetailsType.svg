@@ -1,0 +1,71 @@
+<svg width="700" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- Q1ChargeEntriesType -->
+    <rect x="30" y="50" width="240" height="50" class="small-box"></rect>
+    <text x="40" y="70" class="title">Q1ChargeEntriesType</text>
+    <text x="40" y="90" class="content">- ChargeEntry <tspan dx="14">[1..*] Q1ChargeDetailsType</tspan></text>
+
+    <!-- Q1LeaseType -->
+    <rect x="380" y="5" width="290" height="130" class="small-box"></rect>
+    <text x="390" y="25" class="title">RejectionResponseType</text>
+    <text x="390" y="45" class="content">- ChargeID</text>
+    <text x="505" y="45" class="content">[0..1] TextType</text>
+    <text x="390" y="65" class="content">- ChargeDate</text>
+    <text x="505" y="65" class="content">[0..1] DateType</text>
+    <text x="390" y="85" class="content">- RegisteredCharge</text>
+    <text x="505" y="85" class="content">[1..1] Q1ChargeType</text>
+    <text x="390" y="105" class="content">- ChargeProprietor</text>
+    <text x="505" y="105" class="content">[1..1] Q1ChargeProprietorType</text>
+    <text x="390" y="125" class="content">- SubCharge</text>
+    <text x="505" y="125" class="content">[0..*] Q1SubChargeDetailsType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - Q1ChargeEntriesType -->
+    <line x1="30" y1="74" x2="270" y2="74" stroke="lightgrey"></line>
+    <line x1="30" y1="76" x2="270" y2="76" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1ChargeDetailsType -->
+    <line x1="380" y1="29" x2="670" y2="29" stroke="lightgrey"></line>
+    <line x1="380" y1="31" x2="670" y2="31" stroke="lightgrey"></line>
+    <line x1="380" y1="51" x2="670" y2="51" stroke="lightgrey"></line>
+    <line x1="380" y1="71" x2="670" y2="71" stroke="lightgrey"></line>
+    <line x1="380" y1="91" x2="670" y2="91" stroke="lightgrey"></line>
+    <line x1="380" y1="111" x2="670" y2="111" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="270" y1="87" x2="380" y2="20" class="line"></line>
+
+</svg>

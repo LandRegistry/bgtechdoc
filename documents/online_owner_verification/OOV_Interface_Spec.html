@@ -1,0 +1,1698 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Online Owner Verification Service Interface specification - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/online_owner_verification/OOV_Interface_Spec.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Online Owner Verification Service Interface specification - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/online_owner_verification/OOV_Interface_Spec.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Online Owner Verification Service Interface specification" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/online_owner_verification/OOV_Interface_Spec.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#online-owner-verification-service-interface-specification"><span>Online Owner Verification Service Interface specification</span></a>
+    <ul>
+      <li>
+        <a href="#1-background"><span>1. Background</span></a>
+      </li>
+      <li>
+        <a href="#2-purpose"><span>2. Purpose</span></a>
+      </li>
+      <li>
+        <a href="#3-scope"><span>3. Scope</span></a>
+      </li>
+      <li>
+        <a href="#4-definitions-acronyms-and-abbreviations"><span>4. Definitions, Acronyms and Abbreviations</span></a>
+      </li>
+      <li>
+        <a href="#5-interface-specification"><span>5. Interface Specification</span></a>
+      </li>
+      <li>
+        <a href="#6-xml-requirements"><span>6. XML Requirements</span></a>
+      </li>
+      <li>
+        <a href="#7-business-gateway"><span>7. Business Gateway</span></a>
+      </li>
+      <li>
+        <a href="#8-online-owner-verification-v1-0-specific-messages"><span>8. Online Owner Verification V1_0 Specific Messages</span></a>
+      </li>
+      <li>
+        <a href="#9-xml-schemas"><span>9. XML Schemas</span></a>
+      </li>
+      <li>
+        <a href="#10-online-owner-verification-request-v1-0"><span>10. Online Owner Verification Request (V1_0)</span></a>
+        <ul>
+          <li>
+            <a href="#10-1-request-message-structure"><span>10.1 Request message structure</span></a>
+          </li>
+          <li>
+            <a href="#10-2-request-specific-elements"><span>10.2 Request specific elements</span></a>
+          </li>
+          <li>
+            <a href="#10-2-1-subjectpropertytype-request"><span>10.2.1 SubjectPropertyType (Request)</span></a>
+          </li>
+          <li>
+            <a href="#10-2-2-indicatortype-request"><span>10.2.2 IndicatorType (Request)</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#11-online-owner-verification-response-v1-0"><span>11. Online Owner Verification Response (V1_0)</span></a>
+        <ul>
+          <li>
+            <a href="#11-1-response-message-structure"><span>11.1 Response message structure</span></a>
+          </li>
+          <li>
+            <a href="#11-2-response-specific-elements"><span>11.2 Response specific elements</span></a>
+          </li>
+          <li>
+            <a href="#11-3-acknowledgement-response-structure"><span>11.3 Acknowledgement response structure</span></a>
+          </li>
+          <li>
+            <a href="#11-4-acknowledgement-specific-elements"><span>11.4 Acknowledgement specific elements</span></a>
+          </li>
+          <li>
+            <a href="#11-5-rejection-response-structure"><span>11.5 Rejection response structure</span></a>
+          </li>
+          <li>
+            <a href="#11-6-rejection-specific-elements"><span>11.6 Rejection specific elements</span></a>
+          </li>
+          <li>
+            <a href="#11-7-result-response-structure"><span>11.7 Result response structure</span></a>
+          </li>
+          <li>
+            <a href="#11-8-result-key-elements"><span>11.8 Result key elements</span></a>
+          </li>
+          <li>
+            <a href="#11-8-1-match-elements"><span>11.8.1 Match elements</span></a>
+          </li>
+          <li>
+            <a href="#11-8-2-subjectproperty"><span>11.8.2 SubjectProperty</span></a>
+          </li>
+          <li>
+            <a href="#11-8-3-propertyaddress"><span>11.8.3 PropertyAddress</span></a>
+          </li>
+          <li>
+            <a href="#11-8-4-matchtype"><span>11.8.4 MatchType</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#12-glossary-or-terms-and-abbreviations"><span>12. Glossary or Terms and Abbreviations</span></a>
+      </li>
+      <li>
+        <a href="#13-annex"><span>13. Annex</span></a>
+        <ul>
+          <li>
+            <a href="#13-1-1-acknowledgement-message"><span>13.1.1 Acknowledgement Message</span></a>
+          </li>
+          <li>
+            <a href="#13-1-2-match-information"><span>13.1.2 Match information</span></a>
+          </li>
+          <li>
+            <a href="#13-1-3-match-details"><span>13.1.3 Match Details</span></a>
+          </li>
+          <li>
+            <a href="#13-1-4-rejection-codes"><span>13.1.4 Rejection Codes</span></a>
+          </li>
+          <li>
+            <a href="#13-1-5-sample-messages"><span>13.1.5 Sample Messages</span></a>
+          </li>
+          <li>
+            <a href="#13-1-6-schemas"><span>13.1.6 Schemas</span></a>
+          </li>
+          <li>
+            <a href="#13-1-7-requestonlineownershipverificationv1-0-xsd"><span>13.1.7 RequestOnlineOwnershipVerificationV1_0.xsd</span></a>
+          </li>
+          <li>
+            <a href="#13-1-8-responseonlineownershipverificationv1-0-xsd"><span>13.1.8 ResponseOnlineOwnershipVerificationV1_0.xsd</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/online_owner_verification/index.html">Back to Online Owner Verification</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="online-owner-verification-service-interface-specification">Online Owner Verification Service Interface specification</h1>
+
+<hr>
+<h2 id="1-background">1. Background</h2>
+<p>This document provides the interface requirements for the Online Owner Verification V1_0 Business Gateway service.</p>
+<h2 id="2-purpose">2. Purpose</h2>
+<p>The purpose of this document is to specify the interface between HM Land Registry and a Business Gateway Customer, indicating the message layouts and XML schemas that must be adhered to in order to communicate with HMLR, so that data may be exchanged between the organisations to effect Business Gateway.
+The XML schemas associated with this interface represent the authoritative definition of the interface and takes precedence over any information in this document. The schemas will be issued with this document, along with sample requests and responses. See Annex for <a href="#Sample Messages">samples</a>.</p>
+<h2 id="3-scope">3. Scope</h2>
+<p>The scope of this document encompasses the Online Owner Verification V1_0 interface and XML message format.</p>
+<h2 id="4-definitions-acronyms-and-abbreviations">4. Definitions, Acronyms and Abbreviations</h2>
+<p>Any specific terms and abbreviations are further explained in the Glossary.</p>
+<h2 id="5-interface-specification">5. Interface Specification</h2>
+<p>This section covers general information about the configuration and use of the interface.</p>
+<h2 id="6-xml-requirements">6. XML Requirements</h2>
+<p>The XML schema attached as part of this document is compliant with ‘XML Schema W3C Recommendation’, 04 Feb 2004 and e-GIF standards. The XML version is 1.0 and encoding is UTF-8.
+In an XML message, use of the characters &amp;, &lt;, “ and ‘ is constrained. The characters &amp; and &lt; are permitted to represent themselves only in Comments, Processing Instructions and CDATA sections. The characters “ and ‘ cannot appear in an attribute if they are being used to demarcate the value.
+Escape sequences are used to represent these characters when required. These escape sequences are:</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Character</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Escape sequence</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&amp</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&ldquo;&amp;amp;&rdquo;</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&lt;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&ldquo;&amp;lt;&rdquo;</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&gt;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&ldquo;&amp;gt;&rdquo;</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&ldquo;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&rdquo;&amp;quot;&ldquo;</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&lsquo;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&rdquo;&amp;apos;&ldquo;</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>Within CDATA blocks the above characters are permitted and escape sequences must not be used. CDATA blocks are used for attachments to messages.</p>
+<h2 id="7-business-gateway">7. Business Gateway</h2>
+<p>Business Gateway Process Diagram</p>
+<p><html>
+  <body>
+    <object data="svg_diagrams/BusinessGatewayProcessDiagram.svg"></object>
+  </body>
+</html></p>
+<p>Both the RequestOnlineOwnershipVerificationV1_0 and the Poll Request messages are acknowledged with a ResponseOnlineOwnershipVerificationV1_0 message.</p>
+<h2 id="8-online-owner-verification-v1-0-specific-messages">8. Online Owner Verification V1_0 Specific Messages</h2>
+
+<ul>
+  <li>Schema:</li>
+  <ul class="govuk-list govuk-!-font-size-14">
+    <li><strong>RequestOnlineOwnershipVerificationV1_0</strong></li>
+    <li><strong>ResponseOnlineOwnershipVerificationV1_0</strong></li>
+  </ul>
+  <li>Description:</li>
+  <ul class="govuk-list govuk-!-font-size-14">
+    <li>Online Owner Verification request identifies any titles associated with the supplied address and then checks if the supplied name matches any of the proprietors for those titles. If a title is supplied this will be used.</li>
+    <li>The response indicates either:</li>
+    <ul>
+      <li>A success response includes the result of the search in XML.</li>
+      <li>A system error</li>
+      <li>A rejection response with details of why the search was rejected</li>
+    </ul>
+  </ul>
+</ul>
+<h2 id="9-xml-schemas">9. XML Schemas</h2>
+<p>Current list of XML Schemas</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Version</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">RequestOnlineOwnershipVerificationV1_0</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">1.0</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ResponseOnlineOwnershipVerificationV1_0</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">1.0</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">PollRequest</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">1.0</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>See Annex for details of the individual <a href="#Schemas">Schemas</a> relating to the Online Owner Verification service.</p>
+<h2 id="10-online-owner-verification-request-v1-0">10. Online Owner Verification Request (V1_0)</h2>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">RequestOnlineOwnershipVerificationV1_0</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">This message wallows Customers to submit Online Owner Verification Requests to HMLR.</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="10-1-request-message-structure">10.1 Request message structure</h3>
+<p>The request message comprises generic header information which is common with requests for other services, plus information specific to the RequestOnlineOwnershipVerificationV1_0. This is illustrated below:</p>
+<p><html>
+  <body>
+    <object data="svg_diagrams/RequestMessageStructure.svg"></object>
+  </body>
+</html></p>
+<h3 id="10-2-request-specific-elements">10.2 Request specific elements</h3>
+<p><html>
+  <body>
+    <object data="svg_diagrams/RequestSpecificElements.svg"></object>
+  </body>
+</html></p>
+<p>The request message breakdown is illustrated below:</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">A unique reference associated with the application in the Case Management System</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Reference associated with a case in Case Management System</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">SubjectProperty</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Either the property title number OR the property address on which a search is being requested. See <a href="#SubjectPropertyType (Request)">SubjectPropertyType</a> for more details.</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">FirstForename</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Forename of the proprietor to be searched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MiddleName</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Middle name of the proprietor to be searched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Surname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Surname of the proprietor to be searched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Indicators</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Search Indicators to enable/disable specific checks. See <a href="#IndicatorType (Request)">IndicatorType</a> for more details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="10-2-1-subjectpropertytype-request">10.2.1 SubjectPropertyType (Request)</h3>
+<p>The SubjectPropertyType contains the details of the property to be searched against. It may contain either a Title number or a property address.</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">TitleNumber</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">TitleNumber</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">The title number on which the search is to be performed</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>OR</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">PropertyAddressType</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BuildingName</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Building Name of the property to be searched</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BuildingNumber</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Building Number of the property to be searched</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">StreetName</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Street Name of the property to be searched</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">CityName</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">City or Town of the property to be searched</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">PostcodeZone</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Postcode of the property to be searched</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">SpecificTenure</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Tenure of the property to be searched i.e. freehold, leasehold or rentcharge. This is an optional element and if no specific tenure has been supplied, the system will search against all tenures</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>Note: For best results, minimise the information given. For example, provide building number or building name and postcode and leave all the other items blank. If the property to be searched is a flat then provide flat number in the building number. There can be confusion over the precise numbering of flats. The address we hold may be a simple number, or it may be prefixed by &#39;Flat&rsquo;, &lsquo;Suite&rsquo; and so on. If a search that includes a flat number fails, try providing the address without the flat number.</p>
+<h3 id="10-2-2-indicatortype-request">10.2.2 IndicatorType (Request)</h3>
+<p>The ‘Indicators’ element may contain 0 or many IndicatorType elements. The value of these elements must be set to true or false in lowercase. If any of the IndicatorTypes are excluded from the Request message they will be set to the default values shown below.</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Indicator type Element</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Default</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ContinueIfOutOfHours</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Request will be lodged and processed when back in hours</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">✓</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ContinueIfOutOfHours</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">false</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Reject request if out of hours</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">x</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">SkipPartialMatching</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Do not perform partial match checks for this request</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">x</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">SkipPartialMatching</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">false</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Perform partial match checks on the supplied names if full match not achieved</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">✓</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">SkipHistoricalMatching</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Do not perform historical search for this request</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">x</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">SkipHistoricalMatching</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">false</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Perform historical search if no match is found on the current proprietor(s)</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">✓</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h2 id="11-online-owner-verification-response-v1-0">11. Online Owner Verification Response (V1_0)</h2>
+<p>ResponseOnlineOwnershipVerificationV1_0 message uses the namespace http://www.landregistry.gov.uk/OOV/ResponseOnlineOwnershipVerificationV1_0 and must be valid with respect to the XML Schema published by HM Land Registry for that namespace.</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ResponseOnlineOwnershipVerificationV1_0</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">This message allows HM Land Registry to send the Online Owner Verification Responses to the Customer.</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="11-1-response-message-structure">11.1 Response message structure</h3>
+<p>The response message comprises generic information common with responses to other services, plus information specific to the ResponseOnlineOwnershipVerificationV1_0 response. This is illustrated below:</p>
+<p><html>
+  <body>
+    <object data="svg_diagrams/ResponseMessageStructure.svg"></object>
+  </body>
+</html></p>
+<h3 id="11-2-response-specific-elements">11.2 Response specific elements</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">TypeCode</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>Used to identify the type of response that has been issued.</li>
+                      <li>Acknowledgement = 10</li>
+                      <li>Rejection = 20</li>
+                      <li>Result = 30</li>
+                    </ul>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Acknowledgement</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">This is the Business Gateway confirmation of receipt response</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Rejection</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">This is the Business Gateway rejection response</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Result</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">This is the Business Gateway confirmation of success response</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>Note: Either an acknowledgement, rejection or result message will be issued.</p>
+<h3 id="11-3-acknowledgement-response-structure">11.3 Acknowledgement response structure</h3>
+<p>The Acknowledgement message will be returned if the service is out of hours and the original request message had the indictor ContinueIfOutOfHours set to true.</p>
+<p>If for any reason a valid acknowledgement, rejection or response is not received by the originator (i.e. through network error, corruption or incorrectly prepared XML) there is no way for the server to know if it was successfully received or not. If this occurs the request can be sent again with the same MessageId and the original result will be returned. If HMLR did not receive the original request the system will process the request as a new one.</p>
+<p>Note: Any requests submitted with a duplicate MessageId will receive the last response for that MessageId regardless of the other criteria in the request.</p>
+<p>The acknowledgement response structure is illustrated below:</p>
+<p><html>
+  <body>
+    <object data="svg_diagrams/AcknowledgementType.svg"></object>
+  </body>
+</html></p>
+<h3 id="11-4-acknowledgement-specific-elements">11.4 Acknowledgement specific elements</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">UniqueID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">A unique identifier used by the end user to get the status update of their request</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ExpectedResponseDateTime</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">This element will hold the expected date and time when Business Gateway will try to process the queued request. This element will contain date and time data in a GMT format.</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageDescription</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">This will be a String type element and will be used to return a message to the end user. See Annex for <a href="#Acknowledgement Message">acknowledgement</a> message text</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="11-5-rejection-response-structure">11.5 Rejection response structure</h3>
+<p>The purpose of the Rejection message is to inform the originator of the Request message that it has been rejected due to known circumstances.</p>
+<p><html>
+  <body>
+    <object data="svg_diagrams/RejectionResponseStructure.svg"></object>
+  </body>
+</html></p>
+<h3 id="11-6-rejection-specific-elements">11.6 Rejection specific elements</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Reason</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">A description of the reason for rejection. See Annex for full list of <a href="#Rejection Codes">rejection reasons</a></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Code</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">A code signifying the reason for rejection. See Annex for full list of <a href="#Rejection Codes">rejection codes</a>.</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">OtherDescription</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">A free format text field to convey any further information about the rejection.</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ValidationErrors</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Validation errors</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Reference associated with a case in Case Management System</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="11-7-result-response-structure">11.7 Result response structure</h3>
+<p><html>
+  <body>
+    <object data="svg_diagrams/ResultResponseStructure.svg"></object>
+  </body>
+</html></p>
+<h3 id="11-8-result-key-elements">11.8 Result key elements</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">A free format text field to convey any further information about the response.</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Reference associated with a case in Case Management System</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MatchResult</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Value will be either NO_MATCHES, SINGLE_MATCH, MULTIPLE_MATCHES</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Match</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contains details of each Match. See <a href="#Match Details">Match Details</a>.</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional (0..*)</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="11-8-1-match-elements">11.8.1 Match elements</h3>
+<p><html>
+  <body>
+    <object data="svg_diagrams/MatchElements.svg"></object>
+  </body>
+</html></p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">SubjectProperty</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contains the title number and address details for the property matched. See <a href="#SubjectProperty">SubjectProperty</a></td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">SurnameMatch</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Indicates whether the Surname was matched and details of how it matched. See <a href="#MatchType">MatchType</a>.</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ForenameMatchDetails</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Indicates whether the Forename was matched and details of how it matched. See <a href="#MatchType">MatchType</a>.</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MiddleNameMatchDetails</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Indicates whether the Middle name was matched and details of how it matched. See <a href="#MatchType">MatchType</a>.</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">StringMatchDetails</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Indicates if a match is found against the string concatenation of forename, middle name(s) and surname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MatchInformation</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contains additional details of the match. See <a href="#Match Information">Match Information</a>.</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional (0..*)</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>Notes:
+Forename and Middle name matches will only be returned if there has been a full match or partial match on Surname.
+A string match will only be returned when there is no match on surname. For example the name to be searched in the request is Maria (FirstForename) Santos (MiddleName) Bueno (Surname) and the register of title holds Maria (forename), no middle name and Santos Bueno (surname).</p>
+<h3 id="11-8-2-subjectproperty">11.8.2 SubjectProperty</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">SubjectProperty</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">TitleNumber</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">The title number for the property matched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">PropertyAddress</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contains the address details for the property matched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="11-8-3-propertyaddress">11.8.3 PropertyAddress</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">PropertyAddress</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BuildingName</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Building name of the property matched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">SubBuildingName</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Sub building name of the property matched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BuildingNumber</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Building number of the property matched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">StreetName</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Street name of the property matched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">CityName</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">City name of the property matched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">PostcodeZone</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Postcode of the property matched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Tenure</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Tenure of the property matched</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="11-8-4-matchtype">11.8.4 MatchType</h3>
+<p>The MatchType element indicates the type of match and any additional match details</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">TypeOfMatch</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Indicates if an exact, partial or no match. Typical values MATCH, NO_MATCH, PARTIAL_MATCH or SKIPPED</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MatchDetails</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contains additional details of the match. See <a href="#Match Details">Match Details</a>.</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>This could return a full match, an exact letter for letter match or a partial match, where the name matches in some way, i.e. minor spelling mistake, sounds like or first letter match.
+The type of match for forename and middle name will be set to a value of ‘SKIPPED’ when there is NO match on surname.
+The type of match for surname will be set to a value of ‘SKIPPED’ where there is no Private Individual proprietorship name found for a title number or where LR have no proprietorship details available for a title number.</p>
+<h2 id="12-glossary-or-terms-and-abbreviations">12. Glossary or Terms and Abbreviations</h2>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Acronym</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">OOV</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Online Owner Verification Service</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">HTTP</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">HyperText Transfer Protocol</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">XML</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">eXtensible Markup Language</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Registered on date</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"The date HM Land Registry received the application</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h2 id="13-annex">13. Annex</h2>
+<h3 id="13-1-1-acknowledgement-message">13.1.1 Acknowledgement Message</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Service is not currently available. System has queued your request, please poll at specified time.</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="13-1-2-match-information">13.1.2 Match information</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Acronym</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">OOV</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Online Owner Verification Service</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">HTTP</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">HyperText Transfer Protocol</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">XML</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">eXtensible Markup Language</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Registered on date</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14"The date HM Land Registry received the application</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<ul>
+<li>Only provided for Historical matches</li>
+</ul>
+<h3 id="13-1-3-match-details">13.1.3 Match Details</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">FORENAME_DISTANCE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true or false</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">FORENAME_SOUND</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true or false</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">FORENAME_INITIAL</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true or false</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">FORENAME_MIDDLE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true or false</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">FORENAME_ALIAS</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true or false</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MIDNAME_DISTANCE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true or false</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MIDNAME_SOUND</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true or false</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MIDNAME_INITIAL</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true or false</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">SURNAME_DISTANCE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true or false</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">SURNAME_SOUND</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">true or false</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>*Indicates whether the forename supplied matches a middle name of the registered proprietor. e.g. Search name is Susan Brown and Proprietor name is Edith Susan Brown would return Forename Middle is ‘true’ Distance matching uses Levenshtein. The distance is the number of changes needed to change one String into another, where each change is a single character modification (deletion, insertion or substitution). The returning integer is then checked and if &lt;= (surname length/4) will return ‘true’ otherwise ‘false’.
+Sound uses Double Metaphone, which looks through variant spellings by reducing surnames to phonetic codes. The &quot;double&rdquo; in the title stems from the fact that returning up to two codes for a single surname allows the algorithm to deal with common-case Anglo-Saxon and foreign-pronunciation variants simultaneously. A match on either will return ‘true’ otherwise ‘false’.</p>
+<p>Sound and Distance Examples</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Search Name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Proprietor Name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Sound Value</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Distance Value</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Steven</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Stephen</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Pass</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Fail</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Lin</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Lynne</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Pass</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Fail</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Smith</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Smythe</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Pass</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Fail</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Smith</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Smyth</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Pass</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Pass</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Smith</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Schmidt</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Pass</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Fail</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Goodbourn</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Woodburn</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Fail</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Pass</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Wooldridge</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Aldridge</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Pass</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Fail</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="13-1-4-rejection-codes">13.1.4 Rejection Codes</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Code</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Reason</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">bg.auth.fails</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details are invalid.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">bg.user.account.status.locked.password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Your account is locked. Please reset your password using Portal.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">bg.outofhours.stop</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Service is not currently available and your request will not be processed.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">bg.properties.nopropertyfound</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">bg.properties.novalidtitlefound</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">No valid title number has been identified from the data supplied for this service.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">bg.address.invalidaddresscriteria</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Insufficient address details. Please provide house name or number and postcode OR house name or number, street and city.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">bg.postcode.invalid</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Please provide valid postcode</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.invalid</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Title number is invalid</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">bg.properties.toomanyproperties</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="13-1-5-sample-messages">13.1.5 Sample Messages</h3>
+
+<pre><code>
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes" ?&gt;
+&lt;RequestOOV xmlns="http://www.landregistry.gov.uk/OOV/RequestOnlineOwnershipVerificationV1_0"&gt;
+    &lt;MessageId&gt;OnlineOwnershipVerification-20131217-094743&lt;/MessageId&gt;
+    &lt;Reference&gt;ABC&lt;/Reference&gt;
+    &lt;SubjectProperty&gt;
+        &lt;PropertyAddress&gt;
+            &lt;BuildingNumber&gt;101A&lt;/BuildingNumber&gt;
+            &lt;PostcodeZone&gt;PL1 1QQ&lt;/PostcodeZone&gt;
+        &lt;/PropertyAddress&gt;
+    &lt;/SubjectProperty&gt;
+    &lt;FirstForename&gt;Jon&lt;/FirstForename&gt;
+    &lt;MiddleName&gt;Tomas&lt;/MiddleName&gt;
+    &lt;Surname&gt;Tankerman&lt;/Surname&gt;
+    &lt;Indicators&gt;
+        &lt;Indicator&gt;
+            &lt;IndicatorType&gt;ContinuIfOutOfHours&lt;/IndicatorType&gt;
+            &lt;IndicatorValue&gt;true&lt;/IndicatorValue&gt;
+        &lt;/Indicator&gt;
+    &lt;/Indicators&gt;
+&lt;/RequestOOV&gt;
+</code></pre>
+<p>Sample response message</p>
+
+<pre><code>
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes" ?&gt;
+&lt;ResponseOOV xmlns="http://www.landregistry.gov.uk/OOV/ResponseOnlineOwnershipVerificationV1_0"&gt;
+    &lt;TypeCode&gt;30&lt;/TypeCode&gt;
+    &lt;Result&gt;
+        &lt;Reference&gt;ABC&lt;/Reference&gt;
+        &lt;MatchResult&gt;SINGLE_MATCH&lt;/MatchResult&gt;
+        &lt;Match&gt;
+            &lt;SubjectProperty&gt;
+                &lt;TitleNumber&gt;NT100&lt;/TitleNumber&gt;
+                &lt;PropertyAddress&gt;
+                    &lt;BuildingNumber&gt;101A&lt;/BuildingNumber&gt;
+                    &lt;StreetName&gt;APPLE ROAD&lt;/StreetName&gt;
+                    &lt;CityName&gt;NOTTINGHAM&lt;/CityName&gt;
+                    &lt;PostcodeZone&gt;PL1 1QQ&lt;/PostcodeZone&gt;
+                    &lt;Tenure&gt;freehold&lt;/Tenure&gt;
+                &lt;/PropertyAddress&gt;
+            &lt;/SubjectProperty&gt;
+            &lt;SurnameMatch&gt;
+                &lt;TypeOfMatch&gt;NO_MATCH&lt;/TypeOfMatch&gt;
+            &lt;/SurnameMatch&gt;
+            &lt;StringMatchDetails&gt;
+                &lt;TypeOfMatch&gt;NO_MATCH&lt;/TypeOfMatch&gt;
+            &lt;/StringMatchDetails&gt;
+        &lt;/Match&gt;
+        &lt;Match&gt;
+            &lt;SubjectProperty&gt;
+                &lt;TitleNumber&gt;NT275842&lt;/TitleNumber&gt;
+                &lt;PropertyAddress&gt;
+                    &lt;BuildingNumber&gt;101A&lt;/BuildingNumber&gt;
+                    &lt;StreetName&gt;APPLE ROAD&lt;/StreetName&gt;
+                    &lt;CityName&gt;NOTTINGHAM&lt;/CityName&gt;
+                    &lt;PostcodeZone&gt;PL1 1QQ&lt;/PostcodeZone&gt;
+                    &lt;Tenure&gt;leasehold&lt;/Tenure&gt;
+                &lt;/PropertyAddress&gt;
+            &lt;/SubjectProperty&gt;
+            &lt;SurnameMatch&gt;
+                &lt;TypeOfMatch&gt;MATCH&lt;/TypeOfMatch&gt;
+            &lt;/SurnameMatch&gt;
+            &lt;ForenameMatchDetails&gt;
+                &lt;TypeOfMatch&gt;MATCH&lt;/TypeOfMatch&gt;
+            &lt;/ForenameMatchDetails&gt;
+            &lt;MiddleNameMatchDetails&gt;
+                &lt;TypeOfMatch&gt;MATCH&lt;/TypeOfMatch&gt;
+            &lt;/MiddleNameMatchDetails&gt;
+            &lt;MatchInformation&gt;
+                &lt;Name&gt;HistoricalMatch&lt;/Name&gt;
+                &lt;Value&gt;true&lt;/Value&gt;
+            &lt;/MatchInformation&gt;
+            &lt;MatchInformation&gt;
+                &lt;Name&gt;Ownership&lt;/Name&gt;
+                &lt;Value&gt;Joint&lt;/Value&gt;
+            &lt;/MatchInformation&gt;
+            &lt;MatchInformation&gt;
+                &lt;Name&gt;ProprietorFrom&lt;/Name&gt;
+                &lt;Value&gt;26 Feb 2009&lt;/Value&gt;
+            &lt;/MatchInformation&gt;
+            &lt;MatchInformation&gt;
+                &lt;Name&gt;ProprietorTo&lt;/Name&gt;
+                &lt;Value&gt;31 Dec 2012&lt;/Value&gt;
+            &lt;/MatchInformation&gt;
+        &lt;/Match&gt;
+    &lt;/Result&gt;
+&lt;/ResponseOOV&gt;
+</code></pre>
+<h3 id="13-1-6-schemas">13.1.6 Schemas</h3>
+<p>XML Schemas are compliant with e-GIF (Electronic Government Interoperability Framework) standards.
+Schema files are named according to the standard <filename>-vm-n.xsd where v is the letter ‘v’, m is the major version number and n is the minor version number.</p>
+<h3 id="13-1-7-requestonlineownershipverificationv1-0-xsd">13.1.7 RequestOnlineOwnershipVerificationV1_0.xsd</h3>
+
+<pre><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.landregistry.gov.uk/OOV/RequestOnlineOwnershipVerificationV1_0"
+xmlns="http://www.landregistry.gov.uk/OOV/RequestOnlineOwnershipVerificationV1_0"
+elementFormDefault="qualified"&gt;
+    &lt;xs:element name="RequestOOV" type="RequestOnlineOwnershipVerificationType"&gt;&lt;/xs:element&gt;
+    &lt;xs:complexType name="RequestOnlineOwnershipVerificationType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="MessageId" type="MessageIdTextContentType" minOccurs="1" maxOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="Reference" type="ReferenceTextContentType" minOccurs="1" maxOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="SubjectProperty" type="SubjectPropertyType" minOccurs="1" maxOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="FirstForename" type="FirstForenameContentType" minOccurs="1" maxOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="MiddleName" type="NameContentType" minOccurs="0" maxOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="Surname" type="NameContentType" minOccurs="1" maxOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="Indicators" type="IndicatorsType" minOccurs="1" maxOccurs="1"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:simpleType name="FirstForenameContentType"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:minLength value="1"&gt;&lt;/xs:minLength&gt;
+            &lt;xs:pattern value="[a-zA-Z0-9\-']+"&gt;&lt;/xs:pattern&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:simpleType name="NameContentType"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:minLength value="1"&gt;&lt;/xs:minLength&gt;
+            &lt;xs:pattern value="[a-zA-Z0-9\-\s']+"&gt;&lt;/xs:pattern&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:complexType name="SubjectPropertyType"&gt;
+        &lt;xs:choice minOccurs="1" maxOccurs="1" &gt;
+            &lt;xs:element name="TitleNumber"&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:maxLength value="9"&gt;&lt;/xs:maxLength&gt;
+                        &lt;xs:minLength value="1"&gt;&lt;/xs:minLength&gt;
+                        &lt;xs:pattern value="[a-yA-Y]{0,3}\d{1,6}|Z\d{1,6}Z"&gt;&lt;/xs:pattern&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="PropertyAddress" type="PropertyAddressType" /&gt;
+        &lt;/xs:choice&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="PropertyAddressType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="BuildingName" type="BuildingNameTextContentType" minOccurs="0" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;The name of the building or house on a street of this address&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="BuildingNumber" type="BuildingNumberTextContentType" minOccurs="0" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;The number of a building or house on a street of this address. Where the building or house occupies a range
+                     of numbers on the street, e.g. '1-9 Main St', this will be the lower number of the range.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="StreetName" type="StreetNameTextContentType" minOccurs="0" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Name of a street or thoroughfare&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="CityName" type="CityTextContentType" minOccurs="0" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;The name of the city, town or village of this address.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="PostcodeZone" type="PostcodeTextContentType" minOccurs="0" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;The identifier for one or more properties according to the UK postal service; a group of letters and numbers
+                    added to the postal address to assist in the sorting of mail, as defined by the Royal Mail.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="SpecificTenure" type="xs:string" minOccurs="0" maxOccurs="1"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:simpleType name="PostcodeTextContentType"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:minLength value="1" /&gt;
+            &lt;xs:maxLength value="8" /&gt;
+            &lt;xs:pattern value="[a-zA-Z]{1,2}[0-9R][0-9A-Za-z]? [0-9][A-Za-z-[CIKMOVcikmov]]{2}" /&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:simpleType name="CityTextContentType"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:minLength value="1" /&gt;
+            &lt;xs:maxLength value="35" /&gt;
+            &lt;xs:pattern value=".*\S.*" /&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:simpleType name="StreetNameTextContentType"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:minLength value="1" /&gt;
+            &lt;xs:maxLength value="80" /&gt;
+            &lt;xs:pattern value=".*\S.*" /&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:simpleType name="BuildingNameTextContentType"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:minLength value="1" /&gt;
+            &lt;xs:maxLength value="50" /&gt;
+            &lt;xs:pattern value=".*\S.*" /&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:simpleType name="BuildingNumberTextContentType"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:minLength value="1" /&gt;
+            &lt;xs:maxLength value="5" /&gt;
+            &lt;xs:pattern value=".*\S.*" /&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:simpleType name="ReferenceTextContentType"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:minLength value="1" /&gt;
+            &lt;xs:maxLength value="25" /&gt;
+            &lt;xs:pattern value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" /&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:simpleType name="MessageIdTextContentType"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:minLength value="5" /&gt;
+            &lt;xs:maxLength value="50" /&gt;
+            &lt;xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" /&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:complexType name="MiddleNameType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="MiddleName" type="NameContentType" minOccurs="1" maxOccurs="1"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="IndicatorsType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="Indicator" type="IndicatorType" minOccurs="0" maxOccurs="unbounded"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="IndicatorType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;
+                    The indicators are generic so that new options can be added in the future without schema changes.
+                    Expected indicators are:
+                    ContinueIfOutOfHours
+                    SkipPartialMatching
+                    SkipHistoricalMatching
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:element name="IndicatorType" minOccurs="1" maxOccurs="1"&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:minLength value="1"&gt;&lt;/xs:minLength&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="IndicatorValue" type="xs:boolean" minOccurs="1" maxOccurs="1"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</code></pre>
+<h3 id="13-1-8-responseonlineownershipverificationv1-0-xsd">13.1.8 ResponseOnlineOwnershipVerificationV1_0.xsd</h3>
+
+<pre><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.landregistry.gov.uk/OOV/ResponseOnlineOwnershipVerificationV1_0"
+xmlns="http://www.landregistry.gov.uk/OOV/ResponseOnlineOwnershipVerificationV1_0"
+elementFormDefault="qualified"&gt;
+    &lt;xs:element name="ResponseOOV" type="ResponseOnlineOwnershipVerificationType"&gt;&lt;/xs:element&gt;
+    &lt;xs:complexType name="ResponseOnlineOwnershipVerificationType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="TypeCode" type="TypeCodes" maxOccurs="1" minOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="Acknowledgement" type="AcknowledgementType" maxOccurs="1" minOccurs="0"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="Rejection" type="RejectionType" maxOccurs="1" minOccurs="0"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="Result" type="ResultType" maxOccurs="1" minOccurs="0"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="ResponseType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="Code" type="xs:string"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="Text" type="xs:string"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:simpleType name="TypeCodes"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:enumeration value="10"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Acknowledgement&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:enumeration&gt;
+            &lt;xs:enumeration value="20"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Rejections&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:enumeration&gt;
+            &lt;xs:enumeration value="30"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Result&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:enumeration&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:complexType name="AcknowledgementType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="UniqueID" type="xs:string" minOccurs="1" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Unique identifier used by end user to get the status update of their request.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="ExpectedResponseDateTime" type="xs:dateTime" minOccurs="1" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;This element will hold expected time when Business Gateway will try to process the queued request. This
+                    element will contain date and time data as GMT format. This element should be marked as mandatory&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="MessageDescription" type="xs:string" minOccurs="1" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;This will be a String type element and will be use to display a message to end user. This element should be marked as mandatory&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="RejectionType"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Provides details of the reasons for the rejection.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="Reason" type="xs:string" minOccurs="1" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;A description of the reason for rejection.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="Code" type="xs:string" minOccurs="1" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;A code signifying the reason for rejection&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="OtherDescription" type="xs:string" minOccurs="0" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Freeform text field to convey any further information about the rejection.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="ValidationErrors" type="ValidationErrorsType" minOccurs="0" maxOccurs="unbounded" /&gt;
+            &lt;xs:element name="Reference" type="xs:string" maxOccurs="1" minOccurs="1"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="ValidationErrorsType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="Code" type="xs:string" minOccurs="1" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;A character string (i.e. a finite set of characters) generally in the form of words of a language.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="Description" type="xs:string" minOccurs="1" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;A character string (i.e. a finite set of characters) generally in the form of words of a language.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="ResultType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="Message" type="xs:string" maxOccurs="1" minOccurs="0"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="Reference" type="xs:string" maxOccurs="1" minOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="MatchResult" type="MatchResultType" maxOccurs="1" minOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="Match" type="NameMatchType" maxOccurs="unbounded" minOccurs="0"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:simpleType name="MatchResultType"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:enumeration value="NO_MATCHES"&gt;&lt;/xs:enumeration&gt;
+            &lt;xs:enumeration value="SINGLE_MATCH"&gt;&lt;/xs:enumeration&gt;
+            &lt;xs:enumeration value="MULTIPLE_MATCHES"&gt;&lt;/xs:enumeration&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:complexType name="PropertyAddressType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="BuildingName" type="xs:string" minOccurs="0" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;The name of the building or house on a street of this address&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="SubBuildingName" type="xs:string" maxOccurs="1" minOccurs="0"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="BuildingNumber" type="xs:string" minOccurs="0" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;The number of a building or house on a street of this address. Where the building or house
+                    occupies a range of numbers on the street, e.g. '1-9 Main St', this will be the lower number of the range.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="StreetName" type="xs:string" minOccurs="0" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt; Name of a street or thoroughfare&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="CityName" type="xs:string" minOccurs="0"maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;The name of the city, town or village of this address.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="PostcodeZone" type="xs:string" minOccurs="0" maxOccurs="1"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;The identifier for one or more properties according to the UK postal service;
+                    a group of letters and numbers added to the postal address to assist in the sorting of mail,
+                    as defined by the Royal Mail.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="Tenure" type="xs:string" maxOccurs="1" minOccurs="1"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="NameMatchType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="SubjectProperty" type="SubjectPropertyType" maxOccurs="1" minOccurs="1"&gt;#&lt;/xs:element&gt;
+            &lt;xs:element name="SurnameMatch" type="MatchType"maxOccurs="1" minOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="ForenameMatchDetails" type="MatchType" maxOccurs="1" minOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="MiddleNameMatchDetails" type="MatchType"maxOccurs="1" minOccurs="0"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="StringMatchDetails" type="MatchType"maxOccurs="1" minOccurs="0"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="MatchInformation" type="MatchDetailsType" maxOccurs="unbounded" minOccurs="0"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="MatchType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="TypeOfMatch"&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:enumeration value="MATCH"&gt;&lt;/xs:enumeration&gt;
+                        &lt;xs:enumeration value="NO_MATCH"&gt;&lt;/xs:enumeration&gt;
+                        &lt;xs:enumeration value="PARTIAL_MATCH"&gt;&lt;/xs:enumeration&gt;
+                        &lt;xs:enumeration value="SKIPPED"&gt;&lt;/xs:enumeration&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="MatchDetails" type="MatchDetailsType" maxOccurs="unbounded" minOccurs="0"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="MatchDetailsType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Flexible name/value pair element to include various values.
+
+                Possible options are:
+                Name              Values (string)
+                HistoricalMatch   true or false
+                ProprietorFrom    date or unknown
+                ProprietorTo      date or unknown
+                Ownership         Sole or Joint
+                FORENAME_DISTANCE true or false
+                FORENAME_SOUND    true or false
+                FORENAME_INITIAL  true or false
+                FORENAME_MIDDLE   true or false
+                FORENAME_ALIAS    true or false
+                MIDNAME_DISTANCE  true or false
+                MIDNAME_SOUND     true or false
+                MIDNAME_INITIAL   true or false
+                SURNAME_DISTANCE  true or false
+                SURNAME_SOUND     true or false
+                Note: _DISTANCE is Levenshtein distance and _SOUND is sounds like (DoubleMetaphone) &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:element name="Name" type="xs:string" maxOccurs="1" minOccurs="1"&gt;&lt;/xs:element&gt;
+            &lt;xs:element name="Value" type="xs:string" maxOccurs="1" minOccurs="1"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="SubjectPropertyType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="TitleNumber" maxOccurs="1" minOccurs="1"&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:minLength value="1"&gt;&lt;/xs:minLength&gt;
+                        &lt;xs:maxLength value="9"&gt;&lt;/xs:maxLength&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="PropertyAddress" type="PropertyAddressType" maxOccurs="1" minOccurs="1"&gt;&lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</code></pre>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

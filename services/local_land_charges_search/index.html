@@ -10,13 +10,18 @@
     <link href="../../stylesheets/manifest.css" rel="stylesheet" />
 
     <link rel="canonical" href="/services/local_land_charges_search/">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
       <meta name="twitter:title" content="Local Land Charges Search - HM Land Registry Business Gateway Developer Pack" />
       <meta name="twitter:url" content="/services/local_land_charges_search/" />
 
-      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
       <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
       <meta property="og:title" content="Local Land Charges Search" />
       <meta property="og:type" content="object" />
@@ -27,7 +32,7 @@
   </head>
 
   <body class="govuk-template__body">
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
 
     <div class="app-pane">
       <div class="app-pane__header toc-open-disabled">
@@ -55,15 +60,15 @@
 
       <div class="app-pane__body" data-module="in-page-navigation">
           <div class="app-pane__toc">
-            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
               <div class="search" data-module="search" data-path-to-site-root="../../">
   <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
     <input type="hidden" name="as_sitesearch" value=""/>
-    <label class="govuk-label search__label" for="search" aria-hidden="true">
+    <label class="govuk-label search__label" for="search">
       Search (via Google)
     </label>
     <input
-      type="text"
+      type="search"
       id="search" name="q"
       class="govuk-input govuk-!-margin-bottom-0 search__input"
       aria-controls="search-results"
@@ -112,7 +117,9 @@
         <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             
-    <!---**************************************************************-->
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
 
 <div class="page-nav">
 <a href="../index.html">Back to Services</a>
@@ -155,7 +162,7 @@
       </span>
     </summary>
     <div class="govuk-details__text">
-      <table class="govuk-table">
+      <table class="govuk-table" cellpadding="10">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header govuk-!-font-size-14">BG Code</th>
@@ -225,7 +232,7 @@
       </span>
     </summary>
     <div class="govuk-details__text">
-      <table class="govuk-table">
+      <table class="govuk-table" cellpadding="10">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header govuk-!-font-size-14">Business rule</th>
@@ -307,10 +314,9 @@
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/land_charges_search/LLC_Interface_Spec_V2_0.pdf" class="govuk-!-font-size-24">Interface specification</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 606KB, 36 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/land_charges_search/LLC_Interface_Spec_V2_0.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+    <p><a href="../../documents/land_charges_search/LLC_Interface_Spec_V2_0.html" class="govuk-!-font-size-24">Interface specification</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span><br></p>
+    <p><a href="../../documents/land_charges_search/LLC_Interface_Spec_V2_0.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -327,10 +333,9 @@
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/land_charges_search/LLC_Vendor_test_data_V2_0.pdf" class="govuk-!-font-size-24">Vendor Test data</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 252KB, 14 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/land_charges_search/LLC_Vendor_test_data_V2_0.pdf"  class="govuk-!-font-size-19" download >Download</a></p>
+    <p><a href="../../documents/land_charges_search/LLC_Vendor_test_data_V2_0.html" class="govuk-!-font-size-24">Vendor Test data</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span><br></p>
+    <p><a href="../../documents/land_charges_search/LLC_Vendor_test_data_V2_0.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -395,6 +400,7 @@
     </div>
 
     
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
     <script src="../../javascripts/application.js"></script>
   </body>
 </html>

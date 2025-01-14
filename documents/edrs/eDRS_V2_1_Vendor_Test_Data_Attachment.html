@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Attachment Service - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/edrs/eDRS_V2_1_Vendor_Test_Data_Attachment.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Attachment Service - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/edrs/eDRS_V2_1_Vendor_Test_Data_Attachment.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Attachment Service" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/edrs/eDRS_V2_1_Vendor_Test_Data_Attachment.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#attachment-service-vendor-test-data-v2-1"><span>Attachment Service Vendor Test Data V2.1</span></a>
+    <ul>
+      <li>
+        <a href="#1-attachment-service"><span>1. Attachment Service</span></a>
+      </li>
+      <li>
+        <a href="#2-attachment-service-polling-service"><span>2. Attachment Service Polling Service</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/edrs/index.html">Back to e-DRS</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="attachment-service-vendor-test-data-v2-1">Attachment Service Vendor Test Data V2.1</h1>
+
+<hr>
+<h2 id="1-attachment-service">1. Attachment Service</h2>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      <ul class="govuk-list govuk-!-font-size-14">
+        <li>Test: Attachment Service 01</li>
+        <li>Test purpose: Lodge an attachment out of hours</li>
+      </ul>
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Additional provider filter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testoutofhours</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All not mentioned below</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: &ldquo;Service is not currently available. System has queued your request please poll at specified time.&rdquo;</li>
+                      <li>ExpectedResponseDateTime: will be the next working day.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Attachment Service 02</li>
+          <li>Test purpose: Lodge an attachment (incorrect format)</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.formatdescription.error&rsquo;</li>
+                      <li>Description: The attachment file must be in either GIF, JPEG, TIFF or PDF format therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.formatdescription.error&rsquo;</li>
+                      <li>Description: The attachment file must be in either GIF, JPEG, TIFF or PDF format therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.formatdescription.error&rsquo;</li>
+                      <li>Description: The attachment file must be in either GIF, JPEG, TIFF or PDF format therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Additional provider filter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.formatdescription.error&rsquo;</li>
+                      <li>Description: The attachment file must be in either GIF, JPEG, TIFF or PDF format therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any valid Id</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.formatdescription.error&rsquo;</li>
+                      <li>Description: The attachment file must be in either GIF, JPEG, TIFF or PDF format therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.formatdescription.error&rsquo;</li>
+                      <li>Description: The attachment file must be in either GIF, JPEG, TIFF or PDF format therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Attachment</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Non PDF, TIFF, JPEG or GIF</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.formatdescription.error&rsquo;</li>
+                      <li>Description: The attachment file must be in either GIF, JPEG, TIFF or PDF format therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Attachment Service 03</li>
+          <li>Test purpose: Lodge an attachment (incorrect size)</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.filesize.error&rsquo;</li>
+                      <li>Description: The attached file exceeds the maximum permitted file size of 20.0 MB</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.filesize.error&rsquo;</li>
+                      <li>Description: The attached file exceeds the maximum permitted file size of 20.0 MB</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.filesize.error&rsquo;</li>
+                      <li>Description: The attached file exceeds the maximum permitted file size of 20.0 MB</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Additional provider filter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.filesize.error&rsquo;</li>
+                      <li>Description: The attached file exceeds the maximum permitted file size of 20.0 MB</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any valid Id</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.filesize.error&rsquo;</li>
+                      <li>Description: The attached file exceeds the maximum permitted file size of 20.0 MB</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.filesize.error&rsquo;</li>
+                      <li>Description: The attached file exceeds the maximum permitted file size of 20.0 MB</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Attachment</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">File is over 20.0 MB</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.filesize.error&rsquo;</li>
+                      <li>Description: The attached file exceeds the maximum permitted file size of 20.0 MB</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Attachment Service 04</li>
+          <li>Test purpose: Lodge an attachment (secured PDF)</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.pdf.security&rsquo;</li>
+                      <li>Description: Attachments in PDF format must be unsecured PDFs therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.pdf.security&rsquo;</li>
+                      <li>Description: Attachments in PDF format must be unsecured PDFs therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.pdf.security&rsquo;</li>
+                      <li>Description: Attachments in PDF format must be unsecured PDFs therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Additional provider filter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.pdf.security&rsquo;</li>
+                      <li>Description: Attachments in PDF format must be unsecured PDFs therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testPDFsecured</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.pdf.security&rsquo;</li>
+                      <li>Description: Attachments in PDF format must be unsecured PDFs therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.pdf.security&rsquo;</li>
+                      <li>Description: Attachments in PDF format must be unsecured PDFs therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Attachment</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any valid file - this is taken in but not used for this test</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.pdf.security&rsquo;</li>
+                      <li>Description: Attachments in PDF format must be unsecured PDFs therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Attachment Service 05</li>
+          <li>Test purpose: Lodge an attachment (non standard TIFF)</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.tiff.compatibility&rsquo;</li>
+                      <li>Description: The attached TIFF file violated the TIFF standards and therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.tiff.compatibility&rsquo;</li>
+                      <li>Description: The attached TIFF file violated the TIFF standards and therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.tiff.compatibility&rsquo;</li>
+                      <li>Description: The attached TIFF file violated the TIFF standards and therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Additional provider filter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.tiff.compatibility&rsquo;</li>
+                      <li>Description: The attached TIFF file violated the TIFF standards and therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testfailTIFFstandards</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.tiff.compatibility&rsquo;</li>
+                      <li>Description: The attached TIFF file violated the TIFF standards and therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.tiff.compatibility&rsquo;</li>
+                      <li>Description: The attached TIFF file violated the TIFF standards and therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Attachment</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any valid file - this is taken in but not used for this test</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.tiff.compatibility&rsquo;</li>
+                      <li>Description: The attached TIFF file violated the TIFF standards and therefore your attachment cannot be accepted.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      <ul class="govuk-list govuk-!-font-size-14">
+        <li>Test: Attachment Service 06</li>
+        <li>Test purpose: Lodge an attachment (invalid application message ID)</li>
+      </ul>
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.record.not.found&rsquo;</li>
+                      <li>Description: Application Message ID does not exist for this business unit and eDRS request type</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.record.not.found&rsquo;</li>
+                      <li>Description: Application Message ID does not exist for this business unit and eDRS request type</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.record.not.found&rsquo;</li>
+                      <li>Description: Application Message ID does not exist for this business unit and eDRS request type</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Additional provider filter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.record.not.found&rsquo;</li>
+                      <li>Description: Application Message ID does not exist for this business unit and eDRS request type</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any valid Id</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.record.not.found&rsquo;</li>
+                      <li>Description: Application Message ID does not exist for this business unit and eDRS request type</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.record.not.found&rsquo;</li>
+                      <li>Description: Application Message ID does not exist for this business unit and eDRS request type</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Attachment</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any valid file - this is taken in but not used for this test</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.record.not.found&rsquo;</li>
+                      <li>Description: Application Message ID does not exist for this business unit and eDRS request type</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ApplicationMessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testinvalidapplicationmessageid</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.record.not.found&rsquo;</li>
+                      <li>Description: Application Message ID does not exist for this business unit and eDRS request type</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      <ul class="govuk-list govuk-!-font-size-14">
+        <li>Test: Attachment Service 07</li>
+        <li>Test purpose: Lodge an attachment (invalid attachment ID)</li>
+      </ul>
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.attachmentid.notfound&rsquo;</li>
+                      <li>Description: Attachment ID does not match a document associated with the application</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.attachmentid.notfound&rsquo;</li>
+                      <li>Description: Attachment ID does not match a document associated with the application</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.attachmentid.notfound&rsquo;</li>
+                      <li>Description: Attachment ID does not match a document associated with the application</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Additional provider filter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.attachmentid.notfound&rsquo;</li>
+                      <li>Description: Attachment ID does not match a document associated with the application</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testattachmentidmatches</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.attachmentid.notfound&rsquo;</li>
+                      <li>Description: Attachment ID does not match a document associated with the application</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.attachmentid.notfound&rsquo;</li>
+                      <li>Description: Attachment ID does not match a document associated with the application</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">ProductType</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Attachment</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any valid file - this is taken in but not used for this test</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Code: &lsquo;bg.attachment.attachmentid.notfound&rsquo;</li>
+                      <li>Description: Attachment ID does not match a document associated with the application</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      <ul class="govuk-list govuk-!-font-size-14">
+        <li>Test: Attachment Service 08</li>
+        <li>Test purpose: Lodge an attachment</li>
+      </ul>
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: Your attachment has been received</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: Your attachment has been received</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: Your attachment has been received</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Additional provider filter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: Your attachment has been received</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any valid Id</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: Your attachment has been received</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>ProductType</li>
+                      <li>Avoid any data items mentioned in the above examples as the test will not run correctly</li>
+                    </ul>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">All eligible data</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: Your attachment has been received</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>ProductType</li>
+                      <li>Avoid any data items mentioned in the above examples as the test will not run correctly</li>
+                    </ul>
+                  </td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Attachment</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any valid file - this is taken in but not used for this test</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>MessageDescription: Your attachment has been received</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h2 id="2-attachment-service-polling-service">2. Attachment Service Polling Service</h2>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      <ul class="govuk-list govuk-!-font-size-14">
+        <li>Test: Attachment Service Poll 01</li>
+        <li>Test purpose: Lodge an attachment containing suspected virus</li>
+      </ul>
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Reason: ”A suspected virus has been detected therefore your attachment cannot be accepted.”</li>
+                      <li>Code: bg.drs.virus</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Reason: ”A suspected virus has been detected therefore your attachment cannot be accepted.”</li>
+                      <li>Code: bg.drs.virus</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Reason: ”A suspected virus has been detected therefore your attachment cannot be accepted.”</li>
+                      <li>Code: bg.drs.virus</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Additional provider filter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Reason: ”A suspected virus has been detected therefore your attachment cannot be accepted.”</li>
+                      <li>Code: bg.drs.virus</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testvirusscanning</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Reason: ”A suspected virus has been detected therefore your attachment cannot be accepted.”</li>
+                      <li>Code: bg.drs.virus</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      <ul class="govuk-list govuk-!-font-size-14">
+        <li>Test: Attachment Service Poll 02</li>
+        <li>Test purpose: Previous attachment accepted</li>
+      </ul>
+    </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: “Your attachment has been accepted.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: “Your attachment has been accepted.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: “Your attachment has been accepted.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Additional provider filter</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any schema valid value</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: “Your attachment has been accepted.”</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">MessageId</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any valid Id</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>MessageDetails: “Your attachment has been accepted.”</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

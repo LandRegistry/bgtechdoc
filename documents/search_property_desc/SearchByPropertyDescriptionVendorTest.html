@@ -1,0 +1,2593 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Search by Property Description - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/search_property_desc/SearchByPropertyDescriptionVendorTest.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Search by Property Description - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/search_property_desc/SearchByPropertyDescriptionVendorTest.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Search by Property Description" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/search_property_desc/SearchByPropertyDescriptionVendorTest.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#search-by-property-description-vendor-test-data-v1-0"><span>Search by Property Description Vendor Test Data V1.0</span></a>
+    <ul>
+      <li>
+        <a href="#1a-undertake-a-search-using-the-property-description-single-result"><span>1a. Undertake a search using the property description. Single result</span></a>
+      </li>
+      <li>
+        <a href="#1b-out-of-hours-using-building-number-street-and-city-name"><span>1b. Out of hours using building number, street and city name</span></a>
+      </li>
+      <li>
+        <a href="#1c-poll-success-for-search-using-building-number-street-and-city-name"><span>1c. Poll success for search using building number, street and city name</span></a>
+      </li>
+      <li>
+        <a href="#2a-undertake-a-search-using-the-property-description-single-result"><span>2a. Undertake a search using the property description. Single result</span></a>
+      </li>
+      <li>
+        <a href="#2b-out-of-hours-using-building-number-street-name-and-city-name"><span>2b. Out of hours using building number, street name and city name</span></a>
+      </li>
+      <li>
+        <a href="#2c-poll-success-for-search-using-building-number-street-name-and-city-name"><span>2c. Poll success for search using building number, street name and city name</span></a>
+      </li>
+      <li>
+        <a href="#3-undertake-a-search-using-the-property-description-multiple-results"><span>3. Undertake a search using the property description. Multiple results</span></a>
+      </li>
+      <li>
+        <a href="#4-search-against-address-with-no-properties"><span>4. Search against address with no properties</span></a>
+      </li>
+      <li>
+        <a href="#5-too-many-properties-found"><span>5. Too many properties found</span></a>
+      </li>
+      <li>
+        <a href="#6-search-using-schema-invalid-postcode"><span>6. Search using schema invalid postcode</span></a>
+      </li>
+      <li>
+        <a href="#7-search-using-invalid-postcode"><span>7. Search using invalid postcode</span></a>
+      </li>
+      <li>
+        <a href="#8-search-using-insufficient-address-details"><span>8. Search using insufficient address details</span></a>
+      </li>
+      <li>
+        <a href="#9-access-denied-locked-password"><span>9. Access denied. Locked password</span></a>
+      </li>
+      <li>
+        <a href="#10-access-denied-account-not-activated"><span>10. Access denied. Account not activated</span></a>
+      </li>
+      <li>
+        <a href="#poll-out-of-hours"><span>Poll out of hours</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/search_property_description/index.html">Back to Search by Property Description</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="search-by-property-description-vendor-test-data-v1-0">Search by Property Description Vendor Test Data V1.0</h1>
+
+<hr>
+<p>Note: All tests require the minimum data items (as per the schemas).</p>
+<p>This will actually be ignored by the system but is needed to pass XML validation.</p>
+<p>Items highlighted in <span class="hmlr-mark-highlight" role="mark">red</span> in the test documentation are needed for the test to return the correct response.</p>
+<h2 id="1a-undertake-a-search-using-the-property-description-single-result">1a. Undertake a search using the property description. Single result</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the Case Management System (CMS).</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name / house</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number / flat</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">99</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">TQ56 4HY</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="1b-out-of-hours-using-building-number-street-and-city-name">1b. Out of hours using building number, street and city name</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">pollST500681</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name / house</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number / flat</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">99</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Flake Avenue</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Torquay</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;Service is not currently available. System has queued your request, please poll at specified time.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="1c-poll-success-for-search-using-building-number-street-and-city-name">1c. Poll success for search using building number, street and city name</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">pollST500681</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="2a-undertake-a-search-using-the-property-description-single-result">2a. Undertake a search using the property description. Single result</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name / house</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number / flat</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">71</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Allerburn Lea</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Alnwick</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="2b-out-of-hours-using-building-number-street-name-and-city-name">2b. Out of hours using building number, street name and city name</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">pollND66318</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name / house</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number / flat</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">71</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Allerburn Lea</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Alnwick</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="2c-poll-success-for-search-using-building-number-street-name-and-city-name">2c. Poll success for search using building number, street name and city name</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">pollND66318</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="3-undertake-a-search-using-the-property-description-multiple-results">3. Undertake a search using the property description. Multiple results</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name / house</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number / flat</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">27</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Church Road</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Exeter</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;30&rsquo;</li>
+                    <li>Generation of the following information:</li>
+                    <li>
+                        <ul>
+                            <li>external reference number</li>
+                            <li>title number</li>
+                            <li>tenure</li>
+                            <li>building name and/or building number</li>
+                            <li>street name</li>
+                            <li>city name</li>
+                            <li>postcode</li>
+                        </ul>
+                    </li>
+                    <li>for each matching result is returned to the <abbr title="Case Management System">CMS</abbr>.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="4-search-against-address-with-no-properties">4. Search against address with no properties</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.nopropertyfound</strong></li>
+                    <li>Message: &ldquo;<strong>No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.nopropertyfound</strong></li>
+                    <li>Message: &ldquo;<strong>No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.nopropertyfound</strong></li>
+                    <li>Message: &ldquo;<strong>No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.nopropertyfound</strong></li>
+                    <li>Message: &ldquo;<strong>No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name / house</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.nopropertyfound</strong></li>
+                    <li>Message: &ldquo;<strong>No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number / flat</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.nopropertyfound</strong></li>
+                    <li>Message: &ldquo;<strong>No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.nopropertyfound</strong></li>
+                    <li>Message: &ldquo;<strong>No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Bristol</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.nopropertyfound</strong></li>
+                    <li>Message: &ldquo;<strong>No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.nopropertyfound</strong></li>
+                    <li>Message: &ldquo;<strong>No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.nopropertyfound</strong></li>
+                    <li>Message: &ldquo;<strong>No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.nopropertyfound</strong></li>
+                    <li>Message: &ldquo;<strong>No title number has been identified from the data supplied. This does not necessarily mean that a register of a title does not exist but only that insufficient data has matched.</strong>&rdquo; returned</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="5-too-many-properties-found">5. Too many properties found</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.toomanyproperties</strong></li>
+                    <li>Message: &ldquo;<strong>The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.toomanyproperties</strong></li>
+                    <li>Message: &ldquo;<strong>The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.toomanyproperties</strong></li>
+                    <li>Message: &ldquo;<strong>The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.toomanyproperties</strong></li>
+                    <li>Message: &ldquo;<strong>The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name / house</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.toomanyproperties</strong></li>
+                    <li>Message: &ldquo;<strong>The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number / flat</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.toomanyproperties</strong></li>
+                    <li>Message: &ldquo;<strong>The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.toomanyproperties</strong></li>
+                    <li>Message: &ldquo;<strong>The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Cardiff</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.toomanyproperties</strong></li>
+                    <li>Message: &ldquo;<strong>The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.toomanyproperties</strong></li>
+                    <li>Message: &ldquo;<strong>The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.toomanyproperties</strong></li>
+                    <li>Message: &ldquo;<strong>The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.properties.toomanyproperties</strong></li>
+                    <li>Message: &ldquo;<strong>The property address you entered has matched with a large number of properties on our database. Please request again with refined address details.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="6-search-using-schema-invalid-postcode">6. Search using schema invalid postcode</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Schema fault returned.</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Schema fault returned.</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Schema fault returned.</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Schema fault returned.</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name / house</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Schema fault returned.</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number / flat</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Schema fault returned.</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Schema fault returned.</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Schema fault returned.</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Invalid format postcode</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Schema fault returned.</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Schema fault returned.</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Schema fault returned.</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="7-search-using-invalid-postcode">7. Search using invalid postcode</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.postcode.invalid</strong></li>
+                    <li>Message: &ldquo;<strong>Please provide valid postcode</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.postcode.invalid</strong></li>
+                    <li>Message: &ldquo;<strong>Please provide valid postcode</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.postcode.invalid</strong></li>
+                    <li>Message: &ldquo;<strong>Please provide valid postcode</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.postcode.invalid</strong></li>
+                    <li>Message: &ldquo;<strong>Please provide valid postcode</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name / house</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.postcode.invalid</strong></li>
+                    <li>Message: &ldquo;<strong>Please provide valid postcode</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number / flat</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.postcode.invalid</strong></li>
+                    <li>Message: &ldquo;<strong>Please provide valid postcode</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.postcode.invalid</strong></li>
+                    <li>Message: &ldquo;<strong>Please provide valid postcode</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.postcode.invalid</strong></li>
+                    <li>Message: &ldquo;<strong>Please provide valid postcode</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">PL1 8XX</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.postcode.invalid</strong></li>
+                    <li>Message: &ldquo;<strong>Please provide valid postcode</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.postcode.invalid</strong></li>
+                    <li>Message: &ldquo;<strong>Please provide valid postcode</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.postcode.invalid</strong></li>
+                    <li>Message: &ldquo;<strong>Please provide valid postcode</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="8-search-using-insufficient-address-details">8. Search using insufficient address details</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.invalid.property.search.criteria</strong></li>
+                    <li>Message: &ldquo;<strong>Insufficient address details. Please provide flat/house and postcode OR flat, street and town OR house, street and town</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.invalid.property.search.criteria</strong></li>
+                    <li>Message: &ldquo;<strong>Insufficient address details. Please provide flat/house and postcode OR flat, street and town OR house, street and town</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.invalid.property.search.criteria</strong></li>
+                    <li>Message: &ldquo;<strong>Insufficient address details. Please provide flat/house and postcode OR flat, street and town OR house, street and town</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.invalid.property.search.criteria</strong></li>
+                    <li>Message: &ldquo;<strong>Insufficient address details. Please provide flat/house and postcode OR flat, street and town OR house, street and town</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Building name / house</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.invalid.property.search.criteria</strong></li>
+                    <li>Message: &ldquo;<strong>Insufficient address details. Please provide flat/house and postcode OR flat, street and town OR house, street and town</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">Building number / flat</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.invalid.property.search.criteria</strong></li>
+                    <li>Message: &ldquo;<strong>Insufficient address details. Please provide flat/house and postcode OR flat, street and town OR house, street and town</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.invalid.property.search.criteria</strong></li>
+                    <li>Message: &ldquo;<strong>Insufficient address details. Please provide flat/house and postcode OR flat, street and town OR house, street and town</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.invalid.property.search.criteria</strong></li>
+                    <li>Message: &ldquo;<strong>Insufficient address details. Please provide flat/house and postcode OR flat, street and town OR house, street and town</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.invalid.property.search.criteria</strong></li>
+                    <li>Message: &ldquo;<strong>Insufficient address details. Please provide flat/house and postcode OR flat, street and town OR house, street and town</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.invalid.property.search.criteria</strong></li>
+                    <li>Message: &ldquo;<strong>Insufficient address details. Please provide flat/house and postcode OR flat, street and town OR house, street and town</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;20&rsquo;</li>
+                    <li>External reference</li>
+                    <li><strong>bg.invalid.property.search.criteria</strong></li>
+                    <li>Message: &ldquo;<strong>Insufficient address details. Please provide flat/house and postcode OR flat, street and town OR house, street and town</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="9-access-denied-locked-password">9. Access denied. Locked password</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">BGUser002</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;Your account is locked. Please reset your password using Portal.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">landreg001</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;Your account is locked. Please reset your password using Portal.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;Your account is locked. Please reset your password using Portal.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;Your account is locked. Please reset your password using Portal.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name / house</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;Your account is locked. Please reset your password using Portal.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number / flat</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;Your account is locked. Please reset your password using Portal.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;Your account is locked. Please reset your password using Portal.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;Your account is locked. Please reset your password using Portal.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;Your account is locked. Please reset your password using Portal.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;Your account is locked. Please reset your password using Portal.&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Your account is locked. Please reset your password using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="10-access-denied-account-not-activated">10. Access denied. Account not activated</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">BGUser006</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Please activate your account using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">landreg001</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Please activate your account using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Please activate your account using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Please activate your account using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name / house</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Please activate your account using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number / flat</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Please activate your account using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Please activate your account using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Please activate your account using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property address</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Please activate your account using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Please activate your account using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Any schema valid input</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>FaultCode = &lsquo;soapenv:Server&rsquo;</li>
+                    <li>Message: &ldquo;<strong>Please activate your account using Portal.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="poll-out-of-hours">Poll out of hours</h2>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">BGUser001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Password</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">landreg001</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User locale</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">en</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Login details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">polloutofhours</span></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>TypeCode = &lsquo;10&rsquo;</li>
+                    <li>Unique ID</li>
+                    <li>ExpectedResponseDateTime</li>
+                    <li>Message description &ldquo;<strong>Service is not currently available. System has queued your request, please poll at specified time.</strong>&rdquo; returned.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

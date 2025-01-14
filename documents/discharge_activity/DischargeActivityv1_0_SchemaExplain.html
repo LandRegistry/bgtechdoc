@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Discharge Activity - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/discharge_activity/DischargeActivityv1_0_SchemaExplain.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Discharge Activity - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/discharge_activity/DischargeActivityv1_0_SchemaExplain.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Discharge Activity" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/discharge_activity/DischargeActivityv1_0_SchemaExplain.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#discharge-activity-vendor-test-data-v1-0"><span>Discharge Activity Vendor Test Data V1.0</span></a>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/discharge_activity/index.html">Back to Discharge Activity</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="discharge-activity-vendor-test-data-v1-0">Discharge Activity Vendor Test Data V1.0</h1>
+
+<hr>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Data input field</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Extract of relevant code from schema</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Mandatory</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Minimum value</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Maximum value</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Has a pattern constraint</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">XML datatype</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-size-14">MessageID</th>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType name="<strong>Q1IdentifierType</strong>"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>MessageID</strong>" type="<strong>Q1TextType</strong>" minOccurs="1" maxOccurs="1"&gt;
+
+&lt;xs:complexType name="<strong>Q1TextType</strong>"&gt;
+    
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q1TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q1TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="5" /&gt;
+        &lt;xs:maxLength value="50" /&gt;
+        &lt;xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">This is the element that carries the message ID. The message ID must be unique and must meet the pattern constraint.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">5</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">50</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-size-14">RequestDischargeActivityV1_0Type</th>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType name="RequestDischargeActivityV1_0Type"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>ID</strong>" type="<strong>Q1IdentifierType</strong>" minOccurs="1" maxOccurs="1" /&gt;
+        &lt;xs:element name="<strong>Product</strong>" type="<strong>Q1ProductType</strong>" minOccurs="1" maxOccurs="1"&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">This is the main container for carrying the message ID and an instance of Q1ProductType.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-size-14">Q1ProductType</th>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType name="<strong>Q1ProductType</strong>"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>ExternalReference</strong>" type="<strong>Q1ExternalReferenceType</strong>" minOccurs="1" maxOccurs="1"&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="<strong>SubjectProperty</strong>" type="Q1SubjectPropertyType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">This element holds the relevant items to enable the search to be completed.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-size-14">Q1SubjectPropertyType</th>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType name="<strong>Q1SubjectPropertyType</strong>"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>TitleNumber</strong>" type="<strong>Q2TextType</strong>" minOccurs="1" maxOccurs="1"&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="<strong>ContinueIfTitleIsClosedAndContinuedIndicator</strong>" type="<strong>IndicatorType</strong>" minOccurs="1" maxOccurs="1"&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="<strong>ChargeDate</strong>" type="<strong>DateType</strong>" minOccurs="0" maxOccurs="1"&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Contains the title number required to search with, along with an optional charge date. This section </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-size-14">ExternalReference</th>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>ExternalReference</strong>" type="<strong>Q1ExternalReferenceType</strong>" minOccurs="1" maxOccurs="1"&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>Q1ExternalReferenceType</strong>"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>Reference</strong>" type="<strong>ReferenceTextContentType</strong>" minOccurs="1" maxOccurs="1"&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="<strong>AllocatedBy</strong>" type="<strong>Q3TextType</strong>" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:element name="<strong>Description</strong>" type="<strong>Q3TextType</strong>" minOccurs="0" maxOccurs="1"&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>ReferenceTextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="25" /&gt;
+        &lt;xs:pattern value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;]*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+
+&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="Q3TextContentType" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>This element carries the external reference (this is a reference relevant to the user only) split into three parts.</p>
+                <ul class="govuk-list govuk-!-font-size-14">
+                    <li>Reference number</li>
+                    <li>Allocated by</li>
+                    <li>Description</li>
+                </ul>
+                <p>The allocated by and description fields are not currently used and will just be returned (if completed) in the response the same as they were sent to Land Registry.</p>
+                <p>These extra fields may be useful for user&rsquo;s tracking of cases.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">25</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-size-14">TitleNumber</th>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>TitleNumber</strong>" type="<strong>Q2TextType</strong>" minOccurs="1" maxOccurs="1"&gt;
+&lt;xs:element&gt;
+
+&lt;xs:complexType name="<strong>Q2TextType</strong>"&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q2TextContentType</strong>"&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q2TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;minLength value="1" /&gt;
+        &lt;maxLength value="9" /&gt;
+        &lt;pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">This element is for setting up the title number required for the search.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">9</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-size-14">ContinueIfTitleIsClosedAndContinuedIndicator</th>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>ContinueIfTitleIsClosedAndContinuedIndicator</strong>" type="<strong>IndicatorType</strong>" minOccurs="1" maxOccurs="1"&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>IndicatorType</strong>"&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:boolean" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Closed and continued indicator element is there so that if the subject title number is closed, we will follow any chain of open title numbers to find the latest one. The enquiry will then be made using the newly found title.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">No</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:boolean</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-size-14">ChargeDate</th>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>ChargeDate</strong>" type="<strong>DateType</strong>" minOccurs="0" maxOccurs="1"&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>DateType</strong>"&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:date" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">The date of a charge, that you want to check, that has been discharged within the last thirty calendar days.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">No</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">YYYY-MM-DD</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:date</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

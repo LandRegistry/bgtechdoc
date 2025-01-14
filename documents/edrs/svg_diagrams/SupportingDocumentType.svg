@@ -1,0 +1,74 @@
+<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7"
+            refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+        </marker>
+    </defs>
+
+    <!-- DocumentType -->
+    <rect x="30" y="4" width="240" height="50" class="small-box"></rect>
+    <text x="40" y="20" class="title">DocumentType</text>
+    <text x="40" y="44" class="content">- CertifiedCopy <tspan dx="15">[1..1] CertifiedTypeContent</tspan></text>
+
+    <!-- SupportingDocumentType -->
+    <rect x="30" y="100" width="270" height="70" class="small-box"></rect>
+    <text x="40" y="120" class="title">SupportingDocumentType</text>
+    <text x="40" y="140" class="content">- DocumentId</text>
+    <text x="150" y="140" class="content">[1..1] positiveInteger</text>
+    <text x="40" y="160" class="content">- DocumentName</text>
+    <text x="150" y="160" class="content">[1..1] DocumentNameContent</text>
+
+    <!-- ApplicationTypeContent -->
+    <rect x="350" y="100" width="150" height="30" class="small-box"></rect>
+    <text x="360" y="120" class="title">DocumentNameContent</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - DocumentType -->
+    <line x1="30" y1="29" x2="270" y2="29" stroke="lightgrey"></line>
+    <line x1="30" y1="31" x2="270" y2="31" stroke="lightgrey"></line>
+
+    <!-- Table Lines - SupportingDocumentType -->
+    <line x1="30" y1="125" x2="300" y2="125" stroke="lightgrey"></line>
+    <line x1="30" y1="127" x2="300" y2="127" stroke="lightgrey"></line>
+    <line x1="30" y1="147" x2="300" y2="147" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="135" y1="100" x2="135" y2="74" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="300" y1="155" x2="350" y2="115" class="line"></line>
+
+</svg>

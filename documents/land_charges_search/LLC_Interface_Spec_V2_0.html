@@ -1,0 +1,2038 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Local land charges search service - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/land_charges_search/LLC_Interface_Spec_V2_0.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Local land charges search service - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/land_charges_search/LLC_Interface_Spec_V2_0.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Local land charges search service" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/land_charges_search/LLC_Interface_Spec_V2_0.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#local-land-charges-search-service-interface-specification"><span>Local land charges search service interface specification</span></a>
+    <ul>
+      <li>
+        <a href="#local-land-charges-search-service"><span>Local land charges search service</span></a>
+        <ul>
+          <li>
+            <a href="#1-background"><span>1. Background</span></a>
+          </li>
+          <li>
+            <a href="#2-purpose"><span>2. Purpose</span></a>
+          </li>
+          <li>
+            <a href="#3-scope"><span>3. Scope</span></a>
+          </li>
+          <li>
+            <a href="#4-definitions-acronyms-and-abbreviations"><span>4. Definitions, Acronyms and Abbreviations</span></a>
+          </li>
+          <li>
+            <a href="#5-interface-specification"><span>5. Interface Specification</span></a>
+          </li>
+          <li>
+            <a href="#6-xml-requirements"><span>6. XML Requirements</span></a>
+          </li>
+          <li>
+            <a href="#7-business-gateway"><span>7. Business Gateway</span></a>
+          </li>
+          <li>
+            <a href="#8-llc-search-v2-0-specific-messages"><span>8. LLC Search V2_0 Specific Messages</span></a>
+          </li>
+          <li>
+            <a href="#9-xml-schemas"><span>9. Xml Schemas</span></a>
+          </li>
+          <li>
+            <a href="#10-local-land-charges-search-request-v2-0"><span>10. Local Land Charges search request (V2_0)</span></a>
+          </li>
+          <li>
+            <a href="#11-local-land-charges-search-response-v2-0"><span>11. Local Land Charges Search Response (V2_0)</span></a>
+          </li>
+          <li>
+            <a href="#12-glossary-or-terms-and-abbreviations"><span>12. Glossary Or Terms and Abbreviations</span></a>
+          </li>
+          <li>
+            <a href="#13-annex"><span>13. Annex</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/local_land_charges_search/index.html">Back to Local Land Charges Search</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="local-land-charges-search-service-interface-specification">Local land charges search service interface specification</h1>
+
+<hr>
+<h2 id="local-land-charges-search-service">Local land charges search service</h2>
+<h3 id="1-background">1. Background</h3>
+<p>This document provides the interface requirements for the Local Land Charges Search V2_0 Business Gateway service. V2_0
+has added functionality to provide a response in alternative formats. It is anticipated the customers will then present
+this data to their end users in a format appropriate to their requirements. Should users require both a PDF and alternative
+response then it will be necessary to complete a <a href="#Request message structure">Refresh search</a> using the ‘Search Reference’ from the initial search.
+The Refresh search does not incur a further charge.</p>
+<h3 id="2-purpose">2. Purpose</h3>
+<p>The purpose of this document is to specify the interface between HM Land Registry and a Business Gateway Customer,
+indicating the message layouts and XML schemas that must be adhered to in order to communicate with HMLR, so that data
+may be exchanged between the organisations to effect Business Gateway. The XML schemas associated with this interface
+represent the authoritative definition of the interface and takes precedence over any information in this document.
+The schemas will be issued with this document, along with sample requests and responses. See Annex for <a href="#Sample Messages">samples</a>.</p>
+<h3 id="3-scope">3. Scope</h3>
+<p>The scope of this document encompasses the Local Land Charges Search V2_0 interface and XML message format.</p>
+<h3 id="4-definitions-acronyms-and-abbreviations">4. Definitions, Acronyms and Abbreviations</h3>
+<p>Any specific terms and abbreviations are further explained in the Glossary.</p>
+<h3 id="5-interface-specification">5. Interface Specification</h3>
+<p>This section covers general information about the configuration and use of the interface.</p>
+<h3 id="6-xml-requirements">6. XML Requirements</h3>
+<p>The XML schema attached as part of this document is compliant with ‘XML Schema W3C Recommendation’, 04 Feb 2004 and
+e-GIF standards. The XML version is 2.0 and encoding is UTF-8. In an XML message, use of the characters &amp;, &lt;, “ and ‘ is
+constrained. The characters &amp; and &lt; are permitted to represent themselves only in Comments, Processing Instructions and
+CDATA sections. The characters “ and ‘ cannot appear in an attribute if they are being used to demarcate the value.</p>
+<p>Escape sequences are used to represent these characters when required. These escape sequences are:</p>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Character</th>
+                  <th scope="col" class="govuk-table__header govuk-!-font-size-14">Escape sequence</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&amp</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&ldquo;&amp;amp;&rdquo;</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&lt;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&ldquo;&amp;lt;&rdquo;</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&gt;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&ldquo;&amp;gt;&rdquo;</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&ldquo;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&rdquo;&amp;quot;&ldquo;</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&lsquo;</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">&rdquo;&amp;apos;&ldquo;</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<p>Within CDATA blocks the above characters are permitted and escape sequences must not be used. CDATA blocks are used for attachments to messages.</p>
+<h3 id="7-business-gateway">7. Business Gateway</h3>
+<p>Business Gateway Process Diagram</p>
+<p><html>
+  <body>
+    <img src="svg_diagrams/BusinessGatewayProcessDiagram.svg" alt="Business Gateway processs diagram">
+  </body>
+</html></p>
+<p>Both the LLCSearchRequestV2_0 and the Poll Request messages are acknowledged with a LLCSearchResponseV2_0 message.</p>
+<h3 id="8-llc-search-v2-0-specific-messages">8. LLC Search V2_0 Specific Messages</h3>
+
+<ul>
+  <li>Schema:</li>
+  <ul class="govuk-list govuk-!-font-size-14">
+    <li><strong>LLCSearchRequestV2_0</strong></li>
+    <li><strong>LLCSearchResponseV2_0</strong></li>
+  </ul>
+  <li>Description:</li>
+  <ul class="govuk-list govuk-!-font-size-14">
+    <li>Local Land Charges Search request identifies any Local Land Charges within the search area identified by Title number or by GeoJson data. If a refresh search of an exiting Local Land Charges search is made within 6 months of the original request, then this is made using the stored search criteria from the original request.</li>
+    <ul>
+      <li>The response indicates either:</li>
+      <ul>
+        <li>A success response includes a PDF or alternative requested format representing the LLC1 search.</li>
+        <li>A system error.</li>
+        <li>A rejection response with details of why the search was rejected.</li>
+      </ul>
+    </ul>
+  </ul>
+</ul>
+<h3 id="9-xml-schemas">9. Xml Schemas</h3>
+<p>Current list of XML Schemas</p>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Name</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Version</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">LLCSearchRequestV2_0</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">2.0</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">LLCSearchResponseV2_0</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">2.0</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">PollRequest</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">1.0</td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+<p>See Annex for details of the individual <a href="#Schemas">Schemas</a> relating to the Online Owner Verification service.</p>
+<h3 id="10-local-land-charges-search-request-v2-0">10. Local Land Charges search request (V2_0)</h3>
+<p>The LLCSearchRequestV2_0 message uses the namespace http://www.landregistry.gov.uk/LLC/LLCSearchRequestV2_0 and must be valid with respect to the XML Schema published by HM Land Registry for that namespace.</p>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">LLCSearchRequestV2_0</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">This message allows Customers to submit Local Land Charges Search Requests to HMLR.</td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="10-1-request-message-structure">10.1 Request message structure</h4>
+<p>The request message comprises generic header information which is common with requests for other services, plus
+information specific to the LLCSearchRequestV2_0. This is illustrated below:</p>
+<p><html>
+  <body>
+    <img src="svg_diagrams/RequestMessageStructure.svg" alt="Structure of a request for the Local land Charges Search service">
+  </body>
+</html></p>
+<p>The options are for the refresh of an existing search within 6 months of the original request or a new search. A new search can be either using a Land Registry Title number or GeoJson, both would include a Property description.</p>
+
+<div class="govuk-inset-text">Note: The Property description is used as additional information included on the result, but it is not verified or used for the actual search, only the Title number or GeoJson are used for the area of the search.</div>
+<h4 id="10-2-request-specific-elements">10.2 Request specific elements</h4>
+<p><html>
+  <body>
+    <img src="svg_diagrams/RequestSpecificElements.svg" alt="Specific elements of a Local Land Charges Search request">
+  </body>
+</html></p>
+<p>The request message breakdown is illustrated below:</p>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">Message Id</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">A unique reference associated with the application in the Case Management System</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">Reference</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference often associated with a case in Case Management System</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">FeeInPence</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Expected fee in pence</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14"><a id="RefreshSearchReference">RefreshSearchReference</a></td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">The RefreshSearchReference contains the SearchReference given in the response to the original search request. It is used to retrieve the original search criteria and provide a new search if within 6 months of the original search date.</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">TitleNumber</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Land Registry Title number will be used to identify the area of search required</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">GeoJson</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">GeoJson is used to identify coordinates of the search area required. It is included within a CDATA section to prevent this Character Data being parsed as markup.</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">PropertyDescription</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Text describing property being searched. This is included in the search result document, but the data is not verified or used to identify the search area.</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory (with TitleNumber search or GeoJson search)</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">ResponseFormat</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Provides the format user requires the response in. options are PDF, XML, JSON or CSV</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">Indicators</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Search Indicators to enable/disable specific checks. See <a href="#IndicatorType">IndicatorType</a> for more details.</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="10-2-1-options-to-define-area-of-search">10.2.1 Options to define area of search</h4>
+<p>A request comprises one of the following three options:</p>
+
+<ol>
+  <li>1. RefreshSearchReference (to refresh an existing search)</li>
+  <li>2. Title number search, plus PropertyDescription</li>
+  <li>3. GeoJson, plus PropertyDescription</li>
+</ol>
+<h4 id="10-2-2-indicatortype-request">10.2.2 IndicatorType (Request)</h4>
+<p>The ‘Indicators’ element may contain 0 or many IndicatorType elements. The value of these elements must be set to true or false in lowercase. If any of the IndicatorTypes are excluded from the Request message they will be set to the default values shown below.</p>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Indictor Type Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Value</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Default</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">ContinueIfOutOfHours</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">true</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Request will be lodged and processed when back in hours</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">x</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">ContinueIfOutOfHours</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">false</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Reject request if out of hours</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">✓</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">ContinueIfFeeExceedExpected</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">true</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Continue if fee exceeds the fee given in the request</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">✓</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell  govuk-!-font-size-14">ContinueIfFeeExceedsExpected</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">false</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">Reject if fee exceeds</td>
+              <td class="govuk-table__cell  govuk-!-font-size-14">x</td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+<h3 id="11-local-land-charges-search-response-v2-0">11. Local Land Charges Search Response (V2_0)</h3>
+<p>LLCSearchResponseV2_0 message uses the namespace http://www.landregistry.gov.uk/LLC/LLCSearchResponseV2_0 and must be valid with respect to the XML Schema published by HM Land Registry for that namespace.</p>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">LLCSearchResponseV2_0</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">This message allows HM Land Registry to send the Local Land Charges Search Response to the Customer.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="11-1-response-message-structure">11.1 Response message structure</h4>
+<p>The response message comprises generic information common with responses to other services, plus information specific to the LLCSearchResponseV2_0 response. This is illustrated below</p>
+<p><html>
+  <body>
+    <img src="svg_diagrams/LLCSearchResponseV2_0Type.svg" alt="Specific elements of a Local Land Charges Search response">
+  </body>
+</html></p>
+
+<hr>
+<p><html>
+  <body>
+    <img src="svg_diagrams/Q1GatewayResponseType.svg" alt="Generic elements of a Local Land Charges Search response that are common with responses to other Business Gateway Services">
+  </body>
+</html></p>
+<h4 id="11-2-response-specific-elements">11.2 Response specific elements</h4>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">TypeCode</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Used to identify the type of response that has been issued.
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>Acknowledgement: '30&rsquo;</li>
+                      <li>Rejection: &lsquo;20&rsquo;</li>
+                      <li>Result: &lsquo;30&rsquo;</li>
+                    </ul>
+                </td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Acknowledgement</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">This is the Business Gateway confirmation of receipt response</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Rejection</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">This is the Business Gateway rejection response</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Result</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">This is the Business Gateway success response</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="govuk-inset-text">Note: Either an acknowledgement, rejection or result message will be issued.</div>
+<p>The Acknowledgement message will be returned if the service is out of hours and the original request message had the indictor ContinueIfOutOfHours set to true.</p>
+<p>If for any reason a valid acknowledgement, rejection or response is not received by the originator (i.e. through network error, corruption or incorrectly prepared XML) there is no way for the server to know if it was successfully received or not. If this occurs the request can be sent again with the same MessageId and the original result will be returned. If HMLR did not receive the original request the system will process the request as a new one.</p>
+
+<div class="govuk-inset-text">Note: Any requests submitted with a duplicate MessageId will receive the last response for that MessageId regardless of the other criteria in the request.</div>
+<p>The acknowledgement response structure is illustrated below:</p>
+<p><html>
+  <body>
+    <img src="svg_diagrams/Q1AcknowledgementType.svg" alt="Structure of an acknowledgement response for the Local land Charges Search service">
+  </body>
+</html></p>
+<h4 id="11-3-acknowledgement-specific-elements">11.3 Acknowledgement specific elements</h4>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">UniqueID</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">A unique identifier used by the end user to get the status update of their request. This would be the same value as the MessageId from the request.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ExpectedResponseDateTime</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">This element will hold the expected date and time when Business Gateway will try to process the queued request. This element will contain date and time data in a GMT format.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">MessageDescription</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">This will be a String type element and will be used to return a message to the end user. See Annex for <a href="#Acknowledgement Message">acknowledgement</a> message text.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="11-4-rejection-response-structure">11.4 Rejection response structure</h4>
+<p>The purpose of the Rejection message is to inform the originator of the Request message that it has been rejected due to known circumstances.</p>
+<p><html>
+  <body>
+    <img src="svg_diagrams/Q1RejectionType.svg" alt="Structure of a rejection response from the Local Land Charges Search service">
+  </body>
+</html></p>
+
+<hr>
+<p><html>
+  <body>
+    <img src="svg_diagrams/Q1RejectionResponseType.svg" alt="Specific elements of the RejectionResponse field from a Local Land Charges Search rejection response">
+  </body>
+</html></p>
+<h4 id="11-5-rejection-specific-elements">11.5 Rejection specific elements</h4>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Reason</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">A description of the reason for rejection. See Annex for full list of <a href="#Rejection Codes">rejection reasons</a>.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Code</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">A code signifying the reason for rejection. See Annex for full list of <a href="#Rejection Codes">rejection codes</a>.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">OtherDescription</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">A free format text field to convey any further information about the rejection.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ValidationErrors</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Validation errors.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ExternalReference</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference often associated with a case in Case Management System and as provided in Reference element of request</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="11-6-result-response-structure">11.6 Result response structure</h4>
+<p><html>
+  <body>
+    <img src="svg_diagrams/Q1ResultsType.svg" alt="Structure of a result response from the Local Land Charges Search service">
+  </body>
+</html></p>
+<h4 id="11-7-result-key-elements">11.7 Result key elements</h4>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ExternalReference</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference often associated with a case in Case Management System and as provided in Reference element of request.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ActualPrice</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Fee charged in pence, which will be charged under the direct debit for the Business Unit associated to the user submitting the search.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">SearchArea</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Extent used to make search, will be displayed for alternate formats of JSON, CSV or XML.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Attachment</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">This will hold the search results in a PDF document (If not included then either Charges or ChargesAlternateFormat must be included).</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">SearchDateTime</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Date and time the search result was generated.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional *</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">SearchDescription</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Description as provided in request, not used to verify or create the response, but acts as a customer reference.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional *</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">NumberOfSearchesFound</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Integer value of number of Local Land Searches identified in search response.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional *</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Charges</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Multiple LocalLandChargeType elements each representing a separate Local Land Charge. These are only included if response requested as XML.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional 0-unbounded</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ChargesAlternateFormat</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">This contains alternative formats of either JSON or CSV within CDATA tags. Has attribute ‘format’ providing the format response is returned as.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">SearchReference</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">The HM Land Registry reference for this search response. This is then used for a refresh search in element <a href="#RefreshSearchReference">RefreshSearchReference</a>.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="govuk-inset-text">*Always present if alternative response format requested i.e. not a PDF response.</div>
+<h4 id="11-8-local-land-charges-data">11.8 Local Land Charges data</h4>
+<p>Multiple elements (LocalLandCharge) will each contain information for an individual Local Land Charge</p>
+<p><html>
+  <body>
+    <img src="svg_diagrams/LocalLandChargeType.svg" alt="Specific elements of the LocalLandCharge field from a Local Land Charges Search result response">
+  </body>
+</html></p>
+<h4 id="11-9-local-land-charge-content-common-charge-elements">11.9 Local Land Charge Content - common charge elements</h4>
+<p>See separate sections for <a href="#Land Compensation Charge">Land compensation charges</a>, <a href="#Financial Charge">Financial charges</a> and <a href="Light Obstruction Notice">Light Obstruction Notices</a>.
+These detail the specific elements relating to those specific charge types.</p>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">HMLRReference</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">HMLR unique reference to identify a specific charge.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">OriginatingAuthority</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">The name of the Minister of the Crown, government department local authority or other person by whom the charge is brought into existence.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">AuthorityReference</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Local Authorities reference.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">CreationDate</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Date charge created.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">RegistrationDate</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Date charge registered with HMLR.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Category</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Type of charge i.e. Planning</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ChargeSubCategory</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Type of charge sub category i.e. Planning notice.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Law</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Statutory Provision in Law defining this charge.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">LegalDocument</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Legal Document</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Location</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14"><a href="#Q1AddressType">Q1AddressType</a>. For Light Obstruction Notice, see <a href="#LocationDominantBuilding">LocationDominantBuilding</a>.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Description</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Supplementary information relating to the charge.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">SourceOfInformation</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">The location - physical or virtual - where relevant documents may be inspected</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Adjoining</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Boolean value if charge is adjoining searched area</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14"><a id="OtherData">OtherData</a></td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Included to enable additional data types to be added in the future as name/value pairs. Comprising elements DataLabel and Data. Used for additional LON applicant/address information whilst not restricted solely to this use. See <a href="#Light Obstruction Notice">Light obstruction notice (LON)</a>.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional 0..*</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ChargeExtent</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Extent of charge defined as GeoJson. Contained in <a href="#CData">CData</a>.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="11-9-1-land-compensation-charge">11.9.1 Land Compensation Charge</h4>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">LandSold</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Description of the land adjoining the retained land that was compulsorily acquired. (Section 8 charge)</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">WorksDone</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Description of the reason why the land adjoining the retained land was compulsorily acquired. (Section 8 charge).</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">AdvancePayment</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Amount already paid to the landowner from which the land was acquired. (Section 52 charge).</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">TotalCompensation</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">The total amount of compensation payable to the landowner from which the land was acquired. (Section 52 charge).</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">AgreedOrEstimated</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Description of the amount paid to the landowner, values either &lsquo;Agreed amount&rsquo; or &lsquo;Estimated amount&rsquo;. (Section 52 charge).</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="11-9-2-financial-charge">11.9.2 Financial Charge</h4>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Amount</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Amount originally secured by the Financial charge</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">InterestRate</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Rate of interest applicable to the amount the charge.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="11-9-3-light-obstruction-notice">11.9.3 Light Obstruction Notice</h4>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14"><a id="LocationDominantBuilding">LocationDominantBuilding</a></td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Charge address a <a href="#Q1AddressType">Q1AddressType</a></td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">AvailableDocument</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">See <a href="#DocumentType">DocumentType</a> below</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">InterestInLand</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">The capacity in which the applicant holds the land over which the acquisition of the right to light is prevented (The Servient Land).</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ApplicantName</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">The name of the individual or organisation applying for the light obstruction notice. There can be multiple applicants and further applicants will be identified in the <a href="#OtherData">OtherData</a> element with DataLabel ‘LON Applicant *’ where * will be the number of applicant i.e. LON Applicant 2. Data element will contain the applicant name value</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ApplicantAddress</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">The address of the first applicant <a href="#Q1AddressType">Q1AddressType</a>. For multiple ApplicantName, subsequent applicant addresses will be shown in OtherData. The DataLabel will be ‘LON Applicant Address *’ where * will be the number of applicant i.e. LON Applicant Address 2. Data element will contain the applicant address value as a string, not a formatted address.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">ServientLandDevelopment</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14"><a href="#ServientLandDevelopmentType">ServientLandDevelopmentType</a> - details servient land.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p><a id="DocumentType">DocumentType</a></p>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Document</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Documents will include ‘Form A and colour plan’ and either a ‘Temporary certificate’ or ‘Definitive certificate’. Other documents maybe ‘Form B’ and ‘Court order’.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">StarDate</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Start date of wither Temporary certificate or Definitive certificate.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">EndDate</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">End date of either Temporary certificate or Definitive certificate.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p><a id="ServientLandDevelopmentType">ServientLandDevelopmentType</a></p>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Height</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">The height of the notional structure i.e. 20 metres, or &lsquo;Unlimited height&rsquo;.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">CoversAllOrPartOfExtent</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Will be &quot;All of the extent&rdquo; or where available explanatory text of part effected.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="11-9-4-q1addresstype">11.9.4 Q1AddressType</h4>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">PostcadeZone</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Contains Postcode element with postcode text value.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">AddressLine</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Contains multiple Line elements with text values representing lines of address.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Optional</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="11-9-5-cdata">11.9.5 CData</h4>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Element</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rules for Use</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">CData</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Will contain data that should not be escaped. Has attribute of &lsquo;format&rsquo; to describe type of data i.e. JSON, CSV.</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Mandatory</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h3 id="12-glossary-or-terms-and-abbreviations">12. Glossary Or Terms and Abbreviations</h3>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Acronym</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">LLC</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Local Land Charges.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">HTTP</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">HyperText Transfer Protocol.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">XML</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">eXtensible Markup Language.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Registered on date</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">The date HM Land Registry received the application.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h3 id="13-annex">13. Annex</h3>
+<h4 id="13-1-1-acknowledgement-message">13.1.1 Acknowledgement Message</h4>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Message</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">Service is not currently available. System has queued your request. please poll at specified time.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="13-1-2-rejection-codes">13.1.2 Rejection Codes</h4>
+
+<div class="govuk-details__text">
+    <table class="govuk-table" cellpadding="10">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Code</th>
+              <th scope="col" class="govuk-table__header govuk-!-font-size-14">Reason</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.auth.fails</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Login details are invalid.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.user.account.status.locked.password</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Your account is locked. Please reset your password using Portal.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.outofhours.stop</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Service is not currently available and your request will not be processed.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.invalid</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Title number is invalid.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.closed</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">This title number is closed.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.llc.title.closedAndContinued</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Title Number * has been closed and registration continued under Title Number *. Please request a search using the new Title Number.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.no.geojson</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Unable to obtain GeoJSON from title number please try again with GeoJSON data.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.geojson.invalid</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">The supplied GeoJSON is not valid.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.nonmigrated.extent</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">You are searching a non-migrated authority, edit your search area or contact the local authority.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.fee.feeMismatch</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Fee Amount provided does not match with the fee calculated by Land Registry.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.llc.access.denied</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Access denied, this service has limited availability - please contact HM Land Registry.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.llc.search.ref.not.found</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Search reference not found, refresh searches are valid for 6 months after the initial search.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.document.maxFileSizeLimitExceeds</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Generated PDF exceeds maximum size of 20MB.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.geojson.size.exceeded</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">GeoJSON exceeds maximum length of 32000 characters.</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell  govuk-!-font-size-14">bg.too.many.results</td>
+                <td class="govuk-table__cell  govuk-!-font-size-14">Your search area has too many charged. Email HM Land Registry to search this area: locallandchargesregister@landregistry.gov.uk</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 id="13-1-3-sample-messages">13.1.3 Sample Messages</h4>
+
+<pre><code>
+&lt;soapenv:Envelope
+  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:llc=”http://llcsearchv2_0.ws.bg.lr.gov/”
+  xmlns:llc1="http://www.landregistry.gov.uk/LLC/LLCSearchRequestV2_0"&gt;
+  &lt;soapenv:Header&gt;
+    &lt;wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"&gt;
+      &lt;wsse:UsernameToken&gt;
+        &lt;wsse:Username&gt;ABCD3000&lt;/wsse:Username&gt;
+        &lt;wsse:Password type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText"&gt;password99&lt;/wsse:Password&gt;
+      &lt;/wsse:UsernameToken&gt;
+    &lt;/wsse:Security&gt;
+    &lt;i18n:international xmlns:i18n="http://www.w3.org/2005/09/ws-i18n"&gt;
+      &lt;i18n:locale&gt;en&lt;/i18n:locale&gt;
+    &lt;/i18n:international&gt;
+  &lt;/soapenv:Header&gt;
+  &lt;soapenv:Body&gt;
+    &lt;llc:performSearch&gt;
+      &lt;in&gt;
+        &lt;llc1:MessageId&gt;LLC30052018-1515&lt;/llc1:MessageId&gt;
+        &lt;llc1:Reference&gt;XYZ&lt;/llc1:Reference&gt;
+        &lt;llc1:FeeInPence&gt;1500&lt;/llc1:FeeInPence&gt;
+        &lt;!--You have a CHOICE of the next 2 items at this level--&gt;
+        &lt;llc1:TitleNumber&gt;GR987&lt;/llc1:TitleNumber&gt;
+        &lt;llc1:PropertyDescription&gt;The House&lt;/llc1:PropertyDescription&gt;
+        &lt;!—ResponseFormat can contain PDF, XML, JSON or CSV --&gt;
+        &lt;llc1:ResponseFormat&gt;JSON&lt;/llc1:ResponseFormat&gt;
+        &lt;llc1:Indicators&gt;
+          &lt;!--Zero or more repetitions:--&gt;
+          &lt;llc1:Indicator&gt;
+            &lt;llc1:IndicatorType&gt;continueIfOutOfHours&lt;/llc1:IndicatorType&gt;
+            &lt;llc1:IndicatorValue&gt;true&lt;/llc1:IndicatorValue&gt;
+          &lt;/llc1:Indicator&gt;
+        &lt;/llc1:Indicators&gt;
+      &lt;/in&gt;
+    &lt;/llc:performSearch&gt;
+  &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</code></pre>
+<p>Sample response message
+with PDF attached
+<pre><code>
+&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap:Body&gt;
+    &lt;ns5:performSearchResponse xmlns:ns2=&quot;http://www.oscre.org/ns/eReg/MR01-20090605/PollRequest&quot; xmlns:ns3=&quot;http://www.landregistry.gov.uk/LLC/LLCSearchResponseV2_0&quot; xmlns:ns4=&quot;http://www.landregistry.gov.uk/LLC/LLCSearchRequestV2_0&quot; xmlns:ns5=&quot;http://llcsearchv2_0.ws.bg.lr.gov/&quot;&gt;
+      &lt;return&gt;
+        &lt;ns3:GatewayResponse&gt;
+          &lt;ns3:TypeCode&gt;30&lt;/ns3:TypeCode&gt;
+          &lt;ns3:Results&gt;
+            &lt;ns3:ExternalReference&gt;MyLLC1search&lt;/ns3:ExternalReference&gt;
+            &lt;ns3:ActualPrice&gt;
+              &lt;ns3:GrossPriceAmount&gt;1500&lt;/ns3:GrossPriceAmount&gt;
+            &lt;/ns3:ActualPrice&gt;
+            &lt;ns3:Attachment&gt;
+              &lt;ns3:EmbeddedFileBinaryObject ns3:format=&quot;PDF&quot;&gt;Byte data removed for ease of reading&lt;/ns3:EmbeddedFileBinaryObject&gt;
+            &lt;/ns3:Attachment&gt;
+            &lt;ns3:SearchReference&gt;000001904&lt;/ns3:SearchReference&gt;
+          &lt;/ns3:Results&gt;
+        &lt;/ns3:GatewayResponse&gt;
+      &lt;/return&gt;
+    &lt;/ns5:performSearchResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code></pre></p>
+<p>Or JSON or CSV data included</p>
+
+<pre><code>
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soap:Body&gt;
+    &lt;ns5:performSearchResponse xmlns:ns5="http://llcsearchv2_0.ws.bg.lr.gov/" xmlns:ns2="http://www.oscre.org/ns/eReg/MR01-20090605/PollRequest" xmlns:ns3="http://www.landregistry.gov.uk/LLC/LLCSearchResponseV2_0" xmlns:ns4="http://www.landregistry.gov.uk/LLC/LLCSearchRequestV2_0"&gt;
+      &lt;return&gt;
+        &lt;ns3:GatewayResponse&gt;
+          &lt;ns3:TypeCode&gt;30&lt;/ns3:TypeCode&gt;
+          &lt;ns3:Results&gt;
+            &lt;ns3:ExternalReference&gt;qwery123&lt;/ns3:ExternalReference&gt;
+            &lt;ns3:ActualPrice&gt;
+              &lt;ns3:GrossPriceAmount&gt;1500&lt;/ns3:GrossPriceAmount&gt;
+            &lt;/ns3:ActualPrice&gt;
+            &lt;ns3:SearchArea ns3:format="JSON"&gt;&lt;![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[292403.1591430201,92980.43954658421],[292407.18414302013,92984.2895465842],[292424.1591430201,92967.31454658421],[292419.9591430201,92963.9895465842],[292403.1591430201,92980.43954658421] ] ]},"properties":{"id":1.573722712692E12}}]}]]&gt;&lt;/ns3:SearchArea&gt;
+            &lt;ns3:SearchDateTime&gt;2019-11-27T09:24:29.000Z&lt;/ns3:SearchDateTime&gt;
+            &lt;ns3:SearchDescription&gt;Sidwell St. Exeter&lt;/ns3:SearchDescription&gt;
+            &lt;ns3:NumberSearchesFound&gt;9&lt;/ns3:NumberSearchesFound&gt;
+            &lt;ns3:ChargesAlternateFormat ns3:format="JSON"&gt;&lt;![CDATA[ JSON or CSV data here ]]&gt;&lt;/ns3:ChargesAlternateFormat&gt;
+            &lt;ns3:SearchReference&gt;000005041&lt;/ns3:SearchReference&gt;
+          &lt;/ns3:Results&gt;
+        &lt;/ns3:GatewayResponse&gt;
+      &lt;/return&gt;
+    &lt;/ns5:performSearchResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code></pre>
+<p>Or XML response</p>
+
+<pre><code>
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;soap:Body&gt;
+    &lt;ns5:performSearchResponse xmlns:ns5="http://llcsearchv2_0.ws.bg.lr.gov/" xmlns:ns2="http://www.oscre.org/ns/eReg/MR01-20090605/PollRequest" xmlns:ns3="http://www.landregistry.gov.uk/LLC/LLCSearchResponseV2_0" xmlns:ns4="http://www.landregistry.gov.uk/LLC/LLCSearchRequestV2_0"&gt;
+      &lt;return&gt;
+        &lt;ns3:GatewayResponse&gt;
+          &lt;ns3:TypeCode&gt;30&lt;/ns3:TypeCode&gt;
+          &lt;ns3:Results&gt;
+            &lt;ns3:ExternalReference&gt;qwery123&lt;/ns3:ExternalReference&gt;
+            &lt;ns3:ActualPrice&gt;
+              &lt;ns3:GrossPriceAmount&gt;1500&lt;/ns3:GrossPriceAmount&gt;
+            &lt;/ns3:ActualPrice&gt;
+            &lt;ns3:SearchArea ns3:format="JSON"&gt;&lt;![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[292403.1591430201,92980.43954658421],[292407.18414302013,92984.2895465842],[292424.1591430201,92967.31454658421],[292419.9591430201,92963.9895465842],[292403.1591430201,92980.43954658421] ] ]},"properties":{"id":1.573722712692E12}}]}]]&gt;&lt;/ns3:SearchArea&gt;
+            &lt;ns3:SearchDateTime&gt;2019-11-27T14:16:32.000Z&lt;/ns3:SearchDateTime&gt;
+            &lt;ns3:SearchDescription&gt;Sidewell Road Exeter&lt;/ns3:SearchDescription&gt;
+            &lt;ns3:NumberSearchesFound&gt;3&lt;/ns3:NumberSearchesFound&gt;
+            &lt;ns3:Charges&gt;
+              &lt;ns3:LocalLandCharge&gt;
+                &lt;ns3:HMLRReference&gt;LLC-10TW&lt;/ns3:HMLRReference&gt;
+                &lt;ns3:OriginatingAuthority&gt;HM Land Registry&lt;/ns3:OriginatingAuthority&gt;
+                &lt;ns3:AuthorityReference&gt;AuthRef-13579&lt;/ns3:AuthorityReference&gt;
+                &lt;ns3:CreationDate&gt;2019-02-20&lt;/ns3:CreationDate&gt;
+                &lt;ns3:RegistrationDate&gt;2019-11-14&lt;/ns3:RegistrationDate&gt;
+                &lt;ns3:Category&gt;Planning&lt;/ns3:Category&gt;
+                &lt;ns3:ChargeSubCategory&gt;Planning agreement&lt;/ns3:ChargeSubCategory&gt;
+                &lt;ns3:Law&gt;Town and Country Planning Act 1990 section 106&lt;/ns3:Law&gt;
+                &lt;ns3:LegalDocument&gt;Agreement&lt;/ns3:LegalDocument&gt;
+                &lt;ns3:Location&gt;
+                  &lt;ns3:PostcodeZone&gt;
+                    &lt;ns3:Postcode&gt;EX4 6NN&lt;/ns3:Postcode&gt;
+                  &lt;/ns3:PostcodeZone&gt;
+                  &lt;ns3:AddressLine&gt;
+                    &lt;ns3:Line&gt;24 Sidwell Street&lt;/ns3:Line&gt;
+                    &lt;ns3:Line&gt;Exeter&lt;/ns3:Line&gt;
+                  &lt;/ns3:AddressLine&gt;
+                &lt;/ns3:Location&gt;
+                &lt;ns3:Description&gt;Additional text for charge description&lt;/ns3:Description&gt;
+                &lt;ns3:SourceOfInformation&gt;Further information is available in planning department.&lt;/ns3:SourceOfInformation&gt;
+                &lt;ns3:Adjoining&gt;false&lt;/ns3:Adjoining&gt;
+                &lt;ns3:ChargeExtent ns3:format="JSON"&gt;&lt;![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[292403.28359375,92980.3875],[292407.13359374995,92984.15],[292424.02109374997,92967.0875],[292419.99609375,92963.5875],[292403.28359375,92980.3875] ] ]},"properties":{"id":1573721596859}}]}]]&gt;&lt;/ns3:ChargeExtent&gt;
+              &lt;/ns3:LocalLandCharge&gt;
+              &lt;ns3:LocalLandCharge&gt;
+                &lt;ns3:HMLRReference&gt;LLC-10TX&lt;/ns3:HMLRReference&gt;
+                &lt;ns3:OriginatingAuthority&gt;HM Land Registry&lt;/ns3:OriginatingAuthority&gt;
+                &lt;ns3:AuthorityReference&gt;AuthRef-finance1&lt;/ns3:AuthorityReference&gt;
+                &lt;ns3:CreationDate&gt;2019-10-14&lt;/ns3:CreationDate&gt;
+                &lt;ns3:RegistrationDate&gt;2019-11-14&lt;/ns3:RegistrationDate&gt;
+                &lt;ns3:Category&gt;Financial&lt;/ns3:Category&gt;
+                &lt;ns3:Law&gt;Local Land Charges Act 1975 section 6(2)&lt;/ns3:Law&gt;
+                &lt;ns3:LegalDocument&gt;Deed&lt;/ns3:LegalDocument&gt;
+                &lt;ns3:Location&gt;
+                  &lt;ns3:PostcodeZone&gt;
+                    &lt;ns3:Postcode&gt;EX4 6NN&lt;/ns3:Postcode&gt;
+                  &lt;/ns3:PostcodeZone&gt;
+                  &lt;ns3:AddressLine&gt;
+                    &lt;ns3:Line&gt;24 Sidwell Street&lt;/ns3:Line&gt;
+                    &lt;ns3:Line&gt;Exeter&lt;/ns3:Line&gt;
+                  &lt;/ns3:AddressLine&gt;
+                &lt;/ns3:Location&gt;
+                &lt;ns3:SourceOfInformation&gt;Further information about this financial charge&lt;/ns3:SourceOfInformation&gt;
+                &lt;ns3:Amount&gt;5000.00&lt;/ns3:Amount&gt;
+                &lt;ns3:InterestRate&gt;4%&lt;/ns3:InterestRate&gt;
+                &lt;ns3:Adjoining&gt;false&lt;/ns3:Adjoining&gt;
+                &lt;ns3:ChargeExtent ns3:format="JSON"&gt;&lt;![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[292403.19609374995,92980.56249999999],[292419.99609375,92963.93749999999],[292424.10859375,92967.34999999999],[292406.95859374997,92984.23749999999],[292403.19609374995,92980.56249999999] ] ]},"properties":{"id":1573721894086}}]}]]&gt;&lt;/ns3:ChargeExtent&gt;
+              &lt;/ns3:LocalLandCharge&gt;
+              &lt;ns3:LocalLandCharge&gt;
+                &lt;ns3:HMLRReference&gt;LLC-10TY&lt;/ns3:HMLRReference&gt;
+                &lt;ns3:OriginatingAuthority&gt;HM Land Registry&lt;/ns3:OriginatingAuthority&gt;
+                &lt;ns3:AuthorityReference&gt;LandCompRef-123&lt;/ns3:AuthorityReference&gt;
+                &lt;ns3:RegistrationDate&gt;2019-11-14&lt;/ns3:RegistrationDate&gt;
+                &lt;ns3:Category&gt;Land compensation&lt;/ns3:Category&gt;
+                &lt;ns3:Law&gt;Land Compensation Act 1973 section 52(8)&lt;/ns3:Law&gt;
+                &lt;ns3:LegalDocument&gt;Order&lt;/ns3:LegalDocument&gt;
+                &lt;ns3:Location&gt;
+                  &lt;ns3:PostcodeZone&gt;
+                    &lt;ns3:Postcode&gt;EX4 6NN&lt;/ns3:Postcode&gt;
+                  &lt;/ns3:PostcodeZone&gt;
+                  &lt;ns3:AddressLine&gt;
+                    &lt;ns3:Line&gt;24 Sidwell Street&lt;/ns3:Line&gt;
+                    &lt;ns3:Line&gt;Exeter&lt;/ns3:Line&gt;
+                  &lt;/ns3:AddressLine&gt;
+                &lt;/ns3:Location&gt;
+                &lt;ns3:Description&gt;Land Compensation Charge description - optional&lt;/ns3:Description&gt;
+                &lt;ns3:SourceOfInformation&gt;Further information about this Land Compensation charge&lt;/ns3:SourceOfInformation&gt;
+                &lt;ns3:InterestInLand&gt;Freehold&lt;/ns3:InterestInLand&gt;
+                &lt;ns3:AdvancePayment&gt;3500.00&lt;/ns3:AdvancePayment&gt;
+                &lt;ns3:TotalCompensation&gt;4500.00&lt;/ns3:TotalCompensation&gt;
+                &lt;ns3:AgreedOrEstimated&gt;Agreed amount&lt;/ns3:AgreedOrEstimated&gt;
+                &lt;ns3:Adjoining&gt;false&lt;/ns3:Adjoining&gt;
+                &lt;ns3:ChargeExtent ns3:format="JSON"&gt;&lt;![CDATA[{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[292403.19609374995,92980.47499999999],[292420.08359374997,92964.025],[292424.19609374995,92967.61249999999],[292406.87109375,92984.15],[292403.19609374995,92980.47499999999] ] ]},"properties":{"id":1573722067420}}]}]]&gt;&lt;/ns3:ChargeExtent&gt;
+              &lt;/ns3:LocalLandCharge&gt;
+            &lt;/ns3:Charges&gt;
+            &lt;ns3:SearchReference&gt;000005043&lt;/ns3:SearchReference&gt;
+          &lt;/ns3:Results&gt;
+        &lt;/ns3:GatewayResponse&gt;
+      &lt;/return&gt;
+    &lt;/ns5:performSearchResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code></pre>
+<h4 id="13-1-4-schemas">13.1.4 Schemas</h4>
+<p>XML Schemas are compliant with e-GIF (Electronic Government Interoperability Framework) standards.
+Schema files are named according to the standard <filename>-vm-n.xsd where v is the letter ‘v’, m is the major version number and n is the minor version number.</p>
+<h4 id="13-1-5-llcsearchrequestv2-0-xsd">13.1.5 LLCSearchRequestV2_0.xsd</h4>
+
+<pre><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.landregistry.gov.uk/LLC/LLCSearchRequestV2_0"
+  xmlns="http://www.landregistry.gov.uk/LLC/LLCSearchRequestV2_0"
+  elementFormDefault="qualified"&gt;
+  &lt;xs:element name="LLCSearch" type="LLCSearchRequestV2_0Type"&gt;&lt;/xs:element&gt; &lt;!-- fill out all input parameters very basic below --&gt;
+  &lt;xs:complexType name="LLCSearchRequestV2_0Type"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="MessageId" type="MessageIdType" minOccurs="1" maxOccurs="1" /&gt;
+      &lt;xs:element name="Reference" type="ReferenceTextContentType" minOccurs="1" maxOccurs="1" /&gt;
+      &lt;xs:element name="FeeInPence" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs="1" /&gt;
+      &lt;xs:choice&gt;
+        &lt;xs:element name="RefreshSearchReference" type="SearchReferenceTextType" minOccurs="1" maxOccurs="1" /&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:choice&gt;
+            &lt;xs:element name="TitleNumber" type="TitleType" minOccurs="1" maxOccurs="1" /&gt;
+            &lt;xs:element name="GeoJson" type="CDATA" minOccurs="1" maxOccurs="1" /&gt;
+          &lt;/xs:choice&gt;
+          &lt;xs:element name="PropertyDescription" type="PropertyDescriptionType" /&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:choice&gt;
+      &lt;xs:element name="ResponseFormat" type="ResponseFormatContent" minOccurs="1" maxOccurs="1"/&gt;
+      &lt;xs:element name="Indicators" type="IndicatorsType" minOccurs="1" maxOccurs="1"&gt;&lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:simpleType name="PropertyDescriptionType"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:minLength value="1" /&gt;
+      &lt;xs:maxLength value="400" /&gt;
+      &lt;xs:pattern value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" /&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  &lt;xs:simpleType name="MessageIdType"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:minLength value="5" /&gt;
+      &lt;xs:maxLength value="50" /&gt;
+      &lt;xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" /&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  &lt;xs:simpleType name="ReferenceTextContentType"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:minLength value="1" /&gt;
+      &lt;xs:maxLength value="25" /&gt;
+      &lt;xs:pattern value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;&amp;]*" /&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  &lt;xs:simpleType name="SearchReferenceTextType"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:minLength value="1"/&gt;
+      &lt;xs:maxLength value="9"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  &lt;xs:simpleType name="TitleType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;This type defines the validation pattern for title numbers&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:minLength value="1" /&gt;
+      &lt;xs:maxLength value="9" /&gt;
+      &lt;xs:pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?" /&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  &lt;xs:simpleType name="CDATA"&gt;
+    &lt;xs:restriction base="xs:string" /&gt;
+  &lt;/xs:simpleType&gt;
+  &lt;xs:simpleType name="ResponseFormatContent"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:enumeration value="PDF"/&gt;
+      &lt;xs:enumeration value="XML"/&gt;
+      &lt;xs:enumeration value="JSON"/&gt;
+      &lt;xs:enumeration value="CSV"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  &lt;xs:complexType name="IndicatorsType"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="Indicator" type="IndicatorType" minOccurs="0" maxOccurs="unbounded"&gt;&lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="IndicatorType"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt; The indicators are generic so that new options can be added in the future without schema changes. Expected indicators are: ContinueIfOutOfHours ContinueIfFeeExceedsExpected&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+      &lt;xs:element name="IndicatorType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:simpleType&gt;
+          &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:minLength value="1"&gt;&lt;/xs:minLength&gt;
+          &lt;/xs:restriction&gt;
+        &lt;/xs:simpleType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="IndicatorValue" type="xs:boolean" minOccurs="1" maxOccurs="1"&gt;&lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</code></pre>
+<h4 id="13-1-6-llcsearchresponsev2-0-xsd">13.1.6 LLCSearchResponseV2_0.xsd</h4>
+
+<pre></code>
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.landregistry.gov.uk/LLC/LLCSearchResponseV2_0"
+  xmlns="http://www.landregistry.gov.uk/LLC/LLCSearchResponseV2_0"
+  elementFormDefault="qualified" attributeFormDefault="qualified"&gt;
+  &lt;xs:element name="LLCSearchResponse" type="LLCSearchResponseV2_0Type" /&gt;
+  &lt;xs:complexType name="LLCSearchResponseV2_0Type"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="GatewayResponse" type="Q1GatewayResponseType" minOccurs="1" maxOccurs="1" /&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="Q1GatewayResponseType"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="TypeCode" type="ProductResponseCodeType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;A character string (letters, figures or symbols) that for brevity and/or language independence may be used to represent or replace a definitive value or text of an Attribute together with relevant supplementary information.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="Acknowledgement" type="Q1AcknowledgementType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;This is the the Business Gateway confirmation response to the External System.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="Rejection" type="Q1RejectionType" minOccurs="0" maxOccurs="1" /&gt;
+      &lt;xs:element name="Results" type="Q1ResultsType" minOccurs="0" maxOccurs="1" /&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="ProductResponseCodeType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;A character string (letters, figures or symbols) that for brevity and/or language independence may be used to represent or replace a definitive value or text of an Attribute together with relevant supplementary information.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+      &lt;xs:extension base="ProductResponseCodeContentType" /&gt;
+    &lt;/xs:simpleContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:simpleType name="ProductResponseCodeContentType"&gt;
+    &lt;xs:restriction base="xs:normalizedString"&gt;
+      &lt;xs:enumeration value="0"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Other&lt;/xs:documentation&gt;
+          &lt;xs:documentation&gt;-&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:enumeration&gt;
+      &lt;xs:enumeration value="10"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Acknowledgement&lt;/xs:documentation&gt;
+          &lt;xs:documentation&gt;-&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:enumeration&gt;
+      &lt;xs:enumeration value="20"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Rejection&lt;/xs:documentation&gt;
+          &lt;xs:documentation&gt;-&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:enumeration&gt;
+      &lt;xs:enumeration value="30"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Result&lt;/xs:documentation&gt;
+          &lt;xs:documentation&gt;-&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:enumeration&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  &lt;xs:complexType name="Q1AcknowledgementType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;This is the the Business Gateway confirmation response to the External System.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="AcknowledgementDetails" type="Q1AcknowledgementDetailsType" minOccurs="1" maxOccurs="1" /&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="Q1AcknowledgementDetailsType"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="UniqueID" type="IdentifierType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Unique identifier used by end user to get the status update of their request.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="ExpectedResponseDateTime" type="DateTimeType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;This element will hold expected time when
+          Business Gateway will try to process the queued request. This
+          element will contain date and time data as GMT format. This
+          element should be marked as mandatory&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="MessageDescription" type="TextType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;This will be a String type element and will be
+          use to display a message to end user. This element should be
+          marked as mandatory&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="Q1ActualPriceType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Information about price&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="GrossPriceAmount" type="AmountType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;The gross price is the price including the VAT.
+          If the VAT is zero then the Gross and Net Price will be the same
+          &lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="NetPriceAmount" type="AmountType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;The Net Price is the amount before the VAT is
+          added on. If the VAT is zero then the Gross and Net Price will be
+          the same&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="VATAmount" type="AmountType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;This is the amount of the VAT&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="Q1AttachmentType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;An electronic copy of a document that may be attached to a message.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="EmbeddedFileBinaryObject" type="BinaryObjectType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;The binary representation of the image or document&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="Title" type="TextType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Title or Caption for the attached file or document&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="Description" type="TextType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;A description of the contents of the attached file or document&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="Date" type="DateType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;The date of the document within the contained
+          attachment. In the example of a an attached photo, this would be
+          the date the photograph was taken.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="CopyrightNotices" type="TextType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Text description of any Legal or copyright notices that may apply to the file in question.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="Q1RejectionType"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="ExternalReference" type="TextType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;A unique reference given to identify a particular
+          request, order or instruction in the system of the organisation
+          allocating it with the ability to associate the name of the
+          Company that has allocated it.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="ActualPrice" type="Q1ActualPriceType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;This is the price for a Search/Product&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="RejectionResponse" type="Q1RejectionResponseType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Provides details of the reasons for the rejection of the Search Order Send message.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="Q1RejectionResponseType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Provides details of the reasons for the rejection.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="Reason" type="TextType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;A description of the reason for rejection.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="Code" type="TextType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;A code signifying the reason for rejection&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="OtherDescription" type="TextType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Freeform text field to convey any further information about the rejection.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="ValidationErrors" type="Q1ValidationErrorsType" minOccurs="0" maxOccurs="unbounded" /&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="Q1ResultsType"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="ExternalReference" type="TextType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt; Reference associated with a case in Case Management System &lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="ActualPrice" type="Q1ActualPriceType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt; This is the price for a Search/Product&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="SearchArea" type="CData" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;CDATA will contain the geoJSON identifying the area of the search. Will not be included with a PDF attachment which already includes an image displayed Search Area.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:choice&gt;
+        &lt;xs:element name="Attachment" type="Q1AttachmentType" minOccurs="0" maxOccurs="1"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt; An electronic copy of a document that may be attached to a message. &lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name="SearchDateTime" type="DateTimeType" minOccurs="1" maxOccurs="1" &gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation&gt;Date and time of Local Land Charges search&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="SearchDescription" type="xs:string" minOccurs="1" maxOccurs="1" &gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation&gt;Description as provided in the request data&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="NumberSearchesFound" type="xs:integer" minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation&gt;Returns the number of charges found for the given search area&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:choice&gt;
+            &lt;xs:element name="Charges" type="LocalLandChargeType" minOccurs="0" maxOccurs="1"/&gt;
+            &lt;xs:element name="ChargesAlternateFormat" type="CData"&gt;&lt;/xs:element&gt;
+          &lt;/xs:choice&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:choice&gt;
+      &lt;xs:element name="SearchReference" type="TextType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt; Land Registry Search Reference may be used to request a refreshed search within 6 months of original request. &lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="LocalLandChargeType"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="LocalLandCharge" type="LocalLandChargeContent" minOccurs="0" maxOccurs="unbounded"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;If NumberSearchesFound greater than 0, then this element is repeated for each charge identified&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="Q1ValidationErrorsType"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="Code" type="TextType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;A character string (i.e. a finite set of characters) generally in the form of words of a language.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="Description" type="TextType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;A character string (i.e. a finite set of characters) generally in the form of words of a language.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="DateTimeType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;A particular point in the progression of time together with the relevant supplementary information.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+      &lt;xs:extension base="xs:dateTime" /&gt;
+    &lt;/xs:simpleContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="IdentifierType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;A character string to identify and distinguish
+      uniquely, one instance of an object in an identification scheme from
+      all other objects in the same scheme together with relevant
+      supplementary information.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+      &lt;xs:extension base="xs:normalizedString"&gt;
+        &lt;xs:attribute name="schemeAgencyName" type="xs:string" use="optional"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The identification of the agency that maintains
+            the identification scheme.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+        &lt;xs:attribute name="schemeName" type="xs:string" use="optional"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The name of the identification scheme.&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:simpleContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="TextType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;A character string (i.e. a finite set of
+      characters) generally in the form of words of a language.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+      &lt;xs:extension base="xs:string" /&gt;
+    &lt;/xs:simpleContent&gt;
+  &lt;/xs:complexType&gt; &lt;!--Datatypes --&gt;
+  &lt;xs:complexType name="AmountType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;A number of monetary units specified in a currency where the unit of the currency is explicit or implied.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+      &lt;xs:extension base="xs:decimal"&gt;
+        &lt;xs:attribute name="currencyID" type="xs:normalizedString" use="optional"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The currency of the amount&lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:simpleContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="BinaryObjectType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;A set of finite-length sequences of binary octets.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+      &lt;xs:extension base="xs:base64Binary"&gt;
+        &lt;xs:attribute name="filename" type="xs:string" use="optional"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Must be the full filename including the extension(Reference IETF RFC 2045, 2046, 2047) &lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+        &lt;xs:attribute name="format" type="xs:string" use="optional"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The format of the binary content.Note: A file
+            format is a particular way to encode information for storage in a
+            computer file. May be identified by the section of its name following the final period, e.g., gif, pdf, jpg.
+            &lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+        &lt;xs:attribute name="mimeCode" type="xs:normalizedString" use="optional"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The mime type of the binary object.(Reference
+            IETF RFC 2045, 2046, 2047)Note: consist of a standardised system
+            of identifiers (managed by IANA) consisting of a type and a
+            sub-type, separated by a slash - for instance, text/html or
+            image/gif. &lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+        &lt;xs:attribute name="characterSetCode" type="xs:normalizedString" use="optional"&gt;
+          &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The character set of the binary object if the
+            mime type is text.(Reference IETF RFC 2045, 2046, 2047).
+            Examples: ISO-8859-1, UTF-8, UTF-16. See also
+            http://www.iana.org/assignments/character-sets.
+            &lt;/xs:documentation&gt;
+          &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:simpleContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="DateType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;A particular point in the progression of time
+      together with the relevant supplementary information. OSCRE dates
+      follow the ISO 8601 Standard. The international standard date
+      notation is YYYY-MM-DD where YYYY is the year in the usual Gregorian
+      calendar, MM is the month of the year between 01 (January) and 12
+      (December), and DD is the day of the month between 01 and 31.For
+      example, the fourth day of February in the year 1995 is written in
+      the standard notation as 1995-02-04 &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+      &lt;xs:extension base="xs:date" /&gt;
+    &lt;/xs:simpleContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="LocalLandChargeContent"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="HMLRReference" type="TextType" minOccurs="1" maxOccurs="1" /&gt;
+      &lt;xs:element name="OriginatingAuthority" type="TextType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Should always be present except for Light obstruction notice (LON)&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="AuthorityReference" type="TextType" minOccurs="0" maxOccurs="1" /&gt;
+      &lt;xs:element name="CreationDate" type="DateType" minOccurs="0" maxOccurs="1" /&gt;
+      &lt;xs:element name="RegistrationDate" type="DateType" minOccurs="1" maxOccurs="1" /&gt;
+      &lt;xs:element name="Category" type="TextType" minOccurs="1" maxOccurs="1" /&gt;
+      &lt;xs:element name="ChargeSubCategory" type="TextType" minOccurs="0" maxOccurs="1"/&gt;
+      &lt;xs:element name="Law" type="TextType" minOccurs="1" maxOccurs="1" /&gt;
+      &lt;xs:element name="LegalDocument" type="TextType" minOccurs="1" maxOccurs="1" /&gt;
+      &lt;xs:choice&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;LocationDominantBuilding for Light obstruction notice only (LON)&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:element name="Location" type="Q1AddressType" minOccurs="1" maxOccurs="1" /&gt;
+        &lt;xs:element name="LocationDominantBuilding" type="Q1AddressType" minOccurs="1" maxOccurs="1" /&gt;
+      &lt;/xs:choice&gt;
+      &lt;xs:element name="Description" type="TextType" minOccurs="0" maxOccurs="1" /&gt;
+      &lt;xs:element name="SourceOfInformation" type="TextType" minOccurs="0" maxOccurs="1" /&gt;
+      &lt;xs:element name="AvailableDocument" type="DocumentType" minOccurs="0" maxOccurs="unbounded" /&gt;
+      &lt;xs:element name="InterestInLand" type="TextType" minOccurs="0" maxOccurs="1"&gt;
+      &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Generally used for LONS and Financial Charges&lt;/xs:documentation&gt;
+      &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="ApplicantName" type="TextType" minOccurs="0" maxOccurs="1"/&gt;
+    &lt;xs:element name="ApplicantAddress" type="Q1AddressType" minOccurs="0" maxOccurs="1"/&gt;
+    &lt;xs:element name="ServientLandDevelopment" type="ServientLandDevelopmentType" minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;LONS servient land development height and extent covered&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+  &lt;/xs:element&gt;
+  &lt;xs:element name="Amount" type="TextType" minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Amount of financial charge&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;/xs:element&gt;
+      &lt;xs:element name="InterestRate" type="TextType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Rate of interest financial charge incurs&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="LandSold" type="TextType" minOccurs="0" maxOccurs="1"/&gt;
+      &lt;xs:element name="WorksDone" type="TextType" minOccurs="0" maxOccurs="1"/&gt;
+      &lt;xs:element name="AdvancePayment" type="TextType" minOccurs="0" maxOccurs="1"&gt;&lt;/xs:element&gt;
+      &lt;xs:element name="TotalCompensation" type="TextType" minOccurs="0" maxOccurs="1"/&gt;
+      &lt;xs:element name="AgreedOrEstimated" type="TextType" minOccurs="0"/&gt;
+      &lt;xs:element name="Adjoining" type="xs:boolean" minOccurs="1" maxOccurs="1"/&gt;
+      &lt;xs:element name="OtherData" type="OtherDataType" minOccurs="0" maxOccurs="unbounded"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;To allow for inclusion of further data items that may be identified in the future&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="ChargeExtent" type="CData" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;For some charges an extent may not be available due to sensitivity of the area&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="DocumentType"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="Document" type="TextType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;Generally used for LONS i.e. Definitive certificate, Temporary certificate, Form A and colour plan&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="StartDate" type="xs:date" minOccurs="0" maxOccurs="1" /&gt;
+      &lt;xs:element name="EndDate" type="xs:date" minOccurs="0" maxOccurs="1" /&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="ServientLandDevelopmentType"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="Height" type="TextType" minOccurs="1" maxOccurs="1"/&gt;
+      &lt;xs:element name="CoversAllOrPartOfExtent" type="TextType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;"All of the extent" or where available explanatory text of part effected&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="OtherDataType"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="DataLabel" type="TextType" minOccurs="1" maxOccurs="1"/&gt;
+      &lt;xs:element name="Data" type="TextType" minOccurs="1" maxOccurs="1"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="CData"&gt;
+    &lt;xs:simpleContent&gt;
+      &lt;xs:extension base="xs:string"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;CDATA holds plain text data which should not be escaped. Format of data is usually either JSON or CSV&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:attribute name="format" type="xs:string" use="optional"&gt;&lt;/xs:attribute&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:simpleContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="Q1AddressType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;A specific Address that can be used for the delivery of physical mail.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="PostcodeZone" type="Q1PostcodeZoneType" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;The identifier for one or more properties according to the UK postal service; a group of letters and numbers
+          added to the postal address to assist in the sorting of mail, as
+          defined by the Royal Mail.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="AddressLine" type="AddressLineType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;
+            Free form line of an address, expressed as text.
+            The recommendation for using this component is as follows:
+            Line 1
+            Building Name
+            NOTE: This line may also include the Flat Number
+            followed by the
+            Building Name or could be separated out
+            Line 2
+            Building Number
+            Line 3 Street Name
+            Line 4 City Sub-Division-1
+            Line 5
+            City Name
+            Line 6 Country Subentity
+            Line 7 Postcode_Zone
+            NOTE: ONLY
+            the Post Code should exist in this array element
+          &lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="AddressLineType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;
+        Free form line of an address, expressed as text.
+        The recommendation for using this component is as follows:
+        Line 1
+        Building Name
+        NOTE: This line may also include the Flat Number
+        followed by the Building
+        Name or could be separated out
+        Line 2
+        Building Number
+        Line 3 Street Name
+        Line 4 City Sub-Division-1
+        Line 5
+        City Name
+        Line 6 Country Subentity
+        Line 7 Postcode_Zone
+        NOTE: ONLY the
+        Post Code should exist in this array element
+      &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="IndexNumeric" type="NumericType" minOccurs="0" maxOccurs="unbounded"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;The ordinal position of the Address Line, in
+          relation to other Address Lines as part of an Address.
+          &lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="Line" type="TextType" minOccurs="0" maxOccurs="unbounded"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;An address line of unstructured text intended
+          for use only by systems incapable of providing structured or fully
+          structured addresses&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="NumericType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+      &lt;xs:extension base="xs:decimal"/&gt;
+    &lt;/xs:simpleContent&gt;
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="Q1PostcodeZoneType"&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:documentation&gt;The identifier for one or more properties according to the UK postal service; a group of letters and numbers added to the postal address to assist in the sorting of mail, as defined by the Royal Mail.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="Postcode" type="TextType" minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+          &lt;xs:documentation&gt;A full or partial UK Postcode&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</code></pre>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

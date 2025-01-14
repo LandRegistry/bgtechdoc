@@ -1,0 +1,3226 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Land charges full search - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/land_charges_full/LandChargesFullSearch_v2.1_VendorTest_v1_0.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Land charges full search - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/land_charges_full/LandChargesFullSearch_v2.1_VendorTest_v1_0.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Land charges full search" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/land_charges_full/LandChargesFullSearch_v2.1_VendorTest_v1_0.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#land-charges-full-search-vendor-test-data"><span>Land charges full search vendor test data</span></a>
+    <ul>
+      <li>
+        <a href="#full-search"><span>Full search</span></a>
+        <ul>
+          <li>
+            <a href="#1-1-standard-electronic-full-search"><span>1.1 Standard electronic full search</span></a>
+          </li>
+          <li>
+            <a href="#1-2-complex-names-full-search"><span>1.2 Complex names full search</span></a>
+          </li>
+          <li>
+            <a href="#1-3-out-of-hours-full-search"><span>1.3 Out of hours full search</span></a>
+          </li>
+          <li>
+            <a href="#1-4-submit-a-full-search-where-access-is-denied"><span>1.4 Submit a full search where access is denied</span></a>
+          </li>
+          <li>
+            <a href="#1-5-invalid-name-full-search"><span>1.5 Invalid name full search</span></a>
+          </li>
+          <li>
+            <a href="#1-6-electronic-full-search-fee-mismatch"><span>1.6 Electronic full search - fee mismatch</span></a>
+          </li>
+          <li>
+            <a href="#1-7-invalid-county-full-search"><span>1.7 Invalid county full search</span></a>
+          </li>
+          <li>
+            <a href="#1-8-electronic-full-search-multiple-errors"><span>1.8 Electronic full search - multiple errors</span></a>
+          </li>
+          <li>
+            <a href="#1-9-invalid-date-full-search"><span>1.9 Invalid date full search</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#poll-requests"><span>Poll requests</span></a>
+        <ul>
+          <li>
+            <a href="#1-10-poll-for-response-out-of-hours"><span>1.10 Poll for response - out of hours</span></a>
+          </li>
+          <li>
+            <a href="#1-11-poll-for-response-processed-39-no-result-39-pdf-k17-returned"><span>1.11 Poll for response - processed - ‘no result’ PDF (K17) returned</span></a>
+          </li>
+          <li>
+            <a href="#1-12-poll-for-response-rejection-invalid-search-name"><span>1.12 Poll for response - rejection - invalid search name</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/land_charges_full_search/index.html">Back to Land Charges Full Search</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="land-charges-full-search-vendor-test-data">Land charges full search vendor test data</h1>
+
+<hr>
+<h2 id="full-search">Full search</h2>
+
+<div class="govuk-inset-text">Note: MessageIDs are case sensitive and all lowercase.</div>
+<h3 id="1-1-standard-electronic-full-search">1.1 Standard electronic full search</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 01</li>
+          <li>Test purpose: Submit a full search for an electronic result</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testsuccesselectronic</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Gross price amount</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">7.00</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contact Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Telephone Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if actual fee exceeds expected fee</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">TRUE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full search type code</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">10</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private individual forename</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">John</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private Individual surname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Smith</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">1970</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">2000</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Company Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">County</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Countries</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Avon, Blackpool, Cornwall, Devon, Essex, Glamorgan</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s).</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-2-complex-names-full-search">1.2 Complex names full search</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 02</li>
+          <li>Test purpose: Submit a full search for complex names</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testsuccesscomplex</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Gross price amount</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">7.00</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contact Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Telephone Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if actual fee exceeds expected fee</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">TRUE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full search type code</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">30</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private individual forename</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private Individual surname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">1900</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">2000</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Company Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">County</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Countries</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Avon, Blackpool, Cornwall, Devon, Essex, Glamorgan</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Message returned: The application has been accepted. The certificate of result of search will be sent by post.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-3-out-of-hours-full-search">1.3 Out of hours full search</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 03</li>
+          <li>Test purpose: Submit a full search when service out-of-hours</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testoutofhours</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Gross price amount</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">7.00</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contact Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Telephone Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if actual fee exceeds expected fee</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">FALSE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full search type code</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">10</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private individual forename</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">John</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private Individual surname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Smith</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">1970</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">2000</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Company Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">County</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Countries</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Avon, Blackpool, Cornwall, Devon, Essex, Glamorgan</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Service is not currently available. System has queued your request, please poll at specified time.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-4-submit-a-full-search-where-access-is-denied">1.4 Submit a full search where access is denied</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 04</li>
+          <li>Test purpose: Submit a full search where the user does not have access to the service</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testaccessdenied</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Gross price amount</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">7.00</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contact Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Telephone Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if actual fee exceeds expected fee</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">TRUE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full search type code</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">10</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private individual forename</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">John</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private Individual surname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Smith</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">1970</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">2000</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Company Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">County</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Countries</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Avon, Blackpool, Cornwall, Devon, Essex, Glamorgan</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>WebService fault</li>
+                      <li>Message returned: You do not have the necessary rights to access this service.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-5-invalid-name-full-search">1.5 Invalid name full search</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 05</li>
+          <li>Test purpose: Submit a full search with invalid company name</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testinvalidname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Gross price amount</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">7.00</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contact Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Telephone Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if actual fee exceeds expected fee</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">TRUE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full search type code</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">20</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private individual forename</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private Individual surname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Company Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">The Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">1900</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">2000</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">County</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Countries</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Avon, Blackpool, Cornwall, Devon, Essex, Glamorgan</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing: Search Name The Company is invalid</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-6-electronic-full-search-fee-mismatch">1.6 Electronic full search - fee mismatch</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 06</li>
+          <li>Test purpose: Submit a full search where the fees don&rsquo;t match</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testfeemismatch</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Gross price amount</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">7.00</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contact Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Telephone Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if actual fee exceeds expected fee</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">FALSE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full search type code</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">10</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private individual forename</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">John</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private Individual surname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Smith</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">1970</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">2000</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Company Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">County</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Countries</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Avon, Blackpool, Cornwall, Devon, Essex, Glamorgan</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown containing Fee Amount provided does not match with the fee calculated by Land Registry.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-7-invalid-county-full-search">1.7 Invalid county full search</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 07</li>
+          <li>Test purpose: Submit a full search with an invalid county</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testinvalidcounties</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Gross price amount</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">7.00</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contact Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Telephone Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if actual fee exceeds expected fee</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">TRUE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full search type code</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">10</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private individual forename</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">John</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private Individual surname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Smith</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">1970</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">2000</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Company Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">County</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Countries</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Bristol</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-8-electronic-full-search-multiple-errors">1.8 Electronic full search - multiple errors</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 08</li>
+          <li>Test purpose: Submit a full search with multiple errors</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testmultipleerrors</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Gross price amount</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">7.00</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contact Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Telephone Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if actual fee exceeds expected fee</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">TRUE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full search type code</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">20</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private individual forename</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private Individual surname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Company Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">County</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Countries</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Bristol</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: County or Administrative Area is invalid.</li>
+                      <li>Not a valid limited company name.</li>
+                      <li>Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-9-invalid-date-full-search">1.9 Invalid date full search</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 09</li>
+          <li>Test purpose: Submit a full search with invalid dates</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">testinvaliddates</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Gross price amount</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">7.00</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">External reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Customer reference</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Contact Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Telephone Number</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Any</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Continue if actual fee exceeds expected fee</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">TRUE</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full search type code</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">10</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private individual forename</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">John</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Private Individual surname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Smith</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">2000</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Full Search Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">1970</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Complex Names</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Company Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Public Limited Company</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority Name</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">From</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Local Authority</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">To</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Leave blank</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">County</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Countries</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Avon, Blackpool, Cornwall, Devon, Essex, Glamorgan</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Message returned: Provide a Search To date that occurs after the Search From date.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h2 id="poll-requests">Poll requests</h2>
+<h3 id="1-10-poll-for-response-out-of-hours">1.10 Poll for response - out of hours</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 10</li>
+          <li>Test purpose: Poll for response - still out of hours</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Request has not yet been processed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Request has not yet been processed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Request has not yet been processed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">pollstilloutofhours</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;10&rsquo;</li>
+                      <li>Message returned: Request has not yet been processed.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-11-poll-for-response-processed-39-no-result-39-pdf-k17-returned">1.11 Poll for response - processed - &lsquo;no result&rsquo; PDF (K17) returned</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 11</li>
+          <li>Test purpose: Poll for response - processed - no results</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s). PDF file indicates no matches (or no results).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s). PDF file indicates no matches (or no results).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s). PDF file indicates no matches (or no results).</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">pollsuccessnoresults</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;30&rsquo;</li>
+                      <li>Search results returned, certificate(s) are attached as PDF file(s). PDF file indicates no matches (or no results).</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+<h3 id="1-12-poll-for-response-rejection-invalid-search-name">1.12 Poll for response - rejection - invalid search name</h3>
+
+<details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        <ul class="govuk-list govuk-!-font-size-14">
+          <li>Test: Full search 12</li>
+          <li>Test purpose: Poll for response - rejection - invalid search name</li>
+        </ul>
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        <table class="govuk-table" cellpadding="10">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field group</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Field name</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Input</th>
+                <th scope="col" class="govuk-table__header govuk-!-font-size-14">Expected output</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">BGUser001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown</li>
+                      <li>Message returned: Search Name pollinvalidsearchname is invalid.</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Password</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">landreg001</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown</li>
+                      <li>Message returned: Search Name pollinvalidsearchname is invalid.</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">User locale</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">En</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown</li>
+                      <li>Message returned: Search Name pollinvalidsearchname is invalid.</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Login details</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">Message ID</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">pollinvalidsearchname</td>
+                  <td class="govuk-table__cell  govuk-!-font-size-14">
+                    <ul class="govuk-list govuk-!-font-size-14">
+                      <li>TypeCode: &lsquo;20&rsquo;</li>
+                      <li>Batch Exception thrown</li>
+                      <li>Message returned: Search Name pollinvalidsearchname is invalid.</li>
+                      <li>Code: bg.invalid.search.name.detailed.</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

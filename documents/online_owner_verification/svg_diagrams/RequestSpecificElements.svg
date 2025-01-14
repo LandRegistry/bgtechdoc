@@ -1,0 +1,160 @@
+<svg width="1050" height="400" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+        fill: #F9F9F9;
+        stroke: #707070;
+        stroke-width: 1;
+        rx: 4;
+        ry: 4;
+        }
+        .line {
+        stroke: #707070;
+        stroke-width: 1;
+        }
+        .text {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        fill: #000;
+        }
+        .title {
+        font-weight: bold;
+        font-size: 12px;
+        }
+        .content {
+        font-size: 11px;
+        fill: #333;
+        }
+        .small-box {
+        fill: #FFFFFF;
+        stroke: #707070;
+        stroke-width: 1;
+        rx: 2;
+        ry: 2;
+        }
+    </style>
+
+    <!-- RequestOnlineOwnershipVerificationType -->
+    <rect x="30" y="50" width="300" height="170" class="small-box"></rect>
+    <text x="40" y="70" class="title">RequestOnlineOwnershipVerificationType</text>
+    <text x="40" y="90" class="content">- MessageId</text>
+    <text x="170" y="90" class="content">[1..1] MessageIdTextContentType</text>
+    <text x="40" y="110" class="content">- Reference</text>
+    <text x="170" y="110" class="content">[1..1] ReferenceTextContentType</text>
+    <text x="40" y="130" class="content">- SubjectProperty</text>
+    <text x="170" y="130" class="content">[1..1] SubjectPropertyType</text>
+    <text x="40" y="150" class="content">- FirstForename</text>
+    <text x="170" y="150" class="content">[1..1] FirstForenameContentType</text>
+    <text x="40" y="170" class="content">- MiddleName</text>
+    <text x="170" y="170" class="content">[0..1] NameContentType</text>
+    <text x="40" y="190" class="content">- Surname</text>
+    <text x="170" y="190" class="content">[1..1] NameContentType</text>
+    <text x="40" y="210" class="content">- Indicators</text>
+    <text x="170" y="210" class="content">[1..1] IndicatorsType</text>
+
+    <!-- SubjectPropertyType -->
+    <rect x="380" y="85" width="230" height="70" class="small-box"></rect>
+    <text x="390" y="105" class="title">SubjectPropertyType</text>
+    <text x="385" y="125" class="content">- TitleNumber</text>
+    <text x="500" y="125" class="content">(TitleNumberType)</text>
+    <text x="385" y="145" class="content">- PropertyAddress</text>
+    <text x="500" y="145" class="content">PropertyAddressType</text>
+
+    <!-- (TitleNumberType) -->
+    <rect x="680" y="25" width="120" height="30" class="small-box"></rect>
+    <text x="690" y="45" class="title">(TitleNumberType)</text>
+
+    <!-- MessageIdTextContentType -->
+    <rect x="380" y="5" width="160" height="30" class="small-box"></rect>
+    <text x="390" y="25" class="title">MessageIdTextContentType</text>
+
+    <!-- ReferenceTextContentType -->
+    <rect x="380" y="45" width="160" height="30" class="small-box"></rect>
+    <text x="390" y="65" class="title">ReferenceTextContentType</text>
+
+    <!-- FirstForenameContentType -->
+    <rect x="380" y="165" width="160" height="30" class="small-box"></rect>
+    <text x="390" y="185" class="title">FirstForenameContentType</text>
+
+    <!-- NameContentType -->
+    <rect x="380" y="205" width="110" height="30" class="small-box"></rect>
+    <text x="390" y="225" class="title">NameContentType</text>
+
+    <!-- IndicatorsType -->
+    <rect x="380" y="245" width="170" height="50" class="small-box"></rect>
+    <text x="390" y="265" class="title">IndicatorsType</text>
+    <text x="390" y="285" class="content">Indicator</text>
+    <text x="450" y="285" class="content">[0..*] IndicatorType</text>
+
+    <!-- IndicatorType -->
+    <rect x="680" y="245" width="210" height="70" class="small-box"></rect>
+    <text x="690" y="265" class="title">IndicatorType</text>
+    <text x="690" y="285" class="content">IndicatorType</text>
+    <text x="770" y="285" class="content">[1.1] (IndicatorTypeType)</text>
+    <text x="690" y="305" class="content">IndicatorValue</text>
+    <text x="770" y="305" class="content">[1..1] boolean</text>
+
+
+    <!-- PropertyAddressType -->
+    <rect x="680" y="85" width="290" height="150" class="small-box"></rect>
+    <text x="690" y="105" class="title">PropertyAddressType</text>
+    <text x="685" y="125" class="content">- BuildingName</text>
+    <text x="780" y="125" class="content">[0..1] BuildingNameTextContentType</text>
+    <text x="685" y="145" class="content">- BuildingNumber</text>
+    <text x="780" y="145" class="content">[0..1] BuildingNumberTextContentType</text>
+    <text x="685" y="165" class="content">- StreetName</text>
+    <text x="780" y="165" class="content">[0..1] StreetNameTextContentType</text>
+    <text x="685" y="185" class="content">- CityName</text>
+    <text x="780" y="185" class="content">[0..1] CityTextContentType</text>
+    <text x="685" y="205" class="content">- PostcodeZone</text>
+    <text x="780" y="205" class="content">[0..1] PostcodeTextContentType</text>
+    <text x="685" y="225" class="content">- SpecificTenure</text>
+    <text x="780" y="225" class="content">[0..1] string</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - RequestOnlineOwnershipVerificationType -->
+    <line x1="30" y1="74" x2="330" y2="74" stroke="lightgrey"></line>
+    <line x1="30" y1="76" x2="330" y2="76" stroke="lightgrey"></line>
+    <line x1="30" y1="96" x2="330" y2="96" stroke="lightgrey"></line>
+    <line x1="30" y1="116" x2="330" y2="116" stroke="lightgrey"></line>
+    <line x1="30" y1="136" x2="330" y2="136" stroke="lightgrey"></line>
+    <line x1="30" y1="156" x2="330" y2="156" stroke="lightgrey"></line>
+    <line x1="30" y1="176" x2="330" y2="176" stroke="lightgrey"></line>
+    <line x1="30" y1="196" x2="330" y2="196" stroke="lightgrey"></line>
+
+    <!-- Table Lines - SubjectPropertyType -->
+    <line x1="380" y1="109" x2="610" y2="109" stroke="lightgrey"></line>
+    <line x1="380" y1="111" x2="610" y2="111" stroke="lightgrey"></line>
+    <line x1="380" y1="131" x2="610" y2="131" stroke="lightgrey"></line>
+
+    <!-- Table Lines - IndicatorsType -->
+    <line x1="380" y1="269" x2="550" y2="269" stroke="lightgrey"></line>
+    <line x1="380" y1="271" x2="550" y2="271" stroke="lightgrey"></line>
+
+    <!-- Table Lines - IndicatorType -->
+    <line x1="680" y1="269" x2="890" y2="269" stroke="lightgrey"></line>
+    <line x1="680" y1="271" x2="890" y2="271" stroke="lightgrey"></line>
+    <line x1="680" y1="291" x2="890" y2="291" stroke="lightgrey"></line>
+
+    <!-- Table Lines - PropertyAddressType -->
+    <line x1="680" y1="109" x2="970" y2="109" stroke="lightgrey"></line>
+    <line x1="680" y1="111" x2="970" y2="111" stroke="lightgrey"></line>
+    <line x1="680" y1="130" x2="970" y2="130" stroke="lightgrey"></line>
+    <line x1="680" y1="150" x2="970" y2="150" stroke="lightgrey"></line>
+    <line x1="680" y1="170" x2="970" y2="170" stroke="lightgrey"></line>
+    <line x1="680" y1="190" x2="970" y2="190" stroke="lightgrey"></line>
+    <line x1="680" y1="210" x2="970" y2="210" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="330" y1="88" x2="380" y2="20" class="line"></line>
+    <line x1="330" y1="108" x2="380" y2="60" class="line"></line>
+    <line x1="330" y1="128" x2="380" y2="100" class="line"></line>
+    <line x1="330" y1="146" x2="380" y2="180" class="line"></line>
+    <line x1="330" y1="166" x2="380" y2="220" class="line"></line>
+    <line x1="330" y1="186" x2="380" y2="220" class="line"></line>
+    <line x1="330" y1="206" x2="380" y2="260" class="line"></line>
+
+    <line x1="610" y1="122" x2="680" y2="40" class="line"></line>
+    <line x1="610" y1="142" x2="680" y2="90" class="line"></line>
+    <line x1="550" y1="282" x2="680" y2="260" class="line"></line>
+
+</svg>

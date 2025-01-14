@@ -10,13 +10,18 @@
     <link href="../../stylesheets/manifest.css" rel="stylesheet" />
 
     <link rel="canonical" href="/get_started/developer_guide/">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
       <meta name="twitter:title" content="A Developer Guide to the SOAP Services - HM Land Registry Business Gateway Developer Pack" />
       <meta name="twitter:url" content="/get_started/developer_guide/" />
 
-      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
       <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
       <meta property="og:title" content="A Developer Guide to the SOAP Services" />
       <meta property="og:type" content="object" />
@@ -27,7 +32,7 @@
   </head>
 
   <body class="govuk-template__body">
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
 
     <div class="app-pane">
       <div class="app-pane__header toc-open-disabled">
@@ -55,15 +60,15 @@
 
       <div class="app-pane__body" data-module="in-page-navigation">
           <div class="app-pane__toc">
-            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
               <div class="search" data-module="search" data-path-to-site-root="../../">
   <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
     <input type="hidden" name="as_sitesearch" value=""/>
-    <label class="govuk-label search__label" for="search" aria-hidden="true">
+    <label class="govuk-label search__label" for="search">
       Search (via Google)
     </label>
     <input
-      type="text"
+      type="search"
       id="search" name="q"
       class="govuk-input govuk-!-margin-bottom-0 search__input"
       aria-controls="search-results"
@@ -710,7 +715,7 @@ the WSDL file.</p>
 <h3 id="information-services">Information services</h3>
 <p>In the URLs listed below, substitute {PLACE_HOLDER} as follows:</p>
 
-<table class="govuk-table">
+<table class="govuk-table" cellpadding="10">
   <caption>Information services</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -868,7 +873,7 @@ the WSDL file.</p>
 <h3 id="e-drs">e-DRS</h3>
 <p>In the URLs listed below, substitute {PLACE_HOLDER} as follows:</p>
 
-<table class="govuk-table">
+<table class="govuk-table" cellpadding="10">
   <caption>e-DRS</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -934,7 +939,7 @@ the WSDL file.</p>
 <h3 id="verification-services-folder">Verification services_folder</h3>
 <p>In the URLs listed below, substitute {PLACE_HOLDER} as follows:</p>
 
-<table class="govuk-table">
+<table class="govuk-table" cellpadding="10">
   <caption>Verification services_folder</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -952,7 +957,7 @@ the WSDL file.</p>
 <h3 id="business-gateway-service-urls-local-land-charges-services">Local Land Charges Services</h3>
 <p>In the URLs listed below, substitute {PLACE_HOLDER} as follows:</p>
 
-<table class="govuk-table">
+<table class="govuk-table" cellpadding="10">
   <caption>Local Land Charges Services</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -970,7 +975,7 @@ the WSDL file.</p>
 <h3 id="outstanding-requests">Outstanding requests</h3>
 <p>In the URLs listed below, substitute {PLACE_HOLDER} as follows:</p>
 
-<table class="govuk-table">
+<table class="govuk-table" cellpadding="10">
   <caption>Outstanding requests</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -1095,6 +1100,7 @@ the Business Gateway landing page.</p>
     </div>
 
     
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
     <script src="../../javascripts/application.js"></script>
   </body>
 </html>

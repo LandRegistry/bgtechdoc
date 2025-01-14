@@ -1,0 +1,53 @@
+<svg width="700" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- ResponseApplicationToChangeRegisterV2_0 -->
+    <rect x="30" y="50" width="275" height="30" class="small-box"></rect>
+    <text x="40" y="70" class="title">ResponseApplicationToChangeRegisterV2_0</text>
+
+    <!-- TitlesType -->
+    <rect x="360" y="5" width="305" height="50" class="small-box"></rect>
+    <text x="370" y="25" class="title">ResponseApplicationToChangeRegisterV2_0Type</text>
+    <text x="365" y="45" class="content">- GatewayResponse <tspan dx="40">[1..1] GatewayResponseType</tspan></text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - ResponseApplicationToChangeRegisterV2_0Type -->
+    <line x1="360" y1="29" x2="665" y2="29" stroke="lightgrey"></line>
+    <line x1="360" y1="31" x2="665" y2="31" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="305" y1="65" x2="360" y2="20" class="line"></line>
+
+</svg>

@@ -25,7 +25,7 @@
 			<xs:element name="Acknowledgement" type="Q1AcknowledgementType"
 				minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>This is the the Business Gateway confirmation
+					<xs:documentation>This is the Business Gateway confirmation
 						response to the External System.</xs:documentation>
 				</xs:annotation>
 			</xs:element>

@@ -1,0 +1,133 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- Q1PartyType -->
+    <rect x="30" y="100" width="300" height="170" class="small-box"></rect>
+    <text x="40" y="120" class="title">Q1PartyType</text>
+    <text x="40" y="140" class="content">- PrivateIndividual</text>
+    <text x="175" y="140" class="content">[1..1] Q1PrivateIndividualType</text>
+    <text x="40" y="160" class="content">- Organization</text>
+    <text x="175" y="160" class="content">[1..1] Q1OrganizationType</text>
+    <text x="40" y="180" class="content">- Address</text>
+    <text x="175" y="180" class="content">[1..1] Q1AddressType</text>
+    <text x="40" y="200" class="content">- CharityDetails</text>
+    <text x="175" y="200" class="content">[1..1] Q1CharityDetailsType</text>
+    <text x="40" y="220" class="content">- TradingName</text>
+    <text x="175" y="220" class="content">[1..1] TextType</text>
+    <text x="40" y="240" class="content">- PartyNumber</text>
+    <text x="175" y="240" class="content">[0..1] TextType</text>
+    <text x="40" y="260" class="content">- PartyDescription</text>
+    <text x="175" y="260" class="content">[0..1] TextType</text>
+
+    <!-- Q1PrivateIndividualType -->
+    <rect x="380" y="5" width="200" height="70" class="small-box"></rect>
+    <text x="390" y="25" class="title">Q1PrivateIndividualType</text>
+    <text x="385" y="45" class="content">- Name</text>
+    <text x="475" y="45" class="content">[1..1] Q1NameType</text>
+    <text x="385" y="65" class="content">- Alias</text>
+    <text x="475" y="65" class="content">[0..*] Q1NameType</text>
+
+    <!-- Q1OrganizationType -->
+    <rect x="380" y="105" width="400" height="70" class="small-box"></rect>
+    <text x="390" y="125" class="title">Q1OrganizationType</text>
+    <text x="385" y="145" class="content">- Name</text>
+    <text x="555" y="145" class="content">[1..1] Q1NameType</text>
+    <text x="385" y="165" class="content">- CompanyRegistrationNumber</text>
+    <text x="555" y="165" class="content">[0..1] CompanyRegistrationNumberTextType</text>
+
+    <!-- Q1AddressType -->
+    <rect x="380" y="195" width="250" height="70" class="small-box"></rect>
+    <text x="390" y="215" class="title">Q1AddressType</text>
+    <text x="385" y="235" class="content">- PostcodeZone</text>
+    <text x="480" y="235" class="content">[0..1] Q1PostcodeZoneType</text>
+    <text x="385" y="255" class="content">- AddressLine</text>
+    <text x="480" y="255" class="content">[1..1] AddressLineType</text>
+
+    <!-- Q1CharityDetailsType -->
+    <rect x="380" y="285" width="230" height="90" class="small-box"></rect>
+    <text x="390" y="305" class="title">Q1CharityDetailsType</text>
+    <text x="385" y="325" class="content">- CharityName</text>
+    <text x="490" y="325" class="content">[1..*] TextType</text>
+    <text x="385" y="345" class="content">- CharityAddress</text>
+    <text x="490" y="345" class="content">[1..*] TextType</text>
+    <text x="385" y="365" class="content">- CharityType</text>
+    <text x="490" y="365" class="content">[0..*] Q1AddressType</text>
+
+    <!-- TextType -->
+    <rect x="380" y="390" width="70" height="30" class="small-box"></rect>
+    <text x="390" y="410" class="title">TextType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - Q1PartyType -->
+    <line x1="30" y1="125" x2="330" y2="125" stroke="lightgrey"></line>
+    <line x1="30" y1="127" x2="330" y2="127" stroke="lightgrey"></line>
+    <line x1="30" y1="146" x2="330" y2="146" stroke="lightgrey"></line>
+    <line x1="30" y1="166" x2="330" y2="166" stroke="lightgrey"></line>
+    <line x1="30" y1="186" x2="330" y2="186" stroke="lightgrey"></line>
+    <line x1="30" y1="206" x2="330" y2="206" stroke="lightgrey"></line>
+    <line x1="30" y1="226" x2="330" y2="226" stroke="lightgrey"></line>
+    <line x1="30" y1="246" x2="330" y2="246" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1PrivateIndividualType -->
+    <line x1="380" y1="29" x2="580" y2="29" stroke="lightgrey"></line>
+    <line x1="380" y1="31" x2="580" y2="31" stroke="lightgrey"></line>
+    <line x1="380" y1="50" x2="580" y2="50" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1OrganizationType -->
+    <line x1="380" y1="129" x2="780" y2="129" stroke="lightgrey"></line>
+    <line x1="380" y1="131" x2="780" y2="131" stroke="lightgrey"></line>
+    <line x1="380" y1="151" x2="780" y2="151" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1AddressType -->
+    <line x1="380" y1="219" x2="630" y2="219" stroke="lightgrey"></line>
+    <line x1="380" y1="221" x2="630" y2="221" stroke="lightgrey"></line>
+    <line x1="380" y1="241" x2="630" y2="241" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1CharityDetailsType -->
+    <line x1="380" y1="309" x2="610" y2="309" stroke="lightgrey"></line>
+    <line x1="380" y1="311" x2="610" y2="311" stroke="lightgrey"></line>
+    <line x1="380" y1="331" x2="610" y2="331" stroke="lightgrey"></line>
+    <line x1="380" y1="351" x2="610" y2="351" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="330" y1="137" x2="380" y2="20" class="line"></line>
+    <line x1="330" y1="157" x2="380" y2="120" class="line"></line>
+    <line x1="330" y1="177" x2="380" y2="210" class="line"></line>
+    <line x1="330" y1="197" x2="380" y2="300" class="line"></line>
+    <line x1="330" y1="217" x2="380" y2="405" class="line"></line>
+    <line x1="330" y1="237" x2="380" y2="405" class="line"></line>
+    <line x1="330" y1="257" x2="380" y2="405" class="line"></line>
+
+</svg>

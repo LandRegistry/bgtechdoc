@@ -1,0 +1,75 @@
+<svg width="600" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- RejectionType -->
+    <rect x="30" y="50" width="270" height="130" class="small-box"></rect>
+    <text x="40" y="70" class="title">RejectionType</text>
+    <text x="40" y="90" class="content">- ExternalReference</text>
+    <text x="165" y="90" class="content">[1..1] string</text>
+    <text x="40" y="110" class="content">- Reason</text>
+    <text x="165" y="110" class="content">[1..1] string</text>
+    <text x="40" y="130" class="content">- Code</text>
+    <text x="165" y="130" class="content">[1..1] string</text>
+    <text x="40" y="150" class="content">- OtherDescription</text>
+    <text x="165" y="150" class="content">[0..1] string</text>
+    <text x="40" y="170" class="content">- ValidationErrors</text>
+    <text x="165" y="170" class="content">[0..*] ValidationErrorsType</text>
+
+    <!-- ValidationErrorsType -->
+    <rect x="380" y="80" width="170" height="70" class="small-box"></rect>
+    <text x="390" y="100" class="title">ValidationErrorsType</text>
+    <text x="385" y="120" class="content">- Code</text>
+    <text x="490" y="120" class="content">[1..1] string</text>
+    <text x="385" y="140" class="content">- Description</text>
+    <text x="490" y="140" class="content">[1..1] string</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - RejectionType -->
+    <line x1="30" y1="74" x2="300" y2="74" stroke="lightgrey"></line>
+    <line x1="30" y1="76" x2="300" y2="76" stroke="lightgrey"></line>
+    <line x1="30" y1="96" x2="300" y2="96" stroke="lightgrey"></line>
+    <line x1="30" y1="116" x2="300" y2="116" stroke="lightgrey"></line>
+    <line x1="30" y1="136" x2="300" y2="136" stroke="lightgrey"></line>
+    <line x1="30" y1="156" x2="300" y2="156" stroke="lightgrey"></line>
+
+    <!-- Table Lines - ValidationErrorsType -->
+    <line x1="380" y1="108" x2="550" y2="108" stroke="lightgrey"></line>
+    <line x1="380" y1="106" x2="550" y2="106" stroke="lightgrey"></line>
+    <line x1="380" y1="126" x2="550" y2="126" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="300" y1="167" x2="380" y2="95" class="line"></line>
+
+</svg>

@@ -1,0 +1,60 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7"
+            refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+        </marker>
+    </defs>
+
+    <!-- RepresentativeType -->
+    <rect x="30" y="4" width="220" height="50" class="small-box"></rect>
+    <text x="40" y="20" class="title">RepresentativeType</text>
+    <text x="40" y="44" class="content">- RepresentativeId <tspan dx="35">positiveInteger</tspan></text>
+
+    <!-- LodgingConveyancerType -->
+    <rect x="30" y="90" width="220" height="30" class="small-box"></rect>
+    <text x="40" y="110" class="title">LodgingConveyancerType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - ApplicationType -->
+    <line x1="30" y1="29" x2="250" y2="29" stroke="lightgrey"></line>
+    <line x1="30" y1="31" x2="250" y2="31" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="135" y1="90" x2="135" y2="74" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+</svg>

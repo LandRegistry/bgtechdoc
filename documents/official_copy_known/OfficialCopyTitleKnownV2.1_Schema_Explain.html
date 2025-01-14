@@ -1,0 +1,1440 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Request Official Copy Title Known - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/official_copy_known/OfficialCopyTitleKnownV2.1_Schema_Explain.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Request Official Copy Title Known - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/official_copy_known/OfficialCopyTitleKnownV2.1_Schema_Explain.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Request Official Copy Title Known" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/official_copy_known/OfficialCopyTitleKnownV2.1_Schema_Explain.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#request-official-copy-title-known-schema-explain-v2-1"><span>Request Official Copy Title Known Schema Explain V2.1</span></a>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/official_copy_title_known/index.html">Back to Official Copy Title Known</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="request-official-copy-title-known-schema-explain-v2-1">Request Official Copy Title Known Schema Explain V2.1</h1>
+
+<hr>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Data input field (from Land Registry (LR) test harness)</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Extract of relevant code from schema</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Mandatory</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Minimum value</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Maximum value</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Has a pattern constraint</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType name="<strong>Q1IdentifierType</strong>"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>MessageID</strong>"
+            type="<strong>Q1TextType</strong>"
+            minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;A character string
+                    (i.e. a finite set of characters)
+                    generally in the form of words of
+                    a language.
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:complexType name="<strong>Q1TextType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q1TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q1TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="5" /&gt;
+        &lt;xs:maxLength value="50" /&gt;
+        &lt;xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>Each application must have a message ID. There can only be one message ID for each application.</p>
+                <p>The message ID is a string with a minimum length of 5 characters and a maximum length of 50 characters.</p>
+                <p>The message ID has a pattern constraint on its pattern value: <code>[a-zA-Z0-9][a-zA-Z0-9\-]*</code>. This constrains the message ID to begin with a-z (lowercase), A-Z (uppercase) or 0-9 and can then be followed with a-z (lowercase), A-Z (uppercase), 0-9 or a hyphen (as long as the input meets the field&rsquo;s length criteria).</p>
+                <p>All of the XML elements that are relevant for the message ID are shown, text in bold to help show the links within the XML.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">5</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">50</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">RequestTitleKnownOfficialCopyV2_1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType
+    name="<strong>RequestTitleKnownOfficialCopyV2_1Type</strong>"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>ID</strong>"
+            type="<strong>Q1IdentifierType</strong>"
+            minOccurs="1" maxOccurs="1" /&gt;
+        &lt;xs:element name="<strong>Product</strong>"
+            type="<strong>Q1ProductType</strong>"
+            minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;This component contains
+                    details regarding the search being
+                    ordered, expedited service, price
+                    details, delivery method and any
+                    attachment
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>The ID carries the message ID, which is used to identify the application within <abbr title="Land Registry">LR</abbr> systems.</p>
+                <p>The product carries the information necessary to request the official copy.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>TitleNumber</strong>"
+    type="<strong>Q2TextType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Provides the subject property
+            title number if known
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>Q2TextType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q2TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q2TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="9" /&gt;
+        &lt;xs:pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>A title number is a unique number assigned to a parcel of land by Land Registry.</p>
+                <p>The title number usually comprises two parts: an alphabetic code (of up to 3 letters) and a sequential number (of up to 6 digits). Together these unique identify the registered title.</p>
+                <p>Title number input is a string with a minimum length of 1 character and a maximum length of 9 characters.</p>
+                <p>The title number has a constraint on its pattern value: <code>[A-Z]{0,3}[0-9]{1,6}[ZT]?</code>.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">9</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Gross price amount</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType name="<strong>Q1ExpectedPriceType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Information about price
+        &lt;/xs:documentation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>GrossPriceAmount</strong>"
+            type="<strong>AmountType</strong>"
+            minOccurs="0" maxOccurs="1"&gt;
+            &lt;xs:documentation&gt;The gross price is the price
+                including the VAT. If the VAT is zero then
+                the Gross and Net Price will be the same
+            &lt;/xs:documentation&gt;
+        &lt;/xs:element&gt;
+        <span class="hmlr-mark-highlight" role="mark">&lt;xs:element name="<strong>NetPriceAmount</strong>"
+            type="<strong>AmountType</strong>"
+            minOccurs="0" maxOccurs="1"&gt;
+            &lt;xs:documentation&gt;The Net Price is the amount
+                before the VAT is added on. If the VAT is
+                zero then the Gross and Net Price will be
+                the same
+            &lt;/xs:documentation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="<strong>VATAmount</strong>"
+            type="<strong>AmountType</strong>"
+            minOccurs="0" maxOccurs="1"&gt;
+            &lt;xs:documentation&gt;This is the amount of the VAT
+            &lt;/xs:documentation&gt;
+        &lt;/xs:element&gt;</span>
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:complexType name="<strong>AmountType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A number of monetary units
+            specified in a currency where the unit of
+            the currency is explicit or implied.
+        &lt;/xs:documentation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:decimal"&gt;
+            <span class="hmlr-mark-highlight" role="mark">&lt;xs:attribute name="<strong>currencyID</strong>"
+                type="xs:normalizedString"
+                use="optional"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;The currency of the
+                        amount
+                    &lt;/xs:documentation&gt;
+            &lt;/xs:attribute&gt;</span>
+        &lt;/xs:extension&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>The price the customer expects to pay for the service requested.</p>
+                <p>The GrossPriceAmount element is used if &ldquo;Continue if Actual Fee Exceeds Expected Fee Indicator&rdquo; is set to True and if the condition is not met the request will not proceed and an error message will be returned to the customer.</p>
+                <p><span class="hmlr-mark-highlight" role="mark">NetPriceAmount, VATAmount and currencyID are not currently used.</span></p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>ExternalReference</strong>"
+    type="<strong>Q1ExternalReferenceType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+
+&lt;xs:complexType name="<strong>Q1ExternalReferenceType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A unique reference given to
+            identify a particular request, order or
+            instruction in the system of the
+            organisation allocating it with the
+            ability to associate the name of the
+            Company that has allocated it.
+        &lt;/xs:documentation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>Reference</strong>"
+            type="<strong>ReferenceTextContentType</strong>"
+            minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:documentation&gt;A unique reference given to
+                identify a particular request, order or
+                instruction in the system of the
+                organisation allocating it
+            &lt;/xs:documentation&gt;
+        &lt;/xs:element&gt;
+        <span class="hmlr-mark-highlight" role="mark">&lt;xs:element name="<strong>AllocatedBy</strong>"
+            type="<strong>Q3TextType</strong>" minOccurs="0"
+            maxOccurs="1"&gt;
+            &lt;xs:documentation&gt;The name of the organisation
+                that has allocated the Reference
+            &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="<strong>Description</strong>"
+            type="<strong>Q3TextType</strong>" minOccurs="0"
+            maxOccurs="1"&gt;
+            &lt;xs:documentation&gt;This field can be used to
+                provide reference description
+            &lt;/xs:documentation&gt;
+        &lt;/xs:element&gt;</span>
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>ReferenceTextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="25" /&gt;
+        &lt;xs:pattern value="[A-Za-z0-9\s~!&quot;@#$%'\(\)
+            \*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;]*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>External reference field to carry a customer allocated reference for the application.</p>
+                <p><span class="hmlr-mark-highlight" role="mark">AllocatedBy and Description are not currently used.</span></p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">25</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType name="<strong>Q1CustomerReferenceType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Provides a unique reference to
+            identify a particular request, order or
+            instruction or object in the system of the
+            organisation allocating it.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>Reference</strong>"
+            type="<strong>ReferenceTextContentType</strong>"
+            minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;A unique reference
+                    given to identify a particular request,
+                    order or instruction in the system of
+                    the organisation allocating it.
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        <span class="hmlr-mark-highlight" role="mark">&lt;xs:element name="<strong>AllocatedBy</strong>"
+            type="<strong>Q3TextType</strong>"
+            minOccurs="0" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;The name of the
+                    organisation that has allocated the
+                    Reference
+                &lt;/xs:documentation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="<strong>Description</strong>"
+            type="<strong>Q3TextType</strong>"
+            minOccurs="0" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;This field can be
+                    used to provide reference description
+                &lt;/xs:documentation&gt;
+        &lt;/xs:element&gt;</span>
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>ReferenceTextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="25" /&gt;
+        &lt;xs:pattern value="[A-Za-z0-9\s~!&quot;@#$%'\(\)
+            \*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;]*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>Customer reference field to carry a customer allocated reference.</p>
+                <p><span class="hmlr-mark-highlight" role="mark">AllocatedBy and Description are not currently used.</span></p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">25</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Contact name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType name="<strong>Q1ContactType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;The information relevant to a
+            person or organization that acts as a point
+            of contact with another person or
+            organization.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>Name</strong>"
+            type="<strong>Q3TextType</strong>"
+            minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;The name of this contact
+                    person or department.
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        <span class="hmlr-mark-highlight" role="mark">&lt;xs:element name="<strong>Communication</strong>"
+            type="<strong>Q1CommunicationType</strong>"
+            minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;The information relevant
+                    to methods of communication for this
+                    contact.
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;</span>
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>Field to carry the contact name of the person associated with the application.</p>
+                <p>The field has a constraint on its pattern value: <code>.*\S.*</code>. This field will accept any input as long as it contains at least 1 unicode character that isn&rsquo;t a space, tab, return or newline.</p>
+                <p><span class="hmlr-mark-highlight" role="mark">Communication is not currently used.</span></p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Telephone number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType name="<strong>Q1CommunicationType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Provides details of any other
+            form of communication
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>Telephone</strong>"
+            type="<strong>Q3TextType</strong>"
+            minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;A character string
+                    (i.e. a finite set of characters)
+                    generally in the form of words of
+                    a language.
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>Field to carry the contact telephone number of the person associated with application.</p>
+                <p>The field has a constraint on its pattern value <code>.*\S.*</code>. This field will accept any input as long as it contains at least 1 unicode character that isn&rsquo;t a space, tab, return or newline.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Requested official copy code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:simpleType
+    name="<strong>RequestedOfficialCopyCodeContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:normalizedString"&gt;
+        &lt;xs:enumeration value="<strong>10</strong>"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;<strong>Register only</strong>
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:enumeration&gt;
+        &lt;xs:enumeration value="<strong>20</strong>"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;<strong>Title only</strong>
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:enumeration&gt;
+        &lt;xs:enumeration value="<strong>30</strong>"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;<strong>Register and Title plan</strong>
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:enumeration&gt;
+        &lt;xs:enumeration value="<strong>40</strong>"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;<strong>CI</strong>
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:enumeration&gt;
+        &lt;xs:enumeration value="<strong>50</strong>"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;<strong>CI and Register</strong>
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:enumeration&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">The search type requested. Sent to <abbr title="Land Registry">LR</abbr> as one of the enumeration value listed.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Enum value</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Property description</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>PropertyDescription</strong>"
+    type="<strong>PropertyDescriptionTextContentType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;This will be used either when
+            the proprietor names do not match or if Title
+            is not computerised and the CMS System wants
+            to continue with manual investigation without
+            warning.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:simpleType
+    name="<strong>PropertyDescriptionTextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="130" /&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>This field is to carry the property description of the property the Official Copy (OC) is being requested for.</p>
+                <p>The field has a constraint on its pattern value: <code>.*\S.*</code>. This field will accept any input as long as it contains at least 1 unicode character that isn&rsquo;t a space, tab, return or newline.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">130</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Official copy type code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:simpleType name="<strong>OfficialCopyCodeContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:normalizedString"&gt;
+        &lt;xs:enumeration value="<strong>10</strong>"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;<strong>OC1</strong>&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:enumeration&gt;
+        &lt;xs:enumeration value="<strong>20</strong>"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;<strong>OC2</strong>&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:enumeration&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">User&rsquo;s choice of OC1 or OC2</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Enum value</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if title is closed and continued indicator</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element
+    name="<strong>ContinueIfTitleIsClosedAndContinuedIndicator</strong>"
+    type="<strong>IndicatorType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;An indicator sent by the CMS to
+            the BG to advise whether to continue with the
+            new Title number without warning.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>IndicatorType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A list of two mutually exclusive
+            Boolean values that express the only possible
+            states of a Property.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:boolean" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>Set to true if the user wishes <abbr title="Land Registry">LR</abbr> to continue with their office copy request if the title number they have input has been closed and continued with a new title number.</p>
+                <p>Set to false and <abbr title="Land Registry">LR</abbr> will return an error message to the user if the title number they have input has been closed and continued with a new title number.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Notify if pending first registration indicator</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element
+    name="<strong>NotifyIfPendingFirstRegistrationIndicator</strong>"
+    type="<strong>IndicatorType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;<span class="hmlr-mark-highlight" role="mark">A list of two mutually exclusive
+            Boolean values that express the only possible
+            states of a Property.</span>
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>IndicatorType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A list of two mutually exclusive
+            Boolean values that express the only possible
+            states of a Property.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:boolean" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>Documentation does not clearly describe its element.</p>
+                <p>Set to true if the user wishes <abbr title="Land Registry">LR</abbr> to notify them if the title they have used is a pending first registration title.</p>
+                <p>Set to false and <abbr title="Land Registry">LR</abbr> will return an error message to the user if the title they have used is a pending first registration title.</p>
+                <p><span class="hmlr-mark-highlight" role="mark">Please note that this value will always be treated as being set to false by HMLR.</span></p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Notify if pending application indicator</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>NotifyIfPendingApplicationIndicator</strong>"
+    type="<strong>IndicatorType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;<span class="hmlr-mark-highlight" role="mark">A list of two mutually exclusive
+            Boolean values that express the only possible
+            states of a Property.</span>
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>IndicatorType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A list of two mutually exclusive
+            Boolean values that express the only possible
+            states of a Property.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:boolean" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>Documentation does not clearly describe its element.</p>
+                <p>Set to true if the user wishes <abbr title="Land Registry">LR</abbr> to notify them if the title they have used has a pending application.</p>
+                <p>Set to false and <abbr title="Land Registry">LR</abbr> will return an error message to the user if the title they have used has a pending application.</p>
+                <p><span class="hmlr-mark-highlight" role="mark">Please note that this value will always be treated as being set to false by HMLR.</span></p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Send back dated indicator</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>SendBackDatedIndicator</strong>"
+    type="<strong>IndicatorType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;<span class="hmlr-mark-highlight" role="mark">A list of two mutually exclusive
+            Boolean values that express the only possible
+            states of a Property.</span>
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>IndicatorType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A list of two mutually exclusive
+            Boolean values that express the only possible
+            states of a Property.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:boolean" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>Documentation does not clearly describe its element.</p>
+                <p>Set to true if the user wishes <abbr title="Land Registry">LR</abbr> to send them a backdated office copy of the title they have requested.</p>
+                <p>If set to false and there are pending applications on the title, <abbr title="Land Registry">LR</abbr> will reject the application with an appropriate message.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if actual fee exceeds expected fee indicator</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name=
+    "<strong>ContinueIfActualFeeExceedsExpectedFeeIndicator</strong>"
+    type="<strong>IndicatorType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;<span class="hmlr-mark-highlight" role="mark">A list of two mutually exclusive
+            Boolean values that express the only possible
+            states of a Property.</span>
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>IndicatorType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A list of two mutually exclusive
+            Boolean values that express the only possible
+            states of a Property.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:boolean" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>Documentation does not clearly describe its element.</p>
+                <p>Set to true if the user wishes <abbr title="Land Registry">LR</abbr> to continue with the application if the actual fee to be charged is greater than the fee set by the user.</p>
+                <p>Set to false and <abbr title="Land Registry">LR</abbr> will return an error message to the user if the actual fee to be charged is greater than the fee set by the user.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Estate plan plot number numeric</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>EstatePlanPlotNumberNumeric</strong>"
+    type="<strong>NumericType</strong>"
+    minOccurs="1" maxOccurs="unbounded"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;One or more values if CI is
+            requested.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>NumericType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Numeric information that is
+            assigned or is determined by calculation,
+            counting, or sequencing. It does not require
+            a unit of quantity or unit of measure.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:decimal" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>Conveys the request for certificate in form <abbr title="Certificate of Inspection">CI</abbr>. Plan/plot number is passed to <abbr title="Land Registry">LR</abbr>.</p>
+                <p>Mandatory is <abbr title="Certificate of Inspection">CI</abbr> option chosen.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Document details</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>DocumentDetails</strong>"
+    type="<strong>Q1DocumentDetailsType</strong>"
+    minOccurs="0" maxOccurs="unbounded" /&gt;
+
+&lt;xs:complexType name="<strong>Q1DocumentDetailsType</strong>"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>TypeOfDocumentCode</strong>"
+            type="<strong>TypeOfDocumentCodeType</strong>"
+            minOccurs="1" maxOccurs="1"&gt;
+
+&lt;xs:complexType name="<strong>TypeOfDocumentCodeType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string (letters,
+            figures or symbols) that for brevity and/or
+            language independence may be used to
+            represent or replace a definitive value or
+            text of an Attribute together with relevant
+            supplementary information.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base=
+            "<strong>TypeOfDocumentCodeContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">This is the main element that carries the details of each document you wish to request from Land Registry.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Type of document code</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:simpleType
+    name="<strong>TypeOfDocumentCodeContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:normalizedString"&gt;
+        &lt;xs:enumeration value="<strong>10</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Abstract</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>20</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Agreement</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>30</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Assent</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>40</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Assignment</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>50</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Charge</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>60</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Conveyance</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>70</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Deed</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>80</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Indenture</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>90</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Lease</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>100</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Licence</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>110</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Plan</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>120</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Sub-Charge</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>130</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Transfer</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>140</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Other</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>150</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Commonhold Community
+                Statement</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>160</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Memorandum and Articles
+                of Association</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>170</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Surrender of Development
+                Rights</strong>&lt;/xs:documentation&gt;
+        &lt;xs:enumeration value="<strong>180</strong>"&gt;
+            &lt;xs:documentation&gt;<strong>Termination Document</strong>
+            &lt;/xs:documentation&gt;
+    &lt;/xs:restriction&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Acceptable list of documents that can be selected for OC2. Document descriptions are listed with their corresponding enumeration values.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Enum values</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Date of document (YYYY-MM-DD)</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>DateOfDocumentDate</strong>"
+    type="<strong>DateType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt; A particular point in the
+            progression of time together with the relevant
+            supplementary information. OSCRE dates follow
+            the ISO 8601 Standard. The international
+            standard date notation is YYYY-MM-DD where YYYY
+            is the year in the usual Gregorian calendar,
+            MM is the month of the year between 01 (January)
+            and 12 (December), and DD is the day of the
+            month between 01 and 31. For example, the fourth
+            day of February in the year 1995 is written in
+            the standard notation as 1995-02-04
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>DateType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt; As above &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:date" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Date of the document the OC is required for.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title number filed under</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>TitleNumberFiledUnder</strong>"
+    type="<strong>Q2TextType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>Q2TextType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q2TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q2TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="9" /&gt;
+        &lt;xs:pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>A title number is a unique number assigned to a parcel of land by Land Registry.</p>
+                <p>The title number usually comprises two parts: an alphabetic code (of up to 3 letters) and a sequential number (of up to 6 digits). Together these uniquely identify the registered title.</p>
+                <p>Title number input is a string with a minimum length of 1 character and a maximum length of 9 characters.</p>
+                <p>The title number has a constraint on its pattern value: <code>[A-Z]{0,3}[0-9]{1,6}[ZT]?</code>.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">9</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Additional information</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>AdditionalInformation</strong>"
+    type="<strong>Q3TextType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;This is used to provide further
+            information about the requested document. This
+            must be filled in if a document type of 140
+            ('Other') is selected
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>The additional information field becomes mandatory when a document type of &lsquo;Other&rsquo; is selected</p>
+                <p>The field has a constraint on its pattern value: <code>.*\S.*</code>. This field will accept any input as long as it contains at least 1 unicode character that isn&rsquo;t a space, tab, return or newline.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Despatch name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name ="<strong>AlternativeDespatchName</strong>"
+    type="<strong>DespatchNameTextContentType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt; Name of firm/company results
+            will be addressed to.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:simpleType name="<strong>DespatchNameTextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="70" /&gt;
+        &lt;xs:pattern value="[A-Za-z0-9\s~!&quot;@#$%'\(\)
+            \*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;]*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">To record an alternative despatch name.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">70</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Despatch reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name ="<strong>AlternativeDespatchReference</strong>"
+    type="<strong>Q4TextContentType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt; Text reference to be displayed
+            on results.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:simpleType name="<strong>Q4TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="25" /&gt;
+        &lt;xs:pattern value="[A-Za-z0-9\s~!&quot;@#$%'\(\)
+            \*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;]*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">To record an alternative despatch reference.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">25</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Line 1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>AddressLine</strong>"
+    type="<strong>Q3TextType</strong>"
+    minOccurs="0" maxOccurs="unbounded"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A line of the address for the
+            alternative despatch location.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>To record an address line of the alternative despatch address.</p>
+                <p>The field has a constraint on its pattern value: <code>.*\S.*</code>. This field will accept any input as long as it contains at least 1 unicode character that isn&rsquo;t a space, tab, return or newline.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Line 2</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">As line 1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Line 3</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">As line 1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Line 4</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">As line 1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Line 5</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">As line 1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>Postcode</strong>"
+    type="<strong>Q3TextType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A valid postcode for the
+            alternative address.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>To record the postcode of the alternative despatch address.</p>
+                <p>The field has a constraint on its pattern value: <code>.*\S.*</code>. This field will accept any input as long as it contains at least 1 unicode character that isn&rsquo;t a space, tab, return or newline.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">DX number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>DXNumber</strong>"
+    type="<strong>Q3TextType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A unique identifier for a delivery
+            point for organisations using the Document
+            Exchange service.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>To record the DX number of the alternative despatch address.</p>
+                <p>The field has a constraint on its pattern value: <code>.*\S.*</code>. This field will accept any input as long as it contains at least 1 unicode character that isn&rsquo;t a space, tab, return or newline.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">DX exchange</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>ExchangeName</strong>"
+    type="<strong>Q3TextType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt; 
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>To record the DX exchange of the alternative despatch address.</p>
+                <p>The field has a constraint on its pattern value: <code>.*\S.*</code>. This field will accept any input as long as it contains at least 1 unicode character that isn&rsquo;t a space, tab, return or newline.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

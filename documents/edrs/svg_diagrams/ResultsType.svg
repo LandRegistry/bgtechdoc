@@ -1,0 +1,110 @@
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+    <style>
+
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- ResultsType -->
+    <rect x="30" y="50" width="350" height="210" class="small-box"></rect>
+    <text x="40" y="70" class="title">ResultsType</text>
+    <text x="40" y="90" class="content">- MessageDetails</text>
+    <text x="225" y="90" class="content">[1..1] string</text>
+    <text x="40" y="110" class="content">- ExternalReference</text>
+    <text x="225" y="110" class="content">[1..1] string</text>
+    <text x="40" y="130" class="content">- ActualFee</text>
+    <text x="225" y="130" class="content">[1..1] int</text>
+    <text x="40" y="150" class="content">- FeeAdjusted</text>
+    <text x="225" y="150" class="content">[1..1] boolean</text>
+    <text x="40" y="170" class="content">- EarlyCompletionIndicator</text>
+    <text x="225" y="170" class="content">[0..1] boolean</text>
+    <text x="40" y="190" class="content">- AdditionalDespatchItemsIndicator</text>
+    <text x="225" y="190" class="content">[0..1] boolean</text>
+    <text x="40" y="210" class="content">- ResultTypeCode</text>
+    <text x="225" y="210" class="content">[1..1] ResultCodeContentType</text>
+    <text x="40" y="230" class="content">- DespatchDocument</text>
+    <text x="225" y="230" class="content">[0..1] AttachmentType</text>
+    <text x="40" y="250" class="content">- XmlRegisters</text>
+    <text x="225" y="250" class="content">[0..1] XmlRegistersType</text>
+
+    <!-- ResultCodeContentType -->
+    <rect x="420" y="5" width="160" height="30" class="small-box"></rect>
+    <text x="430" y="25" class="title">ResultCodeContentType</text>
+
+    <!-- AttachmentType -->
+    <rect x="420" y="75" width="120" height="70" class="small-box"></rect>
+    <text x="430" y="95" class="title">AttachmentType</text>
+    <text x="425" y="115" class="content">- filename</text>
+    <text x="500" y="115" class="content">string</text>
+    <text x="425" y="135" class="content">- format</text>
+    <text x="500" y="135" class="content">string</text>
+
+    <!-- XmlRegistersType -->
+    <rect x="420" y="185" width="320" height="90" class="small-box"></rect>
+    <text x="430" y="205" class="title">XmlRegistersType</text>
+    <text x="425" y="225" class="content">- TitleNumber</text>
+    <text x="580" y="225" class="content">[1..1] string</text>
+    <text x="425" y="245" class="content">- OCSummaryData</text>
+    <text x="580" y="245" class="content">[1..1] Q1OCSummaryDataType</text>
+    <text x="425" y="265" class="content">- XmlRegisterData</text>
+    <text x="580" y="265" class="content">[1..1] XmlRegisterDataType</text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - ResultsType -->
+    <line x1="30" y1="75" x2="380" y2="75" stroke="lightgrey"></line>
+    <line x1="30" y1="77" x2="380" y2="77" stroke="lightgrey"></line>
+    <line x1="30" y1="96" x2="380" y2="96" stroke="lightgrey"></line>
+    <line x1="30" y1="116" x2="380" y2="116" stroke="lightgrey"></line>
+    <line x1="30" y1="136" x2="380" y2="136" stroke="lightgrey"></line>
+    <line x1="30" y1="156" x2="380" y2="156" stroke="lightgrey"></line>
+    <line x1="30" y1="176" x2="380" y2="176" stroke="lightgrey"></line>
+    <line x1="30" y1="196" x2="380" y2="196" stroke="lightgrey"></line>
+    <line x1="30" y1="216" x2="380" y2="216" stroke="lightgrey"></line>
+    <line x1="30" y1="236" x2="380" y2="236" stroke="lightgrey"></line>
+
+    <!-- Table Lines - AttachmentType -->
+    <line x1="420" y1="99" x2="540" y2="99" stroke="lightgrey"></line>
+    <line x1="420" y1="101" x2="540" y2="101" stroke="lightgrey"></line>
+    <line x1="420" y1="121" x2="540" y2="121" stroke="lightgrey"></line>
+
+    <!-- Table Lines - XmlRegistersType -->
+    <line x1="420" y1="209" x2="740" y2="209" stroke="lightgrey"></line>
+    <line x1="420" y1="211" x2="740" y2="211" stroke="lightgrey"></line>
+    <line x1="420" y1="231" x2="740" y2="231" stroke="lightgrey"></line>
+    <line x1="420" y1="251" x2="740" y2="251" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="380" y1="210" x2="420" y2="20" class="line"></line>
+    <line x1="380" y1="230" x2="420" y2="87" class="line"></line>
+    <line x1="380" y1="250" x2="420" y2="197" class="line"></line>
+
+</svg>

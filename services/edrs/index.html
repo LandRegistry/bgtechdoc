@@ -10,13 +10,18 @@
     <link href="../../stylesheets/manifest.css" rel="stylesheet" />
 
     <link rel="canonical" href="/services/edrs/">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:image" content="/images/govuk-large.png" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
       <meta name="twitter:title" content="e-Document Registration Service - HM Land Registry Business Gateway Developer Pack" />
       <meta name="twitter:url" content="/services/edrs/" />
 
-      <meta property="og:image" content="/images/govuk-large.png" />
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
       <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
       <meta property="og:title" content="e-Document Registration Service" />
       <meta property="og:type" content="object" />
@@ -27,7 +32,7 @@
   </head>
 
   <body class="govuk-template__body">
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
 
     <div class="app-pane">
       <div class="app-pane__header toc-open-disabled">
@@ -55,15 +60,15 @@
 
       <div class="app-pane__body" data-module="in-page-navigation">
           <div class="app-pane__toc">
-            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
               <div class="search" data-module="search" data-path-to-site-root="../../">
   <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
     <input type="hidden" name="as_sitesearch" value=""/>
-    <label class="govuk-label search__label" for="search" aria-hidden="true">
+    <label class="govuk-label search__label" for="search">
       Search (via Google)
     </label>
     <input
-      type="text"
+      type="search"
       id="search" name="q"
       class="govuk-input govuk-!-margin-bottom-0 search__input"
       aria-controls="search-results"
@@ -131,7 +136,9 @@
         <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             
-    <!---**************************************************************-->
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
 
 <div class="page-nav">
 <a href="../index.html">Back to Services</a>
@@ -195,11 +202,10 @@
   <div style="float:left; padding-right: 15px">
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
-  <div >
-    <p><a href="../../documents/edrs/eDRS_V2_1_Submission.pdf" class="govuk-!-font-size-24">Submission guide</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 202KB, 5 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_V2_1_Submission.pdf"  class="govuk-!-font-size-19" download="eDRS_V2_1_Submission.pdf" >Download</a></p>
+  <div style="padding-bottom: 15px">
+    <p><a href="../../documents/edrs/eDRS_V2_1_Submission.html" class="govuk-!-font-size-24">Submission guide</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span><br></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Submission.html" class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -229,7 +235,7 @@ is detailed separately. This is the primary requirements specification for this 
     </span>
   </summary>
   <div class="govuk-details__text">
-    <table class="govuk-table">
+    <table class="govuk-table" cellpadding="10">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rule number</th>
@@ -396,7 +402,7 @@ is detailed separately. This is the primary requirements specification for this 
           <td class="govuk-table__cell  govuk-!-font-size-14">franchise.title</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Applications for a New Lease, Lease Extension or a Transfer of Part will not be permitted against a title with an estate interest of &lsquo;Affecting Franchise&rsquo; or &lsquo;Relating Franchise&rsquo;</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-141</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">Applications for a New Lease, Lease Extension or a Transfer of Part against an affecting franchise or relating franchise are not supported</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Applications for a New Lease, Lease Extension or a Transfer of Part against an affecting franchise or relating franchise are not supported.</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-240</td>
@@ -514,7 +520,7 @@ is detailed separately. This requirements specification forms part of a larger s
     </span>
   </summary>
   <div class="govuk-details__text">
-    <table class="govuk-table">
+    <table class="govuk-table" cellpadding="10">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header govuk-!-font-size-14">Rule number</th>
@@ -532,7 +538,7 @@ is detailed separately. This requirements specification forms part of a larger s
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.attachment.formatdescription.error</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">The Attachment file must be in eithe GIF, JPEG, TIFF or PDF format</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-128</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">The Attachment file must be in either GIF, JPG, TIFF or PDF format therefore your attachment cannot be accepted</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">The Attachment file must be in either GIF, JPEG, TIFF or PDF format therefore your attachment cannot be accepted</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-128</td>
@@ -703,10 +709,9 @@ is detailed separately. This requirements specification forms part of a larger s
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div >
-    <p><a href="../../documents/edrs/eDRS_v2_1_Interface_Spec_V1_3.pdf" class="govuk-!-font-size-24">Interface specification</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 2870KB, 60 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_v2_1_Interface_Spec_V1_3.pdf"  class="govuk-!-font-size-19" download="eDRS_v2_1_Interface_Spec_V1_3.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Interface_Spec_V1_3.html" class="govuk-!-font-size-24">Interface specification</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span><br>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Interface_Spec_V1_3.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -726,10 +731,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data.pdf" class="govuk-!-font-size-24">Vendor Test data- EDRS</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 223KB, 18 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data.pdf"  class="govuk-!-font-size-19" download="eDRS_V2_1_Vendor_Test_Data.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data.html" class="govuk-!-font-size-24">Vendor Test data- EDRS</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span><br>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -738,10 +742,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Attachment.pdf" class="govuk-!-font-size-24">Vendor Test data- Attachment</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 174KB, 7 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Attachment.pdf"  class="govuk-!-font-size-19" download="eDRS_V2_1_Vendor_Test_Data_Attachment.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Attachment.html" class="govuk-!-font-size-24">Vendor Test data- Attachment service</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Attachment.html" class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -750,10 +753,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_Correspondence_Vendor_Test_Data_v1.1.pdf" class="govuk-!-font-size-24">Vendor Test data- Correspondence</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 135KB, 2 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_Correspondence_Vendor_Test_Data_v1.1.pdf"  class="govuk-!-font-size-19" download="eDRS_Correspondence_Vendor_Test_Data_v1.1.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_Correspondence_Vendor_Test_Data_v1.1.html" class="govuk-!-font-size-24">Vendor Test data- Correspondence</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span></p>
+    <p><a href="../../documents/edrs/eDRS_Correspondence_Vendor_Test_Data_v1.1.html" class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -762,10 +764,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_Early_Completion_Vendor_Test_Data_v1_1.pdf" class="govuk-!-font-size-24">Vendor Test data- early Completion</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 136KB, 2 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_Early_Completion_Vendor_Test_Data_v1_1.pdf"  class="govuk-!-font-size-19" download="eDRS_Early_Completion_Vendor_Test_Data_v1_1.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_Early_Completion_Vendor_Test_Data_v1_1.html" class="govuk-!-font-size-24">Vendor Test data- Early Completion</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span></p>
+    <p><a href="../../documents/edrs/eDRS_Early_Completion_Vendor_Test_Data_v1_1.html" class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -774,10 +775,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario1.pdf" class="govuk-!-font-size-24">Vendor Test data- Transfer and Charge</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 246KB, 16 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario1.pdf"  class="govuk-!-font-size-19" download="eDRS_V2_1_Vendor_Test_Data_Scenario1.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario1.html" class="govuk-!-font-size-24">Vendor Test data- Transfer and Charge</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario1.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -786,10 +786,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario2.pdf" class="govuk-!-font-size-24">Vendor Test data- Remortgage</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 215KB, 15 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario2.pdf"  class="govuk-!-font-size-19" download="eDRS_V2_1_Vendor_Test_Data_Scenario2.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario2.html" class="govuk-!-font-size-24">Vendor Test data- Remortgage</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario2.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -798,10 +797,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario3.pdf" class="govuk-!-font-size-24">Vendor Test data- Transfer of Equity</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 241KB, 15 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario3.pdf"  class="govuk-!-font-size-19" download="eDRS_V2_1_Vendor_Test_Data_Scenario3.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario3.html" class="govuk-!-font-size-24">Vendor Test data- Transfer of Equity</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario3.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -810,10 +808,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario4.pdf" class="govuk-!-font-size-24">Vendor Test data- Restriction - Hostile Application</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 243KB, 14 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario4.pdf"  class="govuk-!-font-size-19" download="eDRS_V2_1_Vendor_Test_Data_Scenario4.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario4.html" class="govuk-!-font-size-24">Vendor Test data- Restriction, Hostile Application</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario4.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -822,10 +819,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario5.pdf" class="govuk-!-font-size-24">Vendor Test data- Change of Name</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 219KB, 11 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario5.pdf"  class="govuk-!-font-size-19" download="eDRS_V2_1_Vendor_Test_Data_Scenario5.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario5.html" class="govuk-!-font-size-24">Vendor Test data- Change of Name</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario5.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -834,10 +830,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario6.pdf" class="govuk-!-font-size-24">Vendor Test data- Dispositionary First Lease (DFL)</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 227KB, 14 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario6.pdf"  class="govuk-!-font-size-19" download="eDRS_V2_1_Vendor_Test_Data_Scenario6.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario6.html" class="govuk-!-font-size-24">Vendor Test data- Dispositionary First Lease (DFL)</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario6.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -846,10 +841,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario7.pdf" class="govuk-!-font-size-24">Vendor Test data- Transfer of Part</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 234KB, 14 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario7.pdf"  class="govuk-!-font-size-19" download="eDRS_V2_1_Vendor_Test_Data_Scenario7.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario7.html" class="govuk-!-font-size-24">Vendor Test data- Transfer of Part</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span><br></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario7.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -858,10 +852,9 @@ Business Gateway e-Document Registration Service customer.</p>
     <img src="../../images/doc_thumbnail.png" alt="A Generic document thumbnail image">
   </div>
   <div style="padding-bottom: 15px">
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario8.pdf" class="govuk-!-font-size-24">Vendor Test data- Lease Extension</a></p>
-    <p><span class="govuk-body govuk-!-font-size-14" >PDF, 274KB, 13 pages</span><br>
-      This file may not be suitable for users of assistive technology.</p>
-    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario8.pdf"  class="govuk-!-font-size-19" download="eDRS_V2_1_Vendor_Test_Data_Scenario8.pdf" >Download</a></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario8.html" class="govuk-!-font-size-24">Vendor Test data- Lease Extension</a></p>
+    <p><span class="govuk-body govuk-!-font-size-14" >HTML</span><br></p>
+    <p><a href="../../documents/edrs/eDRS_V2_1_Vendor_Test_Data_Scenario8.html"  class="govuk-!-font-size-19">Open</a></p>
   </div>
 </div>
 
@@ -926,6 +919,7 @@ Business Gateway e-Document Registration Service customer.</p>
     </div>
 
     
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
     <script src="../../javascripts/application.js"></script>
   </body>
 </html>

@@ -1,0 +1,142 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- Q1EntryDetails -->
+    <rect x="30" y="50" width="300" height="150" class="small-box"></rect>
+    <text x="40" y="70" class="title">Q1EntryDetails</text>
+    <text x="40" y="90" class="content">- EntryNumber</text>
+    <text x="170" y="90" class="content">[1..1] TextType</text>
+    <text x="40" y="110" class="content">- EntryText</text>
+    <text x="170" y="110" class="content">[1..1] TextType</text>
+    <text x="40" y="130" class="content">- RegistrationDate</text>
+    <text x="170" y="130" class="content">[0..1] DateType</text>
+    <text x="40" y="150" class="content">- SubRegisterDate</text>
+    <text x="170" y="150" class="content">[0..1] SubRegisterCodeType</text>
+    <text x="40" y="170" class="content">- ScheduleCode</text>
+    <text x="170" y="170" class="content">[0..1] boolean</text>
+    <text x="40" y="190" class="content">- Infills</text>
+    <text x="170" y="190" class="content">[0..1] date</text>
+
+    <!-- TextType -->
+    <rect x="440" y="5" width="70" height="30" class="small-box"></rect>
+    <text x="450" y="25" class="title">TextType</text>
+
+    <!-- DateType -->
+    <rect x="440" y="45" width="70" height="30" class="small-box"></rect>
+    <text x="450" y="64" class="title">DateType</text>
+
+    <!-- SubRegisterCodeType -->
+    <rect x="440" y="85" width="140" height="30" class="small-box"></rect>
+    <text x="450" y="105" class="title">SubRegisterCodeType</text>
+
+    <!-- ScheduleCodeType -->
+    <rect x="440" y="125" width="130" height="30" class="small-box"></rect>
+    <text x="450" y="145" class="title">ScheduleCodeType</text>
+
+    <!-- Q1InfillDetailsType -->
+    <rect x="440" y="175" width="270" height="350" class="small-box"></rect>
+    <text x="450" y="195" class="title">Q1InfillDetailsType</text>
+    <text x="445" y="215" class="content">- Amount</text>
+    <text x="560" y="215" class="content">[1..1] AmountInfillType</text>
+    <text x="445" y="235" class="content">- ChargeDate</text>
+    <text x="560" y="235" class="content">[1..1] ChargeDateInfillType</text>
+    <text x="445" y="255" class="content">- ChargeParty</text>
+    <text x="560" y="255" class="content">[1..1] ChargePartyInfillType</text>
+    <text x="445" y="275" class="content">- Date</text>
+    <text x="560" y="275" class="content">[1..1] DateInfillType</text>
+    <text x="445" y="295" class="content">- DeedDate</text>
+    <text x="560" y="295" class="content">[1..1] DeedDateInfillType</text>
+    <text x="445" y="315" class="content">- DeedExtent</text>
+    <text x="560" y="315" class="content">[1..1] DeedExtentInfillType</text>
+    <text x="445" y="335" class="content">- DeedParty</text>
+    <text x="560" y="335" class="content">[1..1] DeedPartyInfillType</text>
+    <text x="445" y="355" class="content">- DeedType</text>
+    <text x="560" y="355" class="content">[1..1] DeedTypeInfillType</text>
+    <text x="445" y="375" class="content">- ExtentOfLand</text>
+    <text x="560" y="375" class="content">[1..1] ExtentOfLandInfillType</text>
+    <text x="445" y="395" class="content">- MiscellaneousText</text>
+    <text x="560" y="395" class="content">[1..1] MiscTextInfillType</text>
+    <text x="445" y="415" class="content">- Name</text>
+    <text x="560" y="415" class="content">[1..1] NameInfillType</text>
+    <text x="445" y="435" class="content">- Note</text>
+    <text x="560" y="435" class="content">[1..1] NoteInfillType</text>
+    <text x="445" y="455" class="content">- OptionalMiscText</text>
+    <text x="560" y="455" class="content">[1..1] OptMiscTextInfillType</text>
+    <text x="445" y="475" class="content">- PlansReference</text>
+    <text x="560" y="475" class="content">[1..1] PlansRefInfillType</text>
+    <text x="445" y="495" class="content">- TitleNumber</text>
+    <text x="560" y="495" class="content">[1..1] TitleNumberInfillType</text>
+    <text x="445" y="515" class="content">- VerbatimText</text>
+    <text x="560" y="515" class="content">[1..1] VerbatimTextInfillType</text>
+
+
+    <!-- Table Lines -->
+    <!-- Table Lines - Q1EntryDetails -->
+    <line x1="30" y1="74" x2="330" y2="74" stroke="lightgrey"></line>
+    <line x1="30" y1="76" x2="330" y2="76" stroke="lightgrey"></line>
+    <line x1="30" y1="97" x2="330" y2="97" stroke="lightgrey"></line>
+    <line x1="30" y1="117" x2="330" y2="117" stroke="lightgrey"></line>
+    <line x1="30" y1="137" x2="330" y2="137" stroke="lightgrey"></line>
+    <line x1="30" y1="157" x2="330" y2="157" stroke="lightgrey"></line>
+    <line x1="30" y1="177" x2="330" y2="177" stroke="lightgrey"></line>
+
+    <!-- Table Lines - Q1InfillDetailsType -->
+    <line x1="440" y1="199" x2="710" y2="199" stroke="lightgrey"></line>
+    <line x1="440" y1="201" x2="710" y2="201" stroke="lightgrey"></line>
+    <line x1="440" y1="220" x2="710" y2="220" stroke="lightgrey"></line>
+    <line x1="440" y1="240" x2="710" y2="240" stroke="lightgrey"></line>
+    <line x1="440" y1="260" x2="710" y2="260" stroke="lightgrey"></line>
+    <line x1="440" y1="280" x2="710" y2="280" stroke="lightgrey"></line>
+    <line x1="440" y1="300" x2="710" y2="300" stroke="lightgrey"></line>
+    <line x1="440" y1="320" x2="710" y2="320" stroke="lightgrey"></line>
+    <line x1="440" y1="340" x2="710" y2="340" stroke="lightgrey"></line>
+    <line x1="440" y1="360" x2="710" y2="360" stroke="lightgrey"></line>
+    <line x1="440" y1="380" x2="710" y2="380" stroke="lightgrey"></line>
+    <line x1="440" y1="400" x2="710" y2="400" stroke="lightgrey"></line>
+    <line x1="440" y1="420" x2="710" y2="420" stroke="lightgrey"></line>
+    <line x1="440" y1="440" x2="710" y2="440" stroke="lightgrey"></line>
+    <line x1="440" y1="460" x2="710" y2="460" stroke="lightgrey"></line>
+    <line x1="440" y1="480" x2="710" y2="480" stroke="lightgrey"></line>
+    <line x1="440" y1="500" x2="710" y2="500" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="330" y1="90" x2="440" y2="20" class="line"></line>
+    <line x1="330" y1="110" x2="440" y2="20" class="line"></line>
+    <line x1="330" y1="130" x2="440" y2="60" class="line"></line>
+    <line x1="330" y1="150" x2="440" y2="100" class="line"></line>
+    <line x1="330" y1="170" x2="440" y2="140" class="line"></line>
+    <line x1="330" y1="190" x2="440" y2="190" class="line"></line>
+
+</svg>

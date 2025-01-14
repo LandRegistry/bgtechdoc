@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Search by Property Description - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/documents/search_property_desc/RequestSearchByPropertyDescriptionV2_0SchemaExplain.html">
+    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:title" content="Search by Property Description - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/documents/search_property_desc/RequestSearchByPropertyDescriptionV2_0SchemaExplain.html" />
+
+      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Search by Property Description" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/documents/search_property_desc/RequestSearchByPropertyDescriptionV2_0SchemaExplain.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#search-by-property-description-schema-explain-v2-0"><span>Search by Property Description Schema explain V2.0</span></a>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
+
+<!---**************************************************************-->
+
+<div class="page-nav">
+    <a href="../../services/search_property_description/index.html">Back to Search by Property Description</a>
+    <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="search-by-property-description-schema-explain-v2-0">Search by Property Description Schema explain V2.0</h1>
+
+<hr>
+
+<table class="govuk-table" cellpadding="10">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header govuk-!-font-size-14">Data input field (from Land Registry (LR) test harness)</th>
+            <th class="govuk-table__header govuk-!-font-size-14">Extract of relevant code from schema</th>
+            <th class="govuk-table__header govuk-!-font-size-14">Description</th>
+            <th class="govuk-table__header govuk-!-font-size-14">Mandatory</th>
+            <th class="govuk-table__header govuk-!-font-size-14">Minimum value</th>
+            <th class="govuk-table__header govuk-!-font-size-14">Maximum value</th>
+            <th class="govuk-table__header govuk-!-font-size-14">Has a pattern constraint</th>
+            <th class="govuk-table__header govuk-!-font-size-14">XML datatype</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>ID</strong>" 
+    type="<strong>Q1IdentifierType</strong>" 
+    minOccurs="1" maxOccurs="1" /&gt;
+
+&lt;xs:complexType name="Q1IdentifierType"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>MessageID</strong>" 
+            type="<strong>Q1TextType</strong>" 
+            minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gtA character string (i.e. a finite set of 
+                    characters) generally in the form of 
+                    words of a language.&lt;/xs:documentation&gt;
+
+&lt;xs:complexType name="<strong>Q1TextType</strong>"&gt;
+    &lt;xs:documentation&gt;A character string (i.e. a finite set of 
+        characters) generally in the form of 
+        words of a language.&lt;/xs:documentation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="<strong>Q1TextContentType</strong>" /&gt;
+    &lt;/xs:simpleContent&gt;
+
+&lt;xs:simpleType name="<strong>Q1TextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="5" /&gt;
+        &lt;xs:maxLength value="50" /&gt;
+        &lt;xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" /&gt;
+    &lt;xs:restriction&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">The unique message ID of the request.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">5</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">50</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">RequestSearchByPropertyDescriptionV2_0</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>RequestSearchByPropertyDescriptionV2_0</strong>" 
+    type="<strong>RequestSearchByPropertyDescriptionV2_0Type</strong>"/&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>This is the main container element on the schema. General search information follows:</p>
+                <ul>
+                    <li>The simplest search that is most likely to find a match is a house number or name (in the BuildingName) and a postcode. If the building is divided into flats this could be refined by adding a BuildingNumber, or by selecting from a list of properties returned.</li>
+                    <li>If the postcode is not known, the street and town elements should be used. There is no cross-matching between elements, as all elements are search together for a match.</li>
+                    <li>If a number is entered into either BuildingName or BuildingNumber it will be searched against both elements (i.e. if you search for Flat 1 it will return House 1 Flat 1).</li>
+                    <li>The search criteria are also matched against historical and alternative versions of an address. This means that any address returned may not necessarily match the entered search criteria exactly.</li>
+                </ul>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">RequestSearchByPropertyDescriptionV2_0Type</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType name="<strong>RequestSearchByPropertyDescriptionV2_0Type</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;This document provides the ability for the 
+            [External System] to search Title Number 
+            by providing property description. The 
+            [Business Gateway] will retrieve a list of 
+            all properties (maximum of 50) along with 
+            the title number and tenure matching the 
+            property description.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>ID</strong>" 
+            type="<strong>Q1IdentifierType</strong>" 
+            minOccurs="1" maxOccurs="1" /&gt;
+        &lt;xs:element name="<strong>Product</strong>" 
+            type="<strong>Q1ProductType</strong>" 
+            minOccurs="1" maxOccurs"1" /&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;This component contains details regarding 
+                the search being ordered, expedited 
+                service, price details, delivery method and 
+                any attachment&lt;/xs:documentation&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>The ID element is described above (message ID).</p>
+                <p>The product element is described below. (Q1ProductType).</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Q1ProductType</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:complexType name="<strong>Q1ProductType</strong>"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;This component contains details
+            regarding the search being ordered,
+            expedited service, price details, deilvery
+            method and any attachment&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="<strong>ExternalReference</strong>"
+            type="<strong>Q1ExternalReferenceType</strong>"
+            minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Reference associated with a case in 
+                    Case Management System&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="<strong>CustomerReference</strong>"
+            type="<strong>Q1CustomerReferenceType</strong>"
+            minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Reference of the person for whom the
+                    remortgage is performed.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:annotation&gt;
+        &lt;xs:element name="<strong>SubjectProperty</strong>"
+            type="<strong>Q1SubjectPropertyType</strong>"
+            minOccurs="1" maxOccurs="1"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;The Property which is the subject of the 
+                    transaction, or on which a search is 
+                    being prepared&lt;/xs:documentation&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>The product type element contains all of the elements necessary to carry enough information to <abbr title="Land Registry">LR</abbr> to perform the property description search.</p>
+                <p>Each of the parts are described in detail below.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>CustomerReference</strong>"
+    type="<strong>Q1CustomerReferenceType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+
+&lt;xs:complexType name="<strong>Q1CustomerReferenceType</strong>"&gt;
+    &lt;xs:documentation&gt;Provides a unique reference to identify a 
+        particular request, order or instruction or
+        object in the system of the organisation
+        allocating it.&lt;/xs:documentation&gt;
+
+&lt;xs:element name="<strong>Reference</strong>"
+    type="<strong>ReferenceTextContentType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+    &lt;xs:documentation&gt;A unique reference given to identify a
+        particular request, order or instruction in
+        the system of the organisation
+        allocating it.&lt;/xs:documentation&gt;
+
+<span class="hmlr-mark-highlight" role="mark">&lt;xs:element name="<strong>AllocatedBy</strong>"
+    type="<strong>TextType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:documentation&gt;The name of the organisation that has
+    allocated the Reference&lt;/xs:documentation&gt;
+
+&lt;xs:element name="<strong>Description</strong>"
+    type="<strong>TextType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:documentation&gt;This field can be used to provide
+        reference description&lt;/xs:documentation&gt;</span>
+
+&lt;xs:simpleType name="<strong>ReferenceTextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="25" /&gt;
+        &lt;xs:pattern
+            value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_
+                \{\}\^&#xa3;]*" /&gt;
+    &lt;/xs:restriction&gt;
+
+&lt;xs:complexType name="<strong>TextType</strong>"&gt;
+    &lt;xs:documentation&gt;A character string (i.e. a finite set of
+        characters) generally in the form of words
+        of a language.&lt;/xs:documentation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:string" /&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>This element carries the customer reference to <abbr title="Land Regsitry">LR</abbr>. The customer reference is the reference the <abbr title="Case Management System">CMS</abbr> uses to identify the customer linked to the request, within its own system.</p>
+                <p><span class="hmlr-mark-highlight" role="mark">Allocated by and description are not curently used.</span></p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">25</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>ExternalReference</strong>"
+    type="<strong>Q1ExternalReferenceType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+
+&lt;xs:complexType name="<strong>Q1ExternalReferenceType</strong>"&gt;
+    &lt;xs:documentation&gt;A unique reference given to identify a
+        particular request, order or instruction in
+        the system of the organisation allocating
+        it with the ability to associate the name of
+        the Company that has allocated it.&lt;/xs:documentation&gt;
+
+&lt;xs:sequence&gt;
+    &lt;xs:element name="<strong>Reference</strong>"
+        type="<strong>ReferenceTextContentType</strong>"
+        minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;A unique reference given to identify a
+                particular request, order or instruction
+                in the system of the organisation
+                allocating it.&lt;/xs:documentation&gt;
+
+<span class="hmlr-mark-highlight" role="mark">&lt;xs:element name="<strong>AllocatedBy</strong>"
+    type="<strong>TextType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;The name of the organisation that has
+        allocated the Reference&lt;/xs:documentation&gt;
+
+&lt;xs:element name="<strong>Description</strong>"
+    type="<strong>TextType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;This field can be used to provide
+            reference description&lt;/xs:documentation&gt;</span>
+
+&lt;xs:simpleType name="<strong>ReferenceTextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="25" /&gt;
+        &lt;xs:pattern
+            value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_
+                \{\}\^&#xa3;]*" /&gt;
+    &lt;/xs:restriction&gt;
+
+&lt;xs:complexType name="<strong>TextType</strong>"&gt;
+    &lt;xs:documentation&gt;A character string (i.e. a finite set of
+        characters) generally in the form of words
+        of a language.&lt;/xs:documentation&gt;
+    &lt;xs:simpleContent&gt;
+        &lt;xs:extension base="xs:string" /&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>This element carries the external reference to <abbr title="Land Registry">LR</abbr>. The external reference is the reference the <abbr title="Case Management System">CMS</abbr> uses to identify the request within its own system.</p>
+                <p><span class="hmlr-mark-highlight" role="mark">Allocated by and description are not currently used.</span></p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">25</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Subject property</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>SubjectProperty</strong>"
+    type="<strong>Q1SubjectPropertyType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+
+&lt;xs:complexType name="<strong>Q1SubjectPropertyType</strong>"&gt;
+    &lt;xs:documentation&gt;The property which is the subject of the
+        transaction.&lt;/xs:documentation&gt;
+
+&lt;xs:element name="<strong>Address</strong>"
+    type="<strong>Q1AddressType</strong>"
+    minOccurs="1" maxOccurs="1"&gt;
+    &lt;xs:documentation&gt;This is the address format used for the
+        subject property&lt;/xs:documentation&gt;
+
+&lt;xs:complexType name="<strong>Q1AddressType</strong>"&gt;
+    &lt;xs:documentation&gt;A specific address that can be used for
+        the delivery of physical mail.&lt;/xs:documentation&gt;
+
+&lt;xs:sequence&gt;
+    &lt;xs:element name="<strong>BuildingName</strong>"
+        type="<strong>BuildingNameTextContentType</strong>"
+        minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:documentation&gt;The name of the building or house on a
+            street of this address&lt;/xs:documentation&gt;
+
+    &lt;xs:element name="<strong>BuildingNumber</strong>"
+        type="<strong>BuildingNumberTextContentType</strong>"
+        minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:documentation&gt;The number of a building or house on a
+            street of this address. Where the
+            building or house occupies a range of
+            numbers on the street (e.g. "1-9 Main St"),
+            this will be the lower number on the
+            range.&lt;/xs:documentation&gt;
+
+    &lt;xs:element name="<strong>StreetName</strong>"
+        type="<strong>StreetNameTextContentType</strong>"
+        minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:documentation&gt;Name of a street or
+            thoroughfare&lt;/xs:documentation&gt;
+
+    &lt;xs:element name="<strong>CityName</strong>"
+        type="<strong>CityTextContentType</strong>"
+        minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:documentation&gt;The name of the city, town or village of
+            this address.&lt;/xs:documentation&gt;
+
+    &lt;xs:element name="<strong>PostcodeZone</strong>"
+        type="<strong>PostcodeTextContentType</strong>"
+        minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:documentation&gt;The identifier for one or more properties
+            according to the UK postal service; a group
+            of letters and numbers added to the postal
+            address to assist in the sorting of mail,
+            as defined by the Royal Mail.&lt;/xs:documentation&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">This is the container element that holds the details of the address to be searched for.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>BuildingName</strong>"
+    type="<strong>BuildingNameTextContentType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+
+&lt;xs:simpleType name="<strong>BuildingNameTextContentType</strong>"
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="50" /&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>The name or number of a building or house.</p>
+                <ul>
+                    <li>If the building has both a name and a number, just the number should be used, unless the number also contains alpha characters (e.g. &ldquo;70B Courtyard Apartments&rdquo;).</li>
+                    <li>If the number has just a single trailing alpha, the alpha should be dropped (e.g. use &ldquo;70&rdquo; instead of &ldquo;70B&rdquo; and select from the list returned).</li>
+                    <li>The wildcard parameter (&ldquo;*&rdquo;) can be added at the end of this element, but may return more properties than required (e.g. using &ldquo;HILL*&rdquo; would return &ldquo;HILLVIEW&rdquo; and &ldquo;HILLCREST&rdquo;).</li>
+                    <li>It is not possible to search on a sub-building name (e.g. &ldquo;Ground Floor Flat&rdquo;). Such properties would have to be selected from the list returned.</li>
+                </ul>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">50</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Building number</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>BuildingNumber</strong>"
+    type="<strong>BuildingNumberTextContentType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+
+&lt;xs:simpleType name="<strong>BuildingNumberTextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="5" /&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Leading information such as &ldquo;Flat&rdquo; should be dropped.</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">5</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">s:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>StreetName</strong>"
+    type="<strong>StreetNameTextContentType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+
+&lt;xs:simpleType name="<strong>StreetNameTextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="80" /&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>This element carries the name of the street the target is located on.</p>
+                <p>The wildcard parameter (&ldquo;*&rdquo;) can be added at the end of this element to increase the chance of a match, but may return more properties than required.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">80</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">City name</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>CityName</strong>"
+    type="<strong>CityTextContentType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+
+&lt;xs:simpleType name="<strong>CityTextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="35" /&gt;
+        &lt;xs:pattern value=".*\S.*" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>This element carries the name of the city the target property is located in.</p>
+                <p>Locality should not be used here.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">35</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode zone</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+<pre><code>&lt;xs:element name="<strong>PostcodeZone</strong>"
+    type="<strong>PostcodeTextContentType</strong>"
+    minOccurs="0" maxOccurs="1"&gt;
+
+&lt;xs:simpleType name="<strong>PostcodeTextContentType</strong>"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:minLength value="1" /&gt;
+        &lt;xs:maxLength value="8" /&gt;
+        &lt;xs:pattern value="[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][A-Z-[CIKMOV]]{2}" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+</code></pre>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14">
+                <p>This element carries the postcode of the target property.</p>
+                <p>Partial postcodes (even for London, e.g. SW1) cannot be searched and will be rejected.</p>
+            </td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">1</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">8</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>

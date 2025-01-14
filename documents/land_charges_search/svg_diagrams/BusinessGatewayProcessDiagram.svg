@@ -1,0 +1,71 @@
+<svg width="900" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7"
+                refX="0" refY="3.5" orient="auto" markerUnits="strokeWidth">
+          <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+        </marker>
+    </defs>
+
+    <!-- Customer -->
+    <text x="60" y="20" class="title">Customer</text>
+    <rect x="30" y="50" width="135" height="30" class="small-box"></rect>
+    <text x="40" y="70" class="content">- LLC V2_0 REQUEST -</text>
+    <rect x="30" y="150" width="150" height="30" class="small-box"></rect>
+    <text x="40" y="170" class="content">- CUSTOMER PROCESS -</text>
+
+    <!-- Interface -->
+    <text x="260" y="20" class="title">Interface</text>
+    <text x="230" y="70" class="content">- LLCSearchRequestV2_0 -</text>
+    <text x="230" y="170" class="content">- LLCSearchResponseV2_0 -</text>
+
+    <!-- HMLR -->
+    <text x="460" y="20" class="title">HMLR</text>
+    <rect x="430" y="50" width="120" height="30" class="small-box"></rect>
+    <text x="440" y="70" class="content">- HMLR PROCESS -</text>
+
+    <!-- Table Lines -->
+    <line x1="200" y1="30" x2="200" y2="190" stroke="black" stroke-width="2"/>
+    <line x1="400" y1="30" x2="400" y2="190" stroke="black" stroke-width="2"/>
+
+    <!-- Connecting Lines -->
+    <line x1="165" y1="68" x2="190" y2="68" stroke="black" marker-end="url(#arrowhead)"/>
+    <line x1="400" y1="68" x2="420" y2="68" stroke="black" marker-end="url(#arrowhead)"/>
+    <line x1="490" y1="80" x2="490" y2="167" stroke="black"/>
+    <line x1="490" y1="167" x2="410" y2="167" stroke="black" marker-end="url(#arrowhead)"/>
+    <line x1="200" y1="167" x2="190" y2="167" stroke="black" marker-end="url(#arrowhead)"/>
+
+</svg>

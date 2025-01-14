@@ -1,0 +1,53 @@
+<svg width="700" height="200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .box {
+            fill: #F9F9F9;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 4;
+            ry: 4;
+        }
+        .line {
+            stroke: #707070;
+            stroke-width: 1;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            fill: #000;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .content {
+            font-size: 11px;
+            fill: #333;
+        }
+        .small-box {
+            fill: #FFFFFF;
+            stroke: #707070;
+            stroke-width: 1;
+            rx: 2;
+            ry: 2;
+        }
+    </style>
+
+    <!-- ResponseEarlyCompletionV2_0 -->
+    <rect x="30" y="50" width="200" height="30" class="small-box"></rect>
+    <text x="40" y="70" class="title">ResponseEarlyCompletionV2_0</text>
+
+    <!-- ResponseEarlyCompletionV2_0Type -->
+    <rect x="300" y="5" width="310" height="50" class="small-box"></rect>
+    <text x="310" y="25" class="title">ResponseEarlyCompletionV2_0Type</text>
+    <text x="305" y="45" class="content">- GatewayResponse <tspan dx="50">[1..1] GatewayResponseType</tspan></text>
+
+    <!-- Table Lines -->
+    <!-- Table Lines - Q1AgreedNoticeType -->
+    <line x1="300" y1="29" x2="610" y2="29" stroke="lightgrey"></line>
+    <line x1="300" y1="31" x2="610" y2="31" stroke="lightgrey"></line>
+
+    <!-- Connecting Lines -->
+    <line x1="230" y1="67" x2="300" y2="20" class="line"></line>
+
+</svg>
