@@ -105,11 +105,10 @@
 
 <hr>
 
-<table class="govuk-table" cellpadding="10">
+<table class="govuk-table schema-table" cellpadding="10">
     <thead class="govuk-table__head">
         <tr class="govuk-table__row">
             <th class="govuk-table__header govuk-!-font-size-14">Data input field (from Land Registry (LR) test harness)</th>
-            <th class="govuk-table__header govuk-!-font-size-14">Extract of relevant code from schema</th>
             <th class="govuk-table__header govuk-!-font-size-14">Description</th>
             <th class="govuk-table__header govuk-!-font-size-14">Mandatory</th>
             <th class="govuk-table__header govuk-!-font-size-14">Minimum value</th>
@@ -119,69 +118,8 @@
         </tr>
     </thead>
     <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">RequestSearchOfIndexMapV2_1</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType
-    name="<strong>RequestSearchOfIndexMapV2_1Type</strong>"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>ID</strong>"
-            type="<strong>Q1IdentifierType</strong>"
-            minOccurs="1" maxOccurs="1" /&gt;
-        &lt;xs:element name="<strong>Product</strong>"
-            type="<strong>Q1ProductType</strong>"
-            minOccurs="1" maxOccurs="1"&gt;
-
-&lt;xs:element name="<strong>SearchOfIndexMap</strong>"
-    type="<strong>Q1SearchOfIndexMapType</strong>"
-    minOccurs="1" maxOccurs="1"&gt;
-    
-&lt;xs:element name="<strong>AlternativeDespatchDetails</strong>"
-    type="<strong>Q1AlternativeDespatchDetailsType</strong>"
-    minOccurs="0" maxOccurs="1" /&gt;
-
-&lt;xs:complexType name="<strong>Q1SearchOfIndexMapType</strong>"&gt;
-    &lt;xs:element name="<strong>WithoutAttachedPlan</strong>"
-        type="<strong>Q1WithoutAttachedPlanType</strong>"
-        minOccurs="1" maxOccurs="1" /&gt;
-    &lt;xs:element name="<strong>WithAttachedPlan</strong>"
-        type="<strong>Q1WithAttachedPlanType</strong>"
-        minOccurs="1" maxOccurs="1" /&gt;
-
-&lt;xs:complexType name="<strong>Q1WithAttachedPlanType</strong>"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>Plan</strong>"
-            type="<strong>Q1PlanType</strong>"
-            minOccurs="1" maxOccurs="1" /&gt;
-        &lt;xs:element name="<strong>WithPlanAddressDetails</strong>"
-            type="<strong>Q1WithPlanAddressDetailsType</strong>"
-            minOccurs="1" maxOccurs="1" /&gt;
-
-&lt;xs:complexType name="<strong>Q1WithoutAttachedPlanType</strong>"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>WithoutPlanAddressDetails</strong>"
-            type="<strong>Q1WithoutPlanAddressDetailsType</strong>"
-            minOccurs="1" maxOccurs="1" /&gt;
-
-&lt;xs:complexType name="<strong>Q1WithoutPlanAddressDetailsType</strong>"&gt;
-    &lt;xs:choice&gt;
-        &lt;xs:element name="<strong>AddressWithPostcode</strong>"
-            type="<strong>Q1AddressWithPostcodeType</strong>"
-            minOccurs="0" maxOccurs="1" /&gt;
-        &lt;xs:element name="<strong>AddressWithoutPostcode</strong>"
-            type="<strong>Q1WithoutPlanWithoutPostcodeType</strong>"
-            minOccurs="0" maxOccurs="1" /&gt;
-
-&lt;xs:complexType name="<strong>Q1WithPlanAddressDetailsType</strong>"&gt;
-    &lt;xs:choice&gt;
-        &lt;xs:element name="<strong>AddressWithPostcode</strong>"
-            type="<strong>Q1AddressWithPostcodeType</strong>"
-            minOccurs="1" maxOccurs="1" /&gt;
-        &lt;xs:element name="<strong>AddressWithoutPostcode</strong>"
-            type="<strong>Q1WithPlanWithoutPostcodeType</strong>"
-            minOccurs="1" maxOccurs="1" /&gt;
-</code></pre>
-            </td>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Request Search Of Index Map V2_1</td>
             <td class="govuk-table__cell govuk-!-font-size-14">
                 <p>Main element of the schema, creating a message ID and a product type to carry the necessary data for the Search of the Index Map (SIM).</p>
                 <p>Note: The address elements are only explained once.</p>
@@ -193,38 +131,70 @@
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType name="<strong>Q1IdentifierType</strong>"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>MessageId</strong>"
-            type="<strong>Q1TextType</strong>"
-            minOccurs="1" maxOccurs="1"&gt;
-            &lt;xs:annotation&lt;
-                &lt;xs:documentation&gt;A character string
-                    (i.e. a finite set of characters)
-                    generally in the form of words of
-                    a language.
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span>
+    <span class="na">name=</span><span class="s">"RequestSearchOfIndexMapV2_1Type"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ID"</span>
+            <span class="na">type=</span><span class="s">"Q1IdentifierType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Product"</span>
+            <span class="na">type=</span><span class="s">"Q1ProductType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
 
-&lt;xs:complexType name="<strong>Q1TextType</strong>"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A character string
-            (i.e. a finite set of characters) 
-            generally in the form of words of
-            a language.
-        &lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q1TextContentType</strong>" /&gt;
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"SearchOfIndexMap"</span>
+    <span class="na">type=</span><span class="s">"Q1SearchOfIndexMapType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q1TextContentType</strong>"&gt;
-    &lt;xs:restriction&gt;
-        &lt;xs:minLength value="5" /&gt;
-        &lt;xs:maxLength value="50" /&gt;
-        &lt;xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" /&gt;
-    &lt;/xs:restriction&gt;
-</code></pre>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AlternativeDespatchDetails"</span>
+    <span class="na">type=</span><span class="s">"Q1AlternativeDespatchDetailsType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1SearchOfIndexMapType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"WithoutAttachedPlan"</span>
+        <span class="na">type=</span><span class="s">"Q1WithoutAttachedPlanType"</span>
+        <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"WithAttachedPlan"</span>
+        <span class="na">type=</span><span class="s">"Q1WithAttachedPlanType"</span>
+        <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1WithAttachedPlanType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Plan"</span>
+            <span class="na">type=</span><span class="s">"Q1PlanType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"WithPlanAddressDetails"</span>
+            <span class="na">type=</span><span class="s">"Q1WithPlanAddressDetailsType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1WithoutAttachedPlanType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"WithoutPlanAddressDetails"</span>
+            <span class="na">type=</span><span class="s">"Q1WithoutPlanAddressDetailsType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1WithoutPlanAddressDetailsType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:choice&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AddressWithPostcode"</span>
+            <span class="na">type=</span><span class="s">"Q1AddressWithPostcodeType"</span>
+            <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AddressWithoutPostcode"</span>
+            <span class="na">type=</span><span class="s">"Q1WithoutPlanWithoutPostcodeType"</span>
+            <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1WithPlanAddressDetailsType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:choice&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AddressWithPostcode"</span>
+            <span class="na">type=</span><span class="s">"Q1AddressWithPostcodeType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AddressWithoutPostcode"</span>
+            <span class="na">type=</span><span class="s">"Q1WithPlanWithoutPostcodeType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
             <td class="govuk-table__cell govuk-!-font-size-14">
                 <p>Each application must have a message ID. There can only be one message ID for each application.</p>
                 <p>The message ID is a string with a minimum length of 5 characters as a maximum length of 50 characters.</p>
@@ -238,48 +208,40 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Gross price amount</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>ExpectedPrice</strong>"
-    type="<strong>Q1ExpectedPriceType</strong>"
-    minOccurs="0" maxOccurs="1"&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1IdentifierType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"MessageId"</span>
+            <span class="na">type=</span><span class="s">"Q1TextType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:annotation</span><span class="err">&lt;</span>
+                <span class="err">&lt;xs:documentation</span><span class="nt">&gt;</span>A character string
+                    (i.e. a finite set of characters)
+                    generally in the form of words of
+                    a language.
 
-&lt;xs:complexType name="<strong>Q1ExpectedPriceType</strong>"&gt;
-    &lt;xs:element name="<strong>GrossPriceAmount</strong>"
-        type="<strong>AmountType</strong>"
-        minOccurs="0" maxOccurs="1"&gt;
-            &lt;xs:annotation&gt;
-                &lt;xs:documentation&gt;The gross price
-                    is the price including
-                    the VAT. If the VAT is
-                    zero then the Gross and
-                    Net Price will be the same
-                &lt;/xs:documentation&gt;
-    <span class="hmlr-mark-highlight" role="mark">&lt;xs:element name="<strong>NetPriceAmount</strong>"
-        type="<strong>AmountType</strong>"
-        minOccurs="0" maxOccurs="1"&gt;
-        &lt;xs:annotation&gt;
-            &lt;xs:documentation&gt;The Net Price is the
-                amount before the VAT is added on.
-                If the VAT is zero then the Gross
-                and Net Price will be the same
-    &lt;xs:element name="<strong>VATAmount</strong>"
-        type="<strong>AmountType</strong>"
-        minOccurs="0" maxOccurs="1"&gt;
-        &lt;xs:annotation&gt;
-            &lt;xs:documentation&gt;This is the amount of
-                the VAT</span>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q1TextContentType"</span> <span class="nt">/&gt;</span>
 
-&lt;xs:complexType name="<strong>AmountType</strong>"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A number of monetary units
-            specified in a currency where the unit
-            of the currency is explicit or implied.
-        &lt;/xs:documentation&gt;
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="xs:decimal"&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"5"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"50"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">"[a-zA-Z0-9][a-zA-Z0-9\-]*"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Gross price amount</td>
             <td class="govuk-table__cell govuk-!-font-size-14">
                 <p>Carries the customer&rsquo;s expected fee value.</p>
                 <p><span class="hmlr-mark-highlight" role="mark">Net price amount and VAT amount are not currently used.</span></p>
@@ -291,26 +253,50 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:decimal</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Continue if actual fee exceeds expected fee indicator</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name=
-    "<strong>ContinueIfActualFeeExceedsExpectedFeeIndicator</strong>"
-    type="IndicatorType"
-    minOccurs="1" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;<span class="hmlr-mark-highlight" role="mark">A list of two mutually exclusive
-        Boolean values that express the only possible
-        states of a Property.</span>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ExpectedPrice"</span>
+    <span class="na">type=</span><span class="s">"Q1ExpectedPriceType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
 
-&lt;xs:complexType name="<strong>IndicatorType</strong>"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A list of two mutually
-            exclusive Boolean values that express the 
-            only possible states of a Property.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="xs:boolean" /&gt;
-    &lt;/xs:simpleContent&gt;
-</code></pre>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1ExpectedPriceType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"GrossPriceAmount"</span>
+        <span class="na">type=</span><span class="s">"AmountType"</span>
+        <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:annotation&gt;</span>
+                <span class="nt">&lt;xs:documentation&gt;</span>The gross price
+                    is the price including
+                    the VAT. If the VAT is
+                    zero then the Gross and
+                    Net Price will be the same
+                <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"hmlr-mark-highlight"</span> <span class="na">role=</span><span class="s">"mark"</span><span class="nt">&gt;&lt;xs:element</span> <span class="na">name=</span><span class="s">"NetPriceAmount"</span>
+        <span class="na">type=</span><span class="s">"AmountType"</span>
+        <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:annotation&gt;</span>
+            <span class="nt">&lt;xs:documentation&gt;</span>The Net Price is the
+                amount before the VAT is added on.
+                If the VAT is zero then the Gross
+                and Net Price will be the same
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"VATAmount"</span>
+        <span class="na">type=</span><span class="s">"AmountType"</span>
+        <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:annotation&gt;</span>
+            <span class="nt">&lt;xs:documentation&gt;</span>This is the amount of
+                the VAT<span class="nt">&lt;/span&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"AmountType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A number of monetary units
+            specified in a currency where the unit
+            of the currency is explicit or implied.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"xs:decimal"</span><span class="nt">&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue if actual fee exceeds expected fee indicator</td>
             <td class="govuk-table__cell govuk-!-font-size-14">
                 <p><span class="hmlr-mark-highlight" role="mark">The documentation text does not clearly explain its element.</span></p>
                 <p>If true, tells <abbr title="Land Registry">LR</abbr> to continue with search even if the actual cost of the search is greater than the cost expected by the Case Management System (CMS).</p>
@@ -323,42 +309,28 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:boolean</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>ExternalReference</strong>"
-    type="<strong>Q1ExternalReferenceType</strong>"
-    minOccurs="1" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;Reference associated with a
-        case in Case Management System
-            
-&lt;xs:complexType name="<strong>Q1ExternalReferenceType</strong>"&gt;
-    &lt;xs:documentation&gt;A unique reference
-        given to identify a particular request, 
-        order or instruction in the system of
-        the organisation allocating it with the
-        ability to associate the name of the
-        Company that has allocated it.
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>Reference</strong>"
-            type="<strong>ReferenceTextContentType</strong>"
-            minOccurs="1" maxOccurs="1"&gt;
-            &lt;xs:documentation&gt;A unique reference
-                given to identify a particular
-                request, order or instruction
-                in the system of the organisation
-                allocating it.
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span>
+    <span class="s">"ContinueIfActualFeeExceedsExpectedFeeIndicator"</span>
+    <span class="na">type=</span><span class="s">"IndicatorType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;&lt;span</span> <span class="na">class=</span><span class="s">"hmlr-mark-highlight"</span> <span class="na">role=</span><span class="s">"mark"</span><span class="nt">&gt;</span>A list of two mutually exclusive
+        Boolean values that express the only possible
+        states of a Property.<span class="nt">&lt;/span&gt;</span>
 
-&lt;xs:simpleType name="<strong>ReferenceTextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="25" /&gt;
-        &lt;xs:pattern value="[A-Za-z0-
-            9\s~!&quot;@#$%'\(\)\*\+,\-
-            \./:;=&gt;\?\[\\\]_\{\}\^&#xa3;]*" /&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"IndicatorType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A list of two mutually
+            exclusive Boolean values that express the
+            only possible states of a Property.
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"xs:boolean"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">External reference</td>
             <td class="govuk-table__cell govuk-!-font-size-14">To carry the external reference to <abbr title="Land Registry">LR</abbr>, external reference is created by the <abbr title="Case Management System">CMS</abbr>.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -367,44 +339,44 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>CustomerReference</strong>"
-    type="Q1CustomerReferenceType"
-    minOccurs="1" maxOccurs="1"&gt;
-        &lt;xs:documentation&gt;Reference of the
-            person for whom the remortgage
-            is performed.
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ExternalReference"</span>
+    <span class="na">type=</span><span class="s">"Q1ExternalReferenceType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>Reference associated with a
+        case in Case Management System
 
-&lt;xs:complexType name="<strong>Q1CustomerReferenceType</strong>">
-    &lt;xs:documentation&gt;Provides a unique
-        reference to identify a particular
-        request, order or instruction or
-        object in the system of the
-        organisation allocating it.
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>Reference</strong>"
-            type="<strong>ReferenceTextContentType</strong>"
-            minOccurs="1" maxOccurs="1"&gt;
-            &lt;xs:documentation&gt;A unique reference
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1ExternalReferenceType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A unique reference
+        given to identify a particular request,
+        order or instruction in the system of
+        the organisation allocating it with the
+        ability to associate the name of the
+        Company that has allocated it.
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Reference"</span>
+            <span class="na">type=</span><span class="s">"ReferenceTextContentType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:documentation&gt;</span>A unique reference
                 given to identify a particular
                 request, order or instruction
                 in the system of the organisation
-                allocating it with the ability to
-                associate the name of the Company
-                that has allocated it.
+                allocating it.
 
-&lt;xs:simpleType name="<strong>ReferenceTextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="25" /&gt;
-        &lt;xs:pattern value="[A-Za-z0-
-            9\s~!&quot;@#$%'\(\)\*\+,\-
-            \./:;=&gt;\?\[\\\]_\{\}\^&#xa3;]*" /&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"ReferenceTextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"25"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">"[A-Za-z0-
+            9\s~!&amp;quot;@#$%&amp;apos;\(\)\*\+,\-
+            \./:;=&gt;\?\[\\]_\{\}\^&amp;#xa3;]*"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Customer reference</td>
             <td class="govuk-table__cell govuk-!-font-size-14">To carry the customer reference to <abbr title="Land Registry">LR</abbr>, customer reference is created/provided by the <abbr title="Case Management System">CMS</abbr>.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -413,43 +385,46 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Contact name</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>Contact</strong>"
-    type="<strong>Q1ContactType</strong>" minOccurs="1"
-    maxOccurs="unbounded"&gt;
-        &lt;xs:documentation&gt;The information
-            relevant to a person or organization
-            that acts as a point of contact with
-            another person or organization.
-        &lt;/xs:documentation&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"CustomerReference"</span>
+    <span class="na">type=</span><span class="s">"Q1CustomerReferenceType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>Reference of the
+            person for whom the remortgage
+            is performed.
 
-&lt;xs:complexType name="<strong>Q1ContactType</strong>"&gt;
-    &lt;xs:documentation&gt;The information
-        relevant to a person or organization
-        that acts as a point of contact with
-        another person or organization.
-    &lt;/xs:documentation&gt;
-    &lt;xs:element name="<strong>Name</strong>"
-        type="<strong>Q3TextType</strong>"
-        minOccurs="1" maxOccurs="1"&gt;
-        &lt;xs:documentation&gt;The name of this
-            contact person or department.
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1CustomerReferenceType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>Provides a unique
+        reference to identify a particular
+        request, order or instruction or
+        object in the system of the
+        organisation allocating it.
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Reference"</span>
+            <span class="na">type=</span><span class="s">"ReferenceTextContentType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:documentation&gt;</span>A unique reference
+                given to identify a particular
+                request, order or instruction
+                in the system of the organisation
+                allocating it with the ability to
+                associate the name of the Company
+                that has allocated it.
 
-&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
-    &lt;xs:documentation&gt;A character string
-        (i.e. a finite set of characters)
-        generally in the form of words of
-        a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
-
-&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"ReferenceTextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"25"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">"[A-Za-z0-
+            9\s~!&amp;quot;@#$%&amp;apos;\(\)\*\+,\-
+            \./:;=&gt;\?\[\\]_\{\}\^&amp;#xa3;]*"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Contact name</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Carries the contact name of the person sending the request for Official Search (OS).</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -458,37 +433,45 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Telephone number</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>Communication</strong>"
-    type="<strong>Q1CommunicationType</strong>"
-    minOccurs="1" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;The information
-        relevant to methods of communication
-        for this Contact.
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Contact"</span>
+    <span class="na">type=</span><span class="s">"Q1ContactType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span>
+    <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>The information
+            relevant to a person or organization
+            that acts as a point of contact with
+            another person or organization.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
 
-&lt;xs:complexType name="<strong>Q1CommunicationType</strong>"&gt;
-    &lt;xs:documentation&gt;Provides details of
-        any other form of communication
-    &lt;xs:element name="<strong>Telephone</strong>"
-        type="<strong>Q3TextType</strong>"
-        minOccurs="1" maxOccurs="1"&gt;
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1ContactType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>The information
+        relevant to a person or organization
+        that acts as a point of contact with
+        another person or organization.
+    <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Name"</span>
+        <span class="na">type=</span><span class="s">"Q3TextType"</span>
+        <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>The name of this
+            contact person or department.
 
-&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
-    &lt;xs:documentation&gt;A character string
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Telephone number</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Carries the telephone number of the person submitting the application.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -497,13 +480,39 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14"><abbr title="Search of the Index Map">SIM</abbr> - No attachment; No postcode</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType name=
-    "<strong>Q1WithoutPlanWithoutPostcodeType</strong>"&gt;
-    &lt;xs:sequence&gt;
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Communication"</span>
+    <span class="na">type=</span><span class="s">"Q1CommunicationType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>The information
+        relevant to methods of communication
+        for this Contact.
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1CommunicationType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>Provides details of
+        any other form of communication
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Telephone"</span>
+        <span class="na">type=</span><span class="s">"Q3TextType"</span>
+        <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
+        (i.e. a finite set of characters)
+        generally in the form of words of
+        a language.
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14"><abbr title="Search of the Index Map">SIM</abbr> - No attachment; No postcode</td>
             <td class="govuk-table__cell govuk-!-font-size-14">This type is the overall container for sending a request without a plan and without a postcode.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -512,13 +521,15 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:decimal</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14"><abbr title="Search of the Index Map">SIM</abbr> with attachment; No postcode</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType name=
-    "<strong>Q1WithPlanWithoutPostcodeType</strong>"&gt;
-    &lt;xs:sequence&gt;
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span>
+    <span class="s">"Q1WithoutPlanWithoutPostcodeType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14"><abbr title="Search of the Index Map">SIM</abbr> with attachment; No postcode</td>
             <td class="govuk-table__cell govuk-!-font-size-14">This type is the overall container for sending a request with a plan but without a postcode.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -527,34 +538,15 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:decimal</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Attachment</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType name="<strong>Q1PlanType</strong>"&gt;
-    &lt;xs:element name="<strong>PlanDetailsAttachment</strong>"
-        type="<strong>Q1PlanDetailsAttachmentType</strong>"
-        minOccurs="1" maxOccurs="1"&gt;
-
-&lt;xs:complexType
-    name="<strong>Q1PlanDetailsAttachmentType</strong>"&gt;
-    &lt;xs:element name="<strong>EmbeddedFileBinaryObject</strong>"
-        type="<strong>BinaryObjectType</strong>"
-        minOccurs="1" maxOccurs="1"&gt;
-
-&lt;xs:complexType name="<strong>BinaryObjectType</strong>"&gt;
-    &lt;xs:documentation&gt;A set of finitelength sequences
-        of binary octets.
-
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="xs:base64Binary"&gt;
-            &lt;xs:attribute name="filename"
-                type="xs:string"
-                use="optional"&gt;
-                &lt;xs:annotation&gt;
-                    &lt;xs:documentation&gt; Must be the full
-                        filename including the extension
-                        (Reference IETF RFC 2045, 2046, 2047)
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span>
+    <span class="s">"Q1WithPlanWithoutPostcodeType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Attachment</td>
             <td class="govuk-table__cell govuk-!-font-size-14">These elements carry the file upload.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -563,31 +555,36 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:base64Binary</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Identifier</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>Title</strong>"
-    type="<strong>Q3TextType</strong>"
-    minOccurs="0" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;Title or Caption for
-        the attached file or document
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1PlanType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"PlanDetailsAttachment"</span>
+        <span class="na">type=</span><span class="s">"Q1PlanDetailsAttachmentType"</span>
+        <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
 
-&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
-    &lt;xs:documentation&gt;A character string
-        (i.e. a finite set of  characters)
-        generally in the form of words of
-        a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
+<span class="nt">&lt;xs:complexType</span>
+    <span class="na">name=</span><span class="s">"Q1PlanDetailsAttachmentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"EmbeddedFileBinaryObject"</span>
+        <span class="na">type=</span><span class="s">"BinaryObjectType"</span>
+        <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"BinaryObjectType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A set of finitelength sequences
+        of binary octets.
+
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"xs:base64Binary"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:attribute</span> <span class="na">name=</span><span class="s">"filename"</span>
+                <span class="na">type=</span><span class="s">"xs:string"</span>
+                <span class="na">use=</span><span class="s">"optional"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;xs:annotation&gt;</span>
+                    <span class="nt">&lt;xs:documentation&gt;</span> Must be the full
+                        filename including the extension
+                        (Reference IETF RFC 2045, 2046, 2047)</code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Identifier</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Carries the title/description of the file uploaded.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -596,8 +593,33 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Title"</span>
+    <span class="na">type=</span><span class="s">"Q3TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>Title or Caption for
+        the attached file or document
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
+        (i.e. a finite set of  characters)
+        generally in the form of words of
+        a language.
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
             <td class="govuk-table__cell govuk-!-font-size-14">Local authority</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">N/A</td>
             <td class="govuk-table__cell govuk-!-font-size-14">This set of elements/attributes is used with either of the <abbr title="Search of the Index Map">SIM</abbr> with no postcode types above.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -605,34 +627,8 @@
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14">xs:decimal</td>
         </tr>
-        <tr class="govuk-table__row">
+        <tr class="govuk-table__row bottom-border-none">
             <td class="govuk-table__cell govuk-!-font-size-14">Property identifier</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>PropertyIdentifier</strong>"
-    type="<strong>Q1Len50TextType</strong>"
-    minOccurs="1" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;This field could be a
-        Land Identifier, House Number or House
-        Name e.g. Land to the left of 15 The Mews'
-
-&lt;xs:complexType name="<strong>Q1Len50TextType</strong>"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A character string
-            (i.e. a finite set of characters)
-            generally in the form of words of
-            a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension
-            base="<strong>Q1Len50TextContentType</strong>" /&gt;
-
-&lt;xs:simpleType name="<strong>Q1Len50TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="50" /&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-</code></pre>
-            </td>
             <td class="govuk-table__cell govuk-!-font-size-14">House number or name carried by this element.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -641,37 +637,35 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Sub building name</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>SubBuildingName</strong>"
-    type="<strong>Q1Len100TextType</strong>"
-    minOccurs="0" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;A character string
-        (i.e. a finite set of characters)
-        generally in the form of words of
-        a language.
-&lt;/xs:element&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"PropertyIdentifier"</span>
+    <span class="na">type=</span><span class="s">"Q1Len50TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>This field could be a
+        Land Identifier, House Number or House
+        Name e.g. Land to the left of 15 The Mews
 
-&lt;xs:complexType name="<strong>Q1Len100TextType</strong>"&gt;
-    &lt;xs:documentation&gt;A character string
-        (i.e. a finite set of characters)
-        generally in the for of words of
-        a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension
-        base="<strong>Q1Len100TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1Len50TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span>
+            <span class="na">base=</span><span class="s">"Q1Len50TextContentType"</span> <span class="nt">/&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q1Len100TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="100" /&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1Len50TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"50"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Sub building name</td>
             <td class="govuk-table__cell govuk-!-font-size-14">To carry the sub building name. For example, Purple Brick Building.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -680,37 +674,39 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>StreetName</strong>"
-    type="<strong>Q1Len50TextType</strong>"
-    minOccurs="1" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;A character string
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"SubBuildingName"</span>
+    <span class="na">type=</span><span class="s">"Q1Len100TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-&lt;/xs:element&gt;
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:complexType name="<strong>Q1Len50TextType</strong>"&gt;
-    &lt;xs:documentation&gt;A character string
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1Len100TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
-        generally in the form of words of
+        generally in the for of words of
         a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension
-            base="<strong>Q1Len50TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span>
+        <span class="na">base=</span><span class="s">"Q1Len100TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q1Len50TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="50" /&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1Len100TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"100"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Street name</td>
             <td class="govuk-table__cell govuk-!-font-size-14">To carry the street name.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -719,36 +715,39 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Town name</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>TownName</strong>"
-    type="<strong>Q1Len35TextType</strong>"
-    minOccurs="1" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;A character string
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"StreetName"</span>
+    <span class="na">type=</span><span class="s">"Q1Len50TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-&lt;/xs:element&gt;
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:complexType name="<strong>Q1Len35TextType</strong>"&gt;
-    &lt;xs:documentation&gt;A character string
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1Len50TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q1Len35TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span>
+            <span class="na">base=</span><span class="s">"Q1Len50TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q1Len35TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="35" /&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1Len50TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"50"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Town name</td>
             <td class="govuk-table__cell govuk-!-font-size-14">To carry the town name.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -757,36 +756,38 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Locality</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>Locality</strong>"
-    type="<strong>Q1Len35TextType</strong>"
-    minOccurs="0" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;A character string
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"TownName"</span>
+    <span class="na">type=</span><span class="s">"Q1Len35TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-&lt;/xs:element&gt;
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:complexType name="<strong>Q1Len35TextType</strong>"&gt;
-    &lt;xs:documentation&gt;A character string
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1Len35TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q1Len35TextContentType</strong>"/&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q1Len35TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q1Len35TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="35" /&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1Len35TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"35"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Locality</td>
             <td class="govuk-table__cell govuk-!-font-size-14">To carry the locality.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -795,36 +796,38 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">County</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>CountyName</strong>"
-    type="<strong>Q1Len35TextType</strong>"
-    minOccurs="0" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;A character string
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Locality"</span>
+    <span class="na">type=</span><span class="s">"Q1Len35TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-&lt;/xs:element&gt;
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:complexType name="<strong>Q1Len35TextType</strong>"&gt;
-    &lt;xs:documentation&gt;A character string
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1Len35TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q1Len35TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q1Len35TextContentType"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q1Len35TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="35" /&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1Len35TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"35"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">County</td>
             <td class="govuk-table__cell govuk-!-font-size-14">To carry the county name.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -833,36 +836,38 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Local authority</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>LocalAuthority</strong>"
-    type="<strong>Q1Len38TextType</strong>"
-    minOccurs="1" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;A character string
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"CountyName"</span>
+    <span class="na">type=</span><span class="s">"Q1Len35TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-&lt;/xs:element&gt;
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:complexType name="<strong>Q1Len38TextType</strong>"&gt;
-    &lt;xs:documentation&gt;A character string
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1Len35TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q1Len38TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q1Len35TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q1Len38TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="38" /&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1Len35TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"35"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Local authority</td>
             <td class="govuk-table__cell govuk-!-font-size-14">To carry the local authority name.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -871,36 +876,38 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14"><abbr title="Official Search">OS</abbr> map reference</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>OSMapReference</strong>"
-    type="<strong>Q1Len8TextType</strong>"
-    minOccurs="0" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;A character string
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"LocalAuthority"</span>
+    <span class="na">type=</span><span class="s">"Q1Len38TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-&lt;/xs:element&gt;
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:complexType name="<strong>Q1Len8TextType</strong>"&gt;
-    &lt;xs:documentation&gt;A character string
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1Len38TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
         (i.e. a finite set of characters)
         generally in the form of words of
         a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q1Len8TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q1Len38TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q1Len8TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="8" /&gt;
-        &lt;xs:pattern value=".*\S.*" /&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1Len38TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"38"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14"><abbr title="Official Search">OS</abbr> map reference</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Carries the <abbr title="Official Search">OS</abbr></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -909,13 +916,38 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14"><abbr title="Search of the Index Map">SIM</abbr> - Address with postcode</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType
-    name="<strong>Q1AddressWithPostcodeType</strong>"&gt;
-    &lt;xs:sequence&gt;
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"OSMapReference"</span>
+    <span class="na">type=</span><span class="s">"Q1Len8TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
+        (i.e. a finite set of characters)
+        generally in the form of words of
+        a language.
+<span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1Len8TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
+        (i.e. a finite set of characters)
+        generally in the form of words of
+        a language.
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q1Len8TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1Len8TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"8"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14"><abbr title="Search of the Index Map">SIM</abbr> - Address with postcode</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Contents of type as above with extra postcode amount.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -924,53 +956,15 @@
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>PostcodeZone</strong>"
-    type="<strong>Q1PostcodeZoneType</strong>"
-    minOccurs="1" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt;The identifier for
-        one or more properties according 
-        to the UK postal service; a group of 
-        letters and numbers added to the postal
-        address to assist in the sorting of mail,
-        as defined by the Royal Mail.
-&lt;/xs:element&gt;
-
-&lt;xs:complexType name="<strong>Q1PostcodeZoneType</strong>"&gt;
-    &lt;xs:documentation&gt;The identifier for
-        one or more properties according 
-        to the UK postal service; a group of
-        letters and numbers added to the postal
-        address to assist in the sorting of mail,
-        as defined by the Royal Mail.
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>Postcode</strong>"
-            type="<strong>Q3TextType</strong>"
-            minOccurs="1" maxOccurs="1"&gt;
-            &lt;xs:documentation&gt;A full or partial
-                UK Postcode
-        &lt;/xs:element&gt;
-    &lt;/xs:sequence&gt;
-&lt;/xs:complexType&gt;
-
-&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
-    &lt;xs:documentation&gt;A character string
-        (i.e. a finite set of characters)
-        generally in the form of words of
-        a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
-
-&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span>
+    <span class="na">name=</span><span class="s">"Q1AddressWithPostcodeType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Carries the postcode.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -979,35 +973,55 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Alternative despatch address</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType
-    name="<strong>Q1AlternativeDespatchDetailsType</strong>"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>AlternativeDespatchAddress</strong>"
-            type="<strong>Q1AlternativeDespatchAddressType</strong>"
-            minOccurs="0" maxOccurs="1"&gt;
-            &lt;xs:documentation&gt; The type of address
-                to be used on results.
-        &lt;/xs:element&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"PostcodeZone"</span>
+    <span class="na">type=</span><span class="s">"Q1PostcodeZoneType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>The identifier for
+        one or more properties according
+        to the UK postal service; a group of
+        letters and numbers added to the postal
+        address to assist in the sorting of mail,
+        as defined by the Royal Mail.
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:complexType
-    name="<strong>Q1AlternativeDespatchAddressType</strong>">
-    &lt;xs:choice&gt;
-        &lt;xs:element name="<strong>PostalAddress</strong>"
-            type="<strong>Q1AlternativePostalAddressType</strong>"
-            minOccurs="0" maxOccurs="1"&gt;
-            &lt;xs:documentation> A specific
-                Address that can be used for
-                the delivery of physical mail.
-        &lt;/xs:element&gt;
-        &lt;xs:element name="<strong>DXDetails</strong>"
-            type="<strong>Q1DXDetailsType</strong>"
-            minOccurs="0" maxOccurs="1" /&gt;
-    &lt;/xs:choice&gt;
-&lt;/xs:complexType&gt;
-</code></pre>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1PostcodeZoneType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>The identifier for
+        one or more properties according
+        to the UK postal service; a group of
+        letters and numbers added to the postal
+        address to assist in the sorting of mail,
+        as defined by the Royal Mail.
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Postcode"</span>
+            <span class="na">type=</span><span class="s">"Q3TextType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:documentation&gt;</span>A full or partial
+                UK Postcode
+        <span class="nt">&lt;/xs:element&gt;</span>
+    <span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span>A character string
+        (i.e. a finite set of characters)
+        generally in the form of words of
+        a language.
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Alternative despatch address</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Main element enabling/enforcing a choice between postal or DX delivery address.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -1016,28 +1030,37 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:decimal</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Despatch name</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name ="<strong>AlternativeDespatchName</strong>"
-    type="<strong>DespatchNameTextContentType</strong>"
-    minOccurs="0" maxOccurs="1"&gt;
-    &lt;xs:documentation&gt; Name of
-        firm/company results
-        will be addressed to.
-&lt;/xs:element&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span>
+    <span class="na">name=</span><span class="s">"Q1AlternativeDespatchDetailsType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AlternativeDespatchAddress"</span>
+            <span class="na">type=</span><span class="s">"Q1AlternativeDespatchAddressType"</span>
+            <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:documentation&gt;</span> The type of address
+                to be used on results.
+        <span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:simpleType
-    name="<strong>DespatchNameTextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="70" /&gt;
-        &lt;xs:pattern value="[A-Za-z0-
-            9\s~!&quot;@#$%'\(\)\*\+,\-
-            \./:;=&gt;\?\[\\\]_\{\}\^&#xa3;]*" /&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:complexType</span>
+    <span class="na">name=</span><span class="s">"Q1AlternativeDespatchAddressType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:choice&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"PostalAddress"</span>
+            <span class="na">type=</span><span class="s">"Q1AlternativePostalAddressType"</span>
+            <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:documentation&gt;</span> A specific
+                Address that can be used for
+                the delivery of physical mail.
+        <span class="nt">&lt;/xs:element&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"DXDetails"</span>
+            <span class="na">type=</span><span class="s">"Q1DXDetailsType"</span>
+            <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:choice&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Despatch name</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Words say name of firm/company, however it is possible it could be a private individual.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -1046,29 +1069,30 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Despatch reference</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name ="<strong>AlternativeDespatchReference</strong>"
-    type="<strong>Q4TextContentType</strong>"
-    minOccurs="0" maxOccurs="1"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;Text reference to be
-            displayed on results.
-        &lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-&lt;/xs:element&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name =</span><span class="s">"AlternativeDespatchName"</span>
+    <span class="na">type=</span><span class="s">"DespatchNameTextContentType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:documentation&gt;</span> Name of
+        firm/company results
+        will be addressed to.
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q4TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="25" /&gt;
-        &lt;xs:pattern value="[A-Za-z0-
-            9\s~!&quot;@#$%'\(\)\*\+,\-
-            \./:;=&gt;\?\[\\\]_\{\}\^&#xa3;]*" /&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span>
+    <span class="na">name=</span><span class="s">"DespatchNameTextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"70"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">"[A-Za-z0-
+            9\s~!&amp;quot;@#$%&amp;apos;\(\)\*\+,\-
+            \./:;=&gt;\?\[\\]_\{\}\^&amp;#xa3;]*"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Despatch reference</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Carries a reference for the alternative despatch.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -1077,39 +1101,31 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Line 1</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>AddressLine</strong>"
-    type="<strong>Q3TextType</strong>"
-    minOccurs="0" maxOccurs="unbounded"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A line of the
-            address for the alternative
-            despatch location.
-        &lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-&lt;/xs:element&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name =</span><span class="s">"AlternativeDespatchReference"</span>
+    <span class="na">type=</span><span class="s">"Q4TextContentType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>Text reference to be
+            displayed on results.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A character string
-            (i.e. a finite set of characters)
-            generally in the form of words of
-            a language.
-        &lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
-
-&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q4TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"25"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">"[A-Za-z0-
+            9\s~!&amp;quot;@#$%&amp;apos;\(\)\*\+,\-
+            \./:;=&gt;\?\[\\]_\{\}\^&amp;#xa3;]*"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Line 1</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Start of the alternative despatch address.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -1118,78 +1134,213 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Line 2</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">As line 1.</td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
-        </tr>
-        <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Line 3</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">As line 1.</td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
-        </tr>
-        <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Line 4</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">As line 1.</td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
-        </tr>
-        <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Line 5</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">As line 1.</td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
-            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
-        </tr>
-        <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>Postcode</strong>"
-    type="<strong>Q3TextType</strong>"
-    minOccurs="0" maxOccurs="1"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A valid postcode
-            for the alternative address.
-        &lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-&lt;/xs:element&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AddressLine"</span>
+    <span class="na">type=</span><span class="s">"Q3TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A line of the
+            address for the alternative
+            despatch location.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A character string
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
             (i.e. a finite set of characters)
             generally in the form of words of
             a language.
-        &lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Line 2</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AddressLine"</span>
+    <span class="na">type=</span><span class="s">"Q3TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A line of the
+            address for the alternative
+            despatch location.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
+            </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Line 3</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AddressLine"</span>
+    <span class="na">type=</span><span class="s">"Q3TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A line of the
+            address for the alternative
+            despatch location.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
+            </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Line 4</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AddressLine"</span>
+    <span class="na">type=</span><span class="s">"Q3TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A line of the
+            address for the alternative
+            despatch location.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
+            </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Line 5</td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
+            <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AddressLine"</span>
+    <span class="na">type=</span><span class="s">"Q3TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A line of the
+            address for the alternative
+            despatch location.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
+            </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Postcode</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Field to carry the postcode.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -1198,8 +1349,40 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14"><strong>OR</strong></td>
-            <td class="govuk-table__cell govuk-!-font-size-14"></td>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Postcode"</span>
+    <span class="na">type=</span><span class="s">"Q3TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A valid postcode
+            for the alternative address.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-!-font-size-14">OR</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -1207,41 +1390,8 @@
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
         </tr>
-        <tr class="govuk-table__row">
+        <tr class="govuk-table__row bottom-border-none">
             <td class="govuk-table__cell govuk-!-font-size-14">DX number</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>DXNumber</strong>"
-    type="<strong>Q3TextType</strong>"
-    minOccurs="1" maxOccurs="1"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A unique
-            identifier for a delivery
-            point for organisations using
-            the Document Exchange service.
-        &lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-&lt;/xs:element&gt;
-
-&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A character string
-            (i.e. a finite set of characters)
-            generally in the form of words of
-            a language.
-        &lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
-
-&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
-            </td>
             <td class="govuk-table__cell govuk-!-font-size-14">Field to carry the DX number.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -1250,46 +1400,83 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">DX exchange</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>ExchangeName</strong>"
-    type="<strong>Q3TextType</strong>"
-    minOccurs="1" maxOccurs="1"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A character string
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"DXNumber"</span>
+    <span class="na">type=</span><span class="s">"Q3TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A unique
+            identifier for a delivery
+            point for organisations using
+            the Document Exchange service.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
             (i.e. a finite set of characters)
             generally in the form of words of
             a language.
-        &lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-&lt;/xs:element&gt;
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
 
-&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A character string
-            (i.e. a finite set of characters)
-            generally in the form of words of
-            a language.
-        &lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q3TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
-
-&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:pattern value=".*\S.*"/&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">DX exchange</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Field to carry DX exchange.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ExchangeName"</span>
+    <span class="na">type=</span><span class="s">"Q3TextType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+        <span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
+            </td>
         </tr>
     </tbody>
 </table>

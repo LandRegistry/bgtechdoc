@@ -105,11 +105,10 @@
 
 <hr>
 
-<table class="govuk-table" cellpadding="10">
+<table class="govuk-table schema-table" cellpadding="10">
     <thead class="govuk-table__head">
         <tr class="govuk-table__row">
             <th class="govuk-table__header govuk-!-font-size-14">Data input field (from Land Registry (LR) test harness)</th>
-            <th class="govuk-table__header govuk-!-font-size-14">Extract of relevant code from schema</th>
             <th class="govuk-table__header govuk-!-font-size-14">Description</th>
             <th class="govuk-table__header govuk-!-font-size-14">Mandatory</th>
             <th class="govuk-table__header govuk-!-font-size-14">Minimum value</th>
@@ -119,45 +118,8 @@
         </tr>
     </thead>
     <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">MessageID</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>ID</strong>"
-    type="<strong>Q1IdentifierType</strong>"
-    minOccurs="1" maxOccurs="1" /&gt;
-    
-&lt;xs:complexType name="<strong>Q1IdentifierType</strong>"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>MessageID</strong>"
-            type="<strong>Q1TextType</strong>"
-            minOccurs="1" maxOccurs="1"&gt;
-            &lt;xs:annotation&gt;
-                &lt;xs:documentation&gt;A character string
-                    (i.e. a finite set of characters)
-                    generally in the form of words of
-                    a language.
-                &lt;/xs:documentation&gt;
-
-&lt;xs:complexType name="<strong>Q1TextType</strong>"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A character string
-            (i.e. a finite set of characters)
-            generally in the form of words of
-            a language.
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q1TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
-
-&lt;xs:simpleType name="<strong>Q1TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="5" /&gt;
-        &lt;xs:maxLength value="50" /&gt;
-        &lt;xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" /&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
-            </td>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Message ID is a unique input, used to identify your request.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -166,12 +128,46 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">RequestOutstandingRequests</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>RequestOutstandingRequests</strong>"
-    type="<strong>RequestOutstandingRequestsType</strong>" /&gt;
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ID"</span>
+    <span class="na">type=</span><span class="s">"Q1IdentifierType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1IdentifierType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"MessageID"</span>
+            <span class="na">type=</span><span class="s">"Q1TextType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:annotation&gt;</span>
+                <span class="nt">&lt;xs:documentation&gt;</span>A character string
+                    (i.e. a finite set of characters)
+                    generally in the form of words of
+                    a language.
+                <span class="nt">&lt;/xs:documentation&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A character string
+            (i.e. a finite set of characters)
+            generally in the form of words of
+            a language.
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q1TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"5"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"50"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">"[a-zA-Z0-9][a-zA-Z0-9\-]*"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Request Outstanding Requests</td>
             <td class="govuk-table__cell govuk-!-font-size-14">This is the main container for the service.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -180,24 +176,14 @@
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">RequestOutstandingRequestsType</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType
-    name="<strong>RequestOutstandingRequestsType</strong>"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>ID</strong>"
-            type="<strong>Q1IdentifierType</strong>"
-            minOccurs="1" maxOccurs="1" /&gt;
-        &lt;xs:element name="<strong>Product</strong>"
-            type="<strong>Q1OutstandingRequestsProductType</strong>"
-            minOccurs="1" maxOccurs="1"&gt;
-            &lt;xs:annotation&gt;
-                &lt;xs:documentation&gt;This component contains
-                    components holding details of the
-                    requests being searched for
-                &lt;/xs:documentation&gt;
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"RequestOutstandingRequests"</span>
+    <span class="na">type=</span><span class="s">"RequestOutstandingRequestsType"</span> <span class="nt">/&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Request Outstanding Requests Type</td>
             <td class="govuk-table__cell govuk-!-font-size-14">
                 <p>ID element is described above (message ID).</p>
                 <p>The product element is described below.</p>
@@ -209,33 +195,26 @@
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">Q1OutstandingRequestsProductType</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>Product</strong>"
-    type="<strong>Q1OutstandingRequestsProductType</strong>"
-    minOccurs="1" maxOccurs="1"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;This component contains
-            components holding details of the requests
-            being searched for&lt;/xs:documentation&gt;
-
-&lt;xs:complexType
-    name="<strong>Q1OutstandingRequestsProductType</strong>"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;This component contains
-            details regarding the requests being
-            searched for.&lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>ShowOnlyNewResponses</strong>"
-            type="<strong>IndicatorType</strong>" default="false"
-            minOccurs="1" maxOccurs="1" /&gt;
-        &lt;xs:element name="<strong>SpecificService</strong>"
-            type="<strong>Q1ServiceType</strong>"
-            minOccurs="0" maxOccurs="1" /&gt;
-    &lt;/xs:sequence&gt;
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span>
+    <span class="na">name=</span><span class="s">"RequestOutstandingRequestsType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ID"</span>
+            <span class="na">type=</span><span class="s">"Q1IdentifierType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Product"</span>
+            <span class="na">type=</span><span class="s">"Q1OutstandingRequestsProductType"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;xs:annotation&gt;</span>
+                <span class="nt">&lt;xs:documentation&gt;</span>This component contains
+                    components holding details of the
+                    requests being searched for
+                <span class="nt">&lt;/xs:documentation&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Q1 Outstanding Requests Product Type</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Main product element containing two items, both described below.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -244,17 +223,35 @@
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">SpecificService</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>SpecificService</strong>"
-    type="<strong>Q1ServiceType</strong>"
-    minOccurs="0" maxOccurs="1" /&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Product"</span>
+    <span class="na">type=</span><span class="s">"Q1OutstandingRequestsProductType"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>This component contains
+            components holding details of the requests
+            being searched for<span class="nt">&lt;/xs:documentation&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q1ServiceType</strong>"&gt;
-    &lt;xs:restriction base="xs:int" /&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:complexType</span>
+    <span class="na">name=</span><span class="s">"Q1OutstandingRequestsProductType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>This component contains
+            details regarding the requests being
+            searched for.<span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ShowOnlyNewResponses"</span>
+            <span class="na">type=</span><span class="s">"IndicatorType"</span> <span class="na">default=</span><span class="s">"false"</span>
+            <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"SpecificService"</span>
+            <span class="na">type=</span><span class="s">"Q1ServiceType"</span>
+            <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:sequence&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Specific Service</td>
             <td class="govuk-table__cell govuk-!-font-size-14">This is the service type of the request.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -263,23 +260,19 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:int</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">ShowOnlyNewResponses</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>ShowOnlyNewResponses</strong>"
-    type="<strong>IndicatorType</strong>" default="false"
-    minOccurs="1" maxOccurs="1" /&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"SpecificService"</span>
+    <span class="na">type=</span><span class="s">"Q1ServiceType"</span>
+    <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
 
-&lt;xs:complexType name="<strong>IndicatorType</strong>"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;A list of two mutually exclusive
-            Boolean values that express the only possible
-            states of a Property.&lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="xs:boolean" /&gt;
-    &lt;/xs:simpleContent&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1ServiceType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:int"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Show Only New Responses</td>
             <td class="govuk-table__cell govuk-!-font-size-14">If set to true, system will only return new responses. If set to false, system will return all responses.</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -288,19 +281,39 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:boolean</td>
         </tr>
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-!-font-size-14">NumericType</td>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code><span class="hmlr-mark-highlight" role="mark">&lt;xs:simpleType name="<strong>NumericType</strong>"&gt;
-    &lt;xs:restriction base="xs:decimal" /&gt;
-&lt;/xs:simpleType&gt;
-</span></code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ShowOnlyNewResponses"</span>
+    <span class="na">type=</span><span class="s">"IndicatorType"</span> <span class="na">default=</span><span class="s">"false"</span>
+    <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"IndicatorType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:annotation&gt;</span>
+        <span class="nt">&lt;xs:documentation&gt;</span>A list of two mutually exclusive
+            Boolean values that express the only possible
+            states of a Property.<span class="nt">&lt;/xs:documentation&gt;</span>
+    <span class="nt">&lt;/xs:annotation&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"xs:boolean"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Numeric Type</td>
             <td class="govuk-table__cell govuk-!-font-size-14"><span class="hmlr-mark-highlight" role="mark">This element exists in the schema but is not currently used.</span></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14">xs:decimal</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"NumericType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:decimal"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
+            </td>
         </tr>
     </tbody>
 </table>

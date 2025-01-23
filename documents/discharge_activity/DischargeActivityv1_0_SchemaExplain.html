@@ -105,11 +105,10 @@
 
 <hr>
 
-<table class="govuk-table" cellpadding="10">
+<table class="govuk-table schema-table" cellpadding="10">
     <thead class="govuk-table__head">
         <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header govuk-!-font-size-14">Data input field</th>
-            <th scope="col" class="govuk-table__header govuk-!-font-size-14">Extract of relevant code from schema</th>
             <th scope="col" class="govuk-table__header govuk-!-font-size-14">Description</th>
             <th scope="col" class="govuk-table__header govuk-!-font-size-14">Mandatory</th>
             <th scope="col" class="govuk-table__header govuk-!-font-size-14">Minimum value</th>
@@ -119,29 +118,8 @@
         </tr>
     </thead>
     <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-size-14">MessageID</th>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType name="<strong>Q1IdentifierType</strong>"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>MessageID</strong>" type="<strong>Q1TextType</strong>" minOccurs="1" maxOccurs="1"&gt;
-
-&lt;xs:complexType name="<strong>Q1TextType</strong>"&gt;
-    
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q1TextContentType</strong>" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
-
-&lt;xs:simpleType name="<strong>Q1TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="5" /&gt;
-        &lt;xs:maxLength value="50" /&gt;
-        &lt;xs:pattern value="[a-zA-Z0-9][a-zA-Z0-9\-]*" /&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
-            </td>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Message ID</td>
             <td class="govuk-table__cell govuk-!-font-size-14">This is the element that carries the message ID. The message ID must be unique and must meet the pattern constraint.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14">5</td>
@@ -150,17 +128,30 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-size-14">RequestDischargeActivityV1_0Type</th>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType name="RequestDischargeActivityV1_0Type"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>ID</strong>" type="<strong>Q1IdentifierType</strong>" minOccurs="1" maxOccurs="1" /&gt;
-        &lt;xs:element name="<strong>Product</strong>" type="<strong>Q1ProductType</strong>" minOccurs="1" maxOccurs="1"&gt;
-        &lt;/xs:element&gt;
-    &lt;/xs:sequence&gt;
-&lt;/xs:complexType&gt;
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1IdentifierType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"MessageID"</span> <span class="na">type=</span><span class="s">"Q1TextType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1TextType"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q1TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q1TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"5"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"50"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">"[a-zA-Z0-9][a-zA-Z0-9\-]*"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Request Discharge Activity V1_0 Type</td>
             <td class="govuk-table__cell govuk-!-font-size-14">This is the main container for carrying the message ID and an instance of Q1ProductType.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -169,18 +160,19 @@
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
         </tr>
         <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-size-14">Q1ProductType</th>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType name="<strong>Q1ProductType</strong>"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>ExternalReference</strong>" type="<strong>Q1ExternalReferenceType</strong>" minOccurs="1" maxOccurs="1"&gt;
-        &lt;/xs:element&gt;
-        &lt;xs:element name="<strong>SubjectProperty</strong>" type="Q1SubjectPropertyType" minOccurs="1" maxOccurs="1"&gt;
-        &lt;/xs:element&gt;
-    &lt;/xs:sequence&gt;
-&lt;/xs:complexType&gt;
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"RequestDischargeActivityV1_0Type"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ID"</span> <span class="na">type=</span><span class="s">"Q1IdentifierType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Product"</span> <span class="na">type=</span><span class="s">"Q1ProductType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/xs:element&gt;</span>
+    <span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Q1 Product Type</td>
             <td class="govuk-table__cell govuk-!-font-size-14">This element holds the relevant items to enable the search to be completed.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -189,20 +181,20 @@
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
         </tr>
         <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-size-14">Q1SubjectPropertyType</th>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:complexType name="<strong>Q1SubjectPropertyType</strong>"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>TitleNumber</strong>" type="<strong>Q2TextType</strong>" minOccurs="1" maxOccurs="1"&gt;
-        &lt;/xs:element&gt;
-        &lt;xs:element name="<strong>ContinueIfTitleIsClosedAndContinuedIndicator</strong>" type="<strong>IndicatorType</strong>" minOccurs="1" maxOccurs="1"&gt;
-        &lt;/xs:element&gt;
-        &lt;xs:element name="<strong>ChargeDate</strong>" type="<strong>DateType</strong>" minOccurs="0" maxOccurs="1"&gt;
-        &lt;/xs:element&gt;
-    &lt;/xs:sequence&gt;
-&lt;/xs:complexType&gt;
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1ProductType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ExternalReference"</span> <span class="na">type=</span><span class="s">"Q1ExternalReferenceType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/xs:element&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"SubjectProperty"</span> <span class="na">type=</span><span class="s">"Q1SubjectPropertyType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/xs:element&gt;</span>
+    <span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Q1 Subject Property Type</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Contains the title number required to search with, along with an optional charge date. This section </td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
@@ -211,40 +203,22 @@
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
         </tr>
         <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-size-14">ExternalReference</th>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>ExternalReference</strong>" type="<strong>Q1ExternalReferenceType</strong>" minOccurs="1" maxOccurs="1"&gt;
-&lt;/xs:element&gt;
-
-&lt;xs:complexType name="<strong>Q1ExternalReferenceType</strong>"&gt;
-    &lt;xs:sequence&gt;
-        &lt;xs:element name="<strong>Reference</strong>" type="<strong>ReferenceTextContentType</strong>" minOccurs="1" maxOccurs="1"&gt;
-        &lt;/xs:element&gt;
-        &lt;xs:element name="<strong>AllocatedBy</strong>" type="<strong>Q3TextType</strong>" minOccurs="0" maxOccurs="1"&gt;
-        &lt;xs:element name="<strong>Description</strong>" type="<strong>Q3TextType</strong>" minOccurs="0" maxOccurs="1"&gt;
-&lt;/xs:complexType&gt;
-
-&lt;xs:simpleType name="<strong>ReferenceTextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:minLength value="1" /&gt;
-        &lt;xs:maxLength value="25" /&gt;
-        &lt;xs:pattern value="[A-Za-z0-9\s~!&quot;@#$%'\(\)\*\+,\-\./:;=&gt;\?\[\\\]_\{\}\^&#xa3;]*" /&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-
-&lt;xs:complexType name="<strong>Q3TextType</strong>"&gt;
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="Q3TextContentType" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
-
-&lt;xs:simpleType name="<strong>Q3TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;xs:pattern value=".*\S.*" /&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1SubjectPropertyType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"TitleNumber"</span> <span class="na">type=</span><span class="s">"Q2TextType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/xs:element&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ContinueIfTitleIsClosedAndContinuedIndicator"</span> <span class="na">type=</span><span class="s">"IndicatorType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/xs:element&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ChargeDate"</span> <span class="na">type=</span><span class="s">"DateType"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/xs:element&gt;</span>
+    <span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">External Reference</td>
             <td class="govuk-table__cell govuk-!-font-size-14">
                 <p>This element carries the external reference (this is a reference relevant to the user only) split into three parts.</p>
                 <ul class="govuk-list govuk-!-font-size-14">
@@ -262,26 +236,42 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-size-14">TitleNumber</th>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>TitleNumber</strong>" type="<strong>Q2TextType</strong>" minOccurs="1" maxOccurs="1"&gt;
-&lt;xs:element&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ExternalReference"</span> <span class="na">type=</span><span class="s">"Q1ExternalReferenceType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:complexType name="<strong>Q2TextType</strong>"&gt;
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="<strong>Q2TextContentType</strong>"&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q1ExternalReferenceType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Reference"</span> <span class="na">type=</span><span class="s">"ReferenceTextContentType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/xs:element&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"AllocatedBy"</span> <span class="na">type=</span><span class="s">"Q3TextType"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"Description"</span> <span class="na">type=</span><span class="s">"Q3TextType"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
 
-&lt;xs:simpleType name="<strong>Q2TextContentType</strong>"&gt;
-    &lt;xs:restriction base="xs:string"&gt;
-        &lt;minLength value="1" /&gt;
-        &lt;maxLength value="9" /&gt;
-        &lt;pattern value="[A-Z]{0,3}[0-9]{1,6}[ZT]?" /&gt;
-    &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;
-</code></pre>
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"ReferenceTextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:maxLength</span> <span class="na">value=</span><span class="s">"25"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">"[A-Za-z0-9\s~!&amp;quot;@#$%&amp;apos;\(\)\*\+,\-\./:;=&gt;\?\[\\]_\{\}\^&amp;#xa3;]*"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q3TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q3TextContentType"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q3TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xs:pattern</span> <span class="na">value=</span><span class="s">".*\S.*"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Title Number</td>
             <td class="govuk-table__cell govuk-!-font-size-14">This element is for setting up the title number required for the search.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -290,18 +280,28 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:string</td>
         </tr>
         <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-size-14">ContinueIfTitleIsClosedAndContinuedIndicator</th>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>ContinueIfTitleIsClosedAndContinuedIndicator</strong>" type="<strong>IndicatorType</strong>" minOccurs="1" maxOccurs="1"&gt;
-&lt;/xs:element&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"TitleNumber"</span> <span class="na">type=</span><span class="s">"Q2TextType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:element&gt;</span>
 
-&lt;xs:complexType name="<strong>IndicatorType</strong>"&gt;
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="xs:boolean" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
-</code></pre>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"Q2TextType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"Q2TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span>
+
+<span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"Q2TextContentType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:string"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;minLength</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;maxLength</span> <span class="na">value=</span><span class="s">"9"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;pattern</span> <span class="na">value=</span><span class="s">"[A-Z]{0,3}[0-9]{1,6}[ZT]?"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="nt">&lt;/xs:simpleType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Continue If Title Is Closed And Continued Indicator</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Closed and continued indicator element is there so that if the subject title number is closed, we will follow any chain of open title numbers to find the latest one. The enquiry will then be made using the newly found title.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">Yes</td>
             <td class="govuk-table__cell govuk-!-font-size-14">1</td>
@@ -310,24 +310,39 @@
             <td class="govuk-table__cell govuk-!-font-size-14">xs:boolean</td>
         </tr>
         <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-size-14">ChargeDate</th>
-            <td class="govuk-table__cell govuk-!-font-size-14">
-<pre><code>&lt;xs:element name="<strong>ChargeDate</strong>" type="<strong>DateType</strong>" minOccurs="0" maxOccurs="1"&gt;
-&lt;/xs:element&gt;
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ContinueIfTitleIsClosedAndContinuedIndicator"</span> <span class="na">type=</span><span class="s">"IndicatorType"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
 
-&lt;xs:complexType name="<strong>DateType</strong>"&gt;
-    &lt;xs:simpleContent&gt;
-        &lt;xs:extension base="xs:date" /&gt;
-    &lt;/xs:simpleContent&gt;
-&lt;/xs:complexType&gt;
-</code></pre>
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"IndicatorType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"xs:boolean"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span></code></pre></div>
             </td>
+        </tr>
+        <tr class="govuk-table__row bottom-border-none">
+            <td class="govuk-table__cell govuk-!-font-size-14">Charge Date</td>
             <td class="govuk-table__cell govuk-!-font-size-14">The date of a charge, that you want to check, that has been discharged within the last thirty calendar days.</td>
             <td class="govuk-table__cell govuk-!-font-size-14">No</td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14"></td>
             <td class="govuk-table__cell govuk-!-font-size-14">YYYY-MM-DD</td>
             <td class="govuk-table__cell govuk-!-font-size-14">xs:date</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td colspan="7">
+                <div class="highlight"><pre class="codehilite"><code>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"ChargeDate"</span> <span class="na">type=</span><span class="s">"DateType"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+
+<span class="nt">&lt;xs:complexType</span> <span class="na">name=</span><span class="s">"DateType"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xs:simpleContent&gt;</span>
+        <span class="nt">&lt;xs:extension</span> <span class="na">base=</span><span class="s">"xs:date"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:simpleContent&gt;</span>
+<span class="nt">&lt;/xs:complexType&gt;</span></code></pre></div>
+            </td>
         </tr>
     </tbody>
 </table>
