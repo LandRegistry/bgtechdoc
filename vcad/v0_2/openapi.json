@@ -1137,7 +1137,7 @@
               "VALIDATING",
               "SYSTEM_ERROR",
               "REJECTED",
-              "QUEUED_OUT_OF_HOURS",
+              "VALIDATED",
               "ACCEPTED"
             ]
           },
