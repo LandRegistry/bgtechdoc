@@ -9,7 +9,7 @@
 
     <link href="../stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="/problems/">
+    <link rel="canonical" href="/problems/order-management.html">
     <link rel="icon" sizes="48x48" href="../assets/govuk/assets/images/favicon.ico">
     <link rel="icon" sizes="any" href="../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
     <link rel="mask-icon" href="../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
@@ -19,12 +19,12 @@
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:image" content="../assets/govuk/assets/images/govuk-opengraph-image.png" />
       <meta name="twitter:title" content="HM Land Registry Business Gateway Developer Pack" />
-      <meta name="twitter:url" content="/problems/" />
+      <meta name="twitter:url" content="/problems/order-management.html" />
 
       <meta property="og:image" content="../assets/govuk/assets/images/govuk-opengraph-image.png" />
       <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="/problems/" />
+      <meta property="og:url" content="/problems/order-management.html" />
 
           <link href="../favicon.ico" rel="icon" type="image/ico" />
 
@@ -80,7 +80,12 @@
               <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
                       <ul>
   <li>
-    <a href="#"><span>Error Registry</span></a>
+    <a href="#order-management"><span>Order Management</span></a>
+    <ul>
+      <li>
+        <a href="#name-mismatch-between-doc-and-json"><span>Application submission does not match uploaded documents</span></a>
+      </li>
+    </ul>
   </li>
 </ul>
 
@@ -92,16 +97,32 @@
         <div class="app-pane__content toc-open-disabled" aria-label="Content" tabindex="0">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             
-    <h1>Error Registry</h1>
+    <h1 id="order-management">Order Management</h1>
 
-<p>This page provides links to detailed information about specific error categories.</p>
+<h2 id="name-mismatch-between-doc-and-json">Application submission does not match uploaded documents</h2>
+<p><strong>Type:</strong> <code>name-mismatch-between-doc-and-json</code></p>
+<p><strong>Detail:</strong> Two or more fields are not valid together</p>
+<p><strong>Resolution:</strong></p>
 
 <ul>
-  <li><a href="/bgtechdoc/global.html">Global</a> - A brief description of global errors.</li>
-  <li><a href="/bgtechdoc/index.html">Index</a> - A brief description of index errors.</li>
-  <li><a href="/bgtechdoc/notifications.html">Notifications</a> - A brief description of notifications errors.</li>
-  <li><a href="/bgtechdoc/order-management.html">Order-management</a> - A brief description of order-management errors.</li>
+<li>Lalalala<br></li>
 </ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://businessgateway.landregistry.gov.uk/bg2/api/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Application submission does not match uploaded documents"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Borrower name on mortgage deed does not match borrower name in order"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Borrom name mismatch"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pointers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"ponter/to/mortgage/deed/document/reference"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pointer/to/borrower/party"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<hr>
 
 
 

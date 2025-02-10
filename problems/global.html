@@ -83,26 +83,37 @@
     <a href="#global"><span>Global</span></a>
     <ul>
       <li>
-        <ul>
-          <li>
-            <a href="#bad_request"><span>Bad Request</span></a>
-          </li>
-          <li>
-            <a href="#unauthorized"><span>Unauthorized</span></a>
-          </li>
-          <li>
-            <a href="#forbidden"><span>Forbidden</span></a>
-          </li>
-          <li>
-            <a href="#not-found"><span>Not Found</span></a>
-          </li>
-          <li>
-            <a href="#not-found-for-real"><span>Not Found</span></a>
-          </li>
-          <li>
-            <a href="#server-error"><span>Internal Server Error</span></a>
-          </li>
-        </ul>
+        <a href="#bad_request"><span>Bad Request</span></a>
+      </li>
+      <li>
+        <a href="#unauthorized"><span>Unauthorized</span></a>
+      </li>
+      <li>
+        <a href="#forbidden"><span>Forbidden</span></a>
+      </li>
+      <li>
+        <a href="#not-found"><span>Not Found</span></a>
+      </li>
+      <li>
+        <a href="#conflict"><span>Resource Conflict</span></a>
+      </li>
+      <li>
+        <a href="#im-a-teapot"><span>I’m a Teapot</span></a>
+      </li>
+      <li>
+        <a href="#Unprocessable_Entity"><span>Unprocessable Entity</span></a>
+      </li>
+      <li>
+        <a href="#too_many_requests"><span>Too Many Requests</span></a>
+      </li>
+      <li>
+        <a href="#internal-server-error"><span>Internal Server Error</span></a>
+      </li>
+      <li>
+        <a href="#service-unavailable"><span>Service Unavailable</span></a>
+      </li>
+      <li>
+        <a href="#gateway-timeout"><span>Gateway Timeout</span></a>
       </li>
     </ul>
   </li>
@@ -118,35 +129,31 @@
             
     <h1 id="global">Global</h1>
 
-<h3 id="bad_request">Bad Request</h3>
+<h2 id="bad_request">Bad Request</h2>
 <p><strong>Type:</strong> <code>bad_request</code></p>
-<p><strong>Detail:</strong> The request is invalid or malformed</p>
+<p><strong>Detail:</strong> The request is invalid or malformed.</p>
 <p><strong>Resolution:</strong></p>
 
 <ul>
-<li>Double check the syntax of the request.</li>
-<li>Ensure all fields/parameters/headers in the request are the correct type, format and location.</li>
-<li>Ensure all required fields/parameters/headers are included in the request.<br></li>
+<li>Check your requests against the Schema for problems.</li>
+<li>Required properties/ headers/ parameters are provided.</li>
+<li>Provided properties/ headers/ parameters are valid.<br></li>
 </ul>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/bad_request"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#bad_request"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request is invalid or malformed"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The name 'F' is too short and must be at least 10 characters."</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pointer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$.data.name"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request is invalid or malformed."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 <hr>
 
-<h3 id="unauthorized">Unauthorized</h3>
+<h2 id="unauthorized">Unauthorized</h2>
 <p><strong>Type:</strong> <code>unauthorized</code></p>
-<p><strong>Detail:</strong> The request could not be authorized</p>
+<p><strong>Detail:</strong> The request could not be authorized.</p>
 <p><strong>Resolution:</strong></p>
 
 <ul>
@@ -157,46 +164,43 @@
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/unauthorized"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#unauthorized"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request could not be authorized"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request could not be authorized."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span><span class="w">
     </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The name 'F' is too short and must be at least 10 characters."</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pointer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$.data.name"</span><span class="w">
+        </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Authorization header is either missing or invalid."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authorization"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 <hr>
 
-<h3 id="forbidden">Forbidden</h3>
+<h2 id="forbidden">Forbidden</h2>
 <p><strong>Type:</strong> <code>forbidden</code></p>
-<p><strong>Detail:</strong> The request could not be authorized</p>
+<p><strong>Detail:</strong> The request was rejected due to insufficient permissions.</p>
 <p><strong>Resolution:</strong></p>
 
 <ul>
-<li>Your current user does not have permission to access this resource.<br></li>
+<li>Your current user does not have permission to access this resource.</li>
+<li>Contact support if you believe you require access.<br></li>
 </ul>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/forbidden"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#forbidden"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Forbidden"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request could not be authorized"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">403</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The name 'F' is too short and must be at least 10 characters."</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pointer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$.data.name"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request was rejected due to insufficient permissions."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">403</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 <hr>
 
-<h3 id="not-found">Not Found</h3>
+<h2 id="not-found">Not Found</h2>
 <p><strong>Type:</strong> <code>not-found</code></p>
-<p><strong>Detail:</strong> The resource requested does not exist</p>
+<p><strong>Detail:</strong> The requested resource does not exist.</p>
 <p><strong>Resolution:</strong></p>
 
 <ul>
@@ -205,37 +209,102 @@
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/not-found"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#not-found"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Found"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The resource requested does not exist"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The requested resource does not exist."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 <hr>
 
-<h3 id="not-found-for-real">Not Found</h3>
-<p><strong>Type:</strong> <code>not-found-for-real</code></p>
-<p><strong>Detail:</strong> The resource requested does not exist</p>
+<h2 id="conflict">Resource Conflict</h2>
+<p><strong>Type:</strong> <code>conflict</code></p>
+<p><strong>Detail:</strong> The request to create or update a resource cannot be completed.</p>
 <p><strong>Resolution:</strong></p>
 
 <ul>
-<li>Double check the path and any provided path parameters.<br></li>
+<li>Check if the resource already exists.</li>
+<li>Check if the parent resource already exist.</li>
+<li>Try again as an existing update request may have been processing.<br></li>
 </ul>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/not-found-for-real"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Found"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The resource requested does not exist"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#conflict"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Resource Conflict"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request to create or update a resource cannot be completed."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">409</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 <hr>
 
-<h3 id="server-error">Internal Server Error</h3>
-<p><strong>Type:</strong> <code>server-error</code></p>
+<h2 id="im-a-teapot">I&rsquo;m a Teapot</h2>
+<p><strong>Type:</strong> <code>im-a-teapot</code></p>
+<p><strong>Detail:</strong> This server is a teapot, not a coffee machine.  It refuses to brew coffee.</p>
+<p><strong>Resolution:</strong></p>
+
+<ul>
+<li>If you were expecting coffee, you&rsquo;ve made a mistake. This endpoint is for tea.<br></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#im-a-teapot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I'm a Teapot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Short and stout. Try a different request."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">418</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<hr>
+
+<h2 id="Unprocessable_Entity">Unprocessable Entity</h2>
+<p><strong>Type:</strong> <code>Unprocessable_Entity</code></p>
+<p><strong>Detail:</strong> The request appears valid but cannot be processed, perhaps due to business rule violations.</p>
+<p><strong>Resolution:</strong></p>
+
+<ul>
+<li>Check the request sent against the schema.</li>
+<li>Check the information sent for any data violations.</li>
+<li>Check the response for pointers to any possible violations.<br></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#Unprocessable_Entity"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unprocessable Entity"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request appears valid but cannot be processed, perhaps due to business rule violations."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<hr>
+
+<h2 id="too_many_requests">Too Many Requests</h2>
+<p><strong>Type:</strong> <code>too_many_requests</code></p>
+<p><strong>Detail:</strong> The client has sent too many requests within an alloted amount of time.</p>
+<p><strong>Resolution:</strong></p>
+
+<ul>
+<li>You must wait before sending more requests.</li>
+<li>Please refer to <a href="https://landregistry.github.io/bgtechdoc/rest/get_started/rate_limiting.html">REST Rate Limiting</a> for more information.<br></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#too_many_requests"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Too Many Requests"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The client has sent too many requests within an alloted amount of time."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">429</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<hr>
+
+<h2 id="internal-server-error">Internal Server Error</h2>
+<p><strong>Type:</strong> <code>internal-server-error</code></p>
 <p><strong>Detail:</strong> An unexpected problem has occurred.</p>
 <p><strong>Resolution:</strong></p>
 
@@ -246,10 +315,52 @@
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/server-error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#internal-server-error"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An unexpected problem has occurred."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<hr>
+
+<h2 id="service-unavailable">Service Unavailable</h2>
+<p><strong>Type:</strong> <code>service-unavailable</code></p>
+<p><strong>Detail:</strong> The server was unable to complete your request. Please try again later.</p>
+<p><strong>Resolution:</strong></p>
+
+<ul>
+<li>Please wait and try again at a later time.</li>
+<li>If this issue persists please contact support.<br></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#service-unavailable"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Service Unavailable"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The server was unable to complete your request. Please try again later."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">503</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<hr>
+
+<h2 id="gateway-timeout">Gateway Timeout</h2>
+<p><strong>Type:</strong> <code>gateway-timeout</code></p>
+<p><strong>Detail:</strong> The server timed out waiting for a response. Your request may have been processed, but we cannot confirm.  Please do not resubmit your request immediately.</p>
+<p><strong>Resolution:</strong></p>
+
+<ul>
+<li>Wait a few minutes and check if your request was successful.</li>
+<li>If you are unsure if your request went through, please contact support.<br></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#gateway-timeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gateway Timeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The server timed out waiting for a response. Your request may have been processed, but we cannot confirm.  Please do not resubmit your request immediately."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">504</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
