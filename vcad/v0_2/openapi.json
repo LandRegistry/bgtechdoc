@@ -1902,7 +1902,8 @@
       "Transaction": {
         "required": [
           "fee_in_pence",
-          "type"
+          "type",
+          "priority"
         ],
         "type": "object",
         "description": "The object representing a transaction to apply to specific titles on the application",
@@ -1929,6 +1930,13 @@
             "items": {
               "$ref": "#/components/schemas/DocumentReference"
             }
+          },
+          "priority": {
+            "maximum": 20,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The priority application the transactions should be processed in. Multiple transactions cannot have the same priority.",
+            "format": "int32"
           },
           "fee_in_pence": {
             "type": "integer",
