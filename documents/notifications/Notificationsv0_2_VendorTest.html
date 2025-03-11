@@ -10,18 +10,15 @@
     <link href="../../stylesheets/manifest.css" rel="stylesheet" />
 
     <link rel="canonical" href="/documents/notifications/Notificationsv0_2_VendorTest.html">
-    <link rel="icon" sizes="48x48" href="../../assets/govuk/assets/images/favicon.ico">
-    <link rel="icon" sizes="any" href="../../assets/govuk/assets/images/favicon.svg" type="image/svg+xml">
-    <link rel="mask-icon" href="../../assets/govuk/assets/images/govuk-icon-mask.svg" color="#0b0c0c">
-    <link rel="apple-touch-icon" href="../../assets/govuk/assets/images/govuk-icon-180.png">
-    <link rel="manifest" href="/assets/govuk/assets/manifest.json">
+      <link rel="icon" sizes="48x48" href="/images/favicon.ico">
+      <link rel="icon" sizes="any" href="/images/favicon.svg" type="image/svg+xml">
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta name="twitter:image" content="/images/opengraph-image.png" />
       <meta name="twitter:title" content="Notifications - HM Land Registry Business Gateway Developer Pack" />
       <meta name="twitter:url" content="/documents/notifications/Notificationsv0_2_VendorTest.html" />
 
-      <meta property="og:image" content="../../assets/govuk/assets/images/govuk-opengraph-image.png" />
+      <meta property="og:image" content="/images/opengraph-image.png" />
       <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
       <meta property="og:title" content="Notifications" />
       <meta property="og:type" content="object" />
@@ -93,7 +90,15 @@
             <a href="#scenario-2-get-all-new-notifications"><span>Scenario 2: Get all new notifications</span></a>
           </li>
           <li>
-            <a href="#error-scenarios"><span>Error Scenarios</span></a>
+            <a href="#scenario-3-get-all-acknowledged-notifications"><span>Scenario 3: Get all acknowledged notifications</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#error-scenarios"><span>Error Scenarios</span></a>
+        <ul>
+          <li>
+            <a href="#scenario-4-invalid-date-parameters"><span>Scenario 4: Invalid date parameters</span></a>
           </li>
         </ul>
       </li>
@@ -190,7 +195,7 @@
         </table>
     </div>
 </details>
-<h4 id="scenario-3-get-all-acknowledged-notifications">Scenario 3: Get all acknowledged notifications</h4>
+<h3 id="scenario-3-get-all-acknowledged-notifications">Scenario 3: Get all acknowledged notifications</h3>
 
 <details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
     <summary class="govuk-details__summary">
@@ -225,14 +230,14 @@
         </table>
     </div>
 </details>
-<h3 id="error-scenarios">Error Scenarios</h3>
-<h4 id="scenario-4-invalid-date-parameters">Scenario 4: Invalid date parameters</h4>
+<h2 id="error-scenarios">Error Scenarios</h2>
+<h3 id="scenario-4-invalid-date-parameters">Scenario 4: Invalid date parameters</h3>
 
 <details title="click to expand/collapse" class="govuk-details" data-module="govuk-details" open>
     <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
             <ul class="govuk-list govuk-!-font-size-14">
-                <li>Test: Scenario 3</li>
+                <li>Test: Scenario 4</li>
                 <li>Test purpose: Submit an invalid query where the `created_after` query parameter
                     has a date before the `created_before` query parameter date.</li>
             </ul>
