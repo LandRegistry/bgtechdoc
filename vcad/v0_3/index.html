@@ -9,20 +9,20 @@
 
     <link href="../../stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="/vcad/v0_2/">
+    <link rel="canonical" href="/vcad/v0_3/">
       <link rel="icon" sizes="48x48" href="/images/favicon.ico">
       <link rel="icon" sizes="any" href="/images/favicon.svg" type="image/svg+xml">
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:image" content="/images/opengraph-image.png" />
       <meta name="twitter:title" content="Submit an application to change the Land Register - HM Land Registry Business Gateway Developer Pack" />
-      <meta name="twitter:url" content="/vcad/v0_2/" />
+      <meta name="twitter:url" content="/vcad/v0_3/" />
 
       <meta property="og:image" content="/images/opengraph-image.png" />
       <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
       <meta property="og:title" content="Submit an application to change the Land Register" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="/vcad/v0_2/" />
+      <meta property="og:url" content="/vcad/v0_3/" />
 
           <link href="../../favicon.ico" rel="icon" type="image/ico" />
 
@@ -109,6 +109,9 @@
           <li>
             <a href="#removal-of-notes"><span>Removal of notes</span></a>
           </li>
+          <li>
+            <a href="#versioning-and-breaking-change-policy"><span>Versioning and breaking change policy</span></a>
+          </li>
         </ul>
       </li>
       <li>
@@ -139,9 +142,9 @@
     Version
   </label>
   <select class="govuk-select" id="version" name="version">
-    <option value="/bgtechdoc/vcad/v0_3/index.html">Latest (v0.3)</option>
+    <option value="/bgtechdoc/vcad/v0_3/index.html" selected>Latest (v0.3)</option>
     <option value="/bgtechdoc/vcad/v0_3/index.html">v0.3</option>
-    <option value="/bgtechdoc/vcad/v0_2/index.html" selected>v0.2</option>
+    <option value="/bgtechdoc/vcad/v0_2/index.html">v0.2</option>
     <option value="/bgtechdoc/vcad/v0_1/v0_1.html">v0.1</option>
   </select>
   <button class="govuk-button" id="version-button">Go</button>
@@ -168,38 +171,36 @@ about the new API and why we&rsquo;re making this change.</p>
 <p>Updates to the developer pack include:</p>
 
 <ul>
-<li>new information about managing HMLR notifications</li>
-<li>new technical requirements for specific schema elements (for example, value bands)</li>
-<li>new full lists of transactions and documents</li>
-<li>a new list of validation rules</li>
-<li>new names for APIs to better describe their purpose</li>
-<li>new layout of content pages</li>
+<li>an update to the notifications documentation</li>
+<li>new information about transaction types and application types</li>
+<li>removing calculated fees from the Application information API response. Information about fee calculation will be shared at a later date</li>
+<li>new information about bypassing specific validation</li>
 </ul>
 <p>Updates to the schema include:</p>
 
 <ul>
-<li>renaming <code>ap1_warning_understood</code> to <code>submission_warning_understood</code></li>
-<li>new descriptions on all fields</li>
-<li>new <code>fee_in_pence</code> to <code>Transaction</code> objects</li>
-<li>removal of <code>external_ref_id</code>, replacing it with the HTTP Header <code>Idempotency-Key</code></li>
-<li>moving several properties on <code>Party</code> into a <code>details</code> field, which can be one of <code>PrivateIndividual</code>, <code>UkCompany</code>, <code>OverseasCompany</code>, <code>OtherOrganisation</code> or <code>UnknownParty</code></li>
-<li>added <code>file_length</code> and <code>file_sha256</code> properties to the create upload URL request</li>
-<li>changing the <code>document_type</code> enum in the create upload URL to contain all document types</li>
-<li>changing the type of <code>OrderLodger.email</code> from <code>EmailAddress</code> to <code>string</code></li>
-<li>removing <code>full_address</code> fields from all address detail types</li>
-<li>removing <code>vdd_account_number</code></li>
-<li>making <code>document_id</code> required</li>
-<li>adding regex check to <code>title_number</code></li>
-<li>adding a <code>conveyancers_certificate</code> boolean, when providing a <code>CERT_REG_CH</code> document</li>
-<li>changing data types of <code>addresses</code>, <code>documents</code>, <code>parties</code>, <code>transactions</code> and <code>titles</code> from arrays to objects. The key of the object is used as the object reference</li>
-<li>removal of <code>reference</code> from <code>Address</code>, <code>DocumentDetails</code>, <code>Party</code> and <code>Transaction</code> objects</li>
-<li>adding a new <code>priority</code> field on the <code>Transaction</code> object</li>
-<li>adding <code>warnings</code> to the application status response</li>
-<li>new schema documentation for the upload a document <code>PUT</code> request</li>
-<li>removal <code>PROPERTY_ADDRESS</code>, <code>TRANSFER_ASSENT_ADDRESS</code> and <code>CURRENT_ADDRESS</code> as options for <code>address_for_service_option</code></li>
-<li>adding <code>relates_to_new_title</code> field on the <code>Transaction</code> object</li>
-<li>renaming <code>OrderLodger</code> to <code>ApplicationLodger</code></li>
-<li>renaming <code>order_request_id</code> to <code>application_request_id</code></li>
+<li>changing the application statuses to <code>ACCEPTED_PRIORITY_PROTECTED</code>, <code>ACCEPTED_AWAITING_PRIORITY</code>, <code>VALIDATION_FAILED</code>, <code>SYSTEM_ERROR</code> and <code>VALIDATING</code></li>
+<li>changing <code>AddressDetails.type</code> to be required</li>
+<li>changing <code>BypassValidationData.validation_type</code> to have a max length of 250</li>
+<li>changing <code>Charge.value</code> to be required</li>
+<li>a new document type of <code>RXCD</code></li>
+<li>changing <code>OtherConveyancer.conveyancer_reference</code> to be required</li>
+<li>new validation added for <code>jp1_reference</code></li>
+<li>changing <code>TitleDetails.title_type</code> to be required</li>
+<li>changing <code>TitleDetails.disclosable_overriding_interests</code> to be required</li>
+<li>changing <code>Party.address_for_service_option</code> to be required</li>
+<li>changing <code>Party.representation_type</code> to be required</li>
+<li>a new enum value of <code>NOT_REQUIRED</code> for <code>Party.representation_type</code></li>
+<li>changing <code>PartyRole.party_reference</code> to be required</li>
+<li>changing <code>OverseasAddress.country</code> to be required</li>
+<li>changing <code>UkAddress.postcode</code> to be required</li>
+<li>changing <code>UkAddress.post_town</code> to be required</li>
+<li>changing <code>UkAddress.building_description</code> to be required</li>
+<li>changing all successful response objects to have a root level <code>data</code> object</li>
+<li>new schemas for notification <code>payload</code> elements</li>
+<li>a new error response wrapper containing general error information</li>
+<li>removing <code>summary</code> from the <code>ProblemDetails</code> object</li>
+<li>changing <code>BypassValidationData.reason</code> enum values to <code>DISAGREE_WITH_REGISTER</code>, <code>HMLR_DATA_INCORRECT_OR_OUTDATED</code> and <code>EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES</code></li>
 </ul>
 <p><hr></p>
 <h2 id="why-we-39-re-making-changes">Why we&rsquo;re making changes</h2>
@@ -304,6 +305,8 @@ provided when a <code>CERT_REG_CH</code> document is uploaded</li>
 <li>cover letter – should now be uploaded as a document of type <code>EVIDENCE</code> with the relevant transaction </li>
 <li>request to merge or close leasehold titles – the appropriate transaction type should now be selected for this purpose </li>
 </ul>
+<h3 id="versioning-and-breaking-change-policy">Versioning and breaking change policy</h3>
+<p>A versioning an breaking change policy is being considered and will be added soon</p>
 <p><hr></p>
 <h2 id="glossary">Glossary</h2>
 <div class="table-container">

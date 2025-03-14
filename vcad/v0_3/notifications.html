@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Notifications API - HM Land Registry Business Gateway Developer Pack</title>
+
+    <link href="../../stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="/vcad/v0_3/notifications.html">
+      <link rel="icon" sizes="48x48" href="/images/favicon.ico">
+      <link rel="icon" sizes="any" href="/images/favicon.svg" type="image/svg+xml">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="/images/opengraph-image.png" />
+      <meta name="twitter:title" content="Notifications API - HM Land Registry Business Gateway Developer Pack" />
+      <meta name="twitter:url" content="/vcad/v0_3/notifications.html" />
+
+      <meta property="og:image" content="/images/opengraph-image.png" />
+      <meta property="og:site_name" content="HM Land Registry Business Gateway Developer Pack" />
+      <meta property="og:title" content="Notifications API" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="/vcad/v0_3/notifications.html" />
+
+          <link href="../../favicon.ico" rel="icon" type="image/ico" />
+
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          HM Land Registry Business Gateway Developer Pack
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents">
+              <div class="search" data-module="search" data-path-to-site-root="../../">
+  <form action="https://www.google.co.uk/search" method="get" role="search" class="search__form govuk-!-margin-bottom-4">
+    <input type="hidden" name="as_sitesearch" value=""/>
+    <label class="govuk-label search__label" for="search">
+      Search (via Google)
+    </label>
+    <input
+      type="search"
+      id="search" name="q"
+      class="govuk-input govuk-!-margin-bottom-0 search__input"
+      aria-controls="search-results"
+      placeholder="Search">
+    <button type="submit" class="search__button">Search</button>
+  </form>
+</div>
+
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+                      <ul>
+  <li>
+    <a href="#notifications-api"><span>Notifications API</span></a>
+    <ul>
+      <li>
+        <a href="#view-the-api-specification"><span>View the API Specification</span></a>
+      </li>
+      <li>
+        <a href="#how-the-service-api-works"><span>How the service API works</span></a>
+      </li>
+      <li>
+        <a href="#how-to-test-this-service-api"><span>How to test this service API</span></a>
+      </li>
+      <li>
+        <a href="#technical-guide"><span>Technical guide</span></a>
+        <ul>
+          <li>
+            <a href="#how-to-use-the-notifications-service-api"><span>How to use the Notifications service API</span></a>
+          </li>
+          <li>
+            <a href="#validation-rules"><span>Validation rules</span></a>
+          </li>
+          <li>
+            <a href="#example-requests-and-responses"><span>Example requests and responses</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#see-more"><span>See more</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled" aria-label="Content">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            
+    <div class="page-nav">
+  <a href="index.html">Back to Overview</a>
+  <a href="../../index.html">Back to Home</a>
+</div>
+<h1 id="notifications-api">Notifications API</h1>
+<p>The Notifications API provides a way of fetching updates about multiple applications
+submitted by the same business unit. Currently, this service only supports a pull
+interaction model, where notifications must be requested periodically. However, more
+information about a push interaction model will be shared in future.</p>
+<p>This API has two endpoints:</p>
+
+<ul>
+<li><code>GET /v0/notifications</code>  - get all notifications that match the provided filters</li>
+<li><code>POST /v0/notifications/acknowledge</code> - notify HM Land Registry the notifications have been received </li>
+</ul>
+<p>This API can be used to get more information after receiving a notification indicating the
+application has changed. For information about which notifications will be available,
+visit the notifications section of the <a href="submit-an-application.html">Submit an application</a> service API page.</p>
+<h2 id="view-the-api-specification">View the API Specification</h2>
+<p>See the <a href="vcad-spec.html#tag/Notifications-API">API Specification here</a></p>
+<h2 id="how-the-service-api-works">How the service API works</h2>
+<p><img src="images/NotificationInteraction.png" alt="" /></p>
+<h2 id="how-to-test-this-service-api">How to test this service API</h2>
+<p>HMLR does not currently provide a test environment for
+integrators using our Business Gateway APIs. Instead, we’ve
+provided example code to demonstrate what you should expect
+to see when developing your own services.</p>
+<p>This information is coming soon.</p>
+<h2 id="technical-guide">Technical guide</h2>
+<h3 id="how-to-use-the-notifications-service-api">How to use the Notifications service API</h3>
+<h4 id="receive-notifications">Receive notifications</h4>
+<p>The GET request to fetch all notifications takes the following URL query parameters (which are optional):</p>
+
+<ul>
+<li><code>created_after</code> - only retrieve notifications with a <code>created_timestamp</code> after this date </li>
+<li><code>created_before</code> - only retrieve notifications with a <code>created_timestamp</code> before this date </li>
+<li><code>status</code> - only retrieve notifications with a specific status, either <code>NEW</code> or <code>ACKNOWLEDGED</code></li>
+<li><code>occured_after</code> - only retrieve notifications with a <code>event_timestamp</code> after this date </li>
+<li><code>occured_before</code> - only retrieve notifications with a <code>event_timestamp</code> before this date</li>
+<li><code>notification_type</code> - only retrieve notifications with the specific <code>notification_type</code></li>
+<li><code>subject</code> - only retrieve notifications with the specific <code>subject</code></li>
+<li><code>additional_provider_filter</code> - only retrieve notifications that match the provided <code>additional_provider_filter</code></li>
+<li><code>limit</code> - the maximum number of notifications to return in a single response</li>
+</ul>
+<p>Only notifications for the business unit of the user making the request will be returned.</p>
+<p>Notification delivery is &lsquo;at least once&rsquo;, meaning a specific event at a specific time may result in one or more notifications
+(i.e. duplicate notifications for the same event).</p>
+<p>Duplicate events will have the same <code>event_datetime</code> field and <code>notification_type</code>,
+which can be used to locate and ignore duplicates when receiving notifications. Notifications will continue to be returned by the
+endpoint until they are acknowledged.</p>
+<h4 id="acknowledge-notifications">Acknowledge notifications</h4>
+<p>Once a notification has been processed by your system, the notification should be acknowledged. To do this, 
+send a list of <code>notification_ids</code> to the Acknowledge notifications API as a POST request. This will change the
+status of those notifications to <code>ACKNOWLEDGED</code>.</p>
+<h3 id="validation-rules">Validation rules</h3>
+<p>There are no validation rules for implementing this service API.</p>
+<h3 id="example-requests-and-responses">Example requests and responses</h3>
+<p>For specific examples of notification payloads produced during application submission, see <a href="submit-an-application.html#notifications">submit an application notifications</a></p>
+<h4 id="get-notifications-request">Get notifications request</h4>
+<div class="highlight"><pre class="highlight http" tabindex="0"><code><span class="nf">GET</span> <span class="nn">/v0/notifications?created_after=2025-01-01T00:00:00</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><h4 id="get-notifications-response">Get notifications response</h4>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-03-06T14:32:55.295Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-03-06T14:32:55.295Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload_schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"additionalProp1"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="nl">"additionalProp2"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="nl">"additionalProp3"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id="acknowledge-notifications-request">Acknowledge notifications request</h4>
+<div class="highlight"><pre class="highlight http" tabindex="0"><code><span class="nf">POST</span> <span class="nn">/v0/notifications/acknowledge</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+{
+  "data": [
+    "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  ]
+}
+</code></pre></div><h4 id="acknowledge-notifications-response">Acknowledge notifications response</h4>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"acknowledged"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id="see-more">See more</h2>
+
+<ul>
+<li><a href="send-a-document.html">Send a document API</a></li>
+<li><a href="submit-an-application.html">Submit an application API</a></li>
+<li><a href="application-information.html">Application information API</a></li>
+</ul>
+
+
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/accessibility/index.html">Accessibility Statement</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/glossary/index.html">Glossary</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="https://landregistry.github.io/bgtechdoc/support/index.html">Support</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="../../javascripts/govuk_frontend.js" type="module"></script>
+    <script src="../../javascripts/application.js"></script>
+  </body>
+</html>
