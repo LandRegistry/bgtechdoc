@@ -104,6 +104,23 @@
         </ul>
       </li>
       <li>
+        <a href="#test-stubs"><span>Test Stubs</span></a>
+        <ul>
+          <li>
+            <a href="#1-submit-a-single-charge"><span>1. Submit a Single Charge</span></a>
+          </li>
+          <li>
+            <a href="#2-submit-a-single-transfer"><span>2. Submit a Single Transfer</span></a>
+          </li>
+          <li>
+            <a href="#3-submit-an-application-with-level-1-validation-errors"><span>3. Submit an Application with Level 1 Validation Errors</span></a>
+          </li>
+          <li>
+            <a href="#4-submit-an-application-with-level-2-validation-errors"><span>4. Submit an Application with Level 2 Validation Errors</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
         <a href="#see-more"><span>See more</span></a>
       </li>
     </ul>
@@ -6686,6 +6703,588 @@ of equity being transferred)</li>
             </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id="test-stubs">Test Stubs</h2>
+<p>Base URL: <code>https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+<h3 id="1-submit-a-single-charge">1. Submit a Single Charge</h3>
+<h4 id="request">Request</h4>
+<p>Method: <code>POST</code></p>
+<p>Endpoint: <code>/v0/applications</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+<li><code>Idempotency-Key: &lt;any-value&gt;</code></li>
+</ul>
+<p><strong>NOTE</strong> - The Idempotency Key should be unique for each request (this is not enforced by the stubs)</p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"submission_warning_understood"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"applicants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"Borrower1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Borrower2"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CustomerRef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"AP1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AP1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4fd53325-d120-4366-b151-b006d0ef9a5d"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"certification_statement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CERTIFIED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e-AP1.pdf"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"Deed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MRTG_DEED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0d7bd3a5-1aec-4862-9fc9-f796dfc11d35"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"certification_statement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CERTIFIED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"document_filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deed.pdf"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"application_lodger"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valid.email@landregistry.gov.uk"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONVEYANCER"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"parties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Borrower1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"address_for_service_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT_REQUIRED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tony"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bonito"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"Borrower2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"address_for_service_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT_REQUIRED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toni"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bonito"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"TheBank"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"address_for_service_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT_REQUIRED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK_COMPANY"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"company_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"organisation_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Albion Home Loans Limited"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"titles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"MS305610"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"disclosable_overriding_interests"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS305610"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scope_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WHOLE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"part_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"title_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REGISTER_TITLE"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Charge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHARGE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"mdref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MD006A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">120000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Deed"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee_in_pence"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"party_roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+          </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Borrower1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BORROWER"</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Borrower2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BORROWER"</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TheBank"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LENDER"</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_references"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"MS305610"</span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REGISTER_UPDATE"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id="response">Response</h4>
+<p>Status: <code>202</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"application_request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b3ac19be-2b6d-4b8a-971c-e758b0e8e790"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="2-submit-a-single-transfer">2. Submit a Single Transfer</h3>
+<h4 id="2-submit-a-single-transfer-request">Request</h4>
+<p>Method: <code>POST</code></p>
+<p>Endpoint: <code>/v0/applications</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+<li><code>Idempotency-Key: &lt;any-value&gt;</code></li>
+</ul>
+<p><strong>NOTE</strong> - The Idempotency Key should be unique for each request (this is not enforced by the stubs)</p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"submission_warning_understood"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CustomerRef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"transferee_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"uprn"</span><span class="p">:</span><span class="w"> </span><span class="mi">100040203976</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"organisation_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"department_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sub_building_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"building_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apartment 11"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"113 Newton Street"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dependent_street"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dependent_locality"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"double_dependent_locality"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"post_town"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANCHESTER"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M1 1AE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apartment 11 ,113 Newton Street, MANCHESTER, M1 1AE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"care_of_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"AP1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed4f0f00-ff14-4f95-869b-9b11c9b3ac73"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AP1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"certification_statement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CERTIFIED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"document_filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e-AP1.pdf"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"TR1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a40d6fe0-bd45-4c49-b72a-0d80cf43db83"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TR1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"certification_statement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CERTIFIED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"document_filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TR1.pdf"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"parties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Transferee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"address_for_service_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT_REQUIRED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transferee_address"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"Transferor1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tony"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bonito"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"address_for_service_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT_REQUIRED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"Transferor2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toni"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bonito"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"address_for_service_option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT_REQUIRED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"applicants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"Transferee"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"application_lodger"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valid.email@landregistry.gov.uk"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONVEYANCER"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"titles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"MS312531"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"disclosable_overriding_interests"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS312531"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scope_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WHOLE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"part_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"title_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REGISTER_TITLE"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Transfer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFER"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title_guarantee_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"additional_provisions_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_PROVISIONS"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"consideration_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"consideration_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MONETARY_VALUE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1300000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-12-12"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"TR1"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee_in_pence"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"party_roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferee"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFEREE"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferor1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFEROR"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferor2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFEROR"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_references"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"MS312531"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REGISTER_UPDATE"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id="2-submit-a-single-transfer-response">Response</h4>
+<p>Status: <code>202</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"application_request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2563940e-ae95-4e7e-9b33-49a6571abdf6"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="3-submit-an-application-with-level-1-validation-errors">3. Submit an Application with Level 1 Validation Errors</h3>
+<h4 id="3-submit-an-application-with-level-1-validation-errors-request">Request</h4>
+<p>Method: <code>POST</code></p>
+<p>Endpoint: <code>/v0/applications</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+<li><code>Idempotency-Key: &lt;any-value&gt;</code></li>
+</ul>
+<p><strong>NOTE</strong> - The Idempotency Key should be unique for each request (this is not enforced by the stubs)</p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"submission_warning_understood"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"applicants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"Borrower1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Borrower2"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CustomerRef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"AP1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AP1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4fd53325-d120-4366-b151-b006d0ef9a5d"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"certification_statement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CERTIFIED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"document_filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e-AP1.pdf"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"Deed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MRTG_DEED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0d7bd3a5-1aec-4862-9fc9-f796dfc11d35"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"certification_statement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CERTIFIED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"document_filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deed.pdf"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"parties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Borrower1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tony"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bonito"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"Borrower2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toni"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bonito"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"TheBank"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK_COMPANY"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"company_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"organisation_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Albion Home Loans Limited"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"application_lodger"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valid.email@landregistry.gov.uk"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONVEYANCER"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"titles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"MS305610"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"disclosable_overriding_interests"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS305610"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scope_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WHOLE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"part_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"title_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REGISTER_TITLE"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Charge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Deed"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee_in_pence"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHARGE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3000-01-01"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"mdref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MD006A"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"party_roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Borrower1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BORROWER"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Borrower2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BORROWER"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TheBank"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LENDER"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id="3-submit-an-application-with-level-1-validation-errors-response">Response</h4>
+<p>Status: <code>400</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#bad-request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request is invalid or malformed."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OCV_L1A_000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pointer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/data/transactions/Charge/details/date"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Date must be in the past or in the present"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OCV_L1A_000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pointer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/data/type"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type must not be null"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="4-submit-an-application-with-level-2-validation-errors">4. Submit an Application with Level 2 Validation Errors</h3>
+<h4 id="4-submit-an-application-with-level-2-validation-errors-request">Request</h4>
+<p>Method: <code>POST</code></p>
+<p>Endpoint: <code>/v0/applications</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+<li><code>Idempotency-Key: &lt;any-value&gt;</code></li>
+</ul>
+<p><strong>NOTE</strong> - The Idempotency Key should be unique for each request (this is not enforced by the stubs)</p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"submission_warning_understood"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CustomerRef"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"transferee_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"uprn"</span><span class="p">:</span><span class="w"> </span><span class="mi">100040203976</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"organisation_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"department_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sub_building_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"building_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apartment 11"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"113 Newton Street"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dependent_street"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dependent_locality"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"double_dependent_locality"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"post_town"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANCHESTER"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M1 1AE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apartment 11 ,113 Newton Street, MANCHESTER, M1 1AE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"care_of_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"AP1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed4f0f00-ff14-4f95-869b-9b11c9b3ac73"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AP1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"certification_statement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CERTIFIED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"document_filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e-AP1.pdf"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"TR1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a40d6fe0-bd45-4c49-b72a-0d80cf43db83"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TR1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"certification_statement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CERTIFIED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"document_filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TR1.pdf"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"Deed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MRTG_DEED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e10f5369-a623-43fb-aeaa-5e02625e9f83"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"certification_statement_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CERTIFIED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"document_filename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deed.pdf"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"parties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Transferee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transferee_address"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"Transferor1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tony"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bonito"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"Transferor2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE_INDIVIDUAL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"forenames"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toni"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bonito"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"TheBank"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK_COMPANY"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"company_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"organisation_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Albion Home Loans Limited"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"representation_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LODGING_CONVEYANCER"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"applicants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"Transferee"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"application_lodger"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valid.email@landregistry.gov.uk"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONVEYANCER"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"titles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"MS312531"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"disclosable_overriding_interests"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS312531"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scope_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WHOLE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"part_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Transfer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee_in_pence"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFER"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title_guarantee_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"additional_provisions_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_PROVISIONS"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"consideration_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"consideration_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MONETARY_VALUE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1300000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-12-12"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"party_roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferee"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFEREE"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferor1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFEROR"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferor2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFEROR"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"title_references"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"MS312531"</span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"Charge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Deed"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee_in_pence"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHARGE"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"mdref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MD007A"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"party_roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transferee"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BORROWER"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"party_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TheBank"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LENDER"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"title_references"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"MS312531"</span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REGISTER_UPDATE"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id="4-submit-an-application-with-level-2-validation-errors-response">Response</h4>
+<p>Status: <code>202</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"application_request_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3be62ad3-c542-452d-975e-6cd18d77196f"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id="see-more">See more</h2>
 

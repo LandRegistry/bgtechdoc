@@ -104,6 +104,38 @@
         </ul>
       </li>
       <li>
+        <a href="#test-stubs"><span>Test Stubs</span></a>
+        <ul>
+          <li>
+            <a href="#1-get-all-notifications"><span>1. Get All Notifications</span></a>
+          </li>
+          <li>
+            <a href="#2-get-all-new-notifications"><span>2. Get All New Notifications</span></a>
+          </li>
+          <li>
+            <a href="#3-get-all-acknowledged-notifications"><span>3. Get All Acknowledged Notifications</span></a>
+          </li>
+          <li>
+            <a href="#4-get-all-with-invalid-date-filter"><span>4. Get All with Invalid Date Filter</span></a>
+          </li>
+          <li>
+            <a href="#5-acknowledge-notifications"><span>5. Acknowledge Notifications</span></a>
+          </li>
+          <li>
+            <a href="#6-application-queued-notification"><span>6. Application Queued Notification</span></a>
+          </li>
+          <li>
+            <a href="#7-system-error-notification"><span>7. System Error Notification</span></a>
+          </li>
+          <li>
+            <a href="#8-application-cancelled-notification"><span>8. Application Cancelled Notification</span></a>
+          </li>
+          <li>
+            <a href="#9-application-completed-notification"><span>9. Application Completed Notification</span></a>
+          </li>
+        </ul>
+      </li>
+      <li>
         <a href="#see-more"><span>See more</span></a>
       </li>
     </ul>
@@ -214,6 +246,331 @@ status of those notifications to <code>ACKNOWLEDGED</code>.</p>
       </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id="test-stubs">Test Stubs</h2>
+<p>Base URL: <code>https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+<h3 id="1-get-all-notifications">1. Get All Notifications</h3>
+<h4 id="request">Request</h4>
+<p>Method: <code>GET</code></p>
+<p>Endpoint: <code>/v0/notifications</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<h4 id="response">Response</h4>
+<p>Status: <code>200</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ID}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload_schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APPLICATION_ACCEPTED_ON_DAY_LIST"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAND_REGISTER_APPLICATION"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b3ac19be-2b6d-4b8a-971c-e758b0e8e790"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subUnit1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACKNOWLEDGED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"hmlr_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC456A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPTED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-09-20T09:56:46"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ID}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload_schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APPLICATION_ACCEPTED_ON_DAY_LIST"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAND_REGISTER_APPLICATION"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2563940e-ae95-4e7e-9b33-49a6571abdf6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subUnit1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"hmlr_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC456B"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPTED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-09-20T09:56:46"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ID}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload_schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/validation-failed.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APPLICATION_VALIDATION_FAILED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAND_REGISTER_APPLICATION"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3be62ad3-c542-452d-975e-6cd18d77196f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subUnit1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALIDATION_FAILED"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="2-get-all-new-notifications">2. Get All New Notifications</h3>
+<h4 id="2-get-all-new-notifications-request">Request</h4>
+<p>Method: <code>GET</code></p>
+<p>Endpoint: <code>/v0/notifications?status=NEW</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<h4 id="2-get-all-new-notifications-response">Response</h4>
+<p>Status: <code>200</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ID}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload_schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APPLICATION_ACCEPTED_ON_DAY_LIST"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAND_REGISTER_APPLICATION"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2563940e-ae95-4e7e-9b33-49a6571abdf6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subUnit1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"hmlr_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC456B"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPTED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-09-20T09:56:46"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ID}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload_schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/validation-failed.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APPLICATION_VALIDATION_FAILED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAND_REGISTER_APPLICATION"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3be62ad3-c542-452d-975e-6cd18d77196f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subUnit1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALIDATION_FAILED"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="3-get-all-acknowledged-notifications">3. Get All Acknowledged Notifications</h3>
+<h4 id="3-get-all-acknowledged-notifications-request">Request</h4>
+<p>Method: <code>GET</code></p>
+<p>Endpoint: <code>/v0/notifications?status=ACKNOWLEDGED</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<h4 id="3-get-all-acknowledged-notifications-response">Response</h4>
+<p>Status: <code>200</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ID}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"event_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload_schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-priority-protected.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APPLICATION_ACCEPTED_ON_DAY_LIST"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAND_REGISTER_APPLICATION"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b3ac19be-2b6d-4b8a-971c-e758b0e8e790"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subUnit1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACKNOWLEDGED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"hmlr_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC456A"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPTED"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-09-20T09:56:46"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="4-get-all-with-invalid-date-filter">4. Get All with Invalid Date Filter</h3>
+<h4 id="4-get-all-with-invalid-date-filter-request">Request</h4>
+<p>Method: <code>GET</code></p>
+<p>Endpoint: <code>/v0/notifications?created_after=2020-01-01T00:00:00&amp;created_before=2015-01-01T00:00:00</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<h4 id="4-get-all-with-invalid-date-filter-response">Response</h4>
+<p>Status: <code>400</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://problems-registry.smartbear.com/bad-request/"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created_after parameter cannot be after created_before parameter"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"instance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/v0/notifications"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400-01"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="5-acknowledge-notifications">5. Acknowledge Notifications</h3>
+<h4 id="5-acknowledge-notifications-request">Request</h4>
+<p>Method: <code>POST</code></p>
+<p>Endpoint: <code>/v0/notifications/acknowledge</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"b3ac19be-2b6d-4b8a-971c-e758b0e8e790"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"87654321-2b6d-4b8a-971c-e758b0e8e790"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"12345678-2b6d-4b8a-971c-e758b0e8e790"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id="5-acknowledge-notifications-response">Response</h4>
+<p>Status: <code>200</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"acknowledged"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"b3ac19be-2b6d-4b8a-971c-e758b0e8e790"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"not_found"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"87654321-2b6d-4b8a-971c-e758b0e8e790"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"12345678-2b6d-4b8a-971c-e758b0e8e790"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="6-application-queued-notification">6. Application Queued Notification</h3>
+<h4 id="6-application-queued-notification-request">Request</h4>
+<p>Method: <code>GET</code></p>
+<p>Endpoint: <code>/v0/notifications?notification_type=APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<h4 id="6-application-queued-notification-response">Response</h4>
+<p>Status: <code>200</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ID}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payload_schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/accepted-awaiting-priority.json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APPLICATION_ACCEPTED_QUEUED_FOR_DAY_LIST"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"subject_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAND_REGISTER_APPLICATION"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45454545-2b6d-4b8a-971c-e758b0e8e790"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subUnit1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPTED_AWAITING_PRIORITY"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="7-system-error-notification">7. System Error Notification</h3>
+<h4 id="7-system-error-notification-request">Request</h4>
+<p>Method: <code>GET</code></p>
+<p>Endpoint: <code>/v0/notifications?notification_type=SYSTEM_ERROR</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<h4 id="7-system-error-notification-response">Response</h4>
+<p>Status: <code>200</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ID}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payload_schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/system-error.json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM_ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"subject_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAND_REGISTER_APPLICATION"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45454545-2b6d-4b8a-971c-e758b0e8e790"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subUnit1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM_ERROR"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="8-application-cancelled-notification">8. Application Cancelled Notification</h3>
+<h4 id="8-application-cancelled-notification-request">Request</h4>
+<p>Method: <code>GET</code></p>
+<p>Endpoint: <code>/v0/notifications?notification_type=APPLICATION_CANCELLED</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<h4 id="8-application-cancelled-notification-response">Response</h4>
+<p>Status: <code>200</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ID}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payload_schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/application-cancelled.json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APPLICATION_CANCELLED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"subject_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAND_REGISTER_APPLICATION"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45454545-2b6d-4b8a-971c-e758b0e8e790"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subUnit1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="9-application-completed-notification">9. Application Completed Notification</h3>
+<h4 id="9-application-completed-notification-request">Request</h4>
+<p>Method: <code>GET</code></p>
+<p>Endpoint: <code>/v0/notifications?notification_type=APPLICATION_COMPLETED</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<h4 id="9-application-completed-notification-response">Response</h4>
+<p>Status: <code>200</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ID}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event_datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-01T12:00:00.000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payload_schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/vcad/schemas/v1/application-completed.json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APPLICATION_COMPLETED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"subject_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAND_REGISTER_APPLICATION"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45454545-2b6d-4b8a-971c-e758b0e8e790"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subUnit1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id="see-more">See more</h2>
 

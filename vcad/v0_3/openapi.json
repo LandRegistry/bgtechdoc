@@ -273,15 +273,6 @@
         "operationId": "Receive notifications API",
         "parameters": [
           {
-            "in": "header",
-            "name": "business_unit",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
             "in": "query",
             "name": "created_before",
             "required": false,

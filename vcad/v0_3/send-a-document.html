@@ -103,6 +103,26 @@
           </li>
         </ul>
       </li>
+      <li>
+        <a href="#test-stubs"><span>Test Stubs</span></a>
+        <ul>
+          <li>
+            <a href="#1-success"><span>1. Success</span></a>
+          </li>
+          <li>
+            <a href="#2-invalid-document-type"><span>2. Invalid Document Type</span></a>
+          </li>
+          <li>
+            <a href="#3-invalid-file-length-too-small"><span>3. Invalid File Length (too small)</span></a>
+          </li>
+          <li>
+            <a href="#4-invalid-file-length-too-large"><span>4. Invalid File Length (too large)</span></a>
+          </li>
+          <li>
+            <a href="#5-invalid-sha"><span>5. Invalid SHA</span></a>
+          </li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -258,7 +278,162 @@ of the file. See below for code examples in several languages:</p>
 <li>HTTP 200 on successful upload</li>
 <li>HTTP 4xx on failure</li>
 </ul>
+<h2 id="test-stubs">Test Stubs</h2>
+<p>Due to technical limitations, these stubs will only allow you to get an upload url. The URL won&rsquo;t work and the <code>PUT</code> endpoint is not stubbed.</p>
+<p>Base URL: <code>https://bgtest.landregistry.gov.uk/bg2test/api</code></p>
+<h3 id="1-success">1. Success</h3>
+<h4 id="request">Request</h4>
+<p>Method: <code>POST</code></p>
+<p>Endpoint: <code>/v0/documents/url</code></p>
+<p>Headers:</p>
 
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHARGE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_length"</span><span class="p">:</span><span class="w"> </span><span class="mi">123123</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_sha256"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a 44 character string. blah blah bla"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id="response">Response</h4>
+<p>Status: <code>200</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"upload_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.your-upload-url-would-be-here.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678-1234-1234-1234-1234-123456789abc"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><p><strong>NOTE</strong> - This response body may contain any random UUID in the <code>document_id</code> field.</p>
+<h3 id="2-invalid-document-type">2. Invalid Document Type</h3>
+<h4 id="2-invalid-document-type-request">Request</h4>
+<p>Method: <code>POST</code></p>
+<p>Endpoint: <code>/v0/documents/url</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INVALID"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_length"</span><span class="p">:</span><span class="w"> </span><span class="mi">123123</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_sha256"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a 44 character string. blah blah bla"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id="2-invalid-document-type-response">Response</h4>
+<p>Status: <code>400</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#bad-request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request is invalid or malformed."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1A_JSON_PARSE_ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid document_type: 'INVALID'"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="3-invalid-file-length-too-small">3. Invalid File Length (too small)</h3>
+<h4 id="3-invalid-file-length-too-small-request">Request</h4>
+<p>Method: <code>POST</code></p>
+<p>Endpoint: <code>/v0/documents/url</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHARGE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_length"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_sha256"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a 44 character string. blah blah bla"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id="3-invalid-file-length-too-small-response">Response</h4>
+<p>Status: <code>400</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#bad-request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request is invalid or malformed."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1A_SCHEMA_VALIDATION_ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"There are problems with the JSON provided [must be greater than or equal to 1]"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="4-invalid-file-length-too-large">4. Invalid File Length (too large)</h3>
+<h4 id="4-invalid-file-length-too-large-request">Request</h4>
+<p>Method: <code>POST</code></p>
+<p>Endpoint: <code>/v0/documents/url</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHARGE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_length"</span><span class="p">:</span><span class="w"> </span><span class="mi">419430401</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_sha256"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a 44 character string. blah blah bla"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id="4-invalid-file-length-too-large-response">Response</h4>
+<p>Status: <code>400</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#bad-request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request is invalid or malformed."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1A_SCHEMA_VALIDATION_ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"There are problems with the JSON provided [must be less than or equal to 41943040]"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id="5-invalid-sha">5. Invalid SHA</h3>
+<h4 id="5-invalid-sha-request">Request</h4>
+<p>Method: <code>POST</code></p>
+<p>Endpoint: <code>/v0/documents/url</code></p>
+<p>Headers:</p>
+
+<ul>
+<li><code>Authorization: &lt;any-value&gt;</code></li>
+</ul>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHARGE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"additional_provider_filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_length"</span><span class="p">:</span><span class="w"> </span><span class="mi">123123</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_sha256"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is less than 44 characters."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id="5-invalid-sha-response">Response</h4>
+<p>Status: <code>400</code></p>
+<p>Body:</p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#bad-request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request is invalid or malformed."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1A_SCHEMA_VALIDATION_ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"There are problems with the JSON provided [size must be between 44 and 44]"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 
 
             
