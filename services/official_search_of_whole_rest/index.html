@@ -550,6 +550,15 @@ If you have an active user account, you will be able to access the new service u
 
 
 
+    # Ensures all h2 headers are tab-able (for accessibility)
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('h2').forEach(function(heading) {
+          heading.setAttribute('tabindex', '0');
+        });
+      });
+    </script>
+
             
           </main>
 

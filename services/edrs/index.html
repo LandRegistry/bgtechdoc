@@ -288,9 +288,9 @@ is detailed separately. This is the primary requirements specification for this 
           <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-051</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">Title number validity</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">bg.title.invalid.specific</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">Each Title Number must exist on Land Registry systems and have a valid District Code></td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Each Title Number must exist on Land Registry systems and have a valid District Code</td>
           <td class="govuk-table__cell  govuk-!-font-size-14">MSG-BG-096</td>
-          <td class="govuk-table__cell  govuk-!-font-size-14">Title Number X is invalid</td>
+          <td class="govuk-table__cell  govuk-!-font-size-14">Title number X is invalid</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell  govuk-!-font-size-14">BRL-DRSBG-059</td>
@@ -856,6 +856,15 @@ Business Gateway e-Document Registration Service customer.</p>
 </div>
 
 
+
+    # Ensures all h2 headers are tab-able (for accessibility)
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('h2').forEach(function(heading) {
+          heading.setAttribute('tabindex', '0');
+        });
+      });
+    </script>
 
             
           </main>

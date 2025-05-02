@@ -213,26 +213,97 @@ For example, after receiving a <code>APPLICATION_VALIDATION_FAILED</code> notifi
 <th>REST Field</th>
 <th>Comment</th>
 </tr><tr>
+<td>Reference</td>
+<td>customer_reference</td>
+<td></td>
+</tr><tr>
+<td>Product.Email</td>
+<td>email</td>
+<td>Field on <code>ApplicationLodger</code> object</td>
+</tr><tr>
+<td>TelephoneNumber</td>
+<td>telephone</td>
+<td>Field on <code>ApplicationLodger</code> object</td>
+</tr><tr>
+<td>AP1WarningUnderstood</td>
+<td>submission_warning_understood</td>
+<td></td>
+</tr><tr>
+<td>DisclosableOveridingInterests</td>
+<td>disclosable_overriding_interests</td>
+<td>Field on <code>TitleDetails</code> object</td>
+</tr><tr>
+<td>PostcodeOfProperty</td>
+<td>postcode</td>
+<td>Field on <code>UKAddress</code> object</td>
+</tr><tr>
+<td>LocalAuthority</td>
+<td>-</td>
+<td>Local authority should not be sent</td>
+</tr><tr>
+<td>ServiceTitlesType</td>
+<td>type</td>
+<td>Field on <code>substantiveOrderV5Data</code> object</td>
+</tr><tr>
+<td>Dealing</td>
+<td>REGISTER_UPDATE type</td>
+<td>Service title type corresponds to the application type</td>
+</tr><tr>
+<td>TransferOfPart</td>
+<td>TRANSFER_OF_PART type</td>
+<td>Service title type corresponds to the application type</td>
+</tr><tr>
+<td>NewLease</td>
+<td>DISPOSITIONARY_FIRST_LEASE type</td>
+<td>Service title type corresponds to the application type</td>
+</tr><tr>
+<td>LeaseExtension</td>
+<td>DISPOSITIONARY_FIRST_LEASE type</td>
+<td>Service title type corresponds to the application type</td>
+</tr><tr>
+<td>TitleType</td>
+<td>title_type</td>
+<td>Changed from an object containing a title number to a enum on the <code>titleDetails</code> object</td>
+</tr><tr>
+<td>LessorTitles</td>
+<td>LANDLORD_TITLE</td>
+<td></td>
+</tr><tr>
+<td>LesseeTitles</td>
+<td>TENANT_TITLE</td>
+<td></td>
+</tr><tr>
+<td>Applications</td>
+<td>Transaction</td>
+<td></td>
+</tr><tr>
+<td>CertifiedCopy</td>
+<td>certification_statement_type</td>
+<td>Field on <code>DocumentDetails.DocumentMetadata</code> object</td>
+</tr><tr>
 <td>ChargeDate</td>
 <td>date</td>
-<td>Field on the transaction type <code>Charge</code>
-</td>
+<td>Field on <code>Charge</code> object</td>
 </tr><tr>
-<td>CompanyName</td>
-<td>organisation_name</td>
-<td></td>
+<td>NoMDRef</td>
+<td>-</td>
+<td>If the MDref is not sent, it is assumed the MDRef is not known and lender information must be provided</td>
+</tr><tr>
+<td>SortCode</td>
+<td>-</td>
+<td>Sort code should not be sent</td>
+</tr><tr>
+<td>DocumentNameContent</td>
+<td>type</td>
+<td>Field on <code>DocumentDetails</code> object</td>
 </tr><tr>
 <td>ConveyancerName</td>
 <td>full_name</td>
 <td>Field on <code>OtherConveyancer</code> object</td>
 </tr><tr>
-<td>DisclosableOveridingInterests</td>
-<td>disclosable_overriding_interests</td>
-<td></td>
-</tr><tr>
-<td>CertifiedCopy</td>
-<td>certification_statement_type</td>
-<td></td>
+<td>Reference</td>
+<td>conveyancer_reference</td>
+<td>Field on <code>OtherConveyancer</code> object</td>
 </tr><tr>
 <td>DXExchange</td>
 <td>exchange_name</td>
@@ -242,34 +313,50 @@ For example, after receiving a <code>APPLICATION_VALIDATION_FAILED</code> notifi
 <td>number</td>
 <td>Field on <code>DxAddress</code> object</td>
 </tr><tr>
-<td>Product.Email</td>
-<td>email</td>
-<td>Field on <code>ApplicationLodger</code> object</td>
+<td>PostalAddress</td>
+<td>UKAddress</td>
+<td>A type on the <code>Address</code> object</td>
 </tr><tr>
 <td>EmailAddress.Email</td>
 <td>email</td>
 <td>Field on <code>Address</code> object, where type is <code>Email</code>
 </td>
 </tr><tr>
+<td>CareOfReference</td>
+<td>-</td>
+<td>Care of reference should not be sent</td>
+</tr><tr>
 <td>IsApplicant</td>
 <td>applicants[]</td>
 <td>Array containing PartyReferences for applicants</td>
 </tr><tr>
-<td>NoMDRef</td>
-<td>N/A</td>
-<td>MDref should not be sent</td>
+<td>CompanyName</td>
+<td>organisation_name</td>
+<td>Field on <code>OverseasCompany</code>, <code>UKCompany</code> and <code>OtherOrganisation</code> objects</td>
+</tr><tr>
+<td>CompanyRegistrationNumber</td>
+<td>company_number</td>
+<td></td>
+</tr><tr>
+<td>UK-LLPRegistrationNumber</td>
+<td>company_number</td>
+<td></td>
 </tr><tr>
 <td>OverseasTerritory</td>
 <td>incorporation_territory</td>
 <td></td>
 </tr><tr>
-<td>RepresentitiveId</td>
-<td>representation_type</td>
+<td>RoleType</td>
+<td>role</td>
+<td>Field on <code>PartyRole</code> object</td>
+</tr><tr>
+<td>AddressForService</td>
+<td>full_address</td>
 <td></td>
 </tr><tr>
-<td>RoleType</td>
-<td>Role</td>
-<td>Field on <code>PartyRole</code> object</td>
+<td>ApplicationAffectsContent</td>
+<td>scope</td>
+<td>Field on <code>TitleScopeDetails</code> object</td>
 </tr><tr>
 <td>MessageID</td>
 <td>Idempotency-Key</td>
@@ -7295,6 +7382,15 @@ of equity being transferred)</li>
 </ul>
 
 
+
+    # Ensures all h2 headers are tab-able (for accessibility)
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('h2').forEach(function(heading) {
+          heading.setAttribute('tabindex', '0');
+        });
+      });
+    </script>
 
             
           </main>

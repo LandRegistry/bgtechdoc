@@ -211,6 +211,7 @@
             "description": "The ID returned by Application Creation to track submission requests",
             "in": "path",
             "name": "application_request_id",
+            "example": "12345678-1234-1234-1234-123546789abc",
             "required": true,
             "schema": {
               "type": "string"
@@ -656,7 +657,8 @@
             "maxLength": 250,
             "minLength": 1,
             "description": "A JSON pointer to the field in the submission payload to bypass the validation on. Should match the 'pointer' returned within a status API error",
-            "type": "string"
+            "type": "string",
+            "example": "/data/customer_reference"
           },
           "reason": {
             "type": "string",
@@ -698,7 +700,8 @@
                 "maxLength": 10,
                 "minLength": 0,
                 "description": "The unique MD reference given to the mortgage",
-                "type": "string"
+                "type": "string",
+                "example": "MD123A"
               },
               "value": {
                 "type": "integer",
@@ -756,7 +759,8 @@
             "maxLength": 255,
             "minLength": 0,
             "description": "The filename of the document",
-            "type": "string"
+            "type": "string",
+            "example": "thedeed.pdf"
           }
         }
       },
@@ -775,11 +779,13 @@
         "properties": {
           "upload_url": {
             "type": "string",
-            "description": "The URL used to upload the document. The request must be a PUT HTTP request, where the body of the request is the document that will be uploaded. This URL should only be used once"
+            "description": "The URL used to upload the document. The request must be a PUT HTTP request, where the body of the request is the document that will be uploaded. This URL should only be used once",
+            "example": "about:blank"
           },
           "document_id": {
             "type": "string",
-            "description": "A unique id for this document, which should be used in the application submission request"
+            "description": "A unique id for this document, which should be used in the application submission request",
+            "example": "12345678-1234-1234-1234-1234-123456789abc"
           }
         }
       },
@@ -996,24 +1002,29 @@
         "properties": {
           "type": {
             "type": "string",
-            "format": "uri"
+            "format": "uri",
+            "example": "https://landregistry.github.io/bgtechdoc/problems/global#bad-request"
           },
           "title": {
-            "type": "string"
+            "type": "string",
+            "example": "Bad Request"
           },
           "status": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "example": 400
           },
           "detail": {
-            "type": "string"
+            "type": "string",
+            "example": "The request is invalid or malformed."
           },
           "instance": {
             "type": "string",
             "format": "uri"
           },
           "code": {
-            "type": "string"
+            "type": "string",
+            "example": "ignore me"
           },
           "errors": {
             "type": "array",
@@ -1144,7 +1155,8 @@
         "properties": {
           "application_request_id": {
             "type": "string",
-            "description": "The ID of the application submission request"
+            "description": "The ID of the application submission request",
+            "example": "12345678-1234-1234-1234-123546789abc"
           }
         }
       },
@@ -1170,7 +1182,8 @@
           },
           "hmlr_reference": {
             "type": "string",
-            "description": "The reference used by HM Land Registry to identify the application"
+            "description": "The reference used by HM Land Registry to identify the application",
+            "example": "A123BCD"
           },
           "priority_timestamp": {
             "type": "string",
@@ -1179,7 +1192,8 @@
           },
           "application_request_id": {
             "type": "string",
-            "description": "The ID of the application submission request"
+            "description": "The ID of the application submission request",
+            "example": "12345678-1234-1234-1234-123546789abc"
           },
           "status": {
             "type": "string",
@@ -1231,13 +1245,15 @@
             "minLength": 0,
             "pattern": ".+@.+",
             "type": "string",
-            "description": "The email address of the application lodger"
+            "description": "The email address of the application lodger",
+            "example": "me@site.co.uk"
           },
           "telephone": {
             "maxLength": 50,
             "minLength": 0,
             "type": "string",
-            "description": "A telephone number that can be used to contact the person lodging the application"
+            "description": "A telephone number that can be used to contact the person lodging the application",
+            "example": "+440000000000"
           },
           "type": {
             "type": "string",
@@ -1262,19 +1278,22 @@
             "maxLength": 25,
             "minLength": 0,
             "type": "string",
-            "description": "The conveyancer's reference"
+            "description": "The conveyancer's reference",
+            "example": "party_1"
           },
           "full_name": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
-            "description": "The conveyancer's full name"
+            "description": "The conveyancer's full name",
+            "example": "John Doe"
           },
           "registered_address": {
             "maxLength": 500,
             "minLength": 0,
             "type": "string",
-            "description": "The conveyancer's registered address"
+            "description": "The conveyancer's registered address",
+            "example": "123 Green St., Made Up, MU1 2AB, UK"
           }
         }
       },
@@ -1321,7 +1340,8 @@
             "maxLength": 25,
             "minLength": 0,
             "type": "string",
-            "description": "A short name/reference a customer has given to the application"
+            "description": "A short name/reference a customer has given to the application",
+            "example": "anything_you_like_or_need"
           },
           "documents": {
             "type": "object",
@@ -1440,7 +1460,8 @@
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
-            "description": "A description of the part of the title being updated"
+            "description": "A description of the part of the title being updated",
+            "example": "red outlined area"
           },
           "scope": {
             "type": "string",
@@ -1634,7 +1655,8 @@
           },
           "document_id": {
             "type": "string",
-            "description": "The id of the document from the document upload request"
+            "description": "The id of the document from the document upload request",
+            "example": "12345678-1234-1234-1234-123456789abc"
           },
           "document_metadata": {
             "$ref": "#/components/schemas/DocumentMetadata"
@@ -1939,13 +1961,15 @@
                 "maxLength": 366,
                 "minLength": 0,
                 "type": "string",
-                "description": "Forenames of a private individual"
+                "description": "Forenames of a private individual",
+                "example": "John"
               },
               "surname": {
                 "maxLength": 366,
                 "minLength": 0,
                 "type": "string",
-                "description": "The surname of a private individual"
+                "description": "The surname of a private individual",
+                "example": "Doe"
               }
             }
           }
@@ -2622,15 +2646,18 @@
           },
           "notification_type": {
             "type": "string",
-            "description": "The type of notification, required to distiguish notification types that share a schema"
+            "description": "The type of notification, required to distiguish notification types that share a schema",
+            "example": "TYPE_1"
           },
           "subject_type": {
             "description": "An indicator for the type of the subject",
-            "type": "string"
+            "type": "string",
+            "example": "subject_type"
           },
           "subject": {
             "type": "string",
-            "description": "Unique reference to the subject of the notification"
+            "description": "Unique reference to the subject of the notification",
+            "example": "subject"
           },
           "additional_provider_filter": {
             "type": "string",

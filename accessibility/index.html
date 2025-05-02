@@ -192,7 +192,7 @@
 <li>braille</li>
 </ul>
 <h3 id="telephone">Telephone</h3>
-<p>Telephone:  <a href="tel:03000060400">0300 006 0400</a>, Monday to Friday, 9am to 5pm.</p>
+<p>Telephone:  <a href="tel:03000060411">0300 006 0411</a>, Monday to Friday, 9am to 5pm.</p>
 <p><a href="https://www.gov.uk/call-charges">Find out about call charges</a>.</p>
 <p>We can also provide a text relay service for people who are D/deaf, hearing impaired or have a speech impediment.</p>
 <h3 id="email">Email</h3>
@@ -236,7 +236,7 @@
 <h2 id="reporting-accessibility-problems-with-this-website">Reporting accessibility problems with this website</h2>
 <p>We&rsquo;re always looking to improve the accessibility of this website. If you find any problems that aren&rsquo;t listed on this page or think we&rsquo;re not meeting the accessibility requirements, report it to the Customer Support Centre:</p>
 <h3 id="reporting-accessibility-problems-with-this-website-telephone">Telephone</h3>
-<p>Telephone:  <a href="tel:03000060400">0300 006 0400</a>, Monday to Friday, 9am to 5pm</p>
+<p>Telephone:  <a href="tel:03000060411">0300 006 0411</a>, Monday to Friday, 9am to 5pm</p>
 <p><a href="https://www.gov.uk/call-charges">Find out about call charges</a></p>
 <h3 id="reporting-accessibility-problems-with-this-website-email">Email</h3>
 <p><a href="mailto:channelpartners@landregistry.gov.uk">channelpartners@landregistry.gov.uk</a> (clicking this link will open a new window)</p>
@@ -248,6 +248,15 @@
 <p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications)(No. 2) Accessibility Regulations 2018 (the &lsquo;accessibility regulations&rsquo;). If you&rsquo;re not happy with how we respond to your complaint, <a href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.</p>
 
 
+
+    # Ensures all h2 headers are tab-able (for accessibility)
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('h2').forEach(function(heading) {
+          heading.setAttribute('tabindex', '0');
+        });
+      });
+    </script>
 
             
           </main>
