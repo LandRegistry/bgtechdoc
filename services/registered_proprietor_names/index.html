@@ -314,14 +314,14 @@ https://bgtest.landregistry.gov.uk/bg2test/api/v1/titles/&lt;title_number&gt;/re
 <hr>
 <h2 id="scenarios-when-the-registered-proprietor-names-are-returned">Scenarios when the registered proprietor names are returned</h2>
 <p>Scenario 1 - Single private individual<br>
-Title Number - AB1208001</p>
+Title Number - AB120801</p>
 
 <pre><code>
 {
     "data": {
         "title_status": "Title number is valid",
         "title_status_code": "VALID",
-        "title_number": "AB1208001",
+        "title_number": "AB120801",
         "proprietors": [
             {
                 "sequence": 1,
@@ -338,14 +338,14 @@ Title Number - AB1208001</p>
 </code></pre>
 <p><br></p>
 <p>Scenario 2 - Two or more private individuals<br>
-Title Number - AB1208002</p>
+Title Number - AB120802</p>
 
 <pre><code>
 {
     "data": {
         "title_status": "Title number is valid",
         "title_status_code": "VALID",
-        "title_number": "AB1208002",
+        "title_number": "AB120802",
         "proprietors": [
             {
                 "sequence": 1,
@@ -371,14 +371,14 @@ Title Number - AB1208002</p>
 </code></pre>
 <p><br></p>
 <p>Scenario 3 - One private individual and One UK company<br>
-Title Number - AB1208003</p>
+Title Number - AB120803</p>
 
 <pre><code>
 {
     "data": {
         "title_status": "Title number is valid",
         "title_status_code": "VALID",
-        "title_number": "AB1208003",
+        "title_number": "AB120803",
         "proprietors": [
             {
                 "sequence": 1,
@@ -402,14 +402,14 @@ Title Number - AB1208003</p>
 </code></pre>
 <p><br></p>
 <p>Scenario 4 - One overseas company<br>
-Title Number - AB1208004</p>
+Title Number - AB120804</p>
 
 <pre><code>
 {
     "data": {
         "title_status": "Title number is valid",
         "title_status_code": "VALID",
-        "title_number": "AB1208004",
+        "title_number": "AB120804",
         "proprietors": [
             {
                 "sequence": 1,
@@ -424,14 +424,14 @@ Title Number - AB1208004</p>
 </code></pre>
 <p><br></p>
 <p>Scenario 5 - One organisation, type = local authority<br>
-Title Number - AB1208005</p>
+Title Number - AB120805</p>
 
 <pre><code>
 {
     "data": {
         "title_status": "Title number is valid",
         "title_status_code": "VALID",
-        "title_number": "AB1208005",
+        "title_number": "AB120805",
         "proprietors": [
             {
                 "sequence": 1,
@@ -454,7 +454,7 @@ Title Number - ABCDF3438P</p>
 {
     "errors": [
         {
-            "timestamp": "2022-03-15T09:52:40.758182",
+            "timestamp": "2022-03-15T09:52:40.758Z",
             "http_status": "400",
             "error_code": "BG40001",
             "error_message": "Malformed invalid schema. Title is invalid."
@@ -464,13 +464,13 @@ Title Number - ABCDF3438P</p>
 </code></pre>
 <p><br></p>
 <p>Scenario 7 - Title not found<br>
-Title Number - CD1208001</p>
+Title Number - CD120801</p>
 
 <pre><code>
 {
     "errors": [
         {
-            "timestamp": "2022-03-15T09:52:40.758182",
+            "timestamp": "2022-03-15T09:52:40.758Z",
             "http_status": "404",
             "error_code": "BG40002",
             "error_message": "Title is not found."
@@ -502,7 +502,7 @@ Title Number - GR519468</p>
         "title_status": "According to our records, this title number has been closed and continued under another title number.",
         "title_status_code": "CLOSED_AND_CONTINUED",
         "title_number": "GR519468",
-        "continued_under_title_number": "EF1208001",
+        "continued_under_title_number": "EF120801",
         "proprietors": []
     }
 }
@@ -523,7 +523,7 @@ Title Number - GR514443</p>
 </code></pre>
 <p><br></p>
 <p>Scenario 11 - Organisation not on allow list<br>
-Title Number - CD1208005</p>
+Title Number - CD120805</p>
 
 <pre><code>
 {
@@ -532,14 +532,14 @@ Title Number - CD1208005</p>
             "error_code": "BG40003",
             "error_message": "Organisation is not allowed access to this service.",
             "http_status": "403",
-            "timestamp": "2022-03-15T09:52:40.758182"
+            "timestamp": "2022-03-15T09:52:40.758Z"
         }
     ]
 }
 </code></pre>
 <p><br></p>
 <p>Scenario 12 - Out of business hours<br>
-Title Number - CD1208006</p>
+Title Number - CD120806</p>
 
 <pre><code>
 {
@@ -548,14 +548,14 @@ Title Number - CD1208006</p>
             "error_code": "BG50003",
             "error_message": "rpn service is currently out of hours",
             "http_status": "423",
-            "timestamp": "2022-03-17T16:24:50.309567"
+            "timestamp": "2022-03-17T16:24:50.309Z"
         }
     ]
 }
 </code></pre>
 <p><br></p>
 <p>Scenario 13 - Exceeds rate limiting<br>
-Title Number - CD1208007</p>
+Title Number - CD120807</p>
 
 <pre><code>
 {
@@ -564,7 +564,7 @@ Title Number - CD1208007</p>
             "error_code": "BG40006",
             "error_message": "Too many requests, please wait and try again",
             "http_status": "429",
-            "timestamp": "2022-03-17T16:23:27.60063"
+            "timestamp": "2022-03-17T16:23:27.600Z"
         }
     ]
 }

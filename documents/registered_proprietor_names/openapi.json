@@ -188,7 +188,7 @@
                       "value": {
                         "errors": [
                           {
-                            "timestamp": "2021-11-13T20:20:39+00:00",
+                            "timestamp": "2021-11-13T20:20:39.123Z",
                             "http_status": "400",
                             "error_code": "BG40001",
                             "error_message": "Malformed invalid schema. Title is invalid."
@@ -212,7 +212,7 @@
                       "value": {
                         "errors": [
                           {
-                            "timestamp": "2021-11-13T20:20:39+00:00",
+                            "timestamp": "2021-11-13T20:20:39.123Z",
                             "http_status": "404",
                             "error_code": "BG40002",
                             "error_message": "Title is not found."
@@ -262,7 +262,7 @@
                   "value": {
                     "errors": [
                       {
-                        "timestamp": "2021-11-13T20:20:39+00:00",
+                        "timestamp": "2021-11-13T20:20:39.123Z",
                         "http_status": "504",
                         "error_code": "BG50004",
                         "error_message": "Gateway timeout"
@@ -427,7 +427,7 @@
               "description": "The UTC timestamp of when the error occurred.",
               "type": "string",
               "format": "date-time",
-              "example": "2021-04-04 15:29:51:405Z"
+              "example": "2021-04-04T15:29:51.405Z"
             },
             "trace_id": {
               "type": "string",
