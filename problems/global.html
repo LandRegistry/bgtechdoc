@@ -95,6 +95,9 @@
         <a href="#conflict"><span>Resource Conflict</span></a>
       </li>
       <li>
+        <a href="#unsupported-media-type"><span>Unsupported Media Type</span></a>
+      </li>
+      <li>
         <a href="#im-a-teapot"><span>I’m a Teapot</span></a>
       </li>
       <li>
@@ -232,6 +235,27 @@
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Resource Conflict"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request to create or update a resource cannot be completed."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">409</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<hr>
+
+<h2 id="unsupported-media-type">Unsupported Media Type</h2>
+<p><strong>Type:</strong> <code>unsupported-media-type</code></p>
+<p><strong>Detail:</strong> The requested media type is not supported.</p>
+<p><strong>Resolution:</strong></p>
+
+<ul>
+<li>Ensure body content is valid.</li>
+<li>Ensure Accept header is valid.<br></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#unsupported-media-type"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unsupported Media Type"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The requested media type is not supported."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">415</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>

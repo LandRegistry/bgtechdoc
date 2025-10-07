@@ -1,11 +1,22 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "description": "V0.2 of the set of APIs for the new 'Submit an application to change the Land Register API' Schema",
-    "title": "V0.2 'Submit an application to change the Land Register API' Schema"
+    "description": "V0.3 of the set of APIs for the new 'Submit an application to change the Land Register API' Schema",
+    "title": "V0.3 'Submit an application to change the Land Register API' Schema",
+    "version": "0.3"
   },
+  "servers": [
+    {
+      "url": "https://businessgateway.landregistry.gov.uk/bg2/api",
+      "description": "Production"
+    },
+    {
+      "url": "https://bgtest.landregistry.gov.uk/bg2test/api",
+      "description": "Stub"
+    }
+  ],
   "paths": {
-    "/v1/applications/submit": {
+    "/v0/applications": {
       "post": {
         "description": "Submit an application API - Submit application creation requests for processing",
         "operationId": "Submit an application API",
@@ -34,7 +45,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApplicationCreationResponse"
+                  "$ref": "#/components/schemas/ApplicationCreationDataResponse"
                 }
               }
             },
@@ -63,7 +74,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApplicationCreationResponse"
+                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             },
@@ -78,7 +89,7 @@
         ]
       }
     },
-    "/v1/documents/url": {
+    "/v0/documents/url": {
       "post": {
         "description": "Create an upload URL - Retrieve a generated document upload URL",
         "operationId": "Create an upload URL",
@@ -98,7 +109,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DocumentUploadUrlResponse"
+                  "$ref": "#/components/schemas/DocumentUploadUrlDataResponse"
                 }
               }
             }
@@ -142,7 +153,8 @@
     "Upload a document": {
       "servers": [
         {
-          "url": ""
+          "url": "documentcapture.landregistry.gov.uk",
+          "description": "An example domain for document uploads"
         }
       ],
       "put": {
@@ -191,7 +203,7 @@
         ]
       }
     },
-    "/v1/applications/{application_request_id}/information": {
+    "/v0/applications/{application_request_id}/information": {
       "get": {
         "description": "Application information API - Get the information about an application",
         "operationId": "Application information API",
@@ -200,6 +212,7 @@
             "description": "The ID returned by Application Creation to track submission requests",
             "in": "path",
             "name": "application_request_id",
+            "example": "12345678-1234-1234-1234-123546789abc",
             "required": true,
             "schema": {
               "type": "string"
@@ -211,7 +224,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StatusResponse"
+                  "$ref": "#/components/schemas/StatusDataResponse"
                 }
               }
             },
@@ -256,7 +269,7 @@
         ]
       }
     },
-    "/v1/notifications": {
+    "/v0/notifications": {
       "get": {
         "description": "Receive notifications API - Get any unacknowledged notifications",
         "operationId": "Receive notifications API",
@@ -293,7 +306,7 @@
           },
           {
             "in": "query",
-            "name": "occured_before",
+            "name": "occurred_before",
             "required": false,
             "schema": {
               "type": "string",
@@ -302,7 +315,7 @@
           },
           {
             "in": "query",
-            "name": "occured_after",
+            "name": "occurred_after",
             "required": false,
             "schema": {
               "type": "string",
@@ -332,6 +345,15 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           }
         ],
         "responses": {
@@ -346,21 +368,6 @@
                       "type": "array",
                       "items": {
                         "$ref": "#/components/schemas/NotificationResponse"
-                      }
-                    },
-                    "links": {
-                      "type": "object",
-                      "properties": {
-                        "self": {
-                          "type": "string",
-                          "format": "uri",
-                          "example": "/v1/notifications?created_after=XXX"
-                        },
-                        "next": {
-                          "type": "string",
-                          "format": "uri",
-                          "example": "/v1/notifications?created_after=XXX"
-                        }
                       }
                     }
                   }
@@ -424,7 +431,7 @@
         ]
       }
     },
-    "/v1/notifications/acknowledge": {
+    "/v0/notifications/acknowledge": {
       "post": {
         "description": "Acknowledge notifications API - Acknowledge notifications that have been processed, so they are no longer returned when fetching",
         "operationId": "Acknowledge notifications API",
@@ -567,6 +574,9 @@
       "AddressDetails": {
         "type": "object",
         "description": "The details captured for a specific address. Details differ depending on type",
+        "required": [
+          "type"
+        ],
         "properties": {
           "type": {
             "type": "string",
@@ -639,7 +649,7 @@
         "description": "Fields to describe which validators to bypass and why",
         "properties": {
           "validation_type": {
-            "maxLength": 30,
+            "maxLength": 250,
             "minLength": 1,
             "description": "The type of validation to bypass. Should match the 'type' returned within a status API error",
             "type": "string"
@@ -648,15 +658,16 @@
             "maxLength": 250,
             "minLength": 1,
             "description": "A JSON pointer to the field in the submission payload to bypass the validation on. Should match the 'pointer' returned within a status API error",
-            "type": "string"
+            "type": "string",
+            "example": "/data/customer_reference"
           },
           "reason": {
             "type": "string",
             "description": "The reason the validation is being bypassed",
             "enum": [
               "DISAGREE_WITH_REGISTER",
-              "UNABLE_TO_RESOLVE_ERRORS_BEFORE_OS_EXPIRES",
-              "DISAGREE_WITH_EXTRACTED_DATA"
+              "HMLR_DATA_INCORRECT_OR_OUTDATED",
+              "EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES"
             ]
           },
           "comment": {
@@ -669,7 +680,8 @@
       },
       "Charge": {
         "required": [
-          "date"
+          "date",
+          "value"
         ],
         "type": "object",
         "description": "A TransactionDetails object to capture information about a charge",
@@ -689,10 +701,10 @@
                 "maxLength": 10,
                 "minLength": 0,
                 "description": "The unique MD reference given to the mortgage",
-                "type": "string"
+                "type": "string",
+                "example": "MD123A"
               },
               "value": {
-                "minimum": 0,
                 "type": "integer",
                 "description": "The total charge amount for all titles in pounds",
                 "format": "int32"
@@ -748,7 +760,17 @@
             "maxLength": 255,
             "minLength": 0,
             "description": "The filename of the document",
-            "type": "string"
+            "type": "string",
+            "example": "thedeed.pdf"
+          }
+        }
+      },
+      "DocumentUploadUrlDataResponse": {
+        "type": "object",
+        "description": "The response object containing information needed for uploading a document",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/DocumentUploadUrlResponse"
           }
         }
       },
@@ -758,11 +780,13 @@
         "properties": {
           "upload_url": {
             "type": "string",
-            "description": "The URL used to upload the document. The request must be a PUT HTTP request, where the body of the request is the document that will be uploaded. This URL should only be used once"
+            "description": "The URL used to upload the document. The request must be a PUT HTTP request, where the body of the request is the document that will be uploaded. This URL should only be used once",
+            "example": "about:blank"
           },
           "document_id": {
             "type": "string",
-            "description": "A unique id for this document, which should be used in the application submission request"
+            "description": "A unique id for this document, which should be used in the application submission request",
+            "example": "12345678-1234-1234-1234-1234-123456789abc"
           }
         }
       },
@@ -910,6 +934,7 @@
               "RX3",
               "RX4",
               "RXC",
+              "RXCD",
               "SC",
               "SDLT",
               "SEV",
@@ -974,8 +999,34 @@
       },
       "ErrorResponse": {
         "type": "object",
-        "description": "An object to describe one or more errors the request generated",
+        "description": "Wrapper for any error responses",
         "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://landregistry.github.io/bgtechdoc/problems/global#bad-request"
+          },
+          "title": {
+            "type": "string",
+            "example": "Bad Request"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "example": 400
+          },
+          "detail": {
+            "type": "string",
+            "example": "The request is invalid or malformed."
+          },
+          "instance": {
+            "type": "string",
+            "format": "uri"
+          },
+          "code": {
+            "type": "string",
+            "example": "ignore me"
+          },
           "errors": {
             "type": "array",
             "description": "A list of all errors generated",
@@ -988,7 +1039,6 @@
       "ProblemDetails": {
         "required": [
           "detail",
-          "summary",
           "type"
         ],
         "description": "Detailed information about an error",
@@ -998,11 +1048,6 @@
             "type": "string",
             "description": "The type of error received",
             "example": "L2_MDREF_ERROR"
-          },
-          "summary": {
-            "type": "string",
-            "description": "A short human readable summary of the error type",
-            "example": "MDRef validation Failed"
           },
           "detail": {
             "type": "string",
@@ -1080,7 +1125,7 @@
             "description": "A JSON pointer to where in the body this error occurred",
             "nullable": true,
             "type": "string",
-            "example": "#/data/france/revolution/date"
+            "example": "#/data/name"
           },
           "header": {
             "description": "The header where this error occurred",
@@ -1092,7 +1137,16 @@
             "description": "The path or query parameter where this error occurred",
             "nullable": true,
             "type": "string",
-            "example": "occured_before" 
+            "example": "occurred_before" 
+          }
+        }
+      },
+      "ApplicationCreationDataResponse": {
+        "type": "object",
+        "description": "The response wrapper from the application submission request",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ApplicationCreationResponse"
           }
         }
       },
@@ -1102,7 +1156,17 @@
         "properties": {
           "application_request_id": {
             "type": "string",
-            "description": "The ID of the application submission request"
+            "description": "The ID of the application submission request",
+            "example": "12345678-1234-1234-1234-123546789abc"
+          }
+        }
+      },
+      "StatusDataResponse": {
+        "type": "object",
+        "description": "Data wrapper for the status response",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/StatusResponse"
           }
         }
       },
@@ -1119,7 +1183,8 @@
           },
           "hmlr_reference": {
             "type": "string",
-            "description": "The reference used by HM Land Registry to identify the application"
+            "description": "The reference used by HM Land Registry to identify the application",
+            "example": "A123BCD"
           },
           "priority_timestamp": {
             "type": "string",
@@ -1128,17 +1193,18 @@
           },
           "application_request_id": {
             "type": "string",
-            "description": "The ID of the application submission request"
+            "description": "The ID of the application submission request",
+            "example": "12345678-1234-1234-1234-123546789abc"
           },
           "status": {
             "type": "string",
-            "description": "* `VALIDATING` - The application is currently being processed.\n* `SYSTEM_ERROR` - There was an error creating the application, please retry the submission.\n* `REJECTED` - We have not accepted the application due to validation errors\n* `VALIDATED` - The application has passed validation, and will be accepted onto the day list when it reopens\n* `ACCEPTED` - The application has been accepted onto the day list",
+            "description": "* `VALIDATING` - The application is currently being processed.\n* `SYSTEM_ERROR` - There was an error creating the application, please retry the submission.\n* `VALIDATION_FAILED` - We have not accepted the application due to validation errors\n* `ACCEPTED_AWAITING_PRIORITY` - The application has passed validation, and will be accepted onto the day list when it reopens\n* `ACCEPTED_PRIORITY_PROTECTED` - The application has been accepted onto the day list",
             "enum": [
               "VALIDATING",
               "SYSTEM_ERROR",
-              "REJECTED",
-              "VALIDATED",
-              "ACCEPTED"
+              "VALIDATION_FAILED",
+              "ACCEPTED_AWAITING_PRIORITY",
+              "ACCEPTED_PRIORITY_PROTECTED"
             ]
           },
           "calculated_fees": {
@@ -1180,13 +1246,15 @@
             "minLength": 0,
             "pattern": ".+@.+",
             "type": "string",
-            "description": "The email address of the application lodger"
+            "description": "The email address of the application lodger",
+            "example": "me@site.co.uk"
           },
           "telephone": {
             "maxLength": 50,
             "minLength": 0,
             "type": "string",
-            "description": "A telephone number that can be used to contact the person lodging the application"
+            "description": "A telephone number that can be used to contact the person lodging the application",
+            "example": "+440000000000"
           },
           "type": {
             "type": "string",
@@ -1201,7 +1269,8 @@
       "OtherConveyancer": {
         "required": [
           "full_name",
-          "registered_address"
+          "registered_address",
+          "conveyancer_reference"
         ],
         "type": "object",
         "description": "Information about another conveyancer (who is not the lodging conveyancer) representing a party on the application",
@@ -1210,19 +1279,22 @@
             "maxLength": 25,
             "minLength": 0,
             "type": "string",
-            "description": "The conveyancer's reference"
+            "description": "The conveyancer's reference",
+            "example": "party_1"
           },
           "full_name": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
-            "description": "The conveyancer's full name"
+            "description": "The conveyancer's full name",
+            "example": "John Doe"
           },
           "registered_address": {
             "maxLength": 500,
             "minLength": 0,
             "type": "string",
-            "description": "The conveyancer's registered address"
+            "description": "The conveyancer's registered address",
+            "example": "123 Green St., Made Up, MU1 2AB, UK"
           }
         }
       },
@@ -1255,16 +1327,7 @@
             "description": "The party or parties who the application is being submitted for",
             "minItems": 1,
             "items": {
-              "type": "object",
-              "description": "This is the party or parties who the application is being made on behalf of",
-              "required": [
-                "party_reference"
-              ],
-              "properties": {
-                "party_reference": {
-                  "$ref": "#/components/schemas/PartyReference"
-                }
-              }
+              "$ref": "#/components/schemas/PartyReference"
             }
           },
           "bypass_validation": {
@@ -1278,7 +1341,8 @@
             "maxLength": 25,
             "minLength": 0,
             "type": "string",
-            "description": "A short name/reference a customer has given to the application"
+            "description": "A short name/reference a customer has given to the application",
+            "example": "anything_you_like_or_need"
           },
           "documents": {
             "type": "object",
@@ -1289,7 +1353,10 @@
           },
           "jp1_reference": {
             "type": "string",
-            "description": "The JP1 reference to use when removing a JP1 restriction"
+            "description": "The JP1 reference to use when removing a JP1 restriction",
+            "minLength": 7,
+            "maxLength": 7,
+            "pattern": "^([a-zA-Z0-9]*)$"
           },
           "application_lodger": {
             "$ref": "#/components/schemas/ApplicationLodger"
@@ -1349,7 +1416,9 @@
       "TitleDetails": {
         "required": [
           "scope_details",
-          "title_number"
+          "title_number",
+          "title_type",
+          "disclosable_overriding_interests"
         ],
         "type": "object",
         "description": "Information about a HM Land Registry title",
@@ -1392,7 +1461,8 @@
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
-            "description": "A description of the part of the title being updated"
+            "description": "A description of the part of the title being updated",
+            "example": "red outlined area"
           },
           "scope": {
             "type": "string",
@@ -1423,7 +1493,6 @@
       "Transfer": {
         "required": [
           "additional_provisions_code",
-          "consideration_description",
           "consideration_type",
           "date",
           "title_guarantee_code"
@@ -1587,7 +1656,8 @@
           },
           "document_id": {
             "type": "string",
-            "description": "The id of the document from the document upload request"
+            "description": "The id of the document from the document upload request",
+            "example": "12345678-1234-1234-1234-123456789abc"
           },
           "document_metadata": {
             "$ref": "#/components/schemas/DocumentMetadata"
@@ -1727,6 +1797,7 @@
               "RX3",
               "RX4",
               "RXC",
+              "RXCD",
               "SC",
               "SDLT",
               "SEV",
@@ -1762,7 +1833,9 @@
       },
       "Party": {
         "required": [
-          "details"
+          "details",
+          "address_for_service_option",
+          "representation_type"
         ],
         "type": "object",
         "description": "A person or entity that has a role in an transaction",
@@ -1799,11 +1872,12 @@
           },
           "representation_type": {
             "type": "string",
-            "description": "The type of representation the party has.\n* `LODGING_CONVEYANCER` - The conveyancer lodging the application.\n* `OTHER_CONVEYANCER` - The party is represented by another conveyancer. Details will be included with the application.\n* `NOT_REPRESENTED` - The party is not represented by a conveyancer and identity evidence has been provided",
+            "description": "The type of representation the party has.\n* `LODGING_CONVEYANCER` - The conveyancer lodging the application.\n* `OTHER_CONVEYANCER` - The party is represented by another conveyancer. Details will be included with the application.\n* `NOT_REPRESENTED` - The party is not represented by a conveyancer and identity evidence has been provided\n* `NOT_REQUIRED` - The party is not required to have a representation type.",
             "enum": [
               "LODGING_CONVEYANCER",
               "OTHER_CONVEYANCER",
-              "NOT_REPRESENTED"
+              "NOT_REPRESENTED",
+              "NOT_REQUIRED"
             ]
           },
           "details": {
@@ -1830,14 +1904,15 @@
       },
       "PartyRole": {
         "required": [
-          "role"
+          "role",
+          "party_reference"
         ],
         "type": "object",
         "description": "Information about the roles and capacities for a specific party",
         "properties": {
           "capacity": {
             "type": "string",
-            "description": "This enum describes the capacity in which a party is acting in a transaction. The possible values are:\n* `REGISTERED_PROPRIETOR` - The party is acting as a registered proprietor.\n* `ENTITLED_REGISTERED_PROPRIETOR` - The party is acting as entitled to be registered as the proprietor.\n* `ADDITIONAL_TRUSTEE - The party is acting as an additional trustee.\n* `INSOLVENCY_PRACTITIONER` - The party is acting as an insolvency practitioner.\n* `RECEIVER` - The party is acting as receiver.\n* `DEPUTY` - The party is acting as a deputy.\n* `GUARDIAN` - The party is acting as a guardian.\n* `PERSONAL_REPRESENTATIVE` - The party is acting as a personal representative.\n* `NOT_REQUIRED` - Capacity is not required for the party role (at time of capture by land registry policy).\n* `null` - The capacity value is not known for the party.\n",
+            "description": "This enum describes the capacity in which a party is acting in a transaction. The possible values are:\n* `REGISTERED_PROPRIETOR` - The party is acting as a registered proprietor.\n* `ENTITLED_REGISTERED_PROPRIETOR` - The party is acting as entitled to be registered as the proprietor.\n* `ADDITIONAL_TRUSTEE` - The party is acting as an additional trustee.\n* `INSOLVENCY_PRACTITIONER` - The party is acting as an insolvency practitioner.\n* `RECEIVER` - The party is acting as receiver.\n* `DEPUTY` - The party is acting as a deputy.\n* `GUARDIAN` - The party is acting as a guardian.\n* `PERSONAL_REPRESENTATIVE` - The party is acting as a personal representative.\n* `NOT_REQUIRED` - Capacity is not required for the party role (at time of capture by land registry policy).\n* `null` - The capacity value is not known for the party.\n",
             "enum": [
               "REGISTERED_PROPRIETOR",
               "ENTITLED_REGISTERED_PROPRIETOR",
@@ -1887,13 +1962,15 @@
                 "maxLength": 366,
                 "minLength": 0,
                 "type": "string",
-                "description": "Forenames of a private individual"
+                "description": "Forenames of a private individual",
+                "example": "John"
               },
               "surname": {
                 "maxLength": 366,
                 "minLength": 0,
                 "type": "string",
-                "description": "The surname of a private individual"
+                "description": "The surname of a private individual",
+                "example": "Doe"
               }
             }
           }
@@ -2352,6 +2429,9 @@
       "OverseasAddress": {
         "type": "object",
         "description": "The address of a premise outside the UK",
+        "required": [
+          "country"
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/AddressDetails"
@@ -2451,6 +2531,11 @@
       "UkAddress": {
         "type": "object",
         "description": "A UK postal address",
+        "required": [
+          "postcode",
+          "post_town",
+          "building_description"
+        ],
         "allOf": [
           {
             "$ref": "#/components/schemas/AddressDetails"
@@ -2552,24 +2637,28 @@
             "type": "string",
             "format": "date-time",
             "example": "2025-01-01T00:00:00Z",
-            "description": "Date and time the event occured"
+            "description": "Date and time the event occurred"
           },
           "payload_schema": {
             "type": "string",
             "description": "A link to a resource that describes the schema of the payload, this could be a JSON schema or documentation for example",
-            "format": "uri"
+            "format": "uri",
+            "example": "https://example.com/"
           },
           "notification_type": {
             "type": "string",
-            "description": "The type of notification, required to distiguish notification types that share a schema"
+            "description": "The type of notification, required to distiguish notification types that share a schema",
+            "example": "TYPE_1"
           },
           "subject_type": {
             "description": "An indicator for the type of the subject",
-            "type": "string"
+            "type": "string",
+            "example": "subject_type"
           },
           "subject": {
             "type": "string",
-            "description": "Unique reference to the subject of the notification"
+            "description": "Unique reference to the subject of the notification",
+            "example": "subject"
           },
           "additional_provider_filter": {
             "type": "string",
@@ -2585,35 +2674,7 @@
           "payload": {
             "type": "object",
             "description": "The payload of the notification",
-            "properties": {
-              "type": {
-                "type": "string",
-                "description": "The type of payload received",
-                "enum": [
-                  "STATUS_CHANGED"
-                ]
-              },
-              "application_status": {
-                "type": "string",
-                "description": "The state the application is now in",
-                "enum": [
-                  "ACCEPTED",
-                  "REJECTED",
-                  "SYSTEM_ERROR",
-                  "VALIDATED"
-                ]
-              },
-              "hmlr_reference": {
-                "type": "string",
-                "nullable": true,
-                "description": "The HMLR reference for the application. Only available once an application is ACCEPTED"
-              },
-              "priority": {
-                "type": "string",
-                "nullable": true,
-                "description": "The priority of the application. Only available once an application is ACCEPTED"
-              }
-            }
+            "additionalProperties": true
           }
         }
       },
@@ -2623,12 +2684,12 @@
           "self": {
             "type": "string",
             "format": "path",
-            "example": "/v1/notifications/{id}"
+            "example": "/v0/notifications/{id}"
           },
           "acknowledge": {
             "type": "string",
             "format": "path",
-            "example": "/v1/notifications/{id}/acknowledge"
+            "example": "/v0/notifications/{id}/acknowledge"
           }
         }
       },

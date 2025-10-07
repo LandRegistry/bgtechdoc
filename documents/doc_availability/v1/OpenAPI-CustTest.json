@@ -286,7 +286,7 @@
             "example": "503"
           },
           "timestamp": {
-            "description": "The UTC timestamp of when the error occured.",
+            "description": "The UTC timestamp of when the error occurred.",
             "type": "string",
             "format": "date-time",
             "example": "2021-04-04 15:29:51:405Z"
