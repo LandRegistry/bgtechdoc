@@ -89,6 +89,164 @@
         ]
       }
     },
+    "/v1/documents/{document_id}": {
+      "get": {
+        "description": "Request the download link for a document. Currently only supports the download of documents HMLR despatches, i.e correspondence, cancellation and completion documents.",
+        "operationId": "getDownloadUrlV1",
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "May also be referred to as the `download_id` by some services"
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "Resource was successfully found.",
+            "headers": {
+              "location": {
+                "description": "URL to the document resource for download",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ],
+        "tags": [
+          "Download a document API"
+        ]
+      }
+    },
+    "Download a document": {
+      "servers": [
+        {
+          "url": "documentcapture.landregistry.gov.uk",
+          "description": "An example domain for document downloads"
+        }
+      ],
+      "get": {
+        "operationId": "Download a document",
+        "description": "Download the document contents. <br/><br/>**Note**: This URL, including hostname and path parameters is returned from the GET `/documents/{document_id}` URL endpoint via the `location` header and **should be used unmodified**.",
+        "security": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/octet-stream":{
+  
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found."
+          }
+        },
+        "tags": [
+          "Download a document API"
+        ]
+      }
+    },
     "/v1/documents/url": {
       "post": {
         "description": "Create an upload URL - Retrieve a generated document upload URL",
