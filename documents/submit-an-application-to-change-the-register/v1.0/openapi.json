@@ -92,7 +92,7 @@
     "/v1/documents/{document_id}": {
       "get": {
         "description": "Request the download link for a document. Currently only supports the download of documents HMLR despatches, i.e correspondence, cancellation and completion documents.",
-        "operationId": "getDownloadUrlV1",
+        "operationId": "Get Download URL",
         "parameters": [
           {
             "name": "document_id",
