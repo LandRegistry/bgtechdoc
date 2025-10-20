@@ -3,7 +3,7 @@
   "info": {
     "description": "V1.0 of the set of APIs for the new 'Submit an application to change the Land Register API' Schema",
     "title": "V1.0 'Submit an application to change the Land Register API' Schema",
-    "version": "1.0"
+    "version": "1.0.1"
   },
   "servers": [
     {
@@ -1822,7 +1822,9 @@
             "properties": {
               "additional_provisions": {
                 "type": "string",
-                "description": "The provided additional provisions"
+                "description": "The provided additional provisions",
+                "maxLength": 10000,
+                "minLength": 0
               },
               "additional_provisions_code": {
                 "type": "string",
