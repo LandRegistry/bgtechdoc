@@ -3,7 +3,7 @@
   "info": {
     "description": "V1.0 of the set of APIs for the new 'Submit an application to change the Land Register API' Schema",
     "title": "V1.0 'Submit an application to change the Land Register API' Schema",
-    "version": "1.0.1"
+    "version": "1.0.2"
   },
   "servers": [
     {
@@ -207,11 +207,6 @@
             "description": "Internal Server Error"
           }
         },
-        "security": [
-          {
-            "basic_auth": []
-          }
-        ],
         "tags": [
           "Download a document API"
         ]
@@ -623,7 +618,10 @@
             "name": "notification_type",
             "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "maxLength": 255,
+              "minLength": 0,
+              "pattern": "^[A-Za-z0-9._@-]*$"
             }
           },
           {
@@ -631,7 +629,10 @@
             "name": "subject",
             "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "maxLength": 64,
+              "minLength": 0,
+              "pattern": "^[A-Za-z0-9._@-]*$"
             }
           },
           {
@@ -639,7 +640,9 @@
             "name": "additional_provider_filter",
             "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "maxLength": 50,
+              "minLength": 1
             }
           },
           {
@@ -1015,6 +1018,50 @@
           }
         ]
       },
+      "ValidationDisagreementV6": {
+        "description": "Fields to describe which validation results are contested and why",
+        "properties": {
+          "comment": {
+            "type": "string",
+            "description": "A free text description of the disagreement",
+            "maxLength": 250,
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "description": "The reason for disagreeing with the validation result",
+            "enum": [
+              "DISAGREE_WITH_REGISTER",
+              "HMLR_DATA_INCORRECT_OR_OUTDATED",
+              "PRESSURE_FROM_LENDER_OR_LENDER_REQUIREMENTS",
+              "EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES",
+              "UNABLE_TO_RESOLVE_ERRORS_BEFORE_OS_EXPIRES",
+              "DISAGREE_WITH_EXTRACTED_DATA",
+              "THIRD_PARTY_SOLICITOR_INVOLVED",
+              "DRS_AUTOMATIC_BYPASS",
+              "OTHER"
+            ]
+          },
+          "validation_pointer": {
+            "type": "string",
+            "description": "A JSON pointer to the contested field in the submission payload. Should match the 'pointer' returned within a status API error",
+            "maxLength": 250,
+            "minLength": 1
+          },
+          "validation_type": {
+            "type": "string",
+            "description": "The type of validation being contested. Should match the 'type' returned within a status API error",
+            "maxLength": 250,
+            "minLength": 1
+          }
+        },
+        "required": [
+          "comment",
+          "reason",
+          "validation_pointer",
+          "validation_type"
+        ]
+      },
       "Discharge": {
         "required": [
           "discharge_submission_type"
@@ -1273,6 +1320,8 @@
             ]
           },
           "additional_provider_filter": {
+            "maxLength": 300,
+            "minLength": 1,
             "type": "string",
             "description": "A value that can be used to subsequently retrieve request responses based upon high level grouping"
           },
@@ -1515,23 +1564,6 @@
               "ACCEPTED_PRIORITY_PROTECTED"
             ]
           },
-          "calculated_fees": {
-            "type": "object",
-            "description": "An object containing information about fees taken for the accepted application",
-            "properties": {
-              "total_fee": {
-                "description": "Total fee in pence",
-                "type": "integer"
-              },
-              "per_transaction": {
-                "type": "array",
-                "description": "Breakdown of fees per transaction",
-                "items": {
-                  "$ref": "#/components/schemas/TransactionFee"
-                }
-              }
-            }
-          },
           "warnings": {
             "type": "array",
             "description": "Warnings that need to be actioned before the application is processed by a caseworker, otherwise a requisition may be issued.",
@@ -1552,7 +1584,7 @@
           "email": {
             "maxLength": 254,
             "minLength": 0,
-            "pattern": ".+@.+",
+            "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
             "type": "string",
             "description": "The email address of the application lodger",
             "example": "me@site.co.uk"
@@ -1597,18 +1629,15 @@
             "description": "The conveyancer's full name",
             "example": "John Doe"
           },
-          "registered_address": {
-            "maxLength": 500,
-            "minLength": 0,
+          "address_reference": {
             "type": "string",
-            "description": "The conveyancer's registered address",
-            "example": "123 Green St., Made Up, MU1 2AB, UK"
+            "description": "Reference to the conveyancer's registered address",
+            "minLength": 1
           }
         }
       },
       "SubstantiveApplicationData": {
         "required": [
-          "applicants",
           "customer_reference",
           "application_lodger",
           "submission_warning_understood",
@@ -1660,6 +1689,13 @@
             "description": "A short name/reference a customer has given to the application",
             "maxLength": 25,
             "minLength": 0
+          },
+          "disagree_with_validation_results": {
+            "type": "array",
+            "description": "A list of instances for which the user disagrees with validation errors",
+            "items": {
+              "$ref": "#/components/schemas/ValidationDisagreementV6"
+            }
           },
           "documents": {
             "type": "object",
@@ -1973,7 +2009,8 @@
           "document_id": {
             "type": "string",
             "description": "The id of the document from the document upload request",
-            "example": "12345678-1234-1234-1234-123456789abc"
+            "example": "12345678-1234-1234-1234-123456789abc",
+            "minLength": 1
           },
           "document_metadata": {
             "$ref": "#/components/schemas/DocumentMetadata"
@@ -2006,6 +2043,7 @@
               "CCD",
               "CERT_CON_CH",
               "CERT_DEATH",
+              "CERT_RED_EX",
               "CERT_REG_CH",
               "CERT_S89",
               "CH1",
@@ -2040,6 +2078,7 @@
               "CRWALIQ",
               "DB",
               "DEATH_CERT",
+              "DEBENTURE",
               "DEC_AB_NULL_MARR",
               "DEED",
               "DEED_POLL",
@@ -2061,6 +2100,7 @@
               "EV_OV_NAME_CHANGE",
               "EX1",
               "EX1A",
+              "EX3",
               "FORM_600",
               "FORM_600CH",
               "FORM_DI",
@@ -2128,6 +2168,7 @@
               "TR1",
               "TR2",
               "TR4",
+              "TR5",
               "TRANSFER",
               "TRUSTEE_RESOLUTION",
               "UN1",
@@ -2226,6 +2267,16 @@
         "type": "object",
         "description": "Information about the roles and capacities for a specific party",
         "properties": {
+          "attorneys": {
+            "type": "array",
+            "description": "List of references to parties who hold power of attorney for this party",
+            "items": {
+              "type": "string",
+              "description": "List of references to parties who hold power of attorney for this party"
+            },
+            "maxItems": 4,
+            "minItems": 0
+          },
           "capacity": {
             "type": "string",
             "description": "This enum describes the capacity in which a party is acting in a transaction. The possible values are:\n* `REGISTERED_PROPRIETOR` - The party is acting as a registered proprietor.\n* `ENTITLED_REGISTERED_PROPRIETOR` - The party is acting as entitled to be registered as the proprietor.\n* `ADDITIONAL_TRUSTEE` - The party is acting as an additional trustee.\n* `INSOLVENCY_PRACTITIONER` - The party is acting as an insolvency practitioner.\n* `RECEIVER` - The party is acting as receiver.\n* `DEPUTY` - The party is acting as a deputy.\n* `GUARDIAN` - The party is acting as a guardian.\n* `PERSONAL_REPRESENTATIVE` - The party is acting as a personal representative.\n* `NOT_REQUIRED` - Capacity is not required for the party role (at time of capture by land registry policy).\n* `null` - The capacity value is not known for the party.\n",
@@ -2263,7 +2314,8 @@
       },
       "PrivateIndividual": {
         "required": [
-          "surname"
+          "surname",
+          "type"
         ],
         "type": "object",
         "description": "A party object to capture infomation about a private individual",
@@ -2339,7 +2391,6 @@
           },
           "relates_to_new_title": {
             "type": "boolean",
-            "default": false,
             "description": "Indicates if the transaction applies to the new title number that is created during application processing. Applies only for TRANSFER_OF_PART and DISPOSITIONARY_FIRST_LEASE application types."
           },
           "party_roles": {
@@ -2511,9 +2562,7 @@
               "maxLength": 9,
               "minLength": 0,
               "type": "string"
-            },
-            "minItems": 1,
-            "maxItems": 2147483647
+            }
           }
         }
       },
@@ -2549,7 +2598,9 @@
       "OverseasCompany": {
         "required": [
           "incorporation_territory",
-          "organisation_name"
+          "organisation_name",
+          "roe_id_exempt",
+          "type"
         ],
         "type": "object",
         "description": "A party object to capture infomation about an overseas company",
@@ -2577,6 +2628,15 @@
                 "minLength": 0,
                 "type": "string",
                 "description": "The territory, country or place where the company was first incorporated"
+              },
+              "roe_id": {
+                "type": "string",
+                "description": "Registration of Overseas Entity ID",
+                "pattern": "OE\\d{6}"
+              },
+              "roe_id_exempt": {
+                "type": "boolean",
+                "description": "Set to true if the company is exempt from providing a ROE ID"
               }
             }
           }
@@ -2607,7 +2667,8 @@
       },
       "UnknownParty": {
         "required": [
-          "freeformat_name"
+          "freeformat_name",
+          "type"
         ],
         "type": "object",
         "description": "A party object to capture infomation about an unknown party",
@@ -2846,10 +2907,10 @@
                 "description": "The town/city of the PO Box"
               },
               "postcode": {
-                "maxLength": 8,
-                "minLength": 5,
                 "type": "string",
-                "description": "The postcode of the PO Box"
+                "description": "The postcode of the PO Box",
+                "minLength": 1,
+                "pattern": "^([Gg][Ii][Rr] ?0[Aa]{2})|([A-Za-z]{1,2}[0-9][0-9A-Za-z]? ?[0-9][A-Za-z]{2})$"
               }
             }
           }
@@ -2881,6 +2942,12 @@
                 "minLength": 0,
                 "type": "string",
                 "description": "The care of name to address correspondence to"
+              },
+              "county": {
+                "type": "string",
+                "description": "UK County",
+                "maxLength": 50,
+                "minLength": 0
               },
               "department_name": {
                 "maxLength": 60,
@@ -2919,10 +2986,10 @@
                 "description": "The town of the delivery point of the address"
               },
               "postcode": {
-                "maxLength": 8,
-                "minLength": 5,
                 "type": "string",
-                "description": "A UK postcode"
+                "description": "A UK postcode",
+                "minLength": 1,
+                "pattern": "^([Gg][Ii][Rr] ?0[Aa]{2})|([A-Za-z]{1,2}[0-9][0-9A-Za-z]? ?[0-9][A-Za-z]{2})$"
               },
               "street": {
                 "maxLength": 80,
