@@ -3,7 +3,7 @@
   "info": {
     "description": "V1.0 of the set of APIs for the new 'Submit an application to change the Land Register API' Schema",
     "title": "V1.0 'Submit an application to change the Land Register API' Schema",
-    "version": "1.0.2"
+    "version": "1.0.3"
   },
   "servers": [
     {
@@ -18,8 +18,9 @@
   "paths": {
     "/v1/applications": {
       "post": {
+        "summary": "Submit an application",
         "description": "Submit an application API - Submit application creation requests for processing",
-        "operationId": "Submit an application API",
+        "operationId": "submit_an_application_to_change_the_register_v1",
         "parameters": [
           {
             "in": "header",
@@ -55,8 +56,7 @@
                 "description": "Get application creation status URI for checking status",
                 "schema": {
                   "type": "string"
-                },
-                "style": "simple"
+                }
               }
             }
           },
@@ -91,8 +91,9 @@
     },
     "/v1/documents/{document_id}": {
       "get": {
+        "summary": "Obtain download link for an HMLR document",
         "description": "Request the download link for a document. Currently only supports the download of documents HMLR despatches, i.e correspondence, cancellation and completion documents.",
-        "operationId": "Get Download URL",
+        "operationId": "download_a_document_v1",
         "parameters": [
           {
             "name": "document_id",
@@ -244,8 +245,9 @@
     },
     "/v1/documents/url": {
       "post": {
+        "summary": "Request upload URL for your application attachments",
         "description": "Create an upload URL - Retrieve a generated document upload URL",
-        "operationId": "Create an upload URL",
+        "operationId": "send_a_document_v1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -358,8 +360,9 @@
     },
     "/v1/applications/{application_request_id}/information": {
       "get": {
-        "description": "Application information API - Get the information about an application",
-        "operationId": "Application information API",
+        "summary": "Get application details",
+        "description": "Can return status, fees and correspondence documents for an application",
+        "operationId": "get_application_information_v1",
         "parameters": [
           {
             "description": "The ID returned by Application Creation to track submission requests",
@@ -377,7 +380,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StatusDataResponse"
+                  "$ref": "#/components/schemas/ApplicationInformationDataResponse"
                 }
               }
             },
@@ -424,8 +427,9 @@
     },
     "/v1/applications/{application_request_id}/attachments": {
       "post": {
+        "summary": "Attach a document to an existing application",
         "description": "Attach a document from Send a Document to an existing application",
-        "operationId": "Attach a document",
+        "operationId": "attach_a_document_v1",
         "parameters": [
           {
             "description": "The ID returned by Application Creation to track submission requests",
@@ -493,8 +497,9 @@
     },
     "/v1/applications/{application_request_id}/messages": {
       "post": {
+        "summary": "Attach a message to an existing application",
         "description": "Application information API - Get the information about an application",
-        "operationId": "Attach a message",
+        "operationId": "attach_a_message_v1",
         "parameters": [
           {
             "description": "The ID returned by Application Creation to track submission requests",
@@ -563,7 +568,7 @@
     "/v1/notifications": {
       "get": {
         "description": "Receive notifications API - Get any unacknowledged notifications",
-        "operationId": "Receive notifications API",
+        "operationId": "get_notifications_v1",
         "parameters": [
           {
             "in": "query",
@@ -733,7 +738,7 @@
     "/v1/notifications/acknowledge": {
       "post": {
         "description": "Acknowledge notifications API - Acknowledge notifications that have been processed, so they are no longer returned when fetching",
-        "operationId": "Acknowledge notifications API",
+        "operationId": "acknowledge_notifications_v1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -832,7 +837,7 @@
         "pattern": "^[A-Za-z0-9-?,_]+$",
         "type": "string",
         "description": "Unique identifier for addresses, used to reference addresses from elsewhere in the spec",
-        "example": "property address"
+        "example": "address_reference_1"
       },
       "PartyReference": {
         "maxLength": 50,
@@ -849,26 +854,6 @@
         "type": "string",
         "description": "Unique identifier for documents, used to reference documents from elsewhere in the spec",
         "example": "signed_charge"
-      },
-      "TransactionReference": {
-        "maxLength": 50,
-        "minLength": 1,
-        "pattern": "^[A-Za-z0-9-?,_]+$",
-        "type": "string",
-        "description": "Unique identifier for transactions, used to reference transactions from elsewhere in the spec",
-        "example": "property charge"
-      },
-      "TransactionFee": {
-        "type": "object",
-        "properties": {
-          "transaction_reference": {
-            "$ref": "#/components/schemas/TransactionReference"
-          },
-          "fee": {
-            "description": "Fee in pence",
-            "type": "integer"
-          }
-        }
       },
       "AddressDetails": {
         "type": "object",
@@ -1060,6 +1045,54 @@
           "reason",
           "validation_pointer",
           "validation_type"
+        ]
+      },
+      "CorrespondenceDocumentType": {
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "CorrespondenceRecordDocumentItemWithDownloadId": {
+        "description": "List of documents in the correspondence record",
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "download_id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/CorrespondenceDocumentType"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "CorrespondenceRecordInApplicationInformation": {
+        "description": "Representation of a correspondence record",
+        "properties": {
+          "documents": {
+            "type": "array",
+            "description": "List of documents in the correspondence record",
+            "items": {
+              "$ref": "#/components/schemas/CorrespondenceRecordDocumentItemWithDownloadId"
+            }
+          },
+          "record_id": {
+            "type": "string",
+            "description": "ID of the correspondence record",
+            "example": "1234567"
+          }
+        },
+        "required": [
+          "documents",
+          "record_id"
         ]
       },
       "Discharge": {
@@ -1412,9 +1445,7 @@
           "pointer": {
             "type": "string",
             "description": "A JSON pointer to the location in the JSON payload that caused the error (optional)",
-            "example": [
-              "/data/transaction/t1/mdref"
-            ]
+            "example": "/data/transaction/t1/mdref"
           }
         }
       },
@@ -1518,19 +1549,26 @@
           }
         }
       },
-      "StatusDataResponse": {
+      "ApplicationInformationDataResponse": {
         "type": "object",
         "description": "Data wrapper for the status response",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/StatusResponse"
+            "$ref": "#/components/schemas/ApplicationInformationResponse"
           }
         }
       },
-      "StatusResponse": {
+      "ApplicationInformationResponse": {
         "type": "object",
         "description": "The response object for the application status endpoint",
         "properties": {
+          "correspondences": {
+            "type": "array",
+            "description": "A list of correspondence records on the application",
+            "items": {
+                "$ref": "#/components/schemas/CorrespondenceRecordInApplicationInformation"
+            }
+          },
           "errors": {
             "type": "array",
             "description": "A list of errors that caused the application to not be accepted",
@@ -1629,10 +1667,11 @@
             "description": "The conveyancer's full name",
             "example": "John Doe"
           },
-          "address_reference": {
+          "registered_address": {
             "type": "string",
-            "description": "Reference to the conveyancer's registered address",
-            "minLength": 1
+            "description": "The conveyancer's registered address",
+            "maxLength": 500,
+            "minLength": 0
           }
         }
       },
@@ -3069,21 +3108,6 @@
             "type": "object",
             "description": "The payload of the notification",
             "additionalProperties": true
-          }
-        }
-      },
-      "NotificationsLinks": {
-        "type": "object",
-        "properties": {
-          "self": {
-            "type": "string",
-            "format": "path",
-            "example": "/v0/notifications/{id}"
-          },
-          "acknowledge": {
-            "type": "string",
-            "format": "path",
-            "example": "/v0/notifications/{id}/acknowledge"
           }
         }
       },
