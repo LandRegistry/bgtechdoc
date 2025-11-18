@@ -3,7 +3,7 @@
   "info": {
     "description": "V1.0 of the set of APIs for the new 'Submit an application to change the Land Register API' Schema",
     "title": "V1.0 'Submit an application to change the Land Register API' Schema",
-    "version": "1.0.3"
+    "version": "1.0.4"
   },
   "servers": [
     {
@@ -922,52 +922,6 @@
           }
         ]
       },
-      "BypassValidationData": {
-        "required": [
-          "comment",
-          "reason",
-          "validation_pointer",
-          "validation_type"
-        ],
-        "type": "object",
-        "description": "Fields to describe which validators to bypass and why",
-        "properties": {
-          "validation_type": {
-            "maxLength": 250,
-            "minLength": 1,
-            "description": "The type of validation to bypass. Should match the 'type' returned within a status API error",
-            "type": "string"
-          },
-          "validation_pointer": {
-            "maxLength": 250,
-            "minLength": 1,
-            "description": "A JSON pointer to the field in the submission payload to bypass the validation on. Should match the 'pointer' returned within a status API error",
-            "type": "string",
-            "example": "/data/customer_reference"
-          },
-          "reason": {
-            "type": "string",
-            "description": "The reason the validation is being bypassed",
-            "enum": [
-              "DISAGREE_WITH_REGISTER",
-              "HMLR_DATA_INCORRECT_OR_OUTDATED",
-              "PRESSURE_FROM_LENDER_OR_LENDER_REQUIREMENTS",
-              "EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES",
-              "UNABLE_TO_RESOLVE_ERRORS_BEFORE_OS_EXPIRES",
-              "DISAGREE_WITH_EXTRACTED_DATA",
-              "THIRD_PARTY_SOLICITOR_INVOLVED",
-              "DRS_AUTOMATIC_BYPASS",
-              "OTHER"
-            ]
-          },
-          "comment": {
-            "maxLength": 250,
-            "minLength": 1,
-            "description": "A user inputted description of why the validation is being bypassed",
-            "type": "string"
-          }
-        }
-      },
       "Charge": {
         "required": [
           "date",
@@ -1003,7 +957,7 @@
           }
         ]
       },
-      "ValidationDisagreementV6": {
+      "ValidationDisagreement": {
         "description": "Fields to describe which validation results are contested and why",
         "properties": {
           "comment": {
@@ -1018,13 +972,7 @@
             "enum": [
               "DISAGREE_WITH_REGISTER",
               "HMLR_DATA_INCORRECT_OR_OUTDATED",
-              "PRESSURE_FROM_LENDER_OR_LENDER_REQUIREMENTS",
-              "EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES",
-              "UNABLE_TO_RESOLVE_ERRORS_BEFORE_OS_EXPIRES",
-              "DISAGREE_WITH_EXTRACTED_DATA",
-              "THIRD_PARTY_SOLICITOR_INVOLVED",
-              "DRS_AUTOMATIC_BYPASS",
-              "OTHER"
+              "EXCEPTION_NOT_COVERED_BY_BUSINESS_RULES"
             ]
           },
           "validation_pointer": {
@@ -1716,13 +1664,6 @@
           "application_lodger": {
             "$ref": "#/components/schemas/ApplicationLodger"
           },
-          "bypass_validation": {
-            "type": "array",
-            "description": "A list of bypasses, for when a user disagrees with validation errors",
-            "items": {
-              "$ref": "#/components/schemas/BypassValidationData"
-            }
-          },
           "customer_reference": {
             "type": "string",
             "description": "A short name/reference a customer has given to the application",
@@ -1733,7 +1674,7 @@
             "type": "array",
             "description": "A list of instances for which the user disagrees with validation errors",
             "items": {
-              "$ref": "#/components/schemas/ValidationDisagreementV6"
+              "$ref": "#/components/schemas/ValidationDisagreement"
             }
           },
           "documents": {
