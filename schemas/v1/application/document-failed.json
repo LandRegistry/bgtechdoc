@@ -10,7 +10,15 @@
     "properties": {
         "data": {
             "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "failure_reason"
+            ],
             "properties": {
+                "failure_reason": {
+                    "type": "string",
+                    "description": "Reason why the attachment failed validation"
+                }
             }
         }
     }

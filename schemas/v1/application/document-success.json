@@ -10,7 +10,15 @@
     "properties": {
         "data": {
             "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "attachment_id"
+            ],
             "properties": {
+                "attachment_id": {
+                    "type": "integer",
+                    "description": "Unique identifier for the attachment"
+                }
             }
         }
     }
