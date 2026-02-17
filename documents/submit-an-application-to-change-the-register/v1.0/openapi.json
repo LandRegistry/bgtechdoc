@@ -3,7 +3,7 @@
   "info": {
     "description": "V1.0 of the set of APIs for the new 'Submit an application to change the Land Register API' Schema",
     "title": "V1.0 'Submit an application to change the Land Register API' Schema",
-    "version": "1.0.4"
+    "version": "1.0.5"
   },
   "servers": [
     {
@@ -229,9 +229,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/octet-stream":{
-  
-              }
+              "application/octet-stream": {}
             }
           },
           "404": {
@@ -1514,7 +1512,7 @@
             "type": "array",
             "description": "A list of correspondence records on the application",
             "items": {
-                "$ref": "#/components/schemas/CorrespondenceRecordInApplicationInformation"
+              "$ref": "#/components/schemas/CorrespondenceRecordInApplicationInformation"
             }
           },
           "errors": {
@@ -1594,13 +1592,18 @@
       },
       "OtherConveyancer": {
         "required": [
-          "full_name",
-          "registered_address",
-          "conveyancer_reference"
+          "address_reference",
+          "conveyancer_reference",
+          "full_name"
         ],
         "type": "object",
         "description": "Information about another conveyancer (who is not the lodging conveyancer) representing a party on the application",
         "properties": {
+          "address_reference": {
+            "type": "string",
+            "description": "Reference to the conveyancer's registered address",
+            "minLength": 1
+          },
           "conveyancer_reference": {
             "maxLength": 25,
             "minLength": 0,
@@ -1614,12 +1617,6 @@
             "type": "string",
             "description": "The conveyancer's full name",
             "example": "John Doe"
-          },
-          "registered_address": {
-            "type": "string",
-            "description": "The conveyancer's registered address",
-            "maxLength": 500,
-            "minLength": 0
           }
         }
       },
