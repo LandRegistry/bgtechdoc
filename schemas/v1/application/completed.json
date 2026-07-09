@@ -12,7 +12,8 @@
             "type": "object",
             "properties": {
                 "status": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": ["COMPLETED"]
                 },
                 "hmlr_reference": {
                     "type": "string"

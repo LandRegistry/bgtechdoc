@@ -12,7 +12,8 @@
             "type": "object",
             "properties": {
                 "status": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": ["ACCEPTED_PRIORITY_PENDING"]
                 }
             }
         }
