@@ -95,6 +95,9 @@
         <a href="#not-found"><span>Not Found</span></a>
       </li>
       <li>
+        <a href="#method-not-allowed"><span>Method Not Allowed</span></a>
+      </li>
+      <li>
         <a href="#conflict"><span>Resource Conflict</span></a>
       </li>
       <li>
@@ -216,6 +219,28 @@
     </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Found"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The requested resource does not exist."</span><span class="p">,</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<hr>
+
+<h2 id="method-not-allowed">Method Not Allowed</h2>
+<p><strong>Type:</strong> <code>method-not-allowed</code></p>
+<p><strong>Detail:</strong> The request method is not supported for this resource.</p>
+<p><strong>Resolution:</strong></p>
+
+<ul>
+<li>Verify that you are using an HTTP method supported by this endpoint.</li>
+<li>Refer to the API documentation to determine the allowed methods for the requested resource.</li>
+<li>Update the request to use a supported method and retry.<br></li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre class="highlight json" tabindex="0"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landregistry.github.io/bgtechdoc/problems/global#method-not-allowed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Method Not Allowed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The request method is not supported for this resource."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">405</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
