@@ -2641,8 +2641,8 @@
   padding-right: 8px;
   padding-bottom: 3px;
   padding-left: 8px;
-  color: rgb(11.6, 44.8, 73.6);
-  background-color: rgb(187.2, 212.1, 233.7);
+  color: rgb(4.5490196078%, 17.568627451%, 28.862745098%);
+  background-color: rgb(73.4117647059%, 83.1764705882%, 91.6470588235%);
   text-decoration: none;
   overflow-wrap: break-word;
 }
@@ -2653,53 +2653,53 @@
 }
 
 .govuk-tag--grey {
-  color: rgb(40, 45, 47.5);
-  background-color: rgb(228.75, 230.25, 231);
+  color: rgb(15.6862745098%, 17.6470588235%, 18.6274509804%);
+  background-color: rgb(89.7058823529%, 90.2941176471%, 90.5882352941%);
 }
 
 .govuk-tag--purple {
-  color: rgb(72.5, 21.5, 68);
-  background-color: rgb(238.5, 223.2, 237.15);
+  color: rgb(28.431372549%, 8.431372549%, 26.6666666667%);
+  background-color: rgb(93.5294117647%, 87.5294117647%, 93%);
 }
 
 .govuk-tag--turquoise {
-  color: rgb(16, 64.4, 60.4);
-  background-color: rgb(212, 236.2, 234.2);
+  color: rgb(6.2745098039%, 25.2549019608%, 23.6862745098%);
+  background-color: rgb(83.137254902%, 92.6274509804%, 91.8431372549%);
 }
 
 .govuk-tag--blue {
-  color: rgb(11.6, 44.8, 73.6);
-  background-color: rgb(187.2, 212.1, 233.7);
+  color: rgb(4.5490196078%, 17.568627451%, 28.862745098%);
+  background-color: rgb(73.4117647059%, 83.1764705882%, 91.6470588235%);
 }
 
 .govuk-tag--light-blue {
-  color: rgb(11.6, 44.8, 73.6);
-  background-color: rgb(232.4, 240.7, 247.9);
+  color: rgb(4.5490196078%, 17.568627451%, 28.862745098%);
+  background-color: rgb(91.137254902%, 94.3921568627%, 97.2156862745%);
 }
 
 .govuk-tag--yellow {
-  color: rgb(89.25, 77.35, 0);
-  background-color: rgb(255, 246.5, 191.25);
+  color: rgb(35%, 30.3333333333%, 0%);
+  background-color: rgb(100%, 96.6666666667%, 75%);
 }
 
 .govuk-tag--orange {
-  color: rgb(109.8, 53.55, 25.2);
-  background-color: rgb(251.7, 214.2, 195.3);
+  color: rgb(43.0588235294%, 21%, 9.8823529412%);
+  background-color: rgb(98.7058823529%, 84%, 76.5882352941%);
 }
 
 .govuk-tag--red {
-  color: rgb(42.4, 10.6, 5.6);
-  background-color: rgb(244.25, 204.5, 198.25);
+  color: rgb(16.6274509804%, 4.1568627451%, 2.1960784314%);
+  background-color: rgb(95.7843137255%, 80.1960784314%, 77.7450980392%);
 }
 
 .govuk-tag--pink {
-  color: rgb(106.5, 28, 64);
-  background-color: rgb(248.7, 225.15, 235.95);
+  color: rgb(41.7647058824%, 10.9803921569%, 25.0980392157%);
+  background-color: rgb(97.5294117647%, 88.2941176471%, 92.5294117647%);
 }
 
 .govuk-tag--green {
-  color: rgb(0, 89.6, 48);
-  background-color: rgb(204, 226.4, 216);
+  color: rgb(0%, 35.137254902%, 18.8235294118%);
+  background-color: rgb(80%, 88.7843137255%, 84.7058823529%);
 }
 
 
@@ -4286,7 +4286,7 @@
 /* Deprecated, Opening/Closing Embedded Language Tags e.g. <?php ?> (Unused) */
 .highlight {
   /* Map Rouge / Pygments Tokens to work with 'Base 16' themes */
-  background: rgb(249, 248.5, 248);
+  background: rgb(97.6470588235%, 97.4509803922%, 97.2549019608%);
   color: #0b0c0c;
   /**
    * Comments
@@ -4297,7 +4297,7 @@
 .highlight .cp,
 .highlight .c1,
 .highlight .cs { /* Comment.Special */
-  color: rgb(75.3371428571, 84.7542857143, 89.4628571429);
+  color: rgb(29.543977591%, 33.2369747899%, 35.0834733894%);
 }
 .highlight {
   /**
@@ -4398,7 +4398,7 @@
   color: #0E7754;
 }
 .highlight .sd { /* Literal.String.Doc */
-  color: rgb(75.3371428571, 84.7542857143, 89.4628571429);
+  color: rgb(29.543977591%, 33.2369747899%, 35.0834733894%);
 }
 .highlight .sc { /* Literal.String.Char */ }
 .highlight {
@@ -4441,7 +4441,7 @@
   font-weight: bold;
 }
 .highlight .gp { /* Generic.Prompt */
-  color: rgb(75.3371428571, 84.7542857143, 89.4628571429);
+  color: rgb(29.543977591%, 33.2369747899%, 35.0834733894%);
   font-weight: bold;
 }
 
@@ -5060,7 +5060,7 @@
   font-size: 1em;
 }
 .technical-documentation pre {
-  background: rgb(249, 248.5, 248);
+  background: rgb(97.6470588235%, 97.4509803922%, 97.2549019608%);
   padding: 15px;
   overflow: auto;
   position: relative;
