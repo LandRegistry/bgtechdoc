@@ -308,7 +308,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApplicationInformationDataResponse"
+                  "$ref": "#/components/schemas/ApplicationInformationResponse"
                 }
               }
             },
@@ -535,7 +535,7 @@
                 "string",
                 "null"
               ],
-              "maxLength": 300,
+              "maxLength": 50,
               "minLength": 1
             }
           },
@@ -656,7 +656,7 @@
                           "notification_type": "application.accepted-priority-pending",
                           "subject_type": "APPLICATION",
                           "subject": "373e569c-a5bf-4319-9c02-2309529461cf",
-                          "additional_provider_filter": null,
+                          "additional_provider_filter": "null",
                           "status": "NEW",
                           "payload": {
                             "data": {
@@ -679,7 +679,7 @@
                           "notification_type": "application.accepted-priority-protected",
                           "subject_type": "APPLICATION",
                           "subject": "373e569c-a5bf-4319-9c02-2309529461cf",
-                          "additional_provider_filter": null,
+                          "additional_provider_filter": "null",
                           "status": "NEW",
                           "payload": {
                             "data": {
@@ -704,7 +704,7 @@
                           "notification_type": "application.attachment-failed",
                           "subject_type": "APPLICATION",
                           "subject": "887c2ef4-40da-47cf-afeb-33237fb81986",
-                          "additional_provider_filter": null,
+                          "additional_provider_filter": "null",
                           "status": "NEW",
                           "payload": {
                             "data": {
@@ -727,7 +727,7 @@
                           "notification_type": "application.attachment-success",
                           "subject_type": "APPLICATION",
                           "subject": "373e569c-a5bf-4319-9c02-2309529461cf",
-                          "additional_provider_filter": null,
+                          "additional_provider_filter": "null",
                           "status": "NEW",
                           "payload": {
                             "data": {
@@ -750,7 +750,7 @@
                           "notification_type": "application.cancelled",
                           "subject_type": "APPLICATION",
                           "subject": "373e569c-a5bf-4319-9c02-2309529461cf",
-                          "additional_provider_filter": null,
+                          "additional_provider_filter": "null",
                           "status": "NEW",
                           "payload": {
                             "data": {
@@ -773,7 +773,7 @@
                           "notification_type": "application.completed",
                           "subject_type": "APPLICATION",
                           "subject": "373e569c-a5bf-4319-9c02-2309529461cf",
-                          "additional_provider_filter": null,
+                          "additional_provider_filter": "null",
                           "status": "NEW",
                           "payload": {
                             "data": {
@@ -796,7 +796,7 @@
                           "notification_type": "application.correspondence-despatched",
                           "subject_type": "APPLICATION",
                           "subject": "0064871c-272c-4f0b-91ad-0947da85d48a",
-                          "additional_provider_filter": null,
+                          "additional_provider_filter": "null",
                           "status": "NEW",
                           "payload": {
                             "data": {
@@ -830,7 +830,7 @@
                           "notification_type": "application.message-failed",
                           "subject_type": "APPLICATION",
                           "subject": "887c2ef4-40da-47cf-afeb-33237fb81986",
-                          "additional_provider_filter": null,
+                          "additional_provider_filter": "null",
                           "status": "NEW",
                           "payload": {
                             "data": {
@@ -853,7 +853,7 @@
                           "notification_type": "application.message-success",
                           "subject_type": "APPLICATION",
                           "subject": "373e569c-a5bf-4319-9c02-2309529461cf",
-                          "additional_provider_filter": null,
+                          "additional_provider_filter": "null",
                           "status": "NEW",
                           "payload": {
                             "data": {
@@ -876,7 +876,7 @@
                           "notification_type": "application.system-error",
                           "subject_type": "APPLICATION",
                           "subject": "373e569c-a5bf-4319-9c02-2309529461cf",
-                          "additional_provider_filter": null,
+                          "additional_provider_filter": "null",
                           "status": "NEW",
                           "payload": {
                             "data": {
@@ -899,7 +899,7 @@
                           "notification_type": "application.validation-failed",
                           "subject_type": "APPLICATION",
                           "subject": "373e569c-a5bf-4319-9c02-2309529461cf",
-                          "additional_provider_filter": null,
+                          "additional_provider_filter": "null",
                           "status": "NEW",
                           "payload": {
                             "data": {
@@ -1378,6 +1378,33 @@
           }
         }
       },
+      "CorrespondenceDocumentType": {
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "CorrespondenceRecordDocumentItemWithDownloadId": {
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "download_id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/CorrespondenceDocumentType"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "description": "List of documents in the correspondence record"
+      },
       "ProblemDetail": {
         "type": "object",
         "properties": {
@@ -1409,7 +1436,7 @@
               "null"
             ],
             "format": "uri",
-            "example": "/path/you/called",
+            "example": "https://api.example.com/path/you/called",
             "description": "A reference that identifies the specific occurrence of the problem"
           },
           "status": {
@@ -1436,226 +1463,6 @@
         "required": [
           "type"
         ]
-      },
-      "GetNotificationCollectionResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/NotificationResponse"
-            },
-            "minItems": 1
-          }
-        },
-        "required": [
-          "data"
-        ]
-      },
-      "ApplicationInformationDataResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/ApplicationInformationResponse"
-          }
-        },
-        "description": "Data wrapper for the status response"
-      },
-      "ApplicationCreationDataResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/ApplicationCreationResponse"
-          }
-        },
-        "required": [
-          "data"
-        ]
-      },
-      "SubstantiveApplication": {
-        "description": "The request to submit an application to HM Land Registry",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/SubstantiveApplicationData"
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object"
-      },
-      "ApplicationInformationResponse": {
-        "description": "The response object for the application status endpoint",
-        "properties": {
-          "application_request_id": {
-            "type": "string",
-            "description": "The ID of the application submission request",
-            "example": "12345678-1234-1234-1234-123546789abc"
-          },
-          "errors": {
-            "type": "array",
-            "description": "A list of errors that caused the application to not be accepted",
-            "items": {
-              "$ref": "#/components/schemas/ProblemDetails"
-            }
-          },
-          "hmlr_reference": {
-            "type": "string",
-            "description": "The reference used by HM Land Registry to identify the application",
-            "example": "A123BCD"
-          },
-          "priority_timestamp": {
-            "type": "string",
-            "format": "date-time",
-            "description": "The priority date and time of when the application was accepted onto the day list"
-          },
-          "status": {
-            "type": "string",
-            "description": "* `VALIDATING` - The application is currently being processed.\n* `SYSTEM_ERROR` - There was an error creating the application, please retry the submission.\n* `VALIDATION_FAILED` - We have not accepted the application due to validation errors\n* `ACCEPTED_AWAITING_PRIORITY` - The application has passed validation, and will be accepted onto the day list when it reopens\n* `ACCEPTED_PRIORITY_PROTECTED` - The application has been accepted onto the day list",
-            "enum": [
-              "VALIDATING",
-              "SYSTEM_ERROR",
-              "VALIDATION_FAILED",
-              "ACCEPTED_AWAITING_PRIORITY",
-              "ACCEPTED_PRIORITY_PROTECTED"
-            ]
-          },
-          "warnings": {
-            "type": "array",
-            "description": "Warnings that need to be actioned before the application is processed by a caseworker, otherwise a requisition may be issued.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "correspondences": {
-            "type": "array",
-            "description": "A list of correspondence records on the application",
-            "items": {
-              "$ref": "#/components/schemas/CorrespondenceRecordInApplicationInformation"
-            }
-          }
-        },
-        "type": "object"
-      },
-      "ApplicationCreationResponse": {
-        "description": "The response from the application submission endpoint",
-        "properties": {
-          "application_request_id": {
-            "type": "string",
-            "description": "The ID of the application submission request"
-          }
-        },
-        "type": "object"
-      },
-      "ErrorResponse": {
-        "properties": {
-          "type": {
-            "type": "string",
-            "format": "uri",
-            "example": "https://landregistry.github.io/bgtechdoc/problems/global#bad-request"
-          },
-          "title": {
-            "type": "string",
-            "example": "Bad Request"
-          },
-          "status": {
-            "type": "integer",
-            "format": "int32",
-            "example": 400
-          },
-          "detail": {
-            "type": "string",
-            "example": "The request is invalid or malformed."
-          },
-          "instance": {
-            "type": "string",
-            "format": "uri"
-          },
-          "code": {
-            "type": "string",
-            "example": "ignore me"
-          },
-          "errors": {
-            "type": "array",
-            "description": "A list of all errors generated",
-            "items": {
-              "$ref": "#/components/schemas/ProblemDetails"
-            }
-          }
-        },
-        "type": "object"
-      },
-      "BulkAcknowledgeResult": {
-        "type": "object",
-        "properties": {
-          "acknowledged": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          "not_found": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        }
-      },
-      "AttachAMessageRequest": {
-        "properties": {
-          "data": {
-            "properties": {
-              "message_text": {
-                "type": "string",
-                "description": "The content of the message to be attached",
-                "maxLength": 4034,
-                "minLength": 0
-              }
-            },
-            "required": [
-              "message_text"
-            ]
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object",
-        "description": "The request to send to the endpoint to request an upload URL"
-      },
-      "AttachADocumentRequest": {
-        "properties": {
-          "data": {
-            "properties": {
-              "certification_statement_type": {
-                "type": "string",
-                "description": "    * `CERTIFIED` - I/we certify this is a true copy of an original document\n    * `CERTIFIED_BY_ANOTHER` - I/we certify this document is a true copy of an original document which is certified by a conveyancer to be a true copy of the original\n    * `NOT_CERTIFIED` - This document is an uncertified copy\n",
-                "enum": [
-                  "CERTIFIED",
-                  "CERTIFIED_BY_ANOTHER",
-                  "NOT_CERTIFIED"
-                ]
-              },
-              "document_id": {
-                "type": "string",
-                "description": "The id of the document from the document upload request",
-                "example": "12345678-1234-1234-1234-123456789abc"
-              }
-            },
-            "required": [
-              "certification_statement_type",
-              "document_id"
-            ]
-          }
-        },
-        "required": [
-          "data"
-        ],
-        "type": "object",
-        "description": "The request to send to the endpoint to request an upload URL"
       },
       "CorrespondenceRecordInApplicationInformation": {
         "properties": {
@@ -1686,69 +1493,28 @@
         ],
         "description": "Representation of a correspondence record"
       },
-      "CorrespondenceRecordDocumentItemWithDownloadId": {
-        "properties": {
-          "created_at": {
-            "type": "string"
-          },
-          "download_id": {
-            "type": "string"
-          },
-          "type": {
-            "$ref": "#/components/schemas/CorrespondenceDocumentType"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "description": "List of documents in the correspondence record"
-      },
-      "CorrespondenceDocumentType": {
-        "properties": {
-          "code": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        }
-      },
-      "ErrorDescription": {
+      "ApplicationCreationDataResponse": {
         "type": "object",
         "properties": {
-          "detail": {
-            "description": "A human readable explanation of the error",
-            "type": "string",
-            "example": "Date must be in the past"
-          },
-          "pointer": {
-            "description": "A JSON pointer to where in the body this error occurred",
-            "type": [
-              "string",
-              "null"
-            ],
-            "example": "#/data/name"
-          },
-          "header": {
-            "description": "The header where this error occurred",
-            "type": [
-              "string",
-              "null"
-            ],
-            "example": "Idempotency-Key"
-          },
-          "parameter": {
-            "description": "The path or query parameter where this error occurred",
-            "type": [
-              "string",
-              "null"
-            ],
-            "example": "occurred_before"
+          "data": {
+            "$ref": "#/components/schemas/ApplicationCreationResponse"
           }
         },
         "required": [
-          "detail"
+          "data"
         ]
+      },
+      "SubstantiveApplication": {
+        "description": "The request to submit an application to HM Land Registry",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/SubstantiveApplicationData"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object"
       },
       "SubstantiveApplicationData": {
         "description": "The data required to capture an application",
@@ -1857,6 +1623,133 @@
           "type"
         ],
         "type": "object"
+      },
+      "ApplicationInformationResponse": {
+        "description": "Resource containing representation of an application's details",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ApplicationInformation"
+          }
+        }
+      },
+      "ApplicationCreationResponse": {
+        "description": "The response from the application submission endpoint",
+        "properties": {
+          "application_request_id": {
+            "type": "string",
+            "description": "The ID of the application submission request"
+          }
+        },
+        "type": "object"
+      },
+      "BulkAcknowledgeResult": {
+        "type": "object",
+        "properties": {
+          "acknowledged": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "not_found": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        }
+      },
+      "AttachAMessageRequest": {
+        "properties": {
+          "data": {
+            "properties": {
+              "message_text": {
+                "type": "string",
+                "description": "The content of the message to be attached",
+                "maxLength": 4034,
+                "minLength": 0
+              }
+            },
+            "required": [
+              "message_text"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "description": "The request to send to the endpoint to request an upload URL"
+      },
+      "AttachADocumentRequest": {
+        "properties": {
+          "data": {
+            "properties": {
+              "certification_statement_type": {
+                "type": "string",
+                "description": "    * `CERTIFIED` - I/we certify this is a true copy of an original document\n    * `CERTIFIED_BY_ANOTHER` - I/we certify this document is a true copy of an original document which is certified by a conveyancer to be a true copy of the original\n    * `NOT_CERTIFIED` - This document is an uncertified copy\n",
+                "enum": [
+                  "CERTIFIED",
+                  "CERTIFIED_BY_ANOTHER",
+                  "NOT_CERTIFIED"
+                ]
+              },
+              "document_id": {
+                "type": "string",
+                "description": "The id of the document from the document upload request",
+                "example": "12345678-1234-1234-1234-123456789abc"
+              }
+            },
+            "required": [
+              "certification_statement_type",
+              "document_id"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "description": "The request to send to the endpoint to request an upload URL"
+      },
+      "ErrorDescription": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "description": "A human readable explanation of the error",
+            "type": "string",
+            "example": "Date must be in the past"
+          },
+          "pointer": {
+            "description": "A JSON pointer to where in the body this error occurred",
+            "type": [
+              "string",
+              "null"
+            ],
+            "example": "#/data/name"
+          },
+          "header": {
+            "description": "The header where this error occurred",
+            "type": [
+              "string",
+              "null"
+            ],
+            "example": "Idempotency-Key"
+          },
+          "parameter": {
+            "description": "The path or query parameter where this error occurred",
+            "type": [
+              "string",
+              "null"
+            ],
+            "example": "occurred_before"
+          }
+        },
+        "required": [
+          "detail"
+        ]
       },
       "Address": {
         "description": "An object containing an address, where the address details may be one of multiple types",
@@ -2520,14 +2413,6 @@
           },
           "other_conveyancer": {
             "$ref": "#/components/schemas/OtherConveyancer"
-          },
-          "register_action": {
-            "type": "string",
-            "description": "* `AMEND` - The party information is different to the currently held register information\n* `REMOVE` - The party on the register should be removed",
-            "enum": [
-              "AMEND",
-              "REMOVE"
-            ]
           },
           "representation_type": {
             "type": "string",
@@ -3537,6 +3422,50 @@
         "required": [
           "building_description"
         ]
+      },
+      "ApplicationInformation": {
+        "description": "Representation of an application with its details",
+        "properties": {
+          "application_request_id": {
+            "type": "string",
+            "description": "The ID of the application submission request"
+          },
+          "correspondences": {
+            "type": "array",
+            "description": "A list of correspondence records on the application",
+            "items": {
+              "$ref": "#/components/schemas/CorrespondenceRecordInApplicationInformation"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "description": "A list of errors that caused the application to not be accepted",
+            "items": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            }
+          },
+          "hmlr_reference": {
+            "type": "string",
+            "description": "The reference used by HM Land Registry to identify the application"
+          },
+          "priority_timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The priority date and time of when the application was accepted onto the day list"
+          },
+          "status": {
+            "type": "string",
+            "description": "  * `VALIDATING` - HM Land Registry are still processing the application and it has not yet been added to the day list.\n  * `ACCEPTED_PRIORITY_PROTECTED` - The application has been accepted onto the day list, and has priority.\n  * `VALIDATION_FAILED` - The application has not been added to the day list, due to errors during validation. The errors that were found are included in the \"errors\" section in the response.\n  * `ACCEPTED_AWAITING_PRIORITY` - The application has passed validation but has not yet been added to the day list as the day list is currently closed.\n  * `SYSTEM_ERROR` - The application has not been added to the day list, due to a HM Land Registry system error. The request should be retried, or the support team contacted.\n  * `COMPLETED` - The application has been processed. Service completed.\n  * `CANCELLED` - The application has been cancelled.\n*\n"
+          },
+          "warnings": {
+            "type": "array",
+            "description": "A list of warnings incurred during the creation of the application",
+            "items": {
+              "type": "string",
+              "description": "A list of warnings incurred during the creation of the application"
+            }
+          }
+        }
       }
     },
     "securitySchemes": {
