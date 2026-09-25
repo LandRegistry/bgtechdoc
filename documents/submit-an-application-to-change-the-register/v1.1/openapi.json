@@ -996,15 +996,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "data": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
+                "$ref": "#/components/schemas/AcknowledgeRequest"
               }
             }
           },
@@ -1464,6 +1456,45 @@
           "type"
         ]
       },
+      "AcknowledgeRequest": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "maxItems": 100,
+            "minItems": 1
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "AcknowledgeOut": {
+        "type": "object",
+        "properties": {
+          "acknowledged": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "not_found": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        },
+        "required": [
+          "acknowledged"
+        ]
+      },
       "CorrespondenceRecordInApplicationInformation": {
         "properties": {
           "documents": {
@@ -1645,19 +1676,8 @@
       "BulkAcknowledgeResult": {
         "type": "object",
         "properties": {
-          "acknowledged": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          "not_found": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
+          "data": {
+            "$ref": "#/components/schemas/AcknowledgeOut"
           }
         }
       },
