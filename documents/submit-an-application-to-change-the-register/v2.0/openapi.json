@@ -1086,11 +1086,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/BulkAcknowledgeResult"
-                    }
-                  }
+                  "$ref": "#/components/schemas/BulkAcknowledgeResult"
                 }
               }
             }
@@ -1468,7 +1464,7 @@
         ]
       },
       "ValueBand": {
-        "description": "A range the value of the transaction falls between. Valid bands are:\n* `0 - 100000`\n * `100001 - 200000\n* `200001 - 500000`\n* `500001 - 1000000`\n* `1000001 +`",
+        "description": "A range the value of the transaction falls between. Valid bands are:\n* `0 - 100000`\n * `100001 - 200000`\n* `200001 - 500000`\n* `500001 - 1000000`\n* `1000001 +`",
         "properties": {
           "lower_value_band": {
             "type": "integer",
@@ -2083,7 +2079,7 @@
       "OcSummaryData": {
         "properties": {
           "charge": {
-            "$ref": "#/components/schemas/Charge"
+            "$ref": "#/components/schemas/DocCharge"
           },
           "document_details": {
             "$ref": "#/components/schemas/RegisterDocumentDetails"
@@ -2659,7 +2655,7 @@
             "properties": {
               "certification_statement_type": {
                 "type": "string",
-                "description": "    * `CERTIFIED` - I/we certify this is a true copy of an original document\n    * `CERTIFIED_BY_ANOTHER` - I/we certify this document is a true copy of an original document which is certified by a conveyancer to be a true copy of the original\n    * `NOT_CERTIFIED` - This document is an uncertified copy\n",
+                "description": "* `CERTIFIED` - I/we certify this is a true copy of an original document\n* `CERTIFIED_BY_ANOTHER` - I/we certify this document is a true copy of an original document which is certified by a conveyancer to be a true copy of the original\n* `NOT_CERTIFIED` - This document is an uncertified copy\n",
                 "enum": [
                   "CERTIFIED",
                   "CERTIFIED_BY_ANOTHER",
@@ -4975,7 +4971,7 @@
         ]
       },
       "ValueBandV2": {
-        "description": "A range the value of the transaction falls between. Valid bands are:\n* `0 - 100000`\n * `100001 - 200000\n* `200001 - 500000`\n* `500001 - 1000000`\n* `1000001 +`",
+        "description": "A range the value of the transaction falls between. Valid bands are:\n* `0 - 100000`\n * `100001 - 200000`\n* `200001 - 500000`\n* `500001 - 1000000`\n* `1000001 +`",
         "properties": {
           "lower_value_band": {
             "type": "integer",
@@ -5501,6 +5497,87 @@
             "items": {
               "$ref": "#/components/schemas/TitleSummaryData"
             }
+          }
+        }
+      },
+      "DocCharge": {
+        "type": "object",
+        "properties": {
+          "charge_entry": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChargeEntry"
+            }
+          }
+        }
+      },
+      "ChargeEntry": {
+        "type": "object",
+        "properties": {
+          "charge_date": {
+            "type": "string"
+          },
+          "charge_id": {
+            "type": "string"
+          },
+          "charge_proprietor": {
+            "$ref": "#/components/schemas/ChargeProprietor"
+          },
+          "registered_charge": {
+            "$ref": "#/components/schemas/RegisteredCharge"
+          }
+        }
+      },
+      "ChargeProprietor": {
+        "type": "object",
+        "properties": {
+          "chargee_party": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChargeeParty"
+            }
+          },
+          "entry_details": {
+            "$ref": "#/components/schemas/ChargeEntryDetails"
+          }
+        }
+      },
+      "RegisteredCharge": {
+        "type": "object",
+        "properties": {
+          "entry_details": {
+            "$ref": "#/components/schemas/ChargeEntryDetails"
+          }
+        }
+      },
+      "ChargeeParty": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "$ref": "#/components/schemas/AddressForService"
+          },
+          "organization": {
+            "$ref": "#/components/schemas/Organization"
+          },
+          "private_individual": {
+            "$ref": "#/components/schemas/PrivateIndividual"
+          }
+        }
+      },
+      "ChargeEntryDetails": {
+        "type": "object",
+        "properties": {
+          "entry_number": {
+            "type": "string"
+          },
+          "entry_text": {
+            "type": "string"
+          },
+          "registration_date": {
+            "type": "string"
+          },
+          "sub_register_code": {
+            "type": "string"
           }
         }
       }
