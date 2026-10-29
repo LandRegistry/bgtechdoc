@@ -33,8 +33,12 @@
 
   <body class="govuk-template__body">
     <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
-    <header class="govuk-template__header app-header" role="banner" data-module="govuk-header">
-      <div class="govuk-header app-header" role="banner" data-module="govuk-header">
+
+    <div class="app-pane">
+      
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-header__container--full-width">
     <div class="govuk-header__logo">
       <a href="https://landregistry.github.io/bgtechdoc" class="govuk-header__link govuk-header__homepage-link">
@@ -44,14 +48,9 @@
       </a>
     </div>
   </div>
-</div>
+</header>
 
-    </header>
-
-
-      
-      <div class="app-pane__header toc-open-disabled">
-        <a href="#content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+        
       </div>
 
         <div id="toc-heading" class="toc-show fixedsticky">
@@ -112,7 +111,7 @@
           </div>
 
         <div class="app-pane__content toc-open-disabled" aria-label="Content">
-          <main id="content" class="govuk-main-wrapper technical-documentation" data-module="anchored-headings">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
             
     <p><link href="../../stylesheets/table-wrap.css" rel="stylesheet" /></p>
 
@@ -734,12 +733,8 @@ For the live service it will be expected that the outstanding request service wi
 
           <aside>
           </aside>
-        </div>
-      </div>
 
-
-    <footer class="govuk-template__footer">
-      <div class="govuk-footer app-footer" role="contentinfo">
+          <footer class="govuk-footer app-footer" role="contentinfo">
   <div class="govuk-footer__meta">
     <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
 
@@ -785,9 +780,11 @@ For the live service it will be expected that the outstanding request service wi
       >© Crown copyright</a>
     </div>
   </div>
-</div>
+</footer>
 
-    </footer>
+        </div>
+      </div>
+    </div>
 
     
     <script src="../../javascripts/govuk_frontend.js" type="module"></script>
